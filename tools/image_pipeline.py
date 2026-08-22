@@ -12,6 +12,9 @@ CH Travel OS 2.0 - 圖片發布標準管線 (Image Publishing Pipeline)
 import os
 import sys
 import json
+import time
+import shutil
+import datetime
 import hashlib
 import tempfile
 from pathlib import Path
@@ -23,11 +26,13 @@ DOCS_DIR = BASE_DIR / "docs"
 
 # 預設發布 Profile 規格 (禁止 upscale)
 PROFILES = [
-    {"name": "thumb", "width": 480, "role": "mobile/grid"},
-    {"name": "content", "width": 960, "role": "article"},
-    {"name": "desktop", "width": 1200, "role": "hero/wide"},
-    {"name": "lightbox", "width": 1600, "role": "lightbox_max"}
+    {"name": "thumb", "width": 480},
+    {"name": "content", "width": 960},
+    {"name": "desktop", "width": 1200},
+    {"name": "lightbox", "width": 1600}
 ]
+
+PIPELINE_VERSION = "2.0.0"
 DEFAULT_QUALITY = 84
 
 
@@ -39,22 +44,31 @@ def get_file_sha256(filepath):
     return h.hexdigest()
 
 
-def process_image(src_path, output_dir, rel_public_base, existing_manifest_entry=None):
+def process_image(src_path, output_dir, rel_public_base, existing_manifest_entry=None, manifest_meta=None):
     output_dir.mkdir(parents=True, exist_ok=True)
     stem = src_path.stem
     source_hash = get_file_sha256(src_path)
 
-    # 檢查 Cache：若 source_hash 相同且衍生圖皆完整存在，直接沿用
-    if existing_manifest_entry and existing_manifest_entry.get("source_hash") == source_hash:
-        all_exist = True
-        for d in existing_manifest_entry.get("derivatives", []):
-            d_file = output_dir / d["filename"]
-            if not d_file.exists() or d_file.stat().st_size != d.get("bytes"):
-                all_exist = False
-                break
-        if all_exist:
-            # Cache hit!
-            return existing_manifest_entry, True
+    # 嚴格合約快取比對 (比對 pipeline_version, quality, profiles, source_hash 與實體檔案)
+    is_contract_valid = (
+        manifest_meta
+        and manifest_meta.get("pipeline_version") == PIPELINE_VERSION
+        and manifest_meta.get("quality") == DEFAULT_QUALITY
+        and manifest_meta.get("profiles") == PROFILES
+    )
+
+    if is_contract_valid and existing_manifest_entry and existing_manifest_entry.get("source_hash") == source_hash:
+        derivatives = existing_manifest_entry.get("derivatives", [])
+        if len(derivatives) == len(PROFILES):
+            all_exist = True
+            for d in derivatives:
+                d_file = output_dir / d["filename"]
+                if not d_file.exists() or d_file.stat().st_size != d.get("bytes"):
+                    all_exist = False
+                    break
+            if all_exist:
+                # Cache hit!
+                return existing_manifest_entry, True
 
     derivatives = []
     generated_widths = set()
@@ -64,19 +78,23 @@ def process_image(src_path, output_dir, rel_public_base, existing_manifest_entry
         img = ImageOps.exif_transpose(img)
         orig_w, orig_h = img.size
 
-        # 2. 依 Profile 生成各尺寸 WebP (不保留 EXIF)
+        # 2. 依 Profile 生成各尺寸 WebP (長邊約束，禁止 upscale，不保留 EXIF)
         for prof in PROFILES:
-            target_w = prof["width"]
-            if target_w > orig_w:
-                target_w = orig_w  # 禁止 upscale
+            max_target = prof["width"]
+            if orig_w >= orig_h:
+                # 橫圖 (Landscape)
+                target_w = min(max_target, orig_w)
+                target_h = int(round(orig_h * (target_w / orig_w)))
+            else:
+                # 直圖 (Portrait)
+                target_h = min(max_target, orig_h)
+                target_w = int(round(orig_w * (target_h / orig_h)))
 
-            # 避免同一照片因原圖解析度較小而產生重複寬度的檔案
-            if target_w in generated_widths and target_w == orig_w:
+            # 避免同一照片因原圖解析度較小而產生重複尺寸的檔案
+            dim_key = (target_w, target_h)
+            if dim_key in generated_widths:
                 continue
-            generated_widths.add(target_w)
-
-            ratio = target_w / orig_w
-            target_h = int(orig_h * ratio)
+            generated_widths.add(dim_key)
 
             out_filename = f"{stem}-{prof['name']}-{target_w}w.webp"
             out_file = output_dir / out_filename
@@ -90,9 +108,18 @@ def process_image(src_path, output_dir, rel_public_base, existing_manifest_entry
             os.close(temp_fd)
             try:
                 resized.save(temp_path, format="WEBP", quality=DEFAULT_QUALITY, method=6)
-                if os.path.exists(out_file):
-                    os.remove(out_file)
-                os.replace(temp_path, out_file)
+                # Windows Defender/Index 暫時鎖定重試機制
+                for attempt in range(5):
+                    try:
+                        if os.path.exists(out_file):
+                            os.remove(out_file)
+                        os.replace(temp_path, out_file)
+                        break
+                    except PermissionError:
+                        time.sleep(0.15)
+                else:
+                    if os.path.exists(temp_path):
+                        shutil.copyfile(temp_path, out_file)
             finally:
                 if os.path.exists(temp_path):
                     try:
@@ -133,11 +160,21 @@ def process_trip(trip_slug, dest_slug=None, pilot_day=None):
     trip_output = DOCS_DIR / dest_slug / "images"
     manifest_file = DOCS_DIR / dest_slug / "image-manifest.json"
 
-    manifest_data = {"trip": trip_slug, "dest": dest_slug, "generated_at": str(Path(__file__).stat().st_mtime), "images": {}}
+    now_iso = datetime.datetime.now(datetime.timezone.utc).isoformat()
+    manifest_data = {
+        "pipeline_version": PIPELINE_VERSION,
+        "trip": trip_slug,
+        "dest": dest_slug,
+        "generated_at": now_iso,
+        "quality": DEFAULT_QUALITY,
+        "profiles": PROFILES,
+        "images": {}
+    }
     if manifest_file.exists():
         try:
             with open(manifest_file, "r", encoding="utf-8") as f:
-                manifest_data = json.load(f)
+                loaded_manifest = json.load(f)
+                manifest_data["images"] = loaded_manifest.get("images", {})
         except Exception:
             pass
 
@@ -160,7 +197,7 @@ def process_trip(trip_slug, dest_slug=None, pilot_day=None):
             try:
                 img_key = f"{day_name}/{img_path.name}"
                 existing_entry = manifest_data.get("images", {}).get(img_key)
-                res, is_cache = process_image(img_path, out_day_dir, rel_base, existing_entry)
+                res, is_cache = process_image(img_path, out_day_dir, rel_base, existing_entry, manifest_meta=manifest_data)
                 manifest_data["images"][img_key] = res
                 total_processed += 1
                 if is_cache:

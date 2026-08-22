@@ -23,3 +23,12 @@
 1. **第 1 層：Instagram 現場隨筆 (`.ig-post-card`)** — 原汁原味呈現當天真實隨筆文字與時間。
 2. **第 2 層：旅人深度散文 (`.story-split` & `.story-split.reverse`)** — 雜誌風左右交錯排版，每段文字緊扣照片視覺錨點展開。
 3. **第 3 層：實戰 Bento 攻略盒 (`.bento-grid`)** — 隨文嵌入停車座標、TripNG 避坑警示、德法雙語發音按鈕。
+
+---
+
+## 3. 批次遷移標準守則 (MIGRATION_PLAN.md)
+
+在執行 2026 Germany 其餘天數或 2024 Australia 批次遷移時，必須嚴格遵守專案根目錄下的 [MIGRATION_PLAN.md](file:///c:/Data/charlotte-ai-os-dev/ch-travel-os/MIGRATION_PLAN.md)：
+- 嚴格遵守「小步閉環 (Milestones)」與「Config 驅動構建 (`blog-migration.json`)」。
+- 尚未生成的頁面禁止在前端暴露 404 連結。
+- 每次變更必須 100% 通過 `python tools/validate_images.py` 全站死鏈與資產稽核。

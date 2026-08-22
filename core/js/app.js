@@ -141,18 +141,45 @@ function initTimelineCards() {
 }
 
 /* ==========================================================================
-   5. GLightbox 燈箱初始化
+   5. GLightbox 燈箱初始化與快速圖集觸發器
    ========================================================================== */
+let globalLightboxInstance = null;
+
 function initGLightbox() {
   if (typeof GLightbox !== 'undefined') {
-    GLightbox({
+    globalLightboxInstance = GLightbox({
       selector: '.glightbox',
       touchNavigation: true,
       loop: true,
       zoomable: true
     });
   }
+
+  // 綁定所有快速圖集瀏覽按鈕 (.btn-gallery-quick)
+  document.querySelectorAll('.btn-gallery-quick').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openCurrentPageGallery();
+    });
+  });
 }
+
+function openCurrentPageGallery() {
+  const firstLink = document.querySelector('.glightbox');
+  if (firstLink) {
+    firstLink.click();
+  } else if (globalLightboxInstance) {
+    globalLightboxInstance.open();
+  }
+}
+
+// 支援所有天數的 inline onclick 呼叫 (如 openDay01Gallery, openDay03Gallery 等)
+for (let i = 1; i <= 15; i++) {
+  const pad = String(i).padStart(2, '0');
+  window[`openDay${pad}Gallery`] = openCurrentPageGallery;
+  window[`openDay${i}Gallery`] = openCurrentPageGallery;
+}
+window.openDayGallery = openCurrentPageGallery;
 
 /* ==========================================================================
    6. 📸 精選遊記 16 篇隨機抽取與「🎲 換一批」引擎 (Featured Stories Randomizer)
@@ -215,7 +242,7 @@ const ALL_STORIES = [
     themeType: "badge-forest",
     title: "紐倫堡皇帝堡走讀 — 聖誕之都的冬日紅磚風華",
     quote: "「登上皇帝堡城牆俯瞰整座紅色屋頂的帝國古都，在老城石板路上追尋杜勒與胡桃鉗的童話足跡。」",
-    img: "images/day-05/18002102333848437-desktop-1200w.webp",
+    img: "images/day-05/18002102333848437-desktop-900w.webp",
     url: "blog/day-05-blog.html"
   },
   {
@@ -227,7 +254,7 @@ const ALL_STORIES = [
     themeType: "badge-wine",
     title: "陶伯河畔羅騰堡 — 漫步中世紀時光膠囊",
     quote: "「走進普連萊小廣場，彩色桁架木屋在晨光下靜謐得如同童話插畫，彷彿時間在這裡整整停駐了五百年。」",
-    img: "images/day-06/18078973727601770-desktop-1200w.webp",
+    img: "images/day-06/18078973727601770-desktop-900w.webp",
     url: "blog/day-06-blog.html"
   },
   {
@@ -239,7 +266,7 @@ const ALL_STORIES = [
     themeType: "badge-wine",
     title: "符茲堡主教宮與舊美茵橋白葡萄酒",
     quote: "「符茲堡是『藝術＋酒』的城市。白天看世界最大穹頂天頂畫，傍晚上橋喝一杯，冬天來，反而更剛好。」",
-    img: "images/day-07/18075865346091014-desktop-1200w.webp",
+    img: "images/day-07/18075865346091014-desktop-901w.webp",
     url: "blog/day-07-blog.html"
   },
   {
@@ -263,7 +290,7 @@ const ALL_STORIES = [
     themeType: "badge-wine",
     title: "哈瑙童話起點 ✕ 法蘭克福采爾大道巡禮",
     quote: "「在格林兄弟銅像前尋找童話大道的源頭，走入法蘭克福現代都會的璀璨繁華，感受古典與當代的奇妙交織。」",
-    img: "images/day-09/18058121042364450-desktop-1200w.webp",
+    img: "images/day-09/18058121042364450-desktop-900w.webp",
     url: "blog/day-09-blog.html"
   },
   {
@@ -275,7 +302,7 @@ const ALL_STORIES = [
     themeType: "badge-wine",
     title: "史派爾羅曼式大教堂 ✕ 跨國亞爾薩斯轉移",
     quote: "「站在千年紅色砂岩砌成的帝國教堂下，沉重的歷史感撲面而來，隨後跨越萊茵河，奔向法式彩色木屋的世界。」",
-    img: "images/day-10/20260204_122442-desktop-1200w.webp",
+    img: "images/day-10/20260204_122442-desktop-676w.webp",
     url: "blog/day-10-speyer-blog.html"
   },
   {
@@ -335,7 +362,7 @@ const ALL_STORIES = [
     themeType: "badge-wine",
     title: "帕特納赫峽谷冬季冰瀑奇景 ✕ 天然冰宮探秘",
     quote: "「穿鑿於八十公尺高垂直岩壁間，凝視層層堆疊的幽藍冰瀑與冰簾，體驗大自然將時間徹底凍結的震撼奇景。」",
-    img: "images/day-14/18038771039755485-desktop-1200w.webp",
+    img: "images/day-14/18038771039755485-desktop-900w.webp",
     url: "blog/day-14-blog.html"
   },
   {
@@ -347,7 +374,7 @@ const ALL_STORIES = [
     themeType: "badge-gold",
     title: "慕尼黑機場滿載賦歸 ✕ 十五天德南冬旅自駕回甘",
     quote: "「陪伴我們 15 天、橫跨四國、奔馳兩千公里的白色 Audi A5 功成身退。在粉紫暮色與孩子燦爛的笑容中，圓滿回甘。」",
-    img: "images/day-15/20260208_172729-desktop-1200w.webp",
+    img: "images/day-15/20260208_172729-desktop-675w.webp",
     url: "blog/day-15-blog.html"
   }
 ];
