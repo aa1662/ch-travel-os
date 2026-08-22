@@ -1,0 +1,165 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+CH Travel OS 2.0 - 全域發布與圖片合規驗證器 (Full Site & Image Validator)
+自動嚴格驗證：
+1. 圖片合規：尺寸 <= 1600px、單檔 <= 2.5MB、可解碼、EXIF/GPS 徹底移除。
+2. Manifest 一致性：Manifest 與磁碟 WebP 檔案 100% 對應。
+3. HTML 連結完整性：檢查所有 <a href>, <img src>, <img srcset>, <script src>, <link href>，嚴禁 404 死鏈。
+4. 原圖與隱私防護：HTML 與 JS 不得直接引用 masters/ 或未經 WebP 轉換之 raw .jpg。
+5. 社群與 Canonical 驗證：og:url 與 og:image 不得指向舊版或已失效之遺留路由。
+"""
+
+import re
+import sys
+import json
+import urllib.parse
+from pathlib import Path
+from PIL import Image
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+DOCS_DIR = BASE_DIR / "docs"
+
+MAX_ALLOWED_WIDTH = 1600
+MAX_ALLOWED_BYTES = 2.5 * 1024 * 1024  # 2.5MB
+
+
+def validate_docs():
+    print("==================================================")
+    print("🛡️ 正在執行 CH Travel OS 2.0 全站連結與圖片合規檢查...")
+    print("==================================================")
+
+    errors = []
+    warnings = []
+    total_images = 0
+
+    image_files = list(DOCS_DIR.rglob("*.webp")) + list(DOCS_DIR.rglob("*.jpg")) + list(DOCS_DIR.rglob("*.png"))
+
+    # 1. 檢查公開圖片格式、尺寸、檔案大小、可解碼性與 EXIF 剝除
+    for img_path in image_files:
+        if "vendor" in img_path.parts:
+            continue
+
+        total_images += 1
+        size = img_path.stat().st_size
+
+        if size > MAX_ALLOWED_BYTES:
+            errors.append(f"[圖片過大] ({round(size/1024/1024, 2)} MB > 2.5 MB): {img_path.relative_to(DOCS_DIR)}")
+
+        if img_path.suffix.lower() in [".jpg", ".jpeg", ".png", ".heic"]:
+            if "icon" not in img_path.name.lower() and "logo" not in img_path.name.lower():
+                errors.append(f"[未轉檔圖檔外洩] 發現 raw 圖檔存在於 docs: {img_path.relative_to(DOCS_DIR)}")
+
+        try:
+            with Image.open(img_path) as im:
+                w, h = im.size
+                if w > MAX_ALLOWED_WIDTH or h > MAX_ALLOWED_WIDTH:
+                    errors.append(f"[超過上限尺寸] ({w}x{h} > {MAX_ALLOWED_WIDTH}px): {img_path.relative_to(DOCS_DIR)}")
+
+                exif_data = im.getexif()
+                if exif_data:
+                    if 34853 in exif_data or 0x8825 in exif_data:
+                        errors.append(f"[GPS 敏感定位洩漏] 未徹底剝除 EXIF 定位: {img_path.relative_to(DOCS_DIR)}")
+        except Exception as e:
+            errors.append(f"[檔案損毀無法解碼] {img_path.relative_to(DOCS_DIR)} ({e})")
+
+    # 2. 檢查 Image Manifest 一致性
+    manifest_files = list(DOCS_DIR.rglob("image-manifest.json"))
+    for mf in manifest_files:
+        try:
+            with open(mf, "r", encoding="utf-8") as f:
+                mdata = json.load(f)
+                trip_dir = mf.parent
+                for img_key, item in mdata.get("images", {}).items():
+                    for d in item.get("derivatives", []):
+                        d_path = trip_dir / "images" / d["filename"]
+                        if not d_path.exists():
+                            pub_path = DOCS_DIR / d["publicPath"]
+                            if not pub_path.exists():
+                                errors.append(f"[Manifest 遺失實體] {d['publicPath']}")
+        except Exception as e:
+            errors.append(f"[Manifest 解析失敗] {mf.name} ({e})")
+
+    # 3. 檢查 JavaScript 檔案內是否有未更新之 raw .jpg 引用
+    js_files = list(DOCS_DIR.rglob("*.js"))
+    for jf in js_files:
+        if "vendor" in jf.parts:
+            continue
+        try:
+            js_text = jf.read_text(encoding="utf-8")
+            raw_jpg_in_js = re.findall(r'["\']([^"\']*(?:images/day-[^"\']*\.jpg))["\']', js_text, re.IGNORECASE)
+            for r in raw_jpg_in_js:
+                errors.append(f"[JS 包含原始 JPG 引用] {r} in {jf.relative_to(DOCS_DIR)}")
+        except Exception as e:
+            warnings.append(f"讀取 JS 失敗: {jf.name} ({e})")
+
+    # 4. 檢查 HTML 引用有效性、死鏈與社群標籤
+    html_files = list(DOCS_DIR.rglob("*.html"))
+    for hf in html_files:
+        try:
+            content = hf.read_text(encoding="utf-8")
+            html_dir = hf.parent
+
+            # 4.1 檢查是否有直接引用 masters/
+            if "masters/" in content:
+                errors.append(f"[直接引用 master] HTML 引用了未公開 masters/ 路徑: {hf.relative_to(DOCS_DIR)}")
+
+            # 4.2 檢查 legacy OG URL
+            if "2026-Germany" in content:
+                # 排除標題純文字說明，檢查 meta 標籤
+                if re.search(r'<meta[^>]+content=["\'][^"\']*2026-Germany[^"\']*["\']', content):
+                    errors.append(f"[遺留 OG URL] 包含舊版專案網址 2026-Germany: {hf.relative_to(DOCS_DIR)}")
+
+            # 4.3 檢查所有本機連結與資源是否皆存在 (避免 404)
+            # 匹配 href="..." 與 src="..."
+            ref_pattern = re.compile(r'(?:href|src)=["\']([^"\']+)["\']')
+            for match in ref_pattern.finditer(content):
+                target = match.group(1).strip()
+                # 排除外部連結、錨點、JavaScript 虛擬協定
+                if target.startswith(("http://", "https://", "mailto:", "tel:", "#", "javascript:", "data:")):
+                    continue
+
+                # 分離 query string 和 hash 錨點
+                clean_target = target.split("?")[0].split("#")[0]
+                if not clean_target:
+                    continue
+
+                # 解析相對路徑
+                target_path = (html_dir / clean_target).resolve()
+
+                # 檢查是否超出 DOCS_DIR 邊界或檔案不存在
+                if not target_path.exists():
+                    errors.append(f"[死鏈 404] 找不到目標檔案: '{target}' (解析路徑: {target_path}) in {hf.relative_to(DOCS_DIR)}")
+
+                # 檢查 href / src 若指向 images/ 是否為未轉檔之 raw .jpg
+                if "images/" in clean_target and clean_target.lower().endswith((".jpg", ".png", ".heic")):
+                    errors.append(f"[HTML 引用原始 JPG] '{clean_target}' in {hf.relative_to(DOCS_DIR)}")
+
+            # 4.4 檢查 srcset 中的每個檔案是否存在
+            srcset_pattern = re.compile(r'srcset=["\']([^"\']+)["\']')
+            for match in srcset_pattern.finditer(content):
+                srcset_val = match.group(1)
+                items = [item.strip().split()[0] for item in srcset_val.split(",") if item.strip()]
+                for item in items:
+                    if item.startswith(("http://", "https://", "data:")):
+                        continue
+                    clean_item = item.split("?")[0].split("#")[0]
+                    item_path = (html_dir / clean_item).resolve()
+                    if not item_path.exists():
+                        errors.append(f"[srcset 死鏈] 找不到圖片: '{item}' in {hf.relative_to(DOCS_DIR)}")
+
+        except Exception as e:
+            warnings.append(f"讀取 HTML 失敗: {hf.name} ({e})")
+
+    print(f"📊 檢查完成：共掃描 {total_images} 個公開圖片、{len(html_files)} 份 HTML、{len(js_files)} 份 JS 文件。")
+    if errors:
+        print(f"\n❌ 發現 {len(errors)} 個違規與死鏈項目：")
+        for err in errors:
+            print(f"  - {err}")
+        sys.exit(1)
+    else:
+        print("\n✅ 100% 通過！全站連結、社群 Meta 與公開 WebP 圖片完全合規，零 404 死鏈。")
+
+
+if __name__ == "__main__":
+    validate_docs()

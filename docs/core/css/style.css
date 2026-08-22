@@ -1,0 +1,1358 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700;900&family=Noto+Sans+TC:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ==========================================================================
+   2026 德國南部・奧地利・法國・瑞士 15D14N 冬季自駕與圖文遊記 - 旗艦級設計系統
+   Design Philosophy: Snaplog Editorial Style ✕ Bento Grid ✕ Mobile-First ✕ Travel OS
+   ========================================================================== */
+
+/* ---------- 1. Design Tokens & Variables (Aligned with Snaplog) ---------- */
+:root {
+  /* Snaplog 核心品牌色盤 (Warm Paper & Editorial Navy) */
+  --paper: #f7f5f0;            /* 溫潤棉紙白背景 (Paper Background) */
+  --ink: #252525;              /* 沉穩深墨灰文字 (Ink Typography) */
+  --navy: #243447;             /* 典雅深海藍標題與主強調色 (Editorial Navy) */
+  --blue-gray: #6e879a;        /* 雅緻藍灰次要資訊 / Kicker */
+  --sand: #efe8da;             /* 淺沙色卡片與模組底色 (Sand Bento Accent) */
+  --sand-light: #f5f0e6;       /* 柔和淺沙白 */
+  --caption: #6f6a61;          /* 暖灰圖說與引言文字 */
+  --line: #d9d3c7;             /* 細緻暖灰線條 (Subtle Warm Border) */
+  --terracotta: #b85d38;       /* 陶土暖褐 (強調色) */
+
+  /* 系統映射變數 (維持全站組件相容性) */
+  --primary: var(--navy);      /* #243447 */
+  --primary-light: #34495e;
+  --primary-gradient: linear-gradient(135deg, #243447 0%, #182330 100%);
+  --accent: #b45309;           /* 琥珀金 (保留高亮提示) */
+  --accent-light: #fef3c7;
+  --accent-hover: #92400e;
+  --alpine-ice: #50768c;       /* 柔和藍灰 */
+  --alpine-light: #e8eef2;
+  --forest-pine: #3f6b4d;      /* 典雅冷杉綠 */
+  --forest-light: #e6efe8;
+  --wine-burgundy: #733238;    /* 溫潤酒紅 */
+  --wine-light: #f4e6e7;
+  --daruma-red: #b91c1c;       /* 警示朱紅 */
+  --daruma-light: #fbeae8;
+
+  /* Surfaces & Backgrounds */
+  --bg-page: var(--paper);     /* #f7f5f0 */
+  --bg-card: #ffffff;
+  --bg-card-sand: var(--sand); /* #efe8da */
+  --bg-card-glass: rgba(247, 245, 240, 0.96);
+  --bg-dark: #18222d;
+  --border-color: var(--line); /* #d9d3c7 */
+  --border-glass: rgba(217, 211, 199, 0.85);
+
+  /* Typography Colors */
+  --text-main: var(--ink);     /* #252525 */
+  --text-muted: var(--caption);/* #6f6a61 */
+  --text-sub: #524e47;
+  --text-white: #ffffff;
+
+  /* Typography Families (Snaplog: Noto Serif TC + Noto Sans TC) */
+  --font-family: 'Noto Sans TC', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-heading: 'Noto Serif TC', Songti TC, Georgia, serif;
+
+  /* Elevation Shadows (Soft & Subtle for Paper Texture) */
+  --shadow-xs: 0 1px 2px rgba(36, 52, 71, 0.04);
+  --shadow-sm: 0 1px 3px rgba(36, 52, 71, 0.06), 0 1px 2px rgba(36, 52, 71, 0.03);
+  --shadow-md: 0 4px 8px -1px rgba(36, 52, 71, 0.07), 0 2px 4px -2px rgba(36, 52, 71, 0.04);
+  --shadow-lg: 0 10px 18px -3px rgba(36, 52, 71, 0.07), 0 4px 6px -4px rgba(36, 52, 71, 0.03);
+  --shadow-xl: 0 20px 25px -5px rgba(36, 52, 71, 0.08), 0 8px 10px -6px rgba(36, 52, 71, 0.03);
+  --shadow-glow: 0 0 20px rgba(110, 135, 154, 0.25);
+
+  /* Layout & Geometry */
+  --max-width: 1240px;
+  --header-height: 68px;
+  --dock-height: 64px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-full: 9999px;
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---------- 2. Base & Reset ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.65;
+  min-height: 100vh;
+  padding-bottom: calc(var(--dock-height) + 2rem);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ---------- 3. Layout Container ---------- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ---------- 4. Top Navigation Bar (Glassmorphic) ---------- */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(36, 52, 71, 0.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(217, 211, 199, 0.25);
+  box-shadow: var(--shadow-sm);
+}
+
+.site-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text-white);
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: -0.01em;
+}
+
+.brand-badge {
+  background: var(--sand);
+  color: var(--navy);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid rgba(217, 211, 199, 0.6);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text-white);
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.nav-share-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all var(--transition-fast);
+}
+
+.nav-share-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ---------- 5. Mobile Bottom Dock (App-Like) ---------- */
+.mobile-dock {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--dock-height);
+  background: rgba(36, 52, 71, 0.97);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(217, 211, 199, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 1000;
+  padding: 0 0.5rem;
+  box-shadow: 0 -4px 16px rgba(36, 52, 71, 0.15);
+}
+
+.dock-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.75rem;
+  font-weight: 600;
+  gap: 0.2rem;
+  flex: 1;
+  padding: 0.35rem 0;
+  transition: all var(--transition-fast);
+}
+
+.dock-item.active,
+.dock-item:hover {
+  color: var(--accent);
+}
+
+.dock-icon {
+  font-size: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+}
+
+@media (min-width: 769px) {
+  .mobile-dock { display: none; }
+  body { padding-bottom: 2rem; }
+}
+
+/* ---------- 6. Bento Grid System ---------- */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.bento-col-12 { grid-column: span 12; }
+.bento-col-8 { grid-column: span 8; }
+.bento-col-7 { grid-column: span 7; }
+.bento-col-6 { grid-column: span 6; }
+.bento-col-5 { grid-column: span 5; }
+.bento-col-4 { grid-column: span 4; }
+.bento-col-3 { grid-column: span 3; }
+
+@media (max-width: 992px) {
+  .bento-col-8, .bento-col-7, .bento-col-6, .bento-col-5, .bento-col-4, .bento-col-3 {
+    grid-column: span 12;
+  }
+}
+
+.bento-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.bento-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.bento-card-glass {
+  background: var(--bg-card-glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+}
+
+.bento-card-primary {
+  background: var(--primary-gradient);
+  color: var(--text-white);
+  border: none;
+}
+
+/* ---------- 7. Day Switcher Bar (1 ~ 15 天切換) ---------- */
+.day-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  margin: 1.25rem 0 2rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.day-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 0.85rem;
+  background: #ffffff;
+  border: 1.5px solid #d0c8bb;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ink);
+  box-shadow: var(--shadow-xs);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.day-nav-btn:hover {
+  color: var(--terracotta);
+  border-color: var(--terracotta);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.day-nav-btn.active {
+  background: linear-gradient(135deg, #243447 0%, #152230 100%);
+  color: #ffffff;
+  border: 1.5px solid #152230;
+  box-shadow: 0 3px 10px rgba(36, 52, 71, 0.35);
+}
+
+/* ---------- 8. Hero Banner & Day Headers ---------- */
+.hero-bento {
+  padding: 2.5rem 0 1.5rem;
+}
+
+.hero-banner {
+  background: var(--primary-gradient);
+  color: var(--text-white);
+  border-radius: var(--radius-xl);
+  padding: 3.5rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.hero-banner::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(217, 119, 6, 0.25) 0%, rgba(217, 119, 6, 0) 70%);
+  pointer-events: none;
+}
+
+.hero-badge-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.12rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 820px;
+  line-height: 1.75;
+  margin-bottom: 1.75rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-hero-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.4);
+  transition: all var(--transition-fast);
+}
+
+.btn-hero-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(217, 119, 6, 0.5);
+}
+
+.btn-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-fast);
+}
+
+.btn-hero-secondary:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateY(-2px);
+}
+
+/* Day Schedule Header Box */
+.schedule-hero-card {
+  background: var(--primary-gradient);
+  color: var(--text-white);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem 2rem;
+  margin: 1.5rem 0 2rem;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ---------- 9. Badges & Tags (High-Contrast AAA Standard) ---------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.28rem 0.75rem;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.02em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.badge-gold { background: #fef3c7; color: #78350f; border: 1px solid #fde68a; }
+.badge-alpine { background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
+.badge-wine { background: #ffe4e6; color: #881337; border: 1px solid #fecdd3; }
+.badge-forest { background: #dcfce7; color: #14532d; border: 1px solid #bbf7d0; }
+.badge-trap { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; font-weight: 800; }
+.badge-glass { background: rgba(36, 52, 71, 0.88); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.3); }
+
+/* ---------- 10. Vertical Timeline System (視覺化時間軸) ---------- */
+.timeline-section {
+  position: relative;
+  margin: 2rem 0 3rem;
+  padding-left: 2rem;
+}
+
+.timeline-section::before {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 15px;
+  bottom: 15px;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--accent) 0%, var(--alpine-ice) 50%, var(--primary) 100%);
+  border-radius: var(--radius-full);
+  opacity: 0.4;
+}
+
+.timeline-node {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.timeline-node::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  top: 1.25rem;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 4px solid var(--accent);
+  box-shadow: 0 0 0 4px rgba(217, 119, 6, 0.2);
+  z-index: 2;
+  transition: transform var(--transition-fast);
+}
+
+.timeline-node:hover::before {
+  transform: scale(1.3);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 6px rgba(15, 39, 68, 0.2);
+}
+
+.timeline-step-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.timeline-step-card:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(217, 119, 6, 0.4);
+}
+
+.timeline-step-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.timeline-time-badge {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* ---------- 11. Featured Story Cards (精選圖文遊記卡片) ---------- */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 1.5rem 0 3rem;
+}
+
+@media (max-width: 900px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.featured-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.featured-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--accent);
+}
+
+.featured-img-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  max-height: 380px;
+  overflow: hidden;
+  position: relative;
+  background: #e2e8f0;
+}
+
+.featured-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transition: transform 0.4s ease;
+}
+
+/* Image Focus Utilities */
+.focus-top { object-position: center 15% !important; }
+.focus-center { object-position: center center !important; }
+.focus-bottom { object-position: center 85% !important; }
+
+.featured-card:hover .featured-img-wrap img {
+  transform: scale(1.06);
+}
+
+.featured-tag-float {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background: rgba(15, 39, 68, 0.9);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+.featured-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.featured-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.35;
+  margin-bottom: 0.5rem;
+}
+
+.featured-quote {
+  font-size: 0.92rem;
+  color: var(--text-sub);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  font-style: italic;
+}
+
+.btn-read-story {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  background: var(--alpine-light);
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.btn-read-story:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ---------- 12. Base-Grouped Itinerary (五大基地時間軸) ---------- */
+.base-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.base-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.base-title {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.base-days-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.day-item-card {
+  background: var(--bg-page);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.75rem;
+  transition: all var(--transition-fast);
+}
+
+.day-item-card:hover {
+  background: #fff;
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.day-item-tag {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.day-item-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.4;
+}
+
+.day-item-desc {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.day-item-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.btn-day-action {
+  flex: 1;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.45rem 0.65rem;
+  border-radius: var(--radius-sm);
+  background: #ffffff;
+  border: 1px solid #c9c2b4;
+  color: var(--ink);
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.btn-day-action:hover {
+  background: #f1ebd9;
+  color: var(--navy);
+  border-color: var(--navy);
+  transform: translateY(-1px);
+}
+
+/* 📖 深度遊記 High-Contrast 焦點高亮按鈕 */
+.btn-day-action.highlight,
+.btn-day-action.featured {
+  background: linear-gradient(135deg, #243447 0%, #152230 100%);
+  color: #ffffff !important;
+  border: 1.5px solid #1a2838;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(36, 52, 71, 0.25);
+}
+
+.btn-day-action.highlight:hover,
+.btn-day-action.featured:hover {
+  background: #b85d38;
+  border-color: #a04e2c;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(184, 93, 56, 0.35);
+}
+
+/* ---------- 13. Google Maps Navigation Links & Audio Buttons ---------- */
+.text-map-link,
+.map-link {
+  color: #1e3a5f;
+  text-decoration: underline dotted 2px #b85d38;
+  text-underline-offset: 3.5px;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+.text-map-link:hover,
+.map-link:hover {
+  color: #b85d38;
+  background: #fbf5eb;
+  text-decoration: underline solid 2px #b85d38;
+}
+
+/* 德法雙語語音發音按鈕 (High-Contrast Audio Pill) */
+.btn-audio {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #f2e9db;
+  color: #152433;
+  border: 1.5px solid #243447;
+  padding: 0.22rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 1px 3px rgba(36, 52, 71, 0.12);
+  vertical-align: middle;
+  margin: 0 0.25rem;
+}
+
+.btn-audio:hover {
+  background: #243447;
+  color: #ffffff;
+  border-color: #243447;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(36, 52, 71, 0.28);
+}
+
+.btn-audio:active {
+  transform: scale(0.95);
+}
+
+/* 全域圖集快捷啟動按鈕 */
+.btn-gallery-quick {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #243447;
+  color: #ffffff !important;
+  border: 1px solid #182330;
+  padding: 0.42rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 2px 6px rgba(36, 52, 71, 0.2);
+}
+
+.btn-gallery-quick:hover {
+  background: #b85d38;
+  border-color: #9c4c2a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(184, 93, 56, 0.35);
+}
+
+/* ---------- 14. Blog Narrative, Hero & Photo Layouts ---------- */
+.blog-article {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.split-hero {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 2rem;
+  align-items: center;
+  background: var(--sand);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  padding: 1.75rem;
+  margin: 1.5rem 0 2.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.split-hero-img-wrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  box-shadow: var(--shadow-sm);
+  background: var(--sand-light);
+}
+
+.split-hero-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: zoom-in;
+  transition: transform var(--transition-fast);
+}
+
+.split-hero-img-wrap img:hover {
+  transform: scale(1.03);
+}
+
+.split-hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.diptych-hero {
+  background: var(--sand);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  padding: 1.75rem;
+  margin: 1.5rem 0 2.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.diptych-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.diptych-frame {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  box-shadow: var(--shadow-sm);
+  background: var(--sand-light);
+}
+
+.diptych-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: zoom-in;
+  transition: transform var(--transition-normal);
+}
+
+.diptych-frame:hover img {
+  transform: scale(1.03);
+}
+
+.diptych-tag {
+  position: absolute;
+  bottom: 0.85rem;
+  left: 0.85rem;
+  background: rgba(36, 52, 71, 0.9);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.04em;
+}
+
+.diptych-tag-summer { background: rgba(63, 107, 77, 0.92); }
+.diptych-tag-winter { background: rgba(80, 118, 140, 0.92); }
+
+.diptych-quote {
+  background: #fffdf8;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--terracotta);
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  margin-top: 1rem;
+  color: var(--navy);
+  font-weight: 500;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .split-hero {
+    grid-template-columns: 1fr;
+    padding: 1.25rem;
+    gap: 1.5rem;
+  }
+
+  .diptych-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .timeline-section {
+    padding-left: 1.5rem;
+  }
+  
+  .timeline-node::before {
+    left: -1.5rem;
+  }
+}
+
+.portrait-duo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.portrait-trio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.portrait-item {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  box-shadow: var(--shadow-xs);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.portrait-item:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-md);
+}
+
+.portrait-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: zoom-in;
+}
+
+@media (max-width: 600px) {
+  .portrait-trio {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.photo-grid {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.photo-grid-1 { grid-template-columns: 1fr; }
+.photo-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.photo-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.photo-grid-4 { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+
+.photo-grid-item {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  box-shadow: var(--shadow-xs);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.photo-grid-item:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-md);
+}
+
+.photo-grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: zoom-in;
+}
+
+.ig-post-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.ig-post-header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.ig-post-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.ig-post-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.ig-post-author {
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 0.95rem;
+}
+
+.ig-post-date {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.ig-post-caption {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-main);
+  margin-bottom: 1.25rem;
+}
+
+.blog-narrative-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  padding: 2rem 2.25rem;
+  margin: 2rem 0;
+  line-height: 1.95;
+  font-size: 1.05rem;
+  color: var(--ink);
+  box-shadow: var(--shadow-xs);
+  border-left: 4px solid var(--blue-gray);
+}
+
+/* ---------- 14.1 看圖說故事：左右圖文交錯排版 (Story-Split Magazine Layout) ---------- */
+.story-split {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem 0 2.5rem;
+}
+
+.story-split.reverse {
+  flex-direction: row-reverse;
+}
+
+.story-split-text {
+  flex: 1 1 58%;
+  min-width: 0;
+}
+
+.story-split-text p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+
+.story-split-text p:last-child {
+  margin-bottom: 0;
+}
+
+.story-split-media {
+  flex: 1 1 42%;
+  max-width: 400px;
+  min-width: 260px;
+}
+
+.story-split-media img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  display: block;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.story-split-media img:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.fullwidth-landscape-wrap {
+  margin: 2rem 0;
+}
+
+.fullwidth-landscape-wrap img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  display: block;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.fullwidth-landscape-wrap img:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 768px) {
+  .story-split, .story-split.reverse {
+    flex-direction: column !important;
+    gap: 1.25rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .story-split-media {
+    max-width: 100%;
+    width: 100%;
+    min-width: unset;
+  }
+  .story-split-media img {
+    max-height: 440px;
+  }
+}
+
+/* ---------- 15. Toast & Reading Progress ---------- */
+.toast-msg {
+  position: fixed;
+  bottom: calc(var(--dock-height) + 1.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-xl);
+  z-index: 2000;
+  pointer-events: none;
+  animation: toastFade 0.3s ease;
+}
+
+@keyframes toastFade {
+  from { opacity: 0; transform: translate(-50%, 10px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--alpine-ice));
+  z-index: 200;
+  transition: width 0.1s ease-out;
+}
+
+/* ---------- 16. Image Skeleton & Placeholder ---------- */
+img {
+  background-color: var(--sand-light);
+}
+
+.split-hero-img-wrap,
+.diptych-hero-item,
+.featured-img-wrap,
+.story-split-media,
+.fullwidth-landscape-wrap {
+  background: linear-gradient(110deg, #ece5d8 8%, #f5f0e6 18%, #ece5d8 33%);
+  background-size: 200% 100%;
+}
+
+/* ---------- 17. Print Optimization (A4 Clean Sheet) ---------- */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #111111 !important;
+    font-size: 11pt;
+    line-height: 1.5;
+    padding-bottom: 0 !important;
+  }
+  .site-nav,
+  .mobile-dock,
+  .reading-progress,
+  .btn-share,
+  .btn-audio,
+  .hero-actions,
+  .day-nav-bar,
+  .nav-share-btn,
+  .toast-msg {
+    display: none !important;
+  }
+  .container {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+  .bento-card,
+  .schedule-hero-card,
+  .day-item-card,
+  .ig-post-card {
+    box-shadow: none !important;
+    border: 1px solid #cccccc !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  a {
+    text-decoration: none !important;
+    color: #111111 !important;
+  }
+}
+
+/* ---------- 18. 🎲 精選遊記「換一批」按鈕與平滑微動畫 ---------- */
+.btn-dice-random {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--sand);
+  color: var(--primary);
+  border: 1px solid var(--line);
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-xs);
+  transition: all 0.25s ease;
+  vertical-align: middle;
+}
+.btn-dice-random:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: var(--shadow-sm);
+}
+.btn-dice-random:active .dice-icon {
+  transform: rotate(180deg);
+}
+.dice-icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+.featured-grid {
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+.featured-grid.fade-out {
+  opacity: 0;
+  transform: translateY(6px);
+}

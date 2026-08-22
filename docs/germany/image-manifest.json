@@ -1,0 +1,1918 @@
+{
+  "trip": "2026-germany",
+  "dest": "germany",
+  "generated_at": "1787370044.4984703",
+  "images": {
+    "day-02/17843619681677591.jpg": {
+      "id": "17843619681677591",
+      "original_filename": "17843619681677591.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "3a6ede1e20de2cf0ff54276ab4750c25ffd786df084b400ac79aeac859b98f06",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "17843619681677591-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/17843619681677591-thumb-480w.webp",
+          "bytes": 40044,
+          "hash": "e301072cf88fb2d407cf2010283456ab12f3483c3c5a6038c221475b89c3e5ec"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "17843619681677591-content-960w.webp",
+          "publicPath": "germany/images/day-02/17843619681677591-content-960w.webp",
+          "bytes": 125658,
+          "hash": "b135f1876968878bb043c8ff2631a6f668ac4abfdb2e97d28be5a5e48117999a"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "17843619681677591-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/17843619681677591-desktop-1200w.webp",
+          "bytes": 171166,
+          "hash": "0680027fa53250663a49660d3b6b5d34cdba4a015744a9a623b617211036830a"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "17843619681677591-lightbox-1440w.webp",
+          "publicPath": "germany/images/day-02/17843619681677591-lightbox-1440w.webp",
+          "bytes": 221514,
+          "hash": "7f822576f0a0e3273893e67c51548f5495155588f4a5afb2fb3f4ef9750f9cb8"
+        }
+      ]
+    },
+    "day-02/17879012532466174.jpg": {
+      "id": "17879012532466174",
+      "original_filename": "17879012532466174.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "833f4fc98cb9557e79acdadfbe6e9b7747c00f8eb779fc61dc17927126377f53",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "17879012532466174-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/17879012532466174-thumb-480w.webp",
+          "bytes": 79580,
+          "hash": "43c59d9bb557c969ca5798c53e816205f4a855642020ca6d95f1e70eae1ccdbc"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "17879012532466174-content-960w.webp",
+          "publicPath": "germany/images/day-02/17879012532466174-content-960w.webp",
+          "bytes": 277994,
+          "hash": "73741114dbd220d9ffa53b49bcfbbed47564f060fb3eb8c2db1cbcf3d7af1a65"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "17879012532466174-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/17879012532466174-desktop-1200w.webp",
+          "bytes": 388932,
+          "hash": "4f887a8fd7b4a692e15c6f952bb3660f41a8bbdfffcb4937eac160b26ea15bb7"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "17879012532466174-lightbox-1440w.webp",
+          "publicPath": "germany/images/day-02/17879012532466174-lightbox-1440w.webp",
+          "bytes": 481154,
+          "hash": "b853c8b6072a13f1d1e6fc6455170e696321327b388ca1275110194ce029bf9e"
+        }
+      ]
+    },
+    "day-02/17884658574439622.jpg": {
+      "id": "17884658574439622",
+      "original_filename": "17884658574439622.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "076bf2d568fd407e7ad97fad660faada9c577495b71daea851d4b2f85c25c11a",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "17884658574439622-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/17884658574439622-thumb-480w.webp",
+          "bytes": 78322,
+          "hash": "e594a6f6212da9f4bdcd1917b7526c0724a52952c8a106c3ce3cba3be286b6a3"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "17884658574439622-content-960w.webp",
+          "publicPath": "germany/images/day-02/17884658574439622-content-960w.webp",
+          "bytes": 324352,
+          "hash": "c1ce4d77b1e224f4f2b884e697d8ff13ed5629f71ea43d8b3539c2e833be9f29"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "17884658574439622-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/17884658574439622-desktop-1200w.webp",
+          "bytes": 478888,
+          "hash": "02ac9922412cda3beb82898ffc4c4efab9f24808f6b62518e873594193d68267"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "17884658574439622-lightbox-1440w.webp",
+          "publicPath": "germany/images/day-02/17884658574439622-lightbox-1440w.webp",
+          "bytes": 639002,
+          "hash": "d6982a7f0e01a211c41a50a400eb8d74850c5ade81eaf1753ea9fce6b07e996f"
+        }
+      ]
+    },
+    "day-02/17908134810167353.jpg": {
+      "id": "17908134810167353",
+      "original_filename": "17908134810167353.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "c3532de0556619c417e2209c9b5efd7ce0a9144c98ac4ab41feb8ae584822f99",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "17908134810167353-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/17908134810167353-thumb-480w.webp",
+          "bytes": 49062,
+          "hash": "1faf7b7acc0ba2bdffaff0cbe389baff33ffdb71ed9dcd1b7e64b644444b6c78"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "17908134810167353-content-960w.webp",
+          "publicPath": "germany/images/day-02/17908134810167353-content-960w.webp",
+          "bytes": 176720,
+          "hash": "cab2381228fdbeffb872d8185deca7afc2d77e031d3710203c98486d29c0defd"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "17908134810167353-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/17908134810167353-desktop-1200w.webp",
+          "bytes": 254162,
+          "hash": "af6f21c24c1a3600d8b5e66220f5614fa66c55a89dfc26cab65bdc338b436d81"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "17908134810167353-lightbox-1440w.webp",
+          "publicPath": "germany/images/day-02/17908134810167353-lightbox-1440w.webp",
+          "bytes": 330676,
+          "hash": "5c910017556b52d7e504bd593f2ffac7ca06bed255859f71d42a7bdbe186051a"
+        }
+      ]
+    },
+    "day-02/17911206432146906.jpg": {
+      "id": "17911206432146906",
+      "original_filename": "17911206432146906.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "d21da1969e345ab95aa843c3b95ad50e63c55b19528baf13024f452f1df1f45f",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "17911206432146906-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/17911206432146906-thumb-480w.webp",
+          "bytes": 38010,
+          "hash": "66584d8a7aee1565e4439577977436bbede8de505f1a7c7cdea634190a2a03b4"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "17911206432146906-content-960w.webp",
+          "publicPath": "germany/images/day-02/17911206432146906-content-960w.webp",
+          "bytes": 103188,
+          "hash": "091868204f24b7754d6f9374f9c43ef6c2cb6b1560dd987f8e2ed69a78adb405"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "17911206432146906-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/17911206432146906-desktop-1200w.webp",
+          "bytes": 135492,
+          "hash": "285337ba539a24361e8011eb2ab3f65d96dffbe76d2b152de585ee687f65ceeb"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "17911206432146906-lightbox-1440w.webp",
+          "publicPath": "germany/images/day-02/17911206432146906-lightbox-1440w.webp",
+          "bytes": 167350,
+          "hash": "e826c4fbbafd038fa86fac08abee24078fcde1a0fdcb06f0d20a78560f1c11c9"
+        }
+      ]
+    },
+    "day-02/17925095301216146.jpg": {
+      "id": "17925095301216146",
+      "original_filename": "17925095301216146.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "2126de9438bf058088e5369cb8e3cbccf94252f143bc777289934451859affce",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "17925095301216146-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/17925095301216146-thumb-480w.webp",
+          "bytes": 47606,
+          "hash": "d5ff492b858d29c6e2fd3f717535ebf910b70f08de199c1402279d23e784ac06"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "17925095301216146-content-960w.webp",
+          "publicPath": "germany/images/day-02/17925095301216146-content-960w.webp",
+          "bytes": 158752,
+          "hash": "779adfe3bd2442469c0c030daf4fce23c4866d816c8419b1cbeeafc365d65cf3"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "17925095301216146-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/17925095301216146-desktop-1200w.webp",
+          "bytes": 227964,
+          "hash": "538a1443f50a892987b937ed331d6878819036e2f8220406d048d003128a473c"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "17925095301216146-lightbox-1440w.webp",
+          "publicPath": "germany/images/day-02/17925095301216146-lightbox-1440w.webp",
+          "bytes": 296654,
+          "hash": "a369f8654af5a50bdd2de960f56bcd273a84e738ea18c4b032d79a5cb6e0ae7c"
+        }
+      ]
+    },
+    "day-02/17943425694069734.jpg": {
+      "id": "17943425694069734",
+      "original_filename": "17943425694069734.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "d4e88f195cdf775589d9fbf677d40f174bfe703696e4562507b38203b70cbf0a",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "17943425694069734-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/17943425694069734-thumb-480w.webp",
+          "bytes": 56852,
+          "hash": "9fa3b7b759ab894edcaa5fc684466c87c525024e87d508c21ab63ec26431b3a0"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "17943425694069734-content-960w.webp",
+          "publicPath": "germany/images/day-02/17943425694069734-content-960w.webp",
+          "bytes": 206164,
+          "hash": "713cb8dde2142f3a2c76aaa388456cb35d16ab1646234e661cdf1670d97665ca"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "17943425694069734-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/17943425694069734-desktop-1200w.webp",
+          "bytes": 295354,
+          "hash": "a2431fb7956e0361aafd9f909567652e2bc6ce6543fc14ee5490bf2b0c376245"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "17943425694069734-lightbox-1440w.webp",
+          "publicPath": "germany/images/day-02/17943425694069734-lightbox-1440w.webp",
+          "bytes": 393080,
+          "hash": "9de00d90fbe08da9086d228bb8e96398ff6f7977077746bc1f9328733b101fcb"
+        }
+      ]
+    },
+    "day-02/17982795368791222.jpg": {
+      "id": "17982795368791222",
+      "original_filename": "17982795368791222.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "3253bf6160b5bcb7856bafc2b519cd1898f8131335370a59f31d64383aed98d9",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "17982795368791222-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/17982795368791222-thumb-480w.webp",
+          "bytes": 64872,
+          "hash": "d5dd7629c52719b10cb18a4df91ddeb76ad14ada4d5e4c831044d5a3cd3cbb04"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "17982795368791222-content-960w.webp",
+          "publicPath": "germany/images/day-02/17982795368791222-content-960w.webp",
+          "bytes": 225740,
+          "hash": "1e460fa89ebb3ccc8f46119bd8cfa2d56d385cfdad8c8bd7a11163f96e63ee2c"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "17982795368791222-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/17982795368791222-desktop-1200w.webp",
+          "bytes": 320846,
+          "hash": "74f51e626825b4ec022d786cdb6fdc121cc57be39092d36d888d3c50292b66e6"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "17982795368791222-lightbox-1440w.webp",
+          "publicPath": "germany/images/day-02/17982795368791222-lightbox-1440w.webp",
+          "bytes": 426050,
+          "hash": "488896247c4c58a2e0b3e84732c2860d16c0997988d9f63c785b5fb9baa55808"
+        }
+      ]
+    },
+    "day-02/18006800420688157.jpg": {
+      "id": "18006800420688157",
+      "original_filename": "18006800420688157.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "e4fb6697e9fd28f72d494c22c6a2489572c83166a11cc09fafef6daabf179f50",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18006800420688157-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/18006800420688157-thumb-480w.webp",
+          "bytes": 47218,
+          "hash": "29b5c3bae68ff58d2cddd0e7659b770a0fedd5f0917d6d6b61a68803ad0d90de"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18006800420688157-content-960w.webp",
+          "publicPath": "germany/images/day-02/18006800420688157-content-960w.webp",
+          "bytes": 130590,
+          "hash": "4ec1fb30dbc26cd0ee8e342e7d6887ef35cac9def490dc595e323e578b07356c"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18006800420688157-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/18006800420688157-desktop-1200w.webp",
+          "bytes": 173396,
+          "hash": "db1bcfbe8348b453b763cbcc97b56218323e92b521098ce308515c42f1d7cd7f"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18006800420688157-lightbox-1440w.webp",
+          "publicPath": "germany/images/day-02/18006800420688157-lightbox-1440w.webp",
+          "bytes": 220536,
+          "hash": "69f4b83534ca84366963504ac5a8272a26c41d9500bb3cab085615835f44401f"
+        }
+      ]
+    },
+    "day-02/18036082466749210.jpg": {
+      "id": "18036082466749210",
+      "original_filename": "18036082466749210.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "8d886ec64080246b162bad81fe1eb831feacbfab97a19f514dac402f7851174d",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18036082466749210-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/18036082466749210-thumb-480w.webp",
+          "bytes": 25346,
+          "hash": "f3ea41cfedb5d4d33e03f7a754b8df29657d01298d3ad3b2bb133cfd884c7a5e"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18036082466749210-content-960w.webp",
+          "publicPath": "germany/images/day-02/18036082466749210-content-960w.webp",
+          "bytes": 83956,
+          "hash": "fa8112fe6d59ac130eee6d65231edc570243565ab22b8f673cb52e85bf7e870d"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18036082466749210-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/18036082466749210-desktop-1200w.webp",
+          "bytes": 116498,
+          "hash": "67e1e7cd57751480aff9b807e3c8309f9527687835b470598878145752440dc5"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18036082466749210-lightbox-1440w.webp",
+          "publicPath": "germany/images/day-02/18036082466749210-lightbox-1440w.webp",
+          "bytes": 151564,
+          "hash": "1f11a7b27a66b8af0a77e2bf7fb989bfd7177fe2a1be1ebd9b22ba24f3c7382e"
+        }
+      ]
+    },
+    "day-02/18041867387724285.jpg": {
+      "id": "18041867387724285",
+      "original_filename": "18041867387724285.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "d4e88f195cdf775589d9fbf677d40f174bfe703696e4562507b38203b70cbf0a",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18041867387724285-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/18041867387724285-thumb-480w.webp",
+          "bytes": 56852,
+          "hash": "9fa3b7b759ab894edcaa5fc684466c87c525024e87d508c21ab63ec26431b3a0"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18041867387724285-content-960w.webp",
+          "publicPath": "germany/images/day-02/18041867387724285-content-960w.webp",
+          "bytes": 206164,
+          "hash": "713cb8dde2142f3a2c76aaa388456cb35d16ab1646234e661cdf1670d97665ca"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18041867387724285-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/18041867387724285-desktop-1200w.webp",
+          "bytes": 295354,
+          "hash": "a2431fb7956e0361aafd9f909567652e2bc6ce6543fc14ee5490bf2b0c376245"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18041867387724285-lightbox-1440w.webp",
+          "publicPath": "germany/images/day-02/18041867387724285-lightbox-1440w.webp",
+          "bytes": 393080,
+          "hash": "9de00d90fbe08da9086d228bb8e96398ff6f7977077746bc1f9328733b101fcb"
+        }
+      ]
+    },
+    "day-02/18046473335505057.jpg": {
+      "id": "18046473335505057",
+      "original_filename": "18046473335505057.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "b1e7bf4a9a0a3bff259f61ff08b4447d456f2cf70a4f92409e9760f26311ce63",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18046473335505057-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/18046473335505057-thumb-480w.webp",
+          "bytes": 45258,
+          "hash": "42f159ad86aa196ac4c795d26f6ca29bd98dde746683d6a505c4f7d303d5df2b"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18046473335505057-content-960w.webp",
+          "publicPath": "germany/images/day-02/18046473335505057-content-960w.webp",
+          "bytes": 119418,
+          "hash": "f7e2f1ba6dd4e6fedf4545f3d09796c4f9b63d028d66f8049861efdfbf21af50"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18046473335505057-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/18046473335505057-desktop-1200w.webp",
+          "bytes": 160786,
+          "hash": "c56fff83ff3437ccd0d213bee9e809c45bcf431986afd5c657ab520923b055d6"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18046473335505057-lightbox-1440w.webp",
+          "publicPath": "germany/images/day-02/18046473335505057-lightbox-1440w.webp",
+          "bytes": 202184,
+          "hash": "d2ef70b04afdd4d56cd4414b8fc80d8bb63a3a4383e6a0e6786bbdbc0a87ca01"
+        }
+      ]
+    },
+    "day-02/18056611850690492.jpg": {
+      "id": "18056611850690492",
+      "original_filename": "18056611850690492.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "989e88e9ddb9bbf08dba54a450ef2ad7d3909213e42d522217ff76f15b03e5b4",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18056611850690492-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/18056611850690492-thumb-480w.webp",
+          "bytes": 62048,
+          "hash": "7c5015b71977d391abd2f9da1f040da2e07f284bbb5ebbc18cb24185316f30cb"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18056611850690492-content-960w.webp",
+          "publicPath": "germany/images/day-02/18056611850690492-content-960w.webp",
+          "bytes": 157524,
+          "hash": "61e96fa24d0f72b1c2fb40f57c612762d6097692872d46595b2f8f2d17a42871"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18056611850690492-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/18056611850690492-desktop-1200w.webp",
+          "bytes": 205110,
+          "hash": "62e8d8c1c0d1ec5aec4d2a97b46a9b2f2f3b3ce33290fea62805bd36da99ff4f"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18056611850690492-lightbox-1440w.webp",
+          "publicPath": "germany/images/day-02/18056611850690492-lightbox-1440w.webp",
+          "bytes": 253998,
+          "hash": "240092caef21d8f89a25b8260bf28ae8f524650d6c27b2a9963f99d24b8d756a"
+        }
+      ]
+    },
+    "day-02/18063699629288481.jpg": {
+      "id": "18063699629288481",
+      "original_filename": "18063699629288481.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "57346c71e10c6f5f072bc45dfb1468a2347b9c3be26692ea7b767cbbf697021a",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18063699629288481-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/18063699629288481-thumb-480w.webp",
+          "bytes": 65352,
+          "hash": "56a47230bdc386d41d8024b2dbc3006a5a4e34974fcd812823ec4fb1e394b203"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18063699629288481-content-960w.webp",
+          "publicPath": "germany/images/day-02/18063699629288481-content-960w.webp",
+          "bytes": 206820,
+          "hash": "e296663f40e5fb69a14bc19026948c20df1bcf5116eeeecdc4c9430b989e979c"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18063699629288481-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/18063699629288481-desktop-1200w.webp",
+          "bytes": 282386,
+          "hash": "8cb3859191d93b986a544437ed9e7048fb809c0cbc6e71e7f4afa6797daf5665"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18063699629288481-lightbox-1440w.webp",
+          "publicPath": "germany/images/day-02/18063699629288481-lightbox-1440w.webp",
+          "bytes": 357372,
+          "hash": "556b2c8b593cdcbef8354dd9b7edab7c0a3967a3845645d695f367039878eec0"
+        }
+      ]
+    },
+    "day-02/18074581973108629.jpg": {
+      "id": "18074581973108629",
+      "original_filename": "18074581973108629.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "fc868a0791464b83e9cb44d94dd0615bae9d39fe0152588ca0240a868f068715",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18074581973108629-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/18074581973108629-thumb-480w.webp",
+          "bytes": 54108,
+          "hash": "d46fe04de6a2cc034626499e28368b8ee344aa6eba2e0c129c986ab9cca3440f"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18074581973108629-content-960w.webp",
+          "publicPath": "germany/images/day-02/18074581973108629-content-960w.webp",
+          "bytes": 180744,
+          "hash": "0614780ac9a348a51e9d78e5a24ffdbfba971e17307da7fef9f37231886de61e"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18074581973108629-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/18074581973108629-desktop-1200w.webp",
+          "bytes": 257394,
+          "hash": "ab3a5b6067be9a7657c0eae28b5fe1ee90e70603889f52e811b8f8e3eb459c34"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18074581973108629-lightbox-1440w.webp",
+          "publicPath": "germany/images/day-02/18074581973108629-lightbox-1440w.webp",
+          "bytes": 339628,
+          "hash": "dcc1650c95fca7524e502dc10e930687ca26d74b369d01d28e05c80c5ae559f8"
+        }
+      ]
+    },
+    "day-02/18076641533609059.jpg": {
+      "id": "18076641533609059",
+      "original_filename": "18076641533609059.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "de9c78b3ad63b81a9760a6942361f7f2279290772ba6e34f39256581b2f7f513",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18076641533609059-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/18076641533609059-thumb-480w.webp",
+          "bytes": 66104,
+          "hash": "3fd15cc0608f04ea681e7a7c025d305affbb57f86a2dc1124f4d620ccc80e29f"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18076641533609059-content-960w.webp",
+          "publicPath": "germany/images/day-02/18076641533609059-content-960w.webp",
+          "bytes": 255392,
+          "hash": "98595b22e0ffe2b48ce1ee4ef3754b6b07a7ff9f6207c5bc2649f3fec89d2c37"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18076641533609059-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/18076641533609059-desktop-1200w.webp",
+          "bytes": 375814,
+          "hash": "9867585cfe2303c1125003ee6b253bc7175060b131e185203806e737ac4ab88c"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18076641533609059-lightbox-1440w.webp",
+          "publicPath": "germany/images/day-02/18076641533609059-lightbox-1440w.webp",
+          "bytes": 498314,
+          "hash": "a3ba09d40b04d6e6a1ed95e6ec54ccbf7a708102698cd5ee0287dea93895ebf4"
+        }
+      ]
+    },
+    "day-02/18076769306603085.jpg": {
+      "id": "18076769306603085",
+      "original_filename": "18076769306603085.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "efcfd81a5a5c3602135165b4a212761c6c036e9fbea33b87fb3995c66a2de28c",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18076769306603085-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/18076769306603085-thumb-480w.webp",
+          "bytes": 51254,
+          "hash": "d58a2704c13c51b5dcaf71116ac602992ab7eefdb8529941a5fc899cdd37dab7"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18076769306603085-content-960w.webp",
+          "publicPath": "germany/images/day-02/18076769306603085-content-960w.webp",
+          "bytes": 162800,
+          "hash": "4456018737fdc35b930cc30527c858fd7fa1a4d2528a1dd00154069c56b909d5"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18076769306603085-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/18076769306603085-desktop-1200w.webp",
+          "bytes": 230342,
+          "hash": "b598f416d4aaab58763c2b2a3acc59c6822aabe2e8098fdb7777b6555359ba8c"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18076769306603085-lightbox-1440w.webp",
+          "publicPath": "germany/images/day-02/18076769306603085-lightbox-1440w.webp",
+          "bytes": 298716,
+          "hash": "9b0079e4caf2d69e4bc1738cab993750c3db23c10ae8ef814dcbae18bd3e5037"
+        }
+      ]
+    },
+    "day-02/18077644430058345.jpg": {
+      "id": "18077644430058345",
+      "original_filename": "18077644430058345.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "a27d3732b9f7d414599a26dfcc22ce5ceb70cd80830eb7365cbcf67ddcdeffff",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18077644430058345-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/18077644430058345-thumb-480w.webp",
+          "bytes": 17672,
+          "hash": "ea00b35792b2b41a08e378898b5540cdfa8f56de2fa2a8668d77bee67df547f2"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18077644430058345-content-960w.webp",
+          "publicPath": "germany/images/day-02/18077644430058345-content-960w.webp",
+          "bytes": 46692,
+          "hash": "3b2c8f2cb91f82e9a3e3eacb8c7429c4f2c226576954ad102a363ec50d6c84e6"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18077644430058345-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/18077644430058345-desktop-1200w.webp",
+          "bytes": 63192,
+          "hash": "6f2dccc57d3a68dc87583c0642d330c33130db23402d1565fbd72ace0ee02c87"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18077644430058345-lightbox-1440w.webp",
+          "publicPath": "germany/images/day-02/18077644430058345-lightbox-1440w.webp",
+          "bytes": 80808,
+          "hash": "d35e09e2151b886d5e8fb6202b48a20a9af6b8c54da110eb65904a6dcc10739f"
+        }
+      ]
+    },
+    "day-02/18081307181254353.jpg": {
+      "id": "18081307181254353",
+      "original_filename": "18081307181254353.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "830cbcf949d71d969d447073542cb9a0f3a50a0bf768abbedb6676cc8e145f62",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18081307181254353-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/18081307181254353-thumb-480w.webp",
+          "bytes": 53058,
+          "hash": "67e3ebd09969723a9adeb2a82cea0cf17489d6ac0da0fe56d9bcabab7d0c83ca"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18081307181254353-content-960w.webp",
+          "publicPath": "germany/images/day-02/18081307181254353-content-960w.webp",
+          "bytes": 148178,
+          "hash": "68d58d20a76ecb8231c79eede5c8ee45fc856d058ea981f4f682d84fbcfc2baa"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18081307181254353-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/18081307181254353-desktop-1200w.webp",
+          "bytes": 196104,
+          "hash": "826c29e3cdb53deed495ec3ca2eb98414f75252a0aac05fe5b1f0c834044d971"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18081307181254353-lightbox-1440w.webp",
+          "publicPath": "germany/images/day-02/18081307181254353-lightbox-1440w.webp",
+          "bytes": 241700,
+          "hash": "f0e6b7a8ca8cb3d0e6d417f0c6a9148967e5b0bc7b8840c0febf5441d52adcb6"
+        }
+      ]
+    },
+    "day-02/18086048594149104.jpg": {
+      "id": "18086048594149104",
+      "original_filename": "18086048594149104.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "09463aaefa8c802494a80fa53fc5abbaac677ce7241ae1dcbc8a64180f120889",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18086048594149104-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/18086048594149104-thumb-480w.webp",
+          "bytes": 76838,
+          "hash": "3a4c3f2ae21e929f81d8790031e606ccebe5ccbb95df8c51fde0150ed4ecb047"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18086048594149104-content-960w.webp",
+          "publicPath": "germany/images/day-02/18086048594149104-content-960w.webp",
+          "bytes": 276212,
+          "hash": "55e747d071c9bdb75de2bd75aab2540bfdd30ca4f1f5ef7f15262de3956989c7"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18086048594149104-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/18086048594149104-desktop-1200w.webp",
+          "bytes": 399524,
+          "hash": "a829bb487518afe4da44ca90036a0066420c47bf80a34bdb385cdfa74a4fb26b"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18086048594149104-lightbox-1440w.webp",
+          "publicPath": "germany/images/day-02/18086048594149104-lightbox-1440w.webp",
+          "bytes": 516836,
+          "hash": "f130bea7334fae5495048b13ac5f8f3677d62be00e2c2e89e602ac38978ce7cf"
+        }
+      ]
+    },
+    "day-02/18086221103153398.jpg": {
+      "id": "18086221103153398",
+      "original_filename": "18086221103153398.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "2b6f1b119cace316b2c50ae7422238ac82580e6b1d6340ffbf4e8594b0a5f958",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18086221103153398-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/18086221103153398-thumb-480w.webp",
+          "bytes": 75038,
+          "hash": "74c2d72dbc83cbdd2595e3f271858177a89a8e2c46ac1ad4404aa96efa307b09"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18086221103153398-content-960w.webp",
+          "publicPath": "germany/images/day-02/18086221103153398-content-960w.webp",
+          "bytes": 245952,
+          "hash": "00f18f0bb6da58804d4022c87a9b77fcd8bd51946a1a054eef8400b2800a2bd1"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18086221103153398-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/18086221103153398-desktop-1200w.webp",
+          "bytes": 331588,
+          "hash": "2ab97ab16aefff22c152d1e5b61cd67553abea1d1e0481502522298fac91c600"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18086221103153398-lightbox-1440w.webp",
+          "publicPath": "germany/images/day-02/18086221103153398-lightbox-1440w.webp",
+          "bytes": 402078,
+          "hash": "b42b8cf83e6fada5e2c89a44a17fd1dd5860b2361b2b5fced72706eff674fbc2"
+        }
+      ]
+    },
+    "day-02/18089695769042982.jpg": {
+      "id": "18089695769042982",
+      "original_filename": "18089695769042982.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "29cb43b5072090b38f9ce5ef717024cb429631f1f01c35a55bd0d65708ead6d2",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18089695769042982-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/18089695769042982-thumb-480w.webp",
+          "bytes": 68116,
+          "hash": "6496f0933ccc3da915f68ac8abe9827cea4a02480c3ac80c0115f1669054c1db"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18089695769042982-content-960w.webp",
+          "publicPath": "germany/images/day-02/18089695769042982-content-960w.webp",
+          "bytes": 209282,
+          "hash": "a3bb16039f670341a08a04f6f9db098eec59e7c3a93e3c3bbb974765d9c8ea2d"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18089695769042982-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/18089695769042982-desktop-1200w.webp",
+          "bytes": 289088,
+          "hash": "0873dd9c134b05ad1b5e6149dcac5d50550caa23175bb8cf481a70abf2d0bf0c"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18089695769042982-lightbox-1440w.webp",
+          "publicPath": "germany/images/day-02/18089695769042982-lightbox-1440w.webp",
+          "bytes": 362492,
+          "hash": "541458cdf2dc814c0d35bbe7c3e1b0828e6c729d952d400851ff142136e21821"
+        }
+      ]
+    },
+    "day-02/18090190013105970.jpg": {
+      "id": "18090190013105970",
+      "original_filename": "18090190013105970.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "0e003bf78d2137548dd86ba1f6cc9cf32677a7eca67c62a22d695562764c55c6",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18090190013105970-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/18090190013105970-thumb-480w.webp",
+          "bytes": 45378,
+          "hash": "1e017cff9e964056618505f079184b920d0450451caedac241082d16d175df0c"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18090190013105970-content-960w.webp",
+          "publicPath": "germany/images/day-02/18090190013105970-content-960w.webp",
+          "bytes": 132178,
+          "hash": "26833766d75efb8721d97cf17ed11d3b345b795f28a9283f0a1e58a8dd6c959e"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18090190013105970-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/18090190013105970-desktop-1200w.webp",
+          "bytes": 181290,
+          "hash": "5b543fe1959f04bff517c2d01096080a1563ed7db6dacd084e2a181dff3afd11"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18090190013105970-lightbox-1440w.webp",
+          "publicPath": "germany/images/day-02/18090190013105970-lightbox-1440w.webp",
+          "bytes": 235758,
+          "hash": "ab921bef06a392c76432217e532065989e7b7600f2f8ae97c38cb8427a9a2402"
+        }
+      ]
+    },
+    "day-02/18112101370644138.jpg": {
+      "id": "18112101370644138",
+      "original_filename": "18112101370644138.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "c67c7f6abef88afb97c6f84c891c22067704bcb41342b7e153f6aa6151fb5e8f",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18112101370644138-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/18112101370644138-thumb-480w.webp",
+          "bytes": 49864,
+          "hash": "eb38f772af129efe100ab9f1accbaacb35b239217ebf55cc45f4e6fbf129a530"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18112101370644138-content-960w.webp",
+          "publicPath": "germany/images/day-02/18112101370644138-content-960w.webp",
+          "bytes": 122640,
+          "hash": "147f19b00db18adbe3d8bea1ae12c79d6924191c532073c6180c352106ae2a79"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18112101370644138-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/18112101370644138-desktop-1200w.webp",
+          "bytes": 158910,
+          "hash": "f71ef2022fbaa5451392124f7b6db1e0a3a8e08f2efc0d3ea59c6c3dd8c6ac02"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18112101370644138-lightbox-1440w.webp",
+          "publicPath": "germany/images/day-02/18112101370644138-lightbox-1440w.webp",
+          "bytes": 190944,
+          "hash": "d33f713837d0b1fb39f400f0ace3accf21dffc006d3930e9a4e6d97ff3f803d2"
+        }
+      ]
+    },
+    "day-02/18120304240599446.jpg": {
+      "id": "18120304240599446",
+      "original_filename": "18120304240599446.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "13c3c9e9a898d266cb56fe75e62d1256565a4611bd8686bae1f8945b036cfa72",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18120304240599446-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/18120304240599446-thumb-480w.webp",
+          "bytes": 50406,
+          "hash": "931910cb68e80f7162161c214ca8918813cc3e407da8e1be0d8e61cc382f9ca5"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18120304240599446-content-960w.webp",
+          "publicPath": "germany/images/day-02/18120304240599446-content-960w.webp",
+          "bytes": 154998,
+          "hash": "2dd4bbcd8fef037e1262d7c55e3551b9e5666022f491d789b49f9dcd5b4f5ebd"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18120304240599446-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/18120304240599446-desktop-1200w.webp",
+          "bytes": 217780,
+          "hash": "792359a3072f4d594ff25cfb0fd5979ace765182afd9f8fbaefdb0d8672c9ee3"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18120304240599446-lightbox-1440w.webp",
+          "publicPath": "germany/images/day-02/18120304240599446-lightbox-1440w.webp",
+          "bytes": 276162,
+          "hash": "2e6d7956aa5265c09bbd74b8f2d6b4f4413973d870aa74d9fcd8a45afd561e52"
+        }
+      ]
+    },
+    "day-02/18144054301466272.jpg": {
+      "id": "18144054301466272",
+      "original_filename": "18144054301466272.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "e0a15db58e6d1c22afde5bdbf022649219f71f4ca65bf97fdae73ea628f4f9c9",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18144054301466272-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/18144054301466272-thumb-480w.webp",
+          "bytes": 27068,
+          "hash": "df2143d8860b13a0fd78b72931b647ca537c000d8fe6c081ed423066b2478663"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18144054301466272-content-960w.webp",
+          "publicPath": "germany/images/day-02/18144054301466272-content-960w.webp",
+          "bytes": 63996,
+          "hash": "8aa05bf986ea25764ef0c9eab9798da7d3316b08c94be7ddc06ef64118693438"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18144054301466272-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/18144054301466272-desktop-1200w.webp",
+          "bytes": 85252,
+          "hash": "8514d2d5b329cd3c552555ec23f119bdc482c4934ac09590f12672bd8c4cb0a2"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18144054301466272-lightbox-1440w.webp",
+          "publicPath": "germany/images/day-02/18144054301466272-lightbox-1440w.webp",
+          "bytes": 110326,
+          "hash": "b82dcaad916d4e5b487911ba011d313cad6a83b38f81ef2be06bc97fac6adab2"
+        }
+      ]
+    },
+    "day-02/18216637207313387.jpg": {
+      "id": "18216637207313387",
+      "original_filename": "18216637207313387.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "55fff99c0c5f228888e4f44803e09669d00ed490c899c62ff9f40e3ccee01732",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18216637207313387-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/18216637207313387-thumb-480w.webp",
+          "bytes": 48216,
+          "hash": "7bb7b73cfa61586033da835fe7db1c51f147f01353bf02b9291ec19a5f219416"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18216637207313387-content-960w.webp",
+          "publicPath": "germany/images/day-02/18216637207313387-content-960w.webp",
+          "bytes": 124572,
+          "hash": "28e894fa7eb17cddbe6792975c20483591ee760c83ae064c266fff968c35593f"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18216637207313387-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/18216637207313387-desktop-1200w.webp",
+          "bytes": 160444,
+          "hash": "d1b6871020bf594e790ca7f95611d59451abe4b8a3ab82894b83c8355ba05f18"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18216637207313387-lightbox-1440w.webp",
+          "publicPath": "germany/images/day-02/18216637207313387-lightbox-1440w.webp",
+          "bytes": 197384,
+          "hash": "35f255f3f1be9919dafee81eef0f309fd8a173e9ecb8e255edac9109936233c5"
+        }
+      ]
+    },
+    "day-02/18440742691129725.jpg": {
+      "id": "18440742691129725",
+      "original_filename": "18440742691129725.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "98d31eb5a2af745826928b72e5ecb7ea83e065138075d1d93dad2ef43730fb47",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18440742691129725-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/18440742691129725-thumb-480w.webp",
+          "bytes": 46944,
+          "hash": "135092d3dc63754aad437f256919b34ea02046ef27cbed0cb0fd3e28e12a92be"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18440742691129725-content-960w.webp",
+          "publicPath": "germany/images/day-02/18440742691129725-content-960w.webp",
+          "bytes": 136892,
+          "hash": "c65a49ab40de7ca95afdb93316739c65b443c22c845b0fcc4254b4a9e900d13e"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18440742691129725-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/18440742691129725-desktop-1200w.webp",
+          "bytes": 180926,
+          "hash": "fb54ea991f717dcef1a1443ef2576f2b9d19103c94245718e66784eb37db17b9"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18440742691129725-lightbox-1440w.webp",
+          "publicPath": "germany/images/day-02/18440742691129725-lightbox-1440w.webp",
+          "bytes": 225330,
+          "hash": "6bf524f0615a03c58742930fc19112540b10eef23a6fb268b3aa1800a03ff293"
+        }
+      ]
+    },
+    "day-02/20260126_171139.jpg": {
+      "id": "20260126_171139",
+      "original_filename": "20260126_171139.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "6a222d339b596b000b23bd3a29409c651e7d0dc26cdb1a171e6e7cc896e11539",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260126_171139-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/20260126_171139-thumb-480w.webp",
+          "bytes": 37040,
+          "hash": "af08cb822c8c4a23a26bfacba5dd178623da32a4f903cc02b2044eb14222706b"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260126_171139-content-960w.webp",
+          "publicPath": "germany/images/day-02/20260126_171139-content-960w.webp",
+          "bytes": 141160,
+          "hash": "3c6e8440910d0efb50b47ea52f1fc12cbfa8210349f4640513f30a9451cf11a8"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 675,
+          "format": "webp",
+          "filename": "20260126_171139-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/20260126_171139-desktop-1200w.webp",
+          "bytes": 218004,
+          "hash": "dd5284b96ba5b0f517c4b971763402bbb64373793c4f65227161f9c1225ac5a2"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 900,
+          "format": "webp",
+          "filename": "20260126_171139-lightbox-1600w.webp",
+          "publicPath": "germany/images/day-02/20260126_171139-lightbox-1600w.webp",
+          "bytes": 382122,
+          "hash": "ea9ab4d275916cb0ed1a614c93e1b5218b85491b84c250cf077b5f4f7d610ec6"
+        }
+      ]
+    },
+    "day-02/20260127_074112.jpg": {
+      "id": "20260127_074112",
+      "original_filename": "20260127_074112.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "06f8a57c6ecc07f4d48d5e15483739f368fdf4bef05785515a93aeb5f86ef2bc",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260127_074112-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/20260127_074112-thumb-480w.webp",
+          "bytes": 34960,
+          "hash": "bf0365ec3a1ad6a56c821e966d113086f01e78cd2ffcecaf9fbb97d1803b4756"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260127_074112-content-960w.webp",
+          "publicPath": "germany/images/day-02/20260127_074112-content-960w.webp",
+          "bytes": 136434,
+          "hash": "52aca20a682b452e5a7bd4d609e09dd645fb175ff15244d94a5c233d5e15b83c"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 675,
+          "format": "webp",
+          "filename": "20260127_074112-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/20260127_074112-desktop-1200w.webp",
+          "bytes": 215066,
+          "hash": "3f2f0ad9c3f55616dcc8716be28641fbc8858a0c47d8ee82922de14de27434e5"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 900,
+          "format": "webp",
+          "filename": "20260127_074112-lightbox-1600w.webp",
+          "publicPath": "germany/images/day-02/20260127_074112-lightbox-1600w.webp",
+          "bytes": 379308,
+          "hash": "a216ce9227577444984c887c1df95f1df698a3cf67da2d1760599fa778a06518"
+        }
+      ]
+    },
+    "day-02/20260127_074123.jpg": {
+      "id": "20260127_074123",
+      "original_filename": "20260127_074123.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "5dd4fe771c1517f559120dc15902769eab6ab84037c5f5d8ea94c79b8dfd8489",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260127_074123-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/20260127_074123-thumb-480w.webp",
+          "bytes": 44856,
+          "hash": "6c246be04d9dbd96c39b875e2188fd77f8558ddfca0d291d0f415b4c2adb8994"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260127_074123-content-960w.webp",
+          "publicPath": "germany/images/day-02/20260127_074123-content-960w.webp",
+          "bytes": 170660,
+          "hash": "332318090c165082919db833122fc56c72321431c90618fba082e658aba92594"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 675,
+          "format": "webp",
+          "filename": "20260127_074123-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/20260127_074123-desktop-1200w.webp",
+          "bytes": 267236,
+          "hash": "ab4a6e86083013e36abbe23578ad96434799378e8e5b8dac89cc65c7baa691f7"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 900,
+          "format": "webp",
+          "filename": "20260127_074123-lightbox-1600w.webp",
+          "publicPath": "germany/images/day-02/20260127_074123-lightbox-1600w.webp",
+          "bytes": 455496,
+          "hash": "392be08a7c8dde2c1ebb1d60c62b4fc91ecd88bff2d0320d7b3f29e741312362"
+        }
+      ]
+    },
+    "day-02/20260127_074745~2.jpg": {
+      "id": "20260127_074745~2",
+      "original_filename": "20260127_074745~2.jpg",
+      "original_width": 3863,
+      "original_height": 2175,
+      "source_hash": "0a4170cd8d371dabe10ebea00ce1c8d6252e94065c351e0cd56672a164133ef2",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260127_074745~2-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/20260127_074745~2-thumb-480w.webp",
+          "bytes": 38058,
+          "hash": "300832b8199900ca006d02f9124893b2a5c5a0991033f7c02af080c31aa7ef9c"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260127_074745~2-content-960w.webp",
+          "publicPath": "germany/images/day-02/20260127_074745~2-content-960w.webp",
+          "bytes": 142714,
+          "hash": "6f0f927a08ce361df7a938121054036d9d50513f60c8d00e7305ba1e1b53aa77"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 675,
+          "format": "webp",
+          "filename": "20260127_074745~2-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/20260127_074745~2-desktop-1200w.webp",
+          "bytes": 215234,
+          "hash": "b01a5febe05d09edee1d02d14ecb4f912a6b5e88f42d0e698940302a0bcaadd1"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 900,
+          "format": "webp",
+          "filename": "20260127_074745~2-lightbox-1600w.webp",
+          "publicPath": "germany/images/day-02/20260127_074745~2-lightbox-1600w.webp",
+          "bytes": 361132,
+          "hash": "57ec3a4ba9527b4a2fc47d8cf3ce05a1fb9a6a6917224e84e4c42fb78378592c"
+        }
+      ]
+    },
+    "day-02/20260127_093144.jpg": {
+      "id": "20260127_093144",
+      "original_filename": "20260127_093144.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "06f79e45cc22fe01425ea2d22171eaf0b288e1d70a2a631932e4ebeabe8021a1",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260127_093144-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/20260127_093144-thumb-480w.webp",
+          "bytes": 22558,
+          "hash": "93f4320575c52a881552df86e639d212e5c3f50861e78d811fdeea963df150f5"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260127_093144-content-960w.webp",
+          "publicPath": "germany/images/day-02/20260127_093144-content-960w.webp",
+          "bytes": 66730,
+          "hash": "498f100f1ac71be9d817dce6587d29e09447edd654b919718b39862fe9a5df4a"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 675,
+          "format": "webp",
+          "filename": "20260127_093144-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/20260127_093144-desktop-1200w.webp",
+          "bytes": 93152,
+          "hash": "45a54bfc08afbc9b66e8ef5f5d043f270df78db095321064faa6f18224b9bddf"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 900,
+          "format": "webp",
+          "filename": "20260127_093144-lightbox-1600w.webp",
+          "publicPath": "germany/images/day-02/20260127_093144-lightbox-1600w.webp",
+          "bytes": 139560,
+          "hash": "9847bebb8e71976d17beabe47b71a242ed012063f1a52567658cbbec15f83252"
+        }
+      ]
+    },
+    "day-02/20260127_102529.jpg": {
+      "id": "20260127_102529",
+      "original_filename": "20260127_102529.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "dc7f701267ecfe38ba65743b2b846c151acd1b60296d46f2f78515a367ecb12e",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260127_102529-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/20260127_102529-thumb-480w.webp",
+          "bytes": 31588,
+          "hash": "aeea4867b005d206f94ae557e6b6cff3cad9fafb161f91626b10f2c984ce40b6"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260127_102529-content-960w.webp",
+          "publicPath": "germany/images/day-02/20260127_102529-content-960w.webp",
+          "bytes": 112384,
+          "hash": "d13a80f032d800a046897606985d7d14ec8069b80f0213b4238e1805b6d662fa"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 675,
+          "format": "webp",
+          "filename": "20260127_102529-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/20260127_102529-desktop-1200w.webp",
+          "bytes": 170384,
+          "hash": "f0e54ac635591e4cb37a409c776602a29d5c6e7b63b1a33de54feef84ea52f9d"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 900,
+          "format": "webp",
+          "filename": "20260127_102529-lightbox-1600w.webp",
+          "publicPath": "germany/images/day-02/20260127_102529-lightbox-1600w.webp",
+          "bytes": 277818,
+          "hash": "813cdc4fc169a9959df01acc1e47d7f20feadb87904e7ee74f1310b29eff79c2"
+        }
+      ]
+    },
+    "day-02/20260127_111605.jpg": {
+      "id": "20260127_111605",
+      "original_filename": "20260127_111605.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "e8d9e436208cd3a92e2e7617a648f4c2e591b4f445767f2b9c24b2f1d9e4ca97",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260127_111605-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/20260127_111605-thumb-480w.webp",
+          "bytes": 29258,
+          "hash": "cd6ab7d36b5f02f76cd7f1dbb9be6abb2cf18d1740087975fc727c4de0411e96"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260127_111605-content-960w.webp",
+          "publicPath": "germany/images/day-02/20260127_111605-content-960w.webp",
+          "bytes": 111472,
+          "hash": "15645027a14fb4039302b3b3aaf736ad3a7be59bc03d5024e9961fa6acfe2110"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 675,
+          "format": "webp",
+          "filename": "20260127_111605-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/20260127_111605-desktop-1200w.webp",
+          "bytes": 173332,
+          "hash": "11bc0bb7c533d2268f73469aa5123bbd6d5cd05cc8a65b5ac313ec86721ebb94"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 900,
+          "format": "webp",
+          "filename": "20260127_111605-lightbox-1600w.webp",
+          "publicPath": "germany/images/day-02/20260127_111605-lightbox-1600w.webp",
+          "bytes": 304714,
+          "hash": "e35b9e0214e010f00cd0d2b67bb1aba6b85fd4673aec9c78e82973feaaa44c6f"
+        }
+      ]
+    },
+    "day-02/20260127_140120.jpg": {
+      "id": "20260127_140120",
+      "original_filename": "20260127_140120.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "3ab1352245159790eea018707e030b4f45cb5a5c8f101c3f953397523c0fcb18",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260127_140120-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/20260127_140120-thumb-480w.webp",
+          "bytes": 29720,
+          "hash": "8c3ad21a8b9c5de7a7e421012f23ed5c662f01c1a1e113d7bde3efb6ac498de5"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260127_140120-content-960w.webp",
+          "publicPath": "germany/images/day-02/20260127_140120-content-960w.webp",
+          "bytes": 130986,
+          "hash": "ec9ad2174332ff993d933ffb535a1047085fa2c8d1c5eab2eb9a5c00e427c120"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 675,
+          "format": "webp",
+          "filename": "20260127_140120-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/20260127_140120-desktop-1200w.webp",
+          "bytes": 207662,
+          "hash": "c99b0a5f36403f74ad34c461590fb217ebeb7e769d7244635f8bb4a479c09906"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 900,
+          "format": "webp",
+          "filename": "20260127_140120-lightbox-1600w.webp",
+          "publicPath": "germany/images/day-02/20260127_140120-lightbox-1600w.webp",
+          "bytes": 369826,
+          "hash": "6cc96f13d949d5d31a67f0f030fed8bede0b99c48abeca7a1a3450e1ab31eb22"
+        }
+      ]
+    },
+    "day-02/20260127_140128.jpg": {
+      "id": "20260127_140128",
+      "original_filename": "20260127_140128.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "36005d9635b3115a60547d6fe1ddc9345e9989b13367f1c1ea406218f4606c79",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260127_140128-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/20260127_140128-thumb-480w.webp",
+          "bytes": 48224,
+          "hash": "77e4cae5fbb44dde413afc5d7ef69c7ebc63c8022b526a955541394237286d18"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260127_140128-content-960w.webp",
+          "publicPath": "germany/images/day-02/20260127_140128-content-960w.webp",
+          "bytes": 204802,
+          "hash": "d70c783ab75a5e66029e7e8d70d7f519e5e6f788b1ad3aa39cac5e84fe9655c9"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 675,
+          "format": "webp",
+          "filename": "20260127_140128-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/20260127_140128-desktop-1200w.webp",
+          "bytes": 326776,
+          "hash": "921c9939264a65c5b0a31bb1cfbdc6c629099d4a9886e4ac8e85285ea1c78dc0"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 900,
+          "format": "webp",
+          "filename": "20260127_140128-lightbox-1600w.webp",
+          "publicPath": "germany/images/day-02/20260127_140128-lightbox-1600w.webp",
+          "bytes": 589166,
+          "hash": "5a603560f021d78810034f1bc4c63d65361c84677b928b9b460df82d93f71b87"
+        }
+      ]
+    },
+    "day-02/20260128_083704.jpg": {
+      "id": "20260128_083704",
+      "original_filename": "20260128_083704.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "ee6d7f541f6184c86bfcf873c43b8a0dd475ed680a37cd9cb84debdaac941a4d",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260128_083704-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/20260128_083704-thumb-480w.webp",
+          "bytes": 33046,
+          "hash": "cb871805206687164730393b28c55ced91aa202bd5ce430cad19141793ca4ab7"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260128_083704-content-960w.webp",
+          "publicPath": "germany/images/day-02/20260128_083704-content-960w.webp",
+          "bytes": 126090,
+          "hash": "61a63f1b2d0419227064ff6a8a57cf1758d45525dc550720efd01ed2f3199b47"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 675,
+          "format": "webp",
+          "filename": "20260128_083704-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/20260128_083704-desktop-1200w.webp",
+          "bytes": 194646,
+          "hash": "8904e9a93cfe3388b06bb0b923c89955caabe826cf971c525c1e43b995bbfdf2"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 900,
+          "format": "webp",
+          "filename": "20260128_083704-lightbox-1600w.webp",
+          "publicPath": "germany/images/day-02/20260128_083704-lightbox-1600w.webp",
+          "bytes": 334376,
+          "hash": "df80f26a173d06964beafd4516906cc970397c3c88c33e58b989098cb3ef4879"
+        }
+      ]
+    },
+    "day-02/Hallstatt05.jpg": {
+      "id": "Hallstatt05",
+      "original_filename": "Hallstatt05.jpg",
+      "original_width": 2048,
+      "original_height": 1348,
+      "source_hash": "80bfafb188b8bb92d5b1832ce779448b6daebe1421b721d1b54367932c7dba85",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 315,
+          "format": "webp",
+          "filename": "Hallstatt05-thumb-480w.webp",
+          "publicPath": "germany/images/day-02/Hallstatt05-thumb-480w.webp",
+          "bytes": 28114,
+          "hash": "abb7be6fb83743554b9969c96472b38d571a4c6c31e9433f11bc58c7cb756b3b"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 631,
+          "format": "webp",
+          "filename": "Hallstatt05-content-960w.webp",
+          "publicPath": "germany/images/day-02/Hallstatt05-content-960w.webp",
+          "bytes": 99092,
+          "hash": "48d48158fba66dac61f1669b60c041b35585ca2a5a2a2ade6371d1468ed8f233"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 789,
+          "format": "webp",
+          "filename": "Hallstatt05-desktop-1200w.webp",
+          "publicPath": "germany/images/day-02/Hallstatt05-desktop-1200w.webp",
+          "bytes": 146126,
+          "hash": "7b238bf08a4702257116f2388004459cafc0216c52518423524ed62cd1350d65"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 1053,
+          "format": "webp",
+          "filename": "Hallstatt05-lightbox-1600w.webp",
+          "publicPath": "germany/images/day-02/Hallstatt05-lightbox-1600w.webp",
+          "bytes": 232266,
+          "hash": "1541ec89c2edc999559803b1f5679c1a13d846a85073b28dd17c845f06616e78"
+        }
+      ]
+    }
+  }
+}

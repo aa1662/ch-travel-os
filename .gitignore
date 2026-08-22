@@ -1,0 +1,16 @@
+# Master raw camera photos and private takeout
+masters/
+**/masters/
+
+# Temporary and backup files
+*.bak
+**/*.bak
+*.tmp
+__pycache__/
+**/__pycache__/
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
