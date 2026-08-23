@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="2026年德國南部冬季15天自駕之旅與深度圖文遊記，涵蓋哈修塔特、符茲堡、海德堡、科爾馬、加米許與新天鵝堡。">
+  <!-- Open Graph / Social Sharing Meta Tags -->
+  <meta property="og:site_name" content="2026 德南冬旅誌 · CH Travel OS">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2026 德國南部冬季 15 天自駕之旅 ✕ 沉浸式圖文遊記">
+  <meta property="og:description" content="2026年德國南部冬季15天自駕之旅與深度圖文遊記，涵蓋哈修塔特、符茲堡、海德堡、科爾馬、加米許與新天鵝堡。">
+  <meta property="og:url" content="https://aa1662.github.io/ch-travel-os/2026-germany/index.html">
+  <meta property="og:image" content="https://aa1662.github.io/ch-travel-os/2026-germany/images/day-02/18041867387724285-desktop-1200w.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <title>2026 德國南部冬季 15 天自駕之旅 ✕ 沉浸式圖文遊記</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../core/css/style.css">
+  <link rel="stylesheet" href="../core/vendor/glightbox/glightbox.min.css">
+</head>
+<body>
+  <!-- 頂部玻璃擬態導覽列 -->
+  <nav class="site-nav">
+    <div class="container">
+      <a href="../index.html" class="brand-link">
+        <span>🇩🇪 2026 德南冬旅誌</span>
+        <span class="brand-badge">Travel OS</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">全球總入口</a></li>
+        <li><a href="index.html" class="active">首頁</a></li>
+        <li><a href="#featured">📸 精選遊記</a></li>
+        <li><a href="#itinerary">🗺️ 15天行程</a></li>
+      </ul>
+      <button class="nav-share-btn btn-share"><span>📤 分享</span></button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- ========================================== -->
+    <!-- 1. Hero 封面區域 -->
+    <!-- ========================================== -->
+    <section class="hero-bento" style="margin-top: 1.5rem;">
+      <div class="hero-banner">
+        <div class="hero-badge-group">
+          <span class="badge badge-gold">❄️ 2026 冬季跨國自駕 15D14N</span>
+          <span class="badge badge-glass">📅 1/26 (一) — 2/9 (日)</span>
+          <span class="badge badge-glass">🚗 德・奧・法・瑞 四國環線</span>
+          <span class="badge badge-glass">🏨 5 大精選住宿漫遊基地</span>
+        </div>
+        <h1 class="hero-title">白雪、古堡與酒鄉微醺的 15 天旅程</h1>
+        <p class="hero-subtitle">
+          從阿爾卑斯湖畔的哈修塔特，走過羅曼蒂克大道的古堡酒莊，穿越亞爾薩斯的童話木屋，最終登上雪白新天鵝堡。這是一本真實記錄旅人心情與實戰避坑的自駕圖文手記。
+        </p>
+        <div class="hero-actions">
+          <a href="#featured" class="btn-hero-primary">📸 閱讀精選遊記 ↓</a>
+          <a href="#itinerary" class="btn-hero-secondary">🗺️ 瀏覽 15 天完整行程 ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 2. 📸 精選深度圖文遊記 (Featured Stories) -->
+    <!-- ========================================== -->
+    <section id="featured" style="margin: 3.5rem 0 1.5rem;">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.75rem;">
+        <div>
+          <span class="badge badge-gold" style="margin-bottom: 0.5rem;">The Stories</span>
+          <h2 style="font-family: var(--font-heading); font-size: 1.85rem; color: var(--primary); margin: 0; display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+            <span>📸 精選圖文遊記 (Featured Stories)</span>
+            <button class="btn-dice-random" id="btnRandomStories" title="隨機換抽另外 3 篇精彩遊記">
+              <span class="dice-icon">🎲</span> 換一批精選
+            </button>
+          </h2>
+        </div>
+        <span style="font-size: 0.9rem; color: var(--text-muted);">真實心情 ✕ 實拍美圖 ✕ 16 篇隨機探索</span>
+      </div>
+
+      <div class="featured-grid">
+        <!-- 精選卡片 1: Day 02 哈修塔特 -->
+        <article class="featured-card">
+          <div class="featured-img-wrap">
+            <img src="images/day-02/18041867387724285-desktop-1200w.webp"
+                 srcset="images/day-02/18041867387724285-thumb-480w.webp 480w,
+                         images/day-02/18041867387724285-content-960w.webp 960w,
+                         images/day-02/18041867387724285-desktop-1200w.webp 1200w"
+                 sizes="(max-width: 768px) 100vw, 400px"
+                 width="1200" height="1200"
+                 alt="哈修塔特湖畔晨景" loading="lazy">
+            <span class="featured-tag-float">Day 02 · 奧地利</span>
+          </div>
+          <div class="featured-body">
+            <div>
+              <div style="margin-bottom: 0.5rem;">
+                <span class="badge badge-alpine">📍 Hallstatt</span>
+                <span class="badge badge-wine">🏛️ 世界遺產</span>
+              </div>
+              <h3 class="featured-title">哈修塔特湖畔漫遊 — 夏與冬的十二年對照</h3>
+              <p class="featured-quote">「同一個地點，不同的季節與人生階段。十二年前是綠意盎然的盛夏，十二年後是白雪皚皚的清冷清晨。」</p>
+            </div>
+            <a href="blog/hallstatt-winter.html" class="btn-read-story">📖 閱讀深度圖文遊記 →</a>
+          </div>
+        </article>
+
+        <!-- 精選卡片 2: Day 07 符茲堡 -->
+        <article class="featured-card">
+          <div class="featured-img-wrap">
+            <img src="images/day-07/18075865346091014-desktop-901w.webp"
+                 srcset="images/day-07/18075865346091014-thumb-360w.webp 360w,
+                         images/day-07/18075865346091014-content-721w.webp 721w,
+                         images/day-07/18075865346091014-desktop-901w.webp 901w"
+                 sizes="(max-width: 768px) 100vw, 400px"
+                 width="901" height="1201"
+                 alt="符茲堡主教宮與舊美茵橋" loading="lazy">
+            <span class="featured-tag-float">Day 07 · 德國</span>
+          </div>
+          <div class="featured-body">
+            <div>
+              <div style="margin-bottom: 0.5rem;">
+                <span class="badge badge-gold">📍 Würzburg</span>
+                <span class="badge badge-wine">🍷 藝術與酒</span>
+              </div>
+              <h3 class="featured-title">符茲堡主教宮與舊美茵橋白葡萄酒</h3>
+              <p class="featured-quote">「符茲堡是『藝術＋酒』的城市。白天看世界最大穹頂天頂畫，傍晚上橋喝一杯，冬天來，反而更剛好。」</p>
+            </div>
+            <a href="blog/wuerzburg-residenz.html" class="btn-read-story">📖 閱讀深度圖文遊記 →</a>
+          </div>
+        </article>
+
+        <!-- 精選卡片 3: Day 08 海德堡 -->
+        <article class="featured-card">
+          <div class="featured-img-wrap">
+            <img src="images/day-08/18065731982249055-desktop-1200w.webp"
+                 srcset="images/day-08/18065731982249055-thumb-480w.webp 480w,
+                         images/day-08/18065731982249055-content-960w.webp 960w,
+                         images/day-08/18065731982249055-desktop-1200w.webp 1200w"
+                 sizes="(max-width: 768px) 100vw, 400px"
+                 width="1200" height="900"
+                 alt="海德堡城堡俯瞰老城" loading="lazy">
+            <span class="featured-tag-float">Day 08 · 德國</span>
+          </div>
+          <div class="featured-body">
+            <div>
+              <div style="margin-bottom: 0.5rem;">
+                <span class="badge badge-wine">📍 Heidelberg</span>
+                <span class="badge badge-forest">🏰 浪漫古城</span>
+              </div>
+              <h3 class="featured-title">我把心遺留在海德堡 — 城堡與老橋日落</h3>
+              <p class="featured-quote">「海德堡是『剛剛好的浪漫』。不浮誇、不壯闊，但走過老橋、看著城堡染上夕陽，會理解為什麼那麼多人把心留在這裡。」</p>
+            </div>
+            <a href="blog/heidelberg-castle.html" class="btn-read-story">📖 閱讀深度圖文遊記 →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 3. 🗺️ 15 天環線總覽：五大漫遊基地分組 -->
+    <!-- ========================================== -->
+    <span id="timeline" style="display: block; position: relative; top: -80px; visibility: hidden;"></span>
+    <section id="itinerary" style="margin: 3.5rem 0 2rem;">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.5rem;">
+        <div>
+          <span class="badge badge-alpine" style="margin-bottom: 0.5rem;">The Itinerary</span>
+          <h2 style="font-family: var(--font-heading); font-size: 1.85rem; color: var(--primary); margin: 0;">
+            🗺️ 15 天環線總覽（五大漫遊基地）
+          </h2>
+        </div>
+        <span style="font-size: 0.9rem; color: var(--text-muted);">清晰基地分組 ✕ 時間表 ✕ 遊記雙入口</span>
+      </div>
+
+      <!-- 基地 1: 奧地利湖區基地 (Day 1 - 3) -->
+      <div class="base-section">
+        <div class="base-header">
+          <div class="base-title">
+            <span>🇦🇹 基地一：哈修塔特湖區漫遊 (Hallstatt Base)</span>
+          </div>
+          <div>
+            <span class="badge badge-alpine">Day 01 - 03</span>
+            <span class="badge badge-gold">🏨 連住 2 晚</span>
+          </div>
+        </div>
+        <div class="base-days-grid">
+          <!-- Day 1 -->
+          <div class="day-item-card">
+            <div>
+              <span class="day-item-tag">Day 01 · 1/26 (一)</span>
+              <div class="day-item-title">慕尼黑 ➔ 薩爾斯堡 ➔ 哈修塔特</div>
+              <div class="day-item-desc">機場取車南下、莫札特故鄉電梯戰術、抵達湖畔藍調時刻。</div>
+            </div>
+            <div class="day-item-actions">
+              <a href="day-01.html" class="btn-day-action">⏱️ 時間表</a>
+              <a href="blog/salzburg-to-hallstatt.html" class="btn-day-action featured">📖 深度遊記</a>
+            </div>
+          </div>
+
+          <!-- Day 2 -->
+          <div class="day-item-card" style="border-color: var(--accent); background: #fffdf5;">
+            <div>
+              <span class="day-item-tag" style="color: var(--accent);">Day 02 · 1/27 (二) ★ 旗艦</span>
+              <div class="day-item-title">哈修塔特湖畔漫遊 ✕ 巴德伊舍</div>
+              <div class="day-item-desc">十二年夏冬時光對照、人骨屋、Seehotel 烤鱒魚、皇家午茶。</div>
+            </div>
+            <div class="day-item-actions">
+              <a href="day-02.html" class="btn-day-action">⏱️ 時間表</a>
+              <a href="blog/hallstatt-winter.html" class="btn-day-action featured">📖 深度遊記</a>
+            </div>
+          </div>
+
+          <!-- Day 3 -->
+          <div class="day-item-card">
+            <div>
+              <span class="day-item-tag">Day 03 · 1/28 (三)</span>
+              <div class="day-item-title">哈修塔特 ➔ Ingolstadt ➔ 符茲堡</div>
+              <div class="day-item-desc">阿爾卑斯冰雪長途轉移、Outlet 尋寶補給、進駐羅曼蒂克起點。</div>
+            </div>
+            <div class="day-item-actions">
+              <a href="day-03.html" class="btn-day-action">⏱️ 時間表</a>
+              <a href="blog/ingolstadt-wuerzburg.html" class="btn-day-action highlight">📖 深度遊記</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 基地 2: 符茲堡與法蘭肯酒鄉基地 (Day 3 - 7) -->
+      <div class="base-section">
+        <div class="base-header">
+          <div class="base-title">
+            <span>🇩🇪 基地二：符茲堡與羅曼蒂克大道 (Würzburg Base)</span>
+          </div>
+          <div>
+            <span class="badge badge-gold">Day 03 - 07</span>
+            <span class="badge badge-forest">🏨 連住 4 晚</span>
+          </div>
+        </div>
+        <div class="base-days-grid">
+          <!-- Day 4 -->
+          <div class="day-item-card">
+            <div>
+              <span class="day-item-tag">Day 04 · 1/29 (四)</span>
+              <div class="day-item-title">班堡 (Bamberg) 世界遺產巡禮</div>
+              <div class="day-item-desc">水上市政廳、小威尼斯水岸、傳奇煙燻啤酒 (Rauchbier)。</div>
+            </div>
+            <div class="day-item-actions">
+              <a href="day-04.html" class="btn-day-action">⏱️ 時間表</a>
+              <a href="blog/bamberg-old-town.html" class="btn-day-action highlight">📖 深度遊記</a>
+            </div>
+          </div>
+
+          <!-- Day 5 -->
+          <div class="day-item-card">
+            <div>
+              <span class="day-item-tag">Day 05 · 1/30 (五)</span>
+              <div class="day-item-title">紐倫堡 (Nürnberg) 皇帝堡走讀</div>
+              <div class="day-item-desc">皇帝堡俯瞰紅瓦老城、品嚐紐倫堡炭烤小香腸、中世紀街巷。</div>
+            </div>
+            <div class="day-item-actions">
+              <a href="day-05.html" class="btn-day-action">⏱️ 時間表</a>
+              <a href="blog/nuremberg-kaiserburg.html" class="btn-day-action highlight">📖 深度遊記</a>
+            </div>
+          </div>
+
+          <!-- Day 6 -->
+          <div class="day-item-card">
+            <div>
+              <span class="day-item-tag">Day 06 · 1/31 (六)</span>
+              <div class="day-item-title">羅騰堡 (Rothenburg) 中世紀童話</div>
+              <div class="day-item-desc">普連萊經典拍照點、環城古城牆漫步、品嚐甜點雪球 (Schneeball)。</div>
+            </div>
+            <div class="day-item-actions">
+              <a href="day-06.html" class="btn-day-action">⏱️ 時間表</a>
+              <a href="blog/rothenburg-winter.html" class="btn-day-action highlight">📖 深度遊記</a>
+            </div>
+          </div>
+
+          <!-- Day 7 -->
+          <div class="day-item-card">
+            <div>
+              <span class="day-item-tag">Day 07 · 2/01 (日)</span>
+              <div class="day-item-title">符茲堡主教宮 ➔ 海德堡轉移</div>
+              <div class="day-item-desc">世界最大濕壁畫主教宮、舊美茵橋舉杯白酒、下午轉移至海德堡。</div>
+            </div>
+            <div class="day-item-actions">
+              <a href="day-07.html" class="btn-day-action">⏱️ 時間表</a>
+              <a href="blog/wuerzburg-residenz.html" class="btn-day-action highlight">📖 深度遊記</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 基地 3: 海德堡與內卡河浪漫古城 (Day 7 - 10) -->
+      <div class="base-section">
+        <div class="base-header">
+          <div class="base-title">
+            <span>🇩🇪 基地三：海德堡與內卡河畔 (Heidelberg Base)</span>
+          </div>
+          <div>
+            <span class="badge badge-wine">Day 07 - 10</span>
+            <span class="badge badge-gold">🏨 連住 3 晚</span>
+          </div>
+        </div>
+        <div class="base-days-grid">
+          <!-- Day 8 -->
+          <div class="day-item-card">
+            <div>
+              <span class="day-item-tag">Day 08 · 2/02 (一)</span>
+              <div class="day-item-title">海德堡 (Heidelberg) 浪漫古城</div>
+              <div class="day-item-desc">海德堡城堡世界大酒桶、齒軌纜車、德國藥事博物館、老橋夕陽。</div>
+            </div>
+            <div class="day-item-actions">
+              <a href="day-08.html" class="btn-day-action">⏱️ 時間表</a>
+              <a href="blog/heidelberg-castle.html" class="btn-day-action highlight">📖 深度遊記</a>
+            </div>
+          </div>
+
+          <!-- Day 9 -->
+          <div class="day-item-card">
+            <div>
+              <span class="day-item-tag">Day 09 · 2/03 (二)</span>
+              <div class="day-item-title">哈瑙童話起點 ✕ 法蘭克福</div>
+              <div class="day-item-desc">格林兄弟雕像朝聖、法蘭克福羅馬人廣場與美茵河金融天際線。</div>
+            </div>
+            <div class="day-item-actions">
+              <a href="day-09.html" class="btn-day-action">⏱️ 時間表</a>
+              <a href="blog/hanau-frankfurt.html" class="btn-day-action highlight">📖 深度遊記</a>
+            </div>
+          </div>
+
+          <!-- Day 10 (史派爾) -->
+          <div class="day-item-card">
+            <div>
+              <span class="day-item-tag">Day 10 (上) · 2/04 (三)</span>
+              <div class="day-item-title">海德堡 ➔ 史派爾 ➔ 亞爾薩斯轉移</div>
+              <div class="day-item-desc">世界文化遺產史派爾大教堂、羅曼式千年帝國震撼、穿越法德邊界。</div>
+            </div>
+            <div class="day-item-actions">
+              <a href="day-10.html" class="btn-day-action">⏱️ 時間表</a>
+              <a href="blog/speyer-cathedral.html" class="btn-day-action highlight">📖 深度遊記</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 基地 4: 法國亞爾薩斯與瑞士三國交界 (Day 10 - 12) -->
+      <div class="base-section">
+        <div class="base-header">
+          <div class="base-title">
+            <span>🇫🇷 基地四：亞爾薩斯童話與巴塞爾 (Colmar Base)</span>
+          </div>
+          <div>
+            <span class="badge badge-trap">Day 10 - 12</span>
+            <span class="badge badge-forest">🏨 連住 2 晚</span>
+          </div>
+        </div>
+        <div class="base-days-grid">
+          <!-- Day 10 (科爾馬) -->
+          <div class="day-item-card">
+            <div>
+              <span class="day-item-tag">Day 10 (下) · 2/04 (三)</span>
+              <div class="day-item-title">科爾馬小威尼斯 ✕ 移動城堡</div>
+              <div class="day-item-desc">宮崎駿《霍爾的移動城堡》原型木質骨架屋、市集強迫症蔬果、小威尼斯運河夜景。</div>
+            </div>
+            <div class="day-item-actions">
+              <a href="day-10.html" class="btn-day-action">⏱️ 時間表</a>
+              <a href="blog/colmar-little-venice.html" class="btn-day-action highlight">📖 深度遊記</a>
+            </div>
+          </div>
+
+          <!-- Day 11 -->
+          <div class="day-item-card">
+            <div>
+              <span class="day-item-tag">Day 11 · 2/05 (四)</span>
+              <div class="day-item-title">瑞士巴塞爾 BIS 朝聖 ✕ 埃吉桑姆</div>
+              <div class="day-item-desc">國際清算銀行 (BIS) 總部外觀、萊茵河畔、法國最美同心圓童話村莊。</div>
+            </div>
+            <div class="day-item-actions">
+              <a href="day-11.html" class="btn-day-action">⏱️ 時間表</a>
+              <a href="blog/eguisheim-basel.html" class="btn-day-action highlight">📖 深度遊記</a>
+            </div>
+          </div>
+
+          <!-- Day 12 -->
+          <div class="day-item-card">
+            <div>
+              <span class="day-item-tag">Day 12 · 2/06 (五)</span>
+              <div class="day-item-title">黑森林過渡 ✕ 加米許山莊溫泉 Das Graseck</div>
+              <div class="day-item-desc">穿越黑森林前往阿爾卑斯名城，搭專用纜車抵達隱世溫泉飯店，享受雪山無邊際 Spa。</div>
+            </div>
+            <div class="day-item-actions">
+              <a href="day-12.html" class="btn-day-action">⏱️ 時間表</a>
+              <a href="blog/garmisch-das-graseck.html" class="btn-day-action highlight">📖 深度遊記</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 基地 5: 阿爾卑斯峰頂與新天鵝堡 (Day 12 - 15) -->
+      <div class="base-section">
+        <div class="base-header">
+          <div class="base-title">
+            <span>🏔️ 基地五：阿爾卑斯雙子城與古堡 (Garmisch Base)</span>
+          </div>
+          <div>
+            <span class="badge badge-alpine">Day 12 - 15</span>
+            <span class="badge badge-gold">🏨 連住 3 晚</span>
+          </div>
+        </div>
+        <div class="base-days-grid">
+          <!-- Day 13 -->
+          <div class="day-item-card">
+            <div>
+              <span class="day-item-tag">Day 13 · 2/07 (六)</span>
+              <div class="day-item-title">新天鵝堡雪景重遊 ✕ 馬車上的父女童話</div>
+              <div class="day-item-desc">乘木輪馬車踏雪登堡、重溫時光記憶、路德維希二世童話城堡與冰封阿爾卑斯湖。</div>
+            </div>
+            <div class="day-item-actions">
+              <a href="day-13.html" class="btn-day-action">⏱️ 時間表</a>
+              <a href="blog/neuschwanstein-winter.html" class="btn-day-action highlight">📖 深度遊記</a>
+            </div>
+          </div>
+
+          <!-- Day 14 -->
+          <div class="day-item-card">
+            <div>
+              <span class="day-item-tag">Day 14 · 2/08 (日)</span>
+              <div class="day-item-title">帕特納赫冬季冰瀑 ✕ 天然冰宮探秘</div>
+              <div class="day-item-desc">深入 80 公尺巨型冰瀑峽谷 (Partnachklamm)、穿鑿岩洞探訪藍光冰柱、15天自駕終章。</div>
+            </div>
+            <div class="day-item-actions">
+              <a href="day-14.html" class="btn-day-action">⏱️ 時間表</a>
+              <a href="blog/partnachklamm-ice.html" class="btn-day-action highlight">📖 深度遊記</a>
+            </div>
+          </div>
+
+          <!-- Day 15 -->
+          <div class="day-item-card">
+            <div>
+              <span class="day-item-tag">Day 15 · 2/09 (一) 🏁 完結</span>
+              <div class="day-item-title">GP小鎮 ➔ 慕尼黑機場 ➔ 賦歸返台</div>
+              <div class="day-item-desc">直奔機場還車、入住 Novotel、機場大補給與魔幻暮色、長榮直飛返台。</div>
+            </div>
+            <div class="day-item-actions">
+              <a href="day-15.html" class="btn-day-action">⏱️ 時間表</a>
+              <a href="blog/munich-departure.html" class="btn-day-action highlight">📖 深度遊記</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 手機底部 App-Like 導覽列 -->
+  <div class="mobile-dock">
+    <a href="index.html" class="dock-item active">
+      <span class="dock-icon">🏠</span>
+      <span>首頁</span>
+    </a>
+    <a href="#featured" class="dock-item">
+      <span class="dock-icon">📸</span>
+      <span>精選遊記</span>
+    </a>
+    <a href="#itinerary" class="dock-item">
+      <span class="dock-icon">🗺️</span>
+      <span>15天行程</span>
+    </a>
+    <a href="javascript:void(0)" class="dock-item btn-share">
+      <span class="dock-icon">📤</span>
+      <span>分享</span>
+    </a>
+  </div>
+
+  <footer style="margin-top: 4rem; padding: 2rem 0; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+    <p>© 2026 CH Travel OS 2.0 · Designed with Warm Paper Aesthetic</p>
+  </footer>
+
+  <script src="../core/vendor/glightbox/glightbox.min.js"></script>
+  <script>
+    window.__JOURNEY_STORIES__ = [
+  {
+    day: "Day 01",
+    country: "奧地利",
+    place: "Salzburg",
+    badgeType: "badge-alpine",
+    theme: "🏛️ 音樂之都",
+    themeType: "badge-wine",
+    title: "薩爾斯堡莫札特故鄉 — 電梯直攻僧侶山俯瞰老城",
+    quote: "「冬日的薩爾斯堡少了一分喧鬧，多了一分冷冽的古典韻味。踏入米拉貝爾花園，耳邊宛如響起《真善美》的樂章。」",
+    img: "images/day-01/17869170573551215-desktop-900w.webp",
+    url: "blog/salzburg-to-hallstatt.html"
+  },
+  {
+    day: "Day 02",
+    country: "奧地利",
+    place: "Hallstatt",
+    badgeType: "badge-alpine",
+    theme: "🏛️ 世界遺產",
+    themeType: "badge-wine",
+    title: "哈修塔特湖畔漫遊 — 夏與冬的十二年對照",
+    quote: "「同一個地點，不同的季節與人生階段。十二年前是綠意盎然的盛夏，十二年後是白雪皚皚的清冷清晨。」",
+    img: "images/day-02/18041867387724285-desktop-1200w.webp",
+    url: "blog/hallstatt-winter.html"
+  },
+  {
+    day: "Day 03",
+    country: "德國",
+    place: "Würzburg",
+    badgeType: "badge-gold",
+    theme: "🚗 古堡進駐",
+    themeType: "badge-forest",
+    title: "跨國挺進符茲堡 — 羅曼蒂克大道的北端起點",
+    quote: "「告別奧地利雪白湖區，馳騁於德南平原。進駐符茲堡，為接下來的酒鄉與中世紀古城拉開序幕。」",
+    img: "images/day-03/20260128_083704-desktop-1200w.webp",
+    url: "blog/ingolstadt-wuerzburg.html"
+  },
+  {
+    day: "Day 04",
+    country: "德國",
+    place: "Bamberg",
+    badgeType: "badge-gold",
+    theme: "🍺 煙燻啤酒",
+    themeType: "badge-wine",
+    title: "小威尼斯班堡走讀 — 煙燻啤酒與水中市政廳",
+    quote: "「這座未受二戰轟炸的中世紀古城，空氣中飄著山毛櫸木烘烤麥芽的獨特煙燻香氣，每一口啤酒都是六百年的歷史。」",
+    img: "images/day-04/18066767258248200-desktop-1200w.webp",
+    url: "blog/bamberg-old-town.html"
+  },
+  {
+    day: "Day 05",
+    country: "德國",
+    place: "Nürnberg",
+    badgeType: "badge-gold",
+    theme: "🏰 玩具之都",
+    themeType: "badge-forest",
+    title: "紐倫堡皇帝堡走讀 — 聖誕之都的冬日紅磚風華",
+    quote: "「登上皇帝堡城牆俯瞰整座紅色屋頂的帝國古都，在老城石板路上追尋杜勒與胡桃鉗的童話足跡。」",
+    img: "images/day-05/18002102333848437-desktop-900w.webp",
+    url: "blog/nuremberg-kaiserburg.html"
+  },
+  {
+    day: "Day 06",
+    country: "德國",
+    place: "Rothenburg",
+    badgeType: "badge-gold",
+    theme: "🧸 童話小鎮",
+    themeType: "badge-wine",
+    title: "陶伯河畔羅騰堡 — 漫步中世紀時光膠囊",
+    quote: "「走進普連萊小廣場，彩色桁架木屋在晨光下靜謐得如同童話插畫，彷彿時間在這裡整整停駐了五百年。」",
+    img: "images/day-06/18078973727601770-desktop-900w.webp",
+    url: "blog/rothenburg-winter.html"
+  },
+  {
+    day: "Day 07",
+    country: "德國",
+    place: "Würzburg",
+    badgeType: "badge-gold",
+    theme: "🍷 藝術與酒",
+    themeType: "badge-wine",
+    title: "符茲堡主教宮與舊美茵橋白葡萄酒",
+    quote: "「符茲堡是『藝術＋酒』的城市。白天看世界最大穹頂天頂畫，傍晚上橋喝一杯，冬天來，反而更剛好。」",
+    img: "images/day-07/18075865346091014-desktop-901w.webp",
+    url: "blog/wuerzburg-residenz.html"
+  },
+  {
+    day: "Day 08",
+    country: "德國",
+    place: "Heidelberg",
+    badgeType: "badge-wine",
+    theme: "🏰 浪漫古城",
+    themeType: "badge-forest",
+    title: "我把心遺留在海德堡 — 城堡與老橋日落",
+    quote: "「海德堡是『剛剛好的浪漫』。不浮誇、不壯闊，但走過老橋、看著城堡染上夕陽，會理解為什麼那麼多人把心留在這裡。」",
+    img: "images/day-08/18065731982249055-desktop-1200w.webp",
+    url: "blog/heidelberg-castle.html"
+  },
+  {
+    day: "Day 09",
+    country: "德國",
+    place: "Hanau & Frankfurt",
+    badgeType: "badge-gold",
+    theme: "📖 格林童話",
+    themeType: "badge-wine",
+    title: "哈瑙童話起點 ✕ 法蘭克福采爾大道巡禮",
+    quote: "「在格林兄弟銅像前尋找童話大道的源頭，走入法蘭克福現代都會的璀璨繁華，感受古典與當代的奇妙交織。」",
+    img: "images/day-09/18058121042364450-desktop-900w.webp",
+    url: "blog/hanau-frankfurt.html"
+  },
+  {
+    day: "Day 10 (上)",
+    country: "德國",
+    place: "Speyer",
+    badgeType: "badge-gold",
+    theme: "🏛️ 帝國大教堂",
+    themeType: "badge-wine",
+    title: "史派爾羅曼式大教堂 ✕ 跨國亞爾薩斯轉移",
+    quote: "「站在千年紅色砂岩砌成的帝國教堂下，沉重的歷史感撲面而來，隨後跨越萊茵河，奔向法式彩色木屋的世界。」",
+    img: "images/day-10/20260204_122442-desktop-676w.webp",
+    url: "blog/speyer-cathedral.html"
+  },
+  {
+    day: "Day 10 (下)",
+    country: "法國",
+    place: "Colmar",
+    badgeType: "badge-wine",
+    theme: "🏰 移動城堡",
+    themeType: "badge-forest",
+    title: "科爾馬小威尼斯 ✕ 走進霍爾的移動城堡",
+    quote: "「運河倒映著粉藍、淡黃與酒紅色的木筋屋，彷彿下一秒霍爾與蘇菲就會從街角的屋頂輕盈飛過。」",
+    img: "images/day-10/18082561442231943-desktop-1200w.webp",
+    url: "blog/colmar-little-venice.html"
+  },
+  {
+    day: "Day 11",
+    country: "瑞士/法國",
+    place: "Basel & Eguisheim",
+    badgeType: "badge-alpine",
+    theme: "🌐 三國交界",
+    themeType: "badge-forest",
+    title: "瑞士巴塞爾 BIS 朝聖 ✕ 埃吉桑姆最美童話村",
+    quote: "「上午在巴塞爾萊茵河畔見證國際金融的心臟，下午走入法國最美同心圓花園小鎮埃吉桑姆，雙重感官的極致切換。」",
+    img: "images/day-11/17986859564941938-desktop-1200w.webp",
+    url: "blog/eguisheim-basel.html"
+  },
+  {
+    day: "Day 12",
+    country: "德國",
+    place: "Garmisch",
+    badgeType: "badge-alpine",
+    theme: "♨️ 雪山溫泉",
+    themeType: "badge-wine",
+    title: "黑森林過渡 ✕ 加米許山莊溫泉 Das Graseck",
+    quote: "「搭乘私人古老纜車直上懸崖峭壁，在零下的阿爾卑斯白雪群峰環抱下，浸入熱氣氤氳的無邊際高空溫泉。」",
+    img: "images/day-12/20260206_180606-desktop-1200w.webp",
+    url: "blog/garmisch-das-graseck.html"
+  },
+  {
+    day: "Day 13",
+    country: "德國",
+    place: "Neuschwanstein",
+    badgeType: "badge-alpine",
+    theme: "❄️ 白雪童話",
+    themeType: "badge-wine",
+    title: "新天鵝堡雪景重遊 ✕ 跨越十二年的父女童話時光",
+    quote: "「坐著傳統馬車踏著白雪緩緩上山，十二年前獨自遠眺的夢想城堡，如今牽著女兒的小手一同圓夢。」",
+    img: "images/day-13/20260207_144110-desktop-1200w.webp",
+    url: "blog/neuschwanstein-winter.html"
+  },
+  {
+    day: "Day 14",
+    country: "德國",
+    place: "Partnachklamm",
+    badgeType: "badge-alpine",
+    theme: "🧊 天然冰宮",
+    themeType: "badge-wine",
+    title: "帕特納赫峽谷冬季冰瀑奇景 ✕ 天然冰宮探秘",
+    quote: "「穿鑿於八十公尺高垂直岩壁間，凝視層層堆疊的幽藍冰瀑與冰簾，體驗大自然將時間徹底凍結的震撼奇景。」",
+    img: "images/day-14/18038771039755485-desktop-900w.webp",
+    url: "blog/partnachklamm-ice.html"
+  },
+  {
+    day: "Day 15",
+    country: "德國",
+    place: "Munich Airport",
+    badgeType: "badge-wine",
+    theme: "🎉 圓滿終章",
+    themeType: "badge-gold",
+    title: "慕尼黑機場滿載賦歸 ✕ 十五天德南冬旅自駕回甘",
+    quote: "「陪伴我們 15 天、橫跨四國、奔馳兩千公里的白色 Audi A5 功成身退。在粉紫暮色與孩子燦爛的笑容中，圓滿回甘。」",
+    img: "images/day-15/20260208_172729-desktop-675w.webp",
+    url: "blog/munich-departure.html"
+  }
+];
+  </script>
+  <script src="../core/js/app.js"></script>
+</body>
+</html>

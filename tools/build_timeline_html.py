@@ -12,7 +12,7 @@ CH Travel OS 2.0 - 純時間表批次編譯器 (build_timeline_html.py)
    - 底部篇章導航 (Footer Navigation) 包含上一天、中央遊記直通按鈕、下一天
    - 手機底部 Mobile Dock 100% 雙向直通
    - 現代化 Open Graph 與社群 WebP 標籤
-3. 採用 In-Memory 事務機制，確保全域無錯誤才原子寫入 docs/germany/day-XX.html。
+3. 採用 In-Memory 事務機制，確保全域無錯誤才原子寫入 docs/2026-germany/day-XX.html。
 """
 
 import json
@@ -25,7 +25,13 @@ DOCS_DIR = BASE_DIR / "docs"
 CORE_DIR = BASE_DIR / "core"
 
 
-def build_timelines(trip_slug="2026-germany", dest_slug="germany"):
+def upsert_head_tag(html_content, pattern, replacement):
+    if re.search(pattern, html_content, flags=re.IGNORECASE):
+        return re.sub(pattern, replacement, html_content, count=1, flags=re.IGNORECASE)
+    return html_content.replace("</head>", f"  {replacement}\n</head>", 1)
+
+
+def build_timelines(trip_slug="2026-germany", dest_slug=None):
     trip_dir = BASE_DIR / "trips" / trip_slug
     config_file = trip_dir / "timeline-migration.json"
 
@@ -35,6 +41,12 @@ def build_timelines(trip_slug="2026-germany", dest_slug="germany"):
 
     with open(config_file, "r", encoding="utf-8") as f:
         config = json.load(f)
+
+    config_dest = config.get("dest")
+    if dest_slug and config_dest and dest_slug != config_dest:
+        print(f"❌ dest 不一致: 參數={dest_slug}, config={config_dest}")
+        sys.exit(1)
+    dest_slug = dest_slug or config_dest or trip_slug
 
     entries = config.get("entries", [])
     errors = []
@@ -54,7 +66,7 @@ def build_timelines(trip_slug="2026-germany", dest_slug="germany"):
 
         html_content = src_file.read_text(encoding="utf-8")
 
-        # 1. 調整核心資源路徑至 ../core/ (因為時間表位於 docs/germany/)
+        # 1. 調整核心資源路徑至 ../core/ (因為時間表位於 docs/2026-germany/)
         html_content = re.sub(r'href="(?:\.\./)*css/style\.css(?:\?[^"]*)?"', 'href="../core/css/style.css"', html_content)
         html_content = re.sub(r'href="(?:\.\./)*vendor/glightbox/glightbox\.min\.css(?:\?[^"]*)?"', 'href="../core/vendor/glightbox/glightbox.min.css"', html_content)
         html_content = re.sub(r'src="(?:\.\./)*vendor/glightbox/glightbox\.min\.js(?:\?[^"]*)?"', 'src="../core/vendor/glightbox/glightbox.min.js"', html_content)
@@ -63,6 +75,16 @@ def build_timelines(trip_slug="2026-germany", dest_slug="germany"):
 
         # 2. 修正 OG 與 Canonical URL
         if item.get("og_url"):
+            html_content = upsert_head_tag(
+                html_content,
+                r'<link\s+rel=["\']icon["\'][^>]*>',
+                '<link rel="icon" href="../favicon.svg" type="image/svg+xml">',
+            )
+            html_content = upsert_head_tag(
+                html_content,
+                r'<link\s+rel=["\']canonical["\']\s+href=["\'][^"\']*["\'][^>]*>',
+                f'<link rel="canonical" href="{item["og_url"]}">',
+            )
             html_content = re.sub(
                 r'<meta\s+property=["\']og:url["\']\s+content=["\'][^"\']*["\']',
                 f'<meta property="og:url" content="{item["og_url"]}"',
@@ -81,7 +103,7 @@ def build_timelines(trip_slug="2026-germany", dest_slug="germany"):
             )
 
         # 3. 清理舊版 OG 網址遺留 2026-Germany
-        html_content = re.sub(r'https://aa1662\.github\.io/2026-Germany/([^\s"\']+)', r'https://aa1662.github.io/ch-travel-os/germany/\1', html_content)
+        html_content = re.sub(r'https://aa1662\.github\.io/2026-Germany/([^\s"\']+)', r'https://aa1662.github.io/ch-travel-os/2026-germany/\1', html_content)
 
         # 4. 標準化頂部導覽列 (Top Navbar)
         primary_blog = item.get("blog_link", f"blog/day-{day_num}-blog.html")
@@ -96,10 +118,10 @@ def build_timelines(trip_slug="2026-germany", dest_slug="germany"):
         # 5. 標準化 Hero 看板按鈕 (Hero Primary CTA) - 確保 100% 存在
         if item["id"] == "day-10":
             hero_btn_html = '''<div style="margin-top: 0.85rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
-          <a href="blog/day-10-speyer-blog.html" class="btn-hero-primary" style="font-size: 0.92rem; padding: 0.65rem 1.25rem;">
+          <a href="blog/speyer-cathedral.html" class="btn-hero-primary" style="font-size: 0.92rem; padding: 0.65rem 1.25rem;">
             📝 閱讀 Day 10 上篇（史派爾帝國大教堂 ✕ 跨國轉移）→
           </a>
-          <a href="blog/day-10-colmar-blog.html" class="btn-hero-primary" style="font-size: 0.92rem; padding: 0.65rem 1.25rem;">
+          <a href="blog/colmar-little-venice.html" class="btn-hero-primary" style="font-size: 0.92rem; padding: 0.65rem 1.25rem;">
             📝 閱讀 Day 10 下篇（科爾馬小威尼斯 ✕ 移動城堡）→
           </a>
         </div>'''
@@ -111,19 +133,33 @@ def build_timelines(trip_slug="2026-germany", dest_slug="germany"):
           </a>
         </div>'''
 
-        # 如果已有舊按鈕則替換，若無則插入至 header 結尾
-        if re.search(r'<div style="margin-top:\s*0\.\d+rem;">\s*<a[^>]+class="btn-hero-primary"[^>]*>[\s\S]*?</a>\s*</div>', html_content):
-            html_content = re.sub(
-                r'<div style="margin-top:\s*0\.\d+rem;">\s*<a[^>]+class="btn-hero-primary"[^>]*>[\s\S]*?</a>\s*</div>',
-                hero_btn_html,
-                html_content
+        # Hero 內可能存在不同年代的 badge/button CTA。先全部移除，再插入唯一標準版本。
+        def normalize_hero_cta(match):
+            opening, body, closing = match.groups()
+            body = re.sub(
+                r'<div(?:\s+[^>]*)?>\s*<a\b(?=[^>]*href=["\']blog/)[^>]*>[\s\S]*?</a>\s*</div>',
+                '',
+                body,
+                flags=re.IGNORECASE,
             )
-        elif '<header class="schedule-hero-card">' in html_content:
-            html_content = re.sub(
-                r'(</header>)',
-                f'{hero_btn_html}\n    \\1',
-                html_content
+            body = re.sub(
+                r'<a\b(?=[^>]*href=["\']blog/)[^>]*>[\s\S]*?</a>',
+                '',
+                body,
+                flags=re.IGNORECASE,
             )
+            body = re.sub(r'^[ \t]+$', '', body, flags=re.MULTILINE)
+            return f'{opening}{body.rstrip()}\n    {hero_btn_html}\n    {closing}'
+
+        html_content, hero_count = re.subn(
+            r'(<header\s+class=["\']schedule-hero-card["\'][^>]*>)([\s\S]*?)(</header>)',
+            normalize_hero_cta,
+            html_content,
+            count=1,
+            flags=re.IGNORECASE,
+        )
+        if hero_count != 1:
+            errors.append(f"找不到唯一 schedule-hero-card: {src_file}")
 
         # 6. 標準化底部篇章導覽按鈕 (Footer Navigation)
         prev_p = item.get("prev_link", "index.html#itinerary")
@@ -138,8 +174,8 @@ def build_timelines(trip_slug="2026-germany", dest_slug="germany"):
 
         if item["id"] == "day-10":
             center_nav_html = '''<div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-        <a href="blog/day-10-speyer-blog.html" class="badge badge-gold" style="font-size: 0.9rem; padding: 0.5rem 1rem; text-decoration: none;">📝 閱讀 Day 10 上篇（史派爾）</a>
-        <a href="blog/day-10-colmar-blog.html" class="badge badge-gold" style="font-size: 0.9rem; padding: 0.5rem 1rem; text-decoration: none;">📝 閱讀 Day 10 下篇（科爾馬）</a>
+        <a href="blog/speyer-cathedral.html" class="badge badge-gold" style="font-size: 0.9rem; padding: 0.5rem 1rem; text-decoration: none;">📝 閱讀 Day 10 上篇（史派爾）</a>
+        <a href="blog/colmar-little-venice.html" class="badge badge-gold" style="font-size: 0.9rem; padding: 0.5rem 1rem; text-decoration: none;">📝 閱讀 Day 10 下篇（科爾馬）</a>
       </div>'''
         else:
             day_id_upper = item["id"].replace("-", " ").title()

@@ -24,6 +24,7 @@ CH Travel OS 的品牌核心是個人旅行誌，不是即時旅遊資料庫：
 | 旅程邊界、Place、文章命題與公開狀態 | 未來的 `journey-catalog` | 使用者確認、工具維護 | 只發布 `approved` 內容 |
 | 口述記憶 | 每次 Journey／Place 訪談稿 | 使用者 | 僅作寫作來源，不預設全文公開 |
 | 文章來源 | `trips/` | 使用者內容決策、AI 協作整理 | 通過內容與隱私 UAT 後構建 |
+| Journey 精選故事內容 | 各 Journey Hub 的 `window.__JOURNEY_STORIES__` | 使用者內容決策、Journey 維護流程 | 只引用該 Journey 已發布文章與公開圖片 |
 | 共用呈現與構建行為 | `core/`、`tools/` | 專案工具鏈 | 不承載單一旅程內容 |
 | 公開衍生物 | `docs/` | Builder | 只含核准文字與公開衍生資產 |
 
@@ -46,33 +47,32 @@ Journey（一次完整旅程）
 - Day 是 Journey 的時間脈絡，不是深度文章的強制邊界。
 - 一個 Place 可以跨越多日；同一天也可以包含多個 Place。
 - 現有 Day Blog 若已完整承載一個 Place，優先重編，不新增重複文章。
-- 一個公開主題只保留一個 canonical URL；舊 URL 若遷移，只作轉址或相容入口。
+- 一個公開主題只保留一個 canonical URL；正式公開後才對既有 URL 建立轉址責任，作者試看階段採 clean rename。
 
-## 3.1 URL 策略：先採 Day + Place Hybrid，不過度設計
+## 3.1 URL 策略：Journey-scoped Place/Theme URL
 
-目前 2026 Germany 仍是一本完整旅程專刊，因此已完成的正式文章優先維持在 Journey 連載脈絡內，不急著另建純 Place URL。
+Journey path 負責識別一次完整旅程，Blog filename 只描述文章的 Place／Theme。Day 是 Journey 的時間脈絡，不是 Blog 的長期身份。
 
-短期規則：
+公開階層：
 
-- 若文章本質仍是某一天的旅程章節，但主題已明確收斂到城市、地點或季節，URL 採 hybrid slug：
-  - `docs/germany/blog/day-02-hallstatt-winter.html`
-  - `docs/germany/blog/day-13-neuschwanstein-winter.html`
-- Hybrid URL 兼顧兩件事：保留 Day 順序，也讓 slug 帶有可搜尋的 Place 關鍵字。
-- 原本 `day-xx-blog.html` 若已公開，不立即刪除；是否改名、保留相容頁或更新內部連結，需逐篇 UAT 後決定。
-- 不為了 SEO 另外複製一篇內容相近的純 Place 文章，避免 duplicate content 與維護分裂。
+- Country Hub：`docs/germany/index.html`，只彙整歷年 Germany Journeys。
+- Journey Hub：`docs/2026-germany/index.html`，承載單次旅程專刊與時間軸。
+- Timeline：`docs/2026-germany/day-XX.html`，保留 Day filename。
+- Blog：`docs/2026-germany/blog/<place-theme>.html`，filename 不含 `day-XX-`。
 
-長期規則：
+範例：
 
-- 只有當一篇文章已超出單一旅程日記，成為跨年份、跨旅程或 evergreen 的地方專題時，才建立純 Place URL：
-  - `docs/germany/hallstatt-winter-return.html`
-  - `docs/germany/neuschwanstein-return.html`
-- 純 Place URL 必須有自己的命題、結構與 canonical，不只是 Day 文章換檔名。
-- Day URL 可作為 Journey 章節入口；Place URL 則作為搜尋與長期收藏入口。
+- `/2026-germany/blog/hallstatt-winter.html`
+- `/2026-germany/blog/neuschwanstein-winter.html`
+- `/2026-germany/day-02.html`
 
-成本與效益判斷：
+規則：
 
-- Hybrid URL 是目前最低成本方案：不拆內容模型、不破壞 Journey 導覽，也提升 URL 可讀性與搜尋語意。
-- 純 Place URL 成本較高：需要重編開頭、canonical、內部連結與去重策略，等 Pilot UAT 確認後再採用。
+- Day 保留於 Blog entry id、Timeline filename、Journey 導覽順序、圖片 day folder 與頁面顯示標籤。
+- 同一 Place 在不同 Journey 可有不同文章；Journey path 提供年份與旅程語境。
+- 不為 SEO 複製內容相近的純 Place 文章，避免 duplicate content 與維護分裂。
+- 目前站點尚未正式公開，本輪 URL migration 採 clean rename，不建立 redirect 或相容頁。
+- 精選故事資料由各 Journey Hub 擁有；`core/js/app.js` 只負責隨機抽選、DOM render 與共用互動。
 
 ## 4. 編輯與探索架構
 
@@ -168,15 +168,17 @@ Journey（一次完整旅程）
 
 ### Milestone 3：哈修塔特 Place 化 Pilot
 
+**狀態：已完成。** Day 02 已完成內容、Voice、隱私與實用資訊 UAT，並作為後續 Germany 文章精修基準。
+
 **目的**：驗證新模型，不新增重複內容。
 
 範圍：
 
-- 以現有 `day-02-blog.html` 為唯一哈修塔特文章基礎。
+- 以既有 Day 02 正文為唯一哈修塔特文章基礎。
 - 對照 2014 Blogger、2026 Instagram、照片與現有文章。
 - 先做 Keep／Rewrite／Remove audit，再進行口述訪談。
 - 重編偏 AI 味段落，精選 IG 現場原聲，保留有效圖資與實戰筆記。
-- 初期保留現有 URL；是否遷移到 Place URL 留待 Pilot UAT 後決定。
+- Blog 將依全站 URL migration 改為 Journey-scoped `hallstatt-winter.html`。
 - 不改動 Day 02 時間表的完整行程功能。
 
 驗收：
@@ -191,6 +193,8 @@ Journey（一次完整旅程）
 
 ### Milestone 4：第一波內容轉型
 
+**狀態：已完成。** 2026 Germany 共 16 篇文章已完成分級精修、內容 UAT 與公開衍生圖驗證。
+
 **目的**：先打磨 2026 Germany，驗證 Hallstatt 方法可延伸，但不複製成制式模板。
 
 #### A. 完整平行改寫
@@ -203,7 +207,7 @@ Journey（一次完整旅程）
 4. **Day 01 薩爾斯堡**：收斂為「莫札特的家，我為什麼來了三次」，避免取車與交通資訊淹沒城市主線。
 5. **Day 08 海德堡**：先以口述確認真正留下的記憶，再決定是否從景點總覽改為「原本為古堡而來，最後記住了什麼」。
 
-以上均先做純文字與 `noindex` 平行預覽，不直接取代現有 Day URL。
+以上內容已完成平行預覽、review 與正式 source 收斂；預覽檔保留為 editorial workflow artifacts。
 
 #### B. 結構整理與去 AI 味
 
@@ -260,8 +264,8 @@ Germany 完成後，再評估香港重返、澳洲、台灣分段環島、義大
 
 ## 9. 下一個可執行步驟
 
-1. 以 `trips/2026-germany/prompts/day-13-neuschwanstein-gemini.md` 交由 Gemini audit Day 13。
-2. 回答 Gemini 僅針對證據缺口提出的短訪談問題，優先使用口說稿。
-3. Gemini 交付純文字稿後，由 Codex 做 factual、voice、privacy 與重複內容 review。
-4. 草稿通過後才建立 Day 13 `noindex` 平行預覽，不覆寫正式 Day 13。
-5. 完成 Day 13 UAT，再依 Milestone 4 順序處理 Day 15、12、01、08。
+1. 依 `url_migration.md` 執行 Journey Namespace and URL Migration。
+2. 將 2026 Journey 從 `docs/germany/` 搬至 `docs/2026-germany/`，並建立最小 Germany Country Hub。
+3. 將 16 篇 Blog clean rename 為 Journey-scoped Place／Theme URL。
+4. 收斂 builder、editor server、validator 與 Journey stories ownership。
+5. 完成圖片 cache、全站 validator 與本機瀏覽器 UAT 後，再獨立取得 commit／push 授權。

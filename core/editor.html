@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CH Travel OS 2.0 · 跨旅程視覺化圖文編輯器</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700;900&family=Noto+Sans+TC:wght@400;500;700&family=Outfit:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -623,7 +624,7 @@
       });
 
       // 調整圖片與燈箱路徑以符合 core/ 編輯器的相對位置，確保工作區正常載圖
-      const destSlug = currentTrip ? currentTrip.dest : 'germany';
+      const destSlug = currentTrip ? currentTrip.dest : '2026-germany';
       workspace.querySelectorAll('img').forEach(img => {
         const origSrc = img.getAttribute('src');
         if (origSrc && !origSrc.startsWith('http') && !origSrc.startsWith('data:')) {
@@ -759,7 +760,7 @@
     // 4.3 建立新照片元素
     function createPhotoElement(imgData) {
       const imgFolder = currentPage ? (currentPage.image_folder || currentPage.id) : 'day-01';
-      const destSlug = currentTrip ? currentTrip.dest : 'germany';
+      const destSlug = currentTrip ? currentTrip.dest : '2026-germany';
 
       const derivatives = imgData.derivatives || [];
       const contentDeriv = derivatives.find(d => d.profile === 'content') || derivatives[0] || { filename: `${imgData.id}-content-960w.webp`, width: 960, height: 540 };
@@ -819,7 +820,7 @@
     // 5.1 讀取並渲染 Modal 圖片清單
     async function fetchAndRenderModalImages() {
       const defaultFolder = currentPage ? (currentPage.image_folder || currentPage.id) : 'day-01';
-      const destSlug = currentTrip ? currentTrip.dest : 'germany';
+      const destSlug = currentTrip ? currentTrip.dest : '2026-germany';
       let selectedFolder = imgModalFolderSelect.value;
       if (selectedFolder === 'current') selectedFolder = defaultFolder;
 
@@ -895,7 +896,7 @@
     function applyImageSwap(imgData, targetImg) {
       if (!targetImg) return;
       const imgFolder = currentPage ? (currentPage.image_folder || currentPage.id) : 'day-01';
-      const destSlug = currentTrip ? currentTrip.dest : 'germany';
+      const destSlug = currentTrip ? currentTrip.dest : '2026-germany';
 
       const derivatives = imgData.derivatives || [];
       const contentDeriv = derivatives.find(d => d.profile === 'content') || derivatives[0] || { filename: `${imgData.id}-content-960w.webp`, width: 960, height: 540 };

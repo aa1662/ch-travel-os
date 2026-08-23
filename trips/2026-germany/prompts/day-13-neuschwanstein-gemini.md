@@ -7,7 +7,7 @@
 1. 專案唯一文風與編輯規範：
    `C:\Data\charlotte-ai-os-dev\ch-travel-os\EDITORIAL_STYLE_GUIDE.md`
 2. 現有 Day 13 來源稿：
-   `C:\Data\charlotte-ai-os-dev\ch-travel-os\trips\2026-germany\sources\blog\day-13-blog.html`
+   `C:\Data\charlotte-ai-os-dev\ch-travel-os\trips\2026-germany\sources\blog\neuschwanstein-winter.html`
 3. Blogger legacy archive：
    `C:\Users\aa166\Downloads\Takeout\Blogger\Blogs\CH@PhotoDiary\feed.atom`
    請在 feed 中找到標題為「德國遊記-新天鵝堡」的 entry，完整閱讀正文。這篇 2001 舊文是作者原生聲音的重要證據，不可只看現有 Day 13 模仿。

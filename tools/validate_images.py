@@ -19,6 +19,7 @@ from PIL import Image
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 DOCS_DIR = BASE_DIR / "docs"
+TRIPS_DIR = BASE_DIR / "trips"
 
 MAX_ALLOWED_WIDTH = 1600
 MAX_ALLOWED_BYTES = 2.5 * 1024 * 1024  # 2.5MB
@@ -32,6 +33,38 @@ def validate_docs():
     errors = []
     warnings = []
     total_images = 0
+    blog_contracts = {}
+    timeline_contracts = {}
+    timeline_entries = {}
+
+    for config_path in TRIPS_DIR.glob("*/blog-migration.json"):
+        try:
+            config = json.loads(config_path.read_text(encoding="utf-8"))
+            for entry in config.get("entries", []):
+                output_path = (BASE_DIR / entry["output"]).resolve()
+                if not output_path.is_relative_to(DOCS_DIR.resolve()):
+                    errors.append(f"[Blog 輸出越界] {entry['output']} in {config_path.relative_to(BASE_DIR)}")
+                    continue
+                rel_output = output_path.relative_to(DOCS_DIR.resolve()).as_posix()
+                blog_contracts[rel_output] = entry.get("og_url")
+        except (OSError, json.JSONDecodeError, KeyError) as exc:
+            errors.append(f"[Blog Config 解析失敗] {config_path.relative_to(BASE_DIR)} ({exc})")
+
+    for config_path in TRIPS_DIR.glob("*/timeline-migration.json"):
+        try:
+            config = json.loads(config_path.read_text(encoding="utf-8"))
+            for entry in config.get("entries", []):
+                output_path = (BASE_DIR / entry["output"]).resolve()
+                if not output_path.is_relative_to(DOCS_DIR.resolve()):
+                    errors.append(f"[Timeline 輸出越界] {entry['output']} in {config_path.relative_to(BASE_DIR)}")
+                    continue
+                rel_output = output_path.relative_to(DOCS_DIR.resolve()).as_posix()
+                timeline_contracts[rel_output] = entry.get("og_url")
+                timeline_entries[rel_output] = entry
+        except (OSError, json.JSONDecodeError, KeyError) as exc:
+            errors.append(f"[Timeline Config 解析失敗] {config_path.relative_to(BASE_DIR)} ({exc})")
+
+    page_contracts = {**blog_contracts, **timeline_contracts}
 
     if (DOCS_DIR / "core" / "editor.html").exists():
         errors.append("[公開 Editor 外洩] docs/core/editor.html 不應進入 GitHub Pages 發布目錄")
@@ -105,13 +138,10 @@ def validate_docs():
             if jf.name == "app.js":
                 if "openCurrentPageGallery" not in js_text or "openDay03Gallery" not in js_text:
                     errors.append(f"[Published JS 缺少圖集函式] {jf.relative_to(DOCS_DIR)} 未同步包含 openCurrentPageGallery / openDayXXGallery")
-                
-                # 檢查 JS 中的 ALL_STORIES 圖片是否 100% 存在於硬碟上
-                story_imgs = re.findall(r'img:\s*["\']([^"\']+)["\']', js_text)
-                for simg in story_imgs:
-                    target_img = DOCS_DIR / "germany" / simg
-                    if not target_img.exists():
-                        errors.append(f"[JS 精選遊記圖片 404] 找不到實體圖片: {simg} (解析: {target_img}) in {jf.relative_to(DOCS_DIR)}")
+                if re.search(r'const\s+ALL_STORIES\s*=\s*\[', js_text):
+                    errors.append(f"[Journey 內容耦合] Published app.js 不得硬編碼 ALL_STORIES: {jf.relative_to(DOCS_DIR)}")
+                if "window.__JOURNEY_STORIES__" not in js_text:
+                    errors.append(f"[Journey Stories 契約缺失] app.js 未讀取 window.__JOURNEY_STORIES__: {jf.relative_to(DOCS_DIR)}")
         except Exception as e:
             warnings.append(f"讀取 JS 失敗: {jf.name} ({e})")
 
@@ -140,18 +170,48 @@ def validate_docs():
                 errors.append(f"[直接引用 master] HTML 引用了未公開 masters/ 路徑: {hf.relative_to(DOCS_DIR)}")
 
             rel_html = hf.relative_to(DOCS_DIR).as_posix()
-            if rel_html.startswith("germany/blog/"):
+            if rel_html in blog_contracts:
                 if "window.__PAGE_CONFIG__" in content:
                     errors.append(f"[Editor Metadata 外洩] 正式 Blog 含 window.__PAGE_CONFIG__: {hf.relative_to(DOCS_DIR)}")
                 if "平行改寫預覽版" in content or "Place Preview" in content:
                     errors.append(f"[Preview 施工字樣外洩] 正式 Blog 含預覽術語: {hf.relative_to(DOCS_DIR)}")
 
+            if rel_html in page_contracts:
                 canonical_match = re.search(r'<link\s+rel=["\']canonical["\']\s+href=["\']([^"\']+)["\']', content, re.IGNORECASE)
-                expected_canonical = f"https://aa1662.github.io/ch-travel-os/{rel_html}"
+                expected_canonical = page_contracts[rel_html]
                 if not canonical_match:
-                    errors.append(f"[缺少 Canonical] 正式 Blog 未設定 canonical: {hf.relative_to(DOCS_DIR)}")
+                    errors.append(f"[缺少 Canonical] 正式頁面未設定 canonical: {hf.relative_to(DOCS_DIR)}")
                 elif canonical_match.group(1) != expected_canonical:
                     errors.append(f"[Canonical 不一致] {canonical_match.group(1)} != {expected_canonical} in {hf.relative_to(DOCS_DIR)}")
+
+                og_url_match = re.search(r'<meta\s+property=["\']og:url["\']\s+content=["\']([^"\']+)["\']', content, re.IGNORECASE)
+                if not og_url_match:
+                    errors.append(f"[缺少 og:url] 正式頁面未設定 og:url: {hf.relative_to(DOCS_DIR)}")
+                elif og_url_match.group(1) != expected_canonical:
+                    errors.append(f"[og:url 不一致] {og_url_match.group(1)} != {expected_canonical} in {hf.relative_to(DOCS_DIR)}")
+
+            if rel_html in timeline_entries:
+                hero_match = re.search(
+                    r'<header\s+class=["\']schedule-hero-card["\'][^>]*>([\s\S]*?)</header>',
+                    content,
+                    re.IGNORECASE,
+                )
+                if not hero_match:
+                    errors.append(f"[Timeline Hero 缺失] {hf.relative_to(DOCS_DIR)}")
+                else:
+                    hero_blog_links = re.findall(
+                        r'<a\b(?=[^>]*href=["\'](blog/[^"\']+)["\'])[^>]*>',
+                        hero_match.group(1),
+                        re.IGNORECASE,
+                    )
+                    expected_count = 2 if timeline_entries[rel_html].get("id") == "day-10" else 1
+                    if len(hero_blog_links) != expected_count:
+                        errors.append(
+                            f"[Timeline Hero CTA 數量錯誤] 預期 {expected_count}、實際 {len(hero_blog_links)} "
+                            f"in {hf.relative_to(DOCS_DIR)}"
+                        )
+                    if len(hero_blog_links) != len(set(hero_blog_links)):
+                        errors.append(f"[Timeline Hero CTA 重複] {hf.relative_to(DOCS_DIR)}")
 
             # 4.2 檢查 legacy OG URL
             if "2026-Germany" in content:
@@ -160,6 +220,26 @@ def validate_docs():
 
             # 4.3 檢查 <img> 標籤的 CLS 尺寸 (width/height) 與重複屬性（排除 script 區塊）
             clean_html = re.sub(r'<script[\s\S]*?</script>', '', content, flags=re.IGNORECASE)
+
+            # Journey Hub owns featured-story data; core/app.js owns behavior only.
+            stories_match = re.search(
+                r'window\.__JOURNEY_STORIES__\s*=\s*\[([\s\S]*?)\];',
+                content,
+                re.IGNORECASE,
+            )
+            if stories_match:
+                stories_block = stories_match.group(1)
+                story_imgs = re.findall(r'\bimg:\s*["\']([^"\']+)["\']', stories_block)
+                story_urls = re.findall(r'\burl:\s*["\']([^"\']+)["\']', stories_block)
+                if not story_imgs or len(story_imgs) != len(story_urls):
+                    errors.append(f"[Journey Stories 資料不完整] img/url 數量不一致 in {hf.relative_to(DOCS_DIR)}")
+                if len(story_urls) != len(set(story_urls)):
+                    errors.append(f"[Journey Stories 重複 URL] {hf.relative_to(DOCS_DIR)}")
+                for story_ref, label in [(p, "圖片") for p in story_imgs] + [(p, "連結") for p in story_urls]:
+                    story_path = (html_dir / story_ref).resolve()
+                    if not story_path.exists():
+                        errors.append(f"[Journey Stories {label} 404] {story_ref} in {hf.relative_to(DOCS_DIR)}")
+
             img_tags = re.findall(r'<img\s+([^>]+)>', clean_html, re.IGNORECASE)
             for itag in img_tags:
                 # 檢查 width 與 height

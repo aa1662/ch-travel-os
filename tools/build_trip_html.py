@@ -165,23 +165,28 @@ def sync_public_core_assets():
         shutil.copy2(src, dest)
 
 
-def build_trip(trip_slug="2026-germany", dest_slug="germany"):
+def build_trip(trip_slug="2026-germany", dest_slug=None):
     config_path = TRIPS_DIR / trip_slug / "blog-migration.json"
-    manifest_path = DOCS_DIR / dest_slug / "image-manifest.json"
-
     errors = []
 
     if not config_path.exists():
         print(f"❌ 找不到設定檔: {config_path}")
         sys.exit(1)
 
-    if not manifest_path.exists():
-        print(f"❌ 找不到 Manifest: {manifest_path}")
-        sys.exit(1)
-
     with open(config_path, "r", encoding="utf-8") as f:
         config_data = json.load(f)
         entries = config_data.get("entries", config_data) if isinstance(config_data, dict) else config_data
+
+    config_dest = config_data.get("dest") if isinstance(config_data, dict) else None
+    if dest_slug and config_dest and dest_slug != config_dest:
+        print(f"❌ dest 不一致: 參數={dest_slug}, config={config_dest}")
+        sys.exit(1)
+    dest_slug = dest_slug or config_dest or trip_slug
+    manifest_path = DOCS_DIR / dest_slug / "image-manifest.json"
+
+    if not manifest_path.exists():
+        print(f"❌ 找不到 Manifest: {manifest_path}")
+        sys.exit(1)
 
     with open(manifest_path, "r", encoding="utf-8") as f:
         manifest = json.load(f)
@@ -313,4 +318,4 @@ def build_trip(trip_slug="2026-germany", dest_slug="germany"):
 build_trips = build_trip
 
 if __name__ == "__main__":
-    build_trip("2026-germany", "germany")
+    build_trip("2026-germany")

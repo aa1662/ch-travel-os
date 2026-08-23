@@ -27,6 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DOCS_DIR = BASE_DIR / "docs"
 TRIPS_DIR = BASE_DIR / "trips"
 TOOLS_DIR = BASE_DIR / "tools"
+CORE_DIR = BASE_DIR / "core"
 PORT = 8080
 WRITABLE_TRIP_SUBDIRS = (
     ("sources", "blog"),
@@ -55,6 +56,25 @@ def is_relative_to(path, parent):
         return False
 
 
+def get_trip_dest(trip_slug):
+    """Resolve the public Journey namespace from its migration config."""
+    trip_dir = TRIPS_DIR / trip_slug
+    for config_name in ("blog-migration.json", "timeline-migration.json"):
+        config_path = trip_dir / config_name
+        if not config_path.exists():
+            continue
+        try:
+            data = json.loads(config_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            raise ValueError(f"無法讀取旅程設定 {config_path}: {exc}") from exc
+        dest = data.get("dest")
+        if dest:
+            if Path(dest).name != dest or dest in {".", ".."}:
+                raise ValueError(f"非法 Journey dest: {dest}")
+            return dest
+    return trip_slug
+
+
 class TravelOSMultiTripHandler(SimpleHTTPRequestHandler):
     extensions_map = {
         **SimpleHTTPRequestHandler.extensions_map,
@@ -71,6 +91,11 @@ class TravelOSMultiTripHandler(SimpleHTTPRequestHandler):
             parsed = urllib.parse.urlparse(self.path)
             path = parsed.path
             query = urllib.parse.parse_qs(parsed.query)
+
+            # 本機專用 Editor：來源保留在 core/，不得複製至公開 docs/。
+            if path == "/core/editor.html":
+                self.send_file(CORE_DIR / "editor.html")
+                return
 
             # 0. 靜態文件與 /docs/ 容錯路由
             if path.startswith("/docs/"):
@@ -131,7 +156,7 @@ class TravelOSMultiTripHandler(SimpleHTTPRequestHandler):
                         trip_entry = {
                             "id": trip_slug,
                             "name": trip_slug.replace("-", " ").title(),
-                            "dest": trip_slug.split("-")[-1] if "-" in trip_slug else trip_slug,
+                            "dest": get_trip_dest(trip_slug),
                             "blogs": [],
                             "timelines": [],
                             "previews": []
@@ -241,7 +266,7 @@ class TravelOSMultiTripHandler(SimpleHTTPRequestHandler):
             if path == "/api/list-images":
                 trip_slug = query.get("trip", ["2026-germany"])[0]
                 folder = query.get("folder", ["day-01"])[0]
-                dest = query.get("dest", ["germany"])[0]
+                dest = get_trip_dest(trip_slug)
 
                 manifest_path = DOCS_DIR / dest / "image-manifest.json"
                 if not manifest_path.exists():
@@ -334,16 +359,16 @@ class TravelOSMultiTripHandler(SimpleHTTPRequestHandler):
 
                 # 自動觸發編譯以更新 docs/
                 build_msg = ""
-                dest_slug = trip_slug.split("-")[-1] if "-" in trip_slug else trip_slug
+                dest_slug = get_trip_dest(trip_slug)
                 if "sources/blog" in rel_file:
                     try:
-                        build_trip(trip_slug, dest_slug)
+                        build_trip(trip_slug)
                         build_msg = "已同步重新編譯發布版 Blog HTML！"
                     except Exception as be:
                         build_msg = f"檔案已儲存，但 Blog 編譯時發生錯誤: {be}"
                 elif "sources/timeline" in rel_file:
                     try:
-                        build_timelines(trip_slug, dest_slug)
+                        build_timelines(trip_slug)
                         build_msg = "已同步重新編譯發布版 Timeline HTML！"
                     except Exception as be:
                         build_msg = f"檔案已儲存，但 Timeline 編譯時發生錯誤: {be}"
@@ -392,11 +417,11 @@ class TravelOSMultiTripHandler(SimpleHTTPRequestHandler):
 
                 shutil.copy2(backup_file, target_path)
 
-                dest_slug = trip_slug.split("-")[-1] if "-" in trip_slug else trip_slug
+                dest_slug = get_trip_dest(trip_slug)
                 if "sources/blog" in rel_file:
-                    build_trip(trip_slug, dest_slug)
+                    build_trip(trip_slug)
                 elif "sources/timeline" in rel_file:
-                    build_timelines(trip_slug, dest_slug)
+                    build_timelines(trip_slug)
 
                 restored_html = target_path.read_text(encoding="utf-8")
                 self.send_json({
