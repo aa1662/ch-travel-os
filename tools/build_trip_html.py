@@ -20,6 +20,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DOCS_DIR = BASE_DIR / "docs"
 TRIPS_DIR = BASE_DIR / "trips"
 CORE_DIR = BASE_DIR / "core"
+PUBLIC_CORE_FILES = (
+    ("css", "style.css"),
+    ("js", "app.js"),
+    ("js", "main.js"),
+    ("vendor", "glightbox", "glightbox.min.css"),
+    ("vendor", "glightbox", "glightbox.min.js"),
+)
 
 
 def parse_html_attributes(tag_str):
@@ -132,6 +139,32 @@ def transform_html_images(html_content, images_dict, img_folder, rel_img_prefix,
     return html_content
 
 
+def upsert_head_tag(html_content, pattern, replacement):
+    if re.search(pattern, html_content, flags=re.IGNORECASE):
+        return re.sub(pattern, replacement, html_content, count=1, flags=re.IGNORECASE)
+    return re.sub(r"(<head[^>]*>)", rf"\1\n  {replacement}", html_content, count=1, flags=re.IGNORECASE)
+
+
+def strip_editor_metadata(html_content):
+    return re.sub(
+        r"\s*<script>\s*window\.__PAGE_CONFIG__\s*=\s*\{[\s\S]*?\};\s*</script>",
+        "",
+        html_content,
+        flags=re.IGNORECASE,
+    )
+
+
+def sync_public_core_assets():
+    docs_core = DOCS_DIR / "core"
+    for parts in PUBLIC_CORE_FILES:
+        src = CORE_DIR.joinpath(*parts)
+        if not src.exists():
+            raise FileNotFoundError(f"找不到 core 公開資產: {src}")
+        dest = docs_core.joinpath(*parts)
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(src, dest)
+
+
 def build_trip(trip_slug="2026-germany", dest_slug="germany"):
     config_path = TRIPS_DIR / trip_slug / "blog-migration.json"
     manifest_path = DOCS_DIR / dest_slug / "image-manifest.json"
@@ -170,6 +203,8 @@ def build_trip(trip_slug="2026-germany", dest_slug="germany"):
             continue
 
         html_content = src_file.read_text(encoding="utf-8")
+        html_content = strip_editor_metadata(html_content)
+        html_content = html_content.replace("平行改寫預覽版 (Place Preview)", "")
 
         # 1. 調整核心資源路徑至 ../../core/
         html_content = re.sub(r'href="(?:\.\./)*css/style\.css(?:\?[^"]*)?"', 'href="../../core/css/style.css"', html_content)
@@ -188,16 +223,26 @@ def build_trip(trip_slug="2026-germany", dest_slug="germany"):
 
         # 3. 修正 OG 與 Canonical URL
         if item.get("og_url"):
-            html_content = re.sub(
-                r'<meta\s+property=["\']og:url["\']\s+content=["\'][^"\']*["\']',
-                f'<meta property="og:url" content="{item["og_url"]}"',
-                html_content
+            html_content = upsert_head_tag(
+                html_content,
+                r'<link\s+rel=["\']icon["\'][^>]*>',
+                '<link rel="icon" href="../../favicon.svg" type="image/svg+xml">',
+            )
+            html_content = upsert_head_tag(
+                html_content,
+                r'<meta\s+property=["\']og:url["\']\s+content=["\'][^"\']*["\'][^>]*>',
+                f'<meta property="og:url" content="{item["og_url"]}">',
+            )
+            html_content = upsert_head_tag(
+                html_content,
+                r'<link\s+rel=["\']canonical["\']\s+href=["\'][^"\']*["\'][^>]*>',
+                f'<link rel="canonical" href="{item["og_url"]}">',
             )
         if item.get("og_image"):
-            html_content = re.sub(
-                r'<meta\s+property=["\']og:image["\']\s+content=["\'][^"\']*["\']',
-                f'<meta property="og:image" content="{item["og_image"]}"',
-                html_content
+            html_content = upsert_head_tag(
+                html_content,
+                r'<meta\s+property=["\']og:image["\']\s+content=["\'][^"\']*["\'][^>]*>',
+                f'<meta property="og:image" content="{item["og_image"]}">',
             )
 
         # 4. 建立嚴格無 404 的篇章導航區塊 (Footer Navigation)
@@ -254,9 +299,7 @@ def build_trip(trip_slug="2026-germany", dest_slug="germany"):
 
     # 全域無錯誤，開始原子同步核心資產與寫入 HTML
     if CORE_DIR.exists():
-        docs_core = DOCS_DIR / "core"
-        docs_core.mkdir(parents=True, exist_ok=True)
-        shutil.copytree(CORE_DIR, docs_core, dirs_exist_ok=True)
+        sync_public_core_assets()
 
     for out_file, (item_id, content) in compiled_outputs.items():
         out_file.parent.mkdir(parents=True, exist_ok=True)
@@ -266,6 +309,8 @@ def build_trip(trip_slug="2026-germany", dest_slug="germany"):
 
     print(f"\n✨ 構建完成！共編譯 {built_count} 份標準 WebP 圖文遊記（零錯誤，原子寫入）。\n")
 
+
+build_trips = build_trip
 
 if __name__ == "__main__":
     build_trip("2026-germany", "germany")

@@ -222,6 +222,12 @@ button {
   z-index: 1000;
   padding: 0 0.5rem;
   box-shadow: 0 -4px 16px rgba(36, 52, 71, 0.15);
+  transform: translateY(100%);
+  transition: transform var(--transition-normal);
+}
+
+body.dock-visible .mobile-dock {
+  transform: translateY(0);
 }
 
 .dock-item {
@@ -1088,8 +1094,8 @@ button {
   background: var(--bg-card);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
-  padding: 1.5rem;
-  margin: 2rem 0;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
   box-shadow: var(--shadow-sm);
 }
 
@@ -1097,7 +1103,7 @@ button {
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
 }
 
 .ig-post-avatar {
@@ -1132,28 +1138,37 @@ button {
   font-size: 0.95rem;
   line-height: 1.6;
   color: var(--text-main);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .blog-narrative-card {
   background: #ffffff;
   border-radius: var(--radius-lg);
   border: 1px solid var(--line);
-  padding: 2rem 2.25rem;
-  margin: 2rem 0;
-  line-height: 1.95;
-  font-size: 1.05rem;
+  padding: 1.5rem 1.75rem;
+  margin: 1.5rem 0;
+  line-height: 1.8;
+  font-size: 1.02rem;
   color: var(--ink);
   box-shadow: var(--shadow-xs);
   border-left: 4px solid var(--blue-gray);
+}
+
+.blog-narrative-card p {
+  margin-bottom: 0.85rem;
+  line-height: 1.8;
+}
+
+.blog-narrative-card p:last-child {
+  margin-bottom: 0;
 }
 
 /* ---------- 14.1 看圖說故事：左右圖文交錯排版 (Story-Split Magazine Layout) ---------- */
 .story-split {
   display: flex;
   align-items: center;
-  gap: 2rem;
-  margin: 2rem 0 2.5rem;
+  gap: 1.75rem;
+  margin: 1.5rem 0 2rem;
 }
 
 .story-split.reverse {
@@ -1166,10 +1181,10 @@ button {
 }
 
 .story-split-text p {
-  font-size: 1.05rem;
-  line-height: 1.85;
+  font-size: 1.02rem;
+  line-height: 1.78;
   color: var(--ink);
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
 }
 
 .story-split-text p:last-child {

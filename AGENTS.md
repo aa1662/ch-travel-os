@@ -26,9 +26,11 @@
 
 ---
 
-## 3. 批次遷移標準守則 (MIGRATION_PLAN.md)
+## 3. 內容發展與編輯規範 (SSoT)
 
-在執行 2026 Germany 其餘天數或 2024 Australia 批次遷移時，必須嚴格遵守專案根目錄下的 [MIGRATION_PLAN.md](file:///c:/Data/charlotte-ai-os-dev/ch-travel-os/MIGRATION_PLAN.md)：
-- 嚴格遵守「小步閉環 (Milestones)」與「Config 驅動構建 (`blog-migration.json`)」。
+在擴充新旅程（如 2024 Australia、2019 Italy、香港重返等）時，必須嚴格遵守專案根目錄下的：
+- [TRAVEL_PORTAL_ROADMAP.md](file:///c:/Data/charlotte-ai-os-dev/ch-travel-os/TRAVEL_PORTAL_ROADMAP.md)：定義品牌定位、4 大內容型態（旅程專刊、重返現場、在路上、城市切片）、里程碑與 Place 內容模型。
+- [EDITORIAL_STYLE_GUIDE.md](file:///c:/Data/charlotte-ai-os-dev/ch-travel-os/EDITORIAL_STYLE_GUIDE.md)：定義 CH Voice Profile 寫作語氣、來源優先序、人工記憶訪談與內容 UAT 契約。
+- 嚴格遵守「小步閉環 (Milestones)」與「Config 驅動構建 (`blog-migration.json` / `timeline-migration.json`)」。
 - 尚未生成的頁面禁止在前端暴露 404 連結。
 - 每次變更必須 100% 通過 `python tools/validate_images.py` 全站死鏈與資產稽核。

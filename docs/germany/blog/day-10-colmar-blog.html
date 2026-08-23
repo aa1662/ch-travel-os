@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="zh-TW"><head>
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Day 10 圖文遊記: 跨國自駕進駐法國亞爾薩斯童話小鎮科爾馬，探訪《霍爾的移動城堡》原型普菲斯特之屋、小威尼斯運河、市集強迫症蔬果美學與夜晚點燈漫步。">
+  <link rel="canonical" href="https://aa1662.github.io/ch-travel-os/germany/blog/day-10-colmar-blog.html">
+  <meta name="description" content="聽說歐洲聖誕市集分四級，而法國科爾馬是全鎮封頂的天花板級。可惜我們二月來晚了，走在商人街與小威尼斯運河邊，看著彩色木筋屋想像十二月的張燈結綵——但狂歡過後的清靜，倒也是別有一番風味！">
   <!-- Open Graph / Social Sharing Meta Tags -->
   <meta property="og:site_name" content="2026 德南冬旅誌 · Travel OS">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Day 10 (下) · 科爾馬小威尼斯 ✕ 移動城堡與亞爾薩斯童話 | 2026 德南冬旅誌">
-  <meta property="og:description" content="Day 10 圖文遊記: 跨國自駕進駐法國亞爾薩斯童話小鎮科爾馬，探訪《霍爾的移動城堡》原型普菲斯特之屋、小威尼斯運河、市集強迫症蔬果美學與夜晚點燈漫步。">
+  <meta property="og:title" content="Day 10 · 傳說中天花板級的聖誕小鎮，可惜我們二月才來｜法國科爾馬 ✕ 霍爾的移動城堡原型">
+  <meta property="og:description" content="走進宮崎駿《霍爾的移動城堡》取景地科爾馬。商人街普菲斯特之屋、小威尼斯運河倒影、強迫症室內市集與狂歡過後的冬日寧靜。">
   <meta property="og:url" content="https://aa1662.github.io/ch-travel-os/germany/blog/day-10-colmar-blog.html">
   <meta property="og:image" content="https://aa1662.github.io/ch-travel-os/germany/images/day-10/18082561442231943-desktop-1200w.webp">
   <meta name="twitter:card" content="summary_large_image">
-  <title>Day 10 (下) · 科爾馬小威尼斯 ✕ 移動城堡與亞爾薩斯童話 | 2026 德南冬旅誌</title>
+  <title>Day 10 · 傳說中天花板級的聖誕小鎮，可惜我們二月才來｜法國科爾馬 ✕ 霍爾的移動城堡原型</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700;900&amp;family=Noto+Sans+TC:wght@400;500;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;600;700;900&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../core/css/style.css">
   <link rel="stylesheet" href="../../core/vendor/glightbox/glightbox.min.css">
   <style>
@@ -25,33 +27,27 @@
       gap: 2rem;
       margin: 2rem 0 2.5rem;
     }
-
     .story-split.reverse {
       flex-direction: row-reverse;
     }
-
     .story-split-text {
       flex: 1 1 58%;
       min-width: 0;
     }
-
     .story-split-text p {
       font-size: 1.05rem;
       line-height: 1.85;
       color: var(--ink);
       margin-bottom: 1rem;
     }
-
     .story-split-text p:last-child {
       margin-bottom: 0;
     }
-
     .story-split-media {
       flex: 1 1 42%;
       max-width: 400px;
       min-width: 260px;
     }
-
     .story-split-media img {
       width: 100%;
       aspect-ratio: 4 / 5;
@@ -61,16 +57,13 @@
       display: block;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .story-split-media img:hover {
       transform: translateY(-3px);
       box-shadow: var(--shadow-md);
     }
-
     .fullwidth-landscape-wrap {
       margin: 2rem 0;
     }
-
     .fullwidth-landscape-wrap img {
       width: 100%;
       aspect-ratio: 16 / 9;
@@ -80,34 +73,64 @@
       display: block;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .fullwidth-landscape-wrap img:hover {
       transform: translateY(-2px);
       box-shadow: var(--shadow-md);
     }
-
+    .market-tier-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .market-tier-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+    .market-tier-card.highlight {
+      border: 2px solid var(--accent);
+      background: #fefce8;
+    }
+    .market-tier-title {
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .fun-quote-box {
+      background: linear-gradient(135deg, #fefce8 0%, #fffbeb 100%);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      color: var(--primary);
+      font-size: 0.98rem;
+      line-height: 1.8;
+      box-shadow: var(--shadow-sm);
+    }
     @media (max-width: 768px) {
-
-      .story-split,
-      .story-split.reverse {
+      .story-split, .story-split.reverse {
         flex-direction: column !important;
         gap: 1.25rem;
         margin: 1.5rem 0 2rem;
       }
-
       .story-split-media {
         max-width: 100%;
         width: 100%;
         min-width: unset;
       }
-
       .story-split-media img {
         max-height: 440px;
       }
     }
   </style>
 </head>
-
 <body>
   <!-- 頂部閱讀進度條 -->
   <div class="reading-progress"></div>
@@ -117,7 +140,7 @@
     <div class="container">
       <a href="../index.html" class="brand-link">
         <span>🇩🇪 2026 德南冬旅誌</span>
-        <span class="brand-badge">Travel OS</span>
+        <span class="brand-badge">Day 10</span>
       </a>
       <ul class="nav-links">
         <li><a href="../index.html">首頁</a></li>
@@ -133,9 +156,9 @@
     <article class="blog-article">
       <!-- 麵包屑導覽 -->
       <div style="margin: 1.5rem 0 0.5rem; font-size: 0.9rem; color: var(--text-muted);">
-        <a href="../index.html">首頁</a> <span style="margin: 0 0.4rem;">›</span>
-        <a href="../index.html#itinerary">基地四：科爾馬</a> <span style="margin: 0 0.4rem;">›</span>
-        <span style="color: var(--primary); font-weight: 600;">Day 10 (下) 科爾馬小威尼斯</span>
+        <a href="../index.html">首頁</a> <span style="margin: 0 0.4rem;">›</span> 
+        <a href="../day-10.html">Day 10 每日行程</a> <span style="margin: 0 0.4rem;">›</span> 
+        <span style="color: var(--primary); font-weight: 600;">深度圖文遊記</span>
       </div>
 
       <!-- ========================================== -->
@@ -143,7 +166,7 @@
       <!-- ========================================== -->
       <section class="split-hero">
         <div class="split-hero-img-wrap">
-          <a href="../images/day-10/18082561442231943-lightbox-1440w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="Maison Pfister &amp; Rue des Marchands, Colmar · 2026/02/04">
+          <a href="../images/day-10/18082561442231943-lightbox-1440w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="普菲斯特之屋與商人街街景 · 2026/02/04 法國科爾馬">
             <img src="../images/day-10/18082561442231943-content-960w.webp"
                  srcset="../images/day-10/18082561442231943-thumb-480w.webp 480w,
                   ../images/day-10/18082561442231943-content-960w.webp 960w,
@@ -164,19 +187,14 @@
             <span class="badge badge-forest">🏨 宿：法國科爾馬 (連住 2 晚)</span>
           </div>
           <h1 style="font-family: var(--font-heading); font-size: 2.1rem; line-height: 1.3; color: var(--primary); margin: 0.75rem 0 0.5rem;">
-            Day 10 (下)：走進宮崎駿的童話畫框 ✕ 霍爾的移動城堡原型、小威尼斯運河與市集美學
+            傳說中天花板級的聖誕小鎮，可惜我們二月才來：走進霍爾的移動城堡原型、小威尼斯運河與市集美學
           </h1>
           <div class="diptych-quote" style="margin: 1rem 0;">
-            ✨ 「雪落在彩色屋頂上，運河水面映著燈光，真的會讓人覺得——下一秒霍爾可能就走出來。」
+            ✨ 「看著木筋屋想像十二月聖誕節期間的張燈結綵……不過狂歡過後的清靜，也是別有一番風味，嗯（握拳遠目 XD）就是這樣！」
           </div>
           <div style="font-size: 0.88rem; color: var(--text-muted); display: flex; gap: 1rem; margin-top: 1rem;">
             <span>📍 法國 科爾馬 (Colmar)</span>
             <span>🥐 亞爾薩斯傳統料理、火焰薄餅</span>
-          </div>
-          <div style="margin-top: 1.25rem;">
-            <a href="../day-10.html" class="badge badge-gold" style="font-size: 0.95rem; padding: 0.5rem 1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem;">
-              ⏱️ 查看今日詳細時間表與跨境動線 →
-            </a>
           </div>
         </div>
       </section>
@@ -191,7 +209,7 @@
         <span class="badge badge-gold">現場真實記錄・共 3 則貼文</span>
       </div>
 
-      <!-- IG 貼文 #1: 《霍爾的移動城堡》原型小筆記 (只留前兩張照片) -->
+      <!-- IG 貼文 #1: 《霍爾的移動城堡》原型小筆記 -->
       <div class="ig-post-card" style="margin-bottom: 2.5rem;">
         <div class="ig-post-header">
           <div class="ig-post-avatar">🏰</div>
@@ -212,10 +230,10 @@
           <span style="color: var(--accent); font-size: 0.88rem;">#Colmar #霍爾的移動城堡 #科爾馬 #普菲斯特之屋</span>
         </p>
 
-        <!-- 只留前兩張照片 (雙拼網格) -->
+        <!-- 雙拼網格照片 -->
         <div class="portrait-duo">
           <div class="portrait-item">
-            <a href="../images/day-10/17961745458012910-lightbox-1440w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="Maison Pfister (Howl's Moving Castle) · 2026/02/04 (1/2)">
+            <a href="../images/day-10/17961745458012910-lightbox-1440w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="普菲斯特之屋立面 · 2026/02/04 法國科爾馬">
               <img src="../images/day-10/17961745458012910-content-960w.webp"
                  srcset="../images/day-10/17961745458012910-thumb-480w.webp 480w,
                   ../images/day-10/17961745458012910-content-960w.webp 960w,
@@ -226,11 +244,11 @@
                  height="1440"
                  loading="lazy"
                  decoding="async"
-                 alt="普菲斯特之屋與霍爾的移動城堡">
+                 alt="普菲斯特之屋木雕彩繪立面">
             </a>
           </div>
           <div class="portrait-item">
-            <a href="../images/day-10/17883814845451652-lightbox-1440w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="Howl's Moving Castle Anime Scene · 2026/02/04 (2/2)">
+            <a href="../images/day-10/17883814845451652-lightbox-1440w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="霍爾的移動城堡動畫對照場景 · 法國科爾馬靈感">
               <img src="../images/day-10/17883814845451652-content-960w.webp"
                  srcset="../images/day-10/17883814845451652-thumb-480w.webp 480w,
                   ../images/day-10/17883814845451652-content-960w.webp 960w,
@@ -270,7 +288,7 @@
         <!-- 2 張照片 (雙拼) -->
         <div class="portrait-duo">
           <div class="portrait-item">
-            <a href="../images/day-10/18161385448410620-lightbox-1200w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="Marché Couvert Produce Display · 2026/02/04 (1/2)">
+            <a href="../images/day-10/18161385448410620-lightbox-1200w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="科爾馬室內市集蔬果陳列 · 2026/02/04 法國科爾馬">
               <img src="../images/day-10/18161385448410620-content-720w.webp"
                  srcset="../images/day-10/18161385448410620-thumb-360w.webp 360w,
                   ../images/day-10/18161385448410620-content-720w.webp 720w,
@@ -285,7 +303,7 @@
             </a>
           </div>
           <div class="portrait-item">
-            <a href="../images/day-10/17996966987736920-lightbox-1200w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="Colmar Colorful Shop Window · 2026/02/04 (2/2)">
+            <a href="../images/day-10/17996966987736920-lightbox-1200w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="科爾馬老城個性化櫥窗 · 2026/02/04 法國科爾馬">
               <img src="../images/day-10/17996966987736920-content-720w.webp"
                  srcset="../images/day-10/17996966987736920-thumb-360w.webp 360w,
                   ../images/day-10/17996966987736920-content-720w.webp 720w,
@@ -316,22 +334,23 @@
         </div>
         <div style="font-size: 0.95rem; color: var(--caption); margin-bottom: 1.25rem; line-height: 1.8;">
           <p style="margin-bottom: 0.75rem;">
-            🌡️ <strong>2月初氣溫</strong>：-1°C～5°C ｜ ❄️ <strong>氣候</strong>：阿爾薩斯偏乾冷，偶有降雪 ｜ 🚗
-            <strong>交通</strong>：老城區禁止車輛進入，需停外圍停車場
+            🌡️ <strong>2月初氣溫</strong>：-1°C～5°C ｜ ❄️ <strong>氣候</strong>：阿爾薩斯偏乾冷，偶有降雪 ｜ 🚗 <strong>交通</strong>：老城區禁止車輛進入，需停外圍停車場
           </p>
           <p style="margin-bottom: 0.75rem;">
             🎨 <strong>城市定位</strong>：科爾馬 是亞爾薩斯最具代表性的童話小鎮。彩色木筋屋、運河、小橋與細緻櫥窗，是這座城的關鍵字。
           </p>
           <p style="margin-bottom: 0;">
-            📌 <strong>走讀重點</strong>：科爾馬適合慢走。景點距離都很近，把時間留給街道與光線。</p><div><br>
+            📌 <strong>走讀重點</strong>：科爾馬適合慢走。景點距離都很近，把時間留給街道與光線。
+          </p>
+          <div style="margin-top: 0.75rem;">
             <span style="color: var(--accent); font-size: 0.88rem;">#Colmar #亞爾薩斯 #法國小鎮 #LaPetiteVenise #冬季走讀</span>
-          </div><p></p>
+          </div>
         </div>
 
-        <!-- 現場實拍雙拼照片網格 -->
+        <!-- 現場實拍 4 張照片網格 -->
         <div class="portrait-duo">
           <div class="portrait-item">
-            <a href="../images/day-10/18186544405362669-lightbox-1200w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="La Petite Venise Canal · 2026/02/04 (1/4)">
+            <a href="../images/day-10/18186544405362669-lightbox-1200w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="小威尼斯運河與倒影 · 2026/02/04 法國科爾馬">
               <img src="../images/day-10/18186544405362669-content-720w.webp"
                  srcset="../images/day-10/18186544405362669-thumb-360w.webp 360w,
                   ../images/day-10/18186544405362669-content-720w.webp 720w,
@@ -346,7 +365,7 @@
             </a>
           </div>
           <div class="portrait-item">
-            <a href="../images/day-10/18055529846404396-lightbox-1200w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="Quai de la Poissonnerie Half-timbered Houses · 2026/02/04 (2/4)">
+            <a href="../images/day-10/18055529846404396-lightbox-1200w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="漁人碼頭半木屋 · 2026/02/04 法國科爾馬">
               <img src="../images/day-10/18055529846404396-content-720w.webp"
                  srcset="../images/day-10/18055529846404396-thumb-360w.webp 360w,
                   ../images/day-10/18055529846404396-content-720w.webp 720w,
@@ -361,7 +380,7 @@
             </a>
           </div>
           <div class="portrait-item">
-            <a href="../images/day-10/18072290108616422-lightbox-1200w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="Colmar Old Town Cobblestone Street · 2026/02/04 (3/4)">
+            <a href="../images/day-10/18072290108616422-lightbox-1200w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="科爾馬老城石板路 · 2026/02/04 法國科爾馬">
               <img src="../images/day-10/18072290108616422-content-720w.webp"
                  srcset="../images/day-10/18072290108616422-thumb-360w.webp 360w,
                   ../images/day-10/18072290108616422-content-720w.webp 720w,
@@ -376,7 +395,7 @@
             </a>
           </div>
           <div class="portrait-item">
-            <a href="../images/day-10/18143991850476612-lightbox-1200w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="Cozy Colmar Twilight · 2026/02/04 (4/4)">
+            <a href="../images/day-10/18143991850476612-lightbox-1200w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="暮色下的科爾馬街景 · 2026/02/04 法國科爾馬">
               <img src="../images/day-10/18143991850476612-content-720w.webp"
                  srcset="../images/day-10/18143991850476612-thumb-360w.webp 360w,
                   ../images/day-10/18143991850476612-content-720w.webp 720w,
@@ -405,16 +424,54 @@
         </div>
       </div>
 
+      <div class="story-split-text" style="margin-bottom: 1.5rem;">
+        <p>
+          出發前曾在 IG 上滑過一個熱門短片，影片把歐洲的聖誕市集精闢地分成了四個等級：
+        </p>
+      </div>
+
+      <!-- 聖誕市集等級卡片 -->
+      <div class="market-tier-grid">
+        <div class="market-tier-card">
+          <div class="market-tier-title"><span>🥉</span> 第四級：入門商場風</div>
+          <p style="margin: 0; color: var(--text-muted); font-size: 0.88rem;">各大百貨公司中庭佈置的聖誕樹與主題造景，主要為了吸引逛街購物人潮。</p>
+        </div>
+        <div class="market-tier-card">
+          <div class="market-tier-title"><span>🥈</span> 第三級：節慶主題樂園</div>
+          <p style="margin: 0; color: var(--text-muted); font-size: 0.88rem;">大型臨時冬季嘉年華（如倫敦海德公園 Winter Wonderland），包含摩天輪與溜冰場。</p>
+        </div>
+        <div class="market-tier-card">
+          <div class="market-tier-title"><span>🥇</span> 第二級：廣場傳統市集</div>
+          <p style="margin: 0; color: var(--text-muted); font-size: 0.88rem;">歐洲歷史名城的市政廳或大教堂廣場（如紐倫堡聖母教堂前廣場），滿滿熱紅酒與木屋攤位。</p>
+        </div>
+        <div class="market-tier-card highlight">
+          <div class="market-tier-title"><span>👑</span> 第一級：全鎮封頂童話宇宙</div>
+          <p style="margin: 0; color: var(--primary); font-size: 0.88rem; font-weight: 500;">整座中世紀古城每棟木屋都被巨大泰迪熊、薑餅人與燈海包覆。而<strong>法國亞爾薩斯的科爾馬 (Colmar)</strong>，正是這天花板級的個中翹楚！</p>
+        </div>
+      </div>
+
+      <div class="story-split-text" style="margin-top: 1.5rem; margin-bottom: 2.5rem;">
+        <p>
+          只可惜……我們二月來晚了一步！
+        </p>
+        <p>
+          走在科爾馬商人街和小威尼斯的石板路上，抬頭看著五顏六色的半木結構房屋，窗台邊還殘留著少許聖誕松枝。只能看著眼前古樸的小巷，自行在腦海中補齊十二月張燈結綵、萬人空巷的魔幻畫面。
+        </p>
+        <p>
+          不過轉念一想，狂歡過後的這份清靜……倒也別有一番風味。（握拳、遠目）嗯！出來玩嘛，自我安慰的心理素質還是必須隨時在線的！XD
+        </p>
+      </div>
+
       <!-- 散文第一章：普菲斯特之屋與霍爾的移動城堡 -->
       <section style="margin-bottom: 3rem;">
         <h3 style="font-family: var(--font-heading); font-size: 1.3rem; color: var(--primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
           <span>🏰</span> 一、走進宮崎駿的動畫世界：《霍爾的移動城堡》原型「普菲斯特之屋」
         </h3>
 
-        <!-- 圖文交錯 1: 普菲斯特之屋特寫 (採用無浮水印之原圖) -->
+        <!-- 圖文交錯 1: 普菲斯特之屋特寫 -->
         <div class="story-split">
           <div class="story-split-media">
-            <a href="../images/day-10/18082561442231943-lightbox-1440w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="Maison Pfister, Colmar · 2026/02/04">
+            <a href="../images/day-10/18082561442231943-lightbox-1440w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="普菲斯特之屋八角塔樓與壁畫 · 2026/02/04 法國科爾馬">
               <img src="../images/day-10/18082561442231943-content-960w.webp"
                  srcset="../images/day-10/18082561442231943-thumb-480w.webp 480w,
                   ../images/day-10/18082561442231943-content-960w.webp 960w,
@@ -433,8 +490,7 @@
               跨過萊茵河上的無形國界，從德國進入法國亞爾薩斯，最令人期待的第一站便是科爾馬（Colmar）。
             </p>
             <p>
-              走進商人街（Rue des Marchands）轉角，眼前聳立的正是建於 1537 年的<a href="https://maps.google.com/?q=Maison+Pfister+Colmar" target="_blank" rel="noopener" class="text-map-link">普菲斯特之屋 (Maison
-                Pfister)</a>。這座融合了中世紀木造工藝與文藝復興壁畫的八角形塔樓木屋，正是宮崎駿經典動畫《霍爾的移動城堡》的真實原型！
+              走進商人街（Rue des Marchands）轉角，眼前聳立的正是建於 1537 年的<a href="https://maps.google.com/?q=Maison+Pfister+Colmar" target="_blank" rel="noopener" class="text-map-link">普菲斯特之屋 (Maison Pfister)</a>。這座融合了中世紀木造工藝與文藝復興壁畫的八角形塔樓木屋，正是宮崎駿經典動畫《霍爾的移動城堡》的真實取景原型。
             </p>
             <p>
               仰頭望去，木造凸窗雕花繁複細膩，繪有聖經故事與日耳曼帝王畫像的壁畫在柔和光線下栩栩如生，彷彿下一秒霍爾與蘇菲就會從空中踏風而來。
@@ -445,7 +501,7 @@
         <!-- 圖文交錯 2 (Reverse): 商人街與童話木屋 -->
         <div class="story-split reverse">
           <div class="story-split-media">
-            <a href="../images/day-10/17910116310328588-lightbox-1440w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="Colmar Fairytale Half-timbered Street · 2026/02/04">
+            <a href="../images/day-10/17910116310328588-lightbox-1440w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="科爾馬半木骨架童話街景 · 2026/02/04 法國科爾馬">
               <img src="../images/day-10/17910116310328588-content-960w.webp"
                  srcset="../images/day-10/17910116310328588-thumb-480w.webp 480w,
                   ../images/day-10/17910116310328588-content-960w.webp 960w,
@@ -478,7 +534,7 @@
 
         <!-- 橫式全景大圖 1: 市集紅磚外觀與運河橋畔全景 -->
         <div class="fullwidth-landscape-wrap">
-          <a href="../images/day-10/20260204_154318-lightbox-1600w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="Marché Couvert &amp; Canal Bridge, Colmar · 2026/02/04">
+          <a href="../images/day-10/20260204_154318-lightbox-1600w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="科爾馬室內市集外觀與運河橋畔 · 2026/02/04 法國科爾馬">
             <img src="../images/day-10/20260204_154318-content-960w.webp"
                  srcset="../images/day-10/20260204_154318-thumb-480w.webp 480w,
                   ../images/day-10/20260204_154318-content-960w.webp 960w,
@@ -496,7 +552,7 @@
         <!-- 圖文交錯 3: 市集強迫症蔬果攤與風格慢步 -->
         <div class="story-split">
           <div class="story-split-media">
-            <a href="../images/day-10/18161385448410620-lightbox-1200w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="Marché Couvert Produce Display · 2026/02/04">
+            <a href="../images/day-10/18161385448410620-lightbox-1200w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="室內市集強迫症蔬果陳列 · 2026/02/04 法國科爾馬">
               <img src="../images/day-10/18161385448410620-content-720w.webp"
                  srcset="../images/day-10/18161385448410620-thumb-360w.webp 360w,
                   ../images/day-10/18161385448410620-content-720w.webp 720w,
@@ -515,21 +571,17 @@
               走進磚紅色的<a href="https://maps.google.com/?q=Marche+Couvert+Colmar" target="_blank" rel="noopener" class="text-map-link">科爾馬室內市集 (Marché Couvert)</a>，最吸引目光的不是觀光紀念品，而是令人嘆為觀止的蔬果攤位。
             </p>
             <p>
-              攤主將番茄、甜椒、胡蘿蔔與各式生鮮水果依照飽和的色階排得整整齊齊，鮮紅、翠綠、亮黃與深紫交織成一幅視覺饗宴，堪稱「強迫症天堂」！
+              攤主將番茄、甜椒、胡蘿蔔與各式生鮮水果依照飽和的色階排得整整齊齊，鮮紅、翠綠、亮黃與深紫交織成一幅視覺饗宴，堪稱「強迫症天堂」！站在攤位前看很久都不會膩，莫名感到療癒。
             </p>
             <p>
-              除了蔬果，市集內飄散著亞爾薩斯曼斯特起司（Munster）的濃烈奶香、剛出爐的脆皮長棍麵包與新鮮熟食，這是最道地且生機盎然的常民生活縮影。
-            </p>
-            <p>
-              午後在巷弄間隨興做 window
-              shopping，每家小店都有著極具辨識度的風格特色。手繪招牌、復古鐵鑄吊牌、柔和的黃光燈飾與陶器擺件，處處透露出店主對於生活美學的堅持。在科爾馬逛街不需要帶著購物清單，光是欣賞這些精心佈置的街景櫥窗，心靈就獲得了極大的放鬆。
+              除了蔬果，市集內飄散著亞爾薩斯曼斯特起司（Munster）的濃烈奶香與剛出爐麵包的香氣。午後在巷弄間隨興做 window shopping，每家小店的手繪招牌、復古鐵鑄吊牌與柔和燈飾，處處透露出店主對於生活美學的堅持。
             </p>
           </div>
         </div>
 
         <!-- 橫式全景大圖 2: 綠色接駁車與半木骨架老城廣場 -->
         <div class="fullwidth-landscape-wrap">
-          <a href="../images/day-10/20260204_154741-lightbox-1600w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="La Navette Cœur de Ville &amp; Historic Square, Colmar · 2026/02/04">
+          <a href="../images/day-10/20260204_154741-lightbox-1600w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="老城廣場與綠色接駁車 · 2026/02/04 法國科爾馬">
             <img src="../images/day-10/20260204_154741-content-960w.webp"
                  srcset="../images/day-10/20260204_154741-thumb-480w.webp 480w,
                   ../images/day-10/20260204_154741-content-960w.webp 960w,
@@ -553,7 +605,7 @@
 
         <!-- 橫式全景大圖 3: 午後陽光下的小威尼斯全景 -->
         <div class="fullwidth-landscape-wrap">
-          <a href="../images/day-10/20260204_152038-lightbox-1600w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="La Petite Venise Daylight Panorama, Colmar · 2026/02/04">
+          <a href="../images/day-10/20260204_152038-lightbox-1600w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="午後小威尼斯運河全景 · 2026/02/04 法國科爾馬">
             <img src="../images/day-10/20260204_152038-content-960w.webp"
                  srcset="../images/day-10/20260204_152038-thumb-480w.webp 480w,
                   ../images/day-10/20260204_152038-content-960w.webp 960w,
@@ -571,7 +623,7 @@
         <!-- 圖文交錯 4: 聖彼得橋同心鎖與運河全景 -->
         <div class="story-split">
           <div class="story-split-media">
-            <a href="../images/day-10/20260205_170548-lightbox-1600w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="Pont Saint-Pierre Love Locks &amp; Canal Panorama · 2026/02/05">
+            <a href="../images/day-10/20260205_170548-lightbox-1600w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="聖彼得橋同心鎖與運河全景 · 2026/02/05 法國科爾馬">
               <img src="../images/day-10/20260205_170548-content-960w.webp"
                  srcset="../images/day-10/20260205_170548-thumb-480w.webp 480w,
                   ../images/day-10/20260205_170548-content-960w.webp 960w,
@@ -590,17 +642,17 @@
               漫步來到科爾馬最具代表性的景點——<a href="https://maps.google.com/?q=La+Petite+Venise+Colmar" target="_blank" rel="noopener" class="text-map-link">小威尼斯 (La Petite Venise)</a>。
             </p>
             <p>
-              勞赫河（Lauch）緩緩穿過古老城區，兩岸半木結構房屋整齊依傍在水畔。站在<a href="https://maps.google.com/?q=Pont+Saint-Pierre+Colmar" target="_blank" rel="noopener" class="text-map-link">聖彼得橋 (Pont Saint-Pierre)</a> 上眺望，橋畔欄杆上密密麻麻掛滿了世界各地戀人們留下的紅色同心鎖。
+              勞赫河（Lauch）緩緩穿過古老城區，兩岸半木結構房屋整齊依傍在水畔。站在<a href="https://maps.google.com/?q=Pont+Saint-Pierre+Colmar" target="_blank" rel="noopener" class="text-map-link">聖彼得橋 (Pont Saint-Pierre)</a> 上眺望，橋畔欄杆上掛滿了世界各地戀人們留下的同心鎖。
             </p>
             <p>
-              冬日傍晚的夕陽將天空染上一層淡淡的金粉色，一縷飛機凝結尾雲劃過天際，眼前鵝黃、天藍與赭紅色的木骨架屋倒映在清澈水面上，構成全法國最浪漫的童話畫面。
+              冬日傍晚的夕陽將天空染上一層淡粉色，一縷飛機凝結尾雲劃過天際，鵝黃、天藍與赭紅色的木骨架屋倒映在清澈水面上，構成安靜純粹的法式水岸畫卷。
             </p>
           </div>
         </div>
 
         <!-- 橫式全景大圖 4: 傍晚點燈時刻的小威尼斯 Les Bateliers 餐廳倒影 -->
         <div class="fullwidth-landscape-wrap">
-          <a href="../images/day-10/20260205_165905-lightbox-1600w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="Les Bateliers Fairy Lights &amp; Little Venice Twilight, Colmar · 2026/02/05">
+          <a href="../images/day-10/20260205_165905-lightbox-1600w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="水手之家餐廳燈火倒影 · 2026/02/05 法國科爾馬">
             <img src="../images/day-10/20260205_165905-content-960w.webp"
                  srcset="../images/day-10/20260205_165905-thumb-480w.webp 480w,
                   ../images/day-10/20260205_165905-content-960w.webp 960w,
@@ -616,12 +668,12 @@
         </div>
 
         <p style="font-size: 1.05rem; line-height: 1.85; color: var(--ink); margin: 1rem 0;">
-          當暮色漸漸籠罩，運河畔的<strong>水手之家餐廳 (Les Bateliers)</strong> 點亮了屋簷下一連串暖黃色的燈串與桌燈。臨水露台雅座上，巨大的泰迪熊玩偶憨態可掬地坐在燭光前陪伴著食客；平靜的河水猶如一面深色鏡子，將兩岸木筋屋與搖曳的燈光完美倒映，空氣中瀰漫著濃郁的法式浪漫。
+          當暮色漸漸籠罩，運河畔的<strong>水手之家餐廳 (Les Bateliers)</strong> 點亮了屋簷下一連串暖黃色的燈串。臨水露台雅座上，巨大的泰迪熊玩偶憨態可掬地坐在燭光前陪伴著食客；平靜的河水猶如一面深色鏡子，將兩岸木筋屋與搖曳的燈光完美倒映。
         </p>
 
         <!-- 橫式全景大圖 5: 藍調黃昏時刻的小威尼斯倒影點燈 -->
         <div class="fullwidth-landscape-wrap">
-          <a href="../images/day-10/20260204_174401-lightbox-1600w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="La Petite Venise Blue Hour Twilight, Colmar · 2026/02/04">
+          <a href="../images/day-10/20260204_174401-lightbox-1600w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="藍調黃昏小威尼斯倒影 · 2026/02/04 法國科爾馬">
             <img src="../images/day-10/20260204_174401-content-960w.webp"
                  srcset="../images/day-10/20260204_174401-thumb-480w.webp 480w,
                   ../images/day-10/20260204_174401-content-960w.webp 960w,
@@ -639,7 +691,7 @@
         <!-- 圖文交錯 5 (Reverse): 藍調暮色街景與火焰薄餅 -->
         <div class="story-split reverse">
           <div class="story-split-media">
-            <a href="../images/day-10/18143991850476612-lightbox-1200w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="Cozy Colmar Twilight · 2026/02/04">
+            <a href="../images/day-10/18143991850476612-lightbox-1200w.webp" class="glightbox" data-gallery="day-10-colmar-gallery" data-title="藍調暮色老城巷弄 · 2026/02/04 法國科爾馬">
               <img src="../images/day-10/18143991850476612-content-720w.webp"
                  srcset="../images/day-10/18143991850476612-thumb-360w.webp 360w,
                   ../images/day-10/18143991850476612-content-720w.webp 720w,
@@ -661,7 +713,7 @@
               沿著漁人碼頭（Quai de la Poissonnerie）漫步，古老的石板小路帶著歲月的溫潤光澤。當天色漸暗，我們選了一間溫馨的傳統亞爾薩斯 Winstub 小酒館落座。
             </p>
             <p>
-              點了一份剛出爐、香氣四溢的傳統火焰薄餅（Flammekueche），薄脆如紙的餅皮上塗滿濃郁酸奶白醬，鋪滿焦香培根與甜軟洋蔥絲；再配上一杯清爽微酸的亞爾薩斯麗絲玲（Riesling）白酒，熱氣與香氣瞬間驅散了冬日的寒意，為初抵法國的第一夜寫下最溫暖的句點。
+              點了一份剛出爐、香氣四溢的傳統火焰薄餅（Flammekueche），薄脆如紙的餅皮上塗滿濃郁酸奶白醬，鋪滿焦香培根與甜軟洋蔥絲；再配上一杯清爽微酸的亞爾薩斯麗絲玲（Riesling）白酒，熱氣與香氣瞬間驅散了冬日的寒意，為抵達法國的第一夜寫下最溫暖的句點。
             </p>
           </div>
         </div>
@@ -697,8 +749,7 @@
             <span>📍</span> 必拍地標與機位指南
           </div>
           <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.92rem; line-height: 1.7; color: var(--ink);">
-            <li><a href="https://maps.google.com/?q=Maison+Pfister+Colmar" target="_blank" rel="noopener" class="text-map-link"><strong>普菲斯特之屋 (Maison Pfister)</strong></a>：Rue des Marchands 轉角仰拍八角形塔樓與木雕壁畫。
-            </li>
+            <li><a href="https://maps.google.com/?q=Maison+Pfister+Colmar" target="_blank" rel="noopener" class="text-map-link"><strong>普菲斯特之屋 (Maison Pfister)</strong></a>：Rue des Marchands 轉角仰拍八角形塔樓與木雕壁畫。</li>
             <li><a href="https://maps.google.com/?q=Pont+Saint-Pierre+Colmar" target="_blank" rel="noopener" class="text-map-link"><strong>小威尼斯橋 (Pont Saint-Pierre)</strong></a>：拍運河兩岸彩色木筋屋倒影之最佳機位。</li>
             <li><a href="https://maps.google.com/?q=Quai+de+la+Poissonnerie+Colmar" target="_blank" rel="noopener" class="text-map-link"><strong>漁人碼頭 (Quai de la Poissonnerie)</strong></a>：清晨與傍晚人少時倒影極美。</li>
             <li><a href="https://maps.google.com/?q=Marche+Couvert+Colmar" target="_blank" rel="noopener" class="text-map-link"><strong>科爾馬室內市集</strong></a>：紅磚建築、強迫症蔬果攤與在地起司。</li>
@@ -747,7 +798,7 @@
         </ul>
       </div>
 
-            <!-- 篇章導覽按鈕 -->
+      <!-- 篇章導覽按鈕 -->
       <div style="display: flex; justify-content: space-between; align-items: center; margin: 3.5rem 0 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); flex-wrap: wrap; gap: 1rem;">
         <a href="day-10-speyer-blog.html" style="font-weight: 600; color: var(--primary); font-size: 0.95rem;">← 上一篇：Day 10 (上) 史派爾大教堂</a>
         <a href="../day-10.html" class="badge badge-gold" style="font-size: 0.9rem; padding: 0.5rem 1rem; text-decoration: none;">⏱️ 查看 Day 10 純時間表</a>

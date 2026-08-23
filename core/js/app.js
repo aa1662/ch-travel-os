@@ -5,6 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initReadingProgressBar();
+  initMobileDockVisibility();
   initAudioButtons();
   initShareButton();
   initTimelineCards();
@@ -83,6 +84,18 @@ function initReadingProgressBar() {
     const scrolled = (winScroll / height) * 100;
     progressBar.style.width = scrolled + '%';
   });
+}
+
+function initMobileDockVisibility() {
+  const dock = document.querySelector('.mobile-dock');
+  if (!dock) return;
+
+  const updateDock = () => {
+    document.body.classList.toggle('dock-visible', window.scrollY > 180);
+  };
+
+  updateDock();
+  window.addEventListener('scroll', updateDock, { passive: true });
 }
 
 /* ==========================================================================
@@ -194,7 +207,7 @@ const ALL_STORIES = [
     themeType: "badge-wine",
     title: "薩爾斯堡莫札特故鄉 — 電梯直攻僧侶山俯瞰老城",
     quote: "「冬日的薩爾斯堡少了一分喧鬧，多了一分冷冽的古典韻味。踏入米拉貝爾花園，耳邊宛如響起《真善美》的樂章。」",
-    img: "images/day-01/17869170573551215-desktop-1200w.webp",
+    img: "images/day-01/17869170573551215-desktop-900w.webp",
     url: "blog/day-01-blog.html"
   },
   {

@@ -170,11 +170,12 @@ def process_trip(trip_slug, dest_slug=None, pilot_day=None):
         "profiles": PROFILES,
         "images": {}
     }
+    cached_images = {}
     if manifest_file.exists():
         try:
             with open(manifest_file, "r", encoding="utf-8") as f:
                 loaded_manifest = json.load(f)
-                manifest_data["images"] = loaded_manifest.get("images", {})
+                cached_images = loaded_manifest.get("images", {})
         except Exception:
             pass
 
@@ -185,32 +186,57 @@ def process_trip(trip_slug, dest_slug=None, pilot_day=None):
 
     total_processed = 0
     cache_hits = 0
+    valid_output_files_by_dir = {}
+    failures = []
+
     for day_dir in day_folders:
         day_name = day_dir.name
         out_day_dir = trip_output / day_name
         rel_base = f"{dest_slug}/images/{day_name}"
 
         img_files = sorted([f for f in day_dir.iterdir() if f.is_file() and f.suffix.lower() in [".jpg", ".jpeg", ".png", ".webp", ".heic"]])
-        print(f"📁 處理中: {trip_slug} -> docs/{dest_slug} / {day_name} (共 {len(img_files)} 張照片)...")
+        print(f"📁 處理中: {trip_slug} -> docs/{dest_slug} / {day_name} (共 {len(img_files)} 張照片)...", flush=True)
 
         for img_path in img_files:
             try:
                 img_key = f"{day_name}/{img_path.name}"
-                existing_entry = manifest_data.get("images", {}).get(img_key)
+                existing_entry = cached_images.get(img_key)
                 res, is_cache = process_image(img_path, out_day_dir, rel_base, existing_entry, manifest_meta=manifest_data)
                 manifest_data["images"][img_key] = res
                 total_processed += 1
                 if is_cache:
                     cache_hits += 1
+                valid_output_files = valid_output_files_by_dir.setdefault(out_day_dir, set())
+                for d in res.get("derivatives", []):
+                    valid_output_files.add(out_day_dir / d["filename"])
             except Exception as e:
-                print(f"  ❌ 處理失敗 {img_path.name}: {e}")
+                msg = f"{day_name}/{img_path.name}: {e}"
+                failures.append(msg)
+                print(f"  ❌ 處理失敗 {msg}", flush=True)
+
+    if failures:
+        print(f"\n❌ 圖片管線失敗！發現 {len(failures)} 張圖片處理錯誤，已中止清理舊圖與寫入 Manifest：", flush=True)
+        for failure in failures:
+            print(f"  - {failure}", flush=True)
+        sys.exit(1)
+
+    # 全部圖片成功後，才清理已刪除 master 殘留的舊 WebP 檔案。
+    for out_day_dir, valid_output_files in valid_output_files_by_dir.items():
+        if out_day_dir.exists():
+            for f in out_day_dir.glob("*.webp"):
+                if f not in valid_output_files:
+                    try:
+                        f.unlink()
+                        print(f"  🗑️ 清理孤立舊圖: {f.name}", flush=True)
+                    except Exception:
+                        pass
 
     # 儲存 Manifest
     manifest_file.parent.mkdir(parents=True, exist_ok=True)
     with open(manifest_file, "w", encoding="utf-8") as f:
         json.dump(manifest_data, f, ensure_ascii=False, indent=2)
 
-    print(f"\n✨ 完成！共掃描 {total_processed} 張照片（Cache Hit: {cache_hits}，新生成: {total_processed - cache_hits}），Manifest 儲存至 {manifest_file}\n")
+    print(f"\n✨ 完成！共掃描 {total_processed} 張照片（Cache Hit: {cache_hits}，新生成: {total_processed - cache_hits}），Manifest 儲存至 {manifest_file}\n", flush=True)
 
 
 if __name__ == "__main__":

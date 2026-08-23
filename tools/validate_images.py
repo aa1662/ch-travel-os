@@ -33,11 +33,16 @@ def validate_docs():
     warnings = []
     total_images = 0
 
+    if (DOCS_DIR / "core" / "editor.html").exists():
+        errors.append("[公開 Editor 外洩] docs/core/editor.html 不應進入 GitHub Pages 發布目錄")
+
     image_files = list(DOCS_DIR.rglob("*.webp")) + list(DOCS_DIR.rglob("*.jpg")) + list(DOCS_DIR.rglob("*.png"))
 
     # 1. 檢查公開圖片格式、尺寸、檔案大小、可解碼性與 EXIF 剝除
     for img_path in image_files:
         if "vendor" in img_path.parts:
+            continue
+        if not img_path.exists():
             continue
 
         total_images += 1
@@ -134,13 +139,28 @@ def validate_docs():
             if "masters/" in content:
                 errors.append(f"[直接引用 master] HTML 引用了未公開 masters/ 路徑: {hf.relative_to(DOCS_DIR)}")
 
+            rel_html = hf.relative_to(DOCS_DIR).as_posix()
+            if rel_html.startswith("germany/blog/"):
+                if "window.__PAGE_CONFIG__" in content:
+                    errors.append(f"[Editor Metadata 外洩] 正式 Blog 含 window.__PAGE_CONFIG__: {hf.relative_to(DOCS_DIR)}")
+                if "平行改寫預覽版" in content or "Place Preview" in content:
+                    errors.append(f"[Preview 施工字樣外洩] 正式 Blog 含預覽術語: {hf.relative_to(DOCS_DIR)}")
+
+                canonical_match = re.search(r'<link\s+rel=["\']canonical["\']\s+href=["\']([^"\']+)["\']', content, re.IGNORECASE)
+                expected_canonical = f"https://aa1662.github.io/ch-travel-os/{rel_html}"
+                if not canonical_match:
+                    errors.append(f"[缺少 Canonical] 正式 Blog 未設定 canonical: {hf.relative_to(DOCS_DIR)}")
+                elif canonical_match.group(1) != expected_canonical:
+                    errors.append(f"[Canonical 不一致] {canonical_match.group(1)} != {expected_canonical} in {hf.relative_to(DOCS_DIR)}")
+
             # 4.2 檢查 legacy OG URL
             if "2026-Germany" in content:
                 if re.search(r'<meta[^>]+content=["\'][^"\']*2026-Germany[^"\']*["\']', content):
                     errors.append(f"[遺留 OG URL] 包含舊版專案網址 2026-Germany: {hf.relative_to(DOCS_DIR)}")
 
-            # 4.3 檢查 <img> 標籤的 CLS 尺寸 (width/height) 與重複屬性
-            img_tags = re.findall(r'<img\s+([^>]+)>', content, re.IGNORECASE)
+            # 4.3 檢查 <img> 標籤的 CLS 尺寸 (width/height) 與重複屬性（排除 script 區塊）
+            clean_html = re.sub(r'<script[\s\S]*?</script>', '', content, flags=re.IGNORECASE)
+            img_tags = re.findall(r'<img\s+([^>]+)>', clean_html, re.IGNORECASE)
             for itag in img_tags:
                 # 檢查 width 與 height
                 has_w = bool(re.search(r'\bwidth=["\']?\d+', itag, re.IGNORECASE))
@@ -155,7 +175,7 @@ def validate_docs():
 
             # 4.4 檢查所有本機連結與資源是否皆存在 (避免 404 與無效錨點)
             ref_pattern = re.compile(r'(?:href|src)=["\']([^"\']+)["\']')
-            for match in ref_pattern.finditer(content):
+            for match in ref_pattern.finditer(clean_html):
                 target = match.group(1).strip()
                 # 排除外部連結、JavaScript 虛擬協定
                 if target.startswith(("http://", "https://", "mailto:", "tel:", "javascript:", "data:")):
