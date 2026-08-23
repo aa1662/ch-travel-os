@@ -2,12 +2,22 @@
 masters/
 **/masters/
 
-# Temporary and backup files
+# Local editor generated backups
+**/.backups/
 *.bak
 **/*.bak
 *.tmp
+
+# Playwright / browser automation scratch
+.playwright-mcp/
+
+# Python cache
 __pycache__/
 **/__pycache__/
+*.py[cod]
+
+# Local-only published editor guard
+docs/core/editor.html
 
 # OS & Editor files
 .DS_Store

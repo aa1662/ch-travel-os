@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CH Travel OS 2.0 · 跨旅程視覺化圖文編輯器</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700;900&family=Noto+Sans+TC:wght@400;500;700&family=Outfit:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="vendor/glightbox/glightbox.min.css">
+  <style>
+    /* ========================================== */
+    /* 🎨 編輯器控制面板專屬奢華暗黑主題 (Editor Topbar) */
+    /* ========================================== */
+    .editor-topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      border-bottom: 2px solid var(--accent);
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .editor-brand-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .editor-logo {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      text-decoration: none;
+    }
+    .editor-badge {
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.72rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .editor-status {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      color: #94a3b8;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 0.25rem 0.6rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+      transition: all 0.3s ease;
+    }
+    .status-dot.dirty {
+      background: #f59e0b;
+      box-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
+    }
+    .status-dot.saving {
+      background: #3b82f6;
+      box-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
+    }
+
+    .editor-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .editor-select {
+      background: #1e293b;
+      color: #f1f5f9;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 0.45rem 0.8rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      outline: none;
+      cursor: pointer;
+      transition: border-color 0.2s ease;
+      font-family: inherit;
+    }
+    .editor-select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(180, 83, 9, 0.25);
+    }
+    .btn-editor {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.45rem 0.95rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+      border: none;
+      text-decoration: none;
+    }
+    .btn-editor-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-editor-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(180, 83, 9, 0.35);
+    }
+    .btn-editor-secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .btn-editor-secondary:hover {
+      background: rgba(255, 255, 255, 0.18);
+      color: #fff;
+    }
+
+    /* ========================================== */
+    /* 📝 視覺化工作區與可編輯高亮 (Visual Canvas) */
+    /* ========================================== */
+    #editor-workspace {
+      min-height: calc(100vh - 70px);
+      padding-bottom: 6rem;
+      background: var(--bg-page);
+    }
+    .editable-active [contenteditable="true"] {
+      outline: 1px dashed rgba(180, 83, 9, 0.25);
+      border-radius: 4px;
+      padding: 2px 4px;
+      transition: all 0.2s ease;
+    }
+    .editable-active [contenteditable="true"]:hover {
+      outline: 1px solid var(--accent);
+      background: rgba(254, 243, 199, 0.35);
+    }
+    .editable-active [contenteditable="true"]:focus {
+      outline: 2px solid var(--accent);
+      background: rgba(254, 243, 199, 0.65);
+    }
+
+    /* 圖片懸浮換圖按鈕 */
+    .img-edit-wrap {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+    .img-toolbar {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      gap: 6px;
+      opacity: 0;
+      transition: all 0.2s ease;
+      z-index: 60;
+    }
+    .img-edit-wrap:hover .img-toolbar {
+      opacity: 1;
+    }
+    .img-tool-btn {
+      background: rgba(15, 23, 42, 0.88);
+      color: #fff;
+      backdrop-filter: blur(6px);
+      padding: 0.35rem 0.65rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .img-tool-btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: scale(1.05);
+    }
+    .img-tool-btn.btn-delete-img:hover {
+      background: #ef4444;
+      border-color: #ef4444;
+    }
+    .grid-add-photo-card {
+      border: 2px dashed #94a3b8;
+      border-radius: var(--radius-md);
+      background: rgba(241, 245, 249, 0.6);
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-top: 0.5rem;
+      padding: 1rem;
+    }
+    .grid-add-photo-card:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(217, 119, 6, 0.08);
+      transform: translateY(-2px);
+    }
+
+    /* ========================================== */
+    /* 🖼️ 照片抽換抽屜 (Image Drawer Modal) */
+    /* ========================================== */
+    .img-modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.82);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .img-modal-backdrop.show {
+      display: flex;
+    }
+    .img-modal-content {
+      background: #0f172a;
+      width: 95%;
+      max-width: 1240px;
+      max-height: 88vh;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid #334155;
+    }
+    .img-modal-header {
+      padding: 1.25rem 1.75rem;
+      background: #1e293b;
+      border-bottom: 1px solid #334155;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .img-modal-header h3 {
+      font-family: var(--font-heading);
+      color: #f8fafc;
+      margin: 0;
+      font-size: 1.35rem;
+    }
+    .img-modal-grid {
+      padding: 1.5rem !important;
+      overflow-y: auto !important;
+      display: grid !important;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)) !important;
+      gap: 1rem !important;
+      background: #0b1120 !important;
+    }
+    .img-choice-card {
+      border: 2px solid #334155 !important;
+      border-radius: var(--radius-md) !important;
+      overflow: hidden !important;
+      cursor: pointer !important;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      background: #1e293b !important;
+      display: flex !important;
+      flex-direction: column !important;
+      height: 230px !important;
+      min-height: 230px !important;
+      box-sizing: border-box !important;
+    }
+    .img-choice-card:hover {
+      border-color: var(--accent) !important;
+      transform: translateY(-4px) !important;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6) !important;
+    }
+    .img-choice-thumb-wrap {
+      width: 100% !important;
+      height: 185px !important;
+      min-height: 185px !important;
+      max-height: 185px !important;
+      flex: 0 0 185px !important;
+      display: block !important;
+      background: #020617 !important;
+      overflow: hidden !important;
+      position: relative !important;
+    }
+    .img-choice-thumb-wrap img {
+      width: 100% !important;
+      height: 100% !important;
+      min-height: 185px !important;
+      max-height: 185px !important;
+      object-fit: cover !important;
+      display: block !important;
+      transition: transform 0.3s ease !important;
+    }
+    .img-choice-card:hover .img-choice-thumb-wrap img {
+      transform: scale(1.08) !important;
+    }
+    .img-choice-meta {
+      flex: 0 0 45px !important;
+      height: 45px !important;
+      padding: 0.4rem 0.65rem !important;
+      font-size: 0.75rem !important;
+      color: #cbd5e1 !important;
+      text-overflow: ellipsis !important;
+      overflow: hidden !important;
+      white-space: nowrap !important;
+      background: #1e293b !important;
+      border-top: 1px solid #334155 !important;
+      font-family: monospace !important;
+      font-weight: 600 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    /* 頂部通知 Toast */
+    .editor-toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #0f172a;
+      color: #fff;
+      padding: 0.9rem 1.5rem;
+      border-radius: var(--radius-md);
+      font-size: 0.92rem;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+      z-index: 3000;
+      opacity: 0;
+      transform: translateY(15px);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-left: 4px solid var(--accent);
+    }
+    .editor-toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="editable-active">
+  <!-- 頂部控制面板 -->
+  <header class="editor-topbar">
+    <div class="editor-brand-group">
+      <a href="../index.html" class="editor-logo">
+        <span>🌍 CH Travel OS</span>
+      </a>
+      <span class="editor-badge">Visual Editor 2.0</span>
+      <div class="editor-status">
+        <span class="status-dot" id="statusDot"></span>
+        <span id="statusText">連線就緒</span>
+      </div>
+    </div>
+
+    <div class="editor-controls">
+      <!-- 旅程系列選擇器 -->
+      <select class="editor-select" id="tripSelect" aria-label="選擇旅程系列">
+        <option value="" disabled selected>載入旅程中...</option>
+      </select>
+
+      <!-- 內容類型選擇器 -->
+      <select class="editor-select" id="typeSelect" aria-label="選擇類型">
+        <option value="blogs">📖 深度圖文遊記</option>
+        <option value="timelines">⏱️ 純時間表</option>
+        <option value="previews">🌟 改寫預覽 (Preview)</option>
+      </select>
+
+      <!-- 篇章天數選擇器 -->
+      <select class="editor-select" id="pageSelect" aria-label="選擇篇章天數">
+        <option value="" disabled selected>選擇篇章...</option>
+      </select>
+
+      <!-- 前台預覽按鈕 -->
+      <a href="javascript:void(0)" class="btn-editor btn-editor-secondary" id="btnPreview" target="_blank" title="在瀏覽器新分頁開啟已發布頁面">
+        <span>👁️ 預覽發布版</span>
+      </a>
+
+      <!-- 還原備份按鈕 -->
+      <button class="btn-editor btn-editor-secondary" id="btnRestore" style="display: none;" title="還原至上次存檔前的備份檔案">
+        <span>↩️ 還原備份</span>
+      </button>
+
+      <!-- 儲存按鈕 -->
+      <button class="btn-editor btn-editor-primary" id="btnSave" title="儲存修改並自動重新編譯 (Ctrl + S)">
+        <span>💾 儲存並發布 (Ctrl+S)</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 文章編輯工作區 -->
+  <div id="editor-workspace">
+    <div style="text-align: center; padding: 5rem 2rem; color: var(--text-muted);">
+      <h2>載入工作區手稿中，請稍候...</h2>
+    </div>
+  </div>
+
+  <!-- 換圖 / 插入 Modal 選擇器 -->
+  <div class="img-modal-backdrop" id="imgModal">
+    <div class="img-modal-content">
+      <div class="img-modal-header">
+        <div>
+          <h3 id="imgModalTitle">🖼️ 選擇照片庫</h3>
+          <div style="font-size: 0.85rem; color: var(--text-muted);" id="imgModalSub">
+            點擊照片即可直接插入或替換
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <select id="imgModalFolderSelect" class="editor-select" style="padding: 0.35rem 0.75rem; font-size: 0.85rem; min-width: 150px;" aria-label="切換圖庫目錄">
+            <option value="current">📂 當前章節圖庫</option>
+            <option value="all">🌐 全旅程圖庫 (全部)</option>
+            <option value="day-01">Day 01 · 薩爾斯堡</option>
+            <option value="day-02">Day 02 · 哈修塔特</option>
+            <option value="day-03">Day 03 · 符茲堡</option>
+            <option value="day-04">Day 04 · 班堡</option>
+            <option value="day-05">Day 05 · 紐倫堡</option>
+            <option value="day-06">Day 06 · 羅騰堡</option>
+            <option value="day-07">Day 07 · 羅騰堡與酒鄉</option>
+            <option value="day-08">Day 08 · 海德堡</option>
+            <option value="day-09">Day 09 · 斯圖加特</option>
+            <option value="day-10">Day 10 · 史派亞/科爾馬</option>
+            <option value="day-11">Day 11 · 埃吉桑姆</option>
+            <option value="day-12">Day 12 · 蒂蒂湖/黑森林</option>
+            <option value="day-13">Day 13 · 新天鵝堡</option>
+            <option value="day-14">Day 14 · 加米許/楚格峰</option>
+            <option value="day-15">Day 15 · 慕尼黑</option>
+          </select>
+          <button style="font-size: 1.6rem; color: var(--text-muted); background: none; border: none; cursor: pointer; line-height: 1;" id="btnModalClose">&times;</button>
+        </div>
+      </div>
+      <div class="img-modal-grid" id="imgModalGrid">
+        <!-- 圖片縮圖卡片動態渲染於此 -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast 通知 -->
+  <div class="editor-toast" id="editorToast">儲存成功！</div>
+
+  <!-- Scripts -->
+  <script src="vendor/glightbox/glightbox.min.js"></script>
+  <script>
+    let allTrips = [];
+    let currentTrip = null;
+    let currentPage = null;
+    let currentSourceDoc = null;
+    let isDirty = false;
+
+    // 圖片選擇器狀態
+    let currentPickerMode = 'swap'; // 'swap' | 'insert_after' | 'add_to_grid'
+    let currentPickerTarget = null;
+    let currentPickerGrid = null;
+
+    // DOM 元素快取
+    const tripSelect = document.getElementById('tripSelect');
+    const typeSelect = document.getElementById('typeSelect');
+    const pageSelect = document.getElementById('pageSelect');
+    const btnSave = document.getElementById('btnSave');
+    const btnPreview = document.getElementById('btnPreview');
+    const btnRestore = document.getElementById('btnRestore');
+    const workspace = document.getElementById('editor-workspace');
+    const statusDot = document.getElementById('statusDot');
+    const statusText = document.getElementById('statusText');
+    const imgModal = document.getElementById('imgModal');
+    const imgModalTitle = document.getElementById('imgModalTitle');
+    const imgModalSub = document.getElementById('imgModalSub');
+    const imgModalGrid = document.getElementById('imgModalGrid');
+    const imgModalFolderSelect = document.getElementById('imgModalFolderSelect');
+    const btnModalClose = document.getElementById('btnModalClose');
+    const editorToast = document.getElementById('editorToast');
+
+    // 1. 初始化系統並取得旅程列表
+    async function initEditor() {
+      try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const tripParam = urlParams.get('trip');
+        const typeParam = urlParams.get('type');
+        const pageParam = urlParams.get('page') || urlParams.get('day');
+
+        const res = await fetch('/api/list-trips');
+        const data = await res.json();
+        if (data.success && data.trips.length > 0) {
+          allTrips = data.trips;
+          tripSelect.innerHTML = '';
+          allTrips.forEach(t => {
+            const opt = document.createElement('option');
+            opt.value = t.id;
+            opt.textContent = `🌍 ${t.name}`;
+            tripSelect.appendChild(opt);
+          });
+
+          // 若有 URL 指定 trip
+          if (tripParam && allTrips.some(t => t.id === tripParam)) {
+            tripSelect.value = tripParam;
+            currentTrip = allTrips.find(t => t.id === tripParam);
+          } else {
+            currentTrip = allTrips[0];
+          }
+
+          // 若有 URL 指定 type
+          if (typeParam && ['blogs', 'timelines', 'previews'].includes(typeParam)) {
+            typeSelect.value = typeParam;
+          }
+
+          updatePageOptions(pageParam);
+        } else {
+          statusText.textContent = '未找到旅程數據';
+        }
+      } catch (err) {
+        statusText.textContent = '連線失敗';
+        showToast('無法連線至本地伺服器 API', true);
+      }
+    }
+
+    // 2. 更新篇章天數選單
+    function updatePageOptions(preferredPageId = null) {
+      if (!currentTrip) return;
+      const type = typeSelect.value;
+      const list = currentTrip[type] || [];
+      
+      pageSelect.innerHTML = '';
+      if (list.length === 0) {
+        pageSelect.innerHTML = '<option value="" disabled selected>暫無此類型篇章</option>';
+        workspace.innerHTML = '<div style="text-align:center; padding:5rem 2rem; color:var(--text-muted);"><h3>此類型尚無手稿檔案</h3></div>';
+        return;
+      }
+
+      list.forEach(p => {
+        const opt = document.createElement('option');
+        opt.value = p.id;
+        opt.textContent = `${p.id.toUpperCase()} - ${p.title}`;
+        pageSelect.appendChild(opt);
+      });
+
+      // 檢查是否符合指定的 pageId
+      let targetPage = list[0];
+      if (preferredPageId) {
+        const cleanPref = preferredPageId.toLowerCase();
+        const found = list.find(p => p.id.toLowerCase() === cleanPref || p.id.toLowerCase().replace('-place-preview', '') === cleanPref || p.id.toLowerCase().replace('-blog', '') === cleanPref);
+        if (found) targetPage = found;
+      }
+
+      pageSelect.value = targetPage.id;
+      currentPage = targetPage;
+      syncUrlState();
+      loadSource(currentPage.file);
+    }
+
+    function syncUrlState() {
+      if (!currentTrip || !currentPage) return;
+      const url = new URL(window.location);
+      url.searchParams.set('trip', currentTrip.id);
+      url.searchParams.set('type', typeSelect.value);
+      url.searchParams.set('page', currentPage.id);
+      window.history.replaceState({}, '', url);
+    }
+
+    // 3. 讀取 SSoT 原始手稿
+    async function loadSource(relFile) {
+      statusText.textContent = '讀取手稿中...';
+      statusDot.className = 'status-dot loading';
+      try {
+        const res = await fetch(`/api/load-source?trip=${encodeURIComponent(currentTrip.id)}&file=${encodeURIComponent(relFile)}`);
+        const data = await res.json();
+        if (data.success) {
+          parseAndRender(data.html);
+          btnRestore.style.display = data.has_backup ? 'inline-flex' : 'none';
+          const cleanOut = (currentPage.output || '').replace(/^docs\//, '');
+          btnPreview.href = `../${cleanOut}`;
+          markClean();
+        } else {
+          workspace.innerHTML = `<div style="text-align:center; padding:5rem 2rem; color:#ef4444;"><h3>讀取失敗: ${data.error}</h3></div>`;
+          statusText.textContent = '讀取失敗';
+          statusDot.className = 'status-dot';
+        }
+      } catch (err) {
+        workspace.innerHTML = `<div style="text-align:center; padding:5rem 2rem; color:#ef4444;"><h3>無法載入手稿</h3></div>`;
+        statusText.textContent = '連線錯誤';
+        statusDot.className = 'status-dot';
+      }
+    }
+
+    // 4. 解析 HTML 並注入所見即所得工作區
+    function parseAndRender(htmlText) {
+      const parser = new DOMParser();
+      currentSourceDoc = parser.parseFromString(htmlText, 'text/html');
+
+      const mainContent = currentSourceDoc.querySelector('main') || currentSourceDoc.body;
+      workspace.innerHTML = mainContent.innerHTML;
+
+      // 綁定可編輯文字元素
+      const textSelectors = 'h1, h2, h3, h4, p, blockquote, .diptych-quote, .badge, .day-item-desc, .recap-item span, .bento-card li, .ig-post-caption, .ig-post-date, figcaption, .timeline-time-badge';
+      workspace.querySelectorAll(textSelectors).forEach(el => {
+        el.setAttribute('contenteditable', 'true');
+        el.addEventListener('input', markDirty);
+      });
+
+      // 調整圖片與燈箱路徑以符合 core/ 編輯器的相對位置，確保工作區正常載圖
+      const destSlug = currentTrip ? currentTrip.dest : 'germany';
+      workspace.querySelectorAll('img').forEach(img => {
+        const origSrc = img.getAttribute('src');
+        if (origSrc && !origSrc.startsWith('http') && !origSrc.startsWith('data:')) {
+          img.dataset.origSrc = origSrc;
+          const cleanRel = origSrc.replace(/^(\.\.\/)+/, '');
+          if (!cleanRel.startsWith(destSlug + '/')) {
+            img.src = `../${destSlug}/${cleanRel}`;
+          }
+        }
+
+        const origSrcset = img.getAttribute('srcset');
+        if (origSrcset) {
+          img.dataset.origSrcset = origSrcset;
+          const remapped = origSrcset.split(',').map(item => {
+            const trimmed = item.trim();
+            if (!trimmed) return '';
+            const [url, size] = trimmed.split(/\s+/);
+            const cleanRel = url.replace(/^(\.\.\/)+/, '');
+            const finalUrl = cleanRel.startsWith(destSlug + '/') ? `../${cleanRel}` : `../${destSlug}/${cleanRel}`;
+            return size ? `${finalUrl} ${size}` : finalUrl;
+          }).filter(Boolean).join(', ');
+          img.setAttribute('srcset', remapped);
+        }
+      });
+
+      workspace.querySelectorAll('a.glightbox').forEach(link => {
+        const origHref = link.getAttribute('href');
+        if (origHref && !origHref.startsWith('http') && !origHref.startsWith('data:')) {
+          link.dataset.origHref = origHref;
+          const cleanRel = origHref.replace(/^(\.\.\/)+/, '');
+          if (!cleanRel.startsWith(destSlug + '/')) {
+            link.href = `../${destSlug}/${cleanRel}`;
+          }
+        }
+      });
+
+      // 為所有 <img> 包裝懸浮工具列 (替換、插入、刪除)
+      workspace.querySelectorAll('img').forEach(img => {
+        wrapImageElement(img);
+      });
+
+      // 為所有 .photo-grid 注入「➕ 新增照片至相簿」按鈕
+      workspace.querySelectorAll('.photo-grid').forEach(grid => {
+        setupPhotoGridAddButton(grid);
+      });
+
+      // 初始化 GLightbox
+      if (typeof GLightbox !== 'undefined') {
+        GLightbox({ selector: '.glightbox' });
+      }
+    }
+
+    // 4.1 包裝單張照片之工具列 (換圖、插圖、刪除)
+    function wrapImageElement(img) {
+      if (img.closest('.img-edit-wrap')) return;
+      const wrap = document.createElement('div');
+      wrap.className = 'img-edit-wrap';
+      img.parentNode.insertBefore(wrap, img);
+      wrap.appendChild(img);
+
+      const toolbar = document.createElement('div');
+      toolbar.className = 'img-toolbar';
+
+      // 1. 🔄 替換按鈕
+      const btnSwap = document.createElement('button');
+      btnSwap.className = 'img-tool-btn';
+      btnSwap.innerHTML = '🔄 替換';
+      btnSwap.type = 'button';
+      btnSwap.title = '替換此張照片';
+      btnSwap.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        openImagePicker('swap', img);
+      });
+      toolbar.appendChild(btnSwap);
+
+      // 2. ➕ 插入按鈕
+      const btnInsert = document.createElement('button');
+      btnInsert.className = 'img-tool-btn';
+      btnInsert.innerHTML = '➕ 插入';
+      btnInsert.type = 'button';
+      btnInsert.title = '在此照片後方插入一張新照片';
+      btnInsert.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        openImagePicker('insert_after', img);
+      });
+      toolbar.appendChild(btnInsert);
+
+      // 3. 🗑️ 刪除按鈕
+      const btnDelete = document.createElement('button');
+      btnDelete.className = 'img-tool-btn btn-delete-img';
+      btnDelete.innerHTML = '🗑️ 刪除';
+      btnDelete.type = 'button';
+      btnDelete.title = '刪除此照片';
+      btnDelete.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (confirm('確定要刪除這張照片嗎？')) {
+          const gridItem = wrap.closest('.photo-grid-item');
+          if (gridItem) {
+            gridItem.remove();
+          } else {
+            const link = wrap.closest('a.glightbox');
+            if (link) {
+              link.remove();
+            } else {
+              wrap.remove();
+            }
+          }
+          markDirty();
+          showToast('🗑️ 照片已刪除');
+        }
+      });
+      toolbar.appendChild(btnDelete);
+
+      wrap.appendChild(toolbar);
+    }
+
+    // 4.2 相簿網格新增照片按鈕
+    function setupPhotoGridAddButton(grid) {
+      if (grid.nextElementSibling && grid.nextElementSibling.classList.contains('grid-add-photo-card')) return;
+      const addCard = document.createElement('div');
+      addCard.className = 'grid-add-photo-card';
+      addCard.innerHTML = '<span>➕ 新增照片至此相簿 (Add Photo)</span>';
+      addCard.addEventListener('click', (e) => {
+        e.preventDefault();
+        openImagePicker('add_to_grid', null, grid);
+      });
+      grid.parentNode.insertBefore(addCard, grid.nextSibling);
+    }
+
+    // 4.3 建立新照片元素
+    function createPhotoElement(imgData) {
+      const imgFolder = currentPage ? (currentPage.image_folder || currentPage.id) : 'day-01';
+      const destSlug = currentTrip ? currentTrip.dest : 'germany';
+
+      const derivatives = imgData.derivatives || [];
+      const contentDeriv = derivatives.find(d => d.profile === 'content') || derivatives[0] || { filename: `${imgData.id}-content-960w.webp`, width: 960, height: 540 };
+      const lightboxDeriv = derivatives.find(d => d.profile === 'lightbox') || derivatives[derivatives.length - 1] || { filename: `${imgData.id}-lightbox-1600w.webp` };
+
+      const gridItem = document.createElement('div');
+      gridItem.className = 'photo-grid-item';
+
+      const link = document.createElement('a');
+      link.className = 'glightbox';
+      link.dataset.gallery = (currentPage ? currentPage.id : 'day') + '-gallery';
+      link.dataset.title = imgData.original_name;
+      link.href = `../${destSlug}/images/${imgFolder}/${lightboxDeriv.filename}`;
+      link.dataset.origHref = `../images/${imgFolder}/${lightboxDeriv.filename}`;
+
+      const img = document.createElement('img');
+      img.src = `../${destSlug}/images/${imgFolder}/${contentDeriv.filename}`;
+      img.dataset.origSrc = `../images/${imgFolder}/${contentDeriv.filename}`;
+      img.alt = imgData.original_name;
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      if (contentDeriv.width) img.setAttribute('width', contentDeriv.width);
+      if (contentDeriv.height) img.setAttribute('height', contentDeriv.height);
+
+      if (derivatives.length > 0) {
+        const origSrcset = derivatives.map(d => `../images/${imgFolder}/${d.filename} ${d.width}w`).join(',\n                           ');
+        const workspaceSrcset = derivatives.map(d => `../${destSlug}/images/${imgFolder}/${d.filename} ${d.width}w`).join(',\n                           ');
+        img.setAttribute('srcset', workspaceSrcset);
+        img.dataset.origSrcset = origSrcset;
+      }
+
+      link.appendChild(img);
+      gridItem.appendChild(link);
+      
+      wrapImageElement(img);
+      return gridItem;
+    }
+
+    // 5. 開啟照片抽屜
+    async function openImagePicker(mode = 'swap', targetEl = null, containerGrid = null) {
+      currentPickerMode = mode;
+      currentPickerTarget = targetEl;
+      currentPickerGrid = containerGrid;
+
+      if (mode === 'swap') {
+        imgModalTitle.textContent = '🔄 替換照片';
+      } else if (mode === 'insert_after') {
+        imgModalTitle.textContent = '➕ 插入照片';
+      } else {
+        imgModalTitle.textContent = '➕ 新增照片至相簿';
+      }
+
+      imgModal.classList.add('show');
+      fetchAndRenderModalImages();
+    }
+
+    // 5.1 讀取並渲染 Modal 圖片清單
+    async function fetchAndRenderModalImages() {
+      const defaultFolder = currentPage ? (currentPage.image_folder || currentPage.id) : 'day-01';
+      const destSlug = currentTrip ? currentTrip.dest : 'germany';
+      let selectedFolder = imgModalFolderSelect.value;
+      if (selectedFolder === 'current') selectedFolder = defaultFolder;
+
+      imgModalSub.textContent = `旅程：${currentTrip.name} ｜ 圖庫：${selectedFolder === 'all' ? '全旅程所有照片' : selectedFolder}`;
+      imgModalGrid.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:2rem; color:#94a3b8;">載入照片庫中...</div>';
+
+      try {
+        const res = await fetch(`/api/list-images?trip=${encodeURIComponent(currentTrip.id)}&dest=${encodeURIComponent(destSlug)}&folder=${encodeURIComponent(selectedFolder)}`);
+        const data = await res.json();
+        if (data.success && data.images.length > 0) {
+          imgModalGrid.innerHTML = '';
+          data.images.forEach(img => {
+            const card = document.createElement('div');
+            card.className = 'img-choice-card';
+            
+            const thumbWrap = document.createElement('div');
+            thumbWrap.className = 'img-choice-thumb-wrap';
+
+            const thumbImg = document.createElement('img');
+            thumbImg.src = img.thumb.startsWith('http') ? img.thumb : (img.thumb.startsWith(destSlug + '/') ? `../${img.thumb}` : `../${destSlug}/${img.thumb}`);
+            thumbImg.alt = img.original_name;
+            thumbImg.loading = 'lazy';
+            thumbWrap.appendChild(thumbImg);
+            card.appendChild(thumbWrap);
+
+            const metaDiv = document.createElement('div');
+            metaDiv.className = 'img-choice-meta';
+            metaDiv.title = img.original_name;
+            metaDiv.textContent = img.original_name;
+            card.appendChild(metaDiv);
+
+            card.addEventListener('click', () => {
+              handlePhotoSelected(img);
+              imgModal.classList.remove('show');
+            });
+            imgModalGrid.appendChild(card);
+          });
+        } else {
+          imgModalGrid.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:2rem; color:#94a3b8;">此目錄暫無已編譯之 WebP 圖資</div>';
+        }
+      } catch (err) {
+        imgModalGrid.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:2rem; color:#ef4444;">無法獲取圖片清單</div>';
+      }
+    }
+
+    // 5.2 處理照片選定
+    function handlePhotoSelected(imgData) {
+      if (currentPickerMode === 'swap') {
+        applyImageSwap(imgData, currentPickerTarget);
+      } else if (currentPickerMode === 'insert_after') {
+        const newEl = createPhotoElement(imgData);
+        const refNode = currentPickerTarget.closest('.photo-grid-item') || currentPickerTarget.closest('.img-edit-wrap');
+        if (refNode && refNode.parentNode) {
+          refNode.parentNode.insertBefore(newEl, refNode.nextSibling);
+        }
+        markDirty();
+        showToast(`➕ 已插入照片：${imgData.original_name}`);
+      } else if (currentPickerMode === 'add_to_grid') {
+        if (currentPickerGrid) {
+          const newEl = createPhotoElement(imgData);
+          currentPickerGrid.appendChild(newEl);
+        }
+        markDirty();
+        showToast(`➕ 已新增至相簿：${imgData.original_name}`);
+      }
+
+      if (typeof GLightbox !== 'undefined') {
+        GLightbox({ selector: '.glightbox' });
+      }
+    }
+
+    // 6. 套用圖片替換
+    function applyImageSwap(imgData, targetImg) {
+      if (!targetImg) return;
+      const imgFolder = currentPage ? (currentPage.image_folder || currentPage.id) : 'day-01';
+      const destSlug = currentTrip ? currentTrip.dest : 'germany';
+
+      const derivatives = imgData.derivatives || [];
+      const contentDeriv = derivatives.find(d => d.profile === 'content') || derivatives[0] || { filename: `${imgData.id}-content-960w.webp`, width: 960, height: 540 };
+      const lightboxDeriv = derivatives.find(d => d.profile === 'lightbox') || derivatives[derivatives.length - 1] || { filename: `${imgData.id}-lightbox-1600w.webp` };
+
+      const isPreviewOrDirectWebP = (currentPage && currentPage.file.includes('previews')) || targetImg.hasAttribute('srcset');
+
+      if (isPreviewOrDirectWebP && derivatives.length > 0) {
+        targetImg.src = `../${destSlug}/images/${imgFolder}/${contentDeriv.filename}`;
+        targetImg.dataset.origSrc = `../images/${imgFolder}/${contentDeriv.filename}`;
+
+        const origSrcset = derivatives.map(d => `../images/${imgFolder}/${d.filename} ${d.width}w`).join(',\n                           ');
+        const workspaceSrcset = derivatives.map(d => `../${destSlug}/images/${imgFolder}/${d.filename} ${d.width}w`).join(',\n                           ');
+        
+        targetImg.setAttribute('srcset', workspaceSrcset);
+        targetImg.dataset.origSrcset = origSrcset;
+
+        if (contentDeriv.width) targetImg.setAttribute('width', contentDeriv.width);
+        if (contentDeriv.height) targetImg.setAttribute('height', contentDeriv.height);
+
+        const parentLink = targetImg.closest('a.glightbox');
+        if (parentLink) {
+          parentLink.href = `../${destSlug}/images/${imgFolder}/${lightboxDeriv.filename}`;
+          parentLink.dataset.origHref = `../images/${imgFolder}/${lightboxDeriv.filename}`;
+        }
+      } else {
+        targetImg.src = `../${destSlug}/images/${imgFolder}/${contentDeriv.filename || imgData.original_name}`;
+        targetImg.dataset.origSrc = `../images/${imgFolder}/${imgData.original_name}`;
+
+        if (targetImg.hasAttribute('srcset')) {
+          targetImg.removeAttribute('srcset');
+          delete targetImg.dataset.origSrcset;
+        }
+
+        const parentLink = targetImg.closest('a.glightbox');
+        if (parentLink) {
+          parentLink.href = `../${destSlug}/images/${imgFolder}/${lightboxDeriv.filename || imgData.original_name}`;
+          parentLink.dataset.origHref = `../images/${imgFolder}/${imgData.original_name}`;
+        }
+      }
+
+      markDirty();
+      showToast(`✅ 已替換為：${imgData.original_name}`);
+    }
+
+    // 7. 儲存修改回 SSoT 原始手稿並重新編譯
+    async function saveCurrentArticle() {
+      if (!currentSourceDoc || !currentPage) return;
+      statusText.textContent = '儲存並編譯中...';
+      statusDot.className = 'status-dot saving';
+
+      // 複製一份 workspace 並移除編輯器專屬的 wrapper 與屬性
+      const clone = workspace.cloneNode(true);
+      clone.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
+      clone.querySelectorAll('.img-toolbar').forEach(tb => tb.remove());
+      clone.querySelectorAll('.grid-add-photo-card').forEach(card => card.remove());
+      clone.querySelectorAll('.img-edit-wrap').forEach(wrap => {
+        const img = wrap.querySelector('img');
+        if (img) wrap.parentNode.insertBefore(img, wrap);
+        wrap.remove();
+      });
+
+      // 還原圖片與連結的 SSoT 邏輯路徑
+      clone.querySelectorAll('img').forEach(img => {
+        if (img.dataset.origSrc) {
+          img.setAttribute('src', img.dataset.origSrc);
+          img.removeAttribute('data-orig-src');
+        }
+        if (img.dataset.origSrcset) {
+          img.setAttribute('srcset', img.dataset.origSrcset);
+          img.removeAttribute('data-orig-srcset');
+        }
+      });
+      clone.querySelectorAll('a.glightbox').forEach(link => {
+        if (link.dataset.origHref) {
+          link.setAttribute('href', link.dataset.origHref);
+          link.removeAttribute('data-orig-href');
+        }
+      });
+
+      // 將修改後的內容寫回原始 DOM 的 <main> 內
+      const targetMain = currentSourceDoc.querySelector('main') || currentSourceDoc.body;
+      targetMain.innerHTML = clone.innerHTML;
+
+      const fullCleanHtml = '<!DOCTYPE html>\n' + currentSourceDoc.documentElement.outerHTML;
+
+      try {
+        const res = await fetch('/api/save-source', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            trip: currentTrip.id,
+            file: currentPage.file,
+            html: fullCleanHtml
+          })
+        });
+        const data = await res.json();
+        if (data.success) {
+          markClean();
+          btnRestore.style.display = 'inline-flex';
+          showToast(data.message || '儲存並重新編譯發布成功！');
+        } else {
+          showToast(data.error || '儲存失敗', true);
+          markDirty();
+        }
+      } catch (err) {
+        showToast('無法與伺服器通訊', true);
+        markDirty();
+      }
+    }
+
+    // 8. 還原備份
+    async function restoreBackup() {
+      if (!confirm('確定要還原至上次存檔前的備份版本嗎？當前未存檔的修改將會遺失。')) return;
+
+      try {
+        const res = await fetch('/api/restore-backup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            trip: currentTrip.id,
+            file: currentPage.file
+          })
+        });
+        const data = await res.json();
+        if (data.success) {
+          parseAndRender(data.html);
+          markClean();
+          showToast('已成功還原備份！');
+        } else {
+          showToast(data.error || '還原失敗', true);
+        }
+      } catch (err) {
+        showToast('還原請求失敗', true);
+      }
+    }
+
+    function markDirty() {
+      isDirty = true;
+      statusDot.className = 'status-dot dirty';
+      statusText.textContent = '有未儲存變更';
+    }
+
+    function markClean() {
+      isDirty = false;
+      statusDot.className = 'status-dot';
+      statusText.textContent = '已同步就緒';
+    }
+
+    function showToast(msg, isError = false) {
+      editorToast.textContent = (isError ? '❌ ' : '✅ ') + msg;
+      editorToast.style.borderLeftColor = isError ? '#ef4444' : 'var(--accent)';
+      editorToast.classList.add('show');
+      setTimeout(() => editorToast.classList.remove('show'), 3500);
+    }
+
+    // 事件監聽綁定
+    tripSelect.addEventListener('change', () => {
+      if (isDirty && !confirm('當前文章有未儲存變更，確定要切換旅程嗎？')) {
+        tripSelect.value = currentTrip.id;
+        return;
+      }
+      currentTrip = allTrips.find(t => t.id === tripSelect.value);
+      updatePageOptions();
+    });
+
+    typeSelect.addEventListener('change', () => {
+      if (isDirty && !confirm('當前文章有未儲存變更，確定要切換類型嗎？')) {
+        return;
+      }
+      updatePageOptions();
+    });
+
+    pageSelect.addEventListener('change', () => {
+      if (isDirty && !confirm('當前文章有未儲存變更，確定要切換篇章嗎？')) {
+        pageSelect.value = currentPage.id;
+        return;
+      }
+      const selectedType = typeSelect.value;
+      const pages = currentTrip[selectedType] || [];
+      currentPage = pages.find(p => p.id === pageSelect.value);
+      if (currentPage) {
+        syncUrlState();
+        loadSource(currentPage.file);
+      }
+    });
+
+    imgModalFolderSelect.addEventListener('change', fetchAndRenderModalImages);
+    btnSave.addEventListener('click', saveCurrentArticle);
+    btnRestore.addEventListener('click', restoreBackup);
+    btnModalClose.addEventListener('click', () => imgModal.classList.remove('show'));
+    imgModal.addEventListener('click', (e) => {
+      if (e.target === imgModal) imgModal.classList.remove('show');
+    });
+
+    // 鍵盤快速鍵 Ctrl + S / Cmd + S
+    window.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') {
+        e.preventDefault();
+        saveCurrentArticle();
+      }
+    });
+
+    // 啟動編輯器
+    initEditor();
+  </script>
+</body>
+</html>
