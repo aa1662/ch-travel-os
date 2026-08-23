@@ -48,6 +48,32 @@ Journey（一次完整旅程）
 - 現有 Day Blog 若已完整承載一個 Place，優先重編，不新增重複文章。
 - 一個公開主題只保留一個 canonical URL；舊 URL 若遷移，只作轉址或相容入口。
 
+## 3.1 URL 策略：先採 Day + Place Hybrid，不過度設計
+
+目前 2026 Germany 仍是一本完整旅程專刊，因此已完成的正式文章優先維持在 Journey 連載脈絡內，不急著另建純 Place URL。
+
+短期規則：
+
+- 若文章本質仍是某一天的旅程章節，但主題已明確收斂到城市、地點或季節，URL 採 hybrid slug：
+  - `docs/germany/blog/day-02-hallstatt-winter.html`
+  - `docs/germany/blog/day-13-neuschwanstein-winter.html`
+- Hybrid URL 兼顧兩件事：保留 Day 順序，也讓 slug 帶有可搜尋的 Place 關鍵字。
+- 原本 `day-xx-blog.html` 若已公開，不立即刪除；是否改名、保留相容頁或更新內部連結，需逐篇 UAT 後決定。
+- 不為了 SEO 另外複製一篇內容相近的純 Place 文章，避免 duplicate content 與維護分裂。
+
+長期規則：
+
+- 只有當一篇文章已超出單一旅程日記，成為跨年份、跨旅程或 evergreen 的地方專題時，才建立純 Place URL：
+  - `docs/germany/hallstatt-winter-return.html`
+  - `docs/germany/neuschwanstein-return.html`
+- 純 Place URL 必須有自己的命題、結構與 canonical，不只是 Day 文章換檔名。
+- Day URL 可作為 Journey 章節入口；Place URL 則作為搜尋與長期收藏入口。
+
+成本與效益判斷：
+
+- Hybrid URL 是目前最低成本方案：不拆內容模型、不破壞 Journey 導覽，也提升 URL 可讀性與搜尋語意。
+- 純 Place URL 成本較高：需要重編開頭、canonical、內部連結與去重策略，等 Pilot UAT 確認後再採用。
+
 ## 4. 編輯與探索架構
 
 首頁先讓讀者認識故事，再提供地方與行程入口：
