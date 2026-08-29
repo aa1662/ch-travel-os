@@ -2,7 +2,7 @@
   "pipeline_version": "2.0.0",
   "trip": "2026-osaka",
   "dest": "2026-osaka",
-  "generated_at": "2026-08-29T07:27:41.080034+00:00",
+  "generated_at": "2026-08-29T11:44:29.246842+00:00",
   "quality": 84,
   "profiles": [
     {
@@ -2568,6 +2568,2505 @@
           "publicPath": "2026-osaka/images/day-02/20260825_145604-lightbox-901w.webp",
           "bytes": 326942,
           "hash": "6e0599c0ed237497f134fedd6b6cb59c4d2a1cc6d0dfc71adc9eacb03e26ff92"
+        }
+      ]
+    },
+    "day-03/20260826_082358.jpg": {
+      "id": "20260826_082358",
+      "original_filename": "20260826_082358.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "8cb9fbbcc7f54daff9c462b7c538276248d6d6a33bafefd1c66fbf48eb0e56c7",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20260826_082358-thumb-270w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_082358-thumb-270w.webp",
+          "bytes": 33516,
+          "hash": "c1d06ac9c5c96ff99a1c4666d80972bb92eb41d1de26eb809a491673e95b3ca0"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20260826_082358-content-540w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_082358-content-540w.webp",
+          "bytes": 126392,
+          "hash": "724cc7a895a933ee271da8948c475ae54e44923fdf28bb5aa4af1b99145577f4"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20260826_082358-desktop-676w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_082358-desktop-676w.webp",
+          "bytes": 196360,
+          "hash": "7feaf00deea73ba6026db5d4dce4df623714f106bda0394576adbbb130d61084"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20260826_082358-lightbox-901w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_082358-lightbox-901w.webp",
+          "bytes": 345762,
+          "hash": "c71e0445908a646b7428ab3158d689e99699a43e1ac616cb6917fb27c4923e20"
+        }
+      ]
+    },
+    "day-03/20260826_082549.jpg": {
+      "id": "20260826_082549",
+      "original_filename": "20260826_082549.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "6d88b5203e093e22d82a25065ebb96b0a25e820a598284771b59d73fc9869e3b",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_082549-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_082549-thumb-480w.webp",
+          "bytes": 30022,
+          "hash": "1c932a137da175df3662b02c87fc3deddc94fc424978bf279586eb0a72732a3c"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_082549-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_082549-content-960w.webp",
+          "bytes": 120246,
+          "hash": "c785f9a01c7ef68bdf0a90a338fa875e4e22858386a0159c2f55dad7fae1245a"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_082549-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_082549-desktop-1200w.webp",
+          "bytes": 187132,
+          "hash": "323beb8f65115d5c3a7551b977c265b4a205e871b8406677d180b2b17bceaea3"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_082549-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_082549-lightbox-1600w.webp",
+          "bytes": 325736,
+          "hash": "d7f14642cc937752d5856109730457765c01c2f269f2b7bba3adab79ec08f39e"
+        }
+      ]
+    },
+    "day-03/20260826_082715.jpg": {
+      "id": "20260826_082715",
+      "original_filename": "20260826_082715.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "37c4a141a3ef00d31d47e1ba003141142dec2ca49326cbcf5d789080b36a20ed",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_082715-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_082715-thumb-480w.webp",
+          "bytes": 52066,
+          "hash": "f540b3228a03a9af60f32a518b90f70104a26c824be4e5c21962d7e2e1b2bcc2"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_082715-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_082715-content-960w.webp",
+          "bytes": 201826,
+          "hash": "b5d791d64f3723d1e5aeb975001c5719580fc757a3f68aac72e614cd3014b772"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_082715-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_082715-desktop-1200w.webp",
+          "bytes": 306756,
+          "hash": "a28b194ab86e3cab28c01befb7f3e85d3c72051a81e0dda60708f1f843a948d0"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_082715-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_082715-lightbox-1600w.webp",
+          "bytes": 517158,
+          "hash": "c0d2289d6f6d88d2312f8f2f82b551a7fbcd6df5a117cf3052f7a975b6608263"
+        }
+      ]
+    },
+    "day-03/20260826_082833.jpg": {
+      "id": "20260826_082833",
+      "original_filename": "20260826_082833.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "84983b08ef194aa8a7b220b11d659b38c08e360b45277debf6589ae5b0fe080d",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20260826_082833-thumb-270w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_082833-thumb-270w.webp",
+          "bytes": 26812,
+          "hash": "1b6549c8e2e74bafe15b6bcf5eafb06fded0ad12735b299970cc8699c78885cc"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20260826_082833-content-540w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_082833-content-540w.webp",
+          "bytes": 103212,
+          "hash": "3c87d66bd2e36778a9a8caa61dceddbea1e622b2a262c2bd9ca78f3b6bcf1582"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20260826_082833-desktop-676w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_082833-desktop-676w.webp",
+          "bytes": 156720,
+          "hash": "f778bd509b7b3af357d9aef82e166724a376eb1da76318d1ac96a7110629b4f8"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20260826_082833-lightbox-901w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_082833-lightbox-901w.webp",
+          "bytes": 258714,
+          "hash": "f6f85be17fb7dd4c89737fcb81dce1368365fc41c62e0f1ab9525845c098088c"
+        }
+      ]
+    },
+    "day-03/20260826_082901.jpg": {
+      "id": "20260826_082901",
+      "original_filename": "20260826_082901.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "6a354a8e1b07d1f95fd718a7d10bdaa53fc10444fed48a9e9d20a9546a957505",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_082901-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_082901-thumb-480w.webp",
+          "bytes": 30836,
+          "hash": "fc8f4ef73ee24a71b6e32bda8bc8a7f64ec0c63de11c007fd4ee60fbff7441be"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_082901-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_082901-content-960w.webp",
+          "bytes": 121994,
+          "hash": "13df333c1c838093e74973b218c6bc0a2dc65dcda5f49cfbefc205f52dfa4d0d"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_082901-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_082901-desktop-1200w.webp",
+          "bytes": 192028,
+          "hash": "aaaee55c55ddc4288965671329035bd1f295dcc4ab874e1a23c9571a860dcdea"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_082901-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_082901-lightbox-1600w.webp",
+          "bytes": 345346,
+          "hash": "f7c1ba13e29b5519bae0f880576b4d040b7a73a0b769e50113cb9a4c8b95c079"
+        }
+      ]
+    },
+    "day-03/20260826_082939.jpg": {
+      "id": "20260826_082939",
+      "original_filename": "20260826_082939.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "7bbc44ca72240da79786ef4e2eac8f5a48bc83484880046426f2167e1aa6bc6b",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_082939-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_082939-thumb-480w.webp",
+          "bytes": 50338,
+          "hash": "bd02a25eb277804ca3297aa8ef039f96888b299e3dae5bc169493e13a2df6486"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_082939-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_082939-content-960w.webp",
+          "bytes": 202656,
+          "hash": "62c548988cea435ed41ba79daec60a9f6b730e7167c0c94f0121dff344a6811a"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_082939-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_082939-desktop-1200w.webp",
+          "bytes": 319694,
+          "hash": "52ad98e1d0e4c645e44ce32c0901988b4b7db5b6b24c0a5c61ffab172fd93467"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_082939-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_082939-lightbox-1600w.webp",
+          "bytes": 559214,
+          "hash": "805ff148e178db8a898eaff5e77073e54036bf97ac56483eebf644b0f1840265"
+        }
+      ]
+    },
+    "day-03/20260826_083009.jpg": {
+      "id": "20260826_083009",
+      "original_filename": "20260826_083009.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "319317ebc2395d1c43bbc70d9b6db1ea492663e3970afa84c90d7380c6be604c",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_083009-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083009-thumb-480w.webp",
+          "bytes": 47308,
+          "hash": "11102ef86a8ea47fcb944e0458c38085a03562c161dd7a27f20f8ebf0748c67c"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_083009-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083009-content-960w.webp",
+          "bytes": 195526,
+          "hash": "c63cb1c3dd07df9a3e5f8b572ba609816894eb2e99a06b97ef0d6674836851e1"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_083009-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083009-desktop-1200w.webp",
+          "bytes": 306294,
+          "hash": "52c509084f13bb00f6fd5d31ae1719898dbb21e925303560aa269e438429c73d"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_083009-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083009-lightbox-1600w.webp",
+          "bytes": 539576,
+          "hash": "5d8cc7aa85cfbd00695ae3f7c4b2b7cf40e42e2fd0646ae7f603ff89ad424cd7"
+        }
+      ]
+    },
+    "day-03/20260826_083025.jpg": {
+      "id": "20260826_083025",
+      "original_filename": "20260826_083025.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "8acaf89db7c0fa1095f69f7e036b4d455632f7a9f8ee25cd2f4ad9d8ce0423da",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_083025-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083025-thumb-480w.webp",
+          "bytes": 19530,
+          "hash": "9707b776eacd66d800097f46dafe07bec8fcd5da3fa47b1b324af396cb30c3a0"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_083025-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083025-content-960w.webp",
+          "bytes": 70566,
+          "hash": "9b7651ceeda50c46d30e9938d3d25f86df622d6558ff2603518447f52d1a1116"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_083025-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083025-desktop-1200w.webp",
+          "bytes": 112910,
+          "hash": "337ce0a97db0eec14fbba8e1e2736660c1aabd62ab82b9742b63d6c1fb61c3cc"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_083025-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083025-lightbox-1600w.webp",
+          "bytes": 197874,
+          "hash": "2ec927d442b6400297219c8b380b463b669e05d5f2e51b0dfa789bcb6a9f8e5f"
+        }
+      ]
+    },
+    "day-03/20260826_083210.jpg": {
+      "id": "20260826_083210",
+      "original_filename": "20260826_083210.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "187c7f74a38acad598de67a4f0ecfe5302e53e35de2613e6d92c455c9ede0256",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_083210-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083210-thumb-480w.webp",
+          "bytes": 50464,
+          "hash": "2a4a05a0c976079c5dd293c97bb675e8ef0e245b35ff120529b1faf8215c6c9b"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_083210-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083210-content-960w.webp",
+          "bytes": 194422,
+          "hash": "b46f7c26fbd59428804cb11f948e48741dc1405a4a621d16600b20f4a2bae138"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_083210-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083210-desktop-1200w.webp",
+          "bytes": 300028,
+          "hash": "2a8011e415ec11e06beccb607d1c48ec2714080698edfa39a5965d0ce44be9b3"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_083210-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083210-lightbox-1600w.webp",
+          "bytes": 501872,
+          "hash": "2226fcd69ac92f881034fab992569acf526163b9c27466a5d1df4140b30b4e67"
+        }
+      ]
+    },
+    "day-03/20260826_083227.jpg": {
+      "id": "20260826_083227",
+      "original_filename": "20260826_083227.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "ecea9bf131fd52e109bd1d91259f98d7b57b6b1d828bfa4de38866e620a28a5c",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_083227-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083227-thumb-480w.webp",
+          "bytes": 58886,
+          "hash": "df9a9bfac2ed4d3a6eb58244f65fde5b48c5df1b4e1817d34036b66174a4a17d"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_083227-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083227-content-960w.webp",
+          "bytes": 239604,
+          "hash": "b667ca96dd863e8690a288df8b088aa5476a728ba9a45bd698d777a027791992"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_083227-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083227-desktop-1200w.webp",
+          "bytes": 374658,
+          "hash": "14f5706bce364d44de99d519b887cf537f25dd88840a5c77b382a261cd299c54"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_083227-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083227-lightbox-1600w.webp",
+          "bytes": 660458,
+          "hash": "f9b7908c33627090b8547d41085751b3818d28badaa4837c5e194ccee1a78dc3"
+        }
+      ]
+    },
+    "day-03/20260826_083249.jpg": {
+      "id": "20260826_083249",
+      "original_filename": "20260826_083249.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "62a29e120ae4413cc5d2fa682a6aa3a119eaaea6f9945e9bf701f7f7242259c4",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20260826_083249-thumb-270w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083249-thumb-270w.webp",
+          "bytes": 53510,
+          "hash": "a5ceaa58921042d22e2134c70bd42410709bbd36803d0ac70d527e45723672bb"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20260826_083249-content-540w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083249-content-540w.webp",
+          "bytes": 213296,
+          "hash": "e1950d8c98a640adbb3c0300cb107d6687b3eb348f461757396c60e13297b8d8"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20260826_083249-desktop-676w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083249-desktop-676w.webp",
+          "bytes": 334486,
+          "hash": "35d5010e2bfd957cdcb11ead7a1dce7c21eb2125df3313ada30b4d305dc1406b"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20260826_083249-lightbox-901w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083249-lightbox-901w.webp",
+          "bytes": 596150,
+          "hash": "a61981b125728e7f00587181f4d5cf2c28d3346f7899afbf8bac897152a376f6"
+        }
+      ]
+    },
+    "day-03/20260826_083340.jpg": {
+      "id": "20260826_083340",
+      "original_filename": "20260826_083340.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "edeb81964f8747bf72930cc4321045afecf7adff3b529e64ed3fbf310400f090",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20260826_083340-thumb-270w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083340-thumb-270w.webp",
+          "bytes": 58708,
+          "hash": "c83d7738d7facdda984a3519644c5313f51c88b6ffc558c9e00ace20634c3073"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20260826_083340-content-540w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083340-content-540w.webp",
+          "bytes": 235664,
+          "hash": "1763de3a918aa63bed2f83be44238f80ba1451529fef31dfa3a33155281413c3"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20260826_083340-desktop-676w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083340-desktop-676w.webp",
+          "bytes": 360434,
+          "hash": "1dbbcf80387c020509726335410f35a04892727d72d7bf03f34ff9ddeab369e9"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20260826_083340-lightbox-901w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083340-lightbox-901w.webp",
+          "bytes": 610874,
+          "hash": "341b7708ae426744c1f045a9928a479c3572e21b41ca153ca6019018b31b7ec1"
+        }
+      ]
+    },
+    "day-03/20260826_083453.jpg": {
+      "id": "20260826_083453",
+      "original_filename": "20260826_083453.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "9ff608eb30dc0c75937ac82486f9f687031496d78724901ec69d820108b18ec3",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20260826_083453-thumb-270w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083453-thumb-270w.webp",
+          "bytes": 54816,
+          "hash": "174bfc019f81546d2e8f28ef90fd56a5d98b0844c9a0f0b687f205a7a2137418"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20260826_083453-content-540w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083453-content-540w.webp",
+          "bytes": 205516,
+          "hash": "4b4de47881b9f4ebed4c6deccfa8db50c47716afdb02f379da2cc7976d18d527"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20260826_083453-desktop-676w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083453-desktop-676w.webp",
+          "bytes": 311526,
+          "hash": "5dc79b8fed70834e07adbeb8da0b561abf6c522264047820242e843b91e36511"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20260826_083453-lightbox-901w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083453-lightbox-901w.webp",
+          "bytes": 505788,
+          "hash": "44f9e8b7af9e133ab79089461a2472c9d4bb624c8198099d11434bdf239a7753"
+        }
+      ]
+    },
+    "day-03/20260826_083521.jpg": {
+      "id": "20260826_083521",
+      "original_filename": "20260826_083521.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "f896e842966dc7414d1b6562b2090dc44df4c812112ca1e67211080ce64d3a80",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_083521-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083521-thumb-480w.webp",
+          "bytes": 45664,
+          "hash": "0803923effb2a083a00ed4d61ba2b6c327d796d831147e1fe8af90bb908cd94d"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_083521-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083521-content-960w.webp",
+          "bytes": 170444,
+          "hash": "61ac8b15db8f869d7cd78852dc5c8e81ae64c222b414fdba81c43b22b6bedcb5"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_083521-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083521-desktop-1200w.webp",
+          "bytes": 255006,
+          "hash": "0e7fdff24870b80e9c760882d73d99568e2336deaf940dcfd24677a7e964d3c3"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_083521-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083521-lightbox-1600w.webp",
+          "bytes": 431528,
+          "hash": "b5cbeb43f65e389c277dde84fd8fbc86b8487d5f4ccd0ecc5295b1f5018ca7ed"
+        }
+      ]
+    },
+    "day-03/20260826_083555.jpg": {
+      "id": "20260826_083555",
+      "original_filename": "20260826_083555.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "866f5dea70c9757c6642eeb1c92d120fe37f67dafd8a97a67862ebb0ee6968f8",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_083555-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083555-thumb-480w.webp",
+          "bytes": 54502,
+          "hash": "4f67a711c920cd48c40d20e8325ed40a7a542ef15b0c8d329a293b6efecb3a2f"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_083555-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083555-content-960w.webp",
+          "bytes": 171758,
+          "hash": "2da43def839631bb499acfebdc6dea676487872374c761a0ef188662ef05796c"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_083555-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083555-desktop-1200w.webp",
+          "bytes": 247004,
+          "hash": "cfe0ea5ea7d2339f03dd93c0bc1f21f1241effae0a1e474c625d4d8555149821"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_083555-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083555-lightbox-1600w.webp",
+          "bytes": 383806,
+          "hash": "abeb823ac89400038b143a0a0f26802ddaa2d2cd7d9803c934f3a56c17283c68"
+        }
+      ]
+    },
+    "day-03/20260826_083623.jpg": {
+      "id": "20260826_083623",
+      "original_filename": "20260826_083623.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "87a326255affca57b9f40bd16c2c3e703355a7477c8a3ec9810911dc5376cb56",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_083623-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083623-thumb-480w.webp",
+          "bytes": 52532,
+          "hash": "a2d7cc6f5de244df5e4597fa6c121457849d06aa6fc374df06b77f2219c79362"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_083623-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083623-content-960w.webp",
+          "bytes": 175790,
+          "hash": "84fc1c0cd898bdccbff0938b6d5988177f86103c5d8f84a8b9f7df87da7fd0c5"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_083623-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083623-desktop-1200w.webp",
+          "bytes": 254420,
+          "hash": "57438287f4a8f51c4d49a17edb7788aa69a8933f392172f33861e83f6ab237be"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_083623-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083623-lightbox-1600w.webp",
+          "bytes": 408904,
+          "hash": "a79ec8caf042d3ab78e576b343d73707b1ec6a7346869e0d94993cbe2ced95fd"
+        }
+      ]
+    },
+    "day-03/20260826_083745.jpg": {
+      "id": "20260826_083745",
+      "original_filename": "20260826_083745.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "aabb3c63d493eb0fb3be61d0698be0d7c3751d91291c7697dc575dbb3209fffb",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_083745-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083745-thumb-480w.webp",
+          "bytes": 45574,
+          "hash": "da4c85cb3fe3e63d98ce1d46a775fadd242639ca2f3bcc6ef1a5aa41fa9d3fc0"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_083745-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083745-content-960w.webp",
+          "bytes": 147452,
+          "hash": "ab769480297d60433bbd122c6d8be20a78e7360cec77f19215b0a44faf057d0d"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_083745-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083745-desktop-1200w.webp",
+          "bytes": 213850,
+          "hash": "74de64b2e3be7791579f0678fb2646021e530c80f04bb9b32373e4dcd8775f91"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_083745-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_083745-lightbox-1600w.webp",
+          "bytes": 340680,
+          "hash": "98ad9207287d65dbf63385c9945e6fd9e0ed5a5fda4643c4e835a68b576c32e3"
+        }
+      ]
+    },
+    "day-03/20260826_084010.jpg": {
+      "id": "20260826_084010",
+      "original_filename": "20260826_084010.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "384765a382de8e47ac09a2c79ca6feca90ab3f09f61662d75b46bf16b01cbce1",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20260826_084010-thumb-270w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_084010-thumb-270w.webp",
+          "bytes": 33178,
+          "hash": "1bf6c3cf2f5bc2497ca66502be0247fad36ed346cd1583436ce5716ddde7104f"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20260826_084010-content-540w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_084010-content-540w.webp",
+          "bytes": 107070,
+          "hash": "646c70f3fef6fa84675c1027a28b895a8490a16fb60c8f93a06f254b1ca73eb4"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20260826_084010-desktop-676w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_084010-desktop-676w.webp",
+          "bytes": 160172,
+          "hash": "c53fc58530d757d5f2669c7900734e8ddc2b78fb40211594ec6a5b7d1c943599"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20260826_084010-lightbox-901w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_084010-lightbox-901w.webp",
+          "bytes": 262590,
+          "hash": "7e96b671f4c01a922a61e3d02a70e3f25c2400fd6a0ef749419e8216b44185e2"
+        }
+      ]
+    },
+    "day-03/20260826_084419.jpg": {
+      "id": "20260826_084419",
+      "original_filename": "20260826_084419.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "7618104b43bd5a4bb1ceb6059ce189b1a9ef126cb35590fa0a14c70dcc73c751",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_084419-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_084419-thumb-480w.webp",
+          "bytes": 49110,
+          "hash": "dd43bf3e6845932e73775814a0d73cac458da96f931a9f07e8e660519881b28b"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_084419-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_084419-content-960w.webp",
+          "bytes": 183856,
+          "hash": "cc8703222b7ac1598db7c9a09181dc2e1f9754d3e71bb33f7859aae68123bc46"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_084419-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_084419-desktop-1200w.webp",
+          "bytes": 280948,
+          "hash": "9b2c502f9a35d7c15295937882976d9918d52fad7c62d2a3582d69bcbd628c4f"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_084419-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_084419-lightbox-1600w.webp",
+          "bytes": 477694,
+          "hash": "e0087f7a77f69fae8ff6639d443178c088dcf315c10c9b9c51db6539e6ae770c"
+        }
+      ]
+    },
+    "day-03/20260826_084526.jpg": {
+      "id": "20260826_084526",
+      "original_filename": "20260826_084526.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "02c7ccbf16d5ccec5f361ce0dbe886c040886f052ccfb0ec0d5102b52fc8ed37",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20260826_084526-thumb-270w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_084526-thumb-270w.webp",
+          "bytes": 39332,
+          "hash": "d352dd0a12692957a64c7fe3386157698f8c2da59975f37761fb3a662788708f"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20260826_084526-content-540w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_084526-content-540w.webp",
+          "bytes": 141356,
+          "hash": "77ffcde53f7b5875893967b50b32435657f33b23643109b2d379132a3976fce2"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20260826_084526-desktop-676w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_084526-desktop-676w.webp",
+          "bytes": 211060,
+          "hash": "547990ea613a3a750b96cdae87a753bf05304ff778972e74298ddfa06b08877f"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20260826_084526-lightbox-901w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_084526-lightbox-901w.webp",
+          "bytes": 346538,
+          "hash": "a570bb876d2683c345ab485ab051f6ad442cc4893824a27ab1d82c7c53894d75"
+        }
+      ]
+    },
+    "day-03/20260826_084634.jpg": {
+      "id": "20260826_084634",
+      "original_filename": "20260826_084634.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "75c73d81a302607831d45b1f3f88c08d0027fc4007bfc3ee379330d13f5efa52",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_084634-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_084634-thumb-480w.webp",
+          "bytes": 40796,
+          "hash": "67d91907759e81ecbd6f2ead3fd26bf40d2bdc61671dd70b81cb58a604cc460b"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_084634-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_084634-content-960w.webp",
+          "bytes": 145426,
+          "hash": "a961b1604884a63e5e0a11f843574adba0d23d89f42cf69d3d128828671a7872"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_084634-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_084634-desktop-1200w.webp",
+          "bytes": 215302,
+          "hash": "bb857482c1db8e5b15529e4297c8d73ae9b0fae0a70e175017ee4f6f073b87c4"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_084634-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_084634-lightbox-1600w.webp",
+          "bytes": 351384,
+          "hash": "142b855e457226fc4a0eabc49b39ffceff517f4bd481e192c74932a6815c5e2a"
+        }
+      ]
+    },
+    "day-03/20260826_084650.jpg": {
+      "id": "20260826_084650",
+      "original_filename": "20260826_084650.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "6e9c742c7e194d1dbda4aa66025208cd65339e5f643d5e25654a7f12ba733819",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_084650-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_084650-thumb-480w.webp",
+          "bytes": 51094,
+          "hash": "dbe17e4173f5c71ff5eb095a5d3a35fbf98d2739f4a480862354da812117b349"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_084650-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_084650-content-960w.webp",
+          "bytes": 181686,
+          "hash": "e7b54529d6a692a5820afa4a280f52f4f011eb5fb405eb2c0fb3a9615156548f"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_084650-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_084650-desktop-1200w.webp",
+          "bytes": 276834,
+          "hash": "658a2d060ff332e872e4ef3f15c767759a045b53919e55dea939c04afa8f1eac"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_084650-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_084650-lightbox-1600w.webp",
+          "bytes": 460398,
+          "hash": "a007b64f0c5d8e592d9599c35d12bd9d2badea24144ab415cfaa57647f9891a0"
+        }
+      ]
+    },
+    "day-03/20260826_085303.jpg": {
+      "id": "20260826_085303",
+      "original_filename": "20260826_085303.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "2d53a78dd7d3dbfee11e3edec75d7cc4c9723cb11d7c5e42f102c86b45904415",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_085303-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_085303-thumb-480w.webp",
+          "bytes": 39192,
+          "hash": "85711544f6f1d406acecf2f72447d60b777387278124de0ef51e76f17c713749"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_085303-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_085303-content-960w.webp",
+          "bytes": 144386,
+          "hash": "fe8f2823f0aac8bf7c3781aadc7dc80ff150a0f77a649177f113541be765356b"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_085303-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_085303-desktop-1200w.webp",
+          "bytes": 217970,
+          "hash": "37062a39ab5745d63b7d2a7fcdb66c28c61368dd625dc90c208254b57e901057"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_085303-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_085303-lightbox-1600w.webp",
+          "bytes": 366540,
+          "hash": "b5b8dc52bddcf9db6db73634b8ee9b6e244f75bbc9c60118892c1c17a2d31221"
+        }
+      ]
+    },
+    "day-03/20260826_085342.jpg": {
+      "id": "20260826_085342",
+      "original_filename": "20260826_085342.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "ad1f5ed5aff895b3149d629fc932b2ee269e83ae378f4b5f4e9cbd249804cc2c",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_085342-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_085342-thumb-480w.webp",
+          "bytes": 31254,
+          "hash": "6f8c5ff9c318b27173f9704f511a9c8e30d1c2dbc69013425cc1f3077458a535"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_085342-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_085342-content-960w.webp",
+          "bytes": 122196,
+          "hash": "e0ef525f6906839f980bce99dfd9afea148b32681a9a4b9ae72d43376e5639c8"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_085342-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_085342-desktop-1200w.webp",
+          "bytes": 191064,
+          "hash": "e3b787c556d72f621dab2ba7321981fc1f6374f70edeeeede3b8934842f72b10"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_085342-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_085342-lightbox-1600w.webp",
+          "bytes": 331648,
+          "hash": "eb07771a51791cb0c9ac9d37c28db38741c53007fea72f9fc8c6339bf84d55f2"
+        }
+      ]
+    },
+    "day-03/20260826_085413.jpg": {
+      "id": "20260826_085413",
+      "original_filename": "20260826_085413.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "606f429949be19d9cf57c3a3060b97c2ed0dd3a031ae6163910ca35ff6407902",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_085413-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_085413-thumb-480w.webp",
+          "bytes": 41572,
+          "hash": "48de27949dd3c382f2e8dfd664832cb59b71f7a52cf20ed109b2d6b8ad4a27ae"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_085413-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_085413-content-960w.webp",
+          "bytes": 144020,
+          "hash": "8efc406c4dc98e884ad099d98bcd6c21f27e4fc4898f0d15914ab526cc8a15b6"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_085413-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_085413-desktop-1200w.webp",
+          "bytes": 213150,
+          "hash": "3b194863034df4db45ef3f9bded6ca2a1bfaf46825632c2307b2a884028c2e72"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_085413-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_085413-lightbox-1600w.webp",
+          "bytes": 340762,
+          "hash": "841bca9064a238a4f1db794155bd0efde81624cfae215a01913318cf4c32c781"
+        }
+      ]
+    },
+    "day-03/20260826_085445.jpg": {
+      "id": "20260826_085445",
+      "original_filename": "20260826_085445.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "5dbf750fad14ab0fe40a4f103d07b0f5a852e22bc8238d514508469628ac36d4",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_085445-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_085445-thumb-480w.webp",
+          "bytes": 37878,
+          "hash": "0347d05ed9e684af40c4f20bb2857ffddcf177950a3c1b44a00ec2345c0c6454"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_085445-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_085445-content-960w.webp",
+          "bytes": 138524,
+          "hash": "2014554cd131568ada30f80fad2475d204cbf90e18b3246c91c51fc04056bcd1"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_085445-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_085445-desktop-1200w.webp",
+          "bytes": 210872,
+          "hash": "68e34ac840610814b2b466605d9eb76dc9c9e11004bdeb8ff14ae00022aec53f"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_085445-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_085445-lightbox-1600w.webp",
+          "bytes": 354256,
+          "hash": "bc69138978c69ceb8a4322f5f7e599c87f4ddf9712100a883595236dc460239c"
+        }
+      ]
+    },
+    "day-03/20260826_085802.jpg": {
+      "id": "20260826_085802",
+      "original_filename": "20260826_085802.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "d0df855f311279649e11d7d11b12d00b4a292fb6f8ee39d64a3fac7bb5f6ad3a",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_085802-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_085802-thumb-480w.webp",
+          "bytes": 37564,
+          "hash": "d7cbcbd723b0865be961979182b8828ff811221033bdf527532beaa8e8810659"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_085802-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_085802-content-960w.webp",
+          "bytes": 151068,
+          "hash": "e2033bf85fc56f6393461d3bf70f74fa4cfd934929a8ebffe7b7c45775c34d36"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_085802-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_085802-desktop-1200w.webp",
+          "bytes": 234958,
+          "hash": "c99b084ced0683cd349e2cee77d561853d244286d7b4f54d77d1671e1be3c36c"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_085802-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_085802-lightbox-1600w.webp",
+          "bytes": 409674,
+          "hash": "9a0de9677c3ec62bdc922bacddf47e2c78e5a1f8c5e2316df23d66e0e0b48632"
+        }
+      ]
+    },
+    "day-03/20260826_090125.jpg": {
+      "id": "20260826_090125",
+      "original_filename": "20260826_090125.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "a64873466b83ab19c306d67bb88155c7a20380da760aefa6adb113cd3a8458e4",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20260826_090125-thumb-270w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_090125-thumb-270w.webp",
+          "bytes": 43094,
+          "hash": "f71def513f2694afc3dd10f874c4264792341d662882ad002dfd12edba4bdbfc"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20260826_090125-content-540w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_090125-content-540w.webp",
+          "bytes": 129246,
+          "hash": "f370f24013b7bedda6c0a5149d44a22948ba85429e20025907d0385be2334181"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20260826_090125-desktop-676w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_090125-desktop-676w.webp",
+          "bytes": 182364,
+          "hash": "a84d4efb6d4d164d890628e70e10ecf95dc6802d2a1340b392dc4eae4847a774"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20260826_090125-lightbox-901w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_090125-lightbox-901w.webp",
+          "bytes": 283560,
+          "hash": "d88359efbd47cc852519203a0eead74eba61bd77ddae9c743b5c0e9b618839d6"
+        }
+      ]
+    },
+    "day-03/20260826_090500.jpg": {
+      "id": "20260826_090500",
+      "original_filename": "20260826_090500.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "94ffeab9735d2cd3a3670b7278aa541ffb2cc47ba491ecd5c06f7406f04770a1",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_090500-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_090500-thumb-480w.webp",
+          "bytes": 38766,
+          "hash": "a30e99c63f8a2bcbb645a321e4c2469468b5bdf7477edab7f48a1bfd413f31d2"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_090500-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_090500-content-960w.webp",
+          "bytes": 129466,
+          "hash": "bb79cdc7e8c2077d4791303ff4b1374561bda698348b7ee1ab6d7211e2f8238c"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_090500-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_090500-desktop-1200w.webp",
+          "bytes": 190506,
+          "hash": "b9f487d6a44d8cbf7738ddb05ddf3e6b295c628e494149ea3e3e8c427b356c28"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_090500-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_090500-lightbox-1600w.webp",
+          "bytes": 305654,
+          "hash": "6bfd6676094f223e4eee318d73d7870a62ea70fc3d33983530814a86f899ff12"
+        }
+      ]
+    },
+    "day-03/20260826_090705.jpg": {
+      "id": "20260826_090705",
+      "original_filename": "20260826_090705.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "27a3f676e78761e2926ce077ed7179b2fbdb79be39b84da7f46ff485fe807498",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20260826_090705-thumb-270w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_090705-thumb-270w.webp",
+          "bytes": 38120,
+          "hash": "c4be303728a0c873372151fe988852601809552c45a2c137e0e135cacc9d1d00"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20260826_090705-content-540w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_090705-content-540w.webp",
+          "bytes": 136136,
+          "hash": "fd833493a600ba211bfdfa73bb1a6c39e86d5dff35007e15ae51888f3c3d8e6c"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20260826_090705-desktop-676w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_090705-desktop-676w.webp",
+          "bytes": 202794,
+          "hash": "20e6121007d2015b24cfe6b60018f98ba9b8cfe637428f5f40e2d0d8ee016837"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20260826_090705-lightbox-901w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_090705-lightbox-901w.webp",
+          "bytes": 334970,
+          "hash": "a51fcb34ea4142fb121829a784327c3f0e87c6fa5e30cfe8860b47374e18dd4a"
+        }
+      ]
+    },
+    "day-03/20260826_090759.jpg": {
+      "id": "20260826_090759",
+      "original_filename": "20260826_090759.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "ce2da3580d4d246fba516f0a9db29add8f3c58224468b97485814058f6112a93",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_090759-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_090759-thumb-480w.webp",
+          "bytes": 47114,
+          "hash": "0cc8e13c801d2e2c1825ab410c598ca96e68005ee74ad6594abaf57b9c8d536f"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_090759-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_090759-content-960w.webp",
+          "bytes": 185804,
+          "hash": "237670e765b421dcf45a527dfe3bb440b11cc28deace86628f5a0dddbdbddce1"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_090759-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_090759-desktop-1200w.webp",
+          "bytes": 284356,
+          "hash": "73f59b27410b4e36f84010c34b1df4f33b63004dcdddb93cba714d9418f774ad"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_090759-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_090759-lightbox-1600w.webp",
+          "bytes": 486900,
+          "hash": "d911273fd5c8850a4d9b291cfcbb43f351e7e7cf58805933f63dbb42f96ba82d"
+        }
+      ]
+    },
+    "day-03/20260826_091834.jpg": {
+      "id": "20260826_091834",
+      "original_filename": "20260826_091834.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "395e639f4f9a702f64dfe288e5d7ac92552cad1d68425c9ef7c9c9cccb59b7c0",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_091834-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_091834-thumb-480w.webp",
+          "bytes": 37990,
+          "hash": "423e78b840fd12126b1768683a1d1d6f0af62e12699b2cf1728b96b56ff81832"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_091834-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_091834-content-960w.webp",
+          "bytes": 134748,
+          "hash": "18128bef45fafd1d465c081de70f73b971c771648cc12f2b35a51afde3c7fdd3"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_091834-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_091834-desktop-1200w.webp",
+          "bytes": 200902,
+          "hash": "f01fb586aab91482ee85459aee3e49babd68915a51e88474e1a5896b633c8476"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_091834-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_091834-lightbox-1600w.webp",
+          "bytes": 336934,
+          "hash": "3fddddf4854bb7acf099084feb50ad7b6d618acfec041f0aa2a2116bdbc02eeb"
+        }
+      ]
+    },
+    "day-03/20260826_091840.jpg": {
+      "id": "20260826_091840",
+      "original_filename": "20260826_091840.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "452e3ae7535c6236e47767d6b0ecad0fb1ced2a4095907838d04bf9ae3b4c402",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_091840-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_091840-thumb-480w.webp",
+          "bytes": 35280,
+          "hash": "2e41a16b8af6d8c7ebad17ac9b2066de1e84e0759db4dc94a84bdd9ccc2735e5"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_091840-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_091840-content-960w.webp",
+          "bytes": 130272,
+          "hash": "b48594f78ee1d4e62b2105aef6f470b68154132255cab431f156ea9f2910f50d"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_091840-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_091840-desktop-1200w.webp",
+          "bytes": 200036,
+          "hash": "611dfdc730ad720b3f13a748a2ae431b545b5df5115d11fa3390ae1cf1f6b906"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_091840-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_091840-lightbox-1600w.webp",
+          "bytes": 343080,
+          "hash": "e7b8b2bc84a59a2aa13d0b9b4b2e6d08dc199d320cc93204b122673a06e909c3"
+        }
+      ]
+    },
+    "day-03/20260826_092339.jpg": {
+      "id": "20260826_092339",
+      "original_filename": "20260826_092339.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "5f68a93e603ff3cfdcebc385532fcf9c6cec5fb8a4ba2c57d5b1789a84392a59",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20260826_092339-thumb-270w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_092339-thumb-270w.webp",
+          "bytes": 34272,
+          "hash": "d574bc0e8f7fc4893cea441b1591c25d06d029dd740de8dc98af9eba73b1ea61"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20260826_092339-content-540w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_092339-content-540w.webp",
+          "bytes": 102230,
+          "hash": "ee85b24060c6dfc1218b52735739fb89983dfd3f4253a9a89b90005ea4186d74"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20260826_092339-desktop-676w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_092339-desktop-676w.webp",
+          "bytes": 148064,
+          "hash": "696a2cfbc0305dc204f170807d9ed0a8681d2d020fef7fe532798da4c82d1e2f"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20260826_092339-lightbox-901w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_092339-lightbox-901w.webp",
+          "bytes": 230214,
+          "hash": "675df5b9a0750081d50742bc5c6b111f5b822abdb3c8428f4cfc5eba3969404b"
+        }
+      ]
+    },
+    "day-03/20260826_092359.jpg": {
+      "id": "20260826_092359",
+      "original_filename": "20260826_092359.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "d73686fd1b5f44b98017d7c3471653f00941b8110eb61140e78c33398cad44bd",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_092359-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_092359-thumb-480w.webp",
+          "bytes": 39096,
+          "hash": "a2f8646d415d2183ab6c697f6c2f0f337a7d9fdb7c9c681d6d9e1697ff98e3a6"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_092359-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_092359-content-960w.webp",
+          "bytes": 111284,
+          "hash": "469ec70687ee63f16cd12518a6d4f4b948ecf126a451f789f6938ab64c9cb420"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_092359-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_092359-desktop-1200w.webp",
+          "bytes": 156018,
+          "hash": "a28350568f0760f710cdfae04bf7778619bb9bfe55a4e7856d0e92c8fe2a5e09"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_092359-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_092359-lightbox-1600w.webp",
+          "bytes": 234910,
+          "hash": "0eae56bb174789aabd37127689499e8d47cc698fd450893657567de2dac77125"
+        }
+      ]
+    },
+    "day-03/20260826_092721.jpg": {
+      "id": "20260826_092721",
+      "original_filename": "20260826_092721.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "ee46d4970311278b176c8a9b1aa30d44c23cb61c567754a5172cafcac77ce3b0",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20260826_092721-thumb-270w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_092721-thumb-270w.webp",
+          "bytes": 39308,
+          "hash": "7088cf45f5df05fe820f849c62b5b7a237d4b0bfff9ddd0ee198cb2f54801ef4"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20260826_092721-content-540w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_092721-content-540w.webp",
+          "bytes": 132126,
+          "hash": "5de956fce475afbac2d3a8a03dbe7b72a359e68e4cedc5460509746bc8ceb1ab"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20260826_092721-desktop-676w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_092721-desktop-676w.webp",
+          "bytes": 199550,
+          "hash": "f575b28f7b326902f0e4054d38fb3da4f0f415641e5a7be1c74e13ca05698d91"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20260826_092721-lightbox-901w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_092721-lightbox-901w.webp",
+          "bytes": 336282,
+          "hash": "8351cb35f0a2675a4acf8b4cf2a0bdf551b860657d7a73b4f10ec8b79caf855f"
+        }
+      ]
+    },
+    "day-03/20260826_092813.jpg": {
+      "id": "20260826_092813",
+      "original_filename": "20260826_092813.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "bd175e6b6e283d9d54941e1a151a336cffac030363e2fd5674b4e31fc004c41f",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_092813-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_092813-thumb-480w.webp",
+          "bytes": 39654,
+          "hash": "f8ef1fb94b41def81ae1bcdd51d4d27021a2e015b678e1f5c2521c7a3879047b"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_092813-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_092813-content-960w.webp",
+          "bytes": 124550,
+          "hash": "9facab26670bb964085a470abd86c5da0733c8f789edc98dbc884fbf864c266c"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_092813-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_092813-desktop-1200w.webp",
+          "bytes": 176904,
+          "hash": "02eff3060949406a6e56a5b4f1111b65ef4e368a0f21b462bda988e181f96c9f"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_092813-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_092813-lightbox-1600w.webp",
+          "bytes": 291934,
+          "hash": "f9e2bbe3fb1ef9833ea9532ed05e6e7e78af52da97dc67630253f4ae4098a30c"
+        }
+      ]
+    },
+    "day-03/20260826_092822.jpg": {
+      "id": "20260826_092822",
+      "original_filename": "20260826_092822.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "76bd19cc961dfeba4aaf022d22cdf0374ac0cc2e213a87b360b2be871c749e26",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_092822-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_092822-thumb-480w.webp",
+          "bytes": 41932,
+          "hash": "541cb42f79317706ea9e14ab2bc4b9261df4fba7f897b3f929090184cf3170f4"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_092822-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_092822-content-960w.webp",
+          "bytes": 113174,
+          "hash": "9f0975cff1845865e1ab2ae500cd9cd823c61fd7475640647acca0f28bf03dbb"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_092822-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_092822-desktop-1200w.webp",
+          "bytes": 156606,
+          "hash": "3713f04d97a197981eff75bd31955a424707bcee68a5b0ec4fa24720452e3c28"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_092822-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_092822-lightbox-1600w.webp",
+          "bytes": 239028,
+          "hash": "6de0a79ac13c5caa0ff9291147a8c68962be3d7d56e4327ddf9a1837bcf6c308"
+        }
+      ]
+    },
+    "day-03/20260826_095334.jpg": {
+      "id": "20260826_095334",
+      "original_filename": "20260826_095334.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "8bd18e39cf6ed459ca890bc91586cee707f64b40c3b3d46f8a0090638f1910cd",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_095334-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_095334-thumb-480w.webp",
+          "bytes": 46990,
+          "hash": "7db5eb5f02a31af299d98b760f0998bf0ffe98660683d4967c0f4d4fb24e0791"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_095334-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_095334-content-960w.webp",
+          "bytes": 198880,
+          "hash": "16df37f842ec4c16c077a8b449ab38e5b25ed7528dd1609ec762e65ca9c5d2a3"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_095334-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_095334-desktop-1200w.webp",
+          "bytes": 316252,
+          "hash": "05ad616c1be2fb048d3ec0f485c0ff23dd4f241c81c0b45a251751ed029710c5"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_095334-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_095334-lightbox-1600w.webp",
+          "bytes": 562066,
+          "hash": "e51fdba8ff51d2afb6ea4c9edb7b41bd5e6d0e1047fea46dd9402b9be8a68e90"
+        }
+      ]
+    },
+    "day-03/20260826_095544.jpg": {
+      "id": "20260826_095544",
+      "original_filename": "20260826_095544.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "4c203a01996b0d184c34032e0913b324bcd8b00671755c37e77f78ba065c80e5",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20260826_095544-thumb-270w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_095544-thumb-270w.webp",
+          "bytes": 41636,
+          "hash": "a0c0459dce03d99591a628ff149556a76890f7a8ee5c231fc831e61cb86f0b2e"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20260826_095544-content-540w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_095544-content-540w.webp",
+          "bytes": 150538,
+          "hash": "955192c1a99b203afc28562554310ed41dd105d649c49f3513844f9ee6c6c12e"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20260826_095544-desktop-676w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_095544-desktop-676w.webp",
+          "bytes": 225646,
+          "hash": "136902ddea92128c293204144f7919c50e5fb6b3921a310a42ba0ba33d4c5279"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20260826_095544-lightbox-901w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_095544-lightbox-901w.webp",
+          "bytes": 366870,
+          "hash": "0168f2c207168a158d07ea18c4dcc77fe473df0a5c2d258ce50b143b3f5713e2"
+        }
+      ]
+    },
+    "day-03/20260826_101657.jpg": {
+      "id": "20260826_101657",
+      "original_filename": "20260826_101657.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "17c26d380064dcdd3b752ea40117502bfc969639347a2b84bbfef9c19d708fcb",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20260826_101657-thumb-270w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_101657-thumb-270w.webp",
+          "bytes": 49424,
+          "hash": "18ff63696b2aca1c9207e3b7e8ef93d1d8519e5cae28598de593ba76af56510c"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20260826_101657-content-540w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_101657-content-540w.webp",
+          "bytes": 196654,
+          "hash": "a04f0752c565cafbd55bb39c911d5cca4f6a3cc2a0c4aa03ed02c43fa0d1f88e"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20260826_101657-desktop-676w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_101657-desktop-676w.webp",
+          "bytes": 304662,
+          "hash": "421cf293ad2a15003fe568e7b9ba40835bab0eb9a741a92d5a5d9eaf073cd3b5"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20260826_101657-lightbox-901w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_101657-lightbox-901w.webp",
+          "bytes": 522860,
+          "hash": "51db449fb7b66393be55a7f28a74852df89f6d8f9b36fdf6123d0cfa55e1a78c"
+        }
+      ]
+    },
+    "day-03/20260826_101740.jpg": {
+      "id": "20260826_101740",
+      "original_filename": "20260826_101740.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "8e9704591070c75aa7ce5b142dc8c1810708e2370847801a8e3de6ffd1bd1612",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_101740-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_101740-thumb-480w.webp",
+          "bytes": 51294,
+          "hash": "70d0a90b52e14ff52473b406334ac3bbf02ba8f77bc94b2ec704ab8fff37a5d0"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_101740-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_101740-content-960w.webp",
+          "bytes": 222160,
+          "hash": "93d744f5766a2c5c67c232c19535a0a3e59066805c79f02f70e91e8f790dd2ee"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_101740-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_101740-desktop-1200w.webp",
+          "bytes": 351924,
+          "hash": "b9749b517f4f26c4bf660e6d9da28ea23ae67a7d9948fbc0eb6b3531d180f911"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_101740-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_101740-lightbox-1600w.webp",
+          "bytes": 635068,
+          "hash": "d62d41ffba4572a2d250a0cc19a16b712157f4eb325ab7cd2f255747e06a65e7"
+        }
+      ]
+    },
+    "day-03/20260826_112034.jpg": {
+      "id": "20260826_112034",
+      "original_filename": "20260826_112034.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "57fe6a4eb6c68f588c641b6615de48638ceb8edb1bd25ef17d3b99b1be4aa5dc",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20260826_112034-thumb-270w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_112034-thumb-270w.webp",
+          "bytes": 36450,
+          "hash": "1c0f97d628543d2992a68b696a01cb14820b5ce2c63508a17b1eee2545e8644f"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20260826_112034-content-540w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_112034-content-540w.webp",
+          "bytes": 141112,
+          "hash": "28ef4095f6f8066a6d7590941fdb10713870daf3e84bc4be5647201584d34b77"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20260826_112034-desktop-676w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_112034-desktop-676w.webp",
+          "bytes": 218832,
+          "hash": "d6d5104bb1b999667774844743047daa7140b8895fddeb0668acbee63d2dac57"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20260826_112034-lightbox-901w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_112034-lightbox-901w.webp",
+          "bytes": 374342,
+          "hash": "123db66ebabbbc52952dfaacf37fda4b9d151962ab993cecfb508ba56042d283"
+        }
+      ]
+    },
+    "day-03/20260826_112438.jpg": {
+      "id": "20260826_112438",
+      "original_filename": "20260826_112438.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "51349e599e36199aaf3a70294e0d0cfcc8ae71b87eaaa4a2a23bbf9ccc2aaf3e",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20260826_112438-thumb-270w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_112438-thumb-270w.webp",
+          "bytes": 58030,
+          "hash": "87cc3f25ffdaf539ea1bbe6ab9a50f15613b450dfcc560c38ffcda1f5cebf81f"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20260826_112438-content-540w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_112438-content-540w.webp",
+          "bytes": 236406,
+          "hash": "81a617eed067a492b0be4d51dd3ab02b471c5cecc3a8a6a6a09cedd527ed8025"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20260826_112438-desktop-676w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_112438-desktop-676w.webp",
+          "bytes": 372004,
+          "hash": "6925e7ef39a05a4473a6462172961d8124f71f22ca809122c2766e78e66af1f0"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20260826_112438-lightbox-901w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_112438-lightbox-901w.webp",
+          "bytes": 662098,
+          "hash": "95d1cc5c92dd8bd705e6600996269a66f74a2cda009498ae04f7a9d9694ae1e6"
+        }
+      ]
+    },
+    "day-03/20260826_112641.jpg": {
+      "id": "20260826_112641",
+      "original_filename": "20260826_112641.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "608fa4fe3ba6410eef25adb26369d6a66dff92bea2054943bda4b84d0713f2d6",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20260826_112641-thumb-270w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_112641-thumb-270w.webp",
+          "bytes": 57542,
+          "hash": "7df32ba6c809ee6bd60e00a35d653f65e2c430baefcb763a348cb848f6d79efb"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20260826_112641-content-540w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_112641-content-540w.webp",
+          "bytes": 242820,
+          "hash": "8d46171317043bf9cf18bfa94207d61f5965254f90ba0bdd71cf4d155d6aaf95"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20260826_112641-desktop-676w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_112641-desktop-676w.webp",
+          "bytes": 386454,
+          "hash": "4d81dc2313af0065706138885a9f3ef8c279d1c94c2a242335c2018af3c05732"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20260826_112641-lightbox-901w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_112641-lightbox-901w.webp",
+          "bytes": 672310,
+          "hash": "104c8e5289d7e0b3ebed0e6ed114e0dafff58ef313c38f319dfe0f5c884f5895"
+        }
+      ]
+    },
+    "day-03/20260826_113125.jpg": {
+      "id": "20260826_113125",
+      "original_filename": "20260826_113125.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "ab6cc6d29297aa6cbc29c1c9c1c766f3de8a0be45d774a229d2a6223b57266e7",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20260826_113125-thumb-270w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_113125-thumb-270w.webp",
+          "bytes": 56370,
+          "hash": "cd067e3b4925e33e71e74845130a66fe6920cc783c90c3da6572abfb3654af26"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20260826_113125-content-540w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_113125-content-540w.webp",
+          "bytes": 239646,
+          "hash": "5f2791a606d6b6630228b6535d1dfeb9471e192b87f0fd8eb78e2c05e9ff786d"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20260826_113125-desktop-676w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_113125-desktop-676w.webp",
+          "bytes": 377004,
+          "hash": "86c2a431138c49aa406e0346287b06f5324f285dfab3f3e5665f3adbcc95f35f"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20260826_113125-lightbox-901w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_113125-lightbox-901w.webp",
+          "bytes": 657108,
+          "hash": "2533699a9e483c77a3189924e4c27b3f47dce3b2d1f9371786e8c2fead8dcbec"
+        }
+      ]
+    },
+    "day-03/20260826_113136.jpg": {
+      "id": "20260826_113136",
+      "original_filename": "20260826_113136.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "86194e0288500332500c3213c13c53432e29dad3010af9c0f321871d7027fe7c",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_113136-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_113136-thumb-480w.webp",
+          "bytes": 53100,
+          "hash": "9aa99c576780585bbeeb966e8f3c61c8665cfb0baed031abfe885c90e5346b79"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_113136-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_113136-content-960w.webp",
+          "bytes": 219380,
+          "hash": "343b52ab0020104e63be8dc9ad2da8fc9f2d5d349cedadb81ec433db3f0e778b"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260826_113136-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_113136-desktop-1200w.webp",
+          "bytes": 344784,
+          "hash": "c813311a437598f8ac37c8ce73c2630a8d03bdb0c372537fb122bce73735fcd5"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_113136-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_113136-lightbox-1600w.webp",
+          "bytes": 604330,
+          "hash": "20d61435763811b790bdd6eab9be10aba54674278105ff744036f9fafecba38c"
+        }
+      ]
+    },
+    "day-03/20260826_113502.jpg": {
+      "id": "20260826_113502",
+      "original_filename": "20260826_113502.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "f8c5d926e7294ea05a736fd8e17ce9c14f933d9ec10c85c170211a42e89e4abc",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20260826_113502-thumb-270w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_113502-thumb-270w.webp",
+          "bytes": 45738,
+          "hash": "78c57eb746945536cddfa1f29297b1eafc637f1f42a8883ccc43fd851e4518d9"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20260826_113502-content-540w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_113502-content-540w.webp",
+          "bytes": 194332,
+          "hash": "e67014186f9dc01c4c8d954e29481b2341db7388a622e4c68046af73ba40a8ec"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20260826_113502-desktop-676w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_113502-desktop-676w.webp",
+          "bytes": 308904,
+          "hash": "1f8a0afdab9b2363de7b95d1986f9aa872ce5ab4269c86d5af4a5e5d4c2779d9"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20260826_113502-lightbox-901w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_113502-lightbox-901w.webp",
+          "bytes": 546330,
+          "hash": "91d3175278f3cd63a503d26c7d634cde12675ab084353a94e321b9b230461acf"
+        }
+      ]
+    },
+    "day-03/20260826_113507_001.jpg": {
+      "id": "20260826_113507_001",
+      "original_filename": "20260826_113507_001.jpg",
+      "original_width": 3823,
+      "original_height": 2152,
+      "source_hash": "5868189e242853d229b58ecec45a41347ffaed7887f57ac65d2198a862f80f88",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260826_113507_001-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_113507_001-thumb-480w.webp",
+          "bytes": 46582,
+          "hash": "cbaf6bee8daeb176e2a05bbcf95be26c4c14e5980eacf8ae5b3b8b90b365fca6"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260826_113507_001-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_113507_001-content-960w.webp",
+          "bytes": 192072,
+          "hash": "b38112ebaca67f8e7af4679023a2661a16f74948b8415787cf3833e02ef7d913"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 675,
+          "format": "webp",
+          "filename": "20260826_113507_001-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_113507_001-desktop-1200w.webp",
+          "bytes": 303076,
+          "hash": "059c0411bd8a67ff395a69103215b4b26b3e7d47273794de97c1b42cca8ba443"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260826_113507_001-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_113507_001-lightbox-1600w.webp",
+          "bytes": 533212,
+          "hash": "bd9034a5fbaa6fa16dacdd487f9a2f5cf2d5bb0e6a129bbbd9f333d506b9a989"
+        }
+      ]
+    },
+    "day-03/20260826_122650.jpg": {
+      "id": "20260826_122650",
+      "original_filename": "20260826_122650.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "81ac26b1dcad64d6b3cc56ef71832eae2454bc901f92d113a6acc44f2644b189",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20260826_122650-thumb-270w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_122650-thumb-270w.webp",
+          "bytes": 25230,
+          "hash": "c64d225e18e7c5cd18b2140b47e1ddf84e82234d816292f44a22aef7e56e2464"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20260826_122650-content-540w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_122650-content-540w.webp",
+          "bytes": 93656,
+          "hash": "8fee1b00dfb89ec5f83d1db6f7e572ee0c69052e4c78b061fffd54c9534181e5"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20260826_122650-desktop-676w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_122650-desktop-676w.webp",
+          "bytes": 148880,
+          "hash": "4a873cd349676dd9fb9194dc0811b4b7d15d3ef62c38b1be647e2698e9ba5c37"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20260826_122650-lightbox-901w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260826_122650-lightbox-901w.webp",
+          "bytes": 273518,
+          "hash": "4b401fac8cbb8096d72dee0751fea43f6c651554ee32b8b55959bfc4ba901730"
+        }
+      ]
+    },
+    "day-03/20260829_181519.jpg": {
+      "id": "20260829_181519",
+      "original_filename": "20260829_181519.jpg",
+      "original_width": 2680,
+      "original_height": 1884,
+      "source_hash": "ef705ca5e37d52f2f4baea2cd05313a643234df79ef6e271f027ab6c20c520c6",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 337,
+          "format": "webp",
+          "filename": "20260829_181519-thumb-480w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260829_181519-thumb-480w.webp",
+          "bytes": 54370,
+          "hash": "310e44e3b2dbea9f5d2cf7b460600232cf48efffc1146c02e026fef0570b439a"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 675,
+          "format": "webp",
+          "filename": "20260829_181519-content-960w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260829_181519-content-960w.webp",
+          "bytes": 192774,
+          "hash": "03be62b11a1b31a619bb207a9b97d1b8570a3c780c9ccfed7135f91d619e015b"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 844,
+          "format": "webp",
+          "filename": "20260829_181519-desktop-1200w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260829_181519-desktop-1200w.webp",
+          "bytes": 283468,
+          "hash": "685b9c792791ba2d829d16269dbbff419f832b0b2b4792103a0c692dcd5a5f0b"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 1125,
+          "format": "webp",
+          "filename": "20260829_181519-lightbox-1600w.webp",
+          "publicPath": "2026-osaka/images/day-03/20260829_181519-lightbox-1600w.webp",
+          "bytes": 438692,
+          "hash": "4587469d7797089749cf22ef472f1840d3957825d0b5a668125f60eedfd8e9fe"
         }
       ]
     }

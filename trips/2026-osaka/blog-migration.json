@@ -29,6 +29,21 @@
       "og_image": "https://aa1662.github.io/ch-travel-os/2026-osaka/images/day-02/20260825_145349-desktop-1200w.webp",
       "prev_link": "kurama-kifune-hike.html",
       "prev_title": "鞍馬寺到貴船",
+      "next_link": "katsuoji-minoh-waterfall.html",
+      "next_title": "勝尾寺與箕面瀑布"
+    },
+    {
+      "id": "day-03",
+      "title": "我居然一直不知道勝尾寺｜滿山達摩之後，再走夏日箕面瀑布",
+      "source": "trips/2026-osaka/sources/blog/katsuoji-minoh-waterfall.html",
+      "output": "docs/2026-osaka/blog/katsuoji-minoh-waterfall.html",
+      "image_folder": "day-03",
+      "preserve_gallery_groups": true,
+      "timeline_fallback_link": "../../index.html",
+      "og_url": "https://aa1662.github.io/ch-travel-os/2026-osaka/blog/katsuoji-minoh-waterfall.html",
+      "og_image": "https://aa1662.github.io/ch-travel-os/2026-osaka/images/day-03/20260826_083555-desktop-1200w.webp",
+      "prev_link": "hieizan-enryakuji-eternal-flame.html",
+      "prev_title": "比叡山延曆寺",
       "next_link": null,
       "next_title": "關西盛夏漫遊未完待續"
     }
