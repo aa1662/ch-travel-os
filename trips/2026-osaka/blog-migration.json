@@ -1,0 +1,36 @@
+{
+  "trip": "2026-osaka",
+  "dest": "2026-osaka",
+  "journey_end_title": "關西盛夏漫遊 · 回首頁",
+  "entries": [
+    {
+      "id": "day-02",
+      "title": "一個人從大阪跑去翻山：鞍馬寺到貴船",
+      "source": "trips/2026-osaka/sources/blog/kurama-kifune-hike.html",
+      "output": "docs/2026-osaka/blog/kurama-kifune-hike.html",
+      "image_folder": "day-02",
+      "footer_center": "gallery",
+      "og_url": "https://aa1662.github.io/ch-travel-os/2026-osaka/blog/kurama-kifune-hike.html",
+      "og_image": "https://aa1662.github.io/ch-travel-os/2026-osaka/images/day-02/20260825_093541-desktop-1200w.webp",
+      "prev_link": "../../index.html",
+      "prev_title": "← 全球旅程總覽",
+      "next_link": "hieizan-enryakuji-eternal-flame.html",
+      "next_title": "下一站：比叡山延曆寺"
+    },
+    {
+      "id": "day-02-hieizan",
+      "title": "為了一盞傳了一千兩百年的燈，我臨時翻過比叡山",
+      "source": "trips/2026-osaka/sources/blog/hieizan-enryakuji-eternal-flame.html",
+      "output": "docs/2026-osaka/blog/hieizan-enryakuji-eternal-flame.html",
+      "image_folder": "day-02",
+      "preserve_gallery_groups": true,
+      "timeline_fallback_link": "../../index.html",
+      "og_url": "https://aa1662.github.io/ch-travel-os/2026-osaka/blog/hieizan-enryakuji-eternal-flame.html",
+      "og_image": "https://aa1662.github.io/ch-travel-os/2026-osaka/images/day-02/20260825_145349-desktop-1200w.webp",
+      "prev_link": "kurama-kifune-hike.html",
+      "prev_title": "鞍馬寺到貴船",
+      "next_link": null,
+      "next_title": "關西盛夏漫遊未完待續"
+    }
+  ]
+}

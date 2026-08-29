@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="zh-TW"><head>
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://aa1662.github.io/ch-travel-os/2026-osaka/blog/kurama-kifune-hike.html">
+  <meta name="description" content="從大阪搭電車到鞍馬，走過鞍馬寺、木之根道與山林古道，再從西門下到貴船的盛夏翻山實記。">
+  <meta property="og:site_name" content="2026 關西盛夏漫遊 · Travel OS">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="一個人從大阪跑去翻山：鞍馬寺到貴船">
+  <meta property="og:description" content="從天狗、六芒星走進杉木山徑，最後在貴船川上游吃冰淇淋。">
+  <meta property="og:url" content="https://aa1662.github.io/ch-travel-os/2026-osaka/blog/kurama-kifune-hike.html">
+  <meta property="og:image" content="https://aa1662.github.io/ch-travel-os/2026-osaka/images/day-02/20260825_093541-desktop-1200w.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>鞍馬寺到貴船夏季健行｜一個人從大阪跑去翻山</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Noto+Sans+TC:wght@400;500;700;900&amp;family=Outfit:wght@600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../core/css/style.css">
+  <link rel="stylesheet" href="../../core/vendor/glightbox/glightbox.min.css">
+  <style>
+    .osaka-kurama-pilot .place-hero {
+      position: relative;
+      min-height: 560px;
+      margin: 1.25rem 0 2.75rem;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      background: #1f382d;
+    }
+
+    .osaka-kurama-pilot .place-hero img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 44%;
+    }
+
+    .osaka-kurama-pilot .place-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(12, 24, 20, 0.04) 30%, rgba(12, 24, 20, 0.88) 100%);
+      pointer-events: none;
+    }
+
+    .osaka-kurama-pilot .place-hero-copy {
+      position: absolute;
+      z-index: 1;
+      left: clamp(1.25rem, 4vw, 2.75rem);
+      right: clamp(1.25rem, 4vw, 2.75rem);
+      bottom: clamp(1.25rem, 4vw, 2.5rem);
+      color: #fff;
+    }
+
+    .osaka-kurama-pilot .place-hero-copy h1 {
+      max-width: 760px;
+      margin: 0.65rem 0 0.55rem;
+      color: #fff;
+      font-family: var(--font-heading);
+      font-size: 3.25rem;
+      line-height: 1.16;
+      letter-spacing: 0;
+      text-shadow: 0 2px 16px rgba(0, 0, 0, 0.42);
+    }
+
+    .osaka-kurama-pilot .place-hero-copy p {
+      max-width: 700px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.94);
+      font-size: 1.03rem;
+      line-height: 1.7;
+    }
+
+    .osaka-kurama-pilot .hero-kicker {
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .osaka-kurama-pilot .landscape-pair {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+      margin: 1.75rem 0 2.25rem;
+    }
+
+    .osaka-kurama-pilot .landscape-pair figure,
+    .osaka-kurama-pilot .wide-photo {
+      margin: 0;
+    }
+
+    .osaka-kurama-pilot .landscape-pair img,
+    .osaka-kurama-pilot .wide-photo img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .osaka-kurama-pilot figcaption {
+      padding-top: 0.45rem;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
+
+    .osaka-kurama-pilot .ig-post-stack {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin: 1.25rem 0 2.25rem;
+    }
+
+    .osaka-kurama-pilot .ig-post-stack .ig-post-card {
+      margin: 0;
+    }
+
+    .osaka-kurama-pilot .photo-grid-item.is-static img {
+      cursor: default;
+    }
+
+    .osaka-kurama-pilot .ig-post-caption p {
+      margin: 0 0 0.7rem;
+    }
+
+    .osaka-kurama-pilot .ig-post-caption p:last-child {
+      margin-bottom: 0;
+    }
+
+    .osaka-kurama-pilot .journey-note-heading,
+    .osaka-kurama-pilot .bento-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .osaka-kurama-pilot .journey-note-heading h2,
+    .osaka-kurama-pilot .bento-heading h2 {
+      margin: 0;
+      color: var(--primary);
+      font-family: var(--font-heading);
+    }
+
+    .osaka-kurama-pilot .osaka-bento {
+      --bento-transport: #3f78a8;
+      --bento-nature: #4f7d5e;
+      --bento-food: #c76959;
+      --bento-culture: #ad7b24;
+      --bento-alert: #b24d55;
+    }
+
+    .osaka-kurama-pilot .planning-guide-link {
+      color: var(--primary);
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .osaka-kurama-pilot .planning-guide-link:hover {
+      text-decoration: underline;
+    }
+
+    .osaka-kurama-pilot .osaka-bento .bento-card {
+      border-top: 4px solid var(--bento-accent, var(--primary));
+      background: #fff;
+    }
+
+    .osaka-kurama-pilot .osaka-bento .bento-transport { --bento-accent: var(--bento-transport); }
+    .osaka-kurama-pilot .osaka-bento .bento-nature { --bento-accent: var(--bento-nature); }
+    .osaka-kurama-pilot .osaka-bento .bento-food { --bento-accent: var(--bento-food); }
+    .osaka-kurama-pilot .osaka-bento .bento-culture { --bento-accent: var(--bento-culture); }
+    .osaka-kurama-pilot .osaka-bento .bento-alert { --bento-accent: var(--bento-alert); }
+
+    .osaka-kurama-pilot .bento-source {
+      display: inline-block;
+      margin: 0 0.35rem 0.35rem 0;
+      padding: 0.18rem 0.5rem;
+      border: 1px solid currentColor;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .osaka-kurama-pilot .bento-source-plan { color: #50708b; }
+    .osaka-kurama-pilot .bento-source-field { color: #39724c; }
+    .osaka-kurama-pilot .bento-source-missed { color: #98515a; }
+
+    .osaka-kurama-pilot .story-lede {
+      color: var(--primary);
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 700;
+      line-height: 1.65;
+    }
+
+    .osaka-kurama-pilot section[id] {
+      scroll-margin-top: 6rem;
+    }
+
+    @media (max-width: 700px) {
+      .osaka-kurama-pilot .place-hero {
+        min-height: 590px;
+        border-radius: var(--radius-md);
+      }
+
+      .osaka-kurama-pilot .place-hero img {
+        object-position: 52% center;
+      }
+
+      .osaka-kurama-pilot .place-hero-copy h1 {
+        font-size: 2rem;
+      }
+
+      .osaka-kurama-pilot .landscape-pair {
+        grid-template-columns: 1fr;
+      }
+
+      .osaka-kurama-pilot .story-split.reverse {
+        flex-direction: column-reverse !important;
+      }
+
+      .osaka-kurama-pilot .photo-grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .osaka-kurama-pilot .ig-post-card {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body class="osaka-kurama-pilot">
+  <div class="reading-progress"></div>
+
+  <nav class="site-nav">
+    <div class="container">
+      <a href="../../index.html" class="brand-link">
+        <span>2026 關西盛夏漫遊</span>
+        <span class="brand-badge">Day 02</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../../index.html">全球旅程</a></li>
+        <li><a href="#story" class="active">鞍馬－貴船</a></li>
+        <li><a href="#notes">實戰攻略</a></li>
+      </ul>
+      <button class="nav-share-btn btn-share"><span>分享</span></button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <article class="blog-article">
+      <div style="margin: 1.5rem 0 0.5rem; font-size: 0.9rem; color: var(--text-muted);">
+        <a href="../../index.html">全球旅程</a>
+        <span style="margin: 0 0.4rem;">›</span>
+        <span>2026 關西盛夏漫遊</span>
+        <span style="margin: 0 0.4rem;">›</span>
+        <span style="color: var(--primary); font-weight: 600;">鞍馬－貴船</span>
+      </div>
+
+      <section class="place-hero" aria-labelledby="page-title">
+        <a href="../images/day-02/20260825_093541-lightbox-1600w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="鞍馬寺本殿金堂與金剛床">
+          <img src="../images/day-02/20260825_093541-content-960w.webp"
+                 srcset="../images/day-02/20260825_093541-thumb-480w.webp 480w,
+                  ../images/day-02/20260825_093541-content-960w.webp 960w,
+                  ../images/day-02/20260825_093541-desktop-1200w.webp 1200w,
+                  ../images/day-02/20260825_093541-lightbox-1600w.webp 1600w"
+                 sizes="(max-width: 768px) 100vw, 920px"
+                 width="4000"
+                 height="2252"
+                 loading="eager"
+                 decoding="async"
+                 alt="盛夏晴空下的鞍馬寺本殿金堂與六芒星金剛床" fetchpriority="high">
+        </a>
+        <div class="place-hero-copy">
+          <div class="hero-kicker">2026 關西盛夏漫遊 · 京都洛北</div>
+          <h1 id="page-title">一個人從大阪跑去翻山：鞍馬寺到貴船</h1>
+          <p>從天狗、六芒星走進杉木山徑，最後在貴船川上游吃冰淇淋。</p>
+        </div>
+      </section>
+
+      <section id="story" aria-labelledby="opening-title">
+        <div class="blog-narrative-card">
+          <h2 id="opening-title" style="font-family: var(--font-heading); color: var(--primary); margin-bottom: 1rem;">早上七點，空著肚子往鞍馬</h2>
+          <p class="story-lede">第二天早上七點，我已經走出飯店。行政樓層的早餐七點才開始，門還沒開；下樓又匆匆忙忙，連車站旁邊的 7-Eleven 都沒看到。</p>
+          <p>於是就這樣空著肚子，從大阪一路搭到出町柳，再轉叡山電鐵，坐到終點鞍馬。</p>
+          <p>電車離開市區之後，窗外慢慢變成綠油油的郊區。出來玩，我最喜歡的就是這種風景。</p>
+        </div>
+
+        <div class="landscape-pair">
+          <figure><a href="../images/day-02/20260825_085651-lightbox-1600w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="鞍馬站前的大天狗"><img src="../images/day-02/20260825_085651-content-960w.webp"
+                 srcset="../images/day-02/20260825_085651-thumb-480w.webp 480w,
+                  ../images/day-02/20260825_085651-content-960w.webp 960w,
+                  ../images/day-02/20260825_085651-desktop-1200w.webp 1200w,
+                  ../images/day-02/20260825_085651-lightbox-1600w.webp 1600w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="4000"
+                 height="2252"
+                 loading="lazy"
+                 decoding="async"
+                 alt="鞍馬站前的大天狗與綠色山林"></a><figcaption>一下車就是大天狗。從月台、車站到街上，到處都看得到天狗。</figcaption></figure>
+          <figure><a href="../images/day-02/20260825_091044-lightbox-1600w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="鞍馬寺山門與參道起點"><img src="../images/day-02/20260825_091044-content-960w.webp"
+                 srcset="../images/day-02/20260825_091044-thumb-480w.webp 480w,
+                  ../images/day-02/20260825_091044-content-960w.webp 960w,
+                  ../images/day-02/20260825_091044-desktop-1200w.webp 1200w,
+                  ../images/day-02/20260825_091044-lightbox-1600w.webp 1600w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="3909"
+                 height="2201"
+                 loading="lazy"
+                 decoding="async"
+                 alt="鞍馬寺山門前的石階與森林"></a><figcaption>出鞍馬站走到馬路左轉，沒幾步就是鞍馬寺入口。</figcaption></figure>
+        </div>
+
+        <div class="ig-post-card">
+          <div class="ig-post-header"><div class="ig-post-avatar">山</div><div class="ig-post-meta"><span class="ig-post-author">旅途照片手記</span><span class="ig-post-date">2026-08-25 · 鞍馬</span></div></div>
+          <div class="ig-post-caption"><p>坐到叡山電鐵終點，天狗和山路已經在車站外等著。</p></div>
+          <div class="photo-grid photo-grid-4">
+            <div class="photo-grid-item"><a href="../images/day-02/18176701765434701-lightbox-1440w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="鞍馬站大天狗"><img src="../images/day-02/18176701765434701-content-960w.webp"
+                 srcset="../images/day-02/18176701765434701-thumb-480w.webp 480w,
+                  ../images/day-02/18176701765434701-content-960w.webp 960w,
+                  ../images/day-02/18176701765434701-desktop-1200w.webp 1200w,
+                  ../images/day-02/18176701765434701-lightbox-1440w.webp 1440w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="1440"
+                 height="1440"
+                 loading="lazy"
+                 decoding="async"
+                 alt="鞍馬站大天狗近景"></a></div>
+            <div class="photo-grid-item"><a href="../images/day-02/18090342506302769-lightbox-1440w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="叡山電鐵山間鐵道"><img src="../images/day-02/18090342506302769-content-960w.webp"
+                 srcset="../images/day-02/18090342506302769-thumb-480w.webp 480w,
+                  ../images/day-02/18090342506302769-content-960w.webp 960w,
+                  ../images/day-02/18090342506302769-desktop-1200w.webp 1200w,
+                  ../images/day-02/18090342506302769-lightbox-1440w.webp 1440w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="1440"
+                 height="1440"
+                 loading="lazy"
+                 decoding="async"
+                 alt="鞍馬線山間鐵道"></a></div>
+            <div class="photo-grid-item"><a href="../images/day-02/17927548797401518-lightbox-1440w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="鞍馬寺天狗燈飾"><img src="../images/day-02/17927548797401518-content-960w.webp"
+                 srcset="../images/day-02/17927548797401518-thumb-480w.webp 480w,
+                  ../images/day-02/17927548797401518-content-960w.webp 960w,
+                  ../images/day-02/17927548797401518-desktop-1200w.webp 1200w,
+                  ../images/day-02/17927548797401518-lightbox-1440w.webp 1440w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="1440"
+                 height="1440"
+                 loading="lazy"
+                 decoding="async"
+                 alt="鞍馬寺參道的天狗燈飾"></a></div>
+            <div class="photo-grid-item"><a href="../images/day-02/18072327467651422-lightbox-1440w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="鞍馬寺石階參道"><img src="../images/day-02/18072327467651422-content-960w.webp"
+                 srcset="../images/day-02/18072327467651422-thumb-480w.webp 480w,
+                  ../images/day-02/18072327467651422-content-960w.webp 960w,
+                  ../images/day-02/18072327467651422-desktop-1200w.webp 1200w,
+                  ../images/day-02/18072327467651422-lightbox-1440w.webp 1440w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="1440"
+                 height="1440"
+                 loading="lazy"
+                 decoding="async"
+                 alt="陽光穿過樹林的鞍馬寺石階"></a></div>
+          </div>
+        </div>
+
+        <div class="story-split">
+          <div class="story-split-text">
+            <h2 style="font-family: var(--font-heading); color: var(--primary); margin-bottom: 0.8rem;">纜車剛走，那就自己走</h2>
+            <p>進門之後可以搭牛若號纜車，大約二十分鐘一班。我到的時候剛好錯過。網路上說這一小段自己走，大概二、三十分鐘，沿途也還不錯。</p>
+            <p>為了省半小時，卻站在原地等二十分鐘，好像沒什麼意思。<strong>算了，直接走。</strong></p>
+            <p>前半段到本殿都是石板路，沿途不時有小神社。拿台北的路線來比，大概就是從象山站上山，再一路翻到中華科技大學那一側。有在走郊山的人，不會覺得太難。</p>
+          </div>
+          <div class="story-split-media"><a href="../images/day-02/20260825_092046-lightbox-1600w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="鞍馬寺石板參道"><img src="../images/day-02/20260825_092046-content-960w.webp"
+                 srcset="../images/day-02/20260825_092046-thumb-480w.webp 480w,
+                  ../images/day-02/20260825_092046-content-960w.webp 960w,
+                  ../images/day-02/20260825_092046-desktop-1200w.webp 1200w,
+                  ../images/day-02/20260825_092046-lightbox-1600w.webp 1600w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="4000"
+                 height="2252"
+                 loading="lazy"
+                 decoding="async"
+                 alt="鞍馬寺森林裡的石板參道與山門"></a></div>
+        </div>
+
+        <div class="story-split reverse">
+          <div class="story-split-text">
+            <h2 style="font-family: var(--font-heading); color: var(--primary); margin-bottom: 0.8rem;">傳說中的宇宙能量</h2>
+            <p>一路走到本殿金堂，前面就是鞍馬寺最有名的金剛床。網路上都說要站到中央的六芒星，感受天地宇宙能量。既然都走到了，當然要試一下。</p>
+            <p>站好，吸氣，吐氣。後面有人在等，我先讓開；結果他們有樣學樣，一個接一個也站上去。等人走光，我又回去吸氣、吐氣幾次。</p>
+            <p><strong>嗯，還是沒什麼感覺。</strong>可能我的接收器還沒打開。</p>
+          </div>
+          <div class="story-split-media"><a href="../images/day-02/20260825_094303-lightbox-1600w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="鞍馬寺本殿金堂"><img src="../images/day-02/20260825_094303-content-960w.webp"
+                 srcset="../images/day-02/20260825_094303-thumb-480w.webp 480w,
+                  ../images/day-02/20260825_094303-content-960w.webp 960w,
+                  ../images/day-02/20260825_094303-desktop-1200w.webp 1200w,
+                  ../images/day-02/20260825_094303-lightbox-1600w.webp 1600w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="4000"
+                 height="2252"
+                 loading="lazy"
+                 decoding="async"
+                 alt="藍天下的鞍馬寺本殿金堂"></a></div>
+        </div>
+
+        <div class="ig-post-card">
+          <div class="ig-post-header"><div class="ig-post-avatar">氣</div><div class="ig-post-meta"><span class="ig-post-author">旅途照片手記</span><span class="ig-post-date">2026-08-25 · 鞍馬寺本殿</span></div></div>
+          <div class="ig-post-caption"><p>六芒星站了兩次。宇宙能量沒收到，照片倒是拍得不少。</p></div>
+          <div class="photo-grid photo-grid-4">
+            <div class="photo-grid-item"><a href="../images/day-02/17926857345163914-lightbox-1440w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="鞍馬寺本殿與金剛床"><img src="../images/day-02/17926857345163914-content-960w.webp"
+                 srcset="../images/day-02/17926857345163914-thumb-480w.webp 480w,
+                  ../images/day-02/17926857345163914-content-960w.webp 960w,
+                  ../images/day-02/17926857345163914-desktop-1200w.webp 1200w,
+                  ../images/day-02/17926857345163914-lightbox-1440w.webp 1440w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="1440"
+                 height="1440"
+                 loading="lazy"
+                 decoding="async"
+                 alt="鞍馬寺本殿金堂與金剛床全景"></a></div>
+            <div class="photo-grid-item"><a href="../images/day-02/18019267820860797-lightbox-1440w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="鞍馬寺本殿金堂"><img src="../images/day-02/18019267820860797-content-960w.webp"
+                 srcset="../images/day-02/18019267820860797-thumb-480w.webp 480w,
+                  ../images/day-02/18019267820860797-content-960w.webp 960w,
+                  ../images/day-02/18019267820860797-desktop-1200w.webp 1200w,
+                  ../images/day-02/18019267820860797-lightbox-1440w.webp 1440w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="1440"
+                 height="1440"
+                 loading="lazy"
+                 decoding="async"
+                 alt="鞍馬寺本殿金堂正面"></a></div>
+            <div class="photo-grid-item"><a href="../images/day-02/18121148425831424-lightbox-1440w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="山林裡的小社"><img src="../images/day-02/18121148425831424-content-960w.webp"
+                 srcset="../images/day-02/18121148425831424-thumb-480w.webp 480w,
+                  ../images/day-02/18121148425831424-content-960w.webp 960w,
+                  ../images/day-02/18121148425831424-desktop-1200w.webp 1200w,
+                  ../images/day-02/18121148425831424-lightbox-1440w.webp 1440w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="1440"
+                 height="1440"
+                 loading="lazy"
+                 decoding="async"
+                 alt="鞍馬山林裡的小社與石階"></a></div>
+            
+          <div class="photo-grid-item"><a class="glightbox" data-gallery="day-02-gallery" data-title="18019267820860797.heic" href="../images/day-02/18156525508497546-lightbox-1440w.webp"><img src="../images/day-02/18156525508497546-content-960w.webp"
+                 srcset="../images/day-02/18156525508497546-thumb-480w.webp 480w,
+                  ../images/day-02/18156525508497546-content-960w.webp 960w,
+                  ../images/day-02/18156525508497546-desktop-1200w.webp 1200w,
+                  ../images/day-02/18156525508497546-lightbox-1440w.webp 1440w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="1440"
+                 height="1440"
+                 loading="lazy"
+                 decoding="async"
+                 alt="18019267820860797.heic"></a></div></div>
+        </div>
+
+        <div class="blog-narrative-card">
+          <h2 style="font-family: var(--font-heading); color: var(--primary); margin-bottom: 1rem;">真正有意思的是本殿後面</h2>
+          <p>再往上走，先經過義經公背比石。相傳牛若丸離開鞍馬山之前，曾在這塊石頭旁量過身高。接著進入木之根道與奧之院一帶，石板參道慢慢變成真正的登山土路。地面全是裸露的樹根，往貴船方向一路下坡，有幾段其實還滿陡的。</p>
+          <p>走到這裡，我就暗自慶幸還好三千金沒來。八月底跑來京都翻山，還要踩著木根一路陡下，她們大概率會翻臉 XD</p>
+          <p>出發前我們就已經講好：我研究好行程給大家參考，她們有興趣就一起去，想在大阪逛街，我就自己走行程。不是說一家人出國就得從早到晚綁在一起。各自去做真正有興趣的事，晚上再碰面也很好。</p>
+          <p></p><div><br></div>話說回來，如果要把鞍馬和貴船排在同一天，我會強烈建議從鞍馬上、貴船下。鞍馬側的爬坡多半是整理過的參道；反過來走，就要從貴船端一路踩著木根陡坡往上爬。<p></p>
+          <p>整段幾乎都在樹蔭裡。八月底的京都市區熱得不得了，山裡當然也會流汗，但和在馬路上被太陽直接曬完全不一樣。高大的杉木、土路、樹根和散在山裡的小神社，這才是我今天真正想走的京都。</p>
+        </div>
+
+        <div class="ig-post-card">
+          <div class="ig-post-header"><div class="ig-post-avatar">根</div><div class="ig-post-meta"><span class="ig-post-author">旅途照片手記</span><span class="ig-post-date">2026-08-25 · 木之根道</span></div></div>
+          <div class="ig-post-caption"><p>本殿後才真正進入山裡。這一段，確實適合自己走。</p></div>
+          <div class="photo-grid photo-grid-3">
+            <div class="photo-grid-item"><a href="../images/day-02/18090534557643326-lightbox-1440w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="鞍馬山木根路"><img src="../images/day-02/18090534557643326-content-960w.webp"
+                 srcset="../images/day-02/18090534557643326-thumb-480w.webp 480w,
+                  ../images/day-02/18090534557643326-content-960w.webp 960w,
+                  ../images/day-02/18090534557643326-desktop-1200w.webp 1200w,
+                  ../images/day-02/18090534557643326-lightbox-1440w.webp 1440w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="1440"
+                 height="1440"
+                 loading="lazy"
+                 decoding="async"
+                 alt="鞍馬山土路與裸露樹根"></a></div>
+            <div class="photo-grid-item"><a href="../images/day-02/18034130441649547-lightbox-1440w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="木之根道"><img src="../images/day-02/18034130441649547-content-960w.webp"
+                 srcset="../images/day-02/18034130441649547-thumb-480w.webp 480w,
+                  ../images/day-02/18034130441649547-content-960w.webp 960w,
+                  ../images/day-02/18034130441649547-desktop-1200w.webp 1200w,
+                  ../images/day-02/18034130441649547-lightbox-1440w.webp 1440w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="1440"
+                 height="1440"
+                 loading="lazy"
+                 decoding="async"
+                 alt="木之根道盤根錯節的樹根"></a></div>
+            <div class="photo-grid-item"><a href="../images/day-02/17958260937193886-lightbox-1440w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="杉木林石板古道"><img src="../images/day-02/17958260937193886-content-960w.webp"
+                 srcset="../images/day-02/17958260937193886-thumb-480w.webp 480w,
+                  ../images/day-02/17958260937193886-content-960w.webp 960w,
+                  ../images/day-02/17958260937193886-desktop-1200w.webp 1200w,
+                  ../images/day-02/17958260937193886-lightbox-1440w.webp 1440w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="1440"
+                 height="1440"
+                 loading="lazy"
+                 decoding="async"
+                 alt="杉木林裡的石板古道"></a></div>
+            <div class="photo-grid-item"><a href="../images/day-02/17924966256409315-lightbox-1440w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="鞍馬山路標"><img src="../images/day-02/17924966256409315-content-960w.webp"
+                 srcset="../images/day-02/17924966256409315-thumb-480w.webp 480w,
+                  ../images/day-02/17924966256409315-content-960w.webp 960w,
+                  ../images/day-02/17924966256409315-desktop-1200w.webp 1200w,
+                  ../images/day-02/17924966256409315-lightbox-1440w.webp 1440w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="1440"
+                 height="1440"
+                 loading="lazy"
+                 decoding="async"
+                 alt="鞍馬山往本殿與貴船的路標"></a></div>
+            <div class="photo-grid-item"><a href="../images/day-02/18084973958263401-lightbox-1440w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="鞍馬寺西門出口"><img src="../images/day-02/18084973958263401-content-960w.webp"
+                 srcset="../images/day-02/18084973958263401-thumb-480w.webp 480w,
+                  ../images/day-02/18084973958263401-content-960w.webp 960w,
+                  ../images/day-02/18084973958263401-desktop-1200w.webp 1200w,
+                  ../images/day-02/18084973958263401-lightbox-1440w.webp 1440w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="1440"
+                 height="1440"
+                 loading="lazy"
+                 decoding="async"
+                 alt="鞍馬寺西門與貴船方向指標"></a></div>
+            <div class="photo-grid-item"><a href="../images/day-02/17941854270316837-lightbox-1440w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="貴船神社紅燈籠石階"><img src="../images/day-02/17941854270316837-content-960w.webp"
+                 srcset="../images/day-02/17941854270316837-thumb-480w.webp 480w,
+                  ../images/day-02/17941854270316837-content-960w.webp 960w,
+                  ../images/day-02/17941854270316837-desktop-1200w.webp 1200w,
+                  ../images/day-02/17941854270316837-lightbox-1440w.webp 1440w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="1440"
+                 height="1440"
+                 loading="lazy"
+                 decoding="async"
+                 alt="貴船神社紅燈籠石階"></a></div>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="kifune-title">
+        <div class="story-split" style="margin-top: 1.75rem;">
+          <div class="story-split-text">
+            <h2 id="kifune-title" style="font-family: var(--font-heading); color: var(--primary); margin-bottom: 1rem;">翻過山，貴船就在西門外</h2>
+            <p>一路陡下走到鞍馬寺西門，出了門、過個小橋，貴船就到了。這不是分別搭車去兩個景點，而是真的從鞍馬這一側上山，再從另一邊的溪谷走出來。</p>
+            <p>貴船神社本身不大。入口那排紅色春日燈籠很漂亮，最有名的水占卜也滿有意思：買來時幾乎是張白紙，放到神水上，文字才會慢慢浮出來。不過這裡主打結緣求姻緣，我都已經結婚生小孩了，看看就好。</p>
+          </div>
+          <div class="story-split-media"><a href="../images/day-02/18163006408464815-lightbox-1201w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="貴船神社紅燈籠參道"><img src="../images/day-02/18163006408464815-content-720w.webp"
+                 srcset="../images/day-02/18163006408464815-thumb-360w.webp 360w,
+                  ../images/day-02/18163006408464815-content-720w.webp 720w,
+                  ../images/day-02/18163006408464815-desktop-900w.webp 900w,
+                  ../images/day-02/18163006408464815-lightbox-1201w.webp 1201w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="1440"
+                 height="1919"
+                 loading="lazy"
+                 decoding="async"
+                 alt="林間的貴船神社紅燈籠石階參道"></a></div>
+        </div>
+
+        <div class="ig-post-card">
+          <div class="ig-post-header"><div class="ig-post-avatar">水</div><div class="ig-post-meta"><span class="ig-post-author">旅途照片手記</span><span class="ig-post-date">2026-08-25 · 貴船神社</span></div></div>
+          <div class="ig-post-caption"><p>紅燈籠、水占卜和黑白神馬。翻過山之後，貴船像是另一個世界。</p></div>
+          <div class="photo-grid photo-grid-4">
+            <div class="photo-grid-item is-static"><img src="../images/day-02/18163006408464815-content-720w.webp"
+                 srcset="../images/day-02/18163006408464815-thumb-360w.webp 360w,
+                  ../images/day-02/18163006408464815-content-720w.webp 720w,
+                  ../images/day-02/18163006408464815-desktop-900w.webp 900w,
+                  ../images/day-02/18163006408464815-lightbox-1201w.webp 1201w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="1440"
+                 height="1919"
+                 loading="lazy"
+                 decoding="async"
+                 alt="林間的貴船神社紅燈籠參道"></div>
+            <div class="photo-grid-item"><a href="../images/day-02/18163322467473685-lightbox-1200w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="貴船神社水占卜"><img src="../images/day-02/18163322467473685-content-720w.webp"
+                 srcset="../images/day-02/18163322467473685-thumb-360w.webp 360w,
+                  ../images/day-02/18163322467473685-content-720w.webp 720w,
+                  ../images/day-02/18163322467473685-desktop-900w.webp 900w,
+                  ../images/day-02/18163322467473685-lightbox-1200w.webp 1200w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="1440"
+                 height="1920"
+                 loading="lazy"
+                 decoding="async"
+                 alt="遊客觀看貴船神社水占卜"></a></div>
+            <div class="photo-grid-item"><a href="../images/day-02/18636103189021978-lightbox-1200w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="貴船神社神馬像"><img src="../images/day-02/18636103189021978-content-720w.webp"
+                 srcset="../images/day-02/18636103189021978-thumb-360w.webp 360w,
+                  ../images/day-02/18636103189021978-content-720w.webp 720w,
+                  ../images/day-02/18636103189021978-desktop-900w.webp 900w,
+                  ../images/day-02/18636103189021978-lightbox-1200w.webp 1200w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="1440"
+                 height="1920"
+                 loading="lazy"
+                 decoding="async"
+                 alt="貴船神社黑白神馬像"></a></div>
+            <div class="photo-grid-item"><a href="../images/day-02/18406967839090899-lightbox-1200w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="貴船神社本宮"><img src="../images/day-02/18406967839090899-content-720w.webp"
+                 srcset="../images/day-02/18406967839090899-thumb-360w.webp 360w,
+                  ../images/day-02/18406967839090899-content-720w.webp 720w,
+                  ../images/day-02/18406967839090899-desktop-900w.webp 900w,
+                  ../images/day-02/18406967839090899-lightbox-1200w.webp 1200w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="1440"
+                 height="1920"
+                 loading="lazy"
+                 decoding="async"
+                 alt="貴船神社本宮授與所"></a></div>
+          </div>
+        </div>
+
+        <div class="blog-narrative-card" style="margin-top: 1.75rem;">
+          <h2 style="font-family: var(--font-heading); color: var(--primary); margin-bottom: 1rem;">價錢也很有京都感</h2>
+          <p>夏天來貴船，真正有特色的是沿著貴船川搭起來的川床。貴船這邊的外國遊客明顯比鞍馬多，幾家川床外面都有人排隊。前面多半是懷石料理，2026 年現場看到不少套餐從六千、八千日圓起跳。</p>
+          <p>一個人坐在那裡吃懷石料理，我覺得有點怪；而且我們本來就吃不太慣，也不一定吃得飽。</p>
+          <p><br></p>
+        </div>
+
+        <div class="story-split" style="margin-top: 1.75rem;">
+          <div class="story-split-text"><h2 style="font-family: var(--font-heading); color: var(--primary); margin-bottom: 0.8rem;">坐下游的人，不就在泡別人的洗腳水？</h2><p>沿著川床一路往上走，看到不少人直接把腳伸進溪水裡。照片拿回去給 Lisa 看，她第一句就是：</p><p><strong>「那坐下游的人，不就在泡別人的洗腳水？」</strong></p><p>……好像也有道理。還好我沒有停在下游，繼續往上走了。</p></div>
+          <div class="story-split-media"><a href="../images/day-02/17875881969546242-lightbox-1200w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="川床旁把腳伸進貴船川的遊客"><img src="../images/day-02/17875881969546242-content-720w.webp"
+                 srcset="../images/day-02/17875881969546242-thumb-360w.webp 360w,
+                  ../images/day-02/17875881969546242-content-720w.webp 720w,
+                  ../images/day-02/17875881969546242-desktop-900w.webp 900w,
+                  ../images/day-02/17875881969546242-lightbox-1200w.webp 1200w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="1440"
+                 height="1920"
+                 loading="lazy"
+                 decoding="async"
+                 alt="川床座席旁把腳伸進貴船川消暑的遊客"></a></div>
+        </div>
+
+        <div class="story-split reverse" style="margin-top: 1.75rem;">
+          <div class="story-split-text"><h2 style="font-family: var(--font-heading); color: var(--primary); margin-bottom: 0.8rem;">走到上游，先補一點熱量</h2><p>最後在比較上游找了一家店，點一個抹茶冰淇淋和一杯冰烏龍茶，折合台幣大概三、四百元。早上沒吃早餐，這支冰淇淋差不多就是我今天第一份正式的熱量。</p><div><div><span style="font-size: 16.32px;"><br></span></div><div><span style="font-size: 16.32px;">挑好一個精典角度請人幫我拍張照片，結果對方把我端端正正放在畫面中央，就純拍人 ~.~'"</span></div><div><span style="font-size: 16.32px;">最後只好用同一個角度再拍一張景，使出手機剪貼大法，把人重新貼進去 XD</span></div></div><p></p></div>
+          <div class="story-split-media"><a href="../images/day-02/18127367188738424-lightbox-1200w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="貴船川上的川床"><img src="../images/day-02/18127367188738424-content-720w.webp"
+                 srcset="../images/day-02/18127367188738424-thumb-360w.webp 360w,
+                  ../images/day-02/18127367188738424-content-720w.webp 720w,
+                  ../images/day-02/18127367188738424-desktop-900w.webp 900w,
+                  ../images/day-02/18127367188738424-lightbox-1200w.webp 1200w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="1440"
+                 height="1920"
+                 loading="lazy"
+                 decoding="async"
+                 alt="貴船川溪流上的川床座席"></a></div>
+        </div>
+
+        <div class="ig-post-card">
+          <div class="ig-post-header"><div class="ig-post-avatar">川</div><div class="ig-post-meta"><span class="ig-post-author">旅途照片手記</span><span class="ig-post-date">2026-08-25 · 貴船川</span></div></div>
+          <div class="ig-post-caption"><p>正式川床留給下次。這次一路走到上游，冰淇淋和冰烏龍茶就很夠了。</p></div>
+          <div class="photo-grid photo-grid-4">
+            <div class="photo-grid-item"><a href="../images/day-02/18123336100823567-lightbox-1200w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="川床與溪流"><img src="../images/day-02/18123336100823567-content-720w.webp"
+                 srcset="../images/day-02/18123336100823567-thumb-360w.webp 360w,
+                  ../images/day-02/18123336100823567-content-720w.webp 720w,
+                  ../images/day-02/18123336100823567-desktop-900w.webp 900w,
+                  ../images/day-02/18123336100823567-lightbox-1200w.webp 1200w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="1440"
+                 height="1920"
+                 loading="lazy"
+                 decoding="async"
+                 alt="溪流上方的綠色川床"></a></div>
+            <div class="photo-grid-item"><a href="../images/day-02/17900227770589098-lightbox-1200w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="貴船川上游座席"><img src="../images/day-02/17900227770589098-content-720w.webp"
+                 srcset="../images/day-02/17900227770589098-thumb-360w.webp 360w,
+                  ../images/day-02/17900227770589098-content-720w.webp 720w,
+                  ../images/day-02/17900227770589098-desktop-900w.webp 900w,
+                  ../images/day-02/17900227770589098-lightbox-1200w.webp 1200w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="1440"
+                 height="1920"
+                 loading="lazy"
+                 decoding="async"
+                 alt="貴船川上游的小型座席"></a></div>
+            <div class="photo-grid-item"><a href="../images/day-02/17983894356066277-lightbox-1200w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="貴船街道"><img src="../images/day-02/17983894356066277-content-720w.webp"
+                 srcset="../images/day-02/17983894356066277-thumb-360w.webp 360w,
+                  ../images/day-02/17983894356066277-content-720w.webp 720w,
+                  ../images/day-02/17983894356066277-desktop-900w.webp 900w,
+                  ../images/day-02/17983894356066277-lightbox-1200w.webp 1200w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="1440"
+                 height="1920"
+                 loading="lazy"
+                 decoding="async"
+                 alt="盛夏午後的貴船街道"></a></div>
+            <div class="photo-grid-item is-static"><img src="../images/day-02/17875881969546242-content-720w.webp"
+                 srcset="../images/day-02/17875881969546242-thumb-360w.webp 360w,
+                  ../images/day-02/17875881969546242-content-720w.webp 720w,
+                  ../images/day-02/17875881969546242-desktop-900w.webp 900w,
+                  ../images/day-02/17875881969546242-lightbox-1200w.webp 1200w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="1440"
+                 height="1920"
+                 loading="lazy"
+                 decoding="async"
+                 alt="川床座席旁清澈的貴船川"></div>
+            <div class="photo-grid-item"><a href="../images/day-02/18140006914597696-lightbox-1200w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="溪流上的川床餐廳"><img src="../images/day-02/18140006914597696-content-720w.webp"
+                 srcset="../images/day-02/18140006914597696-thumb-360w.webp 360w,
+                  ../images/day-02/18140006914597696-content-720w.webp 720w,
+                  ../images/day-02/18140006914597696-desktop-900w.webp 900w,
+                  ../images/day-02/18140006914597696-lightbox-1200w.webp 1200w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="1440"
+                 height="1920"
+                 loading="lazy"
+                 decoding="async"
+                 alt="樹林與溪流間的川床餐廳"></a></div>
+            <div class="photo-grid-item"><a href="../images/day-02/18326212225263237-lightbox-1200w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="抹茶冰淇淋與冰烏龍茶"><img src="../images/day-02/18326212225263237-content-720w.webp"
+                 srcset="../images/day-02/18326212225263237-thumb-360w.webp 360w,
+                  ../images/day-02/18326212225263237-content-720w.webp 720w,
+                  ../images/day-02/18326212225263237-desktop-900w.webp 900w,
+                  ../images/day-02/18326212225263237-lightbox-1200w.webp 1200w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="1440"
+                 height="1920"
+                 loading="lazy"
+                 decoding="async"
+                 alt="貴船上游的抹茶冰淇淋與冰烏龍茶"></a></div>
+            <div class="photo-grid-item"><a href="../images/day-02/18029211917674007-lightbox-1200w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="鞍馬山林間小社"><img src="../images/day-02/18029211917674007-content-720w.webp"
+                 srcset="../images/day-02/18029211917674007-thumb-360w.webp 360w,
+                  ../images/day-02/18029211917674007-content-720w.webp 720w,
+                  ../images/day-02/18029211917674007-desktop-900w.webp 900w,
+                  ../images/day-02/18029211917674007-lightbox-1200w.webp 1200w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="1440"
+                 height="1920"
+                 loading="lazy"
+                 decoding="async"
+                 alt="鞍馬山林間的小社與岩石"></a></div>
+            <div class="photo-grid-item"><a href="../images/day-02/17888746641674564-lightbox-1200w.webp" class="glightbox" data-gallery="day-02-gallery" data-title="貴船山林小社"><img src="../images/day-02/17888746641674564-content-720w.webp"
+                 srcset="../images/day-02/17888746641674564-thumb-360w.webp 360w,
+                  ../images/day-02/17888746641674564-content-720w.webp 720w,
+                  ../images/day-02/17888746641674564-desktop-900w.webp 900w,
+                  ../images/day-02/17888746641674564-lightbox-1200w.webp 1200w"
+                 sizes="(max-width: 768px) 100vw, 960px"
+                 width="1440"
+                 height="1920"
+                 loading="lazy"
+                 decoding="async"
+                 alt="貴船山林中的紅色小社"></a></div>
+          </div>
+        </div>
+
+        <div class="blog-narrative-card" style="margin-top: 1.75rem;">
+          <p>休息夠了，再沿原路走回貴船神社附近搭公車下山。班次比我原本想像中多，很快就回到貴船口站，搭上叡山電鐵。</p>
+          <p>上車後瞇了一下，忽然醒來一看：咦，才到寶池？！</p>
+          <p><b>才12點半？！那這是不是一個暗示？</b></p>
+          <p>原本排在明天的比叡山，要不要今天一起跑掉？……（握拳/遠目）</p>
+          <p>反正人都已經在這裡了，這大概就是老天的明示加暗示。</p>
+          <p></p><div>於是臨時改變計畫，直接在寶池站下車到隔壁月台轉車往八瀨比叡山口。</div><p></p>
+        </div>
+      </section>
+
+      <section id="notes" class="osaka-bento" aria-labelledby="notes-title" style="margin-top: 3rem;">
+        <div class="bento-heading">
+          <div>
+            <h2 id="notes-title">讀者抄作業：2026 行前功課 × 現場實戰</h2>
+            <a class="planning-guide-link" href="https://aa1662.github.io/2026-Osaka/guide-kurama-kifune.html" target="_blank" rel="noopener">出發前做的完整功課 →</a>
+          </div>
+          <span class="badge badge-gold">第一手實戰筆記</span>
+        </div>
+        <div class="bento-grid">
+          <div class="bento-card bento-col-6 bento-transport">
+            <h3>大阪怎麼到鞍馬</h3>
+            <p><span class="bento-source bento-source-plan">行前功課</span>京阪電車到出町柳，再轉叡山電鐵直達鞍馬。</p>
+            <p><span class="bento-source bento-source-field">現場實戰</span>全程使用 ICOCA，出鞍馬站左轉走幾步就是入口，比想像中簡單。</p>
+          </div>
+          <div class="bento-card bento-col-6 bento-transport">
+            <h3>牛若號纜車</h3>
+            <p><span class="bento-source bento-source-plan">行前功課</span>搭纜車可省掉前段爬坡，班距約二十分鐘。</p>
+            <p><span class="bento-source bento-source-field">現場實戰</span>我剛好錯過一班；有走郊山習慣，與其站著等，不如直接走上去。</p>
+          </div>
+          <div class="bento-card bento-col-6 bento-nature">
+            <h3>方向與鞋子</h3>
+            <p><span class="bento-source bento-source-plan">行前功課</span>鞍馬進、貴船出，前段參拜、後段翻山。</p>
+            <p><span class="bento-source bento-source-field">現場實戰</span>方向選對了。本殿後是土路、樹根與陡下坡，鞋底要有抓地力；反走會比較辛苦。</p>
+          </div>
+          <div class="bento-card bento-col-6 bento-nature">
+            <h3>要留半天還是一天</h3>
+            <p><span class="bento-source bento-source-plan">行前預估</span>含參拜、健行與貴船停留，原本抓七至八小時。</p>
+            <p><span class="bento-source bento-source-field">實際所需</span>七點離開大阪，十二點半已回到寶池。腳程快、不吃正式川床，半天足夠；慢慢參拜或安排午餐，就留一整天。</p>
+          </div>
+          <div class="bento-card bento-col-6 bento-food">
+            <h3>貴船川床怎麼選</h3>
+            <p><span class="bento-source bento-source-plan">行前功課</span>正式懷石、流水麵與沿溪納涼，都是夏季重點。</p>
+            <p><span class="bento-source bento-source-field">現場實戰</span>2026 年看到不少套餐 ¥6,000、¥8,000 起跳。一個人沒硬吃，往上游找冰淇淋和飲料，反而自在。</p>
+          </div>
+          <div class="bento-card bento-col-6 bento-transport">
+            <h3>貴船回程</h3>
+            <p><span class="bento-source bento-source-plan">行前功課</span>從神社附近搭公車到貴船口，再接叡山電鐵。</p>
+            <p><span class="bento-source bento-source-field">現場實戰</span>班次比預期多，很快就接上電車。別把「貴船口」和「鞍馬口」弄混，兩個不是同一站。</p>
+          </div>
+          <div class="bento-card bento-col-6 bento-culture">
+            <h3>天狗、牛若丸與金剛床</h3>
+            <p><span class="bento-source bento-source-plan">行前功課</span>鞍馬山最有名的是天狗傳說、牛若丸修行，以及本殿前象徵宇宙能量的金剛床。</p>
+            <p><span class="bento-source bento-source-field">現場實戰</span>能量我是沒感覺到；但知道故事後再走義經公背比石與木之根道，山路確實更有意思。</p>
+          </div>
+          <div class="bento-card bento-col-6 bento-culture">
+            <h3>水神、神馬與水占卜</h3>
+            <p><span class="bento-source bento-source-plan">行前功課</span>貴船祭祀水神，黑白神馬與祈雨、止雨的傳說有關；水占卜則要放進神水才顯字。</p>
+            <p><span class="bento-source bento-source-field">現場實戰</span>紅燈籠、神馬和水占卜都看到了。至於結緣求姻緣，我都已經結婚生小孩了，看看就好。</p>
+          </div>
+          <div class="bento-card bento-col-12 bento-alert">
+            <h3>這次留到下次</h3>
+            <p><span class="bento-source bento-source-missed">這次沒走</span>正式川床懷石、流水麵、貴船神社結社與奧宮。不是漏掉，而是這趟選擇把時間留給翻山；完整候選清單仍保留在上方的行前規劃站。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 篇章導覽按鈕 -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin: 3.5rem 0 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); flex-wrap: wrap; gap: 1rem;">
+        <a href="../../index.html" style="font-weight: 600; color: var(--primary); font-size: 0.95rem;">← 全球旅程總覽</a>
+        <button type="button" class="btn-gallery-quick">瀏覽完整圖集</button>
+        <a href="hieizan-enryakuji-eternal-flame.html" style="font-weight: 600; color: var(--primary); font-size: 0.95rem;">下一篇：下一站：比叡山延曆寺 →</a>
+      </div>
+    </article>
+  </main>
+
+  <div class="mobile-dock">
+    <a href="../../index.html" class="dock-item"><span class="dock-icon">⌂</span><span>旅程</span></a>
+    <button type="button" class="dock-item btn-gallery-quick"><span class="dock-icon">▦</span><span>圖集</span></button>
+    <button type="button" class="dock-item btn-share"><span class="dock-icon">↗</span><span>分享</span></button>
+  </div>
+
+  <script src="../../core/vendor/glightbox/glightbox.min.js"></script>
+  <script src="../../core/js/app.js"></script>
+  <script src="../../core/js/main.js"></script>
+
+
+</body></html>

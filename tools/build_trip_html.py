@@ -68,7 +68,7 @@ def transform_html_images(html_content, images_dict, img_folder, rel_img_prefix,
             errors.append(f"燈箱連結找不到圖檔 Manifest 紀錄: {key}")
         return match.group(0)
 
-    html_content = re.sub(r'href="(?:\.\./)*images/([^/]+)/([^"]+\.(?:jpg|jpeg|png|webp))"', replace_a_href, html_content, flags=re.IGNORECASE)
+    html_content = re.sub(r'href="(?:\.\./)*images/([^/]+)/([^"]+\.(?:jpg|jpeg|png|webp|heic))"', replace_a_href, html_content, flags=re.IGNORECASE)
 
     # 2. 結構化重構 <img> 標籤
     def replace_img_tag(match):
@@ -122,17 +122,21 @@ def transform_html_images(html_content, images_dict, img_folder, rel_img_prefix,
         default_src = content_d[0]["filename"] if content_d else derivatives[0]["filename"]
 
         alt_text = attrs.get("alt", "CH Travel OS 旅程實拍")
+        loading_value = attrs.get("loading", "lazy")
+        decoding_value = attrs.get("decoding", "async")
+        sizes_value = attrs.get("sizes", "(max-width: 768px) 100vw, 960px")
         class_attr = f' class="{attrs["class"]}"' if "class" in attrs else ""
         style_attr = f' style="{attrs["style"]}"' if "style" in attrs else ""
+        fetchpriority_attr = f' fetchpriority="{attrs["fetchpriority"]}"' if "fetchpriority" in attrs else ""
 
         return f'''<img src="{rel_img_prefix}/{default_src}"
                  srcset="{srcset_str}"
-                 sizes="(max-width: 768px) 100vw, 960px"
+                 sizes="{sizes_value}"
                  width="{orig_w}"
                  height="{orig_h}"
-                 loading="lazy"
-                 decoding="async"
-                 alt="{alt_text}"{class_attr}{style_attr}>'''
+                 loading="{loading_value}"
+                 decoding="{decoding_value}"
+                 alt="{alt_text}"{class_attr}{style_attr}{fetchpriority_attr}>'''
 
     img_tag_pattern = re.compile(r'<img\s+([^>]+)>', re.IGNORECASE)
     html_content = img_tag_pattern.sub(replace_img_tag, html_content)
@@ -178,6 +182,11 @@ def build_trip(trip_slug="2026-germany", dest_slug=None):
         entries = config_data.get("entries", config_data) if isinstance(config_data, dict) else config_data
 
     config_dest = config_data.get("dest") if isinstance(config_data, dict) else None
+    journey_end_title = (
+        config_data.get("journey_end_title", "旅程圓滿完結 · 回首頁")
+        if isinstance(config_data, dict)
+        else "旅程圓滿完結 · 回首頁"
+    )
     if dest_slug and config_dest and dest_slug != config_dest:
         print(f"❌ dest 不一致: 參數={dest_slug}, config={config_dest}")
         sys.exit(1)
@@ -222,9 +231,10 @@ def build_trip(trip_slug="2026-germany", dest_slug=None):
         rel_prefix = f"../images/{img_folder}"
         html_content = transform_html_images(html_content, images_dict, img_folder, rel_prefix, errors)
 
-        # 2.1 統一全頁的 data-gallery 名稱，確保點擊任一張照片均可全域流暢滑動瀏覽
-        article_gallery_name = f"{item['id']}-gallery"
-        html_content = re.sub(r'data-gallery=["\'][^"\']+["\']', f'data-gallery="{article_gallery_name}"', html_content)
+        # 2.1 預設統一全頁 gallery；需要橫直分組的文章可明確保留 source 分組。
+        if not item.get("preserve_gallery_groups", False):
+            article_gallery_name = f"{item['id']}-gallery"
+            html_content = re.sub(r'data-gallery=["\'][^"\']+["\']', f'data-gallery="{article_gallery_name}"', html_content)
 
         # 3. 修正 OG 與 Canonical URL
         if item.get("og_url"):
@@ -264,17 +274,22 @@ def build_trip(trip_slug="2026-germany", dest_slug=None):
             if not n_text.endswith("→"):
                 n_text += " →"
             next_html = f'<a href="{item["next_link"]}" style="font-weight: 600; color: var(--primary); font-size: 0.95rem;">{n_text}</a>'
+        elif item.get("next_title"):
+            next_html = f'<span style="font-weight: 600; color: var(--text-muted); font-size: 0.95rem;">{item["next_title"]}</span>'
         else:
-            next_html = '<a href="../index.html" style="font-weight: 600; color: var(--primary); font-size: 0.95rem;">🎉 15天德南冬旅圓滿完結 · 回首頁 →</a>'
+            next_html = f'<a href="../index.html" style="font-weight: 600; color: var(--primary); font-size: 0.95rem;">🎉 {journey_end_title} →</a>'
 
         day_num_match = re.search(r'day-(\d+)', item["id"])
         day_num = day_num_match.group(1) if day_num_match else "02"
         timeline_target = f"../day-{day_num}.html"
         timeline_physical = DOCS_DIR / dest_slug / f"day-{day_num}.html"
-        if timeline_physical.exists():
+        if item.get("footer_center") == "gallery":
+            center_html = '<button type="button" class="btn-gallery-quick">瀏覽完整圖集</button>'
+        elif timeline_physical.exists():
             center_html = f'<a href="{timeline_target}" class="badge badge-gold" style="font-size: 0.9rem; padding: 0.5rem 1rem; text-decoration: none;">⏱️ 查看 Day {int(day_num)} 純時間表</a>'
         else:
-            center_html = f'<a href="../index.html#itinerary" class="badge badge-gold" style="font-size: 0.9rem; padding: 0.5rem 1rem; text-decoration: none;">🗺️ 行程總覽</a>'
+            timeline_fallback_link = item.get("timeline_fallback_link", "../index.html#itinerary")
+            center_html = f'<a href="{timeline_fallback_link}" class="badge badge-gold" style="font-size: 0.9rem; padding: 0.5rem 1rem; text-decoration: none;">🗺️ 行程總覽</a>'
 
         new_nav_block = f'''<!-- 篇章導覽按鈕 -->
       <div style="display: flex; justify-content: space-between; align-items: center; margin: 3.5rem 0 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); flex-wrap: wrap; gap: 1rem;">
@@ -291,7 +306,8 @@ def build_trip(trip_slug="2026-germany", dest_slug=None):
 
         # 5. 修正手機 Dock 與頂部導覽列中的未發布 timeline 連結
         if not timeline_physical.exists():
-            html_content = html_content.replace(f'href="../day-{day_num}.html"', 'href="../index.html#itinerary"')
+            timeline_fallback_link = item.get("timeline_fallback_link", "../index.html#itinerary")
+            html_content = html_content.replace(f'href="../day-{day_num}.html"', f'href="{timeline_fallback_link}"')
 
         compiled_outputs[out_file] = (item["id"], html_content)
 
@@ -318,4 +334,11 @@ def build_trip(trip_slug="2026-germany", dest_slug=None):
 build_trips = build_trip
 
 if __name__ == "__main__":
-    build_trip("2026-germany")
+    import argparse
+
+    parser = argparse.ArgumentParser(description="CH Travel OS Blog Builder")
+    parser.add_argument("--trip", default="2026-germany", help="目標旅程目錄名稱")
+    parser.add_argument("--dest", default=None, help="目標發布目錄名稱（預設讀取 config）")
+    args = parser.parse_args()
+
+    build_trip(args.trip, args.dest)

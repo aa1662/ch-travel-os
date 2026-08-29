@@ -172,13 +172,16 @@ function initGLightbox() {
   document.querySelectorAll('.btn-gallery-quick').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      openCurrentPageGallery();
+      openCurrentPageGallery(btn.dataset.galleryTarget);
     });
   });
 }
 
-function openCurrentPageGallery() {
-  const firstLink = document.querySelector('.glightbox');
+function openCurrentPageGallery(galleryTarget) {
+  const links = Array.from(document.querySelectorAll('.glightbox'));
+  const firstLink = galleryTarget
+    ? links.find(link => link.dataset.gallery === galleryTarget)
+    : links[0];
   if (firstLink) {
     firstLink.click();
   } else if (globalLightboxInstance) {
