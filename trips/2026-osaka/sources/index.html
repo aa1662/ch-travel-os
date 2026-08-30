@@ -20,58 +20,100 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../core/css/style.css">
   <style>
-    .osaka-journey-hub { background: #f7f5f0; }
+    .osaka-journey-hub { background: #f7f5f0; color: var(--ink); }
     .osaka-journey-hub .reading-progress { z-index: 120; }
-    .journey-hero { position: relative; min-height: 650px; height: 76vh; max-height: 760px; overflow: hidden; background: #21333a; }
+    
+    /* Hero Banner */
+    .journey-hero { position: relative; min-height: 620px; height: 74vh; max-height: 740px; overflow: hidden; background: #21333a; }
     .journey-hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 56%; }
-    .journey-hero::after { content: ""; position: absolute; inset: 0; background: rgba(8, 20, 28, 0.5); pointer-events: none; }
-    .journey-hero-inner { position: relative; z-index: 1; display: flex; min-height: inherit; height: 100%; align-items: flex-end; padding-top: 5rem; padding-bottom: 4rem; color: #fff; }
-    .journey-hero-copy { max-width: 850px; }
-    .journey-kicker { display: inline-flex; align-items: center; padding: 0.3rem 0.7rem; border: 1px solid rgba(255,255,255,0.58); border-radius: 999px; background: rgba(16,35,44,0.66); font-size: 0.82rem; font-weight: 800; }
-    .journey-hero h1 { margin: 0.8rem 0 0.9rem; color: #fff; font-family: var(--font-heading); font-size: 3.55rem; line-height: 1.13; letter-spacing: 0; text-shadow: 0 3px 20px rgba(0,0,0,0.66); }
-    .journey-hero p { max-width: 730px; margin: 0; color: #fff; font-size: 1.12rem; line-height: 1.75; text-shadow: 0 2px 14px rgba(0,0,0,0.78); }
+    .journey-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8, 20, 28, 0.35) 0%, rgba(8, 20, 28, 0.75) 100%); pointer-events: none; }
+    .journey-hero-inner { position: relative; z-index: 1; display: flex; min-height: inherit; height: 100%; align-items: flex-end; padding-top: 5rem; padding-bottom: 3.8rem; color: #fff; }
+    .journey-hero-copy { max-width: 860px; }
+    .hero-badge-group { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.8rem; }
+    .journey-hero h1 { margin: 0.6rem 0 0.8rem; color: #fff; font-family: var(--font-heading); font-size: 3.4rem; line-height: 1.15; letter-spacing: -0.01em; text-shadow: 0 3px 20px rgba(0,0,0,0.66); }
+    .journey-hero p { max-width: 740px; margin: 0; color: #fff; font-size: 1.12rem; line-height: 1.75; text-shadow: 0 2px 14px rgba(0,0,0,0.78); }
     .journey-hero-actions { display: flex; gap: 0.75rem; margin-top: 1.4rem; flex-wrap: wrap; }
-    .journey-hero-actions a { display: inline-flex; align-items: center; min-height: 44px; padding: 0.68rem 1.1rem; border-radius: 999px; font-weight: 800; text-decoration: none; }
+    .journey-hero-actions a { display: inline-flex; align-items: center; min-height: 44px; padding: 0.68rem 1.15rem; border-radius: 999px; font-weight: 800; text-decoration: none; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .journey-hero-actions a:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
     .journey-hero-actions .is-primary { background: #b44d38; color: #fff; }
-    .journey-hero-actions .is-secondary { border: 1px solid rgba(255,255,255,0.65); background: rgba(16,35,44,0.6); color: #fff; }
-    .journey-section { padding: 4.5rem 0; }
-    .journey-section + .journey-section { border-top: 1px solid var(--border-color); }
-    .journey-prose { max-width: 790px; margin: 0 auto; }
-    .journey-prose h2, .journey-chapter h2 { margin: 0 0 1rem; color: var(--primary); font-family: var(--font-heading); font-size: 2rem; line-height: 1.3; letter-spacing: 0; }
-    .journey-prose p, .journey-chapter-copy p { margin: 0 0 0.9rem; color: var(--ink); font-size: 1.04rem; line-height: 1.88; }
-    .journey-prose p:last-child, .journey-chapter-copy p:last-child { margin-bottom: 0; }
-    .journey-lede { color: var(--primary) !important; font-family: var(--font-heading); font-size: 1.28rem !important; font-weight: 700; }
-    .planning-band { padding: 3.2rem 0; background: #e9f0ed; border-top: 1px solid #cedbd5; border-bottom: 1px solid #cedbd5; }
-    .planning-inner { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(250px, 0.55fr); gap: 3rem; align-items: center; }
-    .planning-inner h2 { margin: 0 0 0.75rem; color: #244f46; font-family: var(--font-heading); font-size: 1.8rem; letter-spacing: 0; }
-    .planning-inner p { margin: 0; color: #314a43; line-height: 1.8; }
-    .planning-link { justify-self: end; display: inline-flex; align-items: center; min-height: 46px; padding: 0.72rem 1.1rem; border: 1px solid #356e61; border-radius: 999px; color: #244f46; font-weight: 800; text-decoration: none; }
-    .journey-stories { padding: 1rem 0 4.5rem; }
-    .journey-chapter { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr); gap: 3.2rem; align-items: center; padding: 4rem 0; border-bottom: 1px solid var(--border-color); }
-    .journey-chapter.is-reverse .journey-chapter-media { order: 2; }
-    .journey-chapter-media { margin: 0; min-width: 0; }
-    .journey-chapter-media a { display: block; }
-    .journey-chapter-media img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 6px; box-shadow: var(--shadow-md); }
-    .journey-chapter-label { display: block; margin-bottom: 0.55rem; color: #9b432f; font-size: 0.8rem; font-weight: 900; text-transform: uppercase; }
-    .journey-story-link { display: inline-flex; align-items: center; margin-top: 0.65rem; color: var(--primary); font-weight: 800; text-decoration: underline; text-underline-offset: 4px; }
-    .journey-quote { margin: 1.2rem 0 0; padding-left: 1rem; border-left: 4px solid #b44d38; color: var(--primary); font-family: var(--font-heading); font-size: 1.18rem; font-weight: 700; line-height: 1.65; }
-    .journey-closing { padding-bottom: 6rem; }
-    .journey-closing strong { color: var(--primary); }
-    .journey-footer { padding: 2rem 0 5.5rem; border-top: 1px solid var(--border-color); color: var(--text-muted); text-align: center; font-size: 0.88rem; }
+    .journey-hero-actions .is-secondary { border: 1px solid rgba(255,255,255,0.7); background: rgba(16,35,44,0.65); color: #fff; backdrop-filter: blur(8px); }
+
+    /* Bento Container & Layout */
+    .journey-main-wrap { max-width: 1120px; margin: 0 auto; padding: 3.5rem 1.25rem 5rem; }
+    .hub-section { margin-bottom: 4rem; }
+    .hub-section-header { margin-bottom: 1.5rem; }
+    .hub-section-header h2 { font-family: var(--font-heading); font-size: 2rem; color: var(--primary); margin: 0.4rem 0 0; }
+    
+    /* Bento Cards System */
+    .bento-card { background: #ffffff; border-radius: 16px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 4px 20px rgba(0,0,0,0.04); padding: 2rem 2.2rem; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .bento-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.07); }
+    /* Grid Layouts - 100% Symmetrical 50/50 & 2x2 */
+    .bento-grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: stretch; }
+    .story-duo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: stretch; }
+    .featured-story-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+
+    .bento-card { display: flex; flex-direction: column; justify-content: space-between; height: 100%; background: #ffffff; border-radius: 16px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 4px 20px rgba(0,0,0,0.04); padding: 2.2rem 2.4rem; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .bento-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.07); }
+    .bento-card h3 { font-family: var(--font-heading); font-size: 1.6rem; color: var(--primary); margin: 0.5rem 0 0.9rem; line-height: 1.35; }
+    .bento-card p { font-size: 1.02rem; line-height: 1.85; color: var(--ink); margin-bottom: 0.9rem; }
+    .bento-card p:last-child { margin-bottom: 0; }
+    .bento-quote { margin: 1rem 0 0; padding: 0.9rem 1.2rem; background: rgba(180, 77, 56, 0.06); border-left: 4px solid #b44d38; border-radius: 0 8px 8px 0; color: var(--primary); font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; line-height: 1.65; }
+
+    /* Story Card (Enhanced 2x2 Symmetry) */
+    .story-bento-card { display: flex; flex-direction: column; height: 100%; background: #ffffff; border-radius: 16px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 4px 20px rgba(0,0,0,0.04); overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .story-bento-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .story-bento-media { position: relative; aspect-ratio: 16 / 9; width: 100%; overflow: hidden; background: #21333a; }
+    .story-bento-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; display: block; }
+    .story-bento-card:hover .story-bento-media img { transform: scale(1.04); }
+    .story-tag-float { position: absolute; top: 12px; left: 12px; background: rgba(8, 20, 28, 0.75); color: #fff; font-size: 0.78rem; font-weight: 800; padding: 0.3rem 0.65rem; border-radius: 999px; backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.25); }
+    .story-bento-body { padding: 1.6rem 1.8rem; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1; height: 100%; }
+    .story-bento-body h3 { font-family: var(--font-heading); font-size: 1.4rem; color: var(--primary); margin: 0.6rem 0 0.6rem; line-height: 1.35; min-height: 2.7rem; display: flex; align-items: center; }
+    .story-bento-body p { font-size: 0.96rem; line-height: 1.75; color: var(--text-muted); margin-bottom: 1.2rem; flex-grow: 1; }
+    .btn-read-bento { display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 0.75rem 1rem; border-radius: 10px; background: var(--primary); color: #fff; font-weight: 800; font-size: 0.95rem; text-decoration: none; transition: background 0.2s ease; margin-top: auto; }
+    .btn-read-bento:hover { background: var(--primary-light); color: #fff; }
+
+    /* Planning Banner Module */
+    .planning-bento-box { background: linear-gradient(135deg, #e4ece8 0%, #d8e5e0 100%); border: 1px solid #bed2ca; border-radius: 16px; padding: 2rem 2.4rem; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2rem; }
+    .planning-bento-box h3 { color: #1e453d; font-family: var(--font-heading); font-size: 1.45rem; margin: 0 0 0.4rem; }
+    .planning-bento-box p { color: #2d554c; margin: 0; font-size: 0.98rem; line-height: 1.65; max-width: 680px; }
+    .planning-bento-btn { display: inline-flex; align-items: center; padding: 0.75rem 1.4rem; border-radius: 999px; background: #235248; color: #fff; font-weight: 800; font-size: 0.95rem; text-decoration: none; transition: transform 0.2s ease, background 0.2s ease; white-space: nowrap; }
+    .planning-bento-btn:hover { background: #183c34; transform: translateY(-2px); color: #fff; }
+
+    /* Closing Card */
+    .closing-bento-card { background: #ffffff; border-radius: 16px; border-top: 5px solid #b44d38; box-shadow: 0 4px 24px rgba(0,0,0,0.05); padding: 2.8rem 2.5rem; text-align: left; }
+    .closing-callout { margin-top: 1.5rem; padding: 1.2rem 1.5rem; background: rgba(180, 77, 56, 0.08); border-radius: 12px; border-left: 4px solid #b44d38; font-family: var(--font-heading); font-size: 1.3rem; font-weight: 800; color: #b44d38; line-height: 1.6; }
+
+    /* Colophon & Portal Navigation */
+    .colophon-bento-card { background: #ffffff; border-radius: 16px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 4px 20px rgba(0,0,0,0.04); padding: 2.4rem 2.6rem; }
+    .colophon-meta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem 2rem; padding: 1.2rem 0 1.6rem; border-top: 1px solid rgba(0,0,0,0.06); border-bottom: 1px solid rgba(0,0,0,0.06); margin: 1.2rem 0 1.6rem; }
+    .colophon-meta-item { display: flex; flex-direction: column; gap: 0.25rem; }
+    .colophon-meta-label { font-size: 0.82rem; font-weight: 800; color: var(--text-muted); }
+    .colophon-meta-val { font-size: 0.98rem; font-weight: 600; color: var(--ink); line-height: 1.5; }
+    .colophon-meta-val a { color: var(--primary); text-decoration: underline; text-underline-offset: 3px; font-weight: 700; transition: color 0.2s ease; }
+    .colophon-meta-val a:hover { color: #b44d38; }
+    .colophon-nav-group { display: flex; gap: 0.85rem; flex-wrap: wrap; align-items: center; }
+    .colophon-nav-btn { display: inline-flex; align-items: center; padding: 0.72rem 1.25rem; border-radius: 999px; font-weight: 800; font-size: 0.92rem; text-decoration: none; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .colophon-nav-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+    .colophon-nav-btn.is-primary { background: var(--primary); color: #fff; }
+    .colophon-nav-btn.is-secondary { background: #f0f4f8; color: var(--primary); border: 1px solid #cedbe7; }
+    .colophon-nav-btn.is-outline { background: #eaf1ee; color: #235248; border: 1px solid #bed2ca; }
+
+    .journey-footer { padding: 2.5rem 0 5.5rem; border-top: 1px solid rgba(0,0,0,0.08); color: var(--text-muted); text-align: center; font-size: 0.88rem; }
     .osaka-journey-hub section[id] { scroll-margin-top: 5.5rem; }
-    @media (max-width: 800px) {
-      .journey-hero { min-height: 610px; height: 82vh; max-height: 700px; }
-      .journey-hero > img { object-position: 58% center; }
-      .journey-hero-inner { padding-top: 4rem; padding-bottom: 2.8rem; }
+
+    @media (max-width: 860px) {
+      .journey-hero { min-height: 560px; height: 80vh; max-height: 680px; }
       .journey-hero h1 { font-size: 2.35rem; }
-      .journey-hero p { font-size: 1rem; }
-      .journey-section { padding: 3.4rem 0; }
-      .journey-prose h2, .journey-chapter h2 { font-size: 1.65rem; }
-      .planning-inner, .journey-chapter { grid-template-columns: 1fr; gap: 1.5rem; }
-      .planning-link { justify-self: start; }
-      .journey-chapter { padding: 3rem 0; }
-      .journey-chapter.is-reverse .journey-chapter-media { order: 0; }
-      .journey-chapter-media img { aspect-ratio: 16 / 10; }
+      .bento-grid-2col, .story-duo-grid, .featured-story-grid { grid-template-columns: 1fr; }
+      .journey-main-wrap { padding: 2.2rem 1rem 4rem; }
+      .bento-card { padding: 1.6rem 1.4rem; }
+      .planning-bento-box { grid-template-columns: 1fr; padding: 1.5rem 1.4rem; gap: 1rem; }
+      .planning-bento-btn { width: 100%; justify-content: center; }
+      .closing-bento-card { padding: 1.8rem 1.4rem; }
+      .closing-callout { font-size: 1.15rem; }
+      .colophon-bento-card { padding: 1.8rem 1.4rem; }
+      .colophon-meta-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .colophon-nav-btn { width: 100%; justify-content: center; }
     }
   </style>
 </head>
@@ -79,14 +121,14 @@
   <div class="reading-progress"></div>
   <nav class="site-nav">
     <div class="container">
-      <a href="index.html" class="brand-link"><span>2026 關西盛夏漫遊</span><span class="brand-badge">4D3N</span></a>
+      <a href="index.html" class="brand-link"><span>🏮 2026 關西盛夏漫遊</span><span class="brand-badge">4D3N</span></a>
       <ul class="nav-links">
         <li><a href="../index.html">全球旅程</a></li>
         <li><a href="#overview" class="active">旅程總覽</a></li>
         <li><a href="#stories">深度遊記</a></li>
         <li><a href="https://aa1662.github.io/2026-Osaka/">行前規劃</a></li>
       </ul>
-      <button class="nav-share-btn btn-share" type="button"><span>分享</span></button>
+      <button class="nav-share-btn btn-share" type="button"><span>📤 分享</span></button>
     </div>
   </nav>
 
@@ -100,7 +142,11 @@
          alt="大阪城、本丸日本庭園與池水倒影">
     <div class="container journey-hero-inner">
       <div class="journey-hero-copy">
-        <span class="journey-kicker">2026.08.24–08.27 · Osaka & Kyoto</span>
+        <div class="hero-badge-group">
+          <span class="badge badge-gold">🏮 2026.08.24–08.27 · Osaka & Kyoto</span>
+          <span class="badge badge-glass">👨‍👩‍👧‍👧 三千金家庭行 4D3N</span>
+          <span class="badge badge-glass">🚶‍♂️ 每日 1.5萬~2.6萬步</span>
+        </div>
         <h1>孩子有約，就要去</h1>
         <p>一個週末做完行前功課，到了現場再把路線重新洗牌。四天裡，有人逛街、有人走山，想一起走的行程就一起走。</p>
         <div class="journey-hero-actions">
@@ -111,144 +157,290 @@
     </div>
   </header>
 
-  <main>
-    <section class="journey-section" id="overview">
-      <div class="container journey-prose">
-        <h2>這趟大阪，是女兒約的</h2>
-        <p class="journey-lede">這次去大阪，其實非常臨時。</p>
-        <p>暑假快結束前，女兒忽然來問：「我們跟媽咪假期結束前要去大阪 shopping，你要不要一起去？」</p>
-        <p>表面上是在問我要不要去，背後的潛台詞其實是：<strong>要不要贊助？</strong></p>
-        <p>反正我不去，錢好像也還是得出。既然都要贊助，那當然就說要去啊。結果我一答應，她們自己還非常驚訝，大概本來也沒真的覺得我會跟。</p>
+  <main class="journey-main-wrap">
+    <!-- ========================================== -->
+    <!-- 1. 旅程前言與哲學 (Prologue Bento Grid) -->
+    <!-- ========================================== -->
+    <section class="hub-section" id="overview">
+      <div class="bento-grid-2col">
+        <!-- 卡片 A: 贊助潛台詞 -->
+        <article class="bento-card">
+          <div>
+            <div style="margin-bottom: 0.6rem;">
+              <span class="badge badge-wine">Family Moment</span>
+              <span class="badge badge-gold">心境轉折</span>
+            </div>
+            <h3>這趟大阪，是女兒約的</h3>
+            <p class="journey-lede" style="color: var(--primary); font-family: var(--font-heading); font-size: 1.18rem; font-weight: 700; margin-bottom: 0.6rem;">這次去大阪，其實非常臨時。</p>
+            <p>暑假快結束前，女兒忽然來問：「我們跟媽咪假期結束前要去大阪 shopping，你要不要一起去？」</p>
+            <p>反正我不去，錢好像也還是得出。既然都要贊助，那當然就說要去啊。結果我一答應，她們自己還非常驚訝，大概本來也沒真的覺得我會跟。</p>
+          </div>
+          <div class="bento-quote">表面上是在問我要不要去，背後的潛台詞其實是：要不要贊助？</div>
+        </article>
+
+        <!-- 卡片 B: 抽換牌哲學 -->
+        <article class="bento-card">
+          <div>
+            <div style="margin-bottom: 0.6rem;">
+              <span class="badge badge-forest">Travel Philosophy</span>
+              <span class="badge badge-alpine">彈性調度</span>
+            </div>
+            <h3>一個週末做出來的行前規劃</h3>
+            <p>決定要去之後，距離出發已經沒多少時間。我只剩前一個週末可以準備，只好先把可能有興趣的地方全部收集起來：琵琶湖、近江八幡、六甲山、有馬溫泉、鞍馬、貴船、比叡山、勝尾寺、箕面瀑布……</p>
+            <p>先不管走不走得完，有興趣的就一個一個查，再放到地圖上看交通和動線，最後乾脆整理成一套完整的行前規劃網站。八月底的大阪和京都實在太熱，這次實際行程和原案差了很多，但也正因為前面查得夠多，臨時更動時反而很快。</p>
+          </div>
+          <div class="bento-quote">計畫不是一張非得完成的表格，比較像一疊隨時可以抽換的牌。</div>
+        </article>
       </div>
     </section>
 
-    <section class="journey-section">
-      <div class="container journey-prose">
-        <h2>一個週末做出來的行前規劃</h2>
-        <p>決定要去之後，距離出發已經沒多少時間。我只剩前一個週末可以準備，只好先把可能有興趣的地方全部收集起來：琵琶湖、近江八幡、六甲山、有馬溫泉、鞍馬、貴船、比叡山、勝尾寺、箕面瀑布……</p>
-        <p>先不管走不走得完，有興趣的就一個一個查，再放到地圖上看交通和動線，最後乾脆整理成一套完整的行前規劃網站。</p>
-        <p>看過的人都很驚訝，覺得資料整理得很完整。可是我做規劃，本來就不是為了到現場逐項打勾，而是先把功課做足，口袋裡多放幾個選項。到了現場再看天氣、體力和時間，隨時都能換一條路線，不必站在路邊才開始搜尋「附近還有什麼地方可以去」。</p>
-        <p>八月底的大阪和京都實在太熱，這次的實際行程和原案差了很多。但也正因為前面查得夠多，臨時更動時反而很快。計畫不是一張非得完成的表格，比較像一疊隨時可以抽換的牌。</p>
-      </div>
-    </section>
-
-    <aside class="planning-band" aria-label="2026 Osaka 行前規劃">
-      <div class="container planning-inner">
+    <!-- ========================================== -->
+    <!-- 2. 行前規劃站入口 (Planning Aside Bento) -->
+    <!-- ========================================== -->
+    <section class="hub-section" style="margin-top: -1.5rem;">
+      <aside class="planning-bento-box" aria-label="2026 Osaka 行前規劃">
         <div>
-          <h2>原本想去的地方，都留在規劃站裡</h2>
+          <div style="margin-bottom: 0.4rem;">
+            <span class="badge badge-forest">Planning Archive</span>
+          </div>
+          <h3>原本想去的地方，都留在規劃站裡</h3>
           <p>完整交通、景點選項與備用路線仍保留在原來的行前規劃網站。這裡記錄的，則是旅程最後真正走成的樣子。</p>
         </div>
-        <a class="planning-link" href="https://aa1662.github.io/2026-Osaka/">開啟 2026 Osaka 行前規劃 →</a>
-      </div>
-    </aside>
+        <a class="planning-bento-btn" href="https://aa1662.github.io/2026-Osaka/">開啟 2026 Osaka 行前規劃 →</a>
+      </aside>
+    </section>
 
-    <section class="journey-section">
-      <div class="container journey-prose">
-        <h2>Day 1｜以前是我帶路，現在只要負責出錢</h2>
-        <p>第一天抵達關西機場，我還在為入境資料找不到飯店正式名稱手忙腳亂，女兒已經把資料查好，很快接過去處理。</p>
-        <p>以前帶孩子出國，到了機場、車站或售票機，都是我走在前面研究路線、買票，再叫她們跟上。這次完全反過來。</p>
-        <p>到了售票機前，她們滴滴嘟嘟按幾下，票就買好了；哪一班車、往哪裡走，也都安排得好好的。我唯一還保有的功能，大概就是出錢。</p>
-        <p>原來一路帶著走的小孩，現在已經可以回過頭來帶我了。這種感覺其實滿奇妙的。</p>
-        <p>飯店就在大阪站旁邊，連馬路都不用過。Check-in、到 Executive Lounge 吃點東西，接下來就是三千金這趟最重要的行程：逛街。</p>
-        <p>阪急、阪急三番街和梅田附近商場一路逛，第一天光陪她們走，就走了一萬五千步。至於第一天晚餐到底吃了什麼，我現在已經完全失憶。能確定的是，她們真的很會逛。</p>
+    <!-- ========================================== -->
+    <!-- 3. 深度遊記四篇章 (Featured Stories Grid) -->
+    <!-- ========================================== -->
+    <section class="hub-section" id="stories" aria-label="2026 Osaka 深度遊記">
+      <div class="hub-section-header">
+        <span class="badge badge-gold">The 4 Stories</span>
+        <h2>📸 現場實走 · 4 篇深度圖文遊記</h2>
+      </div>
+
+      <div class="featured-story-grid">
+        <!-- 篇章 1: 鞍馬－貴船 -->
+        <article class="story-bento-card">
+          <div class="story-bento-media">
+            <img src="images/day-02/20260825_093541-content-960w.webp"
+                 srcset="images/day-02/20260825_093541-thumb-480w.webp 480w,
+                         images/day-02/20260825_093541-content-960w.webp 960w,
+                         images/day-02/20260825_093541-desktop-1200w.webp 1200w"
+                 sizes="(max-width: 768px) 100vw, 540px"
+                 width="4000" height="2252" loading="lazy" decoding="async" alt="鞍馬山杉木林與木之根道">
+            <span class="story-tag-float">Day 2 · 京都</span>
+          </div>
+          <div class="story-bento-body">
+            <div>
+              <div style="margin-bottom: 0.5rem;">
+                <span class="badge badge-forest">📍 鞍馬－貴船</span>
+                <span class="badge badge-alpine">🌲 山林古道</span>
+              </div>
+              <h3>三千金逛她們的街，我走我的山</h3>
+              <p>出發前大家就先說好，有興趣的行程一起走，興趣不同也不必硬湊。真正走完後，最喜歡的不是某一座寺或打卡點，而是從鞍馬翻過一座山，再從貴船溪谷走出來的完整過程。</p>
+            </div>
+            <a class="btn-read-bento" href="blog/kurama-kifune-hike.html">📖 閱讀鞍馬－貴船完整遊記 →</a>
+          </div>
+        </article>
+
+        <!-- 篇章 2: 比叡山延曆寺 -->
+        <article class="story-bento-card">
+          <div class="story-bento-media">
+            <img src="images/day-02/20260825_145349-content-960w.webp"
+                 srcset="images/day-02/20260825_145349-thumb-480w.webp 480w,
+                         images/day-02/20260825_145349-content-960w.webp 960w,
+                         images/day-02/20260825_145349-desktop-1200w.webp 1200w"
+                 sizes="(max-width: 768px) 100vw, 540px"
+                 width="4000" height="2252" loading="lazy" decoding="async" alt="比叡山延曆寺山林與殿堂">
+            <span class="story-tag-float">Day 2 · 京都－滋賀</span>
+          </div>
+          <div class="story-bento-body">
+            <div>
+              <div style="margin-bottom: 0.5rem;">
+                <span class="badge badge-alpine">📍 比叡山延曆寺</span>
+                <span class="badge badge-gold">🔥 不滅法燈</span>
+              </div>
+              <h3>才下午一點，這是不是一個暗示？</h3>
+              <p>在車上瞇了一下忽然醒來：咦，才下午一點？原本排隔天的比叡山當場改到今天。京都上山看延曆寺千年法燈，滋賀坂本下山，原本兩天路線一天走完。</p>
+            </div>
+            <a class="btn-read-bento" href="blog/hieizan-enryakuji-eternal-flame.html">📖 閱讀比叡山完整遊記 →</a>
+          </div>
+        </article>
+
+        <!-- 篇章 3: 勝尾寺與箕面瀑布 -->
+        <article class="story-bento-card">
+          <div class="story-bento-media">
+            <img src="images/day-03/20260826_083555-content-960w.webp"
+                 srcset="images/day-03/20260826_083555-thumb-480w.webp 480w,
+                         images/day-03/20260826_083555-content-960w.webp 960w,
+                         images/day-03/20260826_083555-desktop-1200w.webp 1200w"
+                 sizes="(max-width: 768px) 100vw, 540px"
+                 width="4000" height="2252" loading="lazy" decoding="async" alt="勝尾寺山門與滿山達摩">
+            <span class="story-tag-float">Day 3 · 大阪</span>
+          </div>
+          <div class="story-bento-body">
+            <div>
+              <div style="margin-bottom: 0.5rem;">
+                <span class="badge badge-wine">📍 勝尾寺</span>
+                <span class="badge badge-forest">💧 箕面瀑布</span>
+              </div>
+              <h3>勝尾寺，果然值得來</h3>
+              <p>老婆推薦的達摩名剎。一早開門進去滿山滿谷達摩，安靜好走。箕面瀑布坐在水邊吹半小時的風，沿溪谷一路走下山，比市區舒服太多。</p>
+            </div>
+            <a class="btn-read-bento" href="blog/katsuoji-minoh-waterfall.html">📖 閱讀勝尾寺－箕面完整遊記 →</a>
+          </div>
+        </article>
+
+        <!-- 篇章 4: 大阪城 -->
+        <article class="story-bento-card">
+          <div class="story-bento-media">
+            <img src="images/day-03/20260826_163826-content-960w.webp"
+                 srcset="images/day-03/20260826_163826-thumb-480w.webp 480w,
+                         images/day-03/20260826_163826-content-960w.webp 960w,
+                         images/day-03/20260826_163826-desktop-1200w.webp 1200w"
+                 sizes="(max-width: 768px) 100vw, 540px"
+                 width="3782" height="2128" loading="lazy" decoding="async" alt="大阪城與本丸日本庭園池水倒影">
+            <span class="story-tag-float">Day 3 · 大阪</span>
+          </div>
+          <div class="story-bento-body">
+            <div>
+              <div style="margin-bottom: 0.5rem;">
+                <span class="badge badge-gold">📍 大阪城</span>
+                <span class="badge badge-wine">🏯 日本庭園</span>
+              </div>
+              <h3>多出來的下午，就去補一張大阪城門票</h3>
+              <p>二十多年前第一次來關西，在姬路與大阪之間選了姬路。這次多出一個下午終於進天守閣。光進城就這麼累，古代敵軍走到這裡大概就投降了。</p>
+            </div>
+            <a class="btn-read-bento" href="blog/osaka-castle.html">📖 閱讀大阪城完整遊記 →</a>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="journey-stories" id="stories" aria-label="2026 Osaka 深度遊記">
-      <div class="container">
-        <article class="journey-chapter">
-          <figure class="journey-chapter-media">
-            <a href="blog/kurama-kifune-hike.html"><img src="images/day-02/20260825_093541-content-960w.webp" srcset="images/day-02/20260825_093541-thumb-480w.webp 480w, images/day-02/20260825_093541-content-960w.webp 960w, images/day-02/20260825_093541-desktop-1200w.webp 1200w" sizes="(max-width: 800px) 100vw, 55vw" width="4000" height="2252" loading="lazy" decoding="async" alt="鞍馬山杉木林與木之根道"></a>
-          </figure>
-          <div class="journey-chapter-copy">
-            <span class="journey-chapter-label">Day 2 · Kurama to Kifune</span>
-            <h2>三千金逛她們的街，我走我的山</h2>
-            <p>出發前大家就先說好，有興趣的行程一起走，興趣不同也不必硬湊，然後……</p>
-            <p><strong>三千金逛她們的街，我去走我的山。</strong></p>
-            <p>她們肯跟我來鞍馬、貴船，當然很好，但我知道不可能。八月底的大阪已經夠熱了，要她們放下百貨公司，跟我從鞍馬寺翻過一座山，再一路走到貴船，大概只會讓大家都不開心。</p>
-            <p>既然如此，那白天就各玩各的吧 XD</p>
-            <p>真正走完後，最喜歡的不是某一座寺或某一個打卡點，而是從鞍馬翻過一座山，再從貴船溪谷走出來的完整過程。</p>
-            <a class="journey-story-link" href="blog/kurama-kifune-hike.html">閱讀鞍馬－貴船完整遊記 →</a>
+    <!-- ========================================== -->
+    <!-- 4. 家庭散文對照 (Family Story Duo Bento) -->
+    <!-- ========================================== -->
+    <section class="hub-section">
+      <div class="hub-section-header">
+        <span class="badge badge-wine">Family Ties</span>
+        <h2>👨‍👩‍👧‍👧 旅行中的家庭時光對照</h2>
+      </div>
+
+      <div class="story-duo-grid">
+        <!-- Day 1 卡片 -->
+        <article class="bento-card">
+          <div style="margin-bottom: 0.6rem;">
+            <span class="badge badge-gold">Day 1 · 抵達與逛街</span>
+            <span class="badge badge-alpine">🚶‍♂️ 梅田 1.5 萬步</span>
           </div>
+          <h3>以前是我帶路，現在只要負責出錢</h3>
+          <p>第一天抵達關西機場，我還在為入境資料找不到飯店正式名稱手忙腳亂，女兒已經把資料查好，很快接過去處理。</p>
+          <p>以前帶孩子出國，到了機場、車站或售票機，都是我走在前面研究路線、買票，再叫她們跟上。這次完全反過來。到了售票機前，她們滴滴嘟嘟按幾下，票就買好了；哪一班車、往哪裡走，也都安排得好好的。我唯一還保有的功能，大概就是出錢。</p>
+          <p>原來一路帶著走的小孩，現在已經可以回過頭來帶我了。這種感覺其實滿奇妙的。</p>
+          <p>飯店就在大阪站旁邊，連馬路都不用過。Check-in、到 Executive Lounge 吃點東西，接下來就是三千金這趟最重要的行程：逛街。阪急、阪急三番街和梅田附近商場一路逛，第一天光陪她們走，就走了一萬五千步。至於第一天晚餐到底吃了什麼，我現在已經完全失憶。能確定的是，她們真的很會逛。</p>
         </article>
 
-        <article class="journey-chapter is-reverse">
-          <figure class="journey-chapter-media">
-            <a href="blog/hieizan-enryakuji-eternal-flame.html"><img src="images/day-02/20260825_145349-content-960w.webp" srcset="images/day-02/20260825_145349-thumb-480w.webp 480w, images/day-02/20260825_145349-content-960w.webp 960w, images/day-02/20260825_145349-desktop-1200w.webp 1200w" sizes="(max-width: 800px) 100vw, 55vw" width="4000" height="2252" loading="lazy" decoding="async" alt="比叡山延曆寺山林與殿堂"></a>
-          </figure>
-          <div class="journey-chapter-copy">
-            <span class="journey-chapter-label">Day 2 · Mount Hiei</span>
-            <h2>才下午一點，這是不是一個暗示？</h2>
-            <p>從貴船搭上叡山電鐵，本來以為今天差不多結束了。結果在車上瞇了一下，忽然醒來一看：咦，才到寶池？</p>
-            <p class="journey-quote">才下午一點？那這是不是一個暗示？</p>
-            <p>原本排在隔天的比叡山，就這樣當場改到今天。最後從京都八瀨這一側上山，看完延曆寺與那盞傳了一千兩百多年的不滅法燈，再從滋賀坂本這一側下山。</p>
-            <p>原本排兩天的路線，一天就走完。晚上回到大阪，還是照樣去難波和家人會合。</p>
-            <a class="journey-story-link" href="blog/hieizan-enryakuji-eternal-flame.html">閱讀比叡山完整遊記 →</a>
+        <!-- Day 4 卡片 -->
+        <article class="bento-card">
+          <div style="margin-bottom: 0.6rem;">
+            <span class="badge badge-forest">Day 4 · 世代交棒</span>
+            <span class="badge badge-alpine">📷 梅田 Yodobashi</span>
           </div>
-        </article>
-
-        <article class="journey-chapter">
-          <figure class="journey-chapter-media">
-            <a href="blog/katsuoji-minoh-waterfall.html"><img src="images/day-03/20260826_083555-content-960w.webp" srcset="images/day-03/20260826_083555-thumb-480w.webp 480w, images/day-03/20260826_083555-content-960w.webp 960w, images/day-03/20260826_083555-desktop-1200w.webp 1200w" sizes="(max-width: 800px) 100vw, 55vw" width="4000" height="2252" loading="lazy" decoding="async" alt="勝尾寺山門與滿山達摩"></a>
-          </figure>
-          <div class="journey-chapter-copy">
-            <span class="journey-chapter-label">Day 3 · Katsuoji & Minoh</span>
-            <h2>勝尾寺，果然值得來</h2>
-            <p>比叡山提前走掉，第三天早上就把勝尾寺和箕面瀑布往前挪。</p>
-            <p>勝尾寺是老婆推薦我來的地方。到了現場，滿山滿谷都是達摩，確實很有意思。尤其一早剛開門時進去，園區幾乎沒什麼人；等我走到出口，遊覽車正好一團一團進場。</p>
-            <p>我來過關西這麼多次，居然一直不知道勝尾寺。真的走完，我只能承認，這一站確實值得專程來一趟。</p>
-            <p>箕面瀑布就比較誠實一點。八月底沒有滿山楓葉，它就是一個瀑布；但坐在水邊吹半小時的風，再沿溪谷一路走下山，還是比大阪市區舒服太多。</p>
-            <a class="journey-story-link" href="blog/katsuoji-minoh-waterfall.html">閱讀勝尾寺－箕面完整遊記 →</a>
-          </div>
-        </article>
-
-        <article class="journey-chapter is-reverse">
-          <figure class="journey-chapter-media">
-            <a href="blog/osaka-castle.html"><img src="images/day-03/20260826_163826-content-960w.webp" srcset="images/day-03/20260826_163826-thumb-480w.webp 480w, images/day-03/20260826_163826-content-960w.webp 960w, images/day-03/20260826_163826-desktop-1200w.webp 1200w" sizes="(max-width: 800px) 100vw, 55vw" width="3782" height="2128" loading="lazy" decoding="async" alt="大阪城與本丸日本庭園池水倒影"></a>
-          </figure>
-          <div class="journey-chapter-copy">
-            <span class="journey-chapter-label">Day 3 · Osaka Castle</span>
-            <h2>多出來的下午，就去補一張大阪城門票</h2>
-            <p>上午從箕面回到飯店，洗完澡、休息一下，下午又空了出來。三千金還在逛街，我就臨時去大阪城。</p>
-            <p>大阪來過這麼多次，我一直沒有進過天守閣。二十多年前第一次來關西，在姬路城和大阪城之間，我選了真正的木造古城姬路城。這次反正有一個下午，終於進去看看。</p>
-            <p class="journey-quote">光進城就這麼累，古代真的帶兵來打仗，敵軍大概走到這裡就投降了。</p>
-            <p>天守閣實際走完，外面還是比裡面有意思。至少我自己，來過一次，可以了。</p>
-            <a class="journey-story-link" href="blog/osaka-castle.html">閱讀大阪城完整遊記 →</a>
-          </div>
+          <h3>陪 Belle 買一台可以留下來的相機</h3>
+          <p>前兩天已經把想走的地方大量提前，最後一天本來還可以再塞一個宇治平等院。不過這趟說到底還是全家一起出國，不必每個行程都綁在一起，頭尾總要有一點儀式感。</p>
+          <p>所以最後一天不再排景點，陪 Belle 去梅田的 Yodobashi Camera 看相機。現在年輕人又開始流行底片機。她原本看的多半是一次性相機，一台拍二十七張或三十六張，拍完就丟。我覺得那種東西意義不大；旁邊那些看起來像玩具的重複使用底片機，質感也實在看不上眼。</p>
+          <p>最後找到一台 <strong>KODAK 柯達 Snapic A1 35mm</strong>。價格比一次性相機高，但至少不是拍完就丟，可以真的留下來繼續用。</p>
+          <p>第一天是她們帶我進大阪，最後一天換我陪她挑一台相機。好像也算扯平了。</p>
         </article>
       </div>
     </section>
 
-    <section class="journey-section">
-      <div class="container journey-prose">
-        <h2>最後一天，陪 Belle 買一台可以留下來的相機</h2>
-        <p>前兩天已經把想走的地方大量提前，最後一天本來還可以再塞一個宇治平等院。不過這趟說到底還是全家一起出國，不必每個行程都綁在一起，頭尾總要有一點儀式感。</p>
-        <p>所以最後一天不再排景點，陪 Belle 去梅田的 Yodobashi Camera 看相機。</p>
-        <p>現在年輕人又開始流行底片機。她原本看的多半是一次性相機，一台拍二十七張或三十六張，拍完就丟。我覺得那種東西意義不大；旁邊那些看起來像玩具的重複使用底片機，質感也實在看不上眼。</p>
-        <p>最後找到一台 <strong>KODAK 柯達 Snapic A1 35mm</strong>。價格比一次性相機高，但至少不是拍完就丟，可以真的留下來繼續用。</p>
-        <p>第一天是她們帶我進大阪，最後一天換我陪她挑一台相機。好像也算扯平了。</p>
-      </div>
-    </section>
-
-    <section class="journey-section journey-closing">
-      <div class="container journey-prose">
-        <h2>孩子長大後，旅行方式也變了</h2>
+    <!-- ========================================== -->
+    <!-- 5. 終章總結金句 (Epilogue Bento Card) -->
+    <!-- ========================================== -->
+    <section class="hub-section" style="margin-bottom: 1rem;">
+      <article class="closing-bento-card">
+        <div style="margin-bottom: 0.6rem;">
+          <span class="badge badge-gold">Epilogue</span>
+          <span class="badge badge-wine">旅人回甘</span>
+        </div>
+        <h2 style="font-family: var(--font-heading); font-size: 2rem; color: var(--primary); margin: 0 0 1rem;">孩子長大後，旅行方式也變了</h2>
         <p>回頭看，行前網站裡準備的很多路線都沒有出場，真正走的行程反而大半是在現場重新排列出來的。</p>
-        <p>第一天和最後一天各走了一萬五千步，中間兩天則都接近兩萬六千步。說是悠閒旅行，好像也沒有多悠閒。</p>
-        <p>可是大家都玩得滿盡興。</p>
-        <p>以前一路跟在後面的小孩，現在有了自己的旅行節奏，也能回過頭來帶我；至於我，還是照樣把想走的山排進去。</p>
-        <p>孩子長大了，家庭旅行的方式自然也跟著變了。</p>
-        <p>對現在的我們來說，這樣剛剛好。</p>
-        <p><strong>孩子有約，就要去。<br>不然以後可能就不約了。</strong></p>
-      </div>
+        <p>第一天和最後一天各走了一萬五千步，中間兩天則都接近兩萬六千步。說是悠閒旅行，好像也沒有多悠閒。可是大家都玩得滿盡興。</p>
+        <p>以前一路跟在後面的小孩，現在有了自己的旅行節奏，也能回過頭來帶我；至於我，還是照樣把想走的山排進去。孩子長大了，家庭旅行的方式自然也跟著變了。對現在的我們來說，這樣剛剛好。</p>
+        
+        <div class="closing-callout">
+          孩子有約，就要去。<br>
+          不然以後可能就不約了。
+        </div>
+      </article>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 6. 旅程刊記與跨站導航 (Journey Colophon & Portals) -->
+    <!-- ========================================== -->
+    <section class="hub-section" style="margin-bottom: 2rem;">
+      <article class="colophon-bento-card">
+        <div style="margin-bottom: 0.4rem;">
+          <span class="badge badge-gold">Trip Colophon</span>
+        </div>
+        <h3 style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--primary); margin: 0.4rem 0 0;">2026 關西盛夏漫遊 · 旅程小檔案</h3>
+
+        <div class="colophon-meta-grid">
+          <div class="colophon-meta-item">
+            <span class="colophon-meta-label">📅 旅程時間</span>
+            <span class="colophon-meta-val">2026.08.24 – 08.27 (4D3N)</span>
+          </div>
+          <div class="colophon-meta-item">
+            <span class="colophon-meta-label">📍 造訪足跡</span>
+            <span class="colophon-meta-val">
+              大阪梅田 · 
+              <a href="blog/kurama-kifune-hike.html">鞍馬貴船</a> · 
+              <a href="blog/hieizan-enryakuji-eternal-flame.html">比叡山</a> · 
+              <a href="blog/katsuoji-minoh-waterfall.html">勝尾寺</a> · 
+              <a href="blog/katsuoji-minoh-waterfall.html">箕面瀑布</a> · 
+              <a href="blog/osaka-castle.html">大阪城</a>
+            </span>
+          </div>
+          <div class="colophon-meta-item">
+            <span class="colophon-meta-label">🏨 住宿基地</span>
+            <span class="colophon-meta-val">大阪梅田站旁 · 免過馬路直結基地</span>
+          </div>
+          <div class="colophon-meta-item">
+            <span class="colophon-meta-label">👥 旅伴組合</span>
+            <span class="colophon-meta-val">CH ✕ 三千金家庭同行</span>
+          </div>
+          <div class="colophon-meta-item">
+            <span class="colophon-meta-label">🚶 步數紀錄</span>
+            <span class="colophon-meta-val">4 天累計 82,000+ 步 (單日最高 2.6萬步)</span>
+          </div>
+          <div class="colophon-meta-item">
+            <span class="colophon-meta-label">📷 影像設備</span>
+            <span class="colophon-meta-val">Samsung Galaxy S23</span>
+          </div>
+        </div>
+
+        <div class="colophon-nav-group">
+          <a href="../index.html" class="colophon-nav-btn is-primary">
+            <span>🌍 全球旅程總覽</span>
+          </a>
+          <a href="../2026-germany/index.html" class="colophon-nav-btn is-secondary">
+            <span>🇩🇪 閱讀 2026 德南冬旅 15 天專刊 →</span>
+          </a>
+          <a href="https://aa1662.github.io/2026-Osaka/" class="colophon-nav-btn is-outline">
+            <span>📋 開啟 2026 Osaka 行前規劃站 →</span>
+          </a>
+        </div>
+      </article>
     </section>
   </main>
 
   <div class="mobile-dock">
-    <a href="index.html" class="dock-item active"><span class="dock-icon">⌂</span><span>總覽</span></a>
-    <a href="#stories" class="dock-item"><span class="dock-icon">▤</span><span>遊記</span></a>
-    <a href="https://aa1662.github.io/2026-Osaka/" class="dock-item"><span class="dock-icon">⌖</span><span>規劃</span></a>
-    <a href="javascript:void(0)" class="dock-item btn-share"><span class="dock-icon">↗</span><span>分享</span></a>
+    <a href="index.html" class="dock-item active"><span class="dock-icon">🏠</span><span>總覽</span></a>
+    <a href="#stories" class="dock-item"><span class="dock-icon">📖</span><span>遊記</span></a>
+    <a href="https://aa1662.github.io/2026-Osaka/" class="dock-item"><span class="dock-icon">📋</span><span>規劃</span></a>
+    <a href="javascript:void(0)" class="dock-item btn-share"><span class="dock-icon">📤</span><span>分享</span></a>
   </div>
 
   <footer class="journey-footer">
