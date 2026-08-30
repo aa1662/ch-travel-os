@@ -8,6 +8,7 @@ CH Travel OS 2.0 - Config-Driven Blog HTML Builder
 3. 嚴格對齊章節導覽鏈結 (prev_link / next_link)，未發布天數以非 <a> 標籤優雅降級
 4. 統一社群 OG/Twitter 元數據
 5. 嚴格模式：遇任何 source 遺失或圖片 miss 立即退出 (non-zero exit)
+6. 若存在 trips/<trip>/sources/index.html，於同一筆交易同步 Journey Hub
 """
 
 import re
@@ -298,11 +299,15 @@ def build_trip(trip_slug="2026-germany", dest_slug=None):
         {next_html}
       </div>'''
 
-        html_content = re.sub(
+        html_content, nav_replacement_count = re.subn(
             r'<!--\s*篇章導覽按鈕\s*-->[\s\S]*?</div>\s*</article>',
             f'{new_nav_block}\n    </article>',
             html_content
         )
+        if nav_replacement_count != 1:
+            errors.append(
+                f"{item['id']}: 篇章導覽標記應恰好出現 1 次，實際為 {nav_replacement_count} 次"
+            )
 
         # 5. 修正手機 Dock 與頂部導覽列中的未發布 timeline 連結
         if not timeline_physical.exists():
@@ -310,6 +315,12 @@ def build_trip(trip_slug="2026-germany", dest_slug=None):
             html_content = html_content.replace(f'href="../day-{day_num}.html"', f'href="{timeline_fallback_link}"')
 
         compiled_outputs[out_file] = (item["id"], html_content)
+
+    hub_source = TRIPS_DIR / trip_slug / "sources" / "index.html"
+    if hub_source.exists():
+        hub_output = DOCS_DIR / dest_slug / "index.html"
+        hub_content = strip_editor_metadata(hub_source.read_text(encoding="utf-8"))
+        compiled_outputs[hub_output] = ("journey-hub", hub_content)
 
     # 嚴格原子性把關：若有任何錯誤，絕不寫入磁碟！
     if errors:
