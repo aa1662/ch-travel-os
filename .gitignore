@@ -8,10 +8,10 @@ masters/
 **/*.bak
 *.tmp
 
-# Playwright / browser automation scratch
+# Scratch / output directories
+output/
 .playwright-mcp/
 .playwright-cli/
-output/playwright/
 
 # Cloudflare Wrangler local state
 .wrangler/

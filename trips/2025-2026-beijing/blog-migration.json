@@ -1,0 +1,49 @@
+{
+  "trip": "2025-2026-beijing",
+  "dest": "2025-2026-beijing",
+  "journey_end_title": "回到北京旅程總覽",
+  "entries": [
+    {
+      "id": "mutianyu",
+      "title": "慕田峪長城：錢都花了，VIP 卻不用排隊",
+      "source": "trips/2025-2026-beijing/sources/blog/mutianyu-great-wall.html",
+      "output": "docs/2025-2026-beijing/blog/mutianyu-great-wall.html",
+      "image_folder": "mutianyu",
+      "preserve_gallery_groups": true,
+      "footer_center": "gallery",
+      "og_url": "https://chxtravel.com/2025-2026-beijing/blog/mutianyu-great-wall.html",
+      "og_image": "https://chxtravel.com/2025-2026-beijing/images/mutianyu/20251112_153025-desktop-1200w.webp",
+      "prev_link": "../index.html",
+      "prev_title": "← 北京旅程總覽",
+      "next_title": "北京系列未完待續",
+      "gallery_groups": [
+        {
+          "id": "mutianyu-landscape",
+          "items": [
+            {"image": "20251112_153025.jpg", "title": "深秋慕田峪長城沿山脊延伸"},
+            {"image": "20251112_162724.jpg", "title": "離開前的慕田峪夕陽與群山"}
+          ]
+        },
+        {
+          "id": "mutianyu-portrait",
+          "items": [
+            {"image": "20251112_153120.jpg", "title": "剛登城時遠望山脊長城"},
+            {"image": "20251112_154236.jpg", "title": "敵樓拱窗外的山景"},
+            {"image": "20251112_154752.jpg", "title": "走在慕田峪長城上"},
+            {"image": "20251112_155700.jpg", "title": "空下來的長城石階與遠山"},
+            {"image": "20251112_155943.jpg", "title": "我在慕田峪長城上"},
+            {"image": "20251112_160411.jpg", "title": "城牆通道與遠方敵樓"},
+            {"image": "20251112_160622.jpg", "title": "敵樓屋頂與長城轉折"},
+            {"image": "20251112_160644.jpg", "title": "敵樓前的旅途自拍"},
+            {"image": "20251112_160743.jpg", "title": "向上延伸的慕田峪石階"},
+            {"image": "20251112_160854.jpg", "title": "午後敵樓與長城石階"},
+            {"image": "20251112_161346.jpg", "title": "陡峭石階與山巒"},
+            {"image": "20251112_161401.jpg", "title": "敵樓窗洞框住群山"},
+            {"image": "20251112_161901.jpg", "title": "夕陽前的長城步道"},
+            {"image": "20251112_162505.jpg", "title": "世界文化遺產與國家 5A 景區標誌"}
+          ]
+        }
+      ]
+    }
+  ]
+}

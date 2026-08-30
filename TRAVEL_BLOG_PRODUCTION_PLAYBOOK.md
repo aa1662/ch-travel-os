@@ -119,6 +119,17 @@ recommended_use, owner_decision
 
 母稿應保存於 `trips/<journey>/manuscripts/`。它是寫作證據，不是公開頁，也不得整批覆蓋其他文章的母稿。
 
+### 6.1 新文章硬關卡
+
+新文章或重大改寫必須先完成並取得作者確認：
+
+1. 文章級母稿。
+2. 照片 audit 與公開／排除邊界。
+3. 正文選圖、IG 原貼文與 gallery 的呈現計畫。
+4. 必要的 Grillme 與 factual／voice／privacy HITL。
+
+以上尚未通過時，主編 Agent 不得建立或修改正式 `sources/blog/`、migration config、公開 derivatives 或 `docs/`。作者明確要求平行 preview 時例外，但 preview 必須留在 editorial workflow 目錄，不得冒充正式構建成果。
+
 ## 7. Stage 3：Grillme 與內容 HITL
 
 只針對母稿仍影響故事的問題提問，優先問：
@@ -150,15 +161,36 @@ recommended_use, owner_decision
 
 ## 9. Stage 5：正式文章與呈現
 
+### 9.1 全站雙黃金標準範本 (Dual Gold Standards)
+
+所有新篇章的視覺結構與節奏，必須嚴格對齊以下兩大已驗收的最高標準範本：
+
+1. **路線健行／多景點長篇範本**：[`docs/2026-osaka/blog/kurama-kifune-hike.html`](file:///c:/Data/charlotte-ai-os-dev/ch-travel-os/docs/2026-osaka/blog/kurama-kifune-hike.html)
+   - *適用場景*：有多個途經點、翻山越嶺、時間線性推進、包含交通轉乘與行前功課對比的長篇作品。
+   - *節奏公式*：`Hero (16:9 大景)` ➔ `開篇 Narrative Card (破題與同行背景)` ➔ `Story-Split (圖文並茂起點)` ➔ `Wide Photo (滿版轉換空間)` ➔ `IG 4-Photo Grid (沿途連拍細節)` ➔ `Reverse Split (特色框景/回望)` ➔ `Closing Wide Photo (壓軸大景)` ➔ `Summary Card` ➔ `4~6 格實戰 Bento`。
+2. **單點精華／散文短篇範本**：[`docs/2025-2026-beijing/blog/mutianyu-great-wall.html`](file:///c:/Data/charlotte-ai-os-dev/ch-travel-os/docs/2025-2026-beijing/blog/mutianyu-great-wall.html)
+   - *適用場景*：停留 1～2 小時、包車／單一景點、著重現場氛圍、臨場趣味互動與單一核心命題的精煉作品。
+   - *節奏公式*：`Hero (16:9 氣勢破題)` ➔ `開篇 Narrative Card (出發背景與起因)` ➔ `Story-Split (1:1 圖文等高，聚焦核心笑點/起點石階)` ➔ `Wide Photo (山脊延伸巨龍)` ➔ `IG 4-Photo Grid (步道、石階與文化遺產標誌)` ➔ `雙向交錯 Split (纜車上下 & 敵樓拱窗框景)` ➔ `Closing Wide Photo (夕陽暮色金光)` ➔ `Summary Card (作者核心評價)` ➔ `4 格乾淨實戰 Bento`。
+
+### 9.2 排版與敘事三大禁令 (Anti-Patterns)
+
+- 🚫 **嚴禁同一事實跳針重複（No Repetitive Looping）**：同一個核心事件（如 VIP 快速通關隨到隨上、纜車上下）在開篇破題後，後續段落**必須推進到新的視角與體驗**（如石階攀爬體感、敵樓避風框景、夕陽光線、與其他長城難易度對比）。嚴禁在正文、各區塊小標、照片札記與 Bento 之間機械式跳針重複同一句事實。
+- 🚫 **嚴禁文字大幅高於照片（Text/Image Height Balance）**：在 `.story-split` 圖文交錯模組中，文字段落必須精簡（控制在 2～3 段內），與旁邊的直式照片高度維持 **1:1 視覺對齊**。若有較長的背景或出發起因，應**先以全幅 `.blog-narrative-card` 破題**，再進入左右圖文 Split，嚴禁出現 6～7 段長文壓過短照片造成單側大片留白。
+- 🚫 **嚴禁脫離 SSoT 在 `docs/` 手寫非編譯檔案**：所有正式頁面必須保持 SSoT（`trips/<journey>/sources/blog/*.html`）與 migration config 同步，並透過 `python tools/build_trip_html.py` 原子編譯至 `docs/`，確保 `core/editor.html` 視覺化編輯器、`validate_images.py` 與發布系統 100% 同步。
+
+### 9.3 核心呈現準則
+
 - 先完成故事，再加入 Bento；Bento 原則上是 bottom navigation 上方最後一個內容 section。
 - IG 卡片、story split、單張滿版、雙圖、portrait feature、對照圖與 gallery 都是可選元件。
 - 不要求每篇出現相同數量的 IG 卡片或相同版型；同一 Journey 的導覽、Bento 規格、圖集入口與整體視覺語言必須一致。
+- 批評「元件使用過量」不等於禁用作者已核准的呈現形式。重做時必須逐一判斷元件是否有敘事功能，不得用全部刪除取代編輯判斷。
 - 照片順序可依敘事重排；gallery 本身仍按拍攝時間排序。
+- 直式敘事照片優先保留完整構圖，可以使用 `object-fit: contain`；但容器比例、尺寸與周邊版面必須配合照片，不得留下大片無敘事作用的空白邊。固定版位確實需要滿框時可使用 `cover`，並以桌機／手機 UAT 確認人物與主體焦點未被切掉。
 - 行前規劃有獨立網站時，在 Bento 提供清楚入口；文章只摘錄與實際經驗最相關的內容，不複製整站，也不加入多餘免責聲明。
 - 網路推薦可保留為「當時行前口袋名單」，不得寫成作者吃過、用過或背書的第一手推薦。
 - 實用資訊以造訪年份或月份自然標示，不承諾即時更新。
 
-### 9.1 旅途照片札記（Travel Photo Notes）
+### 9.4 旅途照片札記（Travel Photo Notes）
 
 「旅途照片札記」是借用 IG 卡片閱讀節奏的圖文模組，用來承接未進入正文主線、但仍有獨立故事或資訊價值的核准照片。它不是 Instagram 原貼文，也不是把剩餘照片全部可視化的替代 gallery。
 
@@ -170,6 +202,19 @@ recommended_use, owner_decision
 - 同一影像可以在札記中成為可見入口，但全頁只能註冊一個 Lightbox slide。札記 opener 必須映射到既有橫式或直式 gallery，不得建立重複 slide。
 - 旅途照片札記不取代完整 gallery；gallery 仍依拍攝時間排序、橫直分組並維持精選邊界。
 - 同一 Journey 應維持卡片標示、間距、圖集互動與手機行為一致，但不要求每篇都有札記或相同張數。
+
+### 9.5 Instagram 原貼文與相機原圖雙軌契約
+
+Instagram 原貼文是作者當時已完成的編輯作品；相機原圖則是正式圖文誌的畫質與完整構圖來源。兩者用途不同，不應強迫二選一。
+
+- 建立 `IG 匯出圖 -> 相機原圖 -> 正文／IG 卡用途 -> Lightbox slide` 映射，再進入選圖與構建。
+- Hero、正文大圖與 Lightbox 優先使用相機原圖，保留解析度與完整構圖。
+- IG 卡若原貼文有明顯裁切、調色或版面意圖，使用 IG 匯出圖重現當時貼文；若差異不具意義，直接以原圖配合卡片裁切，避免重複資產。
+- 點擊 IG 圖片時優先開啟對應的相機原圖 Lightbox；同一畫面全頁只能註冊一個 slide。
+- 只有 IG 匯出圖、找不到相機原圖時，可以 IG 圖作為公開來源，但不得拿低解析 IG 圖充當 Hero 或大型 Lightbox。
+- IG carousel 可因人物隱私移除個別照片；caption 必須維持原文，不以 AI 補寫成「原始貼文」。若另寫補充文字，應清楚區分為文章正文或旅途照片札記。
+- 被作者排除的人物照不得進 masters、公開 derivatives、可見卡片或隱藏 gallery registry。
+- IG 匯出圖若需要公開，同樣必須經 image pipeline 轉為 WebP 並清除 metadata；不得直接複製 Takeout 檔案到 `docs/`。
 
 先更新 `trips/<journey>/sources/blog/` 與 migration config，再由 builder 產生 `docs/`。不得把 `docs/` 當唯一 source 手工維護。
 
@@ -241,13 +286,20 @@ python tools/validate_images.py
 [ ] 完成盲寫母稿，不受舊版面限制
 [ ] Grillme 補齊故事、事實、人物與隱私缺口
 [ ] 母稿通過 factual／voice／privacy HITL
+[ ] 母稿、照片 audit 與呈現計畫通過前，尚未建立正式 source／config／docs
 [ ] 逐項比較既有頁，形成保留／採用／融合／刪除決策
+[ ] 依文章型態嚴格對齊黃金範本（Osaka 健行型 或 Beijing 散文型）之視覺節奏
+[ ] 檢查圖文 Split 文字高度是否與直式照片 1:1 等高，無文字欄過長失衡
+[ ] 檢查正文、小標、照片札記與 Bento 無同一事實或笑點的跳針重複
+[ ] IG 原貼文已建立 IG 匯出圖／相機原圖／Lightbox 映射，並排除隱私與重複影像
 [ ] 判斷非正文照片是否值得做旅途照片札記；沒有新增價值就只留 gallery
 [ ] 更新 source、config、正文圖、IG／照片札記、gallery 與 Bento
 [ ] 精選原圖進 masters；只產生入選公開 derivatives
 [ ] 跑 pipeline、builder、validator 與 diff check
+[ ] 確認 SSoT 手稿 (trips/.../sources/) 與 docs/ 完全同步，並在 editor.html 中可正常開啟
 [ ] 驗證 pilot manifest 未丟失其他日 entries
 [ ] 桌面／手機／gallery／console 瀏覽器驗收
+[ ] 直式敘事照片沒有大片無意義空邊；使用 `contain` 或 `cover` 時均已確認構圖與主體
 [ ] 作者完成內容與呈現 UAT
 [ ] 清理臨時檔；commit、push、deploy 分開授權
 ```

@@ -1,0 +1,1007 @@
+{
+  "pipeline_version": "2.0.0",
+  "trip": "2025-2026-beijing",
+  "dest": "2025-2026-beijing",
+  "generated_at": "2026-08-30T15:19:44.132205+00:00",
+  "quality": 84,
+  "profiles": [
+    {
+      "name": "thumb",
+      "width": 480
+    },
+    {
+      "name": "content",
+      "width": 960
+    },
+    {
+      "name": "desktop",
+      "width": 1200
+    },
+    {
+      "name": "lightbox",
+      "width": 1600
+    }
+  ],
+  "images": {
+    "mutianyu/17907672807126550.heic": {
+      "id": "17907672807126550",
+      "original_filename": "17907672807126550.heic",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "d7b52b1a6bacd322ecea14c8791b547f8b1c6435b87aff56581a8dd376ec12ab",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "17907672807126550-thumb-480w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/17907672807126550-thumb-480w.webp",
+          "bytes": 63252,
+          "hash": "0c3b8f53cc013aee9a7a5b66272d202dfda1e8cc12fd2eafd8ff9b0522537fa8"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "17907672807126550-content-960w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/17907672807126550-content-960w.webp",
+          "bytes": 243896,
+          "hash": "910a855919911c37a26ab5fa496715a72d223bb8eaf2bae8bda655deb860207c"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "17907672807126550-desktop-1200w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/17907672807126550-desktop-1200w.webp",
+          "bytes": 352680,
+          "hash": "5cd5918b920938199c054b4e49de2f54ca3d11cfacdd0de119a2208d5a562a5f"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "17907672807126550-lightbox-1440w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/17907672807126550-lightbox-1440w.webp",
+          "bytes": 456462,
+          "hash": "4f6a4205e6b0bccafff3a8a0da1ee2c1ea784dde1c2e7360f492a270835dba33"
+        }
+      ]
+    },
+    "mutianyu/18067388570089226.heic": {
+      "id": "18067388570089226",
+      "original_filename": "18067388570089226.heic",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "9ce375830356ef8a34ca784e3ecdb1fbf970a5ad6a505ea5b2a29a4c8033f6fd",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18067388570089226-thumb-480w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/18067388570089226-thumb-480w.webp",
+          "bytes": 41064,
+          "hash": "9a8e93a1f54f4cc6d0acbc92c4281d073e2cc32eb7a650461fcc532185a62b22"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18067388570089226-content-960w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/18067388570089226-content-960w.webp",
+          "bytes": 141674,
+          "hash": "f366f0e3441a759a5301d2df191d5a51a81ef717f1b313998abd7b381a6c2c62"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18067388570089226-desktop-1200w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/18067388570089226-desktop-1200w.webp",
+          "bytes": 201598,
+          "hash": "8eae9a5c18b1c5bcf12cc26ca44f77874b2c8552683d4181471ee2be955a08df"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18067388570089226-lightbox-1440w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/18067388570089226-lightbox-1440w.webp",
+          "bytes": 264658,
+          "hash": "ebd3fe947e9eb4ce19e4bbe92f80c0ba972d2445a02c71ca56882d10debd040e"
+        }
+      ]
+    },
+    "mutianyu/18110288083525293.heic": {
+      "id": "18110288083525293",
+      "original_filename": "18110288083525293.heic",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "263f68a5e18876236f865dc66be5fff1aabd8cdedb518859cb5fd210b3b4c8f9",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18110288083525293-thumb-480w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/18110288083525293-thumb-480w.webp",
+          "bytes": 57036,
+          "hash": "bc7255bb3dfa3cac817a47dd861aac5807103721925f26447c95c4d2512eca73"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18110288083525293-content-960w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/18110288083525293-content-960w.webp",
+          "bytes": 222334,
+          "hash": "564987b486cec95fe48851c33fd4d737292a368d082b9ad6e2d903f004f6014a"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18110288083525293-desktop-1200w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/18110288083525293-desktop-1200w.webp",
+          "bytes": 325592,
+          "hash": "114b78f5512584e9bd1f96871dc05bc680887d4fc4d857c866ed3c786e13874e"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18110288083525293-lightbox-1440w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/18110288083525293-lightbox-1440w.webp",
+          "bytes": 426338,
+          "hash": "ed9a4a682c5c1f052dc320dfcabe634da0935022ad33a188a188bca07f522ce3"
+        }
+      ]
+    },
+    "mutianyu/18128778040490725.heic": {
+      "id": "18128778040490725",
+      "original_filename": "18128778040490725.heic",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "5f605573c88aac5cca641a29c7d5658837e1cbf10567f03091fb53a586e40294",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18128778040490725-thumb-480w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/18128778040490725-thumb-480w.webp",
+          "bytes": 68422,
+          "hash": "fcaed14c95cd427ec5281e529055597663df143368563d40ce4bc2884d4d7ff7"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18128778040490725-content-960w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/18128778040490725-content-960w.webp",
+          "bytes": 242602,
+          "hash": "711a732c149b8a8767389db6ee5a7ecaa7d31eac391ecd4ba4aad7c132423923"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18128778040490725-desktop-1200w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/18128778040490725-desktop-1200w.webp",
+          "bytes": 339410,
+          "hash": "06fdba578ccd71699983e169f4debeda37ecf121d18e6a72fb50ee46d139162a"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18128778040490725-lightbox-1440w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/18128778040490725-lightbox-1440w.webp",
+          "bytes": 435028,
+          "hash": "e9b909e5e3c78b3df49257ad0da7d2a60797f0a24f1a51cc477d4e679f0a6876"
+        }
+      ]
+    },
+    "mutianyu/20251112_153025.jpg": {
+      "id": "20251112_153025",
+      "original_filename": "20251112_153025.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "b8d806f3f8b56d24ff86ea148ba0c39fb71ad30cfdc7d81a655e0c9fd3b2733e",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20251112_153025-thumb-480w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_153025-thumb-480w.webp",
+          "bytes": 28378,
+          "hash": "44f6d34ab8e5fb516f0fa671ba4bce0186bcaaa868b0b49787341116ea31cba4"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20251112_153025-content-960w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_153025-content-960w.webp",
+          "bytes": 116960,
+          "hash": "57bc010f5796173b944e79d6dc38c80b18e1b4d77739437c7966756b909c2a7e"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20251112_153025-desktop-1200w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_153025-desktop-1200w.webp",
+          "bytes": 187148,
+          "hash": "e5cb79ead490089ce63c10f7f879a0a95084a7fa063094e0c08dd81332326cf8"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20251112_153025-lightbox-1600w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_153025-lightbox-1600w.webp",
+          "bytes": 329920,
+          "hash": "f72a90337f5a4ed7567b452a9444d88b20da20c55933fb4526a26a44ff2be34f"
+        }
+      ]
+    },
+    "mutianyu/20251112_153120.jpg": {
+      "id": "20251112_153120",
+      "original_filename": "20251112_153120.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "3dc8f0301cc02022cc02b63e24c1c69e918376d17b9baf0ef086d707bd3b2ee0",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20251112_153120-thumb-270w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_153120-thumb-270w.webp",
+          "bytes": 32806,
+          "hash": "c8f2c129dafa9c8391097597650d4460e1e6b5bbac66e34e59f00a83b2e1d68a"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20251112_153120-content-540w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_153120-content-540w.webp",
+          "bytes": 138184,
+          "hash": "94ffc6c9a28a1247b4068d79716c330673dcaf24c8f83fdd5b98c8107ff6c9a7"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20251112_153120-desktop-676w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_153120-desktop-676w.webp",
+          "bytes": 219260,
+          "hash": "97aba0f63e0ca691d323351f48d55fd0e2eddb44e711c076a17d7c5e13f51493"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20251112_153120-lightbox-901w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_153120-lightbox-901w.webp",
+          "bytes": 393484,
+          "hash": "1a49f613c2c1b2e61f7f99222fd149fce074f60f10d67cabc568db90fb59df9a"
+        }
+      ]
+    },
+    "mutianyu/20251112_154236.jpg": {
+      "id": "20251112_154236",
+      "original_filename": "20251112_154236.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "ac1a5d76685d578bfb7db4fa496ea37f8d3cad8e71f35b1c5a5be4c0830576cd",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20251112_154236-thumb-270w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_154236-thumb-270w.webp",
+          "bytes": 27586,
+          "hash": "1b13e740f3f401a959869f20495b8e99a859416ebde8ef59ec44fe7b88eb4c03"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20251112_154236-content-540w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_154236-content-540w.webp",
+          "bytes": 112734,
+          "hash": "d91da3b114a08885608d25d38734a713b1468d2b2bb21f30cbf077977115fd4a"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20251112_154236-desktop-676w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_154236-desktop-676w.webp",
+          "bytes": 177404,
+          "hash": "4fd27277d3877c602da02a49ea4e5f60175acbafcde1fecbe1ec566cc01fc69b"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20251112_154236-lightbox-901w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_154236-lightbox-901w.webp",
+          "bytes": 310682,
+          "hash": "4ba1372e4ba198e6b4feff361a377f8eb211081d687e0031b9bd2fc81888c7fd"
+        }
+      ]
+    },
+    "mutianyu/20251112_154752.jpg": {
+      "id": "20251112_154752",
+      "original_filename": "20251112_154752.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "dfa3750a3fdae46d6a35bc4b59278243b0c21f5d8d3853a978767eae0832ee15",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20251112_154752-thumb-270w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_154752-thumb-270w.webp",
+          "bytes": 31996,
+          "hash": "06b2120765a2c50beb32aa589916d839985529108488bb0276f2176d0c38b8e1"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20251112_154752-content-540w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_154752-content-540w.webp",
+          "bytes": 130036,
+          "hash": "3b3b9d7f2da21d0b8f7685c6d0be3a33994d888c237774dac1723a43c8cc7cbd"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20251112_154752-desktop-676w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_154752-desktop-676w.webp",
+          "bytes": 202548,
+          "hash": "e96af1c2460689108aac045fa65796e3b0e1df52fe9e1be928f9fb1d022063f9"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20251112_154752-lightbox-901w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_154752-lightbox-901w.webp",
+          "bytes": 353068,
+          "hash": "bedebf8faacebb444e642524c28b7970e140cf10d472f8fbf69ffa9644509fd9"
+        }
+      ]
+    },
+    "mutianyu/20251112_155700.jpg": {
+      "id": "20251112_155700",
+      "original_filename": "20251112_155700.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "e75a3bbf3c71e6b32d917042313d4b03705767f1084b48e75d8427a14dec6481",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20251112_155700-thumb-270w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_155700-thumb-270w.webp",
+          "bytes": 24738,
+          "hash": "b837f34617e076dff6da78d0be0b8cfe476969865f64318ca51b2f1da4457460"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20251112_155700-content-540w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_155700-content-540w.webp",
+          "bytes": 99212,
+          "hash": "7bd650becbc36db12952325c3608dc3892a68f683b44de901bf3aa9f24190def"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20251112_155700-desktop-676w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_155700-desktop-676w.webp",
+          "bytes": 157402,
+          "hash": "801132ae633ecd198aef8ec710684958209fa4a13ec8e5037d89c62e3d6ea9af"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20251112_155700-lightbox-901w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_155700-lightbox-901w.webp",
+          "bytes": 272684,
+          "hash": "32ca0371b9e1ffc02f5a9a184d484b36b1389b3f9920932ef1cc8b34a22c3516"
+        }
+      ]
+    },
+    "mutianyu/20251112_155943.jpg": {
+      "id": "20251112_155943",
+      "original_filename": "20251112_155943.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "4314f1cf6d03844e7ac43551ad46bfb915d3f2c7c0a93613d8a8444b8e437d87",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20251112_155943-thumb-270w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_155943-thumb-270w.webp",
+          "bytes": 35316,
+          "hash": "8e702537abfd864f82d6eaa06b5f5f1a42e629ab09ee4430375321608b863156"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20251112_155943-content-540w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_155943-content-540w.webp",
+          "bytes": 134730,
+          "hash": "2d29289a1894fd0cc0c31d4906413d01022becfb59e7320bef88370b5dfd858a"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20251112_155943-desktop-676w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_155943-desktop-676w.webp",
+          "bytes": 207900,
+          "hash": "3805c7ae116004aa40bf028f6df81c7160c4822dde5eb698e798e46b8c80d39a"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20251112_155943-lightbox-901w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_155943-lightbox-901w.webp",
+          "bytes": 356934,
+          "hash": "f6f93bd93f17ea7ed026e43a7d1d1ac8aa8c736bab938b4679c44d54712c6963"
+        }
+      ]
+    },
+    "mutianyu/20251112_160411.jpg": {
+      "id": "20251112_160411",
+      "original_filename": "20251112_160411.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "2875b14cfd78ca6da47e92d116c5df327402655c5629a6b85442ee2402f9d044",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20251112_160411-thumb-270w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_160411-thumb-270w.webp",
+          "bytes": 23036,
+          "hash": "02863d27ec9ed46cb111fbc457ec54169ab7fae0e1daebcddf99faddd3ff395c"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20251112_160411-content-540w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_160411-content-540w.webp",
+          "bytes": 89934,
+          "hash": "15b651ce5af720e0fcf855f378e7eba4cc9ed4ea7ecf20417541f481d3a98688"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20251112_160411-desktop-676w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_160411-desktop-676w.webp",
+          "bytes": 135692,
+          "hash": "1ecfcf7e95ea347812420369d579837a8c50f172e6c8b066f649ca38abcf95ca"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20251112_160411-lightbox-901w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_160411-lightbox-901w.webp",
+          "bytes": 228692,
+          "hash": "a36df30222762d7d7cb9afe02d374d4e50c37bb18d6a4ab93f39d99a5bc6adf9"
+        }
+      ]
+    },
+    "mutianyu/20251112_160622.jpg": {
+      "id": "20251112_160622",
+      "original_filename": "20251112_160622.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "94f500e84606bb548dc6ed07bafc33d89498c466afbe00f7314f3967d795d077",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20251112_160622-thumb-270w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_160622-thumb-270w.webp",
+          "bytes": 23102,
+          "hash": "2c57badde61c48cf870ebcab93e5c53b83fe0627f18b4c2f3e3e604561d32db4"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20251112_160622-content-540w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_160622-content-540w.webp",
+          "bytes": 93494,
+          "hash": "56e6b53253ddc6e5d8f41b1e105f3cb2439416910f20c0076bddb9c33add4a21"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20251112_160622-desktop-676w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_160622-desktop-676w.webp",
+          "bytes": 143716,
+          "hash": "1de92c8442b7a828ed14c84caaf00f18c072802f27c45baef061092739626e26"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20251112_160622-lightbox-901w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_160622-lightbox-901w.webp",
+          "bytes": 244780,
+          "hash": "1bacb398792ae507c0c1785f3631e5360b7554dbab19d1fe0885018576de5ce2"
+        }
+      ]
+    },
+    "mutianyu/20251112_160644.jpg": {
+      "id": "20251112_160644",
+      "original_filename": "20251112_160644.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "f4b99a19226f83d078c825aa193c51fce66133327a793e68034c6fbe1ffcb459",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20251112_160644-thumb-270w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_160644-thumb-270w.webp",
+          "bytes": 25100,
+          "hash": "c4a0ae1c6cc17049c6308c343201b31af523c292b81428151e0c2cdf32a50023"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20251112_160644-content-540w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_160644-content-540w.webp",
+          "bytes": 85694,
+          "hash": "13b78bc9504ca19f8dba47020e736ae45710c102e2840d544fa74791f4a7cbc5"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20251112_160644-desktop-676w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_160644-desktop-676w.webp",
+          "bytes": 122260,
+          "hash": "61393df3c4fa7f4a999466cf8f5a1f61484d772edbb3ed1e85c25e10f509eba2"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20251112_160644-lightbox-901w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_160644-lightbox-901w.webp",
+          "bytes": 195312,
+          "hash": "7d40d76d47ab93fb0714de90afe8ae69cae8f514a23cf915e7f4570a97b92fa7"
+        }
+      ]
+    },
+    "mutianyu/20251112_160743.jpg": {
+      "id": "20251112_160743",
+      "original_filename": "20251112_160743.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "45440c6c839a4854e0741f209c8bd3fa457f6b874a72a8a02c3f25f606c58776",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20251112_160743-thumb-270w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_160743-thumb-270w.webp",
+          "bytes": 23268,
+          "hash": "9c143e830f1f9b6866b342deb2819393b123847f548bf21c98512f1f7f17dc11"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20251112_160743-content-540w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_160743-content-540w.webp",
+          "bytes": 97512,
+          "hash": "36cbf5ef4611919d32808efcb9a9445f3c1335ceaeffcbd44fbb4de702eee321"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20251112_160743-desktop-676w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_160743-desktop-676w.webp",
+          "bytes": 153218,
+          "hash": "223f58430657017b137a5c4759839a3aca4b8bbac8653cc6649b2549e17c1313"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20251112_160743-lightbox-901w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_160743-lightbox-901w.webp",
+          "bytes": 279588,
+          "hash": "62997c38386ccfdd3eeaffc4d5ea292002752868c72f32314531facf4ac7991d"
+        }
+      ]
+    },
+    "mutianyu/20251112_160854.jpg": {
+      "id": "20251112_160854",
+      "original_filename": "20251112_160854.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "cec416c3a1a303e6995c27d6514f4c226b6c41d80a19bda34a9f283fad430edd",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20251112_160854-thumb-270w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_160854-thumb-270w.webp",
+          "bytes": 27866,
+          "hash": "7f6eaad1ff1bbedff6050f8eb0f660988dca6cb752ebab462a38766fbfe1efbf"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20251112_160854-content-540w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_160854-content-540w.webp",
+          "bytes": 112072,
+          "hash": "7663a108d9b395823230360cfcd82f2eaf1dc04583288b55f3b65e83b15a6707"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20251112_160854-desktop-676w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_160854-desktop-676w.webp",
+          "bytes": 174546,
+          "hash": "39808d113b024679522de0ce58aad033c6453a24faa542749e6de8bf4071a44b"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20251112_160854-lightbox-901w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_160854-lightbox-901w.webp",
+          "bytes": 305242,
+          "hash": "0d806b9ef593c3801b6ef25c038cb681c3566ac7d463060a07a05fe45654e354"
+        }
+      ]
+    },
+    "mutianyu/20251112_161346.jpg": {
+      "id": "20251112_161346",
+      "original_filename": "20251112_161346.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "2df4c44e99a8777ee1110ebe1a1e81261237fd8e3339c101604b130900969f1b",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20251112_161346-thumb-270w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_161346-thumb-270w.webp",
+          "bytes": 27340,
+          "hash": "fbbf7e86656e8b79855d0d9e520738aed73fe2dc6d724b8b3c3c5737c3b8428a"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20251112_161346-content-540w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_161346-content-540w.webp",
+          "bytes": 110508,
+          "hash": "dfa105224edbbb9fbf2a247457589a5c464daf39b4bfe97fd29532cee03749e1"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20251112_161346-desktop-676w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_161346-desktop-676w.webp",
+          "bytes": 174270,
+          "hash": "69fc5d134d994e291f0a5b9d62bfda5d2fe8d34b70944115c68fecbb62ce14c3"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20251112_161346-lightbox-901w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_161346-lightbox-901w.webp",
+          "bytes": 307474,
+          "hash": "66a9be5691d8a6d1d7f908fd621771fd8ed5994cf403cae473cf0586c2c36596"
+        }
+      ]
+    },
+    "mutianyu/20251112_161401.jpg": {
+      "id": "20251112_161401",
+      "original_filename": "20251112_161401.jpg",
+      "original_width": 2065,
+      "original_height": 3667,
+      "source_hash": "ff8a56155fad567448f0c970c4b9b998534d6ac01ef3f2f67903decaa243eae6",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20251112_161401-thumb-270w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_161401-thumb-270w.webp",
+          "bytes": 11688,
+          "hash": "7c06c5bb204abe9767c8967f4ab2b743a0f655a807fa9c33d496805646318dca"
+        },
+        {
+          "profile": "content",
+          "width": 541,
+          "height": 960,
+          "format": "webp",
+          "filename": "20251112_161401-content-541w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_161401-content-541w.webp",
+          "bytes": 44774,
+          "hash": "b0cb2792262fcf260dac97c47222fbf983a10cdc23baf0796d31ef667fe5fa11"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20251112_161401-desktop-676w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_161401-desktop-676w.webp",
+          "bytes": 70680,
+          "hash": "1855316ddf453bd0b48f2abc494b90cee7d70ab76fa670fbf116227e04146661"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20251112_161401-lightbox-901w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_161401-lightbox-901w.webp",
+          "bytes": 126104,
+          "hash": "cd6f5896c0eb348e5a7794bb2f4ebc584b47a62a9a53e43cbbaffe4dd5099597"
+        }
+      ]
+    },
+    "mutianyu/20251112_161901.jpg": {
+      "id": "20251112_161901",
+      "original_filename": "20251112_161901.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "5d8ff14b1406d03bbc61dced793a86c3e298281bd604b3b6fbd8d64cb9da2b6b",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20251112_161901-thumb-270w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_161901-thumb-270w.webp",
+          "bytes": 22702,
+          "hash": "dc6d4e3b2e5fe9d0539bf4e00130692d01dee711ba7fa14f11074f2f2b62b774"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20251112_161901-content-540w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_161901-content-540w.webp",
+          "bytes": 93986,
+          "hash": "659f2ddf0df279c9fb9aea466b456f03c7bbb0ba64be53432c0a96dc6df60837"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20251112_161901-desktop-676w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_161901-desktop-676w.webp",
+          "bytes": 149694,
+          "hash": "73d67c75f06cc841304e5c2865dc36bde7b50df34ea371f387acabc9dec7767e"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20251112_161901-lightbox-901w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_161901-lightbox-901w.webp",
+          "bytes": 265134,
+          "hash": "d5f2857577977d676a852ce03b852e343f81bc4f9038275b4e36235e42260b6e"
+        }
+      ]
+    },
+    "mutianyu/20251112_162505.jpg": {
+      "id": "20251112_162505",
+      "original_filename": "20251112_162505.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "9dd0bcd156c34c7433cf0e0cdeede772b93567ade5e3feb71e74d572e0bfcefe",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20251112_162505-thumb-270w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_162505-thumb-270w.webp",
+          "bytes": 38540,
+          "hash": "6d54dbf0ea27649e60456be9258e307a18a6c6669fbfff28df70814b37bbb77a"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20251112_162505-content-540w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_162505-content-540w.webp",
+          "bytes": 159708,
+          "hash": "e18a5d6fd451a94c65352ebe100b2c9bf0ce5a9923884db9c56dc17fc0dacbd2"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20251112_162505-desktop-676w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_162505-desktop-676w.webp",
+          "bytes": 250450,
+          "hash": "7db8229a648431a8b2280030b14413aae360f639e9ccb5d32ac61203a9cc6295"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20251112_162505-lightbox-901w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_162505-lightbox-901w.webp",
+          "bytes": 441770,
+          "hash": "037d3da1ea0f5d25a9a230c6944a40ed8e3193eb5d63f76e3250159f9c39fb3f"
+        }
+      ]
+    },
+    "mutianyu/20251112_162724.jpg": {
+      "id": "20251112_162724",
+      "original_filename": "20251112_162724.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "e9dfabe998750eb6982feb2abe00cf7266893a159fe587013d40af41b62398a1",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20251112_162724-thumb-480w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_162724-thumb-480w.webp",
+          "bytes": 12342,
+          "hash": "5843101d5a91379f9483a9fb3c17a6f59ae2640f7f807567115e75e0f476b2ea"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20251112_162724-content-960w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_162724-content-960w.webp",
+          "bytes": 47754,
+          "hash": "b5e5761f57118086836b0f0f9e8e95fe02ba402ba1e60d1cd89987c9038c7eb5"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20251112_162724-desktop-1200w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_162724-desktop-1200w.webp",
+          "bytes": 73552,
+          "hash": "dd7d5a229de5c2cb2bac23ab76a1b61eb5edc81541b749c777d450b121b20698"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20251112_162724-lightbox-1600w.webp",
+          "publicPath": "2025-2026-beijing/images/mutianyu/20251112_162724-lightbox-1600w.webp",
+          "bytes": 124464,
+          "hash": "d7dfe0e3a7004f0d774dc06da2d0feadabcf74986d5fa99520f15248338a1ef9"
+        }
+      ]
+    }
+  }
+}

@@ -15,6 +15,7 @@ import re
 import sys
 import json
 import shutil
+from html import escape as html_escape
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -159,6 +160,44 @@ def strip_editor_metadata(html_content):
     )
 
 
+def render_gallery_registry(item, img_folder, errors):
+    """由 migration config 產生唯一、可驗證的隱藏 Lightbox registry。"""
+    groups = item.get("gallery_groups", [])
+    if not groups:
+        return ""
+
+    seen_images = set()
+    group_html = []
+    for group in groups:
+        gallery_id = group.get("id", "").strip()
+        gallery_items = group.get("items", [])
+        if not gallery_id or not isinstance(gallery_items, list) or not gallery_items:
+            errors.append(f"{item['id']}: gallery_groups 每組必須包含 id 與非空 items")
+            continue
+
+        for gallery_item in gallery_items:
+            image_name = gallery_item.get("image", "").strip()
+            if not image_name:
+                errors.append(f"{item['id']}: gallery item 缺少 image")
+                continue
+            image_id = gallery_item.get("image_id") or Path(image_name).stem
+            if image_id in seen_images:
+                errors.append(f"{item['id']}: gallery image 重複註冊: {image_id}")
+                continue
+            seen_images.add(image_id)
+            title = gallery_item.get("title", "")
+            group_html.append(
+                f'        <a href="../images/{html_escape(img_folder)}/{html_escape(image_name)}" '
+                f'class="glightbox" data-gallery="{html_escape(gallery_id)}" '
+                f'data-gallery-image="{html_escape(image_id)}" '
+                f'data-title="{html_escape(title)}"></a>'
+            )
+
+    if not group_html:
+        return ""
+    return '<div class="gallery-registry" hidden aria-hidden="true">\n' + "\n".join(group_html) + "\n      </div>"
+
+
 def sync_public_core_assets():
     docs_core = DOCS_DIR / "core"
     for parts in PUBLIC_CORE_FILES:
@@ -220,6 +259,14 @@ def build_trip(trip_slug="2026-germany", dest_slug=None):
         html_content = src_file.read_text(encoding="utf-8")
         html_content = strip_editor_metadata(html_content)
         html_content = html_content.replace("平行改寫預覽版 (Place Preview)", "")
+
+        gallery_registry = render_gallery_registry(item, img_folder, errors)
+        gallery_marker_count = html_content.count("<!-- GALLERY_REGISTRY -->")
+        if item.get("gallery_groups") and gallery_marker_count != 1:
+            errors.append(
+                f"{item['id']}: 使用 gallery_groups 時，GALLERY_REGISTRY 標記應恰好出現 1 次，實際為 {gallery_marker_count} 次"
+            )
+        html_content = html_content.replace("<!-- GALLERY_REGISTRY -->", gallery_registry)
 
         # 1. 調整核心資源路徑至 ../../core/
         html_content = re.sub(r'href="(?:\.\./)*css/style\.css(?:\?[^"]*)?"', 'href="../../core/css/style.css"', html_content)
