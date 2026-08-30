@@ -5,10 +5,11 @@
   "entries": [
     {
       "id": "day-02",
-      "title": "一個人從大阪跑去翻山：鞍馬寺到貴船",
+      "title": "三千金逛她們的街，我走我的山：鞍馬寺到貴船",
       "source": "trips/2026-osaka/sources/blog/kurama-kifune-hike.html",
       "output": "docs/2026-osaka/blog/kurama-kifune-hike.html",
       "image_folder": "day-02",
+      "preserve_gallery_groups": true,
       "footer_center": "gallery",
       "og_url": "https://aa1662.github.io/ch-travel-os/2026-osaka/blog/kurama-kifune-hike.html",
       "og_image": "https://aa1662.github.io/ch-travel-os/2026-osaka/images/day-02/20260825_093541-desktop-1200w.webp",
@@ -44,6 +45,21 @@
       "og_image": "https://aa1662.github.io/ch-travel-os/2026-osaka/images/day-03/20260826_083555-desktop-1200w.webp",
       "prev_link": "hieizan-enryakuji-eternal-flame.html",
       "prev_title": "比叡山延曆寺",
+      "next_link": "osaka-castle.html",
+      "next_title": "大阪城天守閣"
+    },
+    {
+      "id": "day-03-osaka-castle",
+      "title": "光走進城，敵軍大概就投降了",
+      "source": "trips/2026-osaka/sources/blog/osaka-castle.html",
+      "output": "docs/2026-osaka/blog/osaka-castle.html",
+      "image_folder": "day-03",
+      "preserve_gallery_groups": true,
+      "timeline_fallback_link": "../../index.html",
+      "og_url": "https://aa1662.github.io/ch-travel-os/2026-osaka/blog/osaka-castle.html",
+      "og_image": "https://aa1662.github.io/ch-travel-os/2026-osaka/images/day-03/20260826_163826-desktop-1200w.webp",
+      "prev_link": "katsuoji-minoh-waterfall.html",
+      "prev_title": "勝尾寺與箕面瀑布",
       "next_link": null,
       "next_title": "關西盛夏漫遊未完待續"
     }

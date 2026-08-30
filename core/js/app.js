@@ -175,6 +175,20 @@ function initGLightbox() {
       openCurrentPageGallery(btn.dataset.galleryTarget);
     });
   });
+
+  // 內文照片只作為入口；燈箱項目由頁面的唯一 registry 管理。
+  document.querySelectorAll('[data-gallery-open]').forEach(opener => {
+    opener.addEventListener('click', (e) => {
+      e.preventDefault();
+      openGalleryImage(opener.dataset.galleryOpen);
+    });
+  });
+}
+
+function openGalleryImage(imageId) {
+  const target = Array.from(document.querySelectorAll('.glightbox[data-gallery-image]'))
+    .find(link => link.dataset.galleryImage === imageId);
+  if (target) target.click();
 }
 
 function openCurrentPageGallery(galleryTarget) {

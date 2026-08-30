@@ -18,11 +18,9 @@
 
 ---
 
-## 2. 每日圖文遊記三層標準結構
+## 2. 圖文遊記呈現元件
 
-1. **第 1 層：Instagram 現場隨筆 (`.ig-post-card`)** — 原汁原味呈現當天真實隨筆文字與時間。
-2. **第 2 層：旅人深度散文 (`.story-split` & `.story-split.reverse`)** — 雜誌風左右交錯排版，每段文字緊扣照片視覺錨點展開。
-3. **第 3 層：實戰 Bento 攻略盒 (`.bento-grid`)** — 隨文嵌入停車座標、TripNG 避坑警示、德法雙語發音按鈕。
+Instagram 卡片 (`.ig-post-card`)、旅人散文 (`.story-split`)、單張／對照圖、燈箱與實戰 Bento (`.bento-grid`) 都是可選呈現元件，不是每篇必須套用的固定三層模板。元件選擇必須服務文章命題與照片證據；同一 Journey 維持導覽、Bento、圖集入口與整體視覺語言一致。
 
 ---
 
@@ -31,6 +29,7 @@
 在擴充新旅程（如 2024 Australia、2019 Italy、香港重返等）時，必須嚴格遵守專案根目錄下的：
 - [TRAVEL_PORTAL_ROADMAP.md](file:///c:/Data/charlotte-ai-os-dev/ch-travel-os/TRAVEL_PORTAL_ROADMAP.md)：定義品牌定位、4 大內容型態（旅程專刊、重返現場、在路上、城市切片）、里程碑與 Place 內容模型。
 - [EDITORIAL_STYLE_GUIDE.md](file:///c:/Data/charlotte-ai-os-dev/ch-travel-os/EDITORIAL_STYLE_GUIDE.md)：定義 CH Voice Profile 寫作語氣、來源優先序、人工記憶訪談與內容 UAT 契約。
+- [TRAVEL_BLOG_PRODUCTION_PLAYBOOK.md](file:///c:/Data/charlotte-ai-os-dev/ch-travel-os/TRAVEL_BLOG_PRODUCTION_PLAYBOOK.md)：定義素材盤點、盲寫母稿、Grillme、既有頁融合、選圖、構建與雙向 UAT 的跨系列製作流程。
 - 嚴格遵守「小步閉環 (Milestones)」與「Config 驅動構建 (`blog-migration.json` / `timeline-migration.json`)」。
 - 尚未生成的頁面禁止在前端暴露 404 連結。
 - 每次變更必須 100% 通過 `python tools/validate_images.py` 全站死鏈與資產稽核。

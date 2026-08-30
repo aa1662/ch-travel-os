@@ -171,6 +171,7 @@ def process_trip(trip_slug, dest_slug=None, pilot_day=None):
         "images": {}
     }
     cached_images = {}
+    loaded_manifest = None
     if manifest_file.exists():
         try:
             with open(manifest_file, "r", encoding="utf-8") as f:
@@ -178,6 +179,28 @@ def process_trip(trip_slug, dest_slug=None, pilot_day=None):
                 cached_images = loaded_manifest.get("images", {})
         except Exception:
             pass
+
+    # Scoped runs must not erase entries owned by unprocessed day folders.
+    # Preserve them only when the existing manifest uses the current contract.
+    if pilot_day and cached_images:
+        manifest_contract_valid = (
+            loaded_manifest
+            and loaded_manifest.get("pipeline_version") == PIPELINE_VERSION
+            and loaded_manifest.get("quality") == DEFAULT_QUALITY
+            and loaded_manifest.get("profiles") == PROFILES
+            and loaded_manifest.get("trip") == trip_slug
+            and loaded_manifest.get("dest") == dest_slug
+        )
+        if not manifest_contract_valid:
+            print("❌ Pilot 模式無法沿用舊版 Manifest 合約；請先執行一次全旅程圖片管線。", flush=True)
+            sys.exit(1)
+
+        pilot_prefix = f"{pilot_day}/"
+        manifest_data["images"].update({
+            key: entry
+            for key, entry in cached_images.items()
+            if not key.startswith(pilot_prefix)
+        })
 
     # 掃描天數資料夾
     day_folders = sorted([d for d in trip_master.iterdir() if d.is_dir()])

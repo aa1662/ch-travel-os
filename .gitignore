@@ -11,6 +11,7 @@ masters/
 # Playwright / browser automation scratch
 .playwright-mcp/
 .playwright-cli/
+output/playwright/
 
 # Python cache
 __pycache__/

@@ -8,6 +8,7 @@ CH Travel OS 2.0 - 全域發布與圖片合規驗證器 (Full Site & Image Valid
 3. HTML 連結完整性：檢查所有 <a href>, <img src>, <img srcset>, <script src>, <link href>，嚴禁 404 死鏈。
 4. 原圖與隱私防護：HTML 與 JS 不得直接引用 masters/ 或未經 WebP 轉換之 raw .jpg。
 5. 社群與 Canonical 驗證：og:url 與 og:image 不得指向舊版或已失效之遺留路由。
+6. 燈箱契約：採 registry 的頁面不得重複註冊照片，且各橫直圖集須依拍攝時間排序。
 """
 
 import re
@@ -253,7 +254,49 @@ def validate_docs():
                 if len(loading_matches) > 1:
                     errors.append(f"[重複 loading 屬性] <img {itag[:60]}...> in {hf.relative_to(DOCS_DIR)}")
 
-            # 4.4 檢查所有本機連結與資源是否皆存在 (避免 404 與無效錨點)
+            # 4.4 驗證 opt-in 燈箱 registry：唯一註冊、時間排序、內文入口可命中。
+            gallery_contracts = re.findall(
+                r'<div\b[^>]*data-gallery-contract=["\']chronological-unique["\'][^>]*>([\s\S]*?)</div>',
+                content,
+                re.IGNORECASE,
+            )
+            for gallery_block in gallery_contracts:
+                registry_items = []
+                for anchor_attrs in re.findall(r'<a\b([^>]*)>', gallery_block, re.IGNORECASE):
+                    image_match = re.search(r'data-gallery-image=["\']([^"\']+)["\']', anchor_attrs, re.IGNORECASE)
+                    group_match = re.search(r'data-gallery=["\']([^"\']+)["\']', anchor_attrs, re.IGNORECASE)
+                    if not image_match or not group_match:
+                        errors.append(f"[燈箱 Registry 欄位缺失] {hf.relative_to(DOCS_DIR)}")
+                        continue
+                    registry_items.append((image_match.group(1), group_match.group(1)))
+
+                image_ids = [image_id for image_id, _ in registry_items]
+                duplicate_ids = sorted({image_id for image_id in image_ids if image_ids.count(image_id) > 1})
+                if duplicate_ids:
+                    errors.append(
+                        f"[燈箱照片重複] {', '.join(duplicate_ids)} in {hf.relative_to(DOCS_DIR)}"
+                    )
+
+                groups = {}
+                for image_id, group in registry_items:
+                    timestamp_match = re.search(r'(\d{8}_\d{6})', image_id)
+                    if not timestamp_match:
+                        errors.append(f"[燈箱缺少拍攝時間] {image_id} in {hf.relative_to(DOCS_DIR)}")
+                        continue
+                    groups.setdefault(group, []).append((timestamp_match.group(1), image_id))
+                for group, items in groups.items():
+                    if items != sorted(items):
+                        errors.append(f"[燈箱時間順序錯誤] {group} in {hf.relative_to(DOCS_DIR)}")
+
+                registry_ids = set(image_ids)
+                opener_ids = re.findall(r'data-gallery-open=["\']([^"\']+)["\']', content, re.IGNORECASE)
+                missing_targets = sorted(set(opener_ids) - registry_ids)
+                if missing_targets:
+                    errors.append(
+                        f"[燈箱入口無對應照片] {', '.join(missing_targets)} in {hf.relative_to(DOCS_DIR)}"
+                    )
+
+            # 4.5 檢查所有本機連結與資源是否皆存在 (避免 404 與無效錨點)
             ref_pattern = re.compile(r'(?:href|src)=["\']([^"\']+)["\']')
             for match in ref_pattern.finditer(clean_html):
                 target = match.group(1).strip()
@@ -292,7 +335,7 @@ def validate_docs():
                 if "images/" in clean_target and clean_target.lower().endswith((".jpg", ".png", ".heic")):
                     errors.append(f"[HTML 引用原始 JPG] '{clean_target}' in {hf.relative_to(DOCS_DIR)}")
 
-            # 4.5 檢查 srcset 中的每個檔案是否存在
+            # 4.6 檢查 srcset 中的每個檔案是否存在
             srcset_pattern = re.compile(r'srcset=["\']([^"\']+)["\']')
             for match in srcset_pattern.finditer(content):
                 srcset_val = match.group(1)
