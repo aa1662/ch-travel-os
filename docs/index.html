@@ -3,32 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CH Travel OS 2.0 - 2017～2026 歷年全球深度旅行圖文誌與自駕漫遊手記">
-  <meta property="og:site_name" content="CH Travel OS 2.0 全球旅程總覽">
+  <meta name="description" content="CH x Travel - CH 的私人旅程圖文誌，收錄現代旅行專刊、歷年影像典藏與自駕漫遊手記。">
+  <meta property="og:site_name" content="CH x Travel">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="CH Travel OS 2.0 · 全球深度旅程圖文誌">
-  <meta property="og:description" content="2017～2026 歷年海內外旅行資產總匯：德國阿爾卑斯、關西盛夏漫遊、澳洲雙城、日本東京、義大利托斯卡尼與台灣自駕。">
+  <meta property="og:title" content="CH x Travel · 私人旅程圖文誌">
+  <meta property="og:description" content="從德南冬季自駕到關西盛夏漫遊，整理 CH 的家庭旅行、重返現場與歷年影像典藏。">
+  <meta property="og:url" content="https://chxtravel.com/">
+  <link rel="canonical" href="https://chxtravel.com/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <title>CH Travel OS 2.0 · 全球深度旅程圖文誌</title>
+  <title>CH x Travel · 私人旅程圖文誌</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="core/css/style.css">
   <link rel="stylesheet" href="core/vendor/glightbox/glightbox.min.css">
+  <style>
+    .snaplog-archive-btn {
+      background: var(--primary);
+      color: var(--text-white);
+      border-color: var(--primary);
+      box-shadow: 0 4px 14px rgba(36, 52, 71, 0.18);
+    }
+
+    .snaplog-archive-btn:hover {
+      background: var(--accent);
+      color: var(--text-white);
+      border-color: var(--accent);
+      box-shadow: 0 6px 18px rgba(217, 119, 6, 0.24);
+    }
+
+    .home-mobile-dock button.dock-item {
+      appearance: none;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding-bottom: calc(var(--dock-height) + 1rem);
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- 頂部玻璃擬態導覽列 -->
   <nav class="site-nav">
     <div class="container">
       <a href="index.html" class="brand-link">
-        <span>🌍 CH Travel OS</span>
-        <span class="brand-badge">全球深度圖文誌</span>
+        <span>🌍 CH x Travel</span>
+        <span class="brand-badge">私人旅程圖文誌</span>
       </a>
       <ul class="nav-links">
         <li><a href="index.html" class="active">全球總入口</a></li>
         <li><a href="2026-germany/index.html">🇩🇪 德南自駕</a></li>
         <li><a href="2026-osaka/index.html">🏮 關西漫遊</a></li>
         <li><a href="2026-germany/blog/hallstatt-winter.html">❄️ 精選遊記</a></li>
+        <li><a href="https://snaplog-c77.pages.dev/" target="_blank" rel="noopener noreferrer">🏛️ Snaplog</a></li>
       </ul>
       <button class="nav-share-btn btn-share" type="button"><span>📤 分享</span></button>
     </div>
@@ -39,13 +71,13 @@
     <section class="hero-bento" style="margin-top: 1.5rem;">
       <div class="hero-banner">
         <div class="hero-badge-group">
-          <span class="badge badge-gold">🌍 Travel OS 2.0 全球旅程總覽</span>
-          <span class="badge badge-glass">📸 2017 ~ 2026 歷年深度足跡</span>
+          <span class="badge badge-gold">🌍 CH x Travel · Private Journey Journal</span>
+          <span class="badge badge-glass">📸 現代專刊與歷年影像典藏</span>
           <span class="badge badge-forest">⚡ 雜誌風極速隨行載入</span>
         </div>
         <h1 class="hero-title">世界各地的光影、故事與生活印記</h1>
         <p class="hero-subtitle">
-          從白雪皚皚的阿爾卑斯湖畔，到關西盛夏的山林古道與大阪城倒影。結合真實隨筆、旅人深度散文與自駕避坑攻略，打造專屬的全球圖文誌。
+          從白雪皚皚的阿爾卑斯湖畔，到關西盛夏的山林古道與大阪城倒影。這裡整理 CH 的現代旅行專刊，也保留早年 Snaplog 影像典藏的入口。
         </p>
         <div class="hero-actions">
           <a href="2026-germany/index.html" class="btn-hero-primary">🇩🇪 2026 德南自駕 15 天專刊 →</a>
@@ -59,9 +91,9 @@
     <section id="trips" style="margin: 3.5rem 0 2rem;">
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;">
         <h2 style="font-family: var(--font-heading); font-size: 1.6rem; color: var(--primary);">
-          🗺️ 歷年旅程目錄
+          🗺️ 現代專刊與歷年入口
         </h2>
-        <span class="badge badge-glass">環球旅記</span>
+        <span class="badge badge-glass">CH x Travel</span>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
@@ -152,58 +184,61 @@
           </div>
         </div>
 
-        <!-- Card 4: 2023 Tokyo & Kinmen -->
-        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; opacity: 0.9;">
-          <div style="position: relative; aspect-ratio: 16/9; background: #e2e8f0; display: flex; align-items: center; justify-content: center;">
-            <div style="text-align: center; color: var(--text-muted);">
-              <span style="font-size: 2.5rem;">🇯🇵 🏛️</span>
-              <div style="font-size: 0.9rem; margin-top: 0.25rem;">經典文化與戰地古聚落</div>
-            </div>
-            <div style="position: absolute; top: 1rem; left: 1rem;">
-              <span class="badge badge-glass">🌸 經典回顧</span>
-            </div>
-          </div>
-          <div style="padding: 1.25rem; flex: 1; display: flex; flex-direction: column;">
-            <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">2023 日本東京 & 金門古厝聚落</span>
-            <h3 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--primary); margin: 0.3rem 0 0.6rem;">
-              🇯🇵 日本東京走讀 ✕ 🏛️ 金門戰地聚落
-            </h3>
-            <p style="font-size: 0.9rem; color: var(--text-sub); line-height: 1.6; flex: 1;">
-              明治神宮古樹參天、東京車站夜景、清酒文化巡禮；金門得月樓、水頭聚落閩南官式燕尾古厝。
-            </p>
-            <div style="margin-top: 1rem;">
-              <span style="font-size: 0.85rem; color: var(--text-muted);">🔜 典藏整理中</span>
-            </div>
-          </div>
+      </div>
+
+      <!-- 歷年足跡外部數位典藏庫 (Snaplog) -->
+      <div style="margin-top: 2rem; background: var(--card-bg); border: 1px dashed var(--border-color); border-radius: var(--radius-lg); padding: 1.4rem 1.8rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;">
+        <div>
+          <a href="https://snaplog-c77.pages.dev/" target="_blank" rel="noopener noreferrer" aria-label="開啟 Snaplog 歷史足跡典藏" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.25rem; text-decoration: none;">
+            <span class="badge badge-gold">🏛️ 歷史足跡典藏</span>
+            <span style="font-weight: 700; color: var(--primary); font-size: 1.05rem;">Snaplog · 2001–2015 歷年影像與自駕回憶庫</span>
+          </a>
+          <p style="margin: 0; font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">
+            收錄早期義大利、德奧、北京、香港、日本等國外旅行，也保留台灣單車環島與金門等國內紀錄。舊旅程先在獨立典藏站保存，未來再逐篇升級搬回 CH x Travel。
+          </p>
         </div>
+        <a href="https://snaplog-c77.pages.dev/" target="_blank" rel="noopener noreferrer" class="btn-hero-secondary snaplog-archive-btn" style="font-size: 0.88rem; padding: 0.5rem 1.1rem; white-space: nowrap;">
+          開啟 Snaplog 典藏庫 ↗
+        </a>
       </div>
     </section>
 
     <!-- 旅程圖文誌特色資訊盒 -->
     <section style="margin: 3rem 0; background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(10px); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.75rem;">
       <h3 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--primary); margin-bottom: 0.75rem;">
-        ✨ 三層圖文誌特色
+        ✨ CH x Travel 的圖文誌方式
       </h3>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; font-size: 0.92rem; color: var(--text-sub); line-height: 1.6;">
         <div>
           <strong style="color: var(--primary);">1. 現場原味隨筆</strong><br>
-          原汁原味呈現旅途當下真實心情，保留最真實的旅人視角。
+          保留旅途當下的真實心情、臨時決定與家人同行的細節。
         </div>
         <div>
           <strong style="color: var(--primary);">2. 深度散文排版</strong><br>
-          雜誌風圖文交錯，每段文字緊扣照片視覺錨點展開心境隨筆。
+          以雜誌式圖文節奏整理重返現場、城市切片與路線故事。
         </div>
         <div>
           <strong style="color: var(--primary);">3. 實用避坑指南</strong><br>
-          隨文嵌入精確導航座標、景點避坑警示與外語語音發音。
+          把造訪當時真的用過的交通、住宿、路線與避坑筆記收在文末。
         </div>
       </div>
     </section>
   </main>
 
   <footer style="margin-top: 4rem; padding: 2rem 0; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-muted); font-size: 0.9rem;">
-    <p>© 2026 CH Travel OS 2.0 · Designed with Warm Paper Aesthetic</p>
+    <p>© 2026 CH x Travel · CH 的私人旅程圖文誌</p>
+    <p style="margin-top: 0.35rem;">
+      <a href="https://snaplog-c77.pages.dev/" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); text-decoration: none;">Snaplog Archive ↗</a>
+    </p>
   </footer>
+
+  <div class="mobile-dock home-mobile-dock">
+    <a href="index.html" class="dock-item active"><span class="dock-icon">🏠</span><span>首頁</span></a>
+    <a href="2026-germany/index.html" class="dock-item"><span class="dock-icon">🇩🇪</span><span>德南</span></a>
+    <a href="2026-osaka/index.html" class="dock-item"><span class="dock-icon">🏮</span><span>關西</span></a>
+    <a href="https://snaplog-c77.pages.dev/" target="_blank" rel="noopener noreferrer" class="dock-item"><span class="dock-icon">🏛️</span><span>典藏</span></a>
+    <button type="button" class="dock-item btn-share"><span class="dock-icon">📤</span><span>分享</span></button>
+  </div>
 
   <script src="core/vendor/glightbox/glightbox.min.js"></script>
   <script src="core/js/app.js"></script>

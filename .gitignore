@@ -13,6 +13,9 @@ masters/
 .playwright-cli/
 output/playwright/
 
+# Cloudflare Wrangler local state
+.wrangler/
+
 # Python cache
 __pycache__/
 **/__pycache__/

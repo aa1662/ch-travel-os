@@ -103,7 +103,7 @@ def build_timelines(trip_slug="2026-germany", dest_slug=None):
             )
 
         # 3. 清理舊版 OG 網址遺留 2026-Germany
-        html_content = re.sub(r'https://aa1662\.github\.io/2026-Germany/([^\s"\']+)', r'https://aa1662.github.io/ch-travel-os/2026-germany/\1', html_content)
+        html_content = re.sub(r'https://aa1662\.github\.io/2026-Germany/([^\s"\']+)', r'https://chxtravel.com/2026-germany/\1', html_content)
 
         # 4. 標準化頂部導覽列 (Top Navbar)
         primary_blog = item.get("blog_link", f"blog/day-{day_num}-blog.html")
