@@ -1,42 +1,342 @@
 <!DOCTYPE html>
-<html lang="zh-TW"><head>
+<html lang="zh-TW">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="description" content="2025 深秋與 2026 初夏，半年內兩次北京旅程。從慕田峪與司馬台長城，到景山、古北水鎮與後海胡同。">
+  <meta name="description" content="2025 深秋與 2026 初夏，半年內兩次北京旅程。從慕田峪與司馬台長城，到古北水鎮、景山公園俯瞰故宮紫禁城。">
   <meta property="og:site_name" content="半年去了兩次北京 · CH Travel OS">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="半年去了兩次北京">
-  <meta property="og:description" content="2025 深秋，一個人順道走走；2026 初夏，帶 Belle 再來看看。">
+  <meta property="og:title" content="半年去了兩次北京 ✕ 沉浸式圖文遊記">
+  <meta property="og:description" content="2025 深秋，一個人出差順道走走；2026 初夏，帶 Belle 再來看看。兩趟旅行拼出屬於自己的北京印象。">
   <meta property="og:url" content="https://chxtravel.com/2025-2026-beijing/index.html">
   <meta property="og:image" content="https://chxtravel.com/2025-2026-beijing/images/mutianyu/20251112_153025-desktop-1200w.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://chxtravel.com/2025-2026-beijing/index.html">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-  <title>半年去了兩次北京｜2025 深秋・2026 初夏</title>
+  <title>半年去了兩次北京｜2025 深秋・2026 初夏 ✕ 沉浸式圖文遊記</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../core/css/style.css">
   <style>
-    .beijing-hub { background: #f6f4ef; }
-    .beijing-hub .journey-hero { position: relative; min-height: 650px; overflow: hidden; background: #26362e; }
-    .beijing-hub .journey-hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 55%; }
-    .beijing-hub .journey-hero::after { content: ""; position: absolute; inset: 0; background: rgba(18,24,22,0.48); }
-    .beijing-hub .journey-hero-inner { position: relative; z-index: 1; display: flex; min-height: 650px; align-items: flex-end; padding: 4.5rem 1.25rem 3.5rem; color: #fff; }
-    .beijing-hub .journey-hero h1 { max-width: 840px; margin: 0.7rem 0; color: #fff; font-family: var(--font-heading); font-size: 3.4rem; line-height: 1.15; letter-spacing: 0; text-shadow: 0 3px 20px rgba(0,0,0,0.72); }
-    .beijing-hub .journey-hero p { max-width: 720px; margin: 0; color: #fff; font-size: 1.1rem; line-height: 1.75; text-shadow: 0 2px 12px rgba(0,0,0,0.8); }
-    .beijing-hub .hub-main { max-width: 1080px; margin: 0 auto; padding: 3.5rem 1.25rem 5rem; }
-    .beijing-hub .story-card { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr); gap: 0; overflow: hidden; border: 1px solid var(--border-color); border-radius: 8px; background: #fff; box-shadow: var(--shadow-sm); }
-    .beijing-hub .story-card img { display: block; width: 100%; height: 100%; min-height: 360px; object-fit: cover; }
-    .beijing-hub .story-copy { padding: clamp(1.6rem, 4vw, 2.7rem); }
-    .beijing-hub .story-copy h2 { margin: 0.7rem 0 0.8rem; color: var(--primary); font-family: var(--font-heading); }
-    .beijing-hub .story-copy p { line-height: 1.8; }
-    .beijing-hub .story-copy a { display: inline-flex; margin-top: 0.8rem; padding: 0.7rem 1rem; border-radius: 8px; background: var(--primary); color: #fff; font-weight: 800; text-decoration: none; }
-    .beijing-hub .series-note { margin-top: 2rem; padding: 1.2rem 1.4rem; border-left: 4px solid #a74434; background: #fffaf5; color: var(--text-muted); }
-    @media (max-width: 760px) { .beijing-hub .journey-hero h1 { font-size: 2.35rem; } .beijing-hub .story-card { grid-template-columns: 1fr; } .beijing-hub .story-card img { min-height: 250px; } }
+    .beijing-hub { background: #f8f6f0; }
+    
+    .beijing-hub .journey-hero {
+      position: relative;
+      min-height: 580px;
+      overflow: hidden;
+      background: #25362e;
+    }
+
+    .beijing-hub .journey-hero > img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 54%;
+    }
+
+    .beijing-hub .journey-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(16, 26, 22, 0.25) 20%, rgba(16, 26, 22, 0.88) 100%);
+    }
+
+    .beijing-hub .journey-hero-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      min-height: 580px;
+      align-items: flex-end;
+      padding: 4.5rem 1.25rem 3.5rem;
+      color: #fff;
+    }
+
+    .beijing-hub .hero-badge-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .beijing-hub .journey-hero h1 {
+      max-width: 860px;
+      margin: 0.5rem 0 0.75rem;
+      color: #fff;
+      font-family: var(--font-heading);
+      font-size: 3.4rem;
+      line-height: 1.15;
+      letter-spacing: 0;
+      text-shadow: 0 3px 20px rgba(0,0,0,0.7);
+    }
+
+    .beijing-hub .journey-hero p {
+      max-width: 720px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.94);
+      font-size: 1.08rem;
+      line-height: 1.75;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.8);
+    }
+
+    .beijing-hub .hub-main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3.5rem 1.25rem 5rem;
+    }
+
+    .beijing-hub .stories-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .beijing-hub .story-grid-card {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .beijing-hub .story-grid-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--accent);
+    }
+
+    .beijing-hub .story-card-media {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      position: relative;
+      background: #e8e3da;
+    }
+
+    .beijing-hub .story-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .beijing-hub .story-grid-card:hover .story-card-media img {
+      transform: scale(1.04);
+    }
+
+    .beijing-hub .story-card-badge {
+      position: absolute;
+      top: 0.85rem;
+      left: 0.85rem;
+      background: rgba(16, 26, 22, 0.8);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .beijing-hub .story-card-body {
+      padding: 1.5rem 1.6rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .beijing-hub .story-card-body h3 {
+      font-family: var(--font-heading);
+      color: var(--primary);
+      font-size: 1.25rem;
+      line-height: 1.4;
+      margin: 0.4rem 0 0.75rem;
+    }
+
+    .beijing-hub .story-card-body p {
+      font-size: 0.94rem;
+      color: var(--text-main);
+      line-height: 1.68;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    .beijing-hub .btn-read-hub {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      width: 100%;
+      padding: 0.65rem 1rem;
+      border-radius: var(--radius-md);
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .beijing-hub .btn-read-hub:hover {
+      background: var(--accent);
+    }
+
+    @media (max-width: 960px) {
+      .beijing-hub .stories-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .beijing-hub .journey-hero h1 {
+        font-size: 2.35rem;
+      }
+    }
   </style>
-</head><body class="beijing-hub">
+</head>
+<body class="beijing-hub">
   <div class="reading-progress"></div>
-  <nav class="site-nav"><div class="container"><a href="index.html" class="brand-link"><span>半年去了兩次北京</span><span class="brand-badge">2025–2026</span></a><ul class="nav-links"><li><a href="../index.html">全球旅程</a></li><li><a href="#stories" class="active">深度遊記</a></li></ul><button class="nav-share-btn btn-share" type="button"><span>分享</span></button></div></nav>
-  <header class="journey-hero"><img src="images/mutianyu/20251112_153025-desktop-1200w.webp" srcset="images/mutianyu/20251112_153025-thumb-480w.webp 480w, images/mutianyu/20251112_153025-content-960w.webp 960w, images/mutianyu/20251112_153025-desktop-1200w.webp 1200w, images/mutianyu/20251112_153025-lightbox-1600w.webp 1600w" sizes="100vw" width="4000" height="2252" loading="eager" decoding="async" fetchpriority="high" alt="深秋慕田峪長城沿山脊延伸"><div class="container journey-hero-inner"><div><span class="badge badge-gold">2025 深秋・2026 初夏</span><h1>半年去了兩次北京</h1><p>第一次因工作來北京，第二次陪 Belle 再來看看。兩趟旅行沒有照同一套玩法，卻慢慢拼成了自己的北京印象。</p></div></div></header>
-  <main class="hub-main"><section id="stories" aria-labelledby="stories-title"><div style="margin-bottom: 1.4rem;"><span class="badge badge-forest">Beijing Stories</span><h2 id="stories-title" style="font-family: var(--font-heading); color: var(--primary); font-size: 2rem; margin: 0.6rem 0 0;">先從慕田峪開始</h2></div><article class="story-card"><img src="images/mutianyu/20251112_162724-desktop-1200w.webp" width="4000" height="2252" loading="lazy" decoding="async" alt="慕田峪夕陽與群山"><div class="story-copy"><span class="badge badge-wine">2025.11.12</span><h2>慕田峪長城：錢都花了，VIP 卻不用排隊</h2><p>和幾位難得聚在北京的同事包車登長城。快速通道沒有派上用場，專車直達的方便倒是真的。</p><a href="blog/mutianyu-great-wall.html">閱讀慕田峪遊記 →</a></div></article><div class="series-note">古北水鎮與司馬台、景山公園、南鑼鼓巷與後海正在依完整母稿整理；尚未完成的頁面不提前建立連結。</div></section></main>
-  <script src="../core/js/app.js"></script><script src="../core/js/main.js"></script>
-</body></html>
+
+  <!-- Standard Site Navigation -->
+  <nav class="site-nav">
+    <div class="container">
+      <a href="index.html" class="brand-link">
+        <span>🇨🇳 半年去了兩次北京</span>
+        <span class="brand-badge">2025–2026</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">全球總入口</a></li>
+        <li><a href="#stories" class="active">深度遊記</a></li>
+      </ul>
+      <button class="nav-share-btn btn-share" type="button"><span>分享</span></button>
+    </div>
+  </nav>
+
+  <!-- Journey Cover Hero -->
+  <header class="journey-hero">
+    <img src="images/mutianyu/20251112_153025-desktop-1200w.webp"
+         srcset="images/mutianyu/20251112_153025-thumb-480w.webp 480w,
+                 images/mutianyu/20251112_153025-content-960w.webp 960w,
+                 images/mutianyu/20251112_153025-desktop-1200w.webp 1200w,
+                 images/mutianyu/20251112_153025-lightbox-1600w.webp 1600w"
+         sizes="100vw"
+         width="4000"
+         height="2252"
+         loading="eager"
+         decoding="async"
+         fetchpriority="high"
+         alt="深秋慕田峪長城沿山脊延伸">
+    <div class="container journey-hero-inner">
+      <div>
+        <div class="hero-badge-group">
+          <span class="badge badge-gold">🇨🇳 2025 深秋 ✕ 2026 初夏</span>
+          <span class="badge badge-glass">📸 3 篇深度圖文遊記</span>
+          <span class="badge badge-glass">⛰️ 兩大長城 ✕ 水鎮夜景 ✕ 皇城中軸線</span>
+        </div>
+        <h1>半年去了兩次北京</h1>
+        <p>第一次因工作來北京，順道包車登長城、住進水鎮客棧；第二次陪 Belle 來場勘學校，傍晚登上景山俯瞰整座紫禁城。兩趟旅行沒有照套裝行程走，卻拼出了最真實的北京印象。</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Grid -->
+  <main class="hub-main">
+    <section id="stories" aria-labelledby="stories-title">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.75rem;">
+        <div>
+          <span class="badge badge-forest">Beijing Stories</span>
+          <h2 id="stories-title" style="font-family: var(--font-heading); color: var(--primary); font-size: 2rem; margin: 0.4rem 0 0;">精選圖文誌</h2>
+        </div>
+        <span style="font-size: 0.9rem; color: var(--text-muted);">共 3 篇已發布實戰紀錄</span>
+      </div>
+
+      <div class="stories-grid">
+        <!-- Card 1: Mutianyu -->
+        <article class="story-grid-card">
+          <div class="story-card-media">
+            <img src="images/mutianyu/20251112_162724-desktop-1200w.webp"
+                 srcset="images/mutianyu/20251112_162724-thumb-480w.webp 480w,
+                         images/mutianyu/20251112_162724-content-960w.webp 960w,
+                         images/mutianyu/20251112_162724-desktop-1200w.webp 1200w"
+                 sizes="(max-width: 768px) 100vw, 400px"
+                 width="4000"
+                 height="2252"
+                 loading="lazy"
+                 decoding="async"
+                 alt="慕田峪長城夕陽暮色">
+            <span class="story-card-badge">2025.11 · 慕田峪</span>
+          </div>
+          <div class="story-card-body">
+            <div>
+              <span class="badge badge-wine" style="margin-bottom: 0.4rem;">⛰️ 世界遺產</span>
+              <h3>慕田峪長城：錢都花了，VIP 卻不用排隊</h3>
+              <p>和難得聚在北京的跨國同事包車登長城。VIP 快速通關沒派上用場，但專車直達與一個多小時的長城暮色，仍是極為舒服的長城初體驗。</p>
+            </div>
+            <a href="blog/mutianyu-great-wall.html" class="btn-read-hub">閱讀慕田峪遊記 →</a>
+          </div>
+        </article>
+
+        <!-- Card 2: Gubei Water Town & Simatai -->
+        <article class="story-grid-card">
+          <div class="story-card-media">
+            <img src="images/gubei/20251114_154539-desktop-1200w.webp"
+                 srcset="images/gubei/20251114_154539-thumb-480w.webp 480w,
+                         images/gubei/20251114_154539-content-960w.webp 960w,
+                         images/gubei/20251114_154539-desktop-1200w.webp 1200w"
+                 sizes="(max-width: 768px) 100vw, 400px"
+                 width="3782"
+                 height="2129"
+                 loading="lazy"
+                 decoding="async"
+                 alt="古北水鎮瓦舍與遠方司馬台長城">
+            <span class="story-card-badge">2025·2026 · 密雲</span>
+          </div>
+          <div class="story-card-body">
+            <div>
+              <span class="badge badge-alpine" style="margin-bottom: 0.4rem;">🛶 水鄉與夜長城</span>
+              <h3>古北水鎮與司馬台：一人住客棧、帶女兒住大飯店</h3>
+              <p>明知是人造度假區，卻能營運十多年維持乾淨精緻、四季玩法徹底翻盤。秋天出差獨遊搭搖櫓船、初夏帶女兒重返登司馬台夜長城看無人機秀。</p>
+            </div>
+            <a href="blog/gubei-water-town-simatai.html" class="btn-read-hub">閱讀古北水鎮遊記 →</a>
+          </div>
+        </article>
+
+        <!-- Card 3: Jingshan Park & Forbidden City -->
+        <article class="story-grid-card">
+          <div class="story-card-media">
+            <img src="images/jingshan/20260613_165225-desktop-1200w.webp"
+                 srcset="images/jingshan/20260613_165225-thumb-480w.webp 480w,
+                         images/jingshan/20260613_165225-content-960w.webp 960w,
+                         images/jingshan/20260613_165225-desktop-1200w.webp 1200w"
+                 sizes="(max-width: 768px) 100vw, 400px"
+                 width="3954"
+                 height="2226"
+                 loading="lazy"
+                 decoding="async"
+                 alt="萬春亭俯瞰紫禁城全貌中軸線">
+            <span class="story-card-badge">2026.06 · 景山</span>
+          </div>
+          <div class="story-card-body">
+            <div>
+              <span class="badge badge-gold" style="margin-bottom: 0.4rem;">🏛️ 皇城中軸線</span>
+              <h3>景山公園：下午 16:00 臨時問 AI，爬上十幾層樓俯瞰紫禁城</h3>
+              <p>不用提早幾週搶故宮門票，出發前手機買好兩塊錢門票。只要爬十幾層樓高的萬春亭，整座紫禁城金黃琉璃瓦頂與端正中軸線全景盡收眼底。</p>
+            </div>
+            <a href="blog/jingshan-park-forbidden-city.html" class="btn-read-hub">閱讀景山公園遊記 →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="../core/js/app.js"></script>
+  <script src="../core/js/main.js"></script>
+</body>
+</html>

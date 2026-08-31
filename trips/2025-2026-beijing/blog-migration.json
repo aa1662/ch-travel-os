@@ -14,8 +14,8 @@
       "og_url": "https://chxtravel.com/2025-2026-beijing/blog/mutianyu-great-wall.html",
       "og_image": "https://chxtravel.com/2025-2026-beijing/images/mutianyu/20251112_153025-desktop-1200w.webp",
       "prev_link": "../index.html",
-      "prev_title": "← 北京旅程總覽",
-      "next_title": "下一篇：古北水鎮與司馬台",
+      "prev_title": "北京旅程總覽",
+      "next_title": "古北水鎮與司馬台",
       "gallery_groups": [
         {
           "id": "mutianyu-landscape",
@@ -105,9 +105,9 @@
       "og_url": "https://chxtravel.com/2025-2026-beijing/blog/gubei-water-town-simatai.html",
       "og_image": "https://chxtravel.com/2025-2026-beijing/images/gubei/20251114_164153-desktop-1200w.webp",
       "prev_link": "mutianyu-great-wall.html",
-      "prev_title": "← 慕田峪長城",
-      "next_link": "../index.html",
-      "next_title": "回到北京旅程總覽",
+      "prev_title": "慕田峪長城",
+      "next_link": "jingshan-park-forbidden-city.html",
+      "next_title": "景山公園",
       "gallery_groups": [
         {
           "id": "gubei-landscape",
@@ -332,6 +332,83 @@
           ]
         }
       ]
+    },
+    {
+      "id": "jingshan",
+      "title": "景山公園：下午 16:00 臨時問 AI，爬上十幾層樓俯瞰整座紫禁城",
+      "source": "trips/2025-2026-beijing/sources/blog/jingshan-park-forbidden-city.html",
+      "output": "docs/2025-2026-beijing/blog/jingshan-park-forbidden-city.html",
+      "image_folder": "jingshan",
+      "gallery_groups": [
+        {
+          "id": "jingshan-landscape",
+          "title": "景山公園與紫禁城全景 · 橫式攝影精選",
+          "items": [
+            {
+              "image": "20260613_163739.jpg",
+              "title": "景山公園南門花圃 · 06.13 16:37 · S23 f/1.8 1/372s ISO25"
+            },
+            {
+              "image": "20260613_164818.jpg",
+              "title": "山腰眺望神武門 · 06.13 16:48 · S23 3x f/2.4 1/225s ISO25"
+            },
+            {
+              "image": "20260613_165225.jpg",
+              "title": "萬春亭俯瞰紫禁城全貌 · 06.13 16:52 · S23 f/1.8 1/317s ISO25"
+            },
+            {
+              "image": "20260613_165241.jpg",
+              "title": "萬春亭俯瞰故宮主殿 · 06.13 16:52 · S23 3x f/2.4 1/193s ISO25"
+            },
+            {
+              "image": "20260613_165310.jpg",
+              "title": "萬春亭俯瞰北京天際線 · 06.13 16:53 · S23 f/1.8 1/348s ISO25"
+            },
+            {
+              "image": "20260613_172025.jpg",
+              "title": "京師大學堂分科大學舊址 · 06.13 17:20 · S23 f/1.8 1/180s ISO200"
+            }
+          ]
+        },
+        {
+          "id": "jingshan-portrait",
+          "title": "景山漫步與老胡同 · 直式旅途紀實",
+          "items": [
+            {
+              "image": "20260613_105421.jpg",
+              "title": "北京中醫藥大學良鄉校區 · 06.13 10:54 · S23 f/1.8 1/3798s ISO25"
+            },
+            {
+              "image": "20260613_163807.jpg",
+              "title": "神武門古城門框景 · 06.13 16:38 · S23 3x f/2.4 1/120s ISO40"
+            },
+            {
+              "image": "20260613_163854.jpg",
+              "title": "景山南門花圃前留影 · 06.13 16:38 · S23 f/1.8 1/521s ISO32"
+            },
+            {
+              "image": "20260613_165803.jpg",
+              "title": "景山林蔭古亭步道 · 06.13 16:58 · S23 f/1.8 1/196s ISO25"
+            },
+            {
+              "image": "20260613_170012.jpg",
+              "title": "景山石階與山頂古建 · 06.13 17:00 · S23 f/1.8 1/120s ISO200"
+            },
+            {
+              "image": "20260613_172014.jpg",
+              "title": "胡同四合院門樓福字 · 06.13 17:20 · S23 f/1.8 1/120s ISO160"
+            }
+          ]
+        }
+      ],
+      "preserve_gallery_groups": true,
+      "footer_center": "gallery",
+      "prev_link": "gubei-water-town-simatai.html",
+      "prev_title": "古北水鎮與司馬台",
+      "next_link": "../index.html",
+      "next_title": "北京旅程總覽",
+      "og_url": "https://chxtravel.com/2025-2026-beijing/blog/jingshan-park-forbidden-city.html",
+      "og_image": "https://chxtravel.com/2025-2026-beijing/images/jingshan/20260613_165225-desktop-1200w.webp"
     }
   ]
 }
