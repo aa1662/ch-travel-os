@@ -106,36 +106,57 @@ class TravelOSMultiTripHandler(SimpleHTTPRequestHandler):
                     return
 
             # 0.1 靜態圖片智能路由 (支援跨旅程 /images/ 與 .jpg 自動解析至對應 WebP derivative)
-            if "/images/" in path:
+            if "/images/" in path or path.lower().endswith((".webp", ".jpg", ".png", ".heic")):
                 clean_rel = path.lstrip("/")
                 direct_file = DOCS_DIR / clean_rel
                 
                 # 若直接路徑不存在，嘗試在各旅程資料夾下尋找
                 if not direct_file.exists() or not direct_file.is_file():
                     trip_dirs = [d for d in DOCS_DIR.iterdir() if d.is_dir() and d.name != "core"]
-                    for t_dir in trip_dirs:
+                    stem = Path(clean_rel).stem
+                    parts = Path(clean_rel).parts
+                    
+                    # 判斷是否指定特定旅程 (如 2025-2026-beijing)
+                    target_trip_dir = next((d for d in trip_dirs if d.name in parts), None)
+                    search_dirs = [target_trip_dir] if target_trip_dir else trip_dirs
+                    
+                    # 找出 subfolder 如 gubei / mutianyu / day-01
+                    img_folder = ""
+                    if "images" in parts:
+                        idx = parts.index("images")
+                        if idx + 1 < len(parts):
+                            img_folder = parts[idx + 1]
+                    
+                    for t_dir in search_dirs:
+                        if not t_dir:
+                            continue
+                        # 1. 嘗試直接子路徑
                         cand = t_dir / clean_rel
                         if cand.exists() and cand.is_file():
                             direct_file = cand
                             break
                         if clean_rel.startswith("images/"):
-                            cand2 = t_dir / "images" / clean_rel.replace("images/", "")
+                            cand2 = t_dir / clean_rel
                             if cand2.exists() and cand2.is_file():
                                 direct_file = cand2
                                 break
-                        # 若為 .jpg，尋找其已轉檔之 WebP derivative
-                        if clean_rel.lower().endswith((".jpg", ".png", ".heic")):
-                            stem = Path(clean_rel).stem
-                            parts = Path(clean_rel).parts
-                            # 找出目錄如 day-01
-                            img_folder = next((p for p in parts if p.startswith("day-")), "")
-                            if img_folder:
-                                matches = list((t_dir / "images" / img_folder).glob(f"{stem}*.webp"))
+                        # 2. 尋找 WebP derivatives
+                        if img_folder:
+                            folder_path = t_dir / "images" / img_folder
+                            if folder_path.exists():
+                                matches = list(folder_path.glob(f"{stem}*.webp"))
                                 if matches:
-                                    # 優先挑選 content 或 desktop 或 thumb
-                                    pref = next((m for m in matches if "-content-" in m.name), matches[0])
+                                    pref = next((m for m in matches if "-content-" in m.name or "-desktop-" in m.name or "-thumb-" in m.name or "-lightbox-" in m.name), matches[0])
                                     direct_file = pref
                                     break
+                        # 3. 若無特定資料夾，在整個 t_dir / images 遞迴尋找
+                        images_dir = t_dir / "images"
+                        if images_dir.exists():
+                            matches = list(images_dir.rglob(f"{stem}*.webp"))
+                            if matches:
+                                pref = next((m for m in matches if "-content-" in m.name or "-desktop-" in m.name or "-thumb-" in m.name or "-lightbox-" in m.name), matches[0])
+                                direct_file = pref
+                                break
 
                 if direct_file.exists() and direct_file.is_file():
                     self.send_file(direct_file)
@@ -157,10 +178,21 @@ class TravelOSMultiTripHandler(SimpleHTTPRequestHandler):
                             "id": trip_slug,
                             "name": trip_slug.replace("-", " ").title(),
                             "dest": get_trip_dest(trip_slug),
+                            "hubs": [],
                             "blogs": [],
                             "timelines": [],
                             "previews": []
                         }
+
+                        hub_source = trip_dir / "sources" / "index.html"
+                        if hub_source.exists():
+                            trip_entry["hubs"].append({
+                                "id": "index",
+                                "title": "旅程總覽",
+                                "file": f"trips/{trip_slug}/sources/index.html",
+                                "output": f"docs/{trip_entry['dest']}/index.html",
+                                "image_folder": "day-01"
+                            })
 
                         if blog_cfg.exists():
                             try:
@@ -366,6 +398,12 @@ class TravelOSMultiTripHandler(SimpleHTTPRequestHandler):
                         build_msg = "已同步重新編譯發布版 Blog HTML！"
                     except Exception as be:
                         build_msg = f"檔案已儲存，但 Blog 編譯時發生錯誤: {be}"
+                elif rel_file.endswith("sources/index.html") or rel_file.endswith("sources\\index.html"):
+                    try:
+                        build_trip(trip_slug)
+                        build_msg = "已同步重新編譯發布版旅程總覽 HTML！"
+                    except Exception as be:
+                        build_msg = f"檔案已儲存，但旅程總覽編譯時發生錯誤: {be}"
                 elif "sources/timeline" in rel_file:
                     try:
                         build_timelines(trip_slug)
@@ -420,6 +458,8 @@ class TravelOSMultiTripHandler(SimpleHTTPRequestHandler):
                 dest_slug = get_trip_dest(trip_slug)
                 if "sources/blog" in rel_file:
                     build_trip(trip_slug)
+                elif rel_file.endswith("sources/index.html") or rel_file.endswith("sources\\index.html"):
+                    build_trip(trip_slug)
                 elif "sources/timeline" in rel_file:
                     build_timelines(trip_slug)
 
@@ -462,6 +502,9 @@ class TravelOSMultiTripHandler(SimpleHTTPRequestHandler):
         if not self.is_readable_source_path(trip_slug, target_path):
             return False
         trip_root = (TRIPS_DIR / trip_slug).resolve()
+        hub_source = (trip_root / "sources" / "index.html").resolve()
+        if target_path == hub_source:
+            return True
         return any(is_relative_to(target_path, trip_root.joinpath(*parts).resolve()) for parts in WRITABLE_TRIP_SUBDIRS)
 
     def is_trusted_json_post(self):

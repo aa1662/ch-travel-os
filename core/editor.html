@@ -390,6 +390,7 @@
       <!-- 內容類型選擇器 -->
       <select class="editor-select" id="typeSelect" aria-label="選擇類型">
         <option value="blogs">📖 深度圖文遊記</option>
+        <option value="hubs">🗺️ 旅程總覽</option>
         <option value="timelines">⏱️ 純時間表</option>
         <option value="previews">🌟 改寫預覽 (Preview)</option>
       </select>
@@ -526,8 +527,22 @@
           }
 
           // 若有 URL 指定 type
-          if (typeParam && ['blogs', 'timelines', 'previews'].includes(typeParam)) {
-            typeSelect.value = typeParam;
+          const typeAliases = {
+            hub: 'hubs',
+            hubs: 'hubs',
+            index: 'hubs',
+            blogs: 'blogs',
+            blog: 'blogs',
+            timelines: 'timelines',
+            timeline: 'timelines',
+            previews: 'previews',
+            preview: 'previews'
+          };
+          const normalizedType = typeParam ? typeParam.toLowerCase() : '';
+          if (normalizedType && typeAliases[normalizedType]) {
+            typeSelect.value = typeAliases[normalizedType];
+          } else if (pageParam && ['index', 'hub', 'journey-hub'].includes(pageParam.toLowerCase())) {
+            typeSelect.value = 'hubs';
           }
 
           updatePageOptions(pageParam);
@@ -997,7 +1012,9 @@
         if (data.success) {
           markClean();
           btnRestore.style.display = 'inline-flex';
-          showToast(data.message || '儲存並重新編譯發布成功！');
+          const promptCopied = await copyReleasePromptToClipboard();
+          const baseMessage = data.message || '儲存並重新編譯發布成功！';
+          showToast(`${baseMessage}${promptCopied ? '已複製後續發布 prompt。' : '剪貼簿寫入失敗，請從 Console 取用 release prompt。'}`);
         } else {
           showToast(data.error || '儲存失敗', true);
           markDirty();
@@ -1005,6 +1022,49 @@
       } catch (err) {
         showToast('無法與伺服器通訊', true);
         markDirty();
+      }
+    }
+
+    async function copyReleasePromptToClipboard() {
+      if (!currentTrip || !currentPage) return false;
+
+      const now = new Date().toISOString();
+      const pageType = typeSelect.value;
+      const sourceFile = currentPage.file || '';
+      const outputFile = currentPage.output || '';
+      const buildCommand = pageType === 'timelines'
+        ? `python tools\\build_timeline_html.py --trip ${currentTrip.id}`
+        : `python tools\\build_trip_html.py --trip ${currentTrip.id}`;
+
+      const prompt = `請在 C:\\Data\\charlotte-ai-os-dev\\ch-travel-os 繼續處理 CH x Travel 本機 editor 儲存後的發布 flow。
+
+本次 editor 儲存資訊：
+- 儲存時間：${now}
+- Journey：${currentTrip.id}
+- 類型：${pageType}
+- Source of Truth：${sourceFile}
+- 預期公開輸出：${outputFile}
+
+請自行判斷是否已經發布到 Cloudflare，不要只看本機 docs。
+
+必要流程：
+1. 先讀專案 AGENTS.md，並執行 git status -sb；只處理這次 editor 儲存造成的相關檔案，不要 stage 或覆蓋無關 dirty changes。
+2. 確認 source 與 docs 輸出是否同步；必要時執行：${buildCommand}
+3. 執行 python tools\\validate_images.py 與 git diff --check。
+4. 檢查 Cloudflare Pages 專案 ch-travel 的最新 production deployment 是否已對應目前要發布的 commit/content。可用 wrangler deployment list、live URL 內容比對、或 Cloudflare dashboard 狀態判斷。
+5. 若尚未發布：只 commit 相關檔案，push 到 origin/master，等待或觸發 Cloudflare Pages production deployment，並驗證 https://chxtravel.com/${outputFile.replace(/^docs\//, '')}。
+6. 若已發布：不要重複 deploy；回報目前 commit、Cloudflare production URL、驗證結果。
+
+請最後用繁體中文簡短回報：改了哪些檔案、驗證結果、是否已上 Cloudflare、live URL。`;
+
+      try {
+        console.info('CH Travel release prompt:', prompt);
+        if (!navigator.clipboard) return false;
+        await navigator.clipboard.writeText(prompt);
+        return true;
+      } catch (err) {
+        console.warn('無法寫入剪貼簿', err);
+        return false;
       }
     }
 

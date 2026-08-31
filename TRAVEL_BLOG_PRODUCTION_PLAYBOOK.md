@@ -91,21 +91,27 @@ recommended_use, owner_decision
 
 `recommended_use` 可為 `hero`、`body`、`ig-card`、`photo-note`、`gallery`、`archive`、`reject`。`owner_decision` 一旦有值，優先於模型建議。
 
-### 5.2 選圖原則
+### 5.2 選圖標準與來源優先序 (Curatorial Standards)
 
-- 正文選「能推進敘事」的照片，不以漂亮程度作唯一標準。
-- 同一景物保留角度、人物、遠近或時間確實不同的照片；淘汰失焦、誤觸、浮水印、AI 標記與無敘事增量的近似圖。
-- IG 是來源與呈現格式之一，不是必須完整搬入文章的固定區塊。
-- 正文照片與 IG 縮圖可以因版面對稱而重複顯示，但同一影像只能註冊一個 Lightbox slide。
-- 燈箱通常可比正文收錄更多照片，但仍需精選；按拍攝時間排序。
-- 同一篇的橫式與直式燈箱分組，入口清楚，組內不得重複。
-- 被作者明確排除的照片不得因後續 rebuild 再度出現。
+選圖必須同時服務**正文故事推進**與**燈箱時間線體驗**，嚴格遵守以下體系：
 
-### 5.3 原圖與 derivatives
+1. **來源優先序 (SSoT Hierarchy)**：
+   - **第一優先**：作者手動建立的精選資料庫（如 `*精選` 目錄或人工指定清單），代表作者第一手審美與核心回憶。
+   - **第二優先**：正文敘事所需的大景補強（如 16:9 橫幅 Hero、章節轉換滿版大圖、清晨壓軸大景）。
+   - **第三優先**：跨季或跨次造訪的對比視角（如初夏綠意 vs 深秋紅葉、打鐵花 vs 無人機秀）。
+2. **四大選圖判斷標準 (4 Curatorial Criteria)**：
+   - 🎯 **敘事責任 (Narrative Responsibility)**：每張入選圖必須在正文或燈箱中承擔具體的「事實證據」，拒絕無敘事增量的純風景。
+   - 🔍 **去重與淘汰連拍 (Deduplication)**：同一角度連拍只留 1 張對焦最銳利、曝光動態範圍最好的代表；淘汰晃動、過暗、浮水印與近似圖。
+   - 📐 **構圖與版位適配 (Layout Fitness)**：橫圖（16:9）專供滿版 Hero 與 Wide Photo；直圖（3:4 / 9:16）專供 1:1 等高 Story-Split 與 4 格 IG Post Card。
+   - 🛡️ **隱私與肖像安全 (Privacy Protection)**：優先選用建築、地景、步道與光影氣氛，避免路人正面特寫與私人同行者過度暴露。
+3. **燈箱嚴格時間排序 (Chronological Ordering)**：
+   - 燈箱圖庫（`landscape` 與 `portrait` 分組）必須嚴格依照照片拍攝時間戳記（`YYYYMMDD_HHMMSS`）由早至晚升冪排序，讓讀者滑動燈箱時能完整體會真實的時間軸與光影流轉。
 
-- 核准原圖移入 `masters/<journey>/<day-or-place>/`；未採用但值得保留者可放私人 `_archive-unused/`。
-- `docs/` 只保存 image pipeline 產生的 WebP，不得保存相機原圖、影片或 EXIF／GPS。
-- 不為「也許以後會用」的照片製作公開 derivatives。
+### 5.3 原圖與 derivatives 發布邊界
+
+- **嚴禁全量轉檔**：不為未入選或「也許以後會用」的照片製作公開 derivatives。
+- **精選原圖進 masters**：僅將經過 5.2 節核准的精選原圖移入 `masters/<journey>/<day-or-place>/`。
+- **公開 WebP 隔離**：`docs/` 只保存 image pipeline 產生的 WebP（480w, 960w, 1200w, 1600w），徹底移除 EXIF、GPS 與相機原圖。
 
 ## 6. Stage 2：盲寫母稿
 
@@ -172,10 +178,11 @@ recommended_use, owner_decision
    - *適用場景*：停留 1～2 小時、包車／單一景點、著重現場氛圍、臨場趣味互動與單一核心命題的精煉作品。
    - *節奏公式*：`Hero (16:9 氣勢破題)` ➔ `開篇 Narrative Card (出發背景與起因)` ➔ `Story-Split (1:1 圖文等高，聚焦核心笑點/起點石階)` ➔ `Wide Photo (山脊延伸巨龍)` ➔ `IG 4-Photo Grid (步道、石階與文化遺產標誌)` ➔ `雙向交錯 Split (纜車上下 & 敵樓拱窗框景)` ➔ `Closing Wide Photo (夕陽暮色金光)` ➔ `Summary Card (作者核心評價)` ➔ `4 格乾淨實戰 Bento`。
 
-### 9.2 排版與敘事三大禁令 (Anti-Patterns)
+### 9.2 排版與敘事四大禁令 (Anti-Patterns)
 
 - 🚫 **嚴禁同一事實跳針重複（No Repetitive Looping）**：同一個核心事件（如 VIP 快速通關隨到隨上、纜車上下）在開篇破題後，後續段落**必須推進到新的視角與體驗**（如石階攀爬體感、敵樓避風框景、夕陽光線、與其他長城難易度對比）。嚴禁在正文、各區塊小標、照片札記與 Bento 之間機械式跳針重複同一句事實。
 - 🚫 **嚴禁文字大幅高於照片（Text/Image Height Balance）**：在 `.story-split` 圖文交錯模組中，文字段落必須精簡（控制在 2～3 段內），與旁邊的直式照片高度維持 **1:1 視覺對齊**。若有較長的背景或出發起因，應**先以全幅 `.blog-narrative-card` 破題**，再進入左右圖文 Split，嚴禁出現 6～7 段長文壓過短照片造成單側大片留白。
+- 🚫 **嚴禁正文與圖集重複註冊 GLightbox（Gallery Opener Standard）**：正文中的所有圖片（Hero、Wide Photo、Story-Split、IG 卡片縮圖）一律使用 `<a class="gallery-opener" data-gallery-open="<image_stem>">` 作為入口觸發器，嚴禁在正文內標籤直接掛載 `class="glightbox"` 與 `data-gallery`。整個頁面的燈箱幻燈片**唯一由底部的 `<div class="gallery-registry">` SSoT 管理**。此規範可杜絕同一照片重複出現在燈箱中，並確保燈箱幻燈片嚴格沿時間軸由早至晚單向推進，徹底避免白天與黑夜來回穿插倒退的混亂體感。
 - 🚫 **嚴禁脫離 SSoT 在 `docs/` 手寫非編譯檔案**：所有正式頁面必須保持 SSoT（`trips/<journey>/sources/blog/*.html`）與 migration config 同步，並透過 `python tools/build_trip_html.py` 原子編譯至 `docs/`，確保 `core/editor.html` 視覺化編輯器、`validate_images.py` 與發布系統 100% 同步。
 
 ### 9.3 核心呈現準則
@@ -291,6 +298,7 @@ python tools/validate_images.py
 [ ] 依文章型態嚴格對齊黃金範本（Osaka 健行型 或 Beijing 散文型）之視覺節奏
 [ ] 檢查圖文 Split 文字高度是否與直式照片 1:1 等高，無文字欄過長失衡
 [ ] 檢查正文、小標、照片札記與 Bento 無同一事實或笑點的跳針重複
+[ ] 檢查正文圖片一律使用 gallery-opener，燈箱唯一由底部 registry 管理，零重複 slide 且按時間升冪排列
 [ ] IG 原貼文已建立 IG 匯出圖／相機原圖／Lightbox 映射，並排除隱私與重複影像
 [ ] 判斷非正文照片是否值得做旅途照片札記；沒有新增價值就只留 gallery
 [ ] 更新 source、config、正文圖、IG／照片札記、gallery 與 Bento
