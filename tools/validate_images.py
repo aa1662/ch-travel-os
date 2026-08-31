@@ -296,6 +296,21 @@ def validate_docs():
                         f"[燈箱入口無對應照片] {', '.join(missing_targets)} in {hf.relative_to(DOCS_DIR)}"
                     )
 
+            # 4.4.1 驗證 gallery-opener 的 data-gallery-open 與內部 img.src 一致性（避免點 A 圖放大變 B 圖）
+            for opener_match in re.finditer(r'<a\b[^>]*class=["\'][^"\']*gallery-opener[^"\']*["\'][^>]*>([\s\S]*?)</a>', content, re.IGNORECASE):
+                opener_tag = opener_match.group(0)
+                inner_content = opener_match.group(1)
+                open_target_match = re.search(r'data-gallery-open=["\']([^"\']+)["\']', opener_tag, re.IGNORECASE)
+                img_src_match = re.search(r'<img\b[^>]*src=["\']([^"\']+)["\']', inner_content, re.IGNORECASE)
+                if open_target_match and img_src_match:
+                    open_target = open_target_match.group(1).strip()
+                    img_src = img_src_match.group(1).strip()
+                    img_stem = Path(img_src).stem.split('-')[0]
+                    if open_target != img_stem:
+                        errors.append(
+                            f"[縮圖與燈箱目標不一致] data-gallery-open='{open_target}' 但內部圖片為 '{img_stem}' in {hf.relative_to(DOCS_DIR)}"
+                        )
+
             # 4.5 檢查所有本機連結與資源是否皆存在 (避免 404 與無效錨點)
             ref_pattern = re.compile(r'(?:href|src)=["\']([^"\']+)["\']')
             for match in ref_pattern.finditer(clean_html):
