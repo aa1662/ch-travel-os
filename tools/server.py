@@ -524,6 +524,27 @@ class TravelOSMultiTripHandler(SimpleHTTPRequestHandler):
                 return False
         return True
 
+    def get_content_type(self, file_path):
+        ctype, _ = mimetypes.guess_type(str(file_path))
+        if ctype:
+            if ctype.startswith("text/") or ctype in ("application/json", "application/javascript"):
+                return f"{ctype}; charset=utf-8"
+            return ctype
+        ext = Path(file_path).suffix.lower()
+        if ext == ".webp":
+            return "image/webp"
+        if ext == ".svg":
+            return "image/svg+xml"
+        if ext in (".html", ".htm"):
+            return "text/html; charset=utf-8"
+        if ext == ".css":
+            return "text/css; charset=utf-8"
+        if ext == ".js":
+            return "text/javascript; charset=utf-8"
+        if ext == ".json":
+            return "application/json; charset=utf-8"
+        return "application/octet-stream"
+
     def send_file(self, file_path):
         ctype = self.get_content_type(file_path)
         try:
@@ -553,7 +574,7 @@ class TravelOSMultiTripHandler(SimpleHTTPRequestHandler):
 def main():
     server_address = ("127.0.0.1", PORT)
     handler_class = partial(TravelOSMultiTripHandler, directory=str(DOCS_DIR))
-    ThreadingHTTPServer.allow_reuse_address = False
+    ThreadingHTTPServer.allow_reuse_address = True
     httpd = ThreadingHTTPServer(server_address, handler_class)
     print(f"============================================================", flush=True)
     print(f"🌍 CH Travel OS 2.0 Multi-Trip Server & Editor API Running!", flush=True)
