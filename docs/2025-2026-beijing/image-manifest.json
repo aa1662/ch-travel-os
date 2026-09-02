@@ -2,7 +2,7 @@
   "pipeline_version": "2.0.0",
   "trip": "2025-2026-beijing",
   "dest": "2025-2026-beijing",
-  "generated_at": "2026-09-02T13:51:29.641985+00:00",
+  "generated_at": "2026-09-02T14:40:12.620429+00:00",
   "quality": 84,
   "profiles": [
     {
@@ -2568,6 +2568,55 @@
           "publicPath": "2025-2026-beijing/images/gubei/20260614_200724-lightbox-900w.webp",
           "bytes": 113512,
           "hash": "bd20b7d5d7ef50b6a213282ba7b11e5f4b3c7acc7d1076e356cf28b6afd11c6b"
+        }
+      ]
+    },
+    "gubei/20260614_201228.jpg": {
+      "id": "20260614_201228",
+      "original_filename": "20260614_201228.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "2c9e9de205f7c0ea6213e39e8b00013046378257a14b2e73835f2ba55594ef4e",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260614_201228-thumb-480w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/20260614_201228-thumb-480w.webp",
+          "bytes": 22058,
+          "hash": "ab746f7b8ba7784bd24a48d034f4a0ec82ba24ba5ca63b13710db696cd5cad2e"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260614_201228-content-960w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/20260614_201228-content-960w.webp",
+          "bytes": 80030,
+          "hash": "33896b45c5a9d3f784d727dd2cc2b04d5df883f16dd48cb630fbbe9ded276f14"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260614_201228-desktop-1200w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/20260614_201228-desktop-1200w.webp",
+          "bytes": 120038,
+          "hash": "bbc7333677393707af675f7f90799030c2ee63bd58151c6131ebdddbd9ada992"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260614_201228-lightbox-1600w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/20260614_201228-lightbox-1600w.webp",
+          "bytes": 190772,
+          "hash": "6a88a87526b6d325a6e3be3295c2879ef5ca6a47c3233818bee40bec48bf49ac"
         }
       ]
     },
