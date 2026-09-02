@@ -978,10 +978,13 @@
         if (contentDeriv.width) targetImg.setAttribute('width', contentDeriv.width);
         if (contentDeriv.height) targetImg.setAttribute('height', contentDeriv.height);
 
-        const parentLink = targetImg.closest('a.glightbox');
+        const parentLink = targetImg.closest('a');
         if (parentLink) {
           parentLink.href = `../${destSlug}/images/${imgFolder}/${lightboxDeriv.filename}`;
           parentLink.dataset.origHref = `../images/${imgFolder}/${lightboxDeriv.filename}`;
+          if (parentLink.hasAttribute('data-gallery-open')) {
+            parentLink.setAttribute('data-gallery-open', imgData.id);
+          }
         }
       } else {
         targetImg.src = `../${destSlug}/images/${imgFolder}/${contentDeriv.filename || imgData.original_name}`;
@@ -992,10 +995,13 @@
           delete targetImg.dataset.origSrcset;
         }
 
-        const parentLink = targetImg.closest('a.glightbox');
+        const parentLink = targetImg.closest('a');
         if (parentLink) {
           parentLink.href = `../${destSlug}/images/${imgFolder}/${lightboxDeriv.filename || imgData.original_name}`;
           parentLink.dataset.origHref = `../images/${imgFolder}/${imgData.original_name}`;
+          if (parentLink.hasAttribute('data-gallery-open')) {
+            parentLink.setAttribute('data-gallery-open', imgData.id);
+          }
         }
       }
 
@@ -1033,7 +1039,7 @@
           img.removeAttribute('data-orig-srcset');
         }
       });
-      clone.querySelectorAll('a.glightbox').forEach(link => {
+      clone.querySelectorAll('a').forEach(link => {
         if (link.dataset.origHref) {
           link.setAttribute('href', link.dataset.origHref);
           link.removeAttribute('data-orig-href');
