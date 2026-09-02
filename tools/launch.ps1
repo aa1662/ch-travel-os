@@ -46,7 +46,9 @@ if (-not $serverReady) {
     }
 }
 
-# 開啟視覺化編輯器與首頁 (正確 Portal 根路由)
-Start-Process "http://127.0.0.1:8080/core/editor.html"
+# 先開啟首頁，再開啟視覺化編輯器 (讓 Editor 留在最前景焦點)
 Start-Process "http://127.0.0.1:8080/index.html"
+Start-Sleep -Milliseconds 600
+Start-Process "http://127.0.0.1:8080/core/editor.html"
+
 
