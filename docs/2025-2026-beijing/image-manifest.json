@@ -2,7 +2,7 @@
   "pipeline_version": "2.0.0",
   "trip": "2025-2026-beijing",
   "dest": "2025-2026-beijing",
-  "generated_at": "2026-08-31T17:00:39.802090+00:00",
+  "generated_at": "2026-09-02T13:51:29.641985+00:00",
   "quality": 84,
   "profiles": [
     {
@@ -2277,52 +2277,101 @@
         }
       ]
     },
-    "gubei/20260614_152430.jpg": {
-      "id": "20260614_152430",
-      "original_filename": "20260614_152430.jpg",
+    "gubei/20260614_152425.jpg": {
+      "id": "20260614_152425",
+      "original_filename": "20260614_152425.jpg",
       "original_width": 2252,
       "original_height": 4000,
-      "source_hash": "7952333a752194bfe36600c5ab63777f70e2247c0a5203cce93520b8d96b2a71",
+      "source_hash": "b44a8284a3f1002be1330179c55b690d5eaa59c33cd0c6545c19399a7c52d390",
       "derivatives": [
         {
           "profile": "thumb",
           "width": 270,
           "height": 480,
           "format": "webp",
-          "filename": "20260614_152430-thumb-270w.webp",
-          "publicPath": "2025-2026-beijing/images/gubei/20260614_152430-thumb-270w.webp",
-          "bytes": 50322,
-          "hash": "29e6e08885f14d22009806907f6e4700cf416375de7e140f657fb3bc3dc8c556"
+          "filename": "20260614_152425-thumb-270w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/20260614_152425-thumb-270w.webp",
+          "bytes": 50986,
+          "hash": "cae95128ed32c7f93444528760b3862a579797abcf3d4fd5dfc1d64c316a067d"
         },
         {
           "profile": "content",
           "width": 540,
           "height": 960,
           "format": "webp",
-          "filename": "20260614_152430-content-540w.webp",
-          "publicPath": "2025-2026-beijing/images/gubei/20260614_152430-content-540w.webp",
-          "bytes": 171926,
-          "hash": "4ffb42ca12fd78277799d9e3f8b635305be61d8c916873ba7d9fb3a42910b09a"
+          "filename": "20260614_152425-content-540w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/20260614_152425-content-540w.webp",
+          "bytes": 186016,
+          "hash": "d9e08cda539f93a868f150d4dfcbc1f87a1af8c17f81b94bd7d04a12348bc255"
         },
         {
           "profile": "desktop",
           "width": 676,
           "height": 1200,
           "format": "webp",
-          "filename": "20260614_152430-desktop-676w.webp",
-          "publicPath": "2025-2026-beijing/images/gubei/20260614_152430-desktop-676w.webp",
-          "bytes": 253848,
-          "hash": "f20bdde629857a305024ff462ad91c25c5d4dca538047ec14e9ebf6bfb62b70d"
+          "filename": "20260614_152425-desktop-676w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/20260614_152425-desktop-676w.webp",
+          "bytes": 271194,
+          "hash": "7252bce74a925ccfd6c97d898a5ea34f42d7bd48b188ea11dbb393ba5c885ae4"
         },
         {
           "profile": "lightbox",
           "width": 901,
           "height": 1600,
           "format": "webp",
-          "filename": "20260614_152430-lightbox-901w.webp",
-          "publicPath": "2025-2026-beijing/images/gubei/20260614_152430-lightbox-901w.webp",
-          "bytes": 420242,
-          "hash": "7d82785d49c420f673d0a48c25064c98a24c229c59498663cf1341bf9e62c2c9"
+          "filename": "20260614_152425-lightbox-901w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/20260614_152425-lightbox-901w.webp",
+          "bytes": 455548,
+          "hash": "e5ea2a1115af779e0a6a8daca7cc3de8808094edf5226d0eecb3385cabf2c7fe"
+        }
+      ]
+    },
+    "gubei/20260614_153107.jpg": {
+      "id": "20260614_153107",
+      "original_filename": "20260614_153107.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "99f66b26c52c90f1df53a4b78149ab396cf54fa601747cab75887b2fb8b8409c",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20260614_153107-thumb-480w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/20260614_153107-thumb-480w.webp",
+          "bytes": 27910,
+          "hash": "e7a1019f6e375853628c6fa584f9211f7d25616df74ade0badbdfb412c1ec438"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20260614_153107-content-960w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/20260614_153107-content-960w.webp",
+          "bytes": 80750,
+          "hash": "c3abaffd8aa32ad3ae8628082412bdc068c0b361e1a9d93b2ff9b6a4ab0f2171"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20260614_153107-desktop-1200w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/20260614_153107-desktop-1200w.webp",
+          "bytes": 108934,
+          "hash": "ea9460c7f82c8ddbed2c458b9abd9ce84a41ee42d3a2b6e8b1a565a1204bd0a6"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20260614_153107-lightbox-1600w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/20260614_153107-lightbox-1600w.webp",
+          "bytes": 162638,
+          "hash": "237c085a1e332aa13fc14c18b41929ea5956ed834257cc15a7524b12b9c12b36"
         }
       ]
     },
@@ -2421,6 +2470,153 @@
           "publicPath": "2025-2026-beijing/images/gubei/20260614_195454-lightbox-1600w.webp",
           "bytes": 100080,
           "hash": "410c01b3fab7a87e50a4ccf29eaa05bebb4aff426165473a318d1fa9e5e9e153"
+        }
+      ]
+    },
+    "gubei/20260614_200419.jpg": {
+      "id": "20260614_200419",
+      "original_filename": "20260614_200419.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "ab0785109408132f30a73e3997b8af4b7c05d1107d27b6b5a97776f7fa266892",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20260614_200419-thumb-270w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/20260614_200419-thumb-270w.webp",
+          "bytes": 11290,
+          "hash": "8a4ab1344c69f3d73b00baea9058e867800ddae936813ea9cb28225b7e482a9d"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20260614_200419-content-540w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/20260614_200419-content-540w.webp",
+          "bytes": 36974,
+          "hash": "c95d5a998e979de74953864150f65988c8b0bb219806d2d2ec3a75273ccddbe9"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20260614_200419-desktop-676w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/20260614_200419-desktop-676w.webp",
+          "bytes": 54310,
+          "hash": "b17afcff2053a622885625ff5695b667511565fff6c611e4387a2172ff82f5ad"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20260614_200419-lightbox-901w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/20260614_200419-lightbox-901w.webp",
+          "bytes": 87354,
+          "hash": "75abb7451c2e3c00e83f72480bdba34001917d6208346f44d9f99d45444df4a3"
+        }
+      ]
+    },
+    "gubei/20260614_200724.jpg": {
+      "id": "20260614_200724",
+      "original_filename": "20260614_200724.jpg",
+      "original_width": 2304,
+      "original_height": 4096,
+      "source_hash": "357e24297d7d48646eca855122ea60b2eb924db7719e1dfacf411cc5ceb44506",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20260614_200724-thumb-270w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/20260614_200724-thumb-270w.webp",
+          "bytes": 17902,
+          "hash": "31a1285fecde53375fccf835f2c17185b23a5c05ddfef073c253ccc3de48961d"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20260614_200724-content-540w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/20260614_200724-content-540w.webp",
+          "bytes": 52972,
+          "hash": "76842fd3dab48969149c85ee631435fe81c078adcb78291190849373261e636e"
+        },
+        {
+          "profile": "desktop",
+          "width": 675,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20260614_200724-desktop-675w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/20260614_200724-desktop-675w.webp",
+          "bytes": 75088,
+          "hash": "bd0fcd2453ed37aaddf68950d7b67e61c47c355e6ff3fa19dab65252f2a0eeed"
+        },
+        {
+          "profile": "lightbox",
+          "width": 900,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20260614_200724-lightbox-900w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/20260614_200724-lightbox-900w.webp",
+          "bytes": 113512,
+          "hash": "bd20b7d5d7ef50b6a213282ba7b11e5f4b3c7acc7d1076e356cf28b6afd11c6b"
+        }
+      ]
+    },
+    "gubei/20260614_210755.jpg": {
+      "id": "20260614_210755",
+      "original_filename": "20260614_210755.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "216f5fb92f262667cd7ea8af9cb68f64e4f33063ca547657d49c20456aac0b1b",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20260614_210755-thumb-270w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/20260614_210755-thumb-270w.webp",
+          "bytes": 34400,
+          "hash": "9d8dc4c50216acc812cb63ad5385f3abc8a9613d9faf0092a6b5bd72737a6db3"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20260614_210755-content-540w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/20260614_210755-content-540w.webp",
+          "bytes": 124436,
+          "hash": "929754004c113e80b0e74f1f37bc9f0f8891393f1e75be8e381f272089536263"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20260614_210755-desktop-676w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/20260614_210755-desktop-676w.webp",
+          "bytes": 186818,
+          "hash": "7e5e133e5858cb08b5b8ba99eb5df3edc9d51fb1f729b06990726c6944993e5d"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20260614_210755-lightbox-901w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/20260614_210755-lightbox-901w.webp",
+          "bytes": 309360,
+          "hash": "03e165f355b96a84e4f71119c128a071f569fbbfdf59e097b417fa986fd9a00f"
         }
       ]
     },
@@ -2617,6 +2813,153 @@
           "publicPath": "2025-2026-beijing/images/gubei/20260614_221516-lightbox-1600w.webp",
           "bytes": 296386,
           "hash": "c971bc775287996dc0dd00280cf0b5c38a403a4a690d11f1493b63c131456e56"
+        }
+      ]
+    },
+    "gubei/IMG20260614155324.jpg": {
+      "id": "IMG20260614155324",
+      "original_filename": "IMG20260614155324.jpg",
+      "original_width": 2304,
+      "original_height": 4096,
+      "source_hash": "971c75ba8fe096d7a70661e0f0db1e96e151f8374558972d05ec21c59080fb02",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "IMG20260614155324-thumb-270w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/IMG20260614155324-thumb-270w.webp",
+          "bytes": 38136,
+          "hash": "c6b18c40d1a755a37ce503de1eceb17dc96467aa68b0ef5c7489f4747c0d26c5"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "IMG20260614155324-content-540w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/IMG20260614155324-content-540w.webp",
+          "bytes": 146880,
+          "hash": "f51a1f1d04e96908c10990255b0b76191dec3d9f381c439e2abb36336544bc25"
+        },
+        {
+          "profile": "desktop",
+          "width": 675,
+          "height": 1200,
+          "format": "webp",
+          "filename": "IMG20260614155324-desktop-675w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/IMG20260614155324-desktop-675w.webp",
+          "bytes": 230824,
+          "hash": "350048d8c358419f1090d31abff881f4d26422aa1d3d02f6e8c1abadbaca1eef"
+        },
+        {
+          "profile": "lightbox",
+          "width": 900,
+          "height": 1600,
+          "format": "webp",
+          "filename": "IMG20260614155324-lightbox-900w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/IMG20260614155324-lightbox-900w.webp",
+          "bytes": 407312,
+          "hash": "f76f77d2f5d77dd6e56d175e2dbe42042fcc09e62c904ebdb31bfa2b661c2701"
+        }
+      ]
+    },
+    "gubei/IMG20260614200559_BURST001.jpg": {
+      "id": "IMG20260614200559_BURST001",
+      "original_filename": "IMG20260614200559_BURST001.jpg",
+      "original_width": 2304,
+      "original_height": 4096,
+      "source_hash": "10beea299dffa8ef50f433aacfd7499d79ebaa048e6d0753f690f48458a22d22",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "IMG20260614200559_BURST001-thumb-270w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/IMG20260614200559_BURST001-thumb-270w.webp",
+          "bytes": 21414,
+          "hash": "5e8019f0a470c417f1479f508e9da86c7ae3d708dfd00e7ed3e65001504d14e2"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "IMG20260614200559_BURST001-content-540w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/IMG20260614200559_BURST001-content-540w.webp",
+          "bytes": 55962,
+          "hash": "197d44162772c6c38867d192a0dd3a6368da4fa6b99f8336b98b894151c457b4"
+        },
+        {
+          "profile": "desktop",
+          "width": 675,
+          "height": 1200,
+          "format": "webp",
+          "filename": "IMG20260614200559_BURST001-desktop-675w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/IMG20260614200559_BURST001-desktop-675w.webp",
+          "bytes": 75632,
+          "hash": "6f972ad68235907dd315b40cf07dfca1af39de03675a2503025dba862dc50df0"
+        },
+        {
+          "profile": "lightbox",
+          "width": 900,
+          "height": 1600,
+          "format": "webp",
+          "filename": "IMG20260614200559_BURST001-lightbox-900w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/IMG20260614200559_BURST001-lightbox-900w.webp",
+          "bytes": 117156,
+          "hash": "e6c6a7112dbe90f86c04b454c20e96c4f9331e573a72101f0bd82af64421b96a"
+        }
+      ]
+    },
+    "gubei/IMG20260614215716.jpg": {
+      "id": "IMG20260614215716",
+      "original_filename": "IMG20260614215716.jpg",
+      "original_width": 2304,
+      "original_height": 4096,
+      "source_hash": "d2ec81adf4f47242447359719295a66c6cbc3538368cba01dde893fd0799e1ee",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "IMG20260614215716-thumb-270w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/IMG20260614215716-thumb-270w.webp",
+          "bytes": 24862,
+          "hash": "72a1d0e587cae5eaa5905de6dbccc74f184408c9ccfe66fcd16a823fee1c2557"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "IMG20260614215716-content-540w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/IMG20260614215716-content-540w.webp",
+          "bytes": 77752,
+          "hash": "1ba481604c7949ad9c50dd03ecdc0c1cf1ed6ff547c0270fcf3bd4b64a9dd669"
+        },
+        {
+          "profile": "desktop",
+          "width": 675,
+          "height": 1200,
+          "format": "webp",
+          "filename": "IMG20260614215716-desktop-675w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/IMG20260614215716-desktop-675w.webp",
+          "bytes": 110184,
+          "hash": "c11e4170143cd8fd75c02ff1692408765b9155a2c462fb3e69db352dd2c5eb67"
+        },
+        {
+          "profile": "lightbox",
+          "width": 900,
+          "height": 1600,
+          "format": "webp",
+          "filename": "IMG20260614215716-lightbox-900w.webp",
+          "publicPath": "2025-2026-beijing/images/gubei/IMG20260614215716-lightbox-900w.webp",
+          "bytes": 170204,
+          "hash": "76b835d9ad8ddc3dae3e58a8994b77d034a9354735340877380562d38dab4dfe"
         }
       ]
     },
