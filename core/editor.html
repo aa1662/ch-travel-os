@@ -498,6 +498,49 @@
     const btnModalClose = document.getElementById('btnModalClose');
     const editorToast = document.getElementById('editorToast');
 
+    const EDITABLE_TEXT_SELECTOR = 'h1, h2, h3, h4, p, blockquote, .fun-quote-box, .diptych-quote, .badge, .day-item-desc, .recap-item span, .bento-card li, .ig-post-caption, .ig-post-date, figcaption, .timeline-time-badge';
+    const REMOVABLE_EMPTY_TEXT_SELECTOR = 'p, blockquote, .fun-quote-box, .diptych-quote, .day-item-desc, .ig-post-caption, figcaption';
+    const PROSE_ROOT_SELECTOR = '.blog-narrative-card, .story-split-text, .ig-post-caption, blockquote';
+
+    function isEditableProseDiv(el) {
+      if (el.tagName !== 'DIV' || !el.textContent.trim()) return false;
+      return !el.querySelector('div, section, article, figure, img, picture, video, audio, ul, ol, table, button');
+    }
+
+    function isLegacyProseDiv(el) {
+      return !el.hasAttribute('class') && !el.hasAttribute('style') && isEditableProseDiv(el);
+    }
+
+    function normalizeLegacyProseBlocks(root) {
+      root.querySelectorAll(PROSE_ROOT_SELECTOR).forEach(container => {
+        container.querySelectorAll('div:not([class]):not([style])').forEach(div => {
+          if (!isLegacyProseDiv(div)) return;
+          const paragraph = div.ownerDocument.createElement('p');
+          while (div.firstChild) paragraph.appendChild(div.firstChild);
+          div.replaceWith(paragraph);
+        });
+
+        container.querySelectorAll('p').forEach(paragraph => {
+          const hasMeaningfulContent = paragraph.textContent.trim() || paragraph.querySelector('img, picture, video, audio');
+          if (!hasMeaningfulContent) paragraph.remove();
+        });
+      });
+    }
+
+    function removeEmptyTextBlocks(root) {
+      root.querySelectorAll(REMOVABLE_EMPTY_TEXT_SELECTOR).forEach(el => {
+        const hasMeaningfulContent = el.textContent.trim() || el.querySelector('img, picture, video, audio, iframe');
+        if (!hasMeaningfulContent) el.remove();
+      });
+    }
+
+    function bindEditableText(el) {
+      if (el.__editorTextBound) return;
+      el.__editorTextBound = true;
+      el.setAttribute('contenteditable', 'true');
+      el.addEventListener('input', markDirty);
+    }
+
     // 1. 初始化系統並取得旅程列表
     async function initEditor() {
       try {
@@ -627,15 +670,18 @@
     function parseAndRender(htmlText) {
       const parser = new DOMParser();
       currentSourceDoc = parser.parseFromString(htmlText, 'text/html');
+      normalizeLegacyProseBlocks(currentSourceDoc);
 
       const mainContent = currentSourceDoc.querySelector('main') || currentSourceDoc.body;
       workspace.innerHTML = mainContent.innerHTML;
 
       // 綁定可編輯文字元素
-      const textSelectors = 'h1, h2, h3, h4, p, blockquote, .diptych-quote, .badge, .day-item-desc, .recap-item span, .bento-card li, .ig-post-caption, .ig-post-date, figcaption, .timeline-time-badge';
-      workspace.querySelectorAll(textSelectors).forEach(el => {
-        el.setAttribute('contenteditable', 'true');
-        el.addEventListener('input', markDirty);
+      document.execCommand('defaultParagraphSeparator', false, 'p');
+      workspace.querySelectorAll(EDITABLE_TEXT_SELECTOR).forEach(bindEditableText);
+      workspace.querySelectorAll(PROSE_ROOT_SELECTOR).forEach(container => {
+        container.querySelectorAll('div').forEach(div => {
+          if (isEditableProseDiv(div)) bindEditableText(div);
+        });
       });
 
       // 調整圖片與燈箱路徑以符合 core/ 編輯器的相對位置，確保工作區正常載圖
@@ -965,6 +1011,8 @@
 
       // 複製一份 workspace 並移除編輯器專屬的 wrapper 與屬性
       const clone = workspace.cloneNode(true);
+      normalizeLegacyProseBlocks(clone);
+      removeEmptyTextBlocks(clone);
       clone.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
       clone.querySelectorAll('.img-toolbar').forEach(tb => tb.remove());
       clone.querySelectorAll('.grid-add-photo-card').forEach(card => card.remove());
