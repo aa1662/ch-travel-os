@@ -2,7 +2,7 @@
   "pipeline_version": "2.0.0",
   "trip": "2026-germany",
   "dest": "2026-germany",
-  "generated_at": "2026-08-23T04:31:14.022010+00:00",
+  "generated_at": "2026-09-02T15:09:59.345434+00:00",
   "quality": 84,
   "profiles": [
     {
@@ -11783,6 +11783,55 @@
         }
       ]
     },
+    "day-11/MEITU_20260902_002520446.jpg": {
+      "id": "MEITU_20260902_002520446",
+      "original_filename": "MEITU_20260902_002520446.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "fbf6411ff10f94eecc2a88ce5361864b1576cb785c2d0d356110ec5733459300",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "MEITU_20260902_002520446-thumb-270w.webp",
+          "publicPath": "2026-germany/images/day-11/MEITU_20260902_002520446-thumb-270w.webp",
+          "bytes": 33484,
+          "hash": "333dbc1b927014f320736b6215db70ef5667ee1f17e69429d17a2908e73e37eb"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "MEITU_20260902_002520446-content-540w.webp",
+          "publicPath": "2026-germany/images/day-11/MEITU_20260902_002520446-content-540w.webp",
+          "bytes": 123512,
+          "hash": "e0100c434e9ebf668a22373befd346cd7df850a931b70c6695c75893a49a656f"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "MEITU_20260902_002520446-desktop-676w.webp",
+          "publicPath": "2026-germany/images/day-11/MEITU_20260902_002520446-desktop-676w.webp",
+          "bytes": 190664,
+          "hash": "50f19521f9d518c4a3ea9355038bf3bac3015bffe9bca54f839f0b357220c84e"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "MEITU_20260902_002520446-lightbox-901w.webp",
+          "publicPath": "2026-germany/images/day-11/MEITU_20260902_002520446-lightbox-901w.webp",
+          "bytes": 323966,
+          "hash": "8736462933e2e543b713f3a3012ccc41389ed1708a4ae33b7344cb496b1e6e3a"
+        }
+      ]
+    },
     "day-12/17859009303545847.jpg": {
       "id": "17859009303545847",
       "original_filename": "17859009303545847.jpg",
@@ -16732,52 +16781,52 @@
         }
       ]
     },
-    "day-15/20260209_112152.jpg": {
-      "id": "20260209_112152",
-      "original_filename": "20260209_112152.jpg",
-      "original_width": 2252,
-      "original_height": 4000,
-      "source_hash": "eb321d94903c8a72ea5f448941d9989ff1e56234cf997b9c2af706ec112372c4",
+    "day-15/20260209_belle-in-plane.jpg": {
+      "id": "20260209_belle-in-plane",
+      "original_filename": "20260209_belle-in-plane.jpg",
+      "original_width": 3072,
+      "original_height": 4096,
+      "source_hash": "d77c17f9eadb408706660e664dcfed15bb2ab1c76855b8ac7268dc6bff433c34",
       "derivatives": [
         {
           "profile": "thumb",
-          "width": 270,
+          "width": 360,
           "height": 480,
           "format": "webp",
-          "filename": "20260209_112152-thumb-270w.webp",
-          "publicPath": "2026-germany/images/day-15/20260209_112152-thumb-270w.webp",
-          "bytes": 23722,
-          "hash": "cb036e3365c8ff6884eb15b80c57ec5b77bce2f35f37b74c3ce229b65e5c11d6"
+          "filename": "20260209_belle-in-plane-thumb-360w.webp",
+          "publicPath": "2026-germany/images/day-15/20260209_belle-in-plane-thumb-360w.webp",
+          "bytes": 29458,
+          "hash": "35a230a6716302a2b1ffc70790e24d0297faa4e414a701123a298e875ccdb5df"
         },
         {
           "profile": "content",
-          "width": 540,
+          "width": 720,
           "height": 960,
           "format": "webp",
-          "filename": "20260209_112152-content-540w.webp",
-          "publicPath": "2026-germany/images/day-15/20260209_112152-content-540w.webp",
-          "bytes": 77850,
-          "hash": "c44aa239a1ccb6b25c4918f251fbdbc06eba19f07bc928d135602e7a8ef5477a"
+          "filename": "20260209_belle-in-plane-content-720w.webp",
+          "publicPath": "2026-germany/images/day-15/20260209_belle-in-plane-content-720w.webp",
+          "bytes": 94188,
+          "hash": "f0389f187ce156faeb8f6fa462644cb42d895ba25b2f23160d22ca425ab0f1a5"
         },
         {
           "profile": "desktop",
-          "width": 676,
+          "width": 900,
           "height": 1200,
           "format": "webp",
-          "filename": "20260209_112152-desktop-676w.webp",
-          "publicPath": "2026-germany/images/day-15/20260209_112152-desktop-676w.webp",
-          "bytes": 116986,
-          "hash": "b4cd06fad7bd412f90b7db12b750d0d1fc6e200b0eaf1bdcb4f99923507b7623"
+          "filename": "20260209_belle-in-plane-desktop-900w.webp",
+          "publicPath": "2026-germany/images/day-15/20260209_belle-in-plane-desktop-900w.webp",
+          "bytes": 138466,
+          "hash": "a007e2d52210fd423e4c7f1848ac9851e6421d9e62f1ad1e08a64a1dc51fbc6f"
         },
         {
           "profile": "lightbox",
-          "width": 901,
+          "width": 1200,
           "height": 1600,
           "format": "webp",
-          "filename": "20260209_112152-lightbox-901w.webp",
-          "publicPath": "2026-germany/images/day-15/20260209_112152-lightbox-901w.webp",
-          "bytes": 189232,
-          "hash": "0e4767da03624699c8f337000dff8e511f6ab5b7a89c7c83517d35adda881108"
+          "filename": "20260209_belle-in-plane-lightbox-1200w.webp",
+          "publicPath": "2026-germany/images/day-15/20260209_belle-in-plane-lightbox-1200w.webp",
+          "bytes": 235064,
+          "hash": "f5895e289fda06e9b0da977f213712497399322dc77576e4e00357383518779d"
         }
       ]
     }
