@@ -56,6 +56,124 @@
         transition: none;
       }
     }
+
+    /* Full-bleed Journey Hero Banner (Aligned with Osaka/Beijing Standard) */
+    .journey-hero {
+      position: relative;
+      min-height: 580px;
+      height: 72vh;
+      max-height: 720px;
+      overflow: hidden;
+      background: #182330;
+    }
+
+    .journey-hero > img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 55%;
+    }
+
+    .journey-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(16, 26, 36, 0.28) 0%, rgba(16, 26, 36, 0.82) 100%);
+      pointer-events: none;
+    }
+
+    .journey-hero-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      min-height: inherit;
+      height: 100%;
+      align-items: flex-end;
+      padding-top: 5rem;
+      padding-bottom: 3.5rem;
+      color: #fff;
+    }
+
+    .journey-hero-copy {
+      max-width: 860px;
+    }
+
+    .journey-hero .hero-badge-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.8rem;
+    }
+
+    .journey-hero h1 {
+      margin: 0.5rem 0 0.8rem;
+      color: #fff;
+      font-family: var(--font-heading);
+      font-size: 3.4rem;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      text-shadow: 0 3px 20px rgba(0, 0, 0, 0.7);
+    }
+
+    .journey-hero p {
+      max-width: 740px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.94);
+      font-size: 1.12rem;
+      line-height: 1.75;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+    }
+
+    .journey-hero-actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .journey-hero-actions a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0.68rem 1.25rem;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .journey-hero-actions a:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .journey-hero-actions .is-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .journey-hero-actions .is-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      background: rgba(16, 26, 36, 0.65);
+      color: #fff;
+      backdrop-filter: blur(8px);
+    }
+
+    @media (max-width: 860px) {
+      .journey-hero {
+        min-height: 520px;
+        height: 75vh;
+      }
+      .journey-hero h1 {
+        font-size: 2.35rem;
+      }
+      .journey-hero-inner {
+        padding-bottom: 2.5rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -76,28 +194,41 @@
     </div>
   </nav>
 
-  <main class="container">
-    <!-- ========================================== -->
-    <!-- 1. Hero 封面區域 -->
-    <!-- ========================================== -->
-    <section class="hero-bento" style="margin-top: 1.5rem;">
-      <div class="hero-banner">
+  <!-- ========================================== -->
+  <!-- 1. Hero 封面大圖區域 (Aligned with Osaka/Beijing Standard) -->
+  <!-- ========================================== -->
+  <header class="journey-hero">
+    <img src="images/day-08/20260202_135702-desktop-1200w.webp"
+         srcset="images/day-08/20260202_135702-thumb-480w.webp 480w,
+                 images/day-08/20260202_135702-content-960w.webp 960w,
+                 images/day-08/20260202_135702-desktop-1200w.webp 1200w,
+                 images/day-08/20260202_135702-lightbox-1600w.webp 1600w"
+         sizes="100vw"
+         width="4000"
+         height="2252"
+         loading="eager"
+         decoding="async"
+         fetchpriority="high"
+         alt="海德堡城堡俯瞰內卡河老城與老橋全景">
+    <div class="container journey-hero-inner">
+      <div class="journey-hero-copy">
         <div class="hero-badge-group">
           <span class="badge badge-gold">❄️ 2026 冬季跨國自駕 15D14N</span>
           <span class="badge badge-glass">📅 1/26 (一) — 2/9 (日)</span>
           <span class="badge badge-glass">🚗 德・奧・法・瑞 四國環線</span>
           <span class="badge badge-glass">🏨 5 大精選住宿漫遊基地</span>
         </div>
-        <h1 class="hero-title">白雪、古堡與酒鄉微醺的 15 天旅程</h1>
-        <p class="hero-subtitle">
-          從阿爾卑斯湖畔的哈修塔特，走過羅曼蒂克大道的古堡酒莊，穿越亞爾薩斯的童話木屋，最終登上雪白新天鵝堡。這是一本真實記錄旅人心情與實戰避坑的自駕圖文手記。
-        </p>
-        <div class="hero-actions">
-          <a href="#featured" class="btn-hero-primary">📸 閱讀精選遊記 ↓</a>
-          <a href="#itinerary" class="btn-hero-secondary">🗺️ 瀏覽 15 天完整行程 ↓</a>
+        <h1>白雪、古堡與酒鄉微醺的 15 天旅程</h1>
+        <p>從阿爾卑斯湖畔的哈修塔特，走過羅曼蒂克大道的古堡酒莊，穿越亞爾薩斯的童話木屋，最終登上雪白新天鵝堡。這是一本真實記錄旅人心情與實戰避坑的自駕圖文手記。</p>
+        <div class="journey-hero-actions">
+          <a href="#featured" class="is-primary">📸 閱讀精選遊記 ↓</a>
+          <a href="#itinerary" class="is-secondary">🗺️ 瀏覽 15 天完整行程 ↓</a>
         </div>
       </div>
-    </section>
+    </div>
+  </header>
+
+  <main class="container">
 
     <!-- ========================================== -->
     <!-- 2. 📸 三篇先讀推薦 (Start Here) -->

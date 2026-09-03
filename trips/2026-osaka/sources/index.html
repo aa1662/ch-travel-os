@@ -48,8 +48,18 @@
     .bento-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.07); }
     /* Grid Layouts - 100% Symmetrical 50/50 & 2x2 */
     .bento-grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: stretch; }
-    .story-duo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: stretch; }
-    .featured-story-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .story-duo-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+    .featured-story-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; align-items: start; }
+
+    .family-lisa-copy { columns: 2; column-gap: 2.5rem; }
+    .family-lisa-copy p { break-inside: avoid; }
+    .family-belle-card { display: grid; grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr); min-width: 0; overflow: hidden; background: #fff; border: 1px solid rgba(0,0,0,0.06); border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+    .family-belle-media { min-height: 0; overflow: hidden; aspect-ratio: 5 / 6; background: #e7e0d8; }
+    .family-belle-media img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 34%; }
+    .family-belle-body { min-width: 0; padding: 2.2rem 2rem; }
+    .family-belle-body h3 { margin: 0.5rem 0 0.9rem; color: var(--primary); font-family: var(--font-heading); font-size: 1.6rem; line-height: 1.35; }
+    .family-belle-body p { margin: 0 0 0.9rem; color: var(--ink); font-size: 1.02rem; line-height: 1.85; }
+    .family-belle-body p:last-child { margin-bottom: 0; }
 
     .bento-card { display: flex; flex-direction: column; justify-content: space-between; height: 100%; background: #ffffff; border-radius: 16px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 4px 20px rgba(0,0,0,0.04); padding: 2.2rem 2.4rem; transition: transform 0.2s ease, box-shadow 0.2s ease; }
     .bento-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.07); }
@@ -58,17 +68,17 @@
     .bento-card p:last-child { margin-bottom: 0; }
     .bento-quote { margin: 1rem 0 0; padding: 0.9rem 1.2rem; background: rgba(180, 77, 56, 0.06); border-left: 4px solid #b44d38; border-radius: 0 8px 8px 0; color: var(--primary); font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; line-height: 1.65; }
 
-    /* Story Card (Enhanced 2x2 Symmetry) */
-    .story-bento-card { display: flex; flex-direction: column; height: 100%; background: #ffffff; border-radius: 16px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 4px 20px rgba(0,0,0,0.04); overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    /* Story Card */
+    .story-bento-card { display: flex; flex-direction: column; background: #ffffff; border-radius: 16px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 4px 20px rgba(0,0,0,0.04); overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease; }
     .story-bento-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
     .story-bento-media { position: relative; aspect-ratio: 16 / 9; width: 100%; overflow: hidden; background: #21333a; }
     .story-bento-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; display: block; }
     .story-bento-card:hover .story-bento-media img { transform: scale(1.04); }
     .story-tag-float { position: absolute; top: 12px; left: 12px; background: rgba(8, 20, 28, 0.75); color: #fff; font-size: 0.78rem; font-weight: 800; padding: 0.3rem 0.65rem; border-radius: 999px; backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.25); }
-    .story-bento-body { padding: 1.6rem 1.8rem; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1; height: 100%; }
-    .story-bento-body h3 { font-family: var(--font-heading); font-size: 1.4rem; color: var(--primary); margin: 0.6rem 0 0.6rem; line-height: 1.35; min-height: 2.7rem; display: flex; align-items: center; }
-    .story-bento-body p { font-size: 0.96rem; line-height: 1.75; color: var(--text-muted); margin-bottom: 1.2rem; flex-grow: 1; }
-    .btn-read-bento { display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 0.75rem 1rem; border-radius: 10px; background: var(--primary); color: #fff; font-weight: 800; font-size: 0.95rem; text-decoration: none; transition: background 0.2s ease; margin-top: auto; }
+    .story-bento-body { padding: 1.6rem 1.8rem; display: flex; flex-direction: column; }
+    .story-bento-body h3 { font-family: var(--font-heading); font-size: 1.4rem; color: var(--primary); margin: 0.6rem 0; line-height: 1.35; }
+    .story-bento-body p { font-size: 0.96rem; line-height: 1.75; color: var(--text-muted); margin-bottom: 0; }
+    .btn-read-bento { display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 0.75rem 1rem; border-radius: 10px; background: var(--primary); color: #fff; font-weight: 800; font-size: 0.95rem; text-decoration: none; transition: background 0.2s ease; margin-top: 1.2rem; }
     .btn-read-bento:hover { background: var(--primary-light); color: #fff; }
 
     /* Planning Banner Module */
@@ -104,6 +114,10 @@
       .journey-hero { min-height: 560px; height: 80vh; max-height: 680px; }
       .journey-hero h1 { font-size: 2.35rem; }
       .bento-grid-2col, .story-duo-grid, .featured-story-grid { grid-template-columns: 1fr; }
+      .family-lisa-copy { columns: 1; }
+      .family-belle-card { grid-template-columns: 1fr; }
+      .family-belle-media { aspect-ratio: 5 / 6; }
+      .family-belle-body { padding: 1.6rem 1.4rem; }
       .journey-main-wrap { padding: 2.2rem 1rem 4rem; }
       .bento-card { padding: 1.6rem 1.4rem; }
       .planning-bento-box { grid-template-columns: 1fr; padding: 1.5rem 1.4rem; gap: 1rem; }
@@ -160,7 +174,7 @@
     <section class="hub-section" id="overview">
       <div class="bento-grid-2col">
         <!-- 卡片 A: 贊助潛台詞 -->
-        <article class="bento-card">
+        <article class="bento-card family-lisa-card">
           <div>
             <div style="margin-bottom: 0.6rem;">
               <span class="badge badge-wine">Family Moment</span>
@@ -319,23 +333,33 @@
             <span class="badge badge-alpine">🚶‍♂️ 梅田 1.5 萬步</span>
           </div>
           <h3>以前是我帶路，現在只要負責出錢</h3>
-          <p>第一天抵達關西機場，我還在為入境資料找不到飯店地址手忙腳亂，女兒已經把資料查好，很快接過去處理。</p>
-          <p>以前帶孩子出國，到了機場、車站或售票機，都是我走在前面研究路線、買票，再叫她們跟上。這次完全反過來。到了售票機前，她們滴滴嘟嘟按幾下，票就買好了；哪一班車、往哪裡走，也都安排得好好的。我唯一還保有的功能，大概就是出錢。</p>
-          <p>原來一路帶著走的小孩，現在已經可以回過頭來帶我了。這種感覺其實滿奇妙的。</p>
-          <p>飯店就在大阪站旁邊，連馬路都不用過。Check-in、到 Executive Lounge 吃點東西，接下來就是三千金這趟最重要的行程：逛街。阪急、阪急三番街和梅田附近商場一路逛，第一天光陪她們走，就走了一萬五千步。至於第一天晚餐到底吃了什麼，我現在已經完全失憶。能確定的是，她們真的很會逛。</p>
+          <div class="family-lisa-copy">
+            <p>第一天抵達關西機場，我還在為入境資料找不到飯店地址手忙腳亂，女兒已經把資料查好，很快接過去處理。</p>
+            <p>以前帶孩子出國，到了機場、車站或售票機，都是我走在前面研究路線、買票，再叫她們跟上。這次完全反過來。到了售票機前，她們滴滴嘟嘟按幾下，票就買好了；哪一班車、往哪裡走，也都安排得好好的。我唯一還保有的功能，大概就是出錢。</p>
+            <p>原來一路帶著走的小孩，現在已經可以回過頭來帶我了。這種感覺其實滿奇妙的。</p>
+            <p>飯店就在大阪站旁邊，連馬路都不用過。Check-in、到 Executive Lounge 吃點東西，接下來就是三千金這趟最重要的行程：逛街。阪急、阪急三番街和梅田附近商場一路逛，第一天光陪她們走，就走了一萬五千步。至於第一天晚餐到底吃了什麼，我現在已經完全失憶。能確定的是，她們真的很會逛。</p>
+          </div>
         </article>
 
         <!-- Day 4 卡片 -->
-        <article class="bento-card">
-          <div style="margin-bottom: 0.6rem;">
-            <span class="badge badge-forest">Day 4 · 世代交棒</span>
-            <span class="badge badge-alpine">📷 梅田 Yodobashi</span>
+        <article class="family-belle-card">
+          <div class="family-belle-media">
+            <img src="images/day-01/belle-osaka-portrait-content-540w.webp" srcset="images/day-01/belle-osaka-portrait-thumb-270w.webp 270w,
+                         images/day-01/belle-osaka-portrait-content-540w.webp 540w,
+                         images/day-01/belle-osaka-portrait-desktop-675w.webp 675w,
+                         images/day-01/belle-osaka-portrait-lightbox-900w.webp 900w" sizes="(max-width: 860px) calc(100vw - 2rem), 600px" width="941" height="1672" alt="Belle 在大阪旅行中的人物照" loading="lazy" decoding="async">
           </div>
-          <h3>陪 Belle 買一台可以留下來的相機</h3>
-          <p>前兩天已經把想走的地方大量提前，最後一天本來還可以再塞一個宇治平等院。不過這趟說到底還是全家一起出國，不必每個行程都綁在一起，頭尾總要有一點儀式感。</p>
-          <p>所以最後一天不再排景點，陪 Belle 去梅田的 Yodobashi Camera 看相機。現在年輕人又開始流行底片機。她原本看的多半是一次性相機，一台拍二十七張或三十六張，拍完就丟。我覺得那種東西意義不大；旁邊那些看起來像玩具的重複使用底片機，質感也實在看不上眼。</p>
-          <p>最後找到一台 <strong>KODAK 柯達 Snapic A1 35mm</strong>。價格比一次性相機高，但至少不是拍完就丟，可以真的留下來繼續用。</p>
-          <p>第一天是她們帶我進大阪，最後一天換我陪她挑一台相機。好像也算親子同樂了...哈。</p>
+          <div class="family-belle-body">
+            <div style="margin-bottom: 0.6rem;">
+              <span class="badge badge-forest">Day 4 · 世代交棒</span>
+              <span class="badge badge-alpine">📷 梅田 Yodobashi</span>
+            </div>
+            <h3>陪 Belle 買一台可以留下來的相機</h3>
+            <p>前兩天已經把想走的地方大量提前，最後一天本來還可以再塞一個宇治平等院。不過這趟說到底還是全家一起出國，不必每個行程都綁在一起，頭尾總要有一點儀式感。</p>
+            <p>所以最後一天不再排景點，陪 Belle 去梅田的 Yodobashi Camera 看相機。現在年輕人又開始流行底片機。她原本看的多半是一次性相機，一台拍二十七張或三十六張，拍完就丟。我覺得那種東西意義不大；旁邊那些看起來像玩具的重複使用底片機，質感也實在看不上眼。</p>
+            <p>最後找到一台 <strong>KODAK 柯達 Snapic A1 35mm</strong>。價格比一次性相機高，但至少不是拍完就丟，可以真的留下來繼續用。</p>
+            <p>第一天是 Lisa 帶我進大阪，最後一天換我陪 Belle 挑一台相機。好像也算親子同樂了...哈。</p>
+          </div>
         </article>
       </div>
     </section>
