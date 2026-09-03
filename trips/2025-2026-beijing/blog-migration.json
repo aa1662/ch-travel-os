@@ -1,6 +1,8 @@
 {
   "trip": "2025-2026-beijing",
   "dest": "2025-2026-beijing",
+  "journey_title": "🇨🇳 半年去了兩次北京",
+  "nav_slot_3_html": "<li><a href=\"../index.html#colophon\">📋 旅程小檔案</a></li>",
   "journey_end_title": "回到北京旅程總覽",
   "entries": [
     {

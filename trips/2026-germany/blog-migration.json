@@ -1,6 +1,8 @@
 {
   "trip": "2026-germany",
   "dest": "2026-germany",
+  "journey_title": "🇩🇪 2026 德南冬旅誌",
+  "nav_slot_3_html": "<li><a href=\"../index.html#itinerary\">🗺️ 15天自駕行程</a></li>",
   "entries": [
     {
       "id": "day-01",

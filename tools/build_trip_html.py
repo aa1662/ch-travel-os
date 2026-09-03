@@ -275,6 +275,30 @@ def build_trip(trip_slug="2026-germany", dest_slug=None):
         html_content = re.sub(r'src="(?:\.\./)*js/app\.js(?:\?[^"]*)?"', 'src="../../core/js/app.js"', html_content)
         html_content = re.sub(r'src="(?:\.\./)*js/main\.js(?:\?[^"]*)?"', 'src="../../core/js/main.js"', html_content)
 
+        # 1.1 統一文章頂部導覽列 (Standard Breadcrumb Brand & 4 Slots)
+        journey_title = config_data.get("journey_title", trip_slug) if isinstance(config_data, dict) else trip_slug
+        slot_3 = config_data.get("nav_slot_3_html", '<li><a href="../index.html#stories">📖 深度遊記</a></li>') if isinstance(config_data, dict) else '<li><a href="../index.html#stories">📖 深度遊記</a></li>'
+        standard_article_nav = f'''  <nav class="site-nav">
+    <div class="container">
+      <div class="brand-group">
+        <a href="../../index.html" class="brand-link">
+          <span>🧭 CH Travel OS</span>
+        </a>
+        <span class="brand-separator">/</span>
+        <a href="../index.html" class="brand-series">
+          <span>{journey_title}</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../../index.html">🌍 全球旅程</a></li>
+        <li><a href="../index.html#stories">📖 深度遊記</a></li>
+        {slot_3}
+      </ul>
+      <button class="nav-share-btn btn-share" type="button"><span>📤 分享</span></button>
+    </div>
+  </nav>'''
+        html_content = re.sub(r'<nav class="site-nav">[\s\S]*?</nav>', standard_article_nav.strip(), html_content)
+
         # 2. 轉換圖片為 WebP 規格
         rel_prefix = f"../images/{img_folder}"
         html_content = transform_html_images(html_content, images_dict, img_folder, rel_prefix, errors)

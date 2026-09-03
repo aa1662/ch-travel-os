@@ -180,17 +180,21 @@
   <!-- 頂部玻璃擬態導覽列 -->
   <nav class="site-nav">
     <div class="container">
-      <a href="../index.html" class="brand-link">
-        <span>🇩🇪 2026 德南冬旅誌</span>
-        <span class="brand-badge">Travel OS</span>
-      </a>
+      <div class="brand-group">
+        <a href="../index.html" class="brand-link">
+          <span>🧭 CH Travel OS</span>
+        </a>
+        <span class="brand-separator">/</span>
+        <a href="index.html" class="brand-series">
+          <span>🇩🇪 2026 德南冬旅誌</span>
+        </a>
+      </div>
       <ul class="nav-links">
-        <li><a href="../index.html">全球總入口</a></li>
-        <li><a href="index.html" class="active">首頁</a></li>
-        <li><a href="#featured">📸 精選遊記</a></li>
-        <li><a href="#itinerary">🗺️ 15天行程</a></li>
+        <li><a href="../index.html">🌍 全球旅程</a></li>
+        <li><a href="#featured">📖 深度遊記</a></li>
+        <li><a href="#itinerary">🗺️ 15天自駕行程</a></li>
       </ul>
-      <button class="nav-share-btn btn-share"><span>📤 分享</span></button>
+      <button class="nav-share-btn btn-share" type="button"><span>📤 分享</span></button>
     </div>
   </nav>
 
@@ -233,6 +237,7 @@
     <!-- ========================================== -->
     <!-- 2. 📸 三篇先讀推薦 (Start Here) -->
     <!-- ========================================== -->
+    <div id="stories"></div>
     <section id="featured" style="margin: 3.5rem 0 1.5rem;">
       <div style="display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.75rem;">
         <div>
@@ -688,7 +693,47 @@
     </a>
   </div>
 
-  <footer style="margin-top: 4rem; padding: 2rem 0; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+  <div class="container">
+    <!-- Journey Colophon Bento Card -->
+    <section class="colophon-bento-card" aria-label="旅程專刊小檔案">
+      <span class="badge badge-gold">Trip Colophon</span>
+      <h3>2026 德南冬旅誌 · 專刊小檔案</h3>
+      <div class="colophon-meta-grid">
+        <div class="colophon-meta-item">
+          <span class="colophon-meta-label">📅 旅程時間</span>
+          <span class="colophon-meta-val">2026.01.26 – 02.09 · 15D14N 冬季跨國自駕</span>
+        </div>
+        <div class="colophon-meta-item">
+          <span class="colophon-meta-label">📍 造訪足跡</span>
+          <span class="colophon-meta-val">德·奧·法·瑞 4 國 · 5 大漫遊基地 · 16 篇遊記</span>
+        </div>
+        <div class="colophon-meta-item">
+          <span class="colophon-meta-label">🚗 旅行方式</span>
+          <span class="colophon-meta-val">冬季跨國自駕 · 奧迪四驅 · 漫遊放射線</span>
+        </div>
+        <div class="colophon-meta-item">
+          <span class="colophon-meta-label">👥 旅伴組合</span>
+          <span class="colophon-meta-val">CH ✕ Belle（父女同行，跨越 12 年重訪）</span>
+        </div>
+        <div class="colophon-meta-item">
+          <span class="colophon-meta-label">📷 影像設備</span>
+          <span class="colophon-meta-val">Samsung Galaxy S23 (主鏡頭與超廣角)</span>
+        </div>
+        <div class="colophon-meta-item">
+          <span class="colophon-meta-label">💡 這輯的主題</span>
+          <span class="colophon-meta-val">白雪、古堡與酒鄉微醺的 15 天旅程</span>
+        </div>
+      </div>
+      <div class="colophon-nav-group">
+        <a href="../index.html" class="colophon-nav-btn is-primary">🌍 全球旅程總覽</a>
+        <a href="../2026-osaka/index.html" class="colophon-nav-btn is-secondary">🏮 閱讀 2026 關西盛夏漫遊 4D3N →</a>
+        <a href="../2025-2026-beijing/index.html" class="colophon-nav-btn is-secondary">🇨🇳 閱讀半年去了兩次北京圖文誌 →</a>
+        <a href="https://snaplog-c77.pages.dev/" target="_blank" rel="noopener noreferrer" class="colophon-nav-btn is-outline">🏛️ Snaplog 歷年足跡典藏庫 ↗</a>
+      </div>
+    </section>
+  </div>
+
+  <footer class="journey-footer">
     <p>© 2026 CH Travel OS 2.0 · Designed with Warm Paper Aesthetic</p>
   </footer>
 
