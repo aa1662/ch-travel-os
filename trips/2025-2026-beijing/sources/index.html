@@ -90,7 +90,7 @@
 
     .beijing-hub .stories-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1.75rem;
       margin-top: 1.5rem;
     }
@@ -178,16 +178,113 @@
       width: 100%;
       padding: 0.65rem 1rem;
       border-radius: var(--radius-md);
-      background: var(--primary);
-      color: #fff;
-      font-size: 0.9rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition: background 0.2s ease;
     }
 
-    .beijing-hub .btn-read-hub:hover {
-      background: var(--accent);
+    /* Colophon Bento Card (Aligned with 2026 Osaka Standard) */
+    .beijing-hub .colophon-bento-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(0, 0, 0, 0.07);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      padding: 2.4rem 2.6rem;
+      margin-top: 3.5rem;
+    }
+
+    .beijing-hub .colophon-bento-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.55rem;
+      color: var(--primary);
+      margin: 0.5rem 0 0;
+    }
+
+    .beijing-hub .colophon-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem 2rem;
+      padding: 1.4rem 0 1.6rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      margin: 1.25rem 0 1.6rem;
+    }
+
+    .beijing-hub .colophon-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .beijing-hub .colophon-meta-label {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--text-muted);
+    }
+
+    .beijing-hub .colophon-meta-val {
+      font-size: 0.96rem;
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.55;
+    }
+
+    .beijing-hub .colophon-meta-val a {
+      color: var(--primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 700;
+      transition: color 0.2s ease;
+    }
+
+    .beijing-hub .colophon-meta-val a:hover {
+      color: var(--accent);
+    }
+
+    .beijing-hub .colophon-nav-group {
+      display: flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .beijing-hub .colophon-nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.72rem 1.25rem;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .beijing-hub .colophon-nav-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .beijing-hub .colophon-nav-btn.is-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .beijing-hub .colophon-nav-btn.is-secondary {
+      background: #f0f4f8;
+      color: var(--primary);
+      border: 1px solid #cedbe7;
+    }
+
+    .beijing-hub .colophon-nav-btn.is-outline {
+      background: #fbf9f5;
+      color: var(--ink);
+      border: 1px solid var(--border-color);
+    }
+
+    .beijing-hub .journey-footer {
+      padding: 2.5rem 0 4rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      color: var(--text-muted);
+      text-align: center;
+      font-size: 0.88rem;
     }
 
     @media (max-width: 960px) {
@@ -197,6 +294,56 @@
       }
       .beijing-hub .journey-hero h1 {
         font-size: 2.35rem;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .beijing-hub .colophon-bento-card {
+        padding: 1.8rem 1.4rem;
+      }
+
+      .beijing-hub .colophon-meta-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .beijing-hub .colophon-nav-btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .beijing-hub .journey-colophon {
+        padding-top: 3rem;
+      }
+
+      .beijing-hub .journey-colophon h2 {
+        font-size: 1.6rem;
+      }
+
+      .beijing-hub .colophon-timeline,
+      .beijing-hub .colophon-facts {
+        grid-template-columns: 1fr;
+      }
+
+      .beijing-hub .colophon-era {
+        padding: 1.25rem 0;
+      }
+
+      .beijing-hub .colophon-era + .colophon-era {
+        padding-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.18);
+        border-left: 0;
+      }
+
+      .beijing-hub .colophon-facts {
+        gap: 1.15rem;
+      }
+
+      .beijing-hub .colophon-links a {
+        width: 100%;
+        justify-content: space-between;
       }
     }
   </style>
@@ -237,11 +384,11 @@
       <div>
         <div class="hero-badge-group">
           <span class="badge badge-gold">🇨🇳 2025 深秋 ✕ 2026 初夏</span>
-          <span class="badge badge-glass">📸 3 篇深度圖文遊記</span>
-          <span class="badge badge-glass">⛰️ 兩大長城 ✕ 水鎮夜景 ✕ 皇城中軸線</span>
+          <span class="badge badge-glass">📸 4 篇深度圖文遊記</span>
+          <span class="badge badge-glass">⛰️ 長城 ✕ 水鎮 ✕ 皇城 ✕ 胡同</span>
         </div>
         <h1>半年去了兩次北京</h1>
-        <p>第一次因工作來北京，順道包車登長城、住進水鎮客棧；第二次陪 Belle 來場勘學校，傍晚登上景山俯瞰整座紫禁城。兩趟旅行沒有照套裝行程走，卻拼出了最真實的北京印象。</p>
+        <p>第一次因工作來北京，順道包車登長城、住進水鎮客棧；第二次陪 Belle 來場勘學校，也各自走進景山與老北京胡同。兩趟旅行沒有照套裝行程走，卻拼出了最真實的北京印象。</p>
       </div>
     </div>
   </header>
@@ -254,7 +401,7 @@
           <span class="badge badge-forest">Beijing Stories</span>
           <h2 id="stories-title" style="font-family: var(--font-heading); color: var(--primary); font-size: 2rem; margin: 0.4rem 0 0;">精選圖文誌</h2>
         </div>
-        <span style="font-size: 0.9rem; color: var(--text-muted);">共 3 篇已發布實戰紀錄</span>
+        <span style="font-size: 0.9rem; color: var(--text-muted);">共 4 篇已完成實戰紀錄</span>
       </div>
 
       <div class="stories-grid">
@@ -332,9 +479,89 @@
             <a href="blog/jingshan-park-forbidden-city.html" class="btn-read-hub">閱讀景山公園遊記 →</a>
           </div>
         </article>
+
+        <!-- Card 4: Nanluoguxiang & Shichahai -->
+        <article class="story-grid-card">
+          <div class="story-card-media">
+            <img src="images/nanluoguxiang/20260615_170017-desktop-1200w.webp"
+                 srcset="images/nanluoguxiang/20260615_170017-thumb-480w.webp 480w,
+                         images/nanluoguxiang/20260615_170017-content-960w.webp 960w,
+                         images/nanluoguxiang/20260615_170017-desktop-1200w.webp 1200w"
+                 sizes="(max-width: 768px) 100vw, 520px"
+                 width="4000"
+                 height="2252"
+                 loading="lazy"
+                 decoding="async"
+                 alt="後海北沿水面與兩岸垂柳">
+            <span class="story-card-badge">2026.06 · 胡同散步</span>
+          </div>
+          <div class="story-card-body">
+            <div>
+              <span class="badge badge-forest" style="margin-bottom: 0.4rem;">城市切片</span>
+              <h3>Belle 去逛王府井，我一個人鑽進北京胡同</h3>
+              <p>星期一想去的館都沒開，乾脆從南鑼鼓巷轉進雨兒胡同。在玉河公園看孩子放學後跑跳，再沿什剎海一路走到鐘鼓樓。</p>
+            </div>
+            <a href="blog/nanluoguxiang-shichahai.html" class="btn-read-hub">閱讀胡同散步遊記 →</a>
+          </div>
+        </article>
       </div>
     </section>
+    <!-- 旅程小檔案與跨站導航 (Osaka Colophon Bento Standard) -->
+    <article class="colophon-bento-card">
+      <div style="margin-bottom: 0.4rem;">
+        <span class="badge badge-gold">Trip Colophon</span>
+      </div>
+      <h3>半年去了兩次北京 · 雙次旅程小檔案</h3>
+
+      <div class="colophon-meta-grid">
+        <div class="colophon-meta-item">
+          <span class="colophon-meta-label">📅 旅程時間</span>
+          <span class="colophon-meta-val">2025.11 (深秋出差) ✕ 2026.06 (初夏同行)</span>
+        </div>
+        <div class="colophon-meta-item">
+          <span class="colophon-meta-label">📍 造訪足跡</span>
+          <span class="colophon-meta-val">
+            <a href="blog/mutianyu-great-wall.html">慕田峪長城</a> ·
+            <a href="blog/gubei-water-town-simatai.html">古北水鎮與司馬台</a> ·
+            <a href="blog/jingshan-park-forbidden-city.html">景山公園</a> ·
+            <a href="blog/nanluoguxiang-shichahai.html">南鑼鼓巷與什剎海</a>
+          </span>
+        </div>
+        <div class="colophon-meta-item">
+          <span class="colophon-meta-label">🚗 旅行方式</span>
+          <span class="colophon-meta-val">包車登長城 · 水鎮留宿 · 地鐵與城市步行</span>
+        </div>
+        <div class="colophon-meta-item">
+          <span class="colophon-meta-label">👥 旅伴組合</span>
+          <span class="colophon-meta-val">跨國同事 ✕ 一人獨旅 ✕ 父女同行</span>
+        </div>
+        <div class="colophon-meta-item">
+          <span class="colophon-meta-label">📷 影像設備</span>
+          <span class="colophon-meta-val">Samsung Galaxy S23 (主鏡頭與廣角)</span>
+        </div>
+        <div class="colophon-meta-item">
+          <span class="colophon-meta-label">💡 這輯的主題</span>
+          <span class="colophon-meta-val">同一座北京，半年後換了季節、旅伴與四種走法</span>
+        </div>
+      </div>
+
+      <div class="colophon-nav-group">
+        <a href="../index.html" class="colophon-nav-btn is-primary">
+          <span>🌍 全球旅程總覽</span>
+        </a>
+        <a href="../2026-germany/index.html" class="colophon-nav-btn is-secondary">
+          <span>🇩🇪 閱讀 2026 德南冬旅 15 天專刊 →</span>
+        </a>
+        <a href="../2026-osaka/index.html" class="colophon-nav-btn is-outline">
+          <span>🏮 閱讀 2026 關西盛夏漫遊 4D3N →</span>
+        </a>
+      </div>
+    </article>
   </main>
+
+  <footer class="journey-footer">
+    <p>© 2026 CH Travel OS 2.0 · 半年去了兩次北京圖文誌</p>
+  </footer>
 
   <script src="../core/js/app.js"></script>
   <script src="../core/js/main.js"></script>

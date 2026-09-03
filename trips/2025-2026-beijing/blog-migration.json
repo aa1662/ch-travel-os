@@ -437,10 +437,87 @@
       "footer_center": "gallery",
       "prev_link": "gubei-water-town-simatai.html",
       "prev_title": "古北水鎮與司馬台",
-      "next_link": "../index.html",
-      "next_title": "北京旅程總覽",
+      "next_link": "nanluoguxiang-shichahai.html",
+      "next_title": "南鑼鼓巷與什剎海",
       "og_url": "https://chxtravel.com/2025-2026-beijing/blog/jingshan-park-forbidden-city.html",
       "og_image": "https://chxtravel.com/2025-2026-beijing/images/jingshan/20260613_165225-desktop-1200w.webp"
+    },
+    {
+      "id": "nanluoguxiang",
+      "title": "Belle 去逛王府井，我一個人鑽進北京胡同",
+      "source": "trips/2025-2026-beijing/sources/blog/nanluoguxiang-shichahai.html",
+      "output": "docs/2025-2026-beijing/blog/nanluoguxiang-shichahai.html",
+      "image_folder": "nanluoguxiang",
+      "preserve_gallery_groups": true,
+      "footer_center": "gallery",
+      "prev_link": "jingshan-park-forbidden-city.html",
+      "prev_title": "景山公園",
+      "next_link": "../index.html",
+      "next_title": "北京旅程總覽",
+      "og_url": "https://chxtravel.com/2025-2026-beijing/blog/nanluoguxiang-shichahai.html",
+      "og_image": "https://chxtravel.com/2025-2026-beijing/images/nanluoguxiang/20260615_170017-desktop-1200w.webp",
+      "gallery_groups": [
+        {
+          "id": "nanluoguxiang-landscape",
+          "title": "玉河公園與什剎海 · 橫式旅途紀實",
+          "items": [
+            {
+              "image": "20260615_163611.jpg",
+              "title": "玉河公園木橋、水道與居民 · 2026 初夏"
+            },
+            {
+              "image": "20260615_165158.jpg",
+              "title": "前海東沿垂柳與遊船 · 2026 初夏"
+            },
+            {
+              "image": "20260615_170017.jpg",
+              "title": "後海北沿水面與垂柳 · 2026 初夏"
+            }
+          ]
+        },
+        {
+          "id": "nanluoguxiang-portrait",
+          "title": "南鑼鼓巷到鐘鼓樓 · 直式街巷紀實",
+          "items": [
+            {
+              "image": "20260615_163051.jpg",
+              "title": "雨兒胡同齊白石舊居紅門 · 2026 初夏"
+            },
+            {
+              "image": "20260615_163113.jpg",
+              "title": "齊白石舊居介紹牌 · 2026 初夏"
+            },
+            {
+              "image": "20260615_163239.jpg",
+              "title": "雨兒胡同門洞與院落 · 2026 初夏"
+            },
+            {
+              "image": "20260615_163414.jpg",
+              "title": "胡同街道與牌樓 · 2026 初夏"
+            },
+            {
+              "image": "20260615_163530.jpg",
+              "title": "玉河公園旁石板路 · 2026 初夏"
+            },
+            {
+              "image": "20260615_165759.jpg",
+              "title": "什剎海水道與遊船 · 2026 初夏"
+            },
+            {
+              "image": "20260615_171330.jpg",
+              "title": "老北京剪紙商店 · 2026 初夏"
+            },
+            {
+              "image": "20260615_172231.jpg",
+              "title": "大石碑胡同街景 · 2026 初夏"
+            },
+            {
+              "image": "20260615_173415.jpg",
+              "title": "小黑虎胡同牆牌 · 2026 初夏"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
