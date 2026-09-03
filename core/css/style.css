@@ -175,15 +175,15 @@ button {
 }
 
 /* Unified Breadcrumb Branding */
-.brand-group {
+.site-nav .brand-group {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   min-width: 0;
 }
 
-.brand-group .brand-link {
-  color: var(--text-white);
+.site-nav .brand-link {
+  color: #ffffff !important;
   font-weight: 700;
   font-size: 1.15rem;
   text-decoration: none;
@@ -193,30 +193,32 @@ button {
   gap: 0.45rem;
 }
 
-.brand-group .brand-separator {
-  color: rgba(255, 255, 255, 0.35);
+.site-nav .brand-separator {
+  color: rgba(255, 255, 255, 0.45) !important;
   font-weight: 400;
   font-size: 0.95rem;
+  user-select: none;
 }
 
-.brand-group .brand-series {
-  color: rgba(255, 255, 255, 0.92);
+.site-nav .brand-series {
+  color: #ffffff !important;
   font-weight: 600;
   font-size: 1.05rem;
   text-decoration: none;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  transition: color var(--transition-fast);
+  transition: opacity var(--transition-fast);
 }
 
-.brand-group .brand-series:hover {
-  color: #fff;
+.site-nav .brand-series:hover {
+  color: #ffffff !important;
+  opacity: 0.85;
 }
 
 @media (max-width: 768px) {
-  .brand-group .brand-separator,
-  .brand-group .brand-series {
+  .site-nav .brand-group .brand-separator,
+  .site-nav .brand-group .brand-series {
     display: none;
   }
 }

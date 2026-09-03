@@ -269,7 +269,8 @@ def build_trip(trip_slug="2026-germany", dest_slug=None):
         html_content = html_content.replace("<!-- GALLERY_REGISTRY -->", gallery_registry)
 
         # 1. 調整核心資源路徑至 ../../core/
-        html_content = re.sub(r'href="(?:\.\./)*css/style\.css(?:\?[^"]*)?"', 'href="../../core/css/style.css"', html_content)
+        html_content = re.sub(r'href="(?:\.\./)*css/style\.css(?:\?[^"]*)?"', 'href="../../core/css/style.css?v=20260903-nav-unify"', html_content)
+        html_content = re.sub(r'href="(?:\.\./)*core/css/style\.css(?:\?[^"]*)?"', 'href="../../core/css/style.css?v=20260903-nav-unify"', html_content)
         html_content = re.sub(r'href="(?:\.\./)*vendor/glightbox/glightbox\.min\.css(?:\?[^"]*)?"', 'href="../../core/vendor/glightbox/glightbox.min.css"', html_content)
         html_content = re.sub(r'src="(?:\.\./)*vendor/glightbox/glightbox\.min\.js(?:\?[^"]*)?"', 'src="../../core/vendor/glightbox/glightbox.min.js"', html_content)
         html_content = re.sub(r'src="(?:\.\./)*js/app\.js(?:\?[^"]*)?"', 'src="../../core/js/app.js"', html_content)
@@ -391,6 +392,7 @@ def build_trip(trip_slug="2026-germany", dest_slug=None):
     if hub_source.exists():
         hub_output = DOCS_DIR / dest_slug / "index.html"
         hub_content = strip_editor_metadata(hub_source.read_text(encoding="utf-8"))
+        hub_content = re.sub(r'href="(?:\.\./)*core/css/style\.css(?:\?[^"]*)?"', 'href="../core/css/style.css?v=20260903-nav-unify"', hub_content)
         compiled_outputs[hub_output] = ("journey-hub", hub_content)
 
     # 嚴格原子性把關：若有任何錯誤，絕不寫入磁碟！
