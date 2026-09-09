@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-CH Travel OS 2.0 - 純時間表批次編譯器 (build_timeline_html.py)
+CH Travel OS 2.0 - 行程頁批次編譯器 (build_timeline_html.py)
 -------------------------------------------------------------
 功能：
 1. 讀取 trips/2026-germany/timeline-migration.json 配置。
@@ -15,6 +15,7 @@ CH Travel OS 2.0 - 純時間表批次編譯器 (build_timeline_html.py)
 3. 採用 In-Memory 事務機制，確保全域無錯誤才原子寫入 docs/2026-germany/day-XX.html。
 """
 
+import argparse
 import json
 import re
 import sys
@@ -31,7 +32,7 @@ def upsert_head_tag(html_content, pattern, replacement):
     return html_content.replace("</head>", f"  {replacement}\n</head>", 1)
 
 
-def build_timelines(trip_slug="2026-germany", dest_slug=None):
+def build_timelines(trip_slug="2026-germany", dest_slug=None, entry_id=None):
     trip_dir = BASE_DIR / "trips" / trip_slug
     config_file = trip_dir / "timeline-migration.json"
 
@@ -48,11 +49,18 @@ def build_timelines(trip_slug="2026-germany", dest_slug=None):
         sys.exit(1)
     dest_slug = dest_slug or config_dest or trip_slug
 
-    entries = config.get("entries", [])
+    all_entries = config.get("entries", [])
+    entries = [
+        item for item in all_entries
+        if entry_id is None or item["id"] == entry_id
+    ]
+    if entry_id and not entries:
+        print(f"❌ 找不到行程項目: {entry_id}")
+        sys.exit(1)
     errors = []
     compiled_outputs = {}
 
-    print(f"🚀 開始執行 {trip_slug} -> {dest_slug} 純時間表 (Timeline) 批次編譯...")
+    print(f"🚀 開始執行 {trip_slug} -> {dest_slug} 行程頁 (Timeline) 批次編譯...")
 
     for item in entries:
         src_file = BASE_DIR / item["source"]
@@ -107,10 +115,13 @@ def build_timelines(trip_slug="2026-germany", dest_slug=None):
 
         # 4. 標準化頂部導覽列 (Top Navbar)
         primary_blog = item.get("blog_link", f"blog/day-{day_num}-blog.html")
+        nav_label = item.get("nav_label", "純時間表")
+        dock_label = item.get("dock_label", "時間表")
+        dock_icon = item.get("dock_icon", "⏱️")
         std_nav_links = f'''<ul class="nav-links">
         <li><a href="index.html">首頁</a></li>
         <li><a href="index.html#itinerary">15天行程</a></li>
-        <li><a href="day-{day_num}.html" class="active">純時間表</a></li>
+        <li><a href="day-{day_num}.html" class="active">{nav_label}</a></li>
         <li><a href="{primary_blog}">深度遊記</a></li>
       </ul>'''
         html_content = re.sub(r'<ul class="nav-links">[\s\S]*?</ul>', std_nav_links, html_content)
@@ -209,8 +220,8 @@ def build_timelines(trip_slug="2026-germany", dest_slug=None):
       <span>首頁</span>
     </a>
     <a href="day-{day_num}.html" class="dock-item active">
-      <span class="dock-icon">⏱️</span>
-      <span>時間表</span>
+      <span class="dock-icon">{dock_icon}</span>
+      <span>{dock_label}</span>
     </a>
     <a href="{primary_blog}" class="dock-item">
       <span class="dock-icon">📖</span>
@@ -254,8 +265,13 @@ def build_timelines(trip_slug="2026-germany", dest_slug=None):
         print(f"  ✅ 已編譯: {item_id} -> {out_file.name}")
         built_count += 1
 
-    print(f"\n✨ 構建完成！共編譯 {built_count} 份標準純時間表（100% 雙向直通，原子寫入）。\n")
+    print(f"\n✨ 構建完成！共編譯 {built_count} 份標準行程頁（100% 雙向直通，原子寫入）。\n")
 
 
 if __name__ == "__main__":
-    build_timelines()
+    parser = argparse.ArgumentParser(description="Build Germany journey itinerary pages.")
+    parser.add_argument("--trip", default="2026-germany")
+    parser.add_argument("--dest")
+    parser.add_argument("--entry", help="Build one configured entry, for example day-01.")
+    args = parser.parse_args()
+    build_timelines(args.trip, args.dest, args.entry)
