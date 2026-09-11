@@ -1086,28 +1086,29 @@
       const pageType = typeSelect.value;
       const sourceFile = currentPage.file || '';
       const outputFile = currentPage.output || '';
+      const entryId = currentPage.id || '';
+      const entryArg = ['blogs', 'timelines'].includes(pageType) && entryId
+        ? ` --entry ${entryId}`
+        : '';
       const buildCommand = pageType === 'timelines'
-        ? `python tools\\build_timeline_html.py --trip ${currentTrip.id}`
-        : `python tools\\build_trip_html.py --trip ${currentTrip.id}`;
+        ? `python tools\\build_timeline_html.py --trip ${currentTrip.id}${entryArg}`
+        : `python tools\\build_trip_html.py --trip ${currentTrip.id}${entryArg}`;
+      const liveUrl = `https://chxtravel.com/${outputFile.replace(/^docs\//, '')}`;
 
-      const prompt = `請在 C:\\Data\\charlotte-ai-os-dev\\ch-travel-os 繼續處理 CH x Travel 本機 editor 儲存後的發布 flow。
+      const prompt = `請在 C:\\Data\\charlotte-ai-os-dev\\ch-travel-os 依 TRAVEL_BLOG_PRODUCTION_PLAYBOOK.md 的「Editor 單篇發布 Fast Path」完成本次發布，不要重跑完整文章製作流程。
 
 本次 editor 儲存資訊：
 - 儲存時間：${now}
 - Journey：${currentTrip.id}
 - 類型：${pageType}
+- Entry：${entryId}
 - Source of Truth：${sourceFile}
 - 預期公開輸出：${outputFile}
+- Live URL：${liveUrl}
 
-請自行判斷是否已經發布到 Cloudflare，不要只看本機 docs。
+執行 ${buildCommand}，再跑 validator 與 git diff --check。只 stage 本次 source/output，確認 staged scope 後 commit 並 push origin/master；不得碰其他 dirty changes。
 
-必要流程：
-1. 先讀專案 AGENTS.md，並執行 git status -sb；只處理這次 editor 儲存造成的相關檔案，不要 stage 或覆蓋無關 dirty changes。
-2. 確認 source 與 docs 輸出是否同步；必要時執行：${buildCommand}
-3. 執行 python tools\\validate_images.py 與 git diff --check。
-4. 檢查 Cloudflare Pages 專案 ch-travel 的最新 production deployment 是否已對應目前要發布的 commit/content。可用 wrangler deployment list、live URL 內容比對、或 Cloudflare dashboard 狀態判斷。
-5. 若尚未發布：只 commit 相關檔案，push 到 origin/master，等待或觸發 Cloudflare Pages production deployment，並驗證 https://chxtravel.com/${outputFile.replace(/^docs\//, '')}。
-6. 若已發布：不要重複 deploy；回報目前 commit、Cloudflare production URL、驗證結果。
+Cloudflare 只查最新一筆 production deployment。Push 後每 20～30 秒查一次，最多等待 60～90 秒；若 Git integration 未觸發，從目標 commit 的乾淨 export/worktree 部署，禁止直接部署 dirty working tree。最後以 production commit、HTTP 200 與 staged diff 中 1～2 個內容 fingerprint 驗證 ${liveUrl}。不要輸出完整 deployment history 或大段 HTML。
 
 請最後用繁體中文簡短回報：改了哪些檔案、驗證結果、是否已上 Cloudflare、live URL。`;
 

@@ -222,6 +222,17 @@ def validate_docs():
             # 4.3 檢查 <img> 標籤的 CLS 尺寸 (width/height) 與重複屬性（排除 script 區塊）
             clean_html = re.sub(r'<script[\s\S]*?</script>', '', content, flags=re.IGNORECASE)
 
+            if re.fullmatch(r'day-\d{2}\.html', hf.name, re.IGNORECASE):
+                chapter_nav_count = len(re.findall(
+                    r'class=["\'][^"\']*\bchapter-nav\b',
+                    clean_html,
+                    re.IGNORECASE,
+                ))
+                if chapter_nav_count != 1:
+                    errors.append(
+                        f"[篇章導覽數量錯誤] 預期 1 組，實際 {chapter_nav_count} 組 in {hf.relative_to(DOCS_DIR)}"
+                    )
+
             # Journey Hub owns featured-story data; core/app.js owns behavior only.
             stories_match = re.search(
                 r'window\.__JOURNEY_STORIES__\s*=\s*\[([\s\S]*?)\];',

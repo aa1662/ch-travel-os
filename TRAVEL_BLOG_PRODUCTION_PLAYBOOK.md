@@ -287,6 +287,36 @@ python tools/validate_images.py
 - 移除或 archive 過渡檔前先確認沒有 config、builder、navigation 或文件引用。
 - Commit、push、deploy 分別取得授權；selective stage，不混入其他 working-tree 變更。
 
+### 12.1 Editor 單篇發布 Fast Path
+
+本流程適用於作者已完成 HITL、由本機 editor 儲存的單篇 blog 或 timeline 內容修訂。目標是在一般情況下 2～4 分鐘內完成 build、驗證、selective commit、push 與 production 確認，不重新啟動完整文章製作流程。
+
+適用條件：
+
+- 只修改一篇既有 source，且對應單一既有公開輸出。
+- 不涉及 migration config、canonical URL、圖片 manifest、公開 derivatives、共用 CSS／JS、builder、validator 或 Journey Hub。
+- editor 任務已明確授權本次 selective commit、push 與 Cloudflare production 發布。
+
+執行順序：
+
+1. 讀取 `AGENTS.md` 並執行 `git status -sb`，記錄但不碰任務外 dirty changes。
+2. 對該篇執行 builder 的 `--entry <entry-id>`；禁止為單篇文字修改重建整個 Journey。
+3. 執行 `python tools/validate_images.py` 與 `git diff --check`。
+4. 只 stage 本次 source 與其公開輸出；用 `git diff --cached --name-status` 確認 staged scope 後 commit、push。
+5. Cloudflare 查詢只輸出最新一筆 production deployment 的 `Source`、`Deployment` 與狀態，不回傳完整歷史清單。
+6. Push 後每 20～30 秒查詢一次，最多等待 60～90 秒。最新 production source 已是目標 commit 時，不得重複部署。
+7. 若 Git integration 在等待上限內未觸發，從目標 commit 建立乾淨的暫時 export 或 detached worktree，再部署該 commit 的 `docs/`；不得直接部署含無關 dirty changes 的工作目錄。完成後清理暫時目錄。
+8. 最終只需驗證 production deployment 對應目標 commit、live URL 回傳 HTTP 200，以及 staged diff 中 1～2 個具辨識度的內容 fingerprint 已出現在 live HTML。
+
+下列任一情況必須退出 Fast Path，改走完整 build 與相應驗收：
+
+- 同時修改多篇文章、Journey Hub、navigation 或 migration config。
+- 新增、刪除或替換圖片，或變更 manifest／pipeline contract。
+- 修改共用 CSS／JS、builder、validator 或發布設定。
+- Source 與 output 無法由單一 entry 確定性重建，或 validator／live fingerprint 驗證失敗。
+
+工具輸出應保持精簡：validator 保留結果摘要，Cloudflare 只保留最新 deployment，Git 只列 staged scope、commit 與最終 status。不得把完整 deployment history 或大段未變更 HTML 帶回對話。
+
 ## 13. 一頁 SOP Checklist
 
 ```text

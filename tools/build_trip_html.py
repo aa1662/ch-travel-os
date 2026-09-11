@@ -372,7 +372,7 @@ def build_trip(trip_slug="2026-germany", dest_slug=None, entry_id=None):
         if item.get("footer_center") == "gallery":
             center_html = '<button type="button" class="btn-gallery-quick">瀏覽完整圖集</button>'
         elif timeline_physical.exists():
-            center_html = f'<a href="{timeline_target}" class="badge badge-gold" style="font-size: 0.9rem; padding: 0.5rem 1rem; text-decoration: none;">⏱️ 查看 Day {int(day_num)} 純時間表</a>'
+            center_html = f'<a href="{timeline_target}" class="badge badge-gold" style="font-size: 0.9rem; padding: 0.5rem 1rem; text-decoration: none;">🧭 查看 Day {int(day_num)} 行程筆記</a>'
         else:
             timeline_fallback_link = item.get("timeline_fallback_link", "../index.html#itinerary")
             center_html = f'<a href="{timeline_fallback_link}" class="badge badge-gold" style="font-size: 0.9rem; padding: 0.5rem 1rem; text-decoration: none;">🗺️ 行程總覽</a>'

@@ -192,6 +192,8 @@ def build_timelines(trip_slug="2026-germany", dest_slug=None, entry_id=None):
             day_id_upper = item["id"].replace("-", " ").title()
             center_nav_html = f'<a href="{primary_blog}" class="badge badge-gold" style="font-size: 0.9rem; padding: 0.5rem 1rem; text-decoration: none;">📝 閱讀 {day_id_upper} 深度遊記</a>'
 
+        nav_marker_pattern = r'<!--\s*(?:篇章)?導覽按鈕(?:(?!-->)[\s\S])*?-->'
+
         # 舊來源曾在篇章導覽前另放一張指向同篇遊記的 CTA 卡。
         # Footer 已有中央遊記入口，構建時移除這個相鄰舊區塊，避免視覺與語意重複。
         escaped_blog_link = re.escape(primary_blog)
@@ -200,7 +202,7 @@ def build_timelines(trip_slug="2026-germany", dest_slug=None, entry_id=None):
             rf'<a\b(?=[^>]*href=["\']{escaped_blog_link}["\'])'
             rf'(?=[^>]*class=["\'][^"\']*btn-hero-primary[^"\']*["\'])[^>]*>'
             rf'(?:(?!</section>)[\s\S])*?</a>(?:(?!</section>)[\s\S])*?</section>\s*'
-            rf'(?=<!--\s*(?:篇章)?導覽按鈕\s*-->)',
+            rf'(?={nav_marker_pattern})',
             '\n\n    ',
             html_content,
             count=1,
@@ -214,9 +216,10 @@ def build_timelines(trip_slug="2026-germany", dest_slug=None, entry_id=None):
       <a href="{next_p}" style="font-weight: 600; color: var(--primary); font-size: 0.95rem;">{next_text}</a>
     </div>'''
 
-        if re.search(r'<!--\s*(?:篇章)?導覽按鈕\s*-->[\s\S]*?</div>\s*</main>', html_content):
+        footer_nav_pattern = rf'{nav_marker_pattern}[\s\S]*?</div>\s*</main>'
+        if re.search(footer_nav_pattern, html_content):
             html_content = re.sub(
-                r'<!--\s*(?:篇章)?導覽按鈕\s*-->[\s\S]*?</div>\s*</main>',
+                footer_nav_pattern,
                 f'{new_footer_nav}\n  </main>',
                 html_content
             )
