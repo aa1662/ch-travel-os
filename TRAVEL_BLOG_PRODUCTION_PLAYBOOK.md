@@ -233,7 +233,7 @@ Instagram 原貼文是作者當時已完成的編輯作品；相機原圖則是�
 
 ```powershell
 python tools/image_pipeline.py --trip <journey> --dest <dest> [--pilot-day <day>]
-python tools/build_trip_html.py --trip <journey> --dest <dest>
+python tools/build_trip_html.py --trip <journey> --dest <dest> [--entry <entry-id>]
 python tools/validate_images.py
 ```
 
@@ -244,6 +244,8 @@ python tools/validate_images.py
 - `--pilot-day` 只更新該日 entries，必須保留其他日已存在且契約相容的 entries。
 - 若現有 manifest contract 不相容，pilot 必須失敗並要求完整 rebuild，不得靜默覆寫全 manifest。
 - Builder 採記憶體緩衝與原子寫入；source missing、mapping miss 或構建錯誤時，不得留下部分發布結果。
+- 單篇來源或單篇 config 內容調整使用 `--entry`，只寫入指定文章；不得連帶重建其他文章、Journey Hub 或同步公開 core 資產。
+- 共用 CSS／JS、導覽規則、圖片契約、Journey Hub 或 builder 本身變更時，省略 `--entry` 執行全 Journey build。
 - `core/` 與 `docs/core/` 的同步由構建流程負責，不依賴人工複製。
 
 ## 11. Stage 7：自動驗收與瀏覽器 UAT

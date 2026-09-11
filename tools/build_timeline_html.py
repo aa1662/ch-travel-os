@@ -130,10 +130,10 @@ def build_timelines(trip_slug="2026-germany", dest_slug=None, entry_id=None):
         if item["id"] == "day-10":
             hero_btn_html = '''<div style="margin-top: 0.85rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
           <a href="blog/speyer-cathedral.html" class="btn-hero-primary" style="font-size: 0.92rem; padding: 0.65rem 1.25rem;">
-            📝 閱讀 Day 10 上篇（史派爾帝國大教堂 ✕ 跨國轉移）→
+            📝 史派爾上篇 →
           </a>
           <a href="blog/colmar-little-venice.html" class="btn-hero-primary" style="font-size: 0.92rem; padding: 0.65rem 1.25rem;">
-            📝 閱讀 Day 10 下篇（科爾馬小威尼斯 ✕ 移動城堡）→
+            📝 科爾馬下篇 →
           </a>
         </div>'''
         else:
@@ -192,8 +192,23 @@ def build_timelines(trip_slug="2026-germany", dest_slug=None, entry_id=None):
             day_id_upper = item["id"].replace("-", " ").title()
             center_nav_html = f'<a href="{primary_blog}" class="badge badge-gold" style="font-size: 0.9rem; padding: 0.5rem 1rem; text-decoration: none;">📝 閱讀 {day_id_upper} 深度遊記</a>'
 
+        # 舊來源曾在篇章導覽前另放一張指向同篇遊記的 CTA 卡。
+        # Footer 已有中央遊記入口，構建時移除這個相鄰舊區塊，避免視覺與語意重複。
+        escaped_blog_link = re.escape(primary_blog)
+        html_content = re.sub(
+            rf'\s*<section\b[^>]*>(?:(?!</section>)[\s\S])*?'
+            rf'<a\b(?=[^>]*href=["\']{escaped_blog_link}["\'])'
+            rf'(?=[^>]*class=["\'][^"\']*btn-hero-primary[^"\']*["\'])[^>]*>'
+            rf'(?:(?!</section>)[\s\S])*?</a>(?:(?!</section>)[\s\S])*?</section>\s*'
+            rf'(?=<!--\s*(?:篇章)?導覽按鈕\s*-->)',
+            '\n\n    ',
+            html_content,
+            count=1,
+            flags=re.IGNORECASE,
+        )
+
         new_footer_nav = f'''<!-- 篇章導覽按鈕 -->
-    <div style="display: flex; justify-content: space-between; align-items: center; margin: 3.5rem 0 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); flex-wrap: wrap; gap: 1rem;">
+    <div class="chapter-nav" style="display: flex; justify-content: space-between; align-items: center; margin: 3.5rem 0 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); flex-wrap: wrap; gap: 1rem;">
       <a href="{prev_p}" style="font-weight: 600; color: var(--primary); font-size: 0.95rem;">{prev_text}</a>
       {center_nav_html}
       <a href="{next_p}" style="font-weight: 600; color: var(--primary); font-size: 0.95rem;">{next_text}</a>
@@ -210,6 +225,12 @@ def build_timelines(trip_slug="2026-germany", dest_slug=None, entry_id=None):
                 r'(</main>)',
                 f'{new_footer_nav}\n  \\1',
                 html_content
+            )
+
+        chapter_nav_count = len(re.findall(r'class=["\'][^"\']*\bchapter-nav\b', html_content))
+        if chapter_nav_count != 1:
+            errors.append(
+                f"[{item['id']}] 篇章導覽必須恰好一組，實際找到 {chapter_nav_count} 組: {src_file}"
             )
 
         # 7. 標準化手機底部 Mobile Dock

@@ -8,7 +8,8 @@ CH Travel OS 2.0 - Config-Driven Blog HTML Builder
 3. 嚴格對齊章節導覽鏈結 (prev_link / next_link)，未發布天數以非 <a> 標籤優雅降級
 4. 統一社群 OG/Twitter 元數據
 5. 嚴格模式：遇任何 source 遺失或圖片 miss 立即退出 (non-zero exit)
-6. 若存在 trips/<trip>/sources/index.html，於同一筆交易同步 Journey Hub
+6. 若存在 trips/<trip>/sources/index.html，全量構建時於同一筆交易同步 Journey Hub
+7. 支援 --entry <id> 單篇構建；單篇模式不寫入 Journey Hub 或同步 core 資產
 """
 
 import re
@@ -209,7 +210,7 @@ def sync_public_core_assets():
         shutil.copy2(src, dest)
 
 
-def build_trip(trip_slug="2026-germany", dest_slug=None):
+def build_trip(trip_slug="2026-germany", dest_slug=None, entry_id=None):
     config_path = TRIPS_DIR / trip_slug / "blog-migration.json"
     errors = []
 
@@ -219,7 +220,18 @@ def build_trip(trip_slug="2026-germany", dest_slug=None):
 
     with open(config_path, "r", encoding="utf-8") as f:
         config_data = json.load(f)
-        entries = config_data.get("entries", config_data) if isinstance(config_data, dict) else config_data
+        all_entries = config_data.get("entries", config_data) if isinstance(config_data, dict) else config_data
+
+    entries = [
+        item for item in all_entries
+        if entry_id is None or item["id"] == entry_id
+    ]
+    if entry_id and not entries:
+        print(f"❌ 找不到 Blog 項目: {entry_id}")
+        sys.exit(1)
+    if entry_id and len(entries) != 1:
+        print(f"❌ Blog 項目 ID 不唯一: {entry_id}")
+        sys.exit(1)
 
     config_dest = config_data.get("dest") if isinstance(config_data, dict) else None
     journey_end_title = (
@@ -243,7 +255,8 @@ def build_trip(trip_slug="2026-germany", dest_slug=None):
     images_dict = manifest.get("images", {})
     built_count = 0
 
-    print(f"🚀 開始執行 {trip_slug} -> {dest_slug} Blog 批次編譯...")
+    build_scope = f"單篇編譯 ({entry_id})" if entry_id else "批次編譯"
+    print(f"🚀 開始執行 {trip_slug} -> {dest_slug} Blog {build_scope}...")
 
     compiled_outputs = {}
 
@@ -389,7 +402,7 @@ def build_trip(trip_slug="2026-germany", dest_slug=None):
         compiled_outputs[out_file] = (item["id"], html_content)
 
     hub_source = TRIPS_DIR / trip_slug / "sources" / "index.html"
-    if hub_source.exists():
+    if entry_id is None and hub_source.exists():
         hub_output = DOCS_DIR / dest_slug / "index.html"
         hub_content = strip_editor_metadata(hub_source.read_text(encoding="utf-8"))
         hub_content = re.sub(r'href="(?:\.\./)*core/css/style\.css(?:\?[^"]*)?"', 'href="../core/css/style.css?v=20260903-nav-unify"', hub_content)
@@ -403,7 +416,7 @@ def build_trip(trip_slug="2026-germany", dest_slug=None):
         sys.exit(1)
 
     # 全域無錯誤，開始原子同步核心資產與寫入 HTML
-    if CORE_DIR.exists():
+    if entry_id is None and CORE_DIR.exists():
         sync_public_core_assets()
 
     for out_file, (item_id, content) in compiled_outputs.items():
@@ -423,6 +436,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="CH Travel OS Blog Builder")
     parser.add_argument("--trip", default="2026-germany", help="目標旅程目錄名稱")
     parser.add_argument("--dest", default=None, help="目標發布目錄名稱（預設讀取 config）")
+    parser.add_argument("--entry", default=None, help="只構建指定的 blog-migration entry ID")
     args = parser.parse_args()
 
-    build_trip(args.trip, args.dest)
+    build_trip(args.trip, args.dest, args.entry)
