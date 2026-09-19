@@ -84,7 +84,7 @@
     },
     {
       "id": "day-07",
-      "title": "Day 07：巴洛克巔峰與美茵河畔微醺 — 主教宮天頂畫、老橋白酒與瑪麗恩堡雪景",
+      "title": "Day 07：巴洛克巔峰與美茵河畔散步 — 主教宮天頂畫、老橋風景與瑪麗恩堡雪景",
       "source": "trips/2026-germany/sources/blog/wuerzburg-residenz.html",
       "output": "docs/2026-germany/blog/wuerzburg-residenz.html",
       "image_folder": "day-07",
@@ -158,11 +158,11 @@
       "prev_link": "colmar-little-venice.html",
       "prev_title": "Day 10 (下) 科爾馬小威尼斯",
       "next_link": "garmisch-das-graseck.html",
-      "next_title": "Day 12 加米許山莊溫泉隱世時光"
+      "next_title": "Day 12 加米許山莊隱世時光"
     },
     {
       "id": "day-12",
-      "title": "Day 12：黑森林過渡 ✕ 加米許山莊溫泉 Das Graseck 的極致隱世時光",
+      "title": "Day 12：黑森林過渡 ✕ 加米許山莊 Das Graseck 的極致隱世時光",
       "source": "trips/2026-germany/sources/blog/garmisch-das-graseck.html",
       "output": "docs/2026-germany/blog/garmisch-das-graseck.html",
       "image_folder": "day-12",
@@ -182,7 +182,7 @@
       "og_url": "https://chxtravel.com/2026-germany/blog/neuschwanstein-winter.html",
       "og_image": "https://chxtravel.com/2026-germany/images/day-13/18085943692920080-desktop-1200w.webp",
       "prev_link": "garmisch-das-graseck.html",
-      "prev_title": "Day 12 加米許溫泉山莊",
+      "prev_title": "Day 12 加米許雪山山莊",
       "next_link": "partnachklamm-ice.html",
       "next_title": "Day 14 帕特納赫峽谷冰瀑奇景"
     },
