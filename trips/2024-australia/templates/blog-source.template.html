@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{短標題}}｜2024 澳洲漫遊記</title>
+  <meta name="description" content="{{從真實故事撰寫的摘要}}">
+  <link rel="canonical" href="https://chxtravel.com/2024-australia/blog/{{slug}}.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{短標題}}">
+  <meta property="og:description" content="{{從真實故事撰寫的摘要}}">
+  <meta property="og:url" content="https://chxtravel.com/2024-australia/blog/{{slug}}.html">
+  <meta property="og:image" content="https://chxtravel.com/2024-australia/images/{{image_folder}}/{{hero-desktop-webp}}">
+  <link rel="stylesheet" href="../../core/css/style.css">
+  <link rel="stylesheet" href="../../core/vendor/glightbox/glightbox.min.css">
+</head>
+<body>
+  <!-- Builder 會依 migration config 統一導覽；此處保留共用結構。 -->
+  <nav class="site-nav">
+    <div class="container">
+      <div class="brand-group"><a class="brand-link" href="../../index.html">🧭 CH Travel OS</a></div>
+      <ul class="nav-links"><li><a href="../index.html#stories">📖 深度遊記</a></li></ul>
+      <button class="nav-share-btn btn-share" type="button">📤 分享</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <article class="blog-article">
+      <!-- Hero 依照片橫直決定適合的比例。已選燈箱才包 gallery-opener。 -->
+      <section class="split-hero">
+        <div class="split-hero-img-wrap">
+          <a class="gallery-opener" data-gallery-open="{{hero-image-id}}" href="../images/{{image_folder}}/{{hero-lightbox-webp}}">
+            <img src="../images/{{image_folder}}/{{hero-desktop-webp}}" alt="{{依真實畫面撰寫的 Hero alt}}" style="object-position:center {{focus-percent}}%;" loading="eager">
+          </a>
+        </div>
+        <div class="split-hero-content">
+          <h1>{{簡潔、具故事命題的標題}}</h1>
+          <p class="article-lead">{{真實經歷的破題，避免制式金句}}</p>
+        </div>
+      </section>
+
+      <!-- 僅由 builder 從 blog-migration.json 的 gallery_groups 生成一次。 -->
+      <!-- GALLERY_REGISTRY -->
+
+      <section class="blog-narrative-card">
+        <p>{{第一段：起因與現場，不用行程流水帳}}</p>
+      </section>
+
+      <section>
+        <h2>{{第一幕小標}}</h2>
+        <div class="story-split">
+          <div class="story-split-text"><p>{{與旁邊直圖有關的兩至三段故事}}</p></div>
+          <figure class="story-split-media">
+            <a class="gallery-opener" data-gallery-open="{{portrait-image-id}}" href="../images/{{image_folder}}/{{portrait-lightbox-webp}}">
+              <img src="../images/{{image_folder}}/{{portrait-content-webp}}" alt="{{真實畫面}}" style="object-position:center {{focus-percent}}%;">
+            </a>
+            <figcaption>{{保守準確的圖說}}</figcaption>
+          </figure>
+        </div>
+        <p>{{需要推進事件的獨立段落}}</p>
+        <figure class="fullwidth-landscape-wrap">
+          <a class="gallery-opener" data-gallery-open="{{landscape-image-id}}" href="../images/{{image_folder}}/{{landscape-lightbox-webp}}">
+            <img src="../images/{{image_folder}}/{{landscape-desktop-webp}}" alt="{{真實畫面}}" style="object-position:center {{focus-percent}}%;">
+          </a>
+          <figcaption>{{保守準確的圖說}}</figcaption>
+        </figure>
+      </section>
+
+      <!-- 以下元件按故事證據選用，不為湊版硬放：
+           .ig-post-card + .photo-grid（Takeout 原文與核准照片）
+           .story-split.reverse（另一幕直圖）
+           .fullwidth-landscape-wrap（相隔至少一至兩段後的橫圖）
+           .bento-grid + .bento-card（已驗證的讀者筆記） -->
+
+      <div class="bento-grid">{{若有實用資訊，填入核准的 bento-card；否則刪除此區}}</div>
+      <a href="../index.html#stories">← 澳洲旅程總覽</a>
+      <button type="button" class="btn-gallery-quick">瀏覽完整圖集</button>
+    </article>
+  </main>
+  <script src="../../core/vendor/glightbox/glightbox.min.js"></script>
+  <script src="../../core/js/app.js"></script>
+</body>
+</html>

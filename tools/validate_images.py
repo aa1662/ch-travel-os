@@ -11,6 +11,7 @@ CH Travel OS 2.0 - 全域發布與圖片合規驗證器 (Full Site & Image Valid
 6. 燈箱契約：採 registry 的頁面不得重複註冊照片，且各橫直圖集須依拍攝時間排序。
 """
 
+import csv
 import re
 import sys
 import json
@@ -69,6 +70,44 @@ def validate_docs():
 
     if (DOCS_DIR / "core" / "editor.html").exists():
         errors.append("[公開 Editor 外洩] docs/core/editor.html 不應進入 GitHub Pages 發布目錄")
+
+    # 0. 載入旅程 research 中已人工驗證的雙軌媒體映射表 (IG -> 相機原圖)
+    # key 必須包含 trip，避免不同旅程的 Instagram ID 彼此覆蓋。
+    media_mappings = {}
+    for mapping_path in TRIPS_DIR.glob("*/research/*media-mapping.csv"):
+        trip_slug = mapping_path.parents[1].name
+        try:
+            with open(mapping_path, encoding="utf-8-sig") as f:
+                reader = csv.DictReader(f)
+                if not reader.fieldnames or "image_id" not in reader.fieldnames:
+                    continue
+                for row in reader:
+                    img_id = row.get("image_id", "").strip()
+                    cam_id = row.get("camera_original_id", "").strip()
+                    status = row.get("mapping_status", "").strip().lower()
+                    if status != "verified":
+                        continue
+                    if not img_id or not cam_id:
+                        errors.append(f"[媒體映射欄位缺失] {mapping_path.relative_to(BASE_DIR)}")
+                        continue
+                    key = (trip_slug, img_id)
+                    previous = media_mappings.get(key)
+                    if previous and previous != cam_id:
+                        errors.append(
+                            f"[媒體映射衝突] {trip_slug}/{img_id}: {previous} != {cam_id}"
+                        )
+                        continue
+                    source_path = (BASE_DIR / row.get("source_path", "")).resolve()
+                    target_path = source_path.with_name(f"{cam_id}{source_path.suffix}")
+                    if not source_path.exists():
+                        errors.append(f"[媒體映射來源不存在] {source_path}")
+                        continue
+                    if not target_path.exists():
+                        errors.append(f"[媒體映射目標不存在] {target_path}")
+                        continue
+                    media_mappings[key] = cam_id
+        except (OSError, csv.Error, UnicodeError) as exc:
+            errors.append(f"[媒體映射解析失敗] {mapping_path.relative_to(BASE_DIR)} ({exc})")
 
     image_files = list(DOCS_DIR.rglob("*.webp")) + list(DOCS_DIR.rglob("*.jpg")) + list(DOCS_DIR.rglob("*.png"))
 
@@ -307,7 +346,31 @@ def validate_docs():
                         f"[燈箱入口無對應照片] {', '.join(missing_targets)} in {hf.relative_to(DOCS_DIR)}"
                     )
 
-            # 4.4.1 驗證 gallery-opener 的 data-gallery-open 與內部 img.src 一致性（避免點 A 圖放大變 B 圖）
+            # 4.4.1 任何 registry 都必須唯一，且每個 opener 必須命中同頁 registry。
+            registry_ids = []
+            registry_match = re.search(
+                r'<div\b[^>]*class=["\'][^"\']*\bgallery-registry\b[^"\']*["\'][^>]*>([\s\S]*?)</div>',
+                content,
+                re.IGNORECASE,
+            )
+            if registry_match:
+                registry_ids = re.findall(
+                    r'data-gallery-image=["\']([^"\']+)["\']',
+                    registry_match.group(1),
+                    re.IGNORECASE,
+                )
+                duplicate_registry_ids = sorted({
+                    image_id for image_id in registry_ids if registry_ids.count(image_id) > 1
+                })
+                if duplicate_registry_ids:
+                    errors.append(
+                        f"[燈箱照片重複] {', '.join(duplicate_registry_ids)} in {hf.relative_to(DOCS_DIR)}"
+                    )
+
+            registry_id_set = set(registry_ids)
+            trip_slug = rel_html.split("/", 1)[0] if "/" in rel_html else ""
+
+            # 4.4.2 驗證 gallery-opener 的 data-gallery-open 與內部 img.src 一致性（避免點 A 圖放大變 B 圖）
             for opener_match in re.finditer(r'<a\b[^>]*class=["\'][^"\']*gallery-opener[^"\']*["\'][^>]*>([\s\S]*?)</a>', content, re.IGNORECASE):
                 opener_tag = opener_match.group(0)
                 inner_content = opener_match.group(1)
@@ -317,10 +380,25 @@ def validate_docs():
                     open_target = open_target_match.group(1).strip()
                     img_src = img_src_match.group(1).strip()
                     img_stem = Path(img_src).stem.split('-')[0]
-                    if open_target != img_stem:
+                    # 只有同旅程且 mapping_status=verified 的映射可以開啟相機原圖。
+                    mapped_target = media_mappings.get((trip_slug, img_stem))
+                    if open_target != img_stem and open_target != mapped_target:
                         errors.append(
                             f"[縮圖與燈箱目標不一致] data-gallery-open='{open_target}' 但內部圖片為 '{img_stem}' in {hf.relative_to(DOCS_DIR)}"
                         )
+                    if registry_id_set and open_target not in registry_id_set:
+                        errors.append(
+                            f"[燈箱入口無對應照片] {open_target} in {hf.relative_to(DOCS_DIR)}"
+                        )
+                    if mapped_target:
+                        if mapped_target not in registry_id_set:
+                            errors.append(
+                                f"[映射目標未註冊] {img_stem} -> {mapped_target} in {hf.relative_to(DOCS_DIR)}"
+                            )
+                        if img_stem in registry_id_set:
+                            errors.append(
+                                f"[映射來源重複註冊] {img_stem} 已映射至 {mapped_target} in {hf.relative_to(DOCS_DIR)}"
+                            )
 
             # 4.5 檢查所有本機連結與資源是否皆存在 (避免 404 與無效錨點)
             ref_pattern = re.compile(r'(?:href|src)=["\']([^"\']+)["\']')

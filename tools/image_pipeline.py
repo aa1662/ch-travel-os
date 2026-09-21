@@ -17,8 +17,15 @@ import shutil
 import datetime
 import hashlib
 import tempfile
+import threading
 from pathlib import Path
 from PIL import Image, ImageOps
+
+try:
+    import pillow_heif
+    pillow_heif.register_heif_opener()
+except ImportError:
+    pass
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 MASTERS_DIR = BASE_DIR / "masters"
@@ -34,6 +41,24 @@ PROFILES = [
 
 PIPELINE_VERSION = "2.0.0"
 DEFAULT_QUALITY = 84
+_MANIFEST_WRITE_LOCK = threading.Lock()
+
+
+def load_publish_exclusions(trip_slug):
+    """Load journey-owned source exclusions that must survive every rebuild."""
+    config_path = BASE_DIR / "trips" / trip_slug / "image-publish.json"
+    if not config_path.exists():
+        return {}
+    with open(config_path, "r", encoding="utf-8") as f:
+        config = json.load(f)
+    excluded = config.get("excluded_files", {})
+    if not isinstance(excluded, dict):
+        raise ValueError(f"excluded_files 必須是以資料夾為 key 的物件: {config_path}")
+    return {
+        folder: set(filenames)
+        for folder, filenames in excluded.items()
+        if isinstance(filenames, list)
+    }
 
 
 def get_file_sha256(filepath):
@@ -148,6 +173,76 @@ def process_image(src_path, output_dir, rel_public_base, existing_manifest_entry
     }, False
 
 
+def process_selected_image(trip_slug, day_name, filename, dest_slug=None):
+    """Publish one selected master without exposing the original file to the editor."""
+    if not dest_slug:
+        dest_slug = trip_slug
+
+    for value, label in ((trip_slug, "trip"), (dest_slug, "dest"), (day_name, "folder"), (filename, "filename")):
+        if not value or Path(value).name != value or value in {".", ".."}:
+            raise ValueError(f"非法 {label}: {value}")
+
+    master_root = (MASTERS_DIR / trip_slug).resolve()
+    src_path = (master_root / day_name / filename).resolve()
+    try:
+        src_path.relative_to(master_root)
+    except ValueError as exc:
+        raise ValueError("圖片不在指定旅程的 master 目錄內") from exc
+    if not src_path.exists() or not src_path.is_file():
+        raise FileNotFoundError(f"找不到 master 圖片: {day_name}/{filename}")
+    if src_path.suffix.lower() not in {".jpg", ".jpeg", ".png", ".webp", ".heic"}:
+        raise ValueError(f"不支援的圖片格式: {src_path.suffix}")
+
+    excluded_names = load_publish_exclusions(trip_slug).get(day_name, set())
+    if filename in excluded_names:
+        raise ValueError("此照片已列入發布排除清單")
+
+    manifest_file = DOCS_DIR / dest_slug / "image-manifest.json"
+    output_dir = DOCS_DIR / dest_slug / "images" / day_name
+    rel_public_base = f"{dest_slug}/images/{day_name}"
+    image_key = f"{day_name}/{filename}"
+
+    with _MANIFEST_WRITE_LOCK:
+        if manifest_file.exists():
+            manifest_data = json.loads(manifest_file.read_text(encoding="utf-8"))
+            contract_valid = (
+                manifest_data.get("pipeline_version") == PIPELINE_VERSION
+                and manifest_data.get("quality") == DEFAULT_QUALITY
+                and manifest_data.get("profiles") == PROFILES
+                and manifest_data.get("trip") == trip_slug
+                and manifest_data.get("dest") == dest_slug
+            )
+            if not contract_valid:
+                raise ValueError("現有 image-manifest 合約已過期，請先執行完整圖片管線")
+        else:
+            manifest_data = {
+                "pipeline_version": PIPELINE_VERSION,
+                "trip": trip_slug,
+                "dest": dest_slug,
+                "generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                "quality": DEFAULT_QUALITY,
+                "profiles": PROFILES,
+                "images": {},
+            }
+
+        existing_entry = manifest_data.setdefault("images", {}).get(image_key)
+        entry, is_cache = process_image(
+            src_path,
+            output_dir,
+            rel_public_base,
+            existing_entry,
+            manifest_meta=manifest_data,
+        )
+        manifest_data["images"][image_key] = entry
+        manifest_data["generated_at"] = datetime.datetime.now(datetime.timezone.utc).isoformat()
+        manifest_file.parent.mkdir(parents=True, exist_ok=True)
+        temp_manifest = manifest_file.with_suffix(".json.tmp")
+        temp_manifest.write_text(json.dumps(manifest_data, ensure_ascii=False, indent=2), encoding="utf-8")
+        os.replace(temp_manifest, manifest_file)
+
+    return entry, is_cache
+
+
 def process_trip(trip_slug, dest_slug=None, pilot_day=None):
     if not dest_slug:
         dest_slug = trip_slug
@@ -159,6 +254,7 @@ def process_trip(trip_slug, dest_slug=None, pilot_day=None):
 
     trip_output = DOCS_DIR / dest_slug / "images"
     manifest_file = DOCS_DIR / dest_slug / "image-manifest.json"
+    publish_exclusions = load_publish_exclusions(trip_slug)
 
     now_iso = datetime.datetime.now(datetime.timezone.utc).isoformat()
     manifest_data = {
@@ -217,8 +313,16 @@ def process_trip(trip_slug, dest_slug=None, pilot_day=None):
         out_day_dir = trip_output / day_name
         rel_base = f"{dest_slug}/images/{day_name}"
 
-        img_files = sorted([f for f in day_dir.iterdir() if f.is_file() and f.suffix.lower() in [".jpg", ".jpeg", ".png", ".webp", ".heic"]])
+        excluded_names = publish_exclusions.get(day_name, set())
+        img_files = sorted([
+            f for f in day_dir.iterdir()
+            if f.is_file()
+            and f.suffix.lower() in [".jpg", ".jpeg", ".png", ".webp", ".heic"]
+            and f.name not in excluded_names
+        ])
         print(f"📁 處理中: {trip_slug} -> docs/{dest_slug} / {day_name} (共 {len(img_files)} 張照片)...", flush=True)
+        if excluded_names:
+            print(f"  🔒 套用持續排除規則: {len(excluded_names)} 張", flush=True)
 
         for img_path in img_files:
             try:

@@ -224,7 +224,7 @@ def build_trip(trip_slug="2026-germany", dest_slug=None, entry_id=None):
 
     entries = [
         item for item in all_entries
-        if entry_id is None or item["id"] == entry_id
+        if item.get("status") != "draft" and (entry_id is None or item["id"] == entry_id)
     ]
     if entry_id and not entries:
         print(f"❌ 找不到 Blog 項目: {entry_id}")

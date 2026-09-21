@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="2024 澳洲漫遊記：雪梨港灣、墨爾本巷弄、亞拉河谷葡萄酒莊與大草原探險。第一手圖文遊記與實戰筆記。">
+  <!-- Open Graph / Social Sharing Meta Tags -->
+  <meta property="og:site_name" content="2024 澳洲漫遊記 · CH Travel OS">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="🇦🇺 2024 澳洲漫遊記 ✕ 沉浸式圖文誌">
+  <meta property="og:description" content="雪梨海港、墨爾本巷弄、亞拉河谷葡萄酒莊與大草原。第一手圖文遊記與實戰攻略。">
+  <meta property="og:url" content="https://chxtravel.com/2024-australia/index.html">
+  <meta property="og:image" content="https://chxtravel.com/2024-australia/images/day-06/20241101_151456-desktop-1200w.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://chxtravel.com/2024-australia/index.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <title>🇦🇺 2024 澳洲漫遊記 ✕ 沉浸式圖文誌</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../core/css/style.css?v=20260903-nav-unify">
+  <link rel="stylesheet" href="../core/vendor/glightbox/glightbox.min.css">
+  <style>
+    .journey-hero {
+      position: relative;
+      min-height: 520px;
+      height: 65vh;
+      max-height: 680px;
+      overflow: hidden;
+      background: #182330;
+    }
+    .journey-hero > img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 38%;
+    }
+    .journey-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(8, 20, 28, 0.35) 0%, rgba(8, 20, 28, 0.78) 100%);
+      pointer-events: none;
+    }
+    .journey-hero-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      min-height: inherit;
+      height: 100%;
+      align-items: flex-end;
+      padding-top: 5rem;
+      padding-bottom: 3.5rem;
+      color: #fff;
+    }
+    .journey-hero-copy {
+      max-width: 860px;
+    }
+    .journey-hero h1 {
+      margin: 0.6rem 0 0.8rem;
+      color: #fff;
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      line-height: 1.2;
+      text-shadow: 0 3px 20px rgba(0,0,0,0.66);
+    }
+    .journey-hero p {
+      max-width: 720px;
+      margin: 0;
+      color: #fff;
+      font-size: 1.1rem;
+      line-height: 1.75;
+      text-shadow: 0 2px 14px rgba(0,0,0,0.78);
+    }
+    .journey-hero-actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.4rem;
+      flex-wrap: wrap;
+    }
+    .journey-hero-actions a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0.65rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .journey-hero-actions a:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .journey-hero-actions .is-primary {
+      background: var(--accent);
+      color: var(--primary);
+    }
+    .journey-hero-actions .is-secondary {
+      border: 1px solid rgba(255,255,255,0.7);
+      background: rgba(16,35,44,0.65);
+      color: #fff;
+      backdrop-filter: blur(8px);
+    }
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin: 2.5rem 0 4rem;
+    }
+    .story-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .story-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .story-card-media {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #182330;
+    }
+    .story-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+    .story-card:hover .story-card-media img {
+      transform: scale(1.03);
+    }
+    .story-card-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .story-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin: 0.5rem 0 0.75rem;
+      line-height: 1.4;
+    }
+    .story-card-desc {
+      font-size: 0.94rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      flex: 1;
+    }
+    .story-card-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem 1rem;
+      border-radius: var(--radius-sm);
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .story-card-btn:hover {
+      background: var(--primary-light);
+      color: #fff;
+    }
+    .story-card-btn.disabled {
+      background: #e2e8f0;
+      color: #a0aec0;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    .interlude-box {
+      background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%);
+      border: 1px solid #fde68a;
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      margin: 3rem 0;
+    }
+    @media (max-width: 768px) {
+      .journey-hero h1 {
+        font-size: 2.2rem;
+      }
+      .journey-hero {
+        min-height: 440px;
+        height: 55vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="reading-progress"></div>
+
+  <!-- 頂部導覽列 -->
+  <nav class="site-nav">
+    <div class="container">
+      <div class="brand-group">
+        <a href="../index.html" class="brand-link">
+          <span>🧭 CH Travel OS</span>
+        </a>
+        <span class="brand-separator">/</span>
+        <a href="index.html" class="brand-series">
+          <span>🇦🇺 2024 澳洲漫遊記</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../index.html">🌍 全球旅程</a></li>
+        <li><a href="#stories" class="active">📖 深度遊記</a></li>
+        <li><a href="#interlude">☕ 中場休息</a></li>
+      </ul>
+      <button class="nav-share-btn btn-share" type="button"><span>📤 分享</span></button>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <header class="journey-hero">
+    <img src="images/day-06/20241101_151456-desktop-1200w.webp" alt="亞拉河谷綠色起伏大草原全景" width="1200" height="676" loading="eager" decoding="async">
+    <div class="container journey-hero-inner">
+      <div class="journey-hero-copy">
+        <div class="hero-badge-group">
+          <span class="badge badge-gold">🇦🇺 2024 雙城遊記</span>
+          <span class="badge badge-forest">雪梨 ✕ 墨爾本</span>
+        </div>
+        <h1>2024 澳洲漫遊記</h1>
+        <p>從雪梨港灣海風到墨爾本維多利亞時代林蔭，走入亞拉河谷起伏萬里的綠色大平原。不盲目趕景點，以真實自嘲的視角記錄南半球的遼闊與微醺。</p>
+        <div class="journey-hero-actions">
+          <a href="#stories" class="is-primary">📖 瀏覽深度遊記</a>
+          <a href="blog/yarra-valley-wine-and-grassland.html" class="is-secondary">🍷 Day 06 亞拉河谷精選</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top: 3.5rem; padding-bottom: 5rem;">
+    <!-- 深度遊記章節 -->
+    <section id="stories" style="scroll-margin-top: 5rem;">
+      <span id="itinerary" style="position: absolute; scroll-margin-top: 5rem;"></span>
+      <div style="display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+        <div>
+          <h2 style="font-family: var(--font-heading); font-size: 2rem; color: var(--primary); margin: 0 0 0.3rem;">
+            📖 系列深度圖文遊記
+          </h2>
+          <p style="margin: 0; color: var(--text-muted); font-size: 0.95rem;">
+            以真實生活感受與旅伴互動出發的篇章誌
+          </p>
+        </div>
+        <span class="badge badge-wine">5 篇核心專刊 + 1 篇中場休息</span>
+      </div>
+
+      <div class="story-grid">
+        <!-- Day 06 (Published) -->
+        <article class="story-card">
+          <div class="story-card-media">
+            <img src="images/day-06/20241101_151456-desktop-1200w.webp" alt="亞拉河谷大草原" width="1200" height="676" loading="lazy" decoding="async">
+            <span style="position: absolute; top: 12px; left: 12px; background: rgba(8,20,28,0.75); color: #fff; font-size: 0.78rem; font-weight: 800; padding: 0.3rem 0.65rem; border-radius: 999px; backdrop-filter: blur(6px);">Day 06 精選</span>
+          </div>
+          <div class="story-card-body">
+            <div style="font-size: 0.84rem; color: var(--accent); font-weight: 700;">🍷 亞拉河谷葡萄酒莊 ✕ 封神大草原</div>
+            <h3 class="story-card-title">聽妹妹的話成行亞拉河谷：在琴酒工廠喝到面部抽筋、在大草原遇到全行程第一名風景！</h3>
+            <p class="story-card-desc">聽從妹妹提議成行，在南半球微醺與遼闊大地上找到答案。蘇瑪酒莊、聖休伯特、四柱琴酒與午後破雲而出的壯麗大草原全景。</p>
+            <a href="blog/yarra-valley-wine-and-grassland.html" class="story-card-btn">閱讀全文 · 完整圖文 →</a>
+          </div>
+        </article>
+
+        <!-- Day 01-02 (Published) -->
+        <article class="story-card">
+          <div class="story-card-media">
+            <img src="images/day-01/20241027_172248-desktop-1200w.webp" alt="雪梨歌劇院與雪梨港灣大橋全景" width="1200" height="676" loading="lazy" decoding="async">
+            <span style="position: absolute; top: 12px; left: 12px; background: rgba(8,20,28,0.75); color: #fff; font-size: 0.78rem; font-weight: 800; padding: 0.3rem 0.65rem; border-radius: 999px; backdrop-filter: blur(6px);">Day 01-02 特別篇</span>
+          </div>
+          <div class="story-card-body">
+            <div style="font-size: 0.84rem; color: var(--accent); font-weight: 700;">🏙️ 雪梨港灣 ✕ QVB ✕ 魚市場 ✕ 海鷗搶食</div>
+            <h3 class="story-card-title">在雪梨，最貴的不是物價，是交給海鷗的保護費！</h3>
+            <p class="story-card-desc">一趟原本正經八百的商務出差，因為妹妹死皮賴臉跟來，意外變成兩天的雪梨觀光特別篇；沿途還遇上從雪梨港一路巡場到海德公園的空中黑幫。</p>
+            <a href="blog/sydney-harbour-and-gulls.html" class="story-card-btn">閱讀全文 · 完整圖文 →</a>
+          </div>
+        </article>
+
+        <!-- Day 03-04 (Coming Soon) -->
+        <article class="story-card">
+          <div class="story-card-media" style="background: #233830; display: flex; align-items: center; justify-content: center; color: #a0aec0;">
+            <div style="text-align: center; padding: 2rem;">
+              <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;">⛰️</span>
+              <span style="font-weight: 700;">雪梨高空視野 · 極致躺平動物園</span>
+            </div>
+            <span style="position: absolute; top: 12px; left: 12px; background: rgba(8,20,28,0.75); color: #fff; font-size: 0.78rem; font-weight: 800; padding: 0.3rem 0.65rem; border-radius: 999px;">Day 03-04</span>
+          </div>
+          <div class="story-card-body">
+            <div style="font-size: 0.84rem; color: var(--text-muted); font-weight: 700;">🏢 46樓高空鳥瞰 ✕ 澳洲動物全員昏睡</div>
+            <h3 class="story-card-title">46 樓會議室的高空震撼：俯瞰雪梨全景，與動物園全員極致躺平日記</h3>
+            <p class="story-card-desc">在辦公大樓高空俯瞰歌劇院與港灣，走入野生動物園遇見集體昏睡的慵懶考拉與袋鼠。</p>
+            <span class="story-card-btn disabled">敬請期待 · 製作中</span>
+          </div>
+        </article>
+
+        <!-- Day 07 (Published) -->
+        <article class="story-card">
+          <div class="story-card-media">
+            <img src="images/day-07/20241102_124800-desktop-1200w.webp" alt="普芬比利蒸汽火車木棧橋大彎道" width="1200" height="676" loading="lazy" decoding="async">
+            <span style="position: absolute; top: 12px; left: 12px; background: rgba(8,20,28,0.75); color: #fff; font-size: 0.78rem; font-weight: 800; padding: 0.3rem 0.65rem; border-radius: 999px; backdrop-filter: blur(6px);">Day 07 精選</span>
+          </div>
+          <div class="story-card-body">
+            <div style="font-size: 0.84rem; color: var(--accent); font-weight: 700;">🚂 百年蒸汽火車 ✕ 菲利普島神仙小企鵝</div>
+            <h3 class="story-card-title">差點錯過普芬比利，最後等到企鵝回家：月台狂奔、百年煙燻與神仙企鵝夜歸</h3>
+            <p class="story-card-desc">窗框懸空雙腳伸出車外體驗百年煙燻肉乾；Maru 看袋鼠集體躺平、諾比司角迎戰海鷗鳥糞味；夜戰刺骨海風守候神仙小企鵝歸巢。</p>
+            <a href="blog/puffing-billy-and-fairy-penguins.html" class="story-card-btn">閱讀全文 · 完整圖文 →</a>
+          </div>
+        </article>
+
+        <!-- Day 08 (Published) -->
+        <article class="story-card">
+          <div class="story-card-media">
+            <img src="images/day-08/20241103_123308-desktop-1200w.webp" alt="疏芬山淘金鎮主街十九世紀維多利亞古典街景" width="1200" height="676" loading="lazy" decoding="async">
+            <span style="position: absolute; top: 12px; left: 12px; background: rgba(8,20,28,0.75); color: #fff; font-size: 0.78rem; font-weight: 800; padding: 0.3rem 0.65rem; border-radius: 999px; backdrop-filter: blur(6px);">Day 08 收官篇</span>
+          </div>
+          <div class="story-card-body">
+            <div style="font-size: 0.84rem; color: var(--accent); font-weight: 700;">⛏️ 19世紀淘金熱 ✕ 沉浸式穿越</div>
+            <h3 class="story-card-title">搭火車闖進疏芬山：淘金、下礦坑，還遇見神祕老奶奶</h3>
+            <p class="story-card-desc">墨爾本最後一天不逛街，我們自己轉車去十九世紀淘金鎮玩實境 RPG。V/Line 週末特惠火車、紅衣警長突襲禮炮、深入地底濕涼礦坑，以及一段在英式別墅裡的午後奇遇。</p>
+            <a href="blog/sovereign-hill-gold-rush.html" class="story-card-btn">閱讀全文 · 完整圖文 →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Day 05 中場休息 Interlude -->
+    <section id="interlude" style="scroll-margin-top: 5rem;">
+      <div class="interlude-box">
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+          <span style="font-size: 1.8rem;">☕</span>
+          <div>
+            <h3 style="margin: 0; font-family: var(--font-heading); color: var(--primary); font-size: 1.4rem;">
+              Day 05 中場休息：墨爾本初抵達、Lonsdale St 與郊區藥妝店踩點
+            </h3>
+            <span style="font-size: 0.88rem; color: var(--text-muted);">雙城切換過渡日 · 墨爾本城市日常</span>
+          </div>
+        </div>
+        <p style="font-size: 1rem; line-height: 1.8; color: var(--ink); margin-bottom: 1rem;">
+          告別雪梨後搭乘內陸航班抵達墨爾本，城市風貌瞬間從開闊海港切換成帶著維多利亞古典氣質的林蔭大道。
+          今天作為行程的中場休息日，不安排緊湊的大景點：入住位於郊區的 Novotel，沿著 Lonsdale St 散步喝咖啡，並在飯店旁的藥妝店完成第一輪保健品價格踩點，為接下來連續三天的酒莊、火車與淘金冒險儲備充足體能。
+        </p>
+        <div style="font-size: 0.88rem; color: var(--caption);">
+          💡 <strong>旅人小筆記</strong>：墨爾本市中心擁有便利的免費電車區域 (Free Tram Zone)，但若住宿在市郊，善用 myki 卡或感應支付搭乘路面電車也是體驗當地人生活的最佳方式。
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 頁腳 -->
+  <footer style="background: #182330; color: #fff; padding: 3rem 0; text-align: center; font-size: 0.9rem;">
+    <div class="container">
+      <p style="margin: 0 0 0.5rem; font-weight: 700; font-size: 1.1rem; color: #fff;">🧭 CH Travel OS · 全球旅程圖文誌</p>
+      <p style="margin: 0; color: rgba(255,255,255,0.6);">© 2024–2026 CH Travel OS. 依據真實旅程口述與照片紀錄自動化構建。</p>
+    </div>
+  </footer>
+
+  <script src="../core/js/app.js"></script>
+</body>
+</html>

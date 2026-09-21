@@ -1,0 +1,865 @@
+{
+  "total_unique_slides": 70,
+  "landscape_count": 67,
+  "portrait_count": 3,
+  "slides": [
+    {
+      "id": "20241102_100809",
+      "image": "day-07/20241102_100809.jpg",
+      "caption": "布萊頓彩虹木屋一隅 · 11/02 10:08",
+      "gallery": "puffing-billy-portrait",
+      "orientation": "Portrait",
+      "dt_sort": "2024-11-02 10:08:09",
+      "scene_id": "scene_d07_035",
+      "all_files": [
+        "20241102_100809.jpg"
+      ]
+    },
+    {
+      "id": "20241102_100854",
+      "image": "day-07/20241102_100854.jpg",
+      "caption": "布萊頓沙灘上一字排開的彩色小木屋群 · 11/02 10:08",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 10:08:54",
+      "scene_id": "scene_d07_036",
+      "all_files": [
+        "20241102_100854.jpg"
+      ]
+    },
+    {
+      "id": "18452906848071381",
+      "image": "day-07/18452906848071381.jpg",
+      "caption": "布萊頓彩虹木屋前沿沙灘漫步 · 11/02 10:15",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 10:15:00",
+      "scene_id": "scene_d07_001",
+      "all_files": [
+        "18452906848071381.jpg"
+      ]
+    },
+    {
+      "id": "18032815952341380",
+      "image": "day-07/18032815952341380.jpg",
+      "caption": "鮮黃與天藍相間的經典沙灘更衣小屋 · 11/02 10:18",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 10:18:00",
+      "scene_id": "scene_d07_002",
+      "all_files": [
+        "18032815952341380.jpg"
+      ]
+    },
+    {
+      "id": "20241102_102008",
+      "image": "day-07/20241102_102008.jpg",
+      "caption": "鮮明撞色設計的布萊頓經典木屋 · 11/02 10:20",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 10:20:08",
+      "scene_id": "scene_d07_037",
+      "all_files": [
+        "20241102_102008.jpg"
+      ]
+    },
+    {
+      "id": "18032070362459481",
+      "image": "day-07/18032070362459481.jpg",
+      "caption": "澳洲國旗彩繪木屋與晴空大海 · 11/02 10:22",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 10:22:00",
+      "scene_id": "scene_d07_003",
+      "all_files": [
+        "18032070362459481.jpg"
+      ]
+    },
+    {
+      "id": "17985981725742801",
+      "image": "day-07/17985981725742801.jpg",
+      "caption": "沙灘小木屋群連綿延伸的海岸線風景 · 11/02 10:25",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 10:25:00",
+      "scene_id": "scene_d07_004",
+      "all_files": [
+        "17985981725742801.jpg"
+      ]
+    },
+    {
+      "id": "18058415443842099",
+      "image": "day-07/18058415443842099.jpg",
+      "caption": "木造幾何圖紋彩繪小屋特寫 · 11/02 10:28",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 10:28:00",
+      "scene_id": "scene_d07_005",
+      "all_files": [
+        "18058415443842099.jpg"
+      ]
+    },
+    {
+      "id": "18049248932003097",
+      "image": "day-07/18049248932003097.jpg",
+      "caption": "墨爾本晴朗春日下的布萊頓海灘全景 · 11/02 10:32",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 10:32:00",
+      "scene_id": "scene_d07_006",
+      "all_files": [
+        "18049248932003097.jpg"
+      ]
+    },
+    {
+      "id": "20241102_103558",
+      "image": "day-07/20241102_103558.jpg",
+      "caption": "晴空萬里下的布萊頓彩虹木屋全景 · 11/02 10:35",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 10:35:58",
+      "scene_id": "scene_d07_038",
+      "all_files": [
+        "20241102_103558.jpg"
+      ]
+    },
+    {
+      "id": "20241102_103629",
+      "image": "day-07/20241102_103629.jpg",
+      "caption": "沙灘上的澳洲國旗彩繪小木屋 · 11/02 10:36",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 10:36:29",
+      "scene_id": "scene_d07_039",
+      "all_files": [
+        "20241102_103629.jpg"
+      ]
+    },
+    {
+      "id": "20241102_103841",
+      "image": "day-07/20241102_103841.jpg",
+      "caption": "彩虹小屋側影與維多利亞風格木造門窗 · 11/02 10:38",
+      "gallery": "puffing-billy-portrait",
+      "orientation": "Portrait",
+      "dt_sort": "2024-11-02 10:38:41",
+      "scene_id": "scene_d07_040",
+      "all_files": [
+        "20241102_103841.jpg"
+      ]
+    },
+    {
+      "id": "20241102_120637",
+      "image": "day-07/20241102_120637.jpg",
+      "caption": "貝爾格雷夫車站月台上的普芬比利復古車廂 · 11/02 12:06",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 12:06:37",
+      "scene_id": "scene_d07_041",
+      "all_files": [
+        "20241102_120637.jpg"
+      ]
+    },
+    {
+      "id": "17842351089353194",
+      "image": "day-07/17842351089353194.jpg",
+      "caption": "貝爾格雷夫月台上的綠色老式車廂與乘客 · 11/02 12:08",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 12:08:00",
+      "scene_id": "scene_d07_007",
+      "all_files": [
+        "17842351089353194.jpg"
+      ]
+    },
+    {
+      "id": "20241102_120842",
+      "image": "day-07/20241102_120842.jpg",
+      "caption": "蒸汽火車頭蓄勢待發冒出陣陣白煙 · 11/02 12:08",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 12:08:42",
+      "scene_id": "scene_d07_042",
+      "all_files": [
+        "20241102_120842.jpg"
+      ]
+    },
+    {
+      "id": "20241102_120910",
+      "image": "day-07/20241102_120910.jpg",
+      "caption": "月台上引導乘客的普芬比利工作人員與復古標誌 · 11/02 12:09",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 12:09:10",
+      "scene_id": "scene_d07_043",
+      "all_files": [
+        "20241102_120910.jpg"
+      ]
+    },
+    {
+      "id": "20241102_120955",
+      "image": "day-07/20241102_120955.jpg",
+      "caption": "漆黑油亮的百年蒸汽火車頭細部與機械結構 · 11/02 12:09",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 12:09:55",
+      "scene_id": "scene_d07_044",
+      "all_files": [
+        "20241102_120955.jpg"
+      ]
+    },
+    {
+      "id": "18476861563002822",
+      "image": "day-07/18476861563002822.jpg",
+      "caption": "蒸汽火車蓄勢待發的機械特寫 · 11/02 12:10",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 12:10:00",
+      "scene_id": "scene_d07_008",
+      "all_files": [
+        "18476861563002822.jpg"
+      ]
+    },
+    {
+      "id": "20241102_121037",
+      "image": "day-07/20241102_121037.jpg",
+      "caption": "火車頭高聳煙囪與老式車燈 · 11/02 12:10",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 12:10:37",
+      "scene_id": "scene_d07_045",
+      "all_files": [
+        "20241102_121037.jpg"
+      ]
+    },
+    {
+      "id": "20241102_121102",
+      "image": "day-07/20241102_121102.jpg",
+      "caption": "湖濱站湖面與層層綠蔭 · 11/02 12:11",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 12:11:02",
+      "scene_id": "scene_d07_046",
+      "all_files": [
+        "20241102_121102.jpg"
+      ]
+    },
+    {
+      "id": "20241102_121232",
+      "image": "day-07/20241102_121232.jpg",
+      "caption": "月台上人潮穿梭與即將啟程的復古蒸汽列車 · 11/02 12:12",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 12:12:32",
+      "scene_id": "scene_d07_009",
+      "all_files": [
+        "17865118728185764.jpg",
+        "20241102_121232.jpg"
+      ]
+    },
+    {
+      "id": "20241102_121246",
+      "image": "day-07/20241102_121246.jpg",
+      "caption": "火車駕駛室與鍋爐壓力表視角 · 11/02 12:12",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 12:12:46",
+      "scene_id": "scene_d07_047",
+      "all_files": [
+        "20241102_121246.jpg"
+      ]
+    },
+    {
+      "id": "20241102_121249",
+      "image": "day-07/20241102_121249.jpg",
+      "caption": "熱鬧的開車前月台全景 · 11/02 12:12",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 12:12:49",
+      "scene_id": "scene_d07_010",
+      "all_files": [
+        "18105308428448629.jpg",
+        "20241102_121249.jpg"
+      ]
+    },
+    {
+      "id": "17857065678240083",
+      "image": "day-07/17857065678240083.jpg",
+      "caption": "月台上的志工站長與懷舊懷錶 · 11/02 12:15",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 12:15:00",
+      "scene_id": "scene_d07_012",
+      "all_files": [
+        "17857065678240083.jpg"
+      ]
+    },
+    {
+      "id": "20241102_121813",
+      "image": "day-07/20241102_121813.jpg",
+      "caption": "窗框滿座旅客與準備懸空雙腳的歡樂氛圍 · 11/02 12:18",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 12:18:13",
+      "scene_id": "scene_d07_048",
+      "all_files": [
+        "20241102_121813.jpg"
+      ]
+    },
+    {
+      "id": "20241102_122208",
+      "image": "day-07/20241102_122208.jpg",
+      "caption": "雙腳伸出窗外！火車緩緩駛離車站啟程 · 11/02 12:22",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 12:22:08",
+      "scene_id": "scene_d07_049",
+      "all_files": [
+        "20241102_122208.jpg"
+      ]
+    },
+    {
+      "id": "17990959445709684",
+      "image": "day-07/17990959445709684.jpg",
+      "caption": "雙腿懸空坐於窗台迎著山林微風 · 11/02 12:25",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 12:25:00",
+      "scene_id": "scene_d07_013",
+      "all_files": [
+        "17990959445709684.jpg"
+      ]
+    },
+    {
+      "id": "18359080231140205",
+      "image": "day-07/18359080231140205.jpg",
+      "caption": "穿越高聳尤加利樹林與巨大樹蕨 · 11/02 12:40",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 12:40:00",
+      "scene_id": "scene_d07_014",
+      "all_files": [
+        "18359080231140205.jpg"
+      ]
+    },
+    {
+      "id": "20241102_124750",
+      "image": "day-07/20241102_124750.jpg",
+      "caption": "穿越巨型樹蕨溫帶雨林的窄軌鐵道 · 11/02 12:47",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 12:47:49",
+      "scene_id": "scene_d07_050",
+      "all_files": [
+        "20241102_124750.jpg"
+      ]
+    },
+    {
+      "id": "20241102_124800",
+      "image": "day-07/20241102_124800.jpg",
+      "caption": "列車蜿蜒於尤肯溪木棧橋 (Monbulk Creek Trestle) 經典大彎道 · 11/02 12:48",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 12:48:00",
+      "scene_id": "scene_d07_051",
+      "all_files": [
+        "20241102_124800.jpg"
+      ]
+    },
+    {
+      "id": "18046460731869299",
+      "image": "day-07/18046460731869299.jpg",
+      "caption": "百年鐵道行經木棧橋的蜿蜒弧線 · 11/02 12:50",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 12:50:00",
+      "scene_id": "scene_d07_015",
+      "all_files": [
+        "18046460731869299.jpg"
+      ]
+    },
+    {
+      "id": "20241102_125639",
+      "image": "day-07/20241102_125639.jpg",
+      "caption": "火車爬坡噴發濃郁黑煙的「百年煙燻」現場 · 11/02 12:56",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 12:56:39",
+      "scene_id": "scene_d07_052",
+      "all_files": [
+        "20241102_125639.jpg"
+      ]
+    },
+    {
+      "id": "18055885900726515",
+      "image": "day-07/18055885900726515.jpg",
+      "caption": "火車頭加煤時滾滾翻騰的煤煙紀錄 · 11/02 13:00",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 13:00:00",
+      "scene_id": "scene_d07_017",
+      "all_files": [
+        "18055885900726515.jpg"
+      ]
+    },
+    {
+      "id": "20241102_130800",
+      "image": "day-07/20241102_130800.jpg",
+      "caption": "森林微風與一路歡呼的乘客雙腿 · 11/02 13:08",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 13:08:00",
+      "scene_id": "scene_d07_053",
+      "all_files": [
+        "20241102_130800.jpg"
+      ]
+    },
+    {
+      "id": "20241102_130807",
+      "image": "day-07/20241102_130807.jpg",
+      "caption": "穿行於翠綠樹林間的紅色復古木造車廂 · 11/02 13:08",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 13:08:07",
+      "scene_id": "scene_d07_031",
+      "all_files": [
+        "18012045026640086.jpg",
+        "20241102_130807.jpg"
+      ]
+    },
+    {
+      "id": "20241102_130814",
+      "image": "day-07/20241102_130814.jpg",
+      "caption": "樹影婆娑下的窄軌列車全視角 · 11/02 13:08",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 13:08:14",
+      "scene_id": "scene_d07_054",
+      "all_files": [
+        "20241102_130814.jpg"
+      ]
+    },
+    {
+      "id": "18077446498564017",
+      "image": "day-07/18077446498564017.jpg",
+      "caption": "穿行於蓊鬱雨林中的紅色復古窗台 · 11/02 13:10",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 13:10:00",
+      "scene_id": "scene_d07_018",
+      "all_files": [
+        "18077446498564017.jpg"
+      ]
+    },
+    {
+      "id": "20241102_131317",
+      "image": "day-07/20241102_131317.jpg",
+      "caption": "抵達湖濱站前的森林開闊路段 · 11/02 13:13",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 13:13:17",
+      "scene_id": "scene_d07_055",
+      "all_files": [
+        "20241102_131317.jpg"
+      ]
+    },
+    {
+      "id": "20241102_131324",
+      "image": "day-07/20241102_131324.jpg",
+      "caption": "從普芬比利蒸汽火車窗邊望向開闊山丘 · 11/02 13:13",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 13:13:24",
+      "scene_id": "scene_d07_024",
+      "all_files": [
+        "18027468059454847.jpg",
+        "20241102_131324.jpg"
+      ]
+    },
+    {
+      "id": "20241102_131419",
+      "image": "day-07/20241102_131419.jpg",
+      "caption": "即將抵達終點湖濱站 (Lakeside) · 11/02 13:14",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 13:14:19",
+      "scene_id": "scene_d07_056",
+      "all_files": [
+        "20241102_131419.jpg"
+      ]
+    },
+    {
+      "id": "18043726997483361",
+      "image": "day-07/18043726997483361.jpg",
+      "caption": "湖濱站前波光粼粼的綠蔭倒影 · 11/02 13:20",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 13:20:00",
+      "scene_id": "scene_d07_019",
+      "all_files": [
+        "18043726997483361.jpg"
+      ]
+    },
+    {
+      "id": "20241102_132321",
+      "image": "day-07/20241102_132321.jpg",
+      "caption": "湖濱站遊客中心外的青翠草坪與休憩步道 · 11/02 13:23",
+      "gallery": "puffing-billy-portrait",
+      "orientation": "Portrait",
+      "dt_sort": "2024-11-02 13:23:21",
+      "scene_id": "scene_d07_057",
+      "all_files": [
+        "20241102_132321.jpg"
+      ]
+    },
+    {
+      "id": "20241102_132352",
+      "image": "day-07/20241102_132352.jpg",
+      "caption": "湖濱站波光粼粼的人工湖畔全景 · 11/02 13:23",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 13:23:52",
+      "scene_id": "scene_d07_058",
+      "all_files": [
+        "20241102_132352.jpg"
+      ]
+    },
+    {
+      "id": "20241102_132405",
+      "image": "day-07/20241102_132405.jpg",
+      "caption": "平靜如鏡的湖面與湖畔散步人群 · 11/02 13:24",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 13:24:05",
+      "scene_id": "scene_d07_059",
+      "all_files": [
+        "20241102_132405.jpg"
+      ]
+    },
+    {
+      "id": "20241102_144857",
+      "image": "day-07/20241102_144857.jpg",
+      "caption": "Maru 野生動物園園區入口與紀念品木雕 · 11/02 14:48",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 14:48:57",
+      "scene_id": "scene_d07_060",
+      "all_files": [
+        "20241102_144857.jpg"
+      ]
+    },
+    {
+      "id": "20241102_145910",
+      "image": "day-07/20241102_145910.jpg",
+      "caption": "袋鼠區草地上集體躺平昏睡的慵懶袋鼠 · 11/02 14:59",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 14:49:10",
+      "scene_id": "scene_d07_027",
+      "all_files": [
+        "17951660543849570.jpg",
+        "20241102_145910.jpg"
+      ]
+    },
+    {
+      "id": "20241102_150100",
+      "image": "day-07/20241102_150100.jpg",
+      "caption": "近距離手餵袋鼠吃草料的溫順互動 · 11/02 15:01",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 15:01:00",
+      "scene_id": "scene_d07_028",
+      "all_files": [
+        "18044547557092512.jpg",
+        "20241102_150100.jpg"
+      ]
+    },
+    {
+      "id": "20241102_150146",
+      "image": "day-07/20241102_150146.jpg",
+      "caption": "閉目養神完全不在乎遊客的躺平大袋鼠 · 11/02 15:01",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 15:01:46",
+      "scene_id": "scene_d07_030",
+      "all_files": [
+        "17865525324182441.jpg",
+        "18043949960506468.jpg",
+        "18044599379107777.jpg",
+        "20241102_150146.jpg"
+      ]
+    },
+    {
+      "id": "20241102_151519",
+      "image": "day-07/20241102_151519.jpg",
+      "caption": "圍欄邊悠閒曬太陽的迷你無尾熊與袋鼠 · 11/02 15:15",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 15:15:19",
+      "scene_id": "scene_d07_029",
+      "all_files": [
+        "18025571525200172.jpg",
+        "20241102_151519.jpg"
+      ]
+    },
+    {
+      "id": "20241102_151908",
+      "image": "day-07/20241102_151908.jpg",
+      "caption": "園區一角的鴯鶓與澳洲本土鳥類展區 · 11/02 15:19",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 15:19:08",
+      "scene_id": "scene_d07_061",
+      "all_files": [
+        "20241102_151908.jpg"
+      ]
+    },
+    {
+      "id": "20241102_173130",
+      "image": "day-07/20241102_173130.jpg",
+      "caption": "諾比司角 (Nobbies) 懸崖木棧道海鷗特寫 · 11/02 17:31",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 17:31:30",
+      "scene_id": "scene_d07_020",
+      "all_files": [
+        "18058251466882444.jpg",
+        "20241102_173130.jpg"
+      ]
+    },
+    {
+      "id": "17881506456163861",
+      "image": "day-07/17881506456163861.jpg",
+      "caption": "諾比司角海岸懸崖木棧道全貌 · 11/02 17:33",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 17:33:00",
+      "scene_id": "scene_d07_021",
+      "all_files": [
+        "17881506456163861.jpg"
+      ]
+    },
+    {
+      "id": "17937662153808427",
+      "image": "day-07/17937662153808427.jpg",
+      "caption": "山坡草地上密密麻麻棲息的海鷗群 · 11/02 17:35",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 17:35:00",
+      "scene_id": "scene_d07_022",
+      "all_files": [
+        "17937662153808427.jpg"
+      ]
+    },
+    {
+      "id": "18261100312254810",
+      "image": "day-07/18261100312254810.jpg",
+      "caption": "南太平洋洶湧浪花拍打黑色礁岩 · 11/02 17:37",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 17:37:00",
+      "scene_id": "scene_d07_023",
+      "all_files": [
+        "18261100312254810.jpg"
+      ]
+    },
+    {
+      "id": "17875788864194186",
+      "image": "day-07/17875788864194186.jpg",
+      "caption": "懸崖邊孤傲佇立的海鷗剪影 · 11/02 17:40",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 17:40:00",
+      "scene_id": "scene_d07_025",
+      "all_files": [
+        "17875788864194186.jpg"
+      ]
+    },
+    {
+      "id": "18021559985293731",
+      "image": "day-07/18021559985293731.jpg",
+      "caption": "海鷗大軍盤旋於菲利普島西南角天空 · 11/02 17:41",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 17:41:00",
+      "scene_id": "scene_d07_026",
+      "all_files": [
+        "18021559985293731.jpg"
+      ]
+    },
+    {
+      "id": "20241102_174146",
+      "image": "day-07/20241102_174146.jpg",
+      "caption": "海角懸崖邊滿山滿谷的海鷗大軍與壯麗洋流 · 11/02 17:41",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 17:41:46",
+      "scene_id": "scene_d07_062",
+      "all_files": [
+        "20241102_174146.jpg"
+      ]
+    },
+    {
+      "id": "20241102_191237",
+      "image": "day-07/20241102_191237.jpg",
+      "caption": "菲利普島企鵝保護區 (Penguin Parade) 訪客中心大廳 · 11/02 19:12",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 19:12:37",
+      "scene_id": "scene_d07_063",
+      "all_files": [
+        "20241102_191237.jpg"
+      ]
+    },
+    {
+      "id": "20241102_191346",
+      "image": "day-07/20241102_191346.jpg",
+      "caption": "展示神仙小企鵝生態的教育解說立牌 · 11/02 19:13",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 19:13:46",
+      "scene_id": "scene_d07_064",
+      "all_files": [
+        "20241102_191346.jpg"
+      ]
+    },
+    {
+      "id": "20241102_191455",
+      "image": "day-07/20241102_191455.jpg",
+      "caption": "通往海邊看台的戶外木棧道與保暖全副武裝人群 · 11/02 19:14",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 19:14:55",
+      "scene_id": "scene_d07_065",
+      "all_files": [
+        "20241102_191455.jpg"
+      ]
+    },
+    {
+      "id": "20241102_191648",
+      "image": "day-07/20241102_191648.jpg",
+      "caption": "傍晚海風凜冽的沙灘看台與逐漸暗沈的南太平洋海浪 · 11/02 19:16",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 19:16:48",
+      "scene_id": "scene_d07_016",
+      "all_files": [
+        "18097021144466855.jpg",
+        "18072604357544998.jpg",
+        "18046118537037707.jpg",
+        "20241102_191648.jpg"
+      ]
+    },
+    {
+      "id": "20241102_191804",
+      "image": "day-07/20241102_191804.jpg",
+      "caption": "暮色蒼茫中靜候小企鵝第一波登陸的看台視野 · 11/02 19:18",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 19:18:04",
+      "scene_id": "scene_d07_011",
+      "all_files": [
+        "18066394879639624.jpg",
+        "18032224832366159.jpg",
+        "20241102_191804.jpg"
+      ]
+    },
+    {
+      "id": "20241102_195436",
+      "image": "day-07/20241102_195436.jpg",
+      "caption": "VIP 入口木棧道：小企鵝沿著回家路走回巢穴的觀察點 · 11/02 19:54",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 19:54:36",
+      "scene_id": "scene_d07_033",
+      "all_files": [
+        "17851248567280445.jpg",
+        "20241102_195436.jpg"
+      ]
+    },
+    {
+      "id": "20241102_202559",
+      "image": "day-07/20241102_202559.jpg",
+      "caption": "黑夜中手機拍攝企鵝歸巢的真實殘酷噪點紀錄 (一) · 11/02 20:25",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 20:25:59",
+      "scene_id": "scene_d07_066",
+      "all_files": [
+        "20241102_202559.jpg"
+      ]
+    },
+    {
+      "id": "20241102_202626",
+      "image": "day-07/20241102_202626.jpg",
+      "caption": "黑夜中手機拍攝企鵝歸巢的真實殘酷噪點紀錄 (二) · 11/02 20:26",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 20:26:26",
+      "scene_id": "scene_d07_067",
+      "all_files": [
+        "20241102_202626.jpg"
+      ]
+    },
+    {
+      "id": "20241102_203050",
+      "image": "day-07/20241102_203050.jpg",
+      "caption": "30 倍數位變焦拍下海灘上的小企鵝 · 11/02 20:30",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 20:30:50",
+      "scene_id": "scene_d07_034",
+      "all_files": [
+        "18047609300001050.jpg",
+        "20241102_203050.jpg"
+      ]
+    },
+    {
+      "id": "20241102_203105",
+      "image": "day-07/20241102_203105.jpg",
+      "caption": "夜深後依序沿棧道離場的凍僵遊客群 · 11/02 20:31",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 20:31:05",
+      "scene_id": "scene_d07_068",
+      "all_files": [
+        "20241102_203105.jpg"
+      ]
+    },
+    {
+      "id": "20241102_203330",
+      "image": "day-07/20241102_203330.jpg",
+      "caption": "企鵝中心出口處的夜間照明與歸程指引 · 11/02 20:33",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 20:33:30",
+      "scene_id": "scene_d07_069",
+      "all_files": [
+        "20241102_203330.jpg"
+      ]
+    },
+    {
+      "id": "20241102_204057",
+      "image": "day-07/20241102_204057.jpg",
+      "caption": "木棧道旁近距離走回巢穴的小企鵝 · 11/02 20:40",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 20:40:57",
+      "scene_id": "scene_d07_070",
+      "all_files": [
+        "20241102_204057.jpg"
+      ]
+    },
+    {
+      "id": "20241102_204058",
+      "image": "day-07/20241102_204058.jpg",
+      "caption": "木棧道燈光下排隊回巢的小企鵝 · 11/02 20:40",
+      "gallery": "puffing-billy-landscape",
+      "orientation": "Landscape",
+      "dt_sort": "2024-11-02 20:40:58",
+      "scene_id": "scene_d07_071",
+      "all_files": [
+        "20241102_204058.jpg"
+      ]
+    }
+  ]
+}

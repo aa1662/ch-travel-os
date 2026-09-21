@@ -166,6 +166,17 @@
       display: inline-block;
       width: 100%;
     }
+    .photo-grid-item .img-edit-wrap {
+      display: block;
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 1 / 1;
+    }
+    .photo-grid-item .img-edit-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
     .img-toolbar {
       position: absolute;
       top: 10px;
@@ -289,8 +300,8 @@
       background: #1e293b !important;
       display: flex !important;
       flex-direction: column !important;
-      height: 230px !important;
-      min-height: 230px !important;
+      height: 250px !important;
+      min-height: 250px !important;
       box-sizing: border-box !important;
     }
     .img-choice-card:hover {
@@ -322,14 +333,14 @@
       transform: scale(1.08) !important;
     }
     .img-choice-meta {
-      flex: 0 0 45px !important;
-      height: 45px !important;
+      flex: 0 0 65px !important;
+      height: 65px !important;
       padding: 0.4rem 0.65rem !important;
       font-size: 0.75rem !important;
       color: #cbd5e1 !important;
       text-overflow: ellipsis !important;
       overflow: hidden !important;
-      white-space: nowrap !important;
+      white-space: normal !important;
       background: #1e293b !important;
       border-top: 1px solid #334155 !important;
       font-family: monospace !important;
@@ -337,7 +348,74 @@
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
+      flex-direction: column !important;
+      gap: 0.3rem !important;
+      text-align: center !important;
     }
+    .img-choice-badges {
+      display: flex;
+      gap: 0.35rem;
+      justify-content: center;
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      font-weight: 700;
+    }
+    .img-choice-badge {
+      padding: 0.12rem 0.38rem;
+      border-radius: 999px;
+      background: #334155;
+      color: #e2e8f0;
+    }
+    .img-choice-badge.pending {
+      background: #78350f;
+      color: #fef3c7;
+    }
+    .img-choice-card.curated-body { border-color: #38bdf8 !important; }
+    .img-choice-card.curated-gallery { box-shadow: inset 0 0 0 2px #f59e0b !important; }
+    .img-choice-card.curated-body.curated-gallery { border-color: #38bdf8 !important; }
+    .img-choice-actions {
+      display: flex;
+      gap: 0.35rem;
+      padding: 0.4rem;
+      background: #1e293b;
+      justify-content: center;
+    }
+    .img-choice-actions button {
+      border: 1px solid #64748b;
+      border-radius: 6px;
+      background: #334155;
+      color: #e2e8f0;
+      padding: 0.25rem 0.45rem;
+      cursor: pointer;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+    .img-choice-actions button[aria-pressed="true"] {
+      background: #0e7490;
+      border-color: #67e8f9;
+      color: #fff;
+    }
+    .img-choice-actions button.gallery-choice[aria-pressed="true"] {
+      background: #92400e;
+      border-color: #fbbf24;
+    }
+    .img-choice-card.curation-card {
+      height: 290px !important;
+      min-height: 290px !important;
+      cursor: default !important;
+    }
+    .img-choice-card.curation-card .img-choice-thumb-wrap { cursor: zoom-in; }
+    .img-modal-footer {
+      display: none;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.9rem 1.5rem;
+      background: #1e293b;
+      color: #e2e8f0;
+      border-top: 1px solid #334155;
+    }
+    .img-modal-footer.show { display: flex; }
 
     /* 頂部通知 Toast */
     .editor-toast {
@@ -410,6 +488,10 @@
         <span>↩️ 還原備份</span>
       </button>
 
+      <button class="btn-editor btn-editor-secondary" id="btnCuratePhotos" type="button" title="先選正文與燈箱照片，確認後才統一轉 WebP">
+        <span>🖼️ 選圖與燈箱</span>
+      </button>
+
       <!-- 儲存按鈕 -->
       <button class="btn-editor btn-editor-primary" id="btnSave" title="儲存修改並自動重新編譯 (Ctrl + S)">
         <span>💾 儲存並發布 (Ctrl+S)</span>
@@ -434,31 +516,29 @@
             點擊照片即可直接插入或替換
           </div>
         </div>
-        <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; justify-content: flex-end;">
+          <select id="imgModalSourceSelect" class="editor-select" style="padding: 0.35rem 0.75rem; font-size: 0.85rem; min-width: 145px;" aria-label="依照片來源篩選">
+            <option value="all">🖼️ 全部來源</option>
+            <option value="phone">📱 手機原圖</option>
+            <option value="instagram">📷 Instagram</option>
+            <option value="unpublished">🛠️ 尚未產生 WebP</option>
+          </select>
           <select id="imgModalFolderSelect" class="editor-select" style="padding: 0.35rem 0.75rem; font-size: 0.85rem; min-width: 150px;" aria-label="切換圖庫目錄">
             <option value="current">📂 當前章節圖庫</option>
             <option value="all">🌐 全旅程圖庫 (全部)</option>
-            <option value="day-01">Day 01 · 薩爾斯堡</option>
-            <option value="day-02">Day 02 · 哈修塔特</option>
-            <option value="day-03">Day 03 · 符茲堡</option>
-            <option value="day-04">Day 04 · 班堡</option>
-            <option value="day-05">Day 05 · 紐倫堡</option>
-            <option value="day-06">Day 06 · 羅騰堡</option>
-            <option value="day-07">Day 07 · 羅騰堡與酒鄉</option>
-            <option value="day-08">Day 08 · 海德堡</option>
-            <option value="day-09">Day 09 · 斯圖加特</option>
-            <option value="day-10">Day 10 · 史派亞/科爾馬</option>
-            <option value="day-11">Day 11 · 埃吉桑姆</option>
-            <option value="day-12">Day 12 · 蒂蒂湖/黑森林</option>
-            <option value="day-13">Day 13 · 新天鵝堡</option>
-            <option value="day-14">Day 14 · 加米許/楚格峰</option>
-            <option value="day-15">Day 15 · 慕尼黑</option>
           </select>
           <button style="font-size: 1.6rem; color: var(--text-muted); background: none; border: none; cursor: pointer; line-height: 1;" id="btnModalClose">&times;</button>
         </div>
       </div>
       <div class="img-modal-grid" id="imgModalGrid">
         <!-- 圖片縮圖卡片動態渲染於此 -->
+      </div>
+      <div class="img-modal-footer" id="imgModalFooter">
+        <span id="imgSelectionSummary">尚未選圖</span>
+        <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+          <button class="btn-editor btn-editor-secondary" id="btnSavePhotoSelection" type="button">💾 保存選圖草稿</button>
+          <button class="btn-editor btn-editor-primary" id="btnFinalizePhotoSelection" type="button">✅ 確認選圖並統一轉 WebP</button>
+        </div>
       </div>
     </div>
   </div>
@@ -476,9 +556,13 @@
     let isDirty = false;
 
     // 圖片選擇器狀態
-    let currentPickerMode = 'swap'; // 'swap' | 'insert_after' | 'add_to_grid'
+    let currentPickerMode = 'swap'; // 'swap' | 'insert_after' | 'add_to_grid' | 'curate'
     let currentPickerTarget = null;
     let currentPickerGrid = null;
+    let photoSelection = new Map();
+    let photoSelectionDirty = false;
+    let photoSelectionStatus = 'draft';
+    let photoSelectionLoadedFor = '';
 
     // DOM 元素快取
     const tripSelect = document.getElementById('tripSelect');
@@ -487,6 +571,7 @@
     const btnSave = document.getElementById('btnSave');
     const btnPreview = document.getElementById('btnPreview');
     const btnRestore = document.getElementById('btnRestore');
+    const btnCuratePhotos = document.getElementById('btnCuratePhotos');
     const workspace = document.getElementById('editor-workspace');
     const statusDot = document.getElementById('statusDot');
     const statusText = document.getElementById('statusText');
@@ -494,11 +579,16 @@
     const imgModalTitle = document.getElementById('imgModalTitle');
     const imgModalSub = document.getElementById('imgModalSub');
     const imgModalGrid = document.getElementById('imgModalGrid');
+    const imgModalFooter = document.getElementById('imgModalFooter');
+    const imgSelectionSummary = document.getElementById('imgSelectionSummary');
+    const btnSavePhotoSelection = document.getElementById('btnSavePhotoSelection');
+    const btnFinalizePhotoSelection = document.getElementById('btnFinalizePhotoSelection');
+    const imgModalSourceSelect = document.getElementById('imgModalSourceSelect');
     const imgModalFolderSelect = document.getElementById('imgModalFolderSelect');
     const btnModalClose = document.getElementById('btnModalClose');
     const editorToast = document.getElementById('editorToast');
 
-    const EDITABLE_TEXT_SELECTOR = 'h1, h2, h3, h4, p, blockquote, .fun-quote-box, .diptych-quote, .badge, .day-item-desc, .recap-item span, .bento-card li, .ig-post-caption, .ig-post-date, figcaption, .timeline-time-badge';
+    const EDITABLE_TEXT_SELECTOR = 'h1, h2, h3, h4, h5, h6, p, blockquote, .fun-quote-box, .diptych-quote, .badge, .day-item-desc, .recap-item span, .bento-card li, .bento-card h4, .bento-card div, .quote-card-text, .quote-card-tag, .ig-post-caption, .ig-post-date, .ig-post-title, .ig-post-meta span, .article-lead, .hero-badge-group span, figcaption, .timeline-time-badge';
     const REMOVABLE_EMPTY_TEXT_SELECTOR = 'p, blockquote, .fun-quote-box, .diptych-quote, .day-item-desc, .ig-post-caption, figcaption';
     const PROSE_ROOT_SELECTOR = '.blog-narrative-card, .story-split-text, .ig-post-caption, blockquote';
 
@@ -531,6 +621,17 @@
       root.querySelectorAll(REMOVABLE_EMPTY_TEXT_SELECTOR).forEach(el => {
         const hasMeaningfulContent = el.textContent.trim() || el.querySelector('img, picture, video, audio, iframe');
         if (!hasMeaningfulContent) el.remove();
+      });
+
+      // 清理因刪除照片而殘留的空白圖文區塊
+      root.querySelectorAll('.story-split').forEach(split => {
+        const hasImg = split.querySelector('img');
+        const textContent = split.querySelector('.story-split-text')?.textContent.trim() || '';
+        if (!hasImg && !textContent) {
+          split.remove();
+        } else if (!hasImg) {
+          split.querySelector('.story-split-media')?.remove();
+        }
       });
     }
 
@@ -601,6 +702,11 @@
     // 2. 更新篇章天數選單
     function updatePageOptions(preferredPageId = null) {
       if (!currentTrip) return;
+      photoSelectionLoadedFor = '';
+      photoSelection = new Map();
+      photoSelectionDirty = false;
+      photoSelectionStatus = 'draft';
+      refreshImageFolderOptions();
       const type = typeSelect.value;
       const list = currentTrip[type] || [];
       
@@ -614,7 +720,7 @@
       list.forEach(p => {
         const opt = document.createElement('option');
         opt.value = p.id;
-        opt.textContent = `${p.id.toUpperCase()} - ${p.title}`;
+        opt.textContent = `${p.id.toUpperCase()} - ${p.title}${p.draft ? ' [選圖草稿]' : ''}`;
         pageSelect.appendChild(opt);
       });
 
@@ -630,6 +736,28 @@
       currentPage = targetPage;
       syncUrlState();
       loadSource(currentPage.file);
+    }
+
+    function refreshImageFolderOptions() {
+      const folders = new Set();
+      for (const kind of ['blogs', 'hubs', 'timelines', 'previews']) {
+        for (const page of currentTrip[kind] || []) {
+          if (page.image_folder) folders.add(page.image_folder);
+        }
+      }
+      imgModalFolderSelect.innerHTML = '';
+      for (const [value, label] of [['current', '📂 當前章節圖庫'], ['all', '🌐 全旅程圖庫']]) {
+        const option = document.createElement('option');
+        option.value = value;
+        option.textContent = label;
+        imgModalFolderSelect.appendChild(option);
+      }
+      for (const folder of [...folders].sort()) {
+        const option = document.createElement('option');
+        option.value = folder;
+        option.textContent = folder;
+        imgModalFolderSelect.appendChild(option);
+      }
     }
 
     function syncUrlState() {
@@ -653,6 +781,8 @@
           btnRestore.style.display = data.has_backup ? 'inline-flex' : 'none';
           const cleanOut = (currentPage.output || '').replace(/^docs\//, '');
           btnPreview.href = `../${cleanOut}`;
+          btnPreview.style.display = currentPage.draft ? 'none' : '';
+          btnSave.querySelector('span').textContent = currentPage.draft ? '💾 保存文章草稿 (Ctrl+S)' : '💾 儲存並發布 (Ctrl+S)';
           markClean();
         } else {
           workspace.innerHTML = `<div style="text-align:center; padding:5rem 2rem; color:#ef4444;"><h3>讀取失敗: ${data.error}</h3></div>`;
@@ -671,6 +801,17 @@
       const parser = new DOMParser();
       currentSourceDoc = parser.parseFromString(htmlText, 'text/html');
       normalizeLegacyProseBlocks(currentSourceDoc);
+
+      // 動態注入當前文章專屬的 <style> 標籤，確保版面與前台 100% 一致
+      const existingPageStyle = document.getElementById('injected-page-style');
+      if (existingPageStyle) existingPageStyle.remove();
+      const pageStyles = Array.from(currentSourceDoc.querySelectorAll('head style')).map(s => s.textContent).join('\n');
+      if (pageStyles) {
+        const styleEl = document.createElement('style');
+        styleEl.id = 'injected-page-style';
+        styleEl.textContent = pageStyles;
+        document.head.appendChild(styleEl);
+      }
 
       const mainContent = currentSourceDoc.querySelector('main') || currentSourceDoc.body;
       workspace.innerHTML = mainContent.innerHTML;
@@ -789,8 +930,17 @@
           if (gridItem) {
             gridItem.remove();
           } else {
-            const link = wrap.closest('a.glightbox');
-            if (link) {
+            const splitMedia = wrap.closest('.story-split-media');
+            const link = wrap.closest('a.glightbox, a.gallery-opener');
+            if (splitMedia) {
+              const splitParent = splitMedia.closest('.story-split');
+              const splitText = splitParent ? splitParent.querySelector('.story-split-text') : null;
+              if (splitText && !splitText.textContent.trim()) {
+                splitParent.remove();
+              } else {
+                splitMedia.remove();
+              }
+            } else if (link) {
               link.remove();
             } else {
               wrap.remove();
@@ -820,7 +970,7 @@
 
     // 4.3 建立新照片元素
     function createPhotoElement(imgData) {
-      const imgFolder = currentPage ? (currentPage.image_folder || currentPage.id) : 'day-01';
+      const imgFolder = imgData.folder || (currentPage ? (currentPage.image_folder || currentPage.id) : 'day-01');
       const destSlug = currentTrip ? currentTrip.dest : '2026-germany';
 
       const derivatives = imgData.derivatives || [];
@@ -866,7 +1016,22 @@
       currentPickerTarget = targetEl;
       currentPickerGrid = containerGrid;
 
-      if (mode === 'swap') {
+      if (mode === 'curate') {
+        if (!currentPage || typeSelect.value !== 'blogs') {
+          showToast('目前只支援 Blog 文章選圖', true);
+          return;
+        }
+        imgModalTitle.textContent = '🖼️ 選圖與燈箱';
+        imgModalFolderSelect.value = 'current';
+        if (photoSelectionLoadedFor !== `${currentTrip.id}/${currentPage.id}`) {
+          try {
+            await loadPhotoSelection();
+          } catch (error) {
+            showToast(error.message, true);
+            return;
+          }
+        }
+      } else if (mode === 'swap') {
         imgModalTitle.textContent = '🔄 替換照片';
       } else if (mode === 'insert_after') {
         imgModalTitle.textContent = '➕ 插入照片';
@@ -874,8 +1039,105 @@
         imgModalTitle.textContent = '➕ 新增照片至相簿';
       }
 
+      imgModalFooter.classList.toggle('show', mode === 'curate');
       imgModal.classList.add('show');
       fetchAndRenderModalImages();
+    }
+
+    function selectionKey(img) {
+      return `${img.folder}/${img.original_name}`;
+    }
+
+    function updateSelectionSummary() {
+      const values = [...photoSelection.values()];
+      const bodyCount = values.filter(image => image.body).length;
+      const galleryCount = values.filter(image => image.gallery).length;
+      const state = photoSelectionDirty ? '尚未保存' : (photoSelectionStatus === 'finalized' ? '已確認並轉檔' : '選圖草稿');
+      imgSelectionSummary.textContent = `正文候選 ${bodyCount} 張 · 燈箱 ${galleryCount} 張 · 共入選 ${values.length} 張 · ${state}`;
+      btnFinalizePhotoSelection.disabled = photoSelectionDirty || values.length === 0;
+      btnFinalizePhotoSelection.title = photoSelectionDirty ? '請先保存選圖草稿' : '';
+    }
+
+    async function loadPhotoSelection() {
+      const key = `${currentTrip.id}/${currentPage.id}`;
+      const res = await fetch(`/api/photo-selection?trip=${encodeURIComponent(currentTrip.id)}&entry=${encodeURIComponent(currentPage.id)}`);
+      const data = await res.json();
+      if (!res.ok || !data.success) throw new Error(data.error || '無法讀取選圖草稿');
+      photoSelection = new Map((data.selection.images || []).map(image => [
+        `${image.folder}/${image.filename}`,
+        { folder: image.folder, filename: image.filename, body: !!image.body, gallery: !!image.gallery }
+      ]));
+      photoSelectionDirty = false;
+      photoSelectionStatus = data.selection.status || 'draft';
+      photoSelectionLoadedFor = key;
+      updateSelectionSummary();
+    }
+
+    function togglePhotoRole(img, role, card, button) {
+      const key = selectionKey(img);
+      const selected = photoSelection.get(key) || {
+        folder: img.folder, filename: img.original_name, body: false, gallery: false
+      };
+      selected[role] = !selected[role];
+      if (selected.body || selected.gallery) photoSelection.set(key, selected);
+      else photoSelection.delete(key);
+      card.classList.toggle('curated-body', selected.body);
+      card.classList.toggle('curated-gallery', selected.gallery);
+      button.setAttribute('aria-pressed', String(selected[role]));
+      photoSelectionDirty = true;
+      updateSelectionSummary();
+    }
+
+    async function savePhotoSelection() {
+      btnSavePhotoSelection.disabled = true;
+      try {
+        const res = await fetch('/api/save-photo-selection', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            trip: currentTrip.id, entry: currentPage.id,
+            images: [...photoSelection.values()]
+          })
+        });
+        const data = await res.json();
+        if (!res.ok || !data.success) throw new Error(data.error || '選圖草稿保存失敗');
+        photoSelectionDirty = false;
+        photoSelectionStatus = 'draft';
+        updateSelectionSummary();
+        showToast('選圖草稿已保存；尚未轉檔或修改文章');
+        return true;
+      } catch (error) {
+        showToast(error.message, true);
+        return false;
+      } finally {
+        btnSavePhotoSelection.disabled = false;
+      }
+    }
+
+    async function finalizePhotoSelection() {
+      if (photoSelectionDirty) {
+        showToast('請先保存選圖草稿', true);
+        return;
+      }
+      const selectedCount = photoSelection.size;
+      if (!selectedCount) return;
+      if (!confirm(`確定這 ${selectedCount} 張的正文／燈箱選擇已定案？系統現在才會為入選原圖統一產生安全 WebP。此步不會自動更動文章或燈箱排序。`)) return;
+      btnFinalizePhotoSelection.disabled = true;
+      imgSelectionSummary.textContent = `正在處理 ${selectedCount} 張入選照片…`;
+      try {
+        const res = await fetch('/api/finalize-photo-selection', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ trip: currentTrip.id, entry: currentPage.id })
+        });
+        const data = await res.json();
+        if (!res.ok || !data.success) throw new Error(data.error || '批次轉檔失敗');
+        photoSelectionStatus = 'finalized';
+        updateSelectionSummary();
+        showToast(`已完成 ${data.selected} 張入選照片，其中 ${data.converted} 張新轉 WebP`);
+        await fetchAndRenderModalImages();
+      } catch (error) {
+        showToast(error.message, true);
+        updateSelectionSummary();
+      }
     }
 
     // 5.1 讀取並渲染 Modal 圖片清單
@@ -892,8 +1154,25 @@
         const res = await fetch(`/api/list-images?trip=${encodeURIComponent(currentTrip.id)}&dest=${encodeURIComponent(destSlug)}&folder=${encodeURIComponent(selectedFolder)}`);
         const data = await res.json();
         if (data.success && data.images.length > 0) {
+          const sourceFilter = imgModalSourceSelect.value;
+          const filteredImages = data.images.filter(img => {
+            if (sourceFilter === 'all') return true;
+            if (sourceFilter === 'unpublished') return !img.published;
+            return img.source_type === sourceFilter;
+          });
+          const counts = data.images.reduce((acc, img) => {
+            acc.total += 1;
+            acc[img.source_type] = (acc[img.source_type] || 0) + 1;
+            if (!img.published) acc.unpublished += 1;
+            return acc;
+          }, { total: 0, phone: 0, instagram: 0, other: 0, unpublished: 0 });
+          imgModalSub.textContent = `旅程：${currentTrip.name} ｜ ${selectedFolder === 'all' ? '全旅程' : selectedFolder} ｜ 手機 ${counts.phone} · Instagram ${counts.instagram} · 其他 ${counts.other} · 待轉檔 ${counts.unpublished}`;
           imgModalGrid.innerHTML = '';
-          data.images.forEach(img => {
+          if (filteredImages.length === 0) {
+            imgModalGrid.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:2rem; color:#94a3b8;">這個篩選條件下沒有照片</div>';
+            return;
+          }
+          filteredImages.forEach(img => {
             const card = document.createElement('div');
             card.className = 'img-choice-card';
             
@@ -901,7 +1180,7 @@
             thumbWrap.className = 'img-choice-thumb-wrap';
 
             const thumbImg = document.createElement('img');
-            thumbImg.src = img.thumb.startsWith('http') ? img.thumb : (img.thumb.startsWith(destSlug + '/') ? `../${img.thumb}` : `../${destSlug}/${img.thumb}`);
+            thumbImg.src = img.thumb.startsWith('http') || img.thumb.startsWith('/') ? img.thumb : (img.thumb.startsWith(destSlug + '/') ? `../${img.thumb}` : `../${destSlug}/${img.thumb}`);
             thumbImg.alt = img.original_name;
             thumbImg.loading = 'lazy';
             thumbWrap.appendChild(thumbImg);
@@ -910,17 +1189,56 @@
             const metaDiv = document.createElement('div');
             metaDiv.className = 'img-choice-meta';
             metaDiv.title = img.original_name;
-            metaDiv.textContent = img.original_name;
+            const filename = document.createElement('span');
+            filename.textContent = img.original_name;
+            filename.style.maxWidth = '100%';
+            filename.style.overflow = 'hidden';
+            filename.style.textOverflow = 'ellipsis';
+            const badges = document.createElement('span');
+            badges.className = 'img-choice-badges';
+            const sourceBadge = document.createElement('span');
+            sourceBadge.className = 'img-choice-badge';
+            sourceBadge.textContent = img.source_type === 'phone' ? '手機原圖' : (img.source_type === 'instagram' ? 'Instagram' : '其他來源');
+            const statusBadge = document.createElement('span');
+            statusBadge.className = `img-choice-badge${img.published ? '' : ' pending'}`;
+            statusBadge.textContent = !img.master_available ? '原圖不在本機' : (img.published ? 'WebP 就緒' : '僅本機預覽');
+            badges.append(sourceBadge, statusBadge);
+            metaDiv.append(filename, badges);
             card.appendChild(metaDiv);
 
-            card.addEventListener('click', () => {
-              handlePhotoSelected(img);
-              imgModal.classList.remove('show');
-            });
+            if (currentPickerMode === 'curate') {
+              card.classList.add('curation-card');
+              const selected = photoSelection.get(selectionKey(img)) || {};
+              card.classList.toggle('curated-body', !!selected.body);
+              card.classList.toggle('curated-gallery', !!selected.gallery);
+              const actions = document.createElement('div');
+              actions.className = 'img-choice-actions';
+              for (const [role, label] of [['body', '正文候選'], ['gallery', '燈箱收錄']]) {
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.className = role === 'gallery' ? 'gallery-choice' : '';
+                button.textContent = label;
+                button.setAttribute('aria-pressed', String(!!selected[role]));
+                button.disabled = !img.master_available;
+                if (!img.master_available) button.title = '原圖不在本機，無法加入新的選片決策';
+                button.addEventListener('click', () => togglePhotoRole(img, role, card, button));
+                actions.appendChild(button);
+              }
+              card.appendChild(actions);
+            } else {
+              card.addEventListener('click', () => {
+                if (!img.published || !img.derivatives || img.derivatives.length === 0) {
+                  showToast('這張尚未轉檔；請先用「選圖與燈箱」列入草稿，定案後統一轉 WebP', true);
+                  return;
+                }
+                handlePhotoSelected(img);
+                imgModal.classList.remove('show');
+              });
+            }
             imgModalGrid.appendChild(card);
           });
         } else {
-          imgModalGrid.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:2rem; color:#94a3b8;">此目錄暫無已編譯之 WebP 圖資</div>';
+          imgModalGrid.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:2rem; color:#94a3b8;">此目錄沒有可選照片</div>';
         }
       } catch (err) {
         imgModalGrid.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:2rem; color:#ef4444;">無法獲取圖片清單</div>';
@@ -956,11 +1274,13 @@
     // 6. 套用圖片替換
     function applyImageSwap(imgData, targetImg) {
       if (!targetImg) return;
-      const imgFolder = currentPage ? (currentPage.image_folder || currentPage.id) : 'day-01';
+      const imgFolder = imgData.folder || (currentPage ? (currentPage.image_folder || currentPage.id) : 'day-01');
       const destSlug = currentTrip ? currentTrip.dest : '2026-germany';
 
       const derivatives = imgData.derivatives || [];
-      const contentDeriv = derivatives.find(d => d.profile === 'content') || derivatives[0] || { filename: `${imgData.id}-content-960w.webp`, width: 960, height: 540 };
+      const isGridItem = !!targetImg.closest('.photo-grid-item');
+      const thumbDeriv = derivatives.find(d => d.profile === 'thumb') || derivatives[0];
+      const contentDeriv = (isGridItem && thumbDeriv) ? thumbDeriv : (derivatives.find(d => d.profile === 'content') || derivatives[0] || { filename: `${imgData.id}-content-960w.webp`, width: 960, height: 540 });
       const lightboxDeriv = derivatives.find(d => d.profile === 'lightbox') || derivatives[derivatives.length - 1] || { filename: `${imgData.id}-lightbox-1600w.webp` };
 
       const isPreviewOrDirectWebP = (currentPage && currentPage.file.includes('previews')) || targetImg.hasAttribute('srcset');
@@ -975,8 +1295,8 @@
         targetImg.setAttribute('srcset', workspaceSrcset);
         targetImg.dataset.origSrcset = origSrcset;
 
-        if (contentDeriv.width) targetImg.setAttribute('width', contentDeriv.width);
-        if (contentDeriv.height) targetImg.setAttribute('height', contentDeriv.height);
+        if (contentDeriv.width && !isGridItem) targetImg.setAttribute('width', contentDeriv.width);
+        if (contentDeriv.height && !isGridItem) targetImg.setAttribute('height', contentDeriv.height);
 
         const parentLink = targetImg.closest('a');
         if (parentLink) {
@@ -1170,7 +1490,7 @@ Cloudflare 只查最新一筆 production deployment。Push 後每 20～30 秒查
 
     // 事件監聽綁定
     tripSelect.addEventListener('change', () => {
-      if (isDirty && !confirm('當前文章有未儲存變更，確定要切換旅程嗎？')) {
+      if ((isDirty || photoSelectionDirty) && !confirm('當前文章或選圖有未保存變更，確定要切換旅程嗎？')) {
         tripSelect.value = currentTrip.id;
         return;
       }
@@ -1179,14 +1499,14 @@ Cloudflare 只查最新一筆 production deployment。Push 後每 20～30 秒查
     });
 
     typeSelect.addEventListener('change', () => {
-      if (isDirty && !confirm('當前文章有未儲存變更，確定要切換類型嗎？')) {
+      if ((isDirty || photoSelectionDirty) && !confirm('當前文章或選圖有未保存變更，確定要切換類型嗎？')) {
         return;
       }
       updatePageOptions();
     });
 
     pageSelect.addEventListener('change', () => {
-      if (isDirty && !confirm('當前文章有未儲存變更，確定要切換篇章嗎？')) {
+      if ((isDirty || photoSelectionDirty) && !confirm('當前文章或選圖有未保存變更，確定要切換篇章嗎？')) {
         pageSelect.value = currentPage.id;
         return;
       }
@@ -1194,17 +1514,29 @@ Cloudflare 只查最新一筆 production deployment。Push 後每 20～30 秒查
       const pages = currentTrip[selectedType] || [];
       currentPage = pages.find(p => p.id === pageSelect.value);
       if (currentPage) {
+        photoSelectionLoadedFor = '';
+        photoSelection = new Map();
+        photoSelectionDirty = false;
         syncUrlState();
         loadSource(currentPage.file);
       }
     });
 
     imgModalFolderSelect.addEventListener('change', fetchAndRenderModalImages);
+    imgModalSourceSelect.addEventListener('change', fetchAndRenderModalImages);
+    btnCuratePhotos.addEventListener('click', () => openImagePicker('curate'));
+    btnSavePhotoSelection.addEventListener('click', savePhotoSelection);
+    btnFinalizePhotoSelection.addEventListener('click', finalizePhotoSelection);
     btnSave.addEventListener('click', saveCurrentArticle);
     btnRestore.addEventListener('click', restoreBackup);
-    btnModalClose.addEventListener('click', () => imgModal.classList.remove('show'));
+    function closeImageModal() {
+      if (currentPickerMode === 'curate' && photoSelectionDirty && !confirm('選圖尚未保存，關閉後本次修改將遺失。確定關閉嗎？')) return;
+      imgModal.classList.remove('show');
+      if (currentPickerMode === 'curate' && photoSelectionDirty) photoSelectionLoadedFor = '';
+    }
+    btnModalClose.addEventListener('click', closeImageModal);
     imgModal.addEventListener('click', (e) => {
-      if (e.target === imgModal) imgModal.classList.remove('show');
+      if (e.target === imgModal) closeImageModal();
     });
 
     // 鍵盤快速鍵 Ctrl + S / Cmd + S

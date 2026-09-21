@@ -7,14 +7,17 @@ CH Travel OS 2.0 - 跨旅程共用本機伺服器與視覺化編輯器後端 API
 import os
 import sys
 import json
+import io
 import re
 import shutil
 import mimetypes
 import traceback
 import urllib.parse
+import datetime
 from functools import partial
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 from pathlib import Path
+from PIL import Image, ImageOps
 
 # 確保 WebP 與現代 Web 資源之 MIME Type 100% 正確
 mimetypes.add_type("image/webp", ".webp")
@@ -44,6 +47,7 @@ if str(TOOLS_DIR) not in sys.path:
 try:
     from build_trip_html import build_trip
     from build_timeline_html import build_timelines
+    from image_pipeline import load_publish_exclusions, process_selected_image, get_file_sha256
 except Exception as ie:
     print(f"Warning: Could not import build modules at startup: {ie}", flush=True)
 
@@ -205,6 +209,7 @@ class TravelOSMultiTripHandler(SimpleHTTPRequestHandler):
                                             "title": item["title"],
                                             "file": item["source"],
                                             "output": item["output"],
+                                            "draft": item.get("status") == "draft",
                                             "image_folder": item.get("image_folder", item["id"].split("-")[0] + "-" + item["id"].split("-")[1] if "-" in item["id"] else item["id"])
                                         })
                             except Exception as e:
@@ -294,41 +299,93 @@ class TravelOSMultiTripHandler(SimpleHTTPRequestHandler):
                     self.send_json({"success": False, "error": str(e)}, 500)
                 return
 
+            # 2.1 API: 本機 master 的低解析、去 metadata 預覽；原檔本身永不直接送出。
+            if path == "/api/master-thumbnail":
+                trip_slug = query.get("trip", [""])[0]
+                folder = query.get("folder", [""])[0]
+                filename = query.get("filename", [""])[0]
+                master_path = self.resolve_master_image(trip_slug, folder, filename)
+                if filename in load_publish_exclusions(trip_slug).get(folder, set()):
+                    self.send_json({"success": False, "error": "此照片已列入發布排除清單"}, 403)
+                    return
+                with Image.open(master_path) as source:
+                    preview = ImageOps.exif_transpose(source).convert("RGB")
+                    preview.thumbnail((480, 480), Image.Resampling.LANCZOS)
+                    buffer = io.BytesIO()
+                    preview.save(buffer, format="WEBP", quality=76, method=4)
+                payload = buffer.getvalue()
+                self.send_response(200)
+                self.send_header("Content-Type", "image/webp")
+                self.send_header("Content-Length", str(len(payload)))
+                self.send_header("Cache-Control", "private, no-store")
+                self.send_header("X-Content-Type-Options", "nosniff")
+                self.end_headers()
+                self.wfile.write(payload)
+                return
+
+            # 選片決策只存在 trips/，不依賴公開 image-manifest。
+            if path == "/api/photo-selection":
+                trip_slug = query.get("trip", [""])[0]
+                entry_id = query.get("entry", [""])[0]
+                selection_path = self.photo_selection_path(trip_slug, entry_id)
+                data = json.loads(selection_path.read_text(encoding="utf-8")) if selection_path.exists() else {
+                    "trip": trip_slug, "entry": entry_id, "status": "draft", "images": []
+                }
+                self.send_json({"success": True, "selection": data})
+                return
+
             # 3. API: 讀取指定旅程該天數的圖片庫 (Image Manifest)
             if path == "/api/list-images":
                 trip_slug = query.get("trip", ["2026-germany"])[0]
                 folder = query.get("folder", ["day-01"])[0]
                 dest = get_trip_dest(trip_slug)
 
-                manifest_path = DOCS_DIR / dest / "image-manifest.json"
-                if not manifest_path.exists():
-                    self.send_json({"success": False, "error": f"找不到 Image Manifest: {manifest_path}"}, 404)
-                    return
-
                 try:
-                    with open(manifest_path, "r", encoding="utf-8") as f:
-                        m = json.load(f)
-
+                    manifest_path = DOCS_DIR / dest / "image-manifest.json"
+                    m = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else {"images": {}}
+                    manifest_images = m.get("images", {})
+                    excluded_by_folder = load_publish_exclusions(trip_slug)
                     images_in_folder = []
-                    for img_key, item in m.get("images", {}).items():
-                        if folder == "all" or f"/{folder}/" in img_key or img_key.startswith(f"{folder}/") or item.get("filename", "").startswith(f"{folder}/") or item.get("original_filename", "").startswith(f"{folder}/"):
-                            derivatives = item.get("derivatives", [])
-                            thumb = next((d["publicPath"] for d in derivatives if d["profile"] == "thumb"), None)
-                            content_p = next((d["publicPath"] for d in derivatives if d["profile"] == "content"), None)
-                            desktop = next((d["publicPath"] for d in derivatives if d["profile"] == "desktop"), None)
-                            lightbox = next((d["publicPath"] for d in derivatives if d["profile"] == "lightbox"), None)
-                            
-                            images_in_folder.append({
-                                "id": item.get("id", Path(img_key).stem),
-                                "original_name": item.get("original_filename", Path(img_key).name),
-                                "thumb": thumb or (derivatives[0]["publicPath"] if derivatives else f"{dest}/images/{img_key}"),
-                                "content": content_p or (derivatives[0]["publicPath"] if derivatives else f"{dest}/images/{img_key}"),
-                                "desktop": desktop or (derivatives[-1]["publicPath"] if derivatives else f"{dest}/images/{img_key}"),
-                                "lightbox": lightbox or (derivatives[-1]["publicPath"] if derivatives else f"{dest}/images/{img_key}"),
-                                "derivatives": derivatives,
-                                "width": item.get("original_width", 1200),
-                                "height": item.get("original_height", 800)
-                            })
+                    master_root = (BASE_DIR / "masters" / trip_slug).resolve()
+                    master_files = []
+                    if master_root.exists():
+                        folders = [d for d in master_root.iterdir() if d.is_dir()]
+                        if folder != "all":
+                            folders = [d for d in folders if d.name == folder]
+                        for master_folder in sorted(folders):
+                            excluded = excluded_by_folder.get(master_folder.name, set())
+                            master_files.extend(
+                                (master_folder.name, image_path)
+                                for image_path in sorted(master_folder.iterdir())
+                                if image_path.is_file()
+                                and image_path.suffix.lower() in {".jpg", ".jpeg", ".png", ".webp", ".heic"}
+                                and image_path.name not in excluded
+                            )
+
+                    seen_keys = set()
+                    for image_folder, master_path in master_files:
+                        img_key = f"{image_folder}/{master_path.name}"
+                        seen_keys.add(img_key)
+                        item = manifest_images.get(img_key, {})
+                        images_in_folder.append(self.make_editor_image_record(
+                            trip_slug, dest, image_folder, master_path.name, item, master_available=True
+                        ))
+
+                    # 相容舊 manifest：即使 master 已不在目前工作機，也保留可用的公開 derivative。
+                    for img_key, item in manifest_images.items():
+                        parts = Path(img_key).parts
+                        image_folder = parts[0] if len(parts) > 1 else folder
+                        if img_key in seen_keys or (folder != "all" and image_folder != folder):
+                            continue
+                        original_name = item.get("original_filename", Path(img_key).name)
+                        images_in_folder.append(self.make_editor_image_record(
+                            trip_slug, dest, image_folder, original_name, item, master_available=False
+                        ))
+
+                    source_order = {"phone": 0, "other": 1, "instagram": 2}
+                    images_in_folder.sort(key=lambda item: (
+                        source_order.get(item["source_type"], 9), item["folder"], item["original_name"].lower()
+                    ))
 
                     self.send_json({
                         "success": True,
@@ -394,8 +451,16 @@ class TravelOSMultiTripHandler(SimpleHTTPRequestHandler):
                 dest_slug = get_trip_dest(trip_slug)
                 if "sources/blog" in rel_file:
                     try:
-                        build_trip(trip_slug)
-                        build_msg = "已同步重新編譯發布版 Blog HTML！"
+                        blog_config = json.loads((TRIPS_DIR / trip_slug / "blog-migration.json").read_text(encoding="utf-8"))
+                        is_draft = any(
+                            item.get("source") == rel_file.replace("\\", "/") and item.get("status") == "draft"
+                            for item in blog_config.get("entries", [])
+                        )
+                        if is_draft:
+                            build_msg = "文章仍是選圖草稿，尚未產生公開頁面。"
+                        else:
+                            build_trip(trip_slug)
+                            build_msg = "已同步重新編譯發布版 Blog HTML！"
                     except Exception as be:
                         build_msg = f"檔案已儲存，但 Blog 編譯時發生錯誤: {be}"
                 elif rel_file.endswith("sources/index.html") or rel_file.endswith("sources\\index.html"):
@@ -423,6 +488,102 @@ class TravelOSMultiTripHandler(SimpleHTTPRequestHandler):
                     "success": True,
                     "message": f"儲存成功！{build_msg}",
                     "has_backup": True
+                })
+                return
+
+            if path == "/api/save-photo-selection":
+                if not self.is_trusted_json_post():
+                    self.send_json({"success": False, "error": "非法或跨來源請求"}, 403)
+                    return
+                content_len = int(self.headers.get("Content-Length", 0))
+                if content_len > 1024 * 1024:
+                    self.send_json({"success": False, "error": "選片清單過大"}, 413)
+                    return
+                payload = json.loads(self.rfile.read(content_len).decode("utf-8"))
+                trip_slug = payload.get("trip", "")
+                entry_id = payload.get("entry", "")
+                selection_path = self.photo_selection_path(trip_slug, entry_id)
+                images = payload.get("images", [])
+                if not isinstance(images, list):
+                    raise ValueError("images 必須是陣列")
+                normalized = []
+                seen = set()
+                exclusions = load_publish_exclusions(trip_slug)
+                for image in images:
+                    if not isinstance(image, dict):
+                        raise ValueError("圖片決策格式錯誤")
+                    folder, filename = image.get("folder", ""), image.get("filename", "")
+                    if not isinstance(folder, str) or not isinstance(filename, str):
+                        raise ValueError("圖片路徑格式錯誤")
+                    if filename in exclusions.get(folder, set()):
+                        raise ValueError(f"照片已列入發布排除清單: {folder}/{filename}")
+                    master_path = self.resolve_master_image(trip_slug, folder, filename)
+                    key = (folder, filename)
+                    if key in seen:
+                        raise ValueError(f"選片重複: {folder}/{filename}")
+                    seen.add(key)
+                    body = image.get("body") is True
+                    gallery = image.get("gallery") is True
+                    if not body and not gallery:
+                        continue
+                    normalized.append({
+                        "folder": folder, "filename": filename,
+                        "body": body, "gallery": gallery,
+                        "source_hash": get_file_sha256(master_path),
+                    })
+                selection = {
+                    "version": 1, "trip": trip_slug, "entry": entry_id,
+                    "status": "draft",
+                    "updated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                    "images": normalized,
+                }
+                selection_path.parent.mkdir(parents=True, exist_ok=True)
+                temp_path = selection_path.with_suffix(".json.tmp")
+                temp_path.write_text(json.dumps(selection, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+                os.replace(temp_path, selection_path)
+                self.send_json({"success": True, "selection": selection})
+                return
+
+            if path == "/api/finalize-photo-selection":
+                if not self.is_trusted_json_post():
+                    self.send_json({"success": False, "error": "非法或跨來源請求"}, 403)
+                    return
+                content_len = int(self.headers.get("Content-Length", 0))
+                if content_len > 4096:
+                    self.send_json({"success": False, "error": "請求過大"}, 413)
+                    return
+                payload = json.loads(self.rfile.read(content_len).decode("utf-8"))
+                trip_slug, entry_id = payload.get("trip", ""), payload.get("entry", "")
+                selection_path = self.photo_selection_path(trip_slug, entry_id)
+                if not selection_path.exists():
+                    raise ValueError("尚未保存選片清單")
+                selection = json.loads(selection_path.read_text(encoding="utf-8"))
+                images = selection.get("images", [])
+                if not images:
+                    raise ValueError("選片清單為空")
+                exclusions = load_publish_exclusions(trip_slug)
+                for image in images:
+                    folder, filename = image["folder"], image["filename"]
+                    if filename in exclusions.get(folder, set()):
+                        raise ValueError(f"照片已列入發布排除清單: {folder}/{filename}")
+                    master_path = self.resolve_master_image(trip_slug, folder, filename)
+                    if get_file_sha256(master_path) != image.get("source_hash"):
+                        raise ValueError(f"原圖已變更，請重新保存選片清單: {folder}/{filename}")
+                dest = get_trip_dest(trip_slug)
+                converted = 0
+                for image in images:
+                    _, is_cache = process_selected_image(
+                        trip_slug, image["folder"], image["filename"], dest
+                    )
+                    converted += 0 if is_cache else 1
+                selection["status"] = "finalized"
+                selection["finalized_at"] = datetime.datetime.now(datetime.timezone.utc).isoformat()
+                temp_path = selection_path.with_suffix(".json.tmp")
+                temp_path.write_text(json.dumps(selection, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+                os.replace(temp_path, selection_path)
+                self.send_json({
+                    "success": True, "selected": len(images), "converted": converted,
+                    "selection": selection,
                 })
                 return
 
@@ -506,6 +667,63 @@ class TravelOSMultiTripHandler(SimpleHTTPRequestHandler):
         if target_path == hub_source:
             return True
         return any(is_relative_to(target_path, trip_root.joinpath(*parts).resolve()) for parts in WRITABLE_TRIP_SUBDIRS)
+
+    def resolve_master_image(self, trip_slug, folder, filename):
+        for value, label in ((trip_slug, "trip"), (folder, "folder"), (filename, "filename")):
+            if not value or Path(value).name != value or value in {".", ".."}:
+                raise ValueError(f"非法 {label}: {value}")
+        master_root = (BASE_DIR / "masters" / trip_slug).resolve()
+        target = (master_root / folder / filename).resolve()
+        if not is_relative_to(target, master_root) or not target.exists() or not target.is_file():
+            raise FileNotFoundError(f"找不到 master 圖片: {folder}/{filename}")
+        if target.suffix.lower() not in {".jpg", ".jpeg", ".png", ".webp", ".heic"}:
+            raise ValueError(f"不支援的圖片格式: {target.suffix}")
+        return target
+
+    def photo_selection_path(self, trip_slug, entry_id):
+        if not re.fullmatch(r"[a-zA-Z0-9][a-zA-Z0-9_-]*", trip_slug or ""):
+            raise ValueError("非法 trip")
+        if not re.fullmatch(r"[a-zA-Z0-9][a-zA-Z0-9_-]*", entry_id or ""):
+            raise ValueError("非法 entry")
+        config_path = TRIPS_DIR / trip_slug / "blog-migration.json"
+        if not config_path.exists():
+            raise ValueError("找不到旅程文章設定")
+        config = json.loads(config_path.read_text(encoding="utf-8"))
+        if not any(item.get("id") == entry_id for item in config.get("entries", [])):
+            raise ValueError(f"找不到文章 entry: {entry_id}")
+        return TRIPS_DIR / trip_slug / "photo-selections" / f"{entry_id}.json"
+
+    def make_editor_image_record(self, trip_slug, dest, folder, original_name, item, master_available=True):
+        derivatives = item.get("derivatives", []) if item else []
+        by_profile = {d.get("profile"): d for d in derivatives}
+        master_preview = (
+            "/api/master-thumbnail?"
+            + urllib.parse.urlencode({"trip": trip_slug, "folder": folder, "filename": original_name})
+        )
+        stem = Path(original_name).stem
+        if re.match(r"^\d{8}_\d{6}(?:[_-].*)?$", stem):
+            source_type = "phone"
+        elif stem.isdigit() and len(stem) >= 12:
+            source_type = "instagram"
+        else:
+            source_type = "other"
+        fallback = derivatives[0]["publicPath"] if derivatives else master_preview
+        last = derivatives[-1]["publicPath"] if derivatives else master_preview
+        return {
+            "id": item.get("id", stem) if item else stem,
+            "folder": folder,
+            "original_name": original_name,
+            "source_type": source_type,
+            "published": bool(derivatives),
+            "master_available": master_available,
+            "thumb": by_profile.get("thumb", {}).get("publicPath", fallback),
+            "content": by_profile.get("content", {}).get("publicPath", fallback),
+            "desktop": by_profile.get("desktop", {}).get("publicPath", last),
+            "lightbox": by_profile.get("lightbox", {}).get("publicPath", last),
+            "derivatives": derivatives,
+            "width": item.get("original_width", 0) if item else 0,
+            "height": item.get("original_height", 0) if item else 0,
+        }
 
     def is_trusted_json_post(self):
         content_type = self.headers.get("Content-Type", "").split(";", 1)[0].strip().lower()

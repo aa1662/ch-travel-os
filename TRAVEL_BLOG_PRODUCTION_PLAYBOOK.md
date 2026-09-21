@@ -183,7 +183,7 @@ recommended_use, owner_decision
 - 🚫 **嚴禁同一事實跳針重複（No Repetitive Looping）**：同一個核心事件（如 VIP 快速通關隨到隨上、纜車上下）在開篇破題後，後續段落**必須推進到新的視角與體驗**（如石階攀爬體感、敵樓避風框景、夕陽光線、與其他長城難易度對比）。嚴禁在正文、各區塊小標、照片札記與 Bento 之間機械式跳針重複同一句事實。
 - 🚫 **嚴禁文字大幅高於照片（Text/Image Height Balance）**：在 `.story-split` 圖文交錯模組中，文字段落必須精簡（控制在 2～3 段內），與旁邊的直式照片高度維持 **1:1 視覺對齊**。若有較長的背景或出發起因，應**先以全幅 `.blog-narrative-card` 破題**，再進入左右圖文 Split，嚴禁出現 6～7 段長文壓過短照片造成單側大片留白。
 - 🚫 **嚴禁無關生活起居雜圖混入景點圖集（Gallery Topic Boundary）**：Gallery Registry 只能收錄與該篇主題場域（景點、步道、歷史現場）直接相關的照片。同一天的飯店大廳、早餐、晚餐牛排、叫車截圖等起居雜圖，除非正文有獨立篇幅敘事，否則一律排除於公開圖集之外，嚴禁機械式無差別全量註冊相機素材。
-- 🚫 **嚴禁自行發明導覽列與網格類別（Navigation & Layout CSS Standard）**：全站頂部導覽一律採用 `.site-nav`、`.brand-link`、`.brand-badge`、`.nav-links` 與 `.reading-progress`，嚴禁使用未在全站 CSS 定義的自訂類別（如 `.sub-nav`）導致 Header Banner 破版成透明純文字；IG 縮圖網格必須完整定義 `.ig-photo-grid.photo-grid-4`，嚴禁照片以 100% 寬度向下垂直堆疊。
+- 🚫 **嚴禁自行發明導覽列與網格類別（Navigation & Layout CSS Standard）**：全站頂部導覽一律採用 `.site-nav`、`.brand-link`、`.brand-badge`、`.nav-links` 與 `.reading-progress`，嚴禁使用未在全站 CSS 定義的自訂類別（如 `.sub-nav`）導致 Header Banner 破版成透明純文字；IG 縮圖網格必須使用專案既有的四欄網格 class，嚴禁照片以 100% 寬度向下垂直堆疊。
 - 🚫 **嚴禁正文與圖集重複註冊 GLightbox（Gallery Opener Standard）**：正文中的所有圖片（Hero、Wide Photo、Story-Split、IG 卡片縮圖）一律使用 `<a class="gallery-opener" data-gallery-open="<image_stem>">` 作為入口觸發器，嚴禁在正文內標籤直接掛載 `class="glightbox"` 與 `data-gallery`。整個頁面的燈箱幻燈片**唯一由底部的 `<div class="gallery-registry">` SSoT 管理**。此規範可杜絕同一照片重複出現在燈箱中，並確保燈箱幻燈片嚴格沿時間軸由早至晚單向推進，徹底避免白天與黑夜來回穿插倒退的混亂體感。
 - 🚫 **嚴禁脫離 SSoT 在 `docs/` 手寫非編譯檔案**：所有正式頁面必須保持 SSoT（`trips/<journey>/sources/blog/*.html`）與 migration config 同步，並透過 `python tools/build_trip_html.py` 原子編譯至 `docs/`，確保 `core/editor.html` 視覺化編輯器、`validate_images.py` 與發布系統 100% 同步。
 
@@ -194,7 +194,13 @@ recommended_use, owner_decision
 - 不要求每篇出現相同數量的 IG 卡片或相同版型；同一 Journey 的導覽、Bento 規格、圖集入口與整體視覺語言必須一致。
 - 批評「元件使用過量」不等於禁用作者已核准的呈現形式。重做時必須逐一判斷元件是否有敘事功能，不得用全部刪除取代編輯判斷。
 - 照片順序可依敘事重排；gallery 本身仍按拍攝時間排序。
+- IG 卡片縮圖在桌機固定每列四張、手機每列兩張；圖片以 `object-fit: cover` 填滿等尺寸框，並依主體位置設定 `object-position`。照片較多時自然換列，不縮成五欄或更多欄。
+- IG 卡片 badge 只標示發布日期與「IG 發布紀錄」，不得寫死「N 張現場實拍」；公開照片可能因隱私、授權、去重或編輯決策調整，固定數字會立刻失真。
 - 直式敘事照片優先保留完整構圖，可以使用 `object-fit: contain`；但容器比例、尺寸與周邊版面必須配合照片，不得留下大片無敘事作用的空白邊。固定版位確實需要滿框時可使用 `cover`，並以桌機／手機 UAT 確認人物與主體焦點未被切掉。
+- 正文直式照片放入固定比例卡片時必須填滿可視框；依主體位置明確設定 `object-position` 為上、中或下焦點，不得以 `contain` 留下大片空白邊。只有完整構圖本身不可裁切時，才改用與照片比例相符的容器。
+- 正文橫式照片一律使用與其他 Wide Photo 相同的滿寬規格，不得縮成 Story-Split 側欄小圖。相鄰兩張橫式大圖之間至少安排一至兩個有內容推進的段落；若敘事必須並排，改選適合 Story-Split 的直式照片。
+- 作者指定的照片若只是在標示場景或內容，而版位需要橫式照片，必須回到原始照片庫搜尋同場景或時間相鄰的橫式原圖，再以照片內容逐張確認；不得直接把直式圖塞進橫式框、硬裁成橫幅，或只依檔名與既有 caption 猜測內容。替換後同步修正 alt、gallery title、mapping caption 與 Lightbox registry。
+- 只有作者明確指定，或兩張橫圖共同構成同一事件的比較／證據時，才可使用等寬雙圖；桌機維持相同比例的兩欄大圖，手機必須改為各自滿寬的單欄排列，不得裁成方形縮圖。
 - 行前規劃有獨立網站時，在 Bento 提供清楚入口；文章只摘錄與實際經驗最相關的內容，不複製整站，也不加入多餘免責聲明。
 - 網路推薦可保留為「當時行前口袋名單」，不得寫成作者吃過、用過或背書的第一手推薦。
 - 實用資訊以造訪年份或月份自然標示，不承諾即時更新。
@@ -226,6 +232,14 @@ Instagram 原貼文是作者當時已完成的編輯作品；相機原圖則是�
 - IG 匯出圖若需要公開，同樣必須經 image pipeline 轉為 WebP 並清除 metadata；不得直接複製 Takeout 檔案到 `docs/`。
 
 先更新 `trips/<journey>/sources/blog/` 與 migration config，再由 builder 產生 `docs/`。不得把 `docs/` 當唯一 source 手工維護。
+
+### 9.6 本機 Editor 先選圖、後轉檔
+
+- 新篇先建立 template source 與 `blog-migration.json` entry，標記 `"status": "draft"`，讓 Editor 能進入選圖畫面；builder 略過這種草稿，不能在公開導覽加入尚未建置的頁面。照片定案、source/config 補齊後才移除 draft 標記。
+- 編輯器「選圖與燈箱」從 `masters/<journey>/<day>/` 讀取本機照片，只回傳低解析、去 metadata 的預覽；不送出相機原檔，也不把 master 路徑寫入 source 或 `docs/`。
+- 作者分別標記「正文候選」與「燈箱收錄」，可同時標記；保存為 `trips/<journey>/photo-selections/<entry-id>.json` 的 `draft`。保存草稿不產生新的公開 derivatives，也不修改文章。
+- 作者確認整篇選圖後，在 Editor 明確執行「確認選圖並統一轉 WebP」，僅為入選照片產生安全 derivatives，清單狀態改為 `finalized`。轉檔前先核對原圖 hash 與排除清單；原圖變更時回到草稿重新確認。
+- `finalized` 清單是新篇選圖的作者決策來源；實際正文版位、caption、IG 映射與 `gallery_groups` 仍須依 [`trips/2024-australia/templates/README.md`](trips/2024-australia/templates/README.md) 套入 source/config，再由 builder 驗證。既有頁面的已產生 WebP 不會因新草稿而自動刪除。
 
 ## 10. Stage 6：圖片管線與 Build
 
@@ -284,6 +298,8 @@ python tools/validate_images.py
 
 - HITL 通過後，將核准版本留在 source 並重新 build；不要只修 published HTML。
 - Preview、prompt、audit 與 manuscript 依專案 editorial workflow 保存；臨時 screenshot、瀏覽器 scratch 與無用途中間檔不進 release commit。
+- 可重複使用的 Python 工具一律放在專案 `tools/`，不得散落在 Journey 根目錄或 `research/`。一次性轉換腳本優先使用 inline command；確實需要落地時只能放在 `scratch/<task>/`，完成驗證後連同 `__pycache__` 一併刪除。`research/` 只保存可追溯的 audit、mapping、config evidence 與研究資料，不保存已完成任務的臨時產生器。
+- Instagram 原文曾使用第三方或官方攝影圖時，文章可以如實說明，但該圖不得進入本站公開頁、燈箱、`masters/` 或 derivatives；僅保留作者自己的現場照片。
 - 移除或 archive 過渡檔前先確認沒有 config、builder、navigation 或文件引用。
 - Commit、push、deploy 分別取得授權；selective stage，不混入其他 working-tree 變更。
 
@@ -334,8 +350,9 @@ python tools/validate_images.py
 [ ] 檢查正文、小標、照片札記與 Bento 無同一事實或笑點的跳針重複
 [ ] 嚴格審查圖集邊界：Gallery 僅收錄景點與現場主題圖，無關生活起居雜圖（飯店/早餐/牛排）一律排除
 [ ] 檢查頂部 Header Banner 是否使用全站標準 .site-nav 結構與 .reading-progress，絕無自訂類別破版
-[ ] 檢查 IG 卡片縮圖是否套用 .ig-photo-grid.photo-grid-4 樣式，呈單行水平等比縮圖，無垂直撐爆破版
+[ ] 檢查 IG 卡片縮圖是否使用專案既有四欄網格：桌機每列四張、手機每列兩張、圖片滿框，且 badge 沒有寫死照片張數
 [ ] 檢查正文圖片一律使用 gallery-opener，燈箱唯一由底部 registry 管理，零重複 slide 且按時間升冪排列
+[ ] 橫式版位已回查原始照片庫並逐張確認內容；沒有把直式圖硬裁成橫幅，alt／caption／registry 與實際畫面一致
 [ ] IG 原貼文已建立 IG 匯出圖／相機原圖／Lightbox 映射，並排除隱私與重複影像
 [ ] 判斷非正文照片是否值得做旅途照片札記；沒有新增價值就只留 gallery
 [ ] 更新 source、config、正文圖、IG／照片札記、gallery 與 Bento
