@@ -113,6 +113,7 @@ class TravelOSMultiTripHandler(SimpleHTTPRequestHandler):
             if "/images/" in path or path.lower().endswith((".webp", ".jpg", ".png", ".heic")):
                 clean_rel = path.lstrip("/")
                 direct_file = DOCS_DIR / clean_rel
+                print(f"DEBUG_IMG_REQ: path={path}, clean_rel={clean_rel}", flush=True)
                 
                 # 若直接路徑不存在，嘗試在各旅程資料夾下尋找
                 if not direct_file.exists() or not direct_file.is_file():
@@ -161,6 +162,34 @@ class TravelOSMultiTripHandler(SimpleHTTPRequestHandler):
                                 pref = next((m for m in matches if "-content-" in m.name or "-desktop-" in m.name or "-thumb-" in m.name or "-lightbox-" in m.name), matches[0])
                                 direct_file = pref
                                 break
+
+                # 4. 本機草稿容錯：若 docs/ 尚未生成 WebP，直接從 masters/ 提供本機預覽原圖
+                if not direct_file.exists() or not direct_file.is_file():
+                    masters_root = BASE_DIR / "masters"
+                    if masters_root.exists():
+                        target_filename = Path(clean_rel).name
+                        target_stem = Path(clean_rel).stem
+                        for m_trip in masters_root.iterdir():
+                            if not m_trip.is_dir():
+                                continue
+                            if target_trip_dir and m_trip.name != target_trip_dir.name:
+                                continue
+                            if img_folder:
+                                f_dir = m_trip / img_folder
+                                if f_dir.exists():
+                                    cand_m = f_dir / target_filename
+                                    if cand_m.exists() and cand_m.is_file():
+                                        direct_file = cand_m
+                                        break
+                                    matches_m = list(f_dir.glob(f"{target_stem}.*"))
+                                    if matches_m:
+                                        direct_file = matches_m[0]
+                                        break
+                            if not direct_file.exists() or not direct_file.is_file():
+                                for cand_m in m_trip.rglob(target_filename):
+                                    if cand_m.is_file():
+                                        direct_file = cand_m
+                                        break
 
                 if direct_file.exists() and direct_file.is_file():
                     self.send_file(direct_file)

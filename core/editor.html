@@ -1228,8 +1228,11 @@
             } else {
               card.addEventListener('click', () => {
                 if (!img.published || !img.derivatives || img.derivatives.length === 0) {
-                  showToast('這張尚未轉檔；請先用「選圖與燈箱」列入草稿，定案後統一轉 WebP', true);
-                  return;
+                  if (!img.master_available) {
+                    showToast('原圖不在本機，無法使用', true);
+                    return;
+                  }
+                  // 草稿模式：原圖在 masters 庫存中，允許直接選用進行本機預覽替換
                 }
                 handlePhotoSelected(img);
                 imgModal.classList.remove('show');
@@ -1307,8 +1310,9 @@
           }
         }
       } else {
-        targetImg.src = `../${destSlug}/images/${imgFolder}/${contentDeriv.filename || imgData.original_name}`;
-        targetImg.dataset.origSrc = `../images/${imgFolder}/${imgData.original_name}`;
+        const rawFilename = (derivatives.length > 0 && contentDeriv && contentDeriv.filename) ? contentDeriv.filename : imgData.original_name;
+        targetImg.src = `../${destSlug}/images/${imgFolder}/${rawFilename}`;
+        targetImg.dataset.origSrc = `../images/${imgFolder}/${rawFilename}`;
 
         if (targetImg.hasAttribute('srcset')) {
           targetImg.removeAttribute('srcset');
@@ -1317,8 +1321,9 @@
 
         const parentLink = targetImg.closest('a');
         if (parentLink) {
-          parentLink.href = `../${destSlug}/images/${imgFolder}/${lightboxDeriv.filename || imgData.original_name}`;
-          parentLink.dataset.origHref = `../images/${imgFolder}/${imgData.original_name}`;
+          const rawLightbox = (derivatives.length > 0 && lightboxDeriv && lightboxDeriv.filename) ? lightboxDeriv.filename : imgData.original_name;
+          parentLink.href = `../${destSlug}/images/${imgFolder}/${rawLightbox}`;
+          parentLink.dataset.origHref = `../images/${imgFolder}/${rawLightbox}`;
           if (parentLink.hasAttribute('data-gallery-open')) {
             parentLink.setAttribute('data-gallery-open', imgData.id);
           }

@@ -2,7 +2,7 @@
   "pipeline_version": "2.0.0",
   "trip": "2024-australia",
   "dest": "2024-australia",
-  "generated_at": "2026-09-20T14:38:33.460331+00:00",
+  "generated_at": "2026-09-22T01:59:21.442862+00:00",
   "quality": 84,
   "profiles": [
     {
@@ -15504,6 +15504,1917 @@
           "publicPath": "2024-australia/images/day-01/IMG_9610-lightbox-1600w.webp",
           "bytes": 282718,
           "hash": "3467c4f093fb7b408b3bf0d1ac7f708712bacf7ca45eb7bc7e767aa07767a849"
+        }
+      ]
+    },
+    "day-03-04/17866299903240943.jpg": {
+      "id": "17866299903240943",
+      "original_filename": "17866299903240943.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "cbdc0d7e3cb4320b553394bf83b65c3268bbe657d3432bd4988afc10a3893f26",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "17866299903240943-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17866299903240943-thumb-480w.webp",
+          "bytes": 85780,
+          "hash": "577bc25df065186caa563c3ac8e9e6a187f355bb246afc60653d59b2cd886817"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "17866299903240943-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17866299903240943-content-960w.webp",
+          "bytes": 320768,
+          "hash": "0d787da7141be5957152af71ee69d2d07e17aded67570f9258eb75768a9c43aa"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "17866299903240943-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17866299903240943-desktop-1200w.webp",
+          "bytes": 468342,
+          "hash": "82b12530a21394d6a363dc86b503cbd53d12c3d59ac7c1d8ea1882f315090e59"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "17866299903240943-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17866299903240943-lightbox-1440w.webp",
+          "bytes": 646266,
+          "hash": "9022d8235c86d9f71b090d5c941f28c63dad9a2c498155d27972925a66645494"
+        }
+      ]
+    },
+    "day-03-04/17880829218086361.jpg": {
+      "id": "17880829218086361",
+      "original_filename": "17880829218086361.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "4e619a54a1f624050113b27545afadd0198666944c1d1cfb1a2c603cb39eb31c",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "17880829218086361-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17880829218086361-thumb-480w.webp",
+          "bytes": 45628,
+          "hash": "9859f2b8493524b0033234b39a0f019f02db4c20662dbea17ad7042c0b25e803"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "17880829218086361-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17880829218086361-content-960w.webp",
+          "bytes": 150418,
+          "hash": "795f6dba5537285bb6595ebcf2e8d6e2e1b11d747548db0a09ce7e9543ee439d"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "17880829218086361-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17880829218086361-desktop-1200w.webp",
+          "bytes": 212708,
+          "hash": "8edc8d107dbc318cbcd1ed52d8015decd1a76e2d7f2d4c25f6a0ecbce0697228"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "17880829218086361-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17880829218086361-lightbox-1440w.webp",
+          "bytes": 286002,
+          "hash": "21df3813e8d09387d1ec90ff44b9c2a02b0e2de4b81e848f5b9661478fec04e4"
+        }
+      ]
+    },
+    "day-03-04/17886750438121295.jpg": {
+      "id": "17886750438121295",
+      "original_filename": "17886750438121295.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "9252e445ec9196adfa4d9c6326c6bec24460bd543304a5bdd03cccec0a604123",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "17886750438121295-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17886750438121295-thumb-480w.webp",
+          "bytes": 39274,
+          "hash": "c3b1259de1b2dac984eb232343075710f8c8c5201c2bfdd1c12fd0a9a99cd92c"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "17886750438121295-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17886750438121295-content-960w.webp",
+          "bytes": 142718,
+          "hash": "99a240fbf887ff3427e0053a444fb7a2569aa26cc095956442fb8a995ac9df71"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "17886750438121295-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17886750438121295-desktop-1200w.webp",
+          "bytes": 207850,
+          "hash": "8d12dbc443939eb830ec5c374b169d94adaac998a94b8496b956d721f894195c"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "17886750438121295-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17886750438121295-lightbox-1440w.webp",
+          "bytes": 293110,
+          "hash": "1fdd68cff06bb323018c6f95414211937c4fdcc64d60ba2b38ff011509c46dd5"
+        }
+      ]
+    },
+    "day-03-04/17903242926059530.jpg": {
+      "id": "17903242926059530",
+      "original_filename": "17903242926059530.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "d48e13ff0dba0e94f79621e37b0fa3a612292ad856340bfea5d63672973d0034",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "17903242926059530-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17903242926059530-thumb-480w.webp",
+          "bytes": 60832,
+          "hash": "6631f0d97eae65c1eb14814b48ab503308303e2b6a192e866a47bed907c241e8"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "17903242926059530-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17903242926059530-content-960w.webp",
+          "bytes": 196566,
+          "hash": "df41ea0834720fceb0e28fc48be21bc6e88137bf7aea30bbd2ec17d2cad54a47"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "17903242926059530-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17903242926059530-desktop-1200w.webp",
+          "bytes": 279650,
+          "hash": "bad3b88ed6b2f8a0d337e7ce7bf9220321c2e5d8d1e111e7cb62eb2b10bccbc5"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "17903242926059530-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17903242926059530-lightbox-1440w.webp",
+          "bytes": 376190,
+          "hash": "2add346cac74636861d680a5d9f542a054accc8df8b83e66f63d617dd86537d0"
+        }
+      ]
+    },
+    "day-03-04/17921951627991294.jpg": {
+      "id": "17921951627991294",
+      "original_filename": "17921951627991294.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "c0e1c76e20cff8f72fe80cdaa7dedebbd8e6be47f007494c085a69278c55dfa4",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "17921951627991294-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17921951627991294-thumb-480w.webp",
+          "bytes": 89942,
+          "hash": "31fadb663839c65662941c9c9d7f4ed65068f6b930b40bf1df4632318c2f73e1"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "17921951627991294-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17921951627991294-content-960w.webp",
+          "bytes": 366808,
+          "hash": "772602a9851ecb7696b9a2dc7c3b19beddbc34678e14d22d94ffff4032c20b68"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "17921951627991294-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17921951627991294-desktop-1200w.webp",
+          "bytes": 558484,
+          "hash": "bb922ffffcae4428184c5da1a9a7b4c284fe569dac33261471626a20810aa608"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "17921951627991294-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17921951627991294-lightbox-1440w.webp",
+          "bytes": 798108,
+          "hash": "2c71c488b4ac6a05347fbe33f2d71f14863e18843a447062d253093112b74a93"
+        }
+      ]
+    },
+    "day-03-04/17929445204953307.jpg": {
+      "id": "17929445204953307",
+      "original_filename": "17929445204953307.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "096c39abe53d3ce032af52d293d7fc5e23eb6c75431057845ea002436b084563",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "17929445204953307-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17929445204953307-thumb-480w.webp",
+          "bytes": 42942,
+          "hash": "88248c27c06d9a667a86ab4c21796b48e8c9b1df9beb94f9b3030c389ceb742b"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "17929445204953307-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17929445204953307-content-960w.webp",
+          "bytes": 175780,
+          "hash": "6c2b5698e4824814fa87307dbff0e317669e185ab1d5c07e02d75af7f489332c"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "17929445204953307-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17929445204953307-desktop-1200w.webp",
+          "bytes": 265046,
+          "hash": "af5c527060cd28144725164916909cb64fe30adbefe4a7a88615379df2fbb03a"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "17929445204953307-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17929445204953307-lightbox-1440w.webp",
+          "bytes": 378928,
+          "hash": "e5633d2fd9682739fbeb243d3fdaa89f865d90c7231a986fcb61f918b9869930"
+        }
+      ]
+    },
+    "day-03-04/17945919914889888.jpg": {
+      "id": "17945919914889888",
+      "original_filename": "17945919914889888.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "70d9dcc8ea63dc8ee2d2f9414683cdecb9e7b6354a950bdf72815f55609a6bdb",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "17945919914889888-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17945919914889888-thumb-480w.webp",
+          "bytes": 39994,
+          "hash": "b9d080ba6c3f0201f1fb52246b4b70fca9aa4a5d58264c850ecc3e06f9a91bf2"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "17945919914889888-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17945919914889888-content-960w.webp",
+          "bytes": 99934,
+          "hash": "496715ff449c10489d5544b4881ad7a4c5892693bc9222adfbf56e441b068d39"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "17945919914889888-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17945919914889888-desktop-1200w.webp",
+          "bytes": 142970,
+          "hash": "b92a955990050c9525bb9096aa21e02258733e8f06bc85982ddd5e570a23561e"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "17945919914889888-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17945919914889888-lightbox-1440w.webp",
+          "bytes": 196688,
+          "hash": "cb74d345a8916a4665174b6b3a75d1161de4b16aaf089c30a866ab77acf36531"
+        }
+      ]
+    },
+    "day-03-04/17958108044822051.jpg": {
+      "id": "17958108044822051",
+      "original_filename": "17958108044822051.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "c23411ca81645afa6c535889ea400ddb4f7718b1112fd563781d772bcdb52936",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "17958108044822051-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17958108044822051-thumb-480w.webp",
+          "bytes": 101160,
+          "hash": "11f789193e9cd9e59edbd10e6da16bdd379eac097ea030047e1867364ef04dfc"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "17958108044822051-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17958108044822051-content-960w.webp",
+          "bytes": 342816,
+          "hash": "99a123b9a72762a868bc7ef67e98be0398bc2173008cf26be5cb568f67a43698"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "17958108044822051-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17958108044822051-desktop-1200w.webp",
+          "bytes": 488236,
+          "hash": "d42397846b26096d01f76f3d97f6be81010a88730bfabc145cb5ad94ba5ec400"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "17958108044822051-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/17958108044822051-lightbox-1440w.webp",
+          "bytes": 665706,
+          "hash": "a43579d8788bda39813aad545e350175e938d3160224317c136a57763ef0f53a"
+        }
+      ]
+    },
+    "day-03-04/18009168137465535.jpg": {
+      "id": "18009168137465535",
+      "original_filename": "18009168137465535.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "244d65f4595d79c3d8a3a9bb2d469c98cac26b94b53d76c4d897257a6208e8ea",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18009168137465535-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18009168137465535-thumb-480w.webp",
+          "bytes": 22672,
+          "hash": "7bc38e0dd0fe0802e326f5e5d5e53b680f693d1ac4cbb3cba605a9fc3bfea6ca"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18009168137465535-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18009168137465535-content-960w.webp",
+          "bytes": 62520,
+          "hash": "e8e2394ae21bf25155216fa58f04a1aa7f13c368a578fbb58c710cff7de791d2"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18009168137465535-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18009168137465535-desktop-1200w.webp",
+          "bytes": 82780,
+          "hash": "ba3faffde3b740693648004351fe84533ec4d324991788c0d64a59fb37ea438a"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18009168137465535-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18009168137465535-lightbox-1440w.webp",
+          "bytes": 107054,
+          "hash": "ed0dceb8f34ebf71d7a8fe6abc524905f897ba7cf550b689dcd8a2c40b352926"
+        }
+      ]
+    },
+    "day-03-04/18013056998394361.jpg": {
+      "id": "18013056998394361",
+      "original_filename": "18013056998394361.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "100645a769f3b78df09bb8384d1a7df02d0cf44ac8ce4b7931380383d5aa54b2",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18013056998394361-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18013056998394361-thumb-480w.webp",
+          "bytes": 98892,
+          "hash": "ec4222de64731359322456e37b677f816b1cd5fcc923be8e881c8f4f4d66b126"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18013056998394361-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18013056998394361-content-960w.webp",
+          "bytes": 333312,
+          "hash": "e68641199dd058186a6d273220d6f5b3cd9bbe2f5f4e5b9164d6a7d48c423a27"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18013056998394361-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18013056998394361-desktop-1200w.webp",
+          "bytes": 474922,
+          "hash": "a2c2897c595498e78c607fe19d8052aea120e1ce919bac9840f113711ad1cdbb"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18013056998394361-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18013056998394361-lightbox-1440w.webp",
+          "bytes": 661678,
+          "hash": "76ca167bc7971cb9aceb370330869224c56d94346cf7c36499029f5b74e52d29"
+        }
+      ]
+    },
+    "day-03-04/18013890299642680.jpg": {
+      "id": "18013890299642680",
+      "original_filename": "18013890299642680.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "6ed71aad4bb106512daf357e2ab78be6a4b7e6f499d48064dca22eb21400629e",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18013890299642680-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18013890299642680-thumb-480w.webp",
+          "bytes": 39150,
+          "hash": "1f7348c5d4582ae9f3ac91f8844aefe3b85c8596d58b7d03b614fd1f5a5251f4"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18013890299642680-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18013890299642680-content-960w.webp",
+          "bytes": 143744,
+          "hash": "3711127f9d0cd03145f4cf512f86f57fc99efafd6944dc0e1aed4855a2809c30"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18013890299642680-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18013890299642680-desktop-1200w.webp",
+          "bytes": 213180,
+          "hash": "79bcfdfebed027abbfaadeea6f9f72b3725a02471f5c12c4a7fcb120d07ea1c5"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18013890299642680-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18013890299642680-lightbox-1440w.webp",
+          "bytes": 296072,
+          "hash": "40dbd6d23f70a51797b8a9e7cf4883d5d43ea137984d6eb97e0f158940134549"
+        }
+      ]
+    },
+    "day-03-04/18027789281419725.jpg": {
+      "id": "18027789281419725",
+      "original_filename": "18027789281419725.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "5856dbdb248c63cf0b51e122347baf6da8050d36cf1bc5ec67ef6c7972046d0f",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18027789281419725-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18027789281419725-thumb-480w.webp",
+          "bytes": 65058,
+          "hash": "0b446d6f09b5e76539e2a9fd0354679a271434ea146de5c313d1795350f1eb68"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18027789281419725-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18027789281419725-content-960w.webp",
+          "bytes": 264900,
+          "hash": "70619b854da9b0754c02e761d59b96bc0b2bafc7a1c18429bbbf9cf62010eb34"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18027789281419725-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18027789281419725-desktop-1200w.webp",
+          "bytes": 405742,
+          "hash": "f1d1627a0ac4ea2eb540175bf5e83a1ba781ed8561555015555982fe5eb7a556"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18027789281419725-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18027789281419725-lightbox-1440w.webp",
+          "bytes": 568976,
+          "hash": "c03cc8b0b664a065165b974371712c413dff1818bded9b12d97d9da116f6b8a9"
+        }
+      ]
+    },
+    "day-03-04/18030058886380669.jpg": {
+      "id": "18030058886380669",
+      "original_filename": "18030058886380669.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "a03815b800b99559837d1c5acea07a36973edb86beb8e3abb042fcc675489f3f",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18030058886380669-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18030058886380669-thumb-480w.webp",
+          "bytes": 22780,
+          "hash": "ada2054c4e3039affd2df97ae9e7e7138527d774575a525b0c105c2a15204e34"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18030058886380669-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18030058886380669-content-960w.webp",
+          "bytes": 63186,
+          "hash": "a9aa2a76cad8f8be76d4299f1af7817011edbbf853cc7dbb6ba2a2e411fdb91c"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18030058886380669-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18030058886380669-desktop-1200w.webp",
+          "bytes": 83970,
+          "hash": "76f31ab69eb3b1ca0f7d13e28b79c4719243a83b640142dd50d2a2fdebf28579"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18030058886380669-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18030058886380669-lightbox-1440w.webp",
+          "bytes": 108258,
+          "hash": "dc463539832b06cdaddb293f738266c29c1b2a75ecab4d9471a68bb7ba1d93e9"
+        }
+      ]
+    },
+    "day-03-04/18035553407255340.jpg": {
+      "id": "18035553407255340",
+      "original_filename": "18035553407255340.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "99a5e1a07d704cce97d6f2e38b6128698fb833def4241e60150fd20d5e7a1e8e",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18035553407255340-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18035553407255340-thumb-480w.webp",
+          "bytes": 71982,
+          "hash": "52bdfd1bbaecab88d27280c0085a8814c03e9db114aa2e15d90c5ba292ddea93"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18035553407255340-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18035553407255340-content-960w.webp",
+          "bytes": 239052,
+          "hash": "d269d9d1e761953db6b9a0dace09e21ce2a7f8b99c2cc70133cb4d40cc55d3ce"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18035553407255340-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18035553407255340-desktop-1200w.webp",
+          "bytes": 328480,
+          "hash": "ac8e9d55ce361ed07f64358f069e0478313b52ce679da3731afe833f5d507766"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18035553407255340-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18035553407255340-lightbox-1440w.webp",
+          "bytes": 436484,
+          "hash": "c854750e1aae2d367ea22b9365001813245459722275f73581badecd609098b2"
+        }
+      ]
+    },
+    "day-03-04/18036911831022727.jpg": {
+      "id": "18036911831022727",
+      "original_filename": "18036911831022727.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "1660ef1aa0a41567588224acb4d9274cecf92f3838b9f9f57d2c01d4877e4645",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18036911831022727-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18036911831022727-thumb-480w.webp",
+          "bytes": 42896,
+          "hash": "5c76dc2c2d3aaab78793425bc24adf77895d55586e01a93efcd5bd63425b4173"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18036911831022727-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18036911831022727-content-960w.webp",
+          "bytes": 175628,
+          "hash": "d780cbcced2371fc067a5d04fe0272872558e4f7e9cdcc17e0a9d07e076ee55d"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18036911831022727-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18036911831022727-desktop-1200w.webp",
+          "bytes": 264388,
+          "hash": "eb4c73efff9e84e46293cfb0c799ff8c3d8181764e98fdac962f7178c3947cd5"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18036911831022727-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18036911831022727-lightbox-1440w.webp",
+          "bytes": 376984,
+          "hash": "9eb425791520ef44a064eb84b941bc8079c15ce02f4187cda8c9c2c629d4c5d2"
+        }
+      ]
+    },
+    "day-03-04/18043024370038498.jpg": {
+      "id": "18043024370038498",
+      "original_filename": "18043024370038498.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "38dc66481da09e365c33a0b5cf12b240e23aebc6d4ede09e671800183d5bd050",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18043024370038498-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18043024370038498-thumb-480w.webp",
+          "bytes": 45970,
+          "hash": "2753fad16909f12d1f5eb5378b7961451cfa445166372893eac9dff68947f5d4"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18043024370038498-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18043024370038498-content-960w.webp",
+          "bytes": 153108,
+          "hash": "02e3834b08afdf1fe3c938f7cf1bcd1440d8be751545c9b42977e26b41fbe3dc"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18043024370038498-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18043024370038498-desktop-1200w.webp",
+          "bytes": 216512,
+          "hash": "ce1d75fc9472c50c93250cf9681b72d82e2c252270ba0901749882db32459e2f"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18043024370038498-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18043024370038498-lightbox-1440w.webp",
+          "bytes": 290434,
+          "hash": "75317bf34d54bb9c23178b8414f8c9f6d7b7b49542b4e6bf6b9d35e3ca1b55a2"
+        }
+      ]
+    },
+    "day-03-04/18043800155088098.jpg": {
+      "id": "18043800155088098",
+      "original_filename": "18043800155088098.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "70d18a375cad2a0b93de36aeea6bc9677d9c57087a129d54789cec06823509e6",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18043800155088098-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18043800155088098-thumb-480w.webp",
+          "bytes": 45188,
+          "hash": "4bb1bc3a5d9b91605cbbf86442f7f7e193b3654ba4afdd0b813862fdcc3e9aea"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18043800155088098-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18043800155088098-content-960w.webp",
+          "bytes": 157226,
+          "hash": "61248e992bbab6a50ab6261684f60f62970a4f629edfc45aed7ba6060c46c2d6"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18043800155088098-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18043800155088098-desktop-1200w.webp",
+          "bytes": 229856,
+          "hash": "6c1a2f5bb4b00b9fe96aa19c6ca4b3da6e0baecf505537d9438fc14a12cbe2ee"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18043800155088098-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18043800155088098-lightbox-1440w.webp",
+          "bytes": 312668,
+          "hash": "5a8768605896461c3f96e9091dcc2aaeb01e403ec31c197ad3224c799508b414"
+        }
+      ]
+    },
+    "day-03-04/18045484025085253.jpg": {
+      "id": "18045484025085253",
+      "original_filename": "18045484025085253.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "95ed122c8303e67ba6c9ec2df18c973fb597770ac3565c819b753104bfe7667d",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18045484025085253-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18045484025085253-thumb-480w.webp",
+          "bytes": 97346,
+          "hash": "0b44dd92471c686c898fd4dada5ff5be7097ff42af962b715cf6277062061f74"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18045484025085253-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18045484025085253-content-960w.webp",
+          "bytes": 313626,
+          "hash": "0e12413b5d6d3dc9fd91848cbd6f23f1bab94b295b9459faed98ab9ea2444ab1"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18045484025085253-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18045484025085253-desktop-1200w.webp",
+          "bytes": 430670,
+          "hash": "235a0e07703d7ea108abb5959a61e7fa6603a540b41f57ab87f2c0813f0fbf24"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18045484025085253-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18045484025085253-lightbox-1440w.webp",
+          "bytes": 571414,
+          "hash": "3b13c7c6fcf580b38b12edf0dbbb47c9c79f9b559b6628844288f2277df743c0"
+        }
+      ]
+    },
+    "day-03-04/18051805897898446.jpg": {
+      "id": "18051805897898446",
+      "original_filename": "18051805897898446.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "3afd0f4ed601747accb6401a553f3c7a8515fec0b6f4b2c9ec358a39b1950c5e",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18051805897898446-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18051805897898446-thumb-480w.webp",
+          "bytes": 89676,
+          "hash": "cf48118e0248728104a5b30ad6f7079e61039f8bdfe7c2f9f87aaf0f8f0cae7d"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18051805897898446-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18051805897898446-content-960w.webp",
+          "bytes": 363034,
+          "hash": "1eaf339e149b0d59832205c5d2d4c7e3b25457f984fec9f09de4c7323c4abd17"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18051805897898446-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18051805897898446-desktop-1200w.webp",
+          "bytes": 545066,
+          "hash": "58f255586b8ac43a477502b98ad9210b4b89a1b33ab09e96049553e6d2a472d1"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18051805897898446-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18051805897898446-lightbox-1440w.webp",
+          "bytes": 783570,
+          "hash": "7ceebd14bba6dcded522934d6d07e3cf8fd8eda42aa5b29131560886f77fe239"
+        }
+      ]
+    },
+    "day-03-04/18055994368858068.jpg": {
+      "id": "18055994368858068",
+      "original_filename": "18055994368858068.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "9252e445ec9196adfa4d9c6326c6bec24460bd543304a5bdd03cccec0a604123",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18055994368858068-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18055994368858068-thumb-480w.webp",
+          "bytes": 39274,
+          "hash": "c3b1259de1b2dac984eb232343075710f8c8c5201c2bfdd1c12fd0a9a99cd92c"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18055994368858068-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18055994368858068-content-960w.webp",
+          "bytes": 142718,
+          "hash": "99a240fbf887ff3427e0053a444fb7a2569aa26cc095956442fb8a995ac9df71"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18055994368858068-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18055994368858068-desktop-1200w.webp",
+          "bytes": 207850,
+          "hash": "8d12dbc443939eb830ec5c374b169d94adaac998a94b8496b956d721f894195c"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18055994368858068-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18055994368858068-lightbox-1440w.webp",
+          "bytes": 293110,
+          "hash": "1fdd68cff06bb323018c6f95414211937c4fdcc64d60ba2b38ff011509c46dd5"
+        }
+      ]
+    },
+    "day-03-04/18057384292853351.jpg": {
+      "id": "18057384292853351",
+      "original_filename": "18057384292853351.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "1660ef1aa0a41567588224acb4d9274cecf92f3838b9f9f57d2c01d4877e4645",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18057384292853351-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18057384292853351-thumb-480w.webp",
+          "bytes": 42896,
+          "hash": "5c76dc2c2d3aaab78793425bc24adf77895d55586e01a93efcd5bd63425b4173"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18057384292853351-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18057384292853351-content-960w.webp",
+          "bytes": 175628,
+          "hash": "d780cbcced2371fc067a5d04fe0272872558e4f7e9cdcc17e0a9d07e076ee55d"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18057384292853351-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18057384292853351-desktop-1200w.webp",
+          "bytes": 264388,
+          "hash": "eb4c73efff9e84e46293cfb0c799ff8c3d8181764e98fdac962f7178c3947cd5"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18057384292853351-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18057384292853351-lightbox-1440w.webp",
+          "bytes": 376984,
+          "hash": "9eb425791520ef44a064eb84b941bc8079c15ce02f4187cda8c9c2c629d4c5d2"
+        }
+      ]
+    },
+    "day-03-04/18060688921645706.jpg": {
+      "id": "18060688921645706",
+      "original_filename": "18060688921645706.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "244d65f4595d79c3d8a3a9bb2d469c98cac26b94b53d76c4d897257a6208e8ea",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18060688921645706-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18060688921645706-thumb-480w.webp",
+          "bytes": 22672,
+          "hash": "7bc38e0dd0fe0802e326f5e5d5e53b680f693d1ac4cbb3cba605a9fc3bfea6ca"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18060688921645706-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18060688921645706-content-960w.webp",
+          "bytes": 62520,
+          "hash": "e8e2394ae21bf25155216fa58f04a1aa7f13c368a578fbb58c710cff7de791d2"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18060688921645706-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18060688921645706-desktop-1200w.webp",
+          "bytes": 82780,
+          "hash": "ba3faffde3b740693648004351fe84533ec4d324991788c0d64a59fb37ea438a"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18060688921645706-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18060688921645706-lightbox-1440w.webp",
+          "bytes": 107054,
+          "hash": "ed0dceb8f34ebf71d7a8fe6abc524905f897ba7cf550b689dcd8a2c40b352926"
+        }
+      ]
+    },
+    "day-03-04/18062402227685652.jpg": {
+      "id": "18062402227685652",
+      "original_filename": "18062402227685652.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "07b11b47f09f0628dfc81bb5a2ff65b736d164d20c78d61e1fbf7f0336013d5b",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18062402227685652-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18062402227685652-thumb-480w.webp",
+          "bytes": 30332,
+          "hash": "f22ce8bbb3e57fb3227d2ab3185f7d32dd187b46f20482a144c3c1ed546ceadb"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18062402227685652-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18062402227685652-content-960w.webp",
+          "bytes": 98942,
+          "hash": "d3b749f122ccae8b097a02d827b404e312d9dc79a14f9cdcc9fc14d3af3c4539"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18062402227685652-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18062402227685652-desktop-1200w.webp",
+          "bytes": 141330,
+          "hash": "036c2207f476f56c4da273c10bb6bd890613a6e3bee92b32f8b75f6a2038d861"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18062402227685652-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18062402227685652-lightbox-1440w.webp",
+          "bytes": 192114,
+          "hash": "c73c3d08935a3efe69c7e82645703eb5627f8d28ab7765fc8ca2fc6be77d12bc"
+        }
+      ]
+    },
+    "day-03-04/18094300270435555.jpg": {
+      "id": "18094300270435555",
+      "original_filename": "18094300270435555.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "4c14c6ccb355b3732350b828682bd67ce14f25dc15da26573cf6b5c30e20d248",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18094300270435555-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18094300270435555-thumb-480w.webp",
+          "bytes": 74174,
+          "hash": "adf8efc8d0b19daf7a6b757ccead14b6b02db6fce42f945fbb1d20184d5aa317"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18094300270435555-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18094300270435555-content-960w.webp",
+          "bytes": 300258,
+          "hash": "9c8031e23776a07d3cd2fee26b2a156e17602848c2bf0141f239d02211787174"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18094300270435555-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18094300270435555-desktop-1200w.webp",
+          "bytes": 452876,
+          "hash": "4a160240e1f9bf5a5065bb93fe577f164a658422a59a4cdbcb749c8ee9b21477"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18094300270435555-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18094300270435555-lightbox-1440w.webp",
+          "bytes": 631536,
+          "hash": "46184b3696fc671ec007e7fddf5945c00e2a56c71b16b56c369086b341353ed4"
+        }
+      ]
+    },
+    "day-03-04/18142665691353917.jpg": {
+      "id": "18142665691353917",
+      "original_filename": "18142665691353917.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "3afd0f4ed601747accb6401a553f3c7a8515fec0b6f4b2c9ec358a39b1950c5e",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18142665691353917-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18142665691353917-thumb-480w.webp",
+          "bytes": 89676,
+          "hash": "cf48118e0248728104a5b30ad6f7079e61039f8bdfe7c2f9f87aaf0f8f0cae7d"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18142665691353917-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18142665691353917-content-960w.webp",
+          "bytes": 363034,
+          "hash": "1eaf339e149b0d59832205c5d2d4c7e3b25457f984fec9f09de4c7323c4abd17"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18142665691353917-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18142665691353917-desktop-1200w.webp",
+          "bytes": 545066,
+          "hash": "58f255586b8ac43a477502b98ad9210b4b89a1b33ab09e96049553e6d2a472d1"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18142665691353917-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18142665691353917-lightbox-1440w.webp",
+          "bytes": 783570,
+          "hash": "7ceebd14bba6dcded522934d6d07e3cf8fd8eda42aa5b29131560886f77fe239"
+        }
+      ]
+    },
+    "day-03-04/18144283651352281.jpg": {
+      "id": "18144283651352281",
+      "original_filename": "18144283651352281.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "211a96c1e5fcee8e6618973b409c43f3af322e061f8752c99d415a41ac8503dd",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18144283651352281-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18144283651352281-thumb-480w.webp",
+          "bytes": 39692,
+          "hash": "35aaa2eb6b25dd21ae4a1092ccda78d3790b3294410dc1e343ebdde645a2cd1b"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18144283651352281-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18144283651352281-content-960w.webp",
+          "bytes": 117052,
+          "hash": "cea3ce891d330e02170fedafb3a43851af2f40ce005dd9a686709b87bc44ed1f"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18144283651352281-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18144283651352281-desktop-1200w.webp",
+          "bytes": 161862,
+          "hash": "6eecd53caf3aa41ecd7a040c15f9ce971e3ebbede59cd9a20b8b3865a39f8307"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18144283651352281-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18144283651352281-lightbox-1440w.webp",
+          "bytes": 215144,
+          "hash": "a61301b659ce09cc607b389acb1f91396559d8c6d86b068435f312669ae80751"
+        }
+      ]
+    },
+    "day-03-04/18280066735169168.jpg": {
+      "id": "18280066735169168",
+      "original_filename": "18280066735169168.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "32e61fdfb6ca9e60cad3740ece7f2301f3e476d538a3af4be67558e39086d54f",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18280066735169168-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18280066735169168-thumb-480w.webp",
+          "bytes": 65484,
+          "hash": "365028de4beac9aa8f801b7ccbeca17e77419a391f99b7e18ead43eda2fb8a55"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18280066735169168-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18280066735169168-content-960w.webp",
+          "bytes": 268502,
+          "hash": "5dba8d6d9ada300c16c726a0f4e16357a3b71cea0ba1761c3896131f7d10d92f"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18280066735169168-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18280066735169168-desktop-1200w.webp",
+          "bytes": 409520,
+          "hash": "77303d3ef2c5fe4ddb50bfa83fba0334ec6845723247aa92a4be4d9181372d77"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18280066735169168-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18280066735169168-lightbox-1440w.webp",
+          "bytes": 577192,
+          "hash": "a69f85db855cb84d605bd97ecd81c4e29791a49e0df560ebf298f53012c03b4f"
+        }
+      ]
+    },
+    "day-03-04/18289593220225513.jpg": {
+      "id": "18289593220225513",
+      "original_filename": "18289593220225513.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "47c84e4586f21db10acb01a52dc4b627e0b9747d2b34a76f27af441b882a2f84",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18289593220225513-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18289593220225513-thumb-480w.webp",
+          "bytes": 47702,
+          "hash": "a95d0e6f62d877270756ce4c4222babf39879c6ebcb6e894d5eef14e36984a80"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18289593220225513-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18289593220225513-content-960w.webp",
+          "bytes": 173664,
+          "hash": "57b57e844fb4b80b6cf0bf33e9fa53a041db81cf587ee103ff1642b93c0bc605"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18289593220225513-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18289593220225513-desktop-1200w.webp",
+          "bytes": 251856,
+          "hash": "ad3b507fa652ebc3cc7e55cba8205f908f35792b8c8a8b221a6ba06a3e93e38d"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18289593220225513-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18289593220225513-lightbox-1440w.webp",
+          "bytes": 355256,
+          "hash": "20a814426a639539700ddec767eb5eb3bfe346885719b49dfd631ad81b0e0175"
+        }
+      ]
+    },
+    "day-03-04/18292149262230149.jpg": {
+      "id": "18292149262230149",
+      "original_filename": "18292149262230149.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "88558a44ab952e65a5489e6972dfe369329af60fe6aaf81c0f0b50a6cc2e4d68",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18292149262230149-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18292149262230149-thumb-480w.webp",
+          "bytes": 60362,
+          "hash": "8802a59c3280b6722b23b600251d77d00e2cd1492a7f649dc76fa43d51a549de"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18292149262230149-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18292149262230149-content-960w.webp",
+          "bytes": 193022,
+          "hash": "786d75ffd1883d092bf01ccd4d9144202919cdea9d1ef0943bfb6e08e9d25985"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18292149262230149-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18292149262230149-desktop-1200w.webp",
+          "bytes": 272848,
+          "hash": "b5e0128564a4e64fab70f6c5908ac83f4bc46f275c2a5ec19e4dda3dafa94cba"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18292149262230149-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18292149262230149-lightbox-1440w.webp",
+          "bytes": 365218,
+          "hash": "68604257d85dd8a470352ace90bcffc7eb6513a3c52d87b534f2849fbcb27d48"
+        }
+      ]
+    },
+    "day-03-04/18317218402080160.jpg": {
+      "id": "18317218402080160",
+      "original_filename": "18317218402080160.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "07b11b47f09f0628dfc81bb5a2ff65b736d164d20c78d61e1fbf7f0336013d5b",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18317218402080160-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18317218402080160-thumb-480w.webp",
+          "bytes": 30332,
+          "hash": "f22ce8bbb3e57fb3227d2ab3185f7d32dd187b46f20482a144c3c1ed546ceadb"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18317218402080160-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18317218402080160-content-960w.webp",
+          "bytes": 98942,
+          "hash": "d3b749f122ccae8b097a02d827b404e312d9dc79a14f9cdcc9fc14d3af3c4539"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18317218402080160-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18317218402080160-desktop-1200w.webp",
+          "bytes": 141330,
+          "hash": "036c2207f476f56c4da273c10bb6bd890613a6e3bee92b32f8b75f6a2038d861"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18317218402080160-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18317218402080160-lightbox-1440w.webp",
+          "bytes": 192114,
+          "hash": "c73c3d08935a3efe69c7e82645703eb5627f8d28ab7765fc8ca2fc6be77d12bc"
+        }
+      ]
+    },
+    "day-03-04/18357478750136522.jpg": {
+      "id": "18357478750136522",
+      "original_filename": "18357478750136522.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "1660ef1aa0a41567588224acb4d9274cecf92f3838b9f9f57d2c01d4877e4645",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18357478750136522-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18357478750136522-thumb-480w.webp",
+          "bytes": 42896,
+          "hash": "5c76dc2c2d3aaab78793425bc24adf77895d55586e01a93efcd5bd63425b4173"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18357478750136522-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18357478750136522-content-960w.webp",
+          "bytes": 175628,
+          "hash": "d780cbcced2371fc067a5d04fe0272872558e4f7e9cdcc17e0a9d07e076ee55d"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18357478750136522-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18357478750136522-desktop-1200w.webp",
+          "bytes": 264388,
+          "hash": "eb4c73efff9e84e46293cfb0c799ff8c3d8181764e98fdac962f7178c3947cd5"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18357478750136522-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18357478750136522-lightbox-1440w.webp",
+          "bytes": 376984,
+          "hash": "9eb425791520ef44a064eb84b941bc8079c15ce02f4187cda8c9c2c629d4c5d2"
+        }
+      ]
+    },
+    "day-03-04/18373275217101823.jpg": {
+      "id": "18373275217101823",
+      "original_filename": "18373275217101823.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "be9e1591931f0c6c4a92742dadd20a1069f67447acec02b7ab28967c49955aa4",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18373275217101823-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18373275217101823-thumb-480w.webp",
+          "bytes": 45090,
+          "hash": "a5fa0c26ce856ed4c7eb99263665dd76fd29fd400a51294710e6e2c08688313d"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18373275217101823-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18373275217101823-content-960w.webp",
+          "bytes": 178434,
+          "hash": "ad895812877177e1ab68cca24e8da03a6d141769f60866627f4251eb54f85ba6"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18373275217101823-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18373275217101823-desktop-1200w.webp",
+          "bytes": 281880,
+          "hash": "c0480c55232dadc513b12a3b550b81a2b15e89ea83d9d32aafd9ec9cd15f50b9"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18373275217101823-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18373275217101823-lightbox-1440w.webp",
+          "bytes": 425962,
+          "hash": "e33ea897a17145ca093c14577e1ac722fc530269fc85ce5bae505996dbb601d9"
+        }
+      ]
+    },
+    "day-03-04/18376620301108947.jpg": {
+      "id": "18376620301108947",
+      "original_filename": "18376620301108947.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "5dcc45a19bfc8ddc964052f7afe70a0beb8f51d6bb69f4948c7891a593a7c7a0",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18376620301108947-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18376620301108947-thumb-480w.webp",
+          "bytes": 73112,
+          "hash": "1ea46cd6a1238449a078eb6b7eeab040e6e13b17060a9d4ac4ca87eb4b31a2d2"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18376620301108947-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18376620301108947-content-960w.webp",
+          "bytes": 283656,
+          "hash": "dd08d01c4c5aa5444c8edfda0cfe4c5229c475c1383f90b1a92333fc669cfa8b"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18376620301108947-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18376620301108947-desktop-1200w.webp",
+          "bytes": 429538,
+          "hash": "88a27343e2e3c83c713f334c86b26132edb9c936e0c97e1c0e71011d7513b019"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18376620301108947-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18376620301108947-lightbox-1440w.webp",
+          "bytes": 608624,
+          "hash": "ccc818df70d637896917595e5e0a60c61f83b0b05ab031cd86bdfbbef1dadc4f"
+        }
+      ]
+    },
+    "day-03-04/18476627782036400.jpg": {
+      "id": "18476627782036400",
+      "original_filename": "18476627782036400.jpg",
+      "original_width": 1440,
+      "original_height": 1440,
+      "source_hash": "70bc1298c5645bbe7b6ec9ad1e12b95006c537150ee707f9a3b362e20c97acb0",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 480,
+          "format": "webp",
+          "filename": "18476627782036400-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18476627782036400-thumb-480w.webp",
+          "bytes": 30484,
+          "hash": "f09a5167683eff78cfb9416c4a0351d4d1f9fed145e754d3a6264eebf0cae96b"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "filename": "18476627782036400-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18476627782036400-content-960w.webp",
+          "bytes": 100506,
+          "hash": "37df78456a0e0a4f6ef9f84580999a5ae6d2e21be1812789945300525f3cd762"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 1200,
+          "format": "webp",
+          "filename": "18476627782036400-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18476627782036400-desktop-1200w.webp",
+          "bytes": 143362,
+          "hash": "6bbda105dbc6be97a5f0872f875eb3e91186bd7461beb2e520a569f4ebde9138"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1440,
+          "height": 1440,
+          "format": "webp",
+          "filename": "18476627782036400-lightbox-1440w.webp",
+          "publicPath": "2024-australia/images/day-03-04/18476627782036400-lightbox-1440w.webp",
+          "bytes": 194114,
+          "hash": "1697e0dc591b653fc73745f20a3fa0afde0d5f1f5ba39052b3abc86a614a2a5e"
+        }
+      ]
+    },
+    "day-03-04/20241029_125730.jpg": {
+      "id": "20241029_125730",
+      "original_filename": "20241029_125730.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "691ce394026595031e9067b0ff08bbbe4e13db5164d697884add5c8a3f95741f",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20241029_125730-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/20241029_125730-thumb-480w.webp",
+          "bytes": 28194,
+          "hash": "7d67cb4d3d3325067263e702581e89c0ac2c8f0eaf8295005d6373d905983a61"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20241029_125730-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/20241029_125730-content-960w.webp",
+          "bytes": 118922,
+          "hash": "b3e79abb95462f8a9fe2677ccd5d69c5868c9d59500daf4e1a7b43434d7b5e55"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20241029_125730-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/20241029_125730-desktop-1200w.webp",
+          "bytes": 192148,
+          "hash": "9e810228445680c098fd5d96006e6336c774c18eec92ee7ee27e3f10b7577ad6"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20241029_125730-lightbox-1600w.webp",
+          "publicPath": "2024-australia/images/day-03-04/20241029_125730-lightbox-1600w.webp",
+          "bytes": 350898,
+          "hash": "66a390995ed728006cac216415016e9e27c05e6301c4797fac8dd834e8ee3dbf"
+        }
+      ]
+    },
+    "day-03-04/20241029_132708.jpg": {
+      "id": "20241029_132708",
+      "original_filename": "20241029_132708.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "ed799357431d460bb75bf3a6aee6e02491991ae0b9bbc8bcdebd2927da87488c",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20241029_132708-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/20241029_132708-thumb-480w.webp",
+          "bytes": 28752,
+          "hash": "475630c35a0c26eda25c7ebd8999c6be14d34b3b29a2260ac7382b69c8cfa4ef"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20241029_132708-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/20241029_132708-content-960w.webp",
+          "bytes": 112706,
+          "hash": "e79c3696a308a0b9dd427d40c204dbd94a36302db829b0e8ae5af39ee6eb8ed0"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20241029_132708-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/20241029_132708-desktop-1200w.webp",
+          "bytes": 178846,
+          "hash": "9eafe70d26e321a057c7876ca77d1634cd042d0466e513a30f05a0c941b2a4c7"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20241029_132708-lightbox-1600w.webp",
+          "publicPath": "2024-australia/images/day-03-04/20241029_132708-lightbox-1600w.webp",
+          "bytes": 325024,
+          "hash": "772c5f99c3e621a227919cb0df30301d00d90d25f4dccab7c96ec5deed6f7621"
+        }
+      ]
+    },
+    "day-03-04/20241029_210858.jpg": {
+      "id": "20241029_210858",
+      "original_filename": "20241029_210858.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "7b50e8932537a00b09e3416fe1350c0e2ba6578c8d627673eda7f403d0e811cc",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20241029_210858-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/20241029_210858-thumb-480w.webp",
+          "bytes": 20840,
+          "hash": "0f4d6a585ab60dddf0f2368cd686bb665697b709494a33beff007e5bfecdcf6b"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20241029_210858-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/20241029_210858-content-960w.webp",
+          "bytes": 70038,
+          "hash": "e068e85081661f39e9a088e90d15e12e1584e6f7d402aca4d423190b76c46779"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20241029_210858-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/20241029_210858-desktop-1200w.webp",
+          "bytes": 100672,
+          "hash": "39be516d9e00328bc28c9b5b6de18704f7319fbb241f4b3015a3cfaa39bd229c"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20241029_210858-lightbox-1600w.webp",
+          "publicPath": "2024-australia/images/day-03-04/20241029_210858-lightbox-1600w.webp",
+          "bytes": 150098,
+          "hash": "48a291c0763d38a58fbde9ee1b356af677263c1bf2afd332fe8d05573bd677dc"
+        }
+      ]
+    },
+    "day-03-04/20241030_144838.jpg": {
+      "id": "20241030_144838",
+      "original_filename": "20241030_144838.jpg",
+      "original_width": 2252,
+      "original_height": 4000,
+      "source_hash": "2b161eb7f73a2febce51ccc40899b303f9fcc573ad9a012a01443dad71fffbed",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 270,
+          "height": 480,
+          "format": "webp",
+          "filename": "20241030_144838-thumb-270w.webp",
+          "publicPath": "2024-australia/images/day-03-04/20241030_144838-thumb-270w.webp",
+          "bytes": 47654,
+          "hash": "ae50a23fd82a7f3bd0eb83b3e3c3367cbf303e2534d9c34db155601f51523b09"
+        },
+        {
+          "profile": "content",
+          "width": 540,
+          "height": 960,
+          "format": "webp",
+          "filename": "20241030_144838-content-540w.webp",
+          "publicPath": "2024-australia/images/day-03-04/20241030_144838-content-540w.webp",
+          "bytes": 172060,
+          "hash": "c7b85559a0d5bf318cf04c623389e7fafa5dfd6ce0db93ad17c75516c35ecdfe"
+        },
+        {
+          "profile": "desktop",
+          "width": 676,
+          "height": 1200,
+          "format": "webp",
+          "filename": "20241030_144838-desktop-676w.webp",
+          "publicPath": "2024-australia/images/day-03-04/20241030_144838-desktop-676w.webp",
+          "bytes": 254944,
+          "hash": "a9fc938745ffed150eb4f571e84816f367c51fd1d6299c01880b7a167b981b3c"
+        },
+        {
+          "profile": "lightbox",
+          "width": 901,
+          "height": 1600,
+          "format": "webp",
+          "filename": "20241030_144838-lightbox-901w.webp",
+          "publicPath": "2024-australia/images/day-03-04/20241030_144838-lightbox-901w.webp",
+          "bytes": 402090,
+          "hash": "196bff62aa2ee29a83ee2984eceede89f04c69be53711e573577c9ac2897cf73"
+        }
+      ]
+    },
+    "day-03-04/20241029_160747.jpg": {
+      "id": "20241029_160747",
+      "original_filename": "20241029_160747.jpg",
+      "original_width": 4000,
+      "original_height": 2252,
+      "source_hash": "ecc2c27e916cba9360b0ea9f9d9b18ef26b0e444a52ccddf63e91b778c213e71",
+      "derivatives": [
+        {
+          "profile": "thumb",
+          "width": 480,
+          "height": 270,
+          "format": "webp",
+          "filename": "20241029_160747-thumb-480w.webp",
+          "publicPath": "2024-australia/images/day-03-04/20241029_160747-thumb-480w.webp",
+          "bytes": 27448,
+          "hash": "301c68bbe09584ccdb44a16b3cd1d5128439f2f9fb955b38e2a871d2b2579565"
+        },
+        {
+          "profile": "content",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "filename": "20241029_160747-content-960w.webp",
+          "publicPath": "2024-australia/images/day-03-04/20241029_160747-content-960w.webp",
+          "bytes": 117488,
+          "hash": "8f9749abf04a10616ca1cff33d2bb76daa7c682a7c2732650153f34c6059076e"
+        },
+        {
+          "profile": "desktop",
+          "width": 1200,
+          "height": 676,
+          "format": "webp",
+          "filename": "20241029_160747-desktop-1200w.webp",
+          "publicPath": "2024-australia/images/day-03-04/20241029_160747-desktop-1200w.webp",
+          "bytes": 189706,
+          "hash": "ef75676dd86e7798543cfbd0074084fa4d41ef07f3a87204184b1c5d847bf6e0"
+        },
+        {
+          "profile": "lightbox",
+          "width": 1600,
+          "height": 901,
+          "format": "webp",
+          "filename": "20241029_160747-lightbox-1600w.webp",
+          "publicPath": "2024-australia/images/day-03-04/20241029_160747-lightbox-1600w.webp",
+          "bytes": 349770,
+          "hash": "cec1d074bb6f2dfa73230d1d99b17936bfc4ffc2afc040c7fc0fba8b67207ba0"
         }
       ]
     }

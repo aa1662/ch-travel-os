@@ -9,6 +9,7 @@ masters/
 *.tmp
 
 # Scratch / output directories
+scratch/
 output/
 .playwright-mcp/
 .playwright-cli/
