@@ -3,7 +3,7 @@
   "trip": "2024-australia",
   "entry": "day-03-04",
   "status": "finalized",
-  "updated_at": "2026-09-22T01:57:28.406804+00:00",
+  "updated_at": "2026-09-22T15:49:09+00:00",
   "images": [
     {
       "folder": "day-03-04",
@@ -245,10 +245,24 @@
     },
     {
       "folder": "day-03-04",
+      "filename": "20241029_103129.jpg",
+      "body": true,
+      "gallery": true,
+      "source_hash": "c9eab2dcbcfd6093120d0d266a27cef8464ec9b0f925db4413def175d3778c52"
+    },
+    {
+      "folder": "day-03-04",
       "filename": "20241029_125730.jpg",
       "body": true,
       "gallery": true,
       "source_hash": "691ce394026595031e9067b0ff08bbbe4e13db5164d697884add5c8a3f95741f"
+    },
+    {
+      "folder": "day-03-04",
+      "filename": "20241029_130351.jpg",
+      "body": true,
+      "gallery": true,
+      "source_hash": "f61be3e3b6ec64aba69aeccdf390d9493860be41276fafb850182f92ac580172"
     },
     {
       "folder": "day-03-04",
@@ -279,5 +293,5 @@
       "source_hash": "ecc2c27e916cba9360b0ea9f9d9b18ef26b0e444a52ccddf63e91b778c213e71"
     }
   ],
-  "finalized_at": "2026-09-22T01:59:21.482522+00:00"
+  "finalized_at": "2026-09-22T15:49:09+00:00"
 }

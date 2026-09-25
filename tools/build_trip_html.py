@@ -161,7 +161,7 @@ def strip_editor_metadata(html_content):
     )
 
 
-def render_gallery_registry(item, img_folder, errors):
+def render_gallery_registry(item, img_folder, errors, show_gallery_titles=True):
     """由 migration config 產生唯一、可驗證的隱藏 Lightbox registry。"""
     groups = item.get("gallery_groups", [])
     if not groups:
@@ -187,11 +187,15 @@ def render_gallery_registry(item, img_folder, errors):
                 continue
             seen_images.add(image_id)
             title = gallery_item.get("title", "")
+            title_attr = (
+                f' data-title="{html_escape(title)}"'
+                if show_gallery_titles and title
+                else ""
+            )
             group_html.append(
                 f'        <a href="../images/{html_escape(img_folder)}/{html_escape(image_name)}" '
                 f'class="glightbox" data-gallery="{html_escape(gallery_id)}" '
-                f'data-gallery-image="{html_escape(image_id)}" '
-                f'data-title="{html_escape(title)}"></a>'
+                f'data-gallery-image="{html_escape(image_id)}"{title_attr}></a>'
             )
 
     if not group_html:
@@ -273,7 +277,17 @@ def build_trip(trip_slug="2026-germany", dest_slug=None, entry_id=None):
         html_content = strip_editor_metadata(html_content)
         html_content = html_content.replace("平行改寫預覽版 (Place Preview)", "")
 
-        gallery_registry = render_gallery_registry(item, img_folder, errors)
+        show_gallery_titles = (
+            config_data.get("show_gallery_titles", True)
+            if isinstance(config_data, dict)
+            else True
+        )
+        gallery_registry = render_gallery_registry(
+            item,
+            img_folder,
+            errors,
+            show_gallery_titles=show_gallery_titles,
+        )
         gallery_marker_count = html_content.count("<!-- GALLERY_REGISTRY -->")
         if item.get("gallery_groups") and gallery_marker_count != 1:
             errors.append(

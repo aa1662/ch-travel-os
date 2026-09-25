@@ -1780,3 +1780,189 @@ img {
     justify-content: center;
   }
 }
+
+/* ==========================================================================
+   19. Journey Index, Chapters & Editorial Interlude
+   ========================================================================== */
+.journey-chapter {
+  margin: 3.5rem 0 2rem;
+}
+
+.chapter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.chapter-header-text {
+  flex: 1 1 60%;
+  min-width: 0;
+}
+
+.chapter-header-simple {
+  margin-bottom: 1.75rem;
+}
+
+.chapter-tag {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.chapter-title {
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  color: var(--primary);
+  margin: 0 0 0.5rem;
+  line-height: 1.3;
+}
+
+.chapter-desc {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.chapter-visual-card {
+  flex: 0 0 360px;
+  max-width: 360px;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--line);
+  background: #182330;
+}
+
+.chapter-visual-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 55%;
+  display: block;
+}
+
+/* Editorial Interlude */
+.journey-interlude {
+  margin: 4.5rem 0;
+  padding: 3rem 2.5rem;
+  background: #fbf9f5;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  scroll-margin-top: 5rem;
+}
+
+.journey-interlude-header {
+  max-width: 880px;
+  margin: 0 auto 2.5rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1.5rem;
+}
+
+.journey-interlude-title {
+  font-family: var(--font-heading);
+  font-size: 1.95rem;
+  color: var(--primary);
+  margin: 0.75rem 0 0;
+  line-height: 1.35;
+}
+
+.journey-interlude-body {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.interlude-act {
+  margin-bottom: 2.75rem;
+}
+
+.interlude-act:last-child {
+  margin-bottom: 0;
+}
+
+.interlude-act-heading {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  color: var(--primary);
+  margin: 0 0 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--line);
+}
+
+.journey-interlude-body p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--ink);
+  margin: 0 0 1.25rem;
+}
+
+.journey-interlude-body p:last-child {
+  margin-bottom: 0;
+}
+
+.interlude-feature-split {
+  display: flex;
+  gap: 2.25rem;
+  align-items: flex-start;
+}
+
+.interlude-feature-text {
+  flex: 1 1 55%;
+  min-width: 0;
+}
+
+.interlude-feature-media {
+  flex: 0 0 380px;
+  max-width: 380px;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #182330;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--line);
+}
+
+.interlude-feature-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  display: block;
+}
+
+@media (max-width: 860px) {
+  .chapter-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  .chapter-visual-card {
+    flex: 0 0 auto;
+    max-width: 100%;
+    width: 100%;
+  }
+  .journey-interlude {
+    padding: 2rem 1.25rem;
+    margin: 3.5rem 0;
+  }
+  .journey-interlude-title {
+    font-size: 1.6rem;
+  }
+  .interlude-feature-split {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .interlude-feature-media {
+    flex: 0 0 auto;
+    max-width: 100%;
+    width: 100%;
+  }
+}

@@ -3,6 +3,7 @@
   "dest": "2024-australia",
   "journey_title": "🇦🇺 2024 澳洲漫遊記",
   "nav_slot_3_html": "<li><a href=\"../index.html#stories\">📖 澳洲全系列</a></li>",
+  "show_gallery_titles": false,
   "entries": [
     {
       "id": "day-01-02",
@@ -16,8 +17,8 @@
       "og_image": "https://chxtravel.com/2024-australia/images/day-01/20241027_172248-desktop-1200w.webp",
       "prev_link": null,
       "prev_title": null,
-      "next_link": "yarra-valley-wine-and-grassland.html",
-      "next_title": "Day 06 · 聽妹妹的話去亞拉河谷｜琴酒臉皺，大草原封神 →",
+      "next_link": "sydney-skyline-and-lazy-zoo.html",
+      "next_title": "Day 03-04 · 46 樓會議室的高空震撼：俯瞰雪梨全景，與動物園全員極致躺平日記",
       "gallery_groups": [
         {
           "id": "sydney-harbour-landscape",
@@ -286,7 +287,6 @@
     },
     {
       "id": "day-03-04",
-      "status": "draft",
       "title": "Day 03-04 · 46 樓會議室的高空震撼：俯瞰雪梨全景，與動物園全員極致躺平日記",
       "source": "trips/2024-australia/sources/blog/sydney-skyline-and-lazy-zoo.html",
       "output": "docs/2024-australia/blog/sydney-skyline-and-lazy-zoo.html",
@@ -294,218 +294,194 @@
       "footer_center": "gallery",
       "prev_link": "sydney-harbour-and-gulls.html",
       "prev_title": "Day 01-02 · 雪梨出差變地陪：48小時專案驗收，擺平空中黑幫突襲",
-      "next_link": "yarra-valley-wine-and-grassland.html",
-      "next_title": "Day 06 · 聽妹妹的話去亞拉河谷｜琴酒臉皺，大草原封神 →",
+      "next_link": "../index.html#interlude",
+      "next_title": "Day 05 · 四千元拯救腰椎，十澳幣買到全車最孤獨的 Myki",
       "preserve_gallery_groups": true,
       "gallery_groups": [
         {
-          "id": "day-03-04-landscape",
-          "title": "橫式全景圖集",
+          "id": "day-03-04",
+          "title": "雪梨高空與慵懶動物園圖集",
           "items": [
+            {
+              "image": "20241029_103129.jpg",
+              "image_id": "20241029_103129",
+              "title": ""
+            },
             {
               "image": "20241029_125730.jpg",
               "image_id": "20241029_125730",
-              "title": "46 樓落地窗鳥瞰雪梨歌劇院與雪梨港全景 · 10/29 12:57"
+              "title": ""
+            },
+            {
+              "image": "20241029_130351.jpg",
+              "image_id": "20241029_130351",
+              "title": ""
             },
             {
               "image": "20241029_132708.jpg",
               "image_id": "20241029_132708",
-              "title": "46 樓會議大樓室內空間與高空採光 · 10/29 13:27"
+              "title": ""
             },
             {
               "image": "20241029_160747.jpg",
               "image_id": "20241029_160747",
-              "title": "午後陽光灑落雪梨海港大橋與渡輪航道 · 10/29 16:07"
+              "title": ""
             },
             {
               "image": "20241029_210858.jpg",
               "image_id": "20241029_210858",
-              "title": "麥覺理夫人石椅海角遠眺歌劇院與海港大橋璀璨夜景 · 10/29 21:08"
+              "title": ""
             },
             {
               "image": "20241030_144838.jpg",
               "image_id": "20241030_144838",
-              "title": "達令港野生動物園周邊水岸與晴空全景 · 10/30 14:48"
-            }
-          ]
-        },
-        {
-          "id": "day-03-04-square",
-          "title": "Instagram 旅程紀錄與現場圖集",
-          "items": [
+              "title": ""
+            },
             {
               "image": "18289593220225513.jpg",
               "image_id": "18289593220225513",
-              "title": "辦公室落地窗旁採光與綠建築結構 · Post 6 第 6 張"
+              "title": ""
             },
             {
               "image": "18280066735169168.jpg",
               "image_id": "18280066735169168",
-              "title": "高空交誼區望向環形碼頭航跡 · Post 6 第 5 張"
+              "title": ""
             },
             {
               "image": "18376620301108947.jpg",
               "image_id": "18376620301108947",
-              "title": "高空窗台俯瞰雪梨市區棋盤街景 · Post 6 第 7 張"
+              "title": ""
             },
             {
               "image": "18043800155088098.jpg",
               "image_id": "18043800155088098",
-              "title": "辦公大樓現代綠建築室內一隅 · Post 6 第 4 張"
+              "title": ""
             },
             {
               "image": "17921951627991294.jpg",
               "image_id": "17921951627991294",
-              "title": "雪梨辦公室高樓落地窗俯瞰海港 · Post 6 第 1 張"
+              "title": ""
             },
             {
               "image": "17929445204953307.jpg",
               "image_id": "17929445204953307",
-              "title": "46 樓會議空間窗外蔚藍天際線 · Post 6 第 2 張"
+              "title": ""
             },
             {
               "image": "18013890299642680.jpg",
               "image_id": "18013890299642680",
-              "title": "摩天大樓高空遠眺雪梨港灣 · Post 6 第 3 張"
+              "title": ""
             },
             {
               "image": "17886750438121295.jpg",
               "image_id": "17886750438121295",
-              "title": "雪梨港灣日光與粼粼波光 · Post 7 第 1 張"
-            },
-            {
-              "image": "18357478750136522.jpg",
-              "image_id": "18357478750136522",
-              "title": "雪梨市區街角與午後日光剪影 · Post 7 第 7 張"
-            },
-            {
-              "image": "18051805897898446.jpg",
-              "image_id": "18051805897898446",
-              "title": "傍晚時分雪梨港天色漸暗的暮光 · Post 7 第 6 張"
-            },
-            {
-              "image": "18476627782036400.jpg",
-              "image_id": "18476627782036400",
-              "title": "雪梨港灣水面與波光倒影 · Post 7 第 8 張"
-            },
-            {
-              "image": "18030058886380669.jpg",
-              "image_id": "18030058886380669",
-              "title": "水岸夜色與港灣大橋光影倒影 · Post 7 第 3 張"
-            },
-            {
-              "image": "18043024370038498.jpg",
-              "image_id": "18043024370038498",
-              "title": "夜間遠眺海港大橋水波夜景 · Post 7 第 5 張"
+              "title": ""
             },
             {
               "image": "17903242926059530.jpg",
               "image_id": "17903242926059530",
-              "title": "陽光灑落雪梨港灣與水面波紋 · Post 7 第 2 張"
+              "title": ""
+            },
+            {
+              "image": "18030058886380669.jpg",
+              "image_id": "18030058886380669",
+              "title": ""
             },
             {
               "image": "18035553407255340.jpg",
               "image_id": "18035553407255340",
-              "title": "晚餐特色料理與港邊餐敘氛圍 · Post 7 第 4 張"
+              "title": ""
             },
             {
-              "image": "18062402227685652.jpg",
-              "image_id": "18062402227685652",
-              "title": "達令港水岸碼頭與微風徐徐 · Post 8 第 6 張"
+              "image": "18043024370038498.jpg",
+              "image_id": "18043024370038498",
+              "title": ""
+            },
+            {
+              "image": "18051805897898446.jpg",
+              "image_id": "18051805897898446",
+              "title": ""
+            },
+            {
+              "image": "18357478750136522.jpg",
+              "image_id": "18357478750136522",
+              "title": ""
+            },
+            {
+              "image": "18476627782036400.jpg",
+              "image_id": "18476627782036400",
+              "title": ""
             },
             {
               "image": "18009168137465535.jpg",
               "image_id": "18009168137465535",
-              "title": "雪梨街頭 Lime 共享電輔車整齊停放 · Post 8 第 1 張"
-            },
-            {
-              "image": "17880829218086361.jpg",
-              "image_id": "17880829218086361",
-              "title": "皇家植物園步道旁的夜色與林蔭 · Post 8 第 2 張"
-            },
-            {
-              "image": "18292149262230149.jpg",
-              "image_id": "18292149262230149",
-              "title": "夜騎皇家植物園岬角遠眺水面 · Post 8 第 8 張"
+              "title": ""
             },
             {
               "image": "18057384292853351.jpg",
               "image_id": "18057384292853351",
-              "title": "街角陽光與綠意隨影 · Post 8 第 5 張"
-            },
-            {
-              "image": "18055994368858068.jpg",
-              "image_id": "18055994368858068",
-              "title": "日間雪梨港灣與晴空水景 · Post 8 第 4 張"
-            },
-            {
-              "image": "18027789281419725.jpg",
-              "image_id": "18027789281419725",
-              "title": "夜騎沿途回望雪梨市區繁華燈火 · Post 8 第 3 張"
-            },
-            {
-              "image": "18142665691353917.jpg",
-              "image_id": "18142665691353917",
-              "title": "傍晚海港暮色與遠方天際線 · Post 8 第 7 張"
+              "title": ""
             },
             {
               "image": "18045484025085253.jpg",
               "image_id": "18045484025085253",
-              "title": "尤加利樹梢上老僧入定的昏睡無尾熊 · Post 9 第 1 張"
+              "title": ""
             },
             {
               "image": "17866299903240943.jpg",
               "image_id": "17866299903240943",
-              "title": "展區角落另一隻癱軟熟睡的袋鼠 · Post 9 第 2 張"
+              "title": ""
             },
             {
               "image": "18013056998394361.jpg",
               "image_id": "18013056998394361",
-              "title": "野生動物園無尾熊緊抱樹幹沉睡 · Post 9 第 3 張"
+              "title": ""
             },
             {
               "image": "17958108044822051.jpg",
               "image_id": "17958108044822051",
-              "title": "泥地上肚皮朝天、徹底睡翻的袋鼠 · Post 9 第 4 張"
+              "title": ""
             },
             {
               "image": "18373275217101823.jpg",
               "image_id": "18373275217101823",
-              "title": "野生動物園袋鼠展區日常側拍 · Post 9 第 5 張"
+              "title": ""
             },
             {
               "image": "17945919914889888.jpg",
               "image_id": "17945919914889888",
-              "title": "野生動物園特色動物展區 · Post 9 第 6 張"
+              "title": ""
             },
             {
               "image": "18094300270435555.jpg",
               "image_id": "18094300270435555",
-              "title": "雪梨野生動物園入口與園區造景 · Post 9 第 7 張"
-            },
-            {
-              "image": "18144283651352281.jpg",
-              "image_id": "18144283651352281",
-              "title": "雪梨市區建築幾何線條與晴空 · Post 10 第 3 張"
+              "title": ""
             },
             {
               "image": "18036911831022727.jpg",
               "image_id": "18036911831022727",
-              "title": "雪梨市區午後陽光與街角剪影 · Post 10 第 1 張"
-            },
-            {
-              "image": "18317218402080160.jpg",
-              "image_id": "18317218402080160",
-              "title": "達令港水岸渡輪碼頭與微風徐徐 · Post 10 第 4 張"
+              "title": ""
             },
             {
               "image": "18060688921645706.jpg",
               "image_id": "18060688921645706",
-              "title": "雪梨街頭共享單車與市區街景 · Post 10 第 2 張"
+              "title": ""
+            },
+            {
+              "image": "18144283651352281.jpg",
+              "image_id": "18144283651352281",
+              "title": ""
+            },
+            {
+              "image": "18317218402080160.jpg",
+              "image_id": "18317218402080160",
+              "title": ""
             }
           ]
         }
-      ]
+      ],
+      "og_url": "https://chxtravel.com/2024-australia/blog/sydney-skyline-and-lazy-zoo.html",
+      "og_image": "https://chxtravel.com/2024-australia/images/day-03-04/20241029_160747-desktop-1200w.webp"
     },
     {
       "id": "day-06",
@@ -517,10 +493,10 @@
       "footer_center": "gallery",
       "og_url": "https://chxtravel.com/2024-australia/blog/yarra-valley-wine-and-grassland.html",
       "og_image": "https://chxtravel.com/2024-australia/images/day-06/20241101_151456-desktop-1200w.webp",
-      "prev_link": "sydney-harbour-and-gulls.html",
-      "prev_title": "← Day 01-02 · 在雪梨，最貴的是海鷗保護費",
+      "prev_link": "../index.html#interlude",
+      "prev_title": "Day 05 · 四千元拯救腰椎，十澳幣買到全車最孤獨的 Myki",
       "next_link": "puffing-billy-and-fairy-penguins.html",
-      "next_title": "Day 07 · 普芬比利蒸汽火車 ✕ 菲利普島企鵝歸巢 →",
+      "next_title": "Day 07 · 差點錯過普芬比利，最後等到企鵝回家",
       "gallery_groups": [
         {
           "id": "yarra-valley-landscape",
@@ -832,9 +808,9 @@
       "og_url": "https://chxtravel.com/2024-australia/blog/puffing-billy-and-fairy-penguins.html",
       "og_image": "https://chxtravel.com/2024-australia/images/day-07/20241102_124800-desktop-1200w.webp",
       "prev_link": "yarra-valley-wine-and-grassland.html",
-      "prev_title": "← Day 06 · 聽妹妹的話成行亞拉河谷",
+      "prev_title": "Day 06 · 聽妹妹的話成行亞拉河谷",
       "next_link": "sovereign-hill-gold-rush.html",
-      "next_title": "Day 08 · 疏芬山淘金鎮 ✕ 地底礦坑與神祕老奶奶 →",
+      "next_title": "Day 08 · 搭火車闖進疏芬山：淘金、下礦坑，還遇見神祕老奶奶",
       "gallery_groups": [
         {
           "id": "puffing-billy-landscape",
@@ -1306,9 +1282,9 @@
       "og_url": "https://chxtravel.com/2024-australia/blog/sovereign-hill-gold-rush.html",
       "og_image": "https://chxtravel.com/2024-australia/images/day-08/20241103_123308-desktop-1200w.webp",
       "prev_link": "puffing-billy-and-fairy-penguins.html",
-      "prev_title": "← Day 07 · 普芬比利蒸汽火車 ✕ 菲利普島企鵝歸巢",
-      "next_link": null,
-      "next_title": "2024 澳洲雙城圖文誌・全劇終",
+      "prev_title": "Day 07 · 差點錯過普芬比利，最後等到企鵝回家",
+      "next_link": "../index.html",
+      "next_title": "🎉 2024 澳洲漫遊記 · 全系列完結",
       "gallery_groups": [
         {
           "id": "sovereign-hill-landscape",

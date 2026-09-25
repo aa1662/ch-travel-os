@@ -8,7 +8,7 @@ CH Travel OS 2.0 - 全域發布與圖片合規驗證器 (Full Site & Image Valid
 3. HTML 連結完整性：檢查所有 <a href>, <img src>, <img srcset>, <script src>, <link href>，嚴禁 404 死鏈。
 4. 原圖與隱私防護：HTML 與 JS 不得直接引用 masters/ 或未經 WebP 轉換之 raw .jpg。
 5. 社群與 Canonical 驗證：og:url 與 og:image 不得指向舊版或已失效之遺留路由。
-6. 燈箱契約：採 registry 的頁面不得重複註冊照片，且各橫直圖集須依拍攝時間排序。
+6. 燈箱契約：採 registry 的頁面不得重複註冊照片、不得在可見內容直接註冊 GLightbox，且各橫直圖集須依拍攝時間排序。
 """
 
 import csv
@@ -36,6 +36,7 @@ def validate_docs():
     warnings = []
     total_images = 0
     blog_contracts = {}
+    gallery_title_policies = {}
     timeline_contracts = {}
     timeline_entries = {}
 
@@ -49,6 +50,10 @@ def validate_docs():
                     continue
                 rel_output = output_path.relative_to(DOCS_DIR.resolve()).as_posix()
                 blog_contracts[rel_output] = entry.get("og_url")
+                gallery_title_policies[rel_output] = entry.get(
+                    "show_gallery_titles",
+                    config.get("show_gallery_titles", True),
+                )
         except (OSError, json.JSONDecodeError, KeyError) as exc:
             errors.append(f"[Blog Config 解析失敗] {config_path.relative_to(BASE_DIR)} ({exc})")
 
@@ -354,9 +359,10 @@ def validate_docs():
                 re.IGNORECASE,
             )
             if registry_match:
+                registry_content = registry_match.group(1)
                 registry_ids = re.findall(
                     r'data-gallery-image=["\']([^"\']+)["\']',
-                    registry_match.group(1),
+                    registry_content,
                     re.IGNORECASE,
                 )
                 duplicate_registry_ids = sorted({
@@ -365,6 +371,29 @@ def validate_docs():
                 if duplicate_registry_ids:
                     errors.append(
                         f"[燈箱照片重複] {', '.join(duplicate_registry_ids)} in {hf.relative_to(DOCS_DIR)}"
+                    )
+
+                # Registry 是唯一的 slide SSoT；正文、Hero 與 IG 縮圖只能作為 opener。
+                content_without_registry = content[:registry_match.start()] + content[registry_match.end():]
+                visible_glightbox_count = len(re.findall(
+                    r'<a\b[^>]*class=["\'][^"\']*\bglightbox\b[^"\']*["\'][^>]*>',
+                    content_without_registry,
+                    re.IGNORECASE,
+                ))
+                if visible_glightbox_count:
+                    errors.append(
+                        f"[可見內容直接註冊燈箱] {visible_glightbox_count} 個 a.glightbox 位於 registry 外 "
+                        f"in {hf.relative_to(DOCS_DIR)}"
+                    )
+
+                if gallery_title_policies.get(rel_html) is False and re.search(
+                    r'\bdata-title=["\']',
+                    registry_content,
+                    re.IGNORECASE,
+                ):
+                    errors.append(
+                        f"[燈箱標題違反旅程設定] show_gallery_titles=false 但 registry 仍含 data-title "
+                        f"in {hf.relative_to(DOCS_DIR)}"
                     )
 
             registry_id_set = set(registry_ids)
