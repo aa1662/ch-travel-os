@@ -3,6 +3,33 @@
  * 特色：德法雙語發音辭典、冬季藍調時刻預測、Bento 互動、燈箱整合與 Web Share
  */
 
+const GA4_MEASUREMENT_ID = 'G-T54CXJ3E73';
+const GA4_PRODUCTION_HOSTS = new Set(['chxtravel.com', 'www.chxtravel.com']);
+const GA4_CROSS_DOMAIN_HOSTS = ['chxtravel.com', 'snaplog-c77.pages.dev'];
+
+function initGoogleAnalytics() {
+  if (!GA4_PRODUCTION_HOSTS.has(window.location.hostname)) return;
+  if (document.querySelector(`script[data-ga4-id="${GA4_MEASUREMENT_ID}"]`)) return;
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function() {
+    window.dataLayer.push(arguments);
+  };
+
+  window.gtag('js', new Date());
+  window.gtag('config', GA4_MEASUREMENT_ID, {
+    linker: { domains: GA4_CROSS_DOMAIN_HOSTS }
+  });
+
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}`;
+  script.dataset.ga4Id = GA4_MEASUREMENT_ID;
+  document.head.appendChild(script);
+}
+
+initGoogleAnalytics();
+
 document.addEventListener('DOMContentLoaded', () => {
   initReadingProgressBar();
   initMobileDockVisibility();
