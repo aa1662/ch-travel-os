@@ -1,5 +1,7 @@
 # 🇩🇪 2026 Germany 德南冬旅誌 · 內容精修排程與執行準則 (PolishOrder.md)
 
+> **歷史文件：**本輪精修已完成。本文件保留當時的排程與決策脈絡；現行製作規範以專案根目錄的 `AGENTS.md`、`EDITORIAL_STYLE_GUIDE.md` 與 `TRAVEL_BLOG_PRODUCTION_PLAYBOOK.md` 為準，以下舊規則不得覆蓋現行規範。
+
 本文件定義 2026 德南冬旅誌全系列文章的精修優先序、執行準則與架構規範。後續嚴格依照真實 15 天日期順序（Day 01 起）小步閉環推進。
 
 ---

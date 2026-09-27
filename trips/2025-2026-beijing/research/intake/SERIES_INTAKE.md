@@ -1,5 +1,7 @@
 # CH Travel OS－2025／2026 北京系列 Intake
 
+> **歷史 Intake 紀錄：**北京 Journey 已建立並完成四篇正式文章；現行文章清單與 URL 以 `trips/2025-2026-beijing/blog-migration.json` 為準。本文件只保留早期素材邊界與作者決策，不再作為執行狀態。
+>
 > 狀態：篇章邊界與作者決策已確認；尚未建立公開 Journey namespace 或 URL。
 >
 > 本文件負責校正 `PHOTO_AUDIT.md` 的故事與地點分類。該報告的技術統計與 metadata 仍可使用，但其中的 2026 場景標示不得視為事實。
@@ -20,7 +22,7 @@
 
 - 原始照片：`C:\Users\aa166\Downloads\Mobile Devices\`
 - Instagram archive：`C:\Users\aa166\Downloads\Takeout\Instagram`
-- 照片技術盤點：`trips/_intake/beijing/PHOTO_AUDIT.md`
+- 照片技術盤點：`trips/2025-2026-beijing/research/intake/PHOTO_AUDIT.md`
 - 作者口述：2026-08-30 HITL 訪談確認內容
 - 古北水鎮行前參考：Trip.com 2024-11-06 貼文
 
