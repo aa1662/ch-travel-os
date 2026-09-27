@@ -1,0 +1,642 @@
+/* ==========================================================================
+   2026 日本大阪・滋賀・兵庫 4D3N 互動 Web Portal - 旗艦級設計系統
+   Design Philosophy: Bento Grid ✕ Mobile-First Dock ✕ Glassmorphism ✕ Rich Aesthetics
+   ========================================================================== */
+
+/* ---------- 1. Design Tokens & Variables ---------- */
+:root {
+  /* Brand Palette */
+  --primary: #0e2a47;          /* 和風琉璃紺 (Japanese Indigo Navy) */
+  --primary-light: #1d456f;
+  --primary-gradient: linear-gradient(135deg, #0e2a47 0%, #1a4975 100%);
+  --accent: #d97706;           /* 夕陽金琥珀 (Sunset Amber) */
+  --accent-light: #fef3c7;
+  --accent-hover: #b45309;
+  --cool-lake: #0284c7;        /* 琵琶湖青 (Biwako Cyan Blue) */
+  --cool-lake-light: #e0f2fe;
+  --bamboo: #15803d;           /* 箕面竹林翠綠 (Bamboo Valley Green) */
+  --bamboo-light: #dcfce7;
+  --daruma-red: #dc2626;       /* 勝尾寺達摩朱紅 (Daruma Crimson) */
+  --daruma-light: #fee2e2;
+  --purple-kyoto: #7c3aed;
+  --purple-light: #ede9fe;
+
+  /* Surfaces & Backgrounds */
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-card-glass: rgba(255, 255, 255, 0.92);
+  --bg-dark: #0f172a;
+  --border-color: #e2e8f0;
+  --border-glass: rgba(226, 232, 240, 0.8);
+
+  /* Typography Colors */
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --text-sub: #475569;
+  --text-white: #ffffff;
+
+  /* Typography Families */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', Roboto, sans-serif;
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', sans-serif;
+
+  /* Elevation Shadows */
+  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  --shadow-glow: 0 0 20px rgba(217, 119, 6, 0.25);
+
+  /* Layout & Geometry */
+  --max-width: 1240px;
+  --header-height: 68px;
+  --dock-height: 64px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---------- 2. Base & Reset ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.65;
+  min-height: 100vh;
+  padding-bottom: calc(var(--dock-height) + 2rem);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ---------- 3. Layout Container ---------- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ---------- 4. Top Navigation Bar (Glassmorphic) ---------- */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(14, 42, 71, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  height: var(--header-height);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.site-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-white);
+  letter-spacing: -0.02em;
+}
+
+.nav-brand .brand-badge {
+  background: linear-gradient(135deg, #d97706, #f59e0b);
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.92rem;
+  font-weight: 500;
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-full);
+  transition: var(--transition-fast);
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.nav-links a.active {
+  color: #ffffff;
+  background: var(--accent);
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.4);
+}
+
+/* ---------- 5. Bento Grid Layout System ---------- */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.25rem;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.bento-card {
+  background: var(--bg-card-glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.bento-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(217, 119, 6, 0.3);
+}
+
+/* Bento Column Spans */
+.col-12 { grid-column: span 12; }
+.col-8  { grid-column: span 8; }
+.col-7  { grid-column: span 7; }
+.col-6  { grid-column: span 6; }
+.col-5  { grid-column: span 5; }
+.col-4  { grid-column: span 4; }
+.col-3  { grid-column: span 3; }
+
+/* Bento Themes */
+.bento-hero {
+  background: linear-gradient(135deg, #0e2a47 0%, #173d66 60%, #1e5287 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: var(--shadow-xl);
+}
+
+.bento-accent {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border-color: #fde68a;
+}
+
+.bento-cool {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border-color: #bae6fd;
+}
+
+.bento-forest {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border-color: #bbf7d0;
+}
+
+/* ---------- 6. Day Switcher Bar ---------- */
+.day-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 1.5rem 0 2rem;
+  flex-wrap: wrap;
+}
+
+.day-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-sub);
+  box-shadow: var(--shadow-xs);
+  transition: var(--transition-fast);
+}
+
+.day-nav-btn:hover {
+  color: var(--primary);
+  border-color: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.day-nav-btn.active {
+  background: var(--primary-gradient);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(14, 42, 71, 0.3);
+}
+
+.day-nav-btn .day-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+  font-size: 0.78rem;
+}
+
+.day-nav-btn.active .day-num {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+/* ---------- 7. Vertical Timeline System ---------- */
+.timeline-section {
+  position: relative;
+  margin: 2rem 0;
+  padding-left: 2rem;
+}
+
+.timeline-section::before {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 10px;
+  bottom: 10px;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--primary) 0%, var(--accent) 50%, var(--cool-lake) 100%);
+  border-radius: var(--radius-full);
+  opacity: 0.35;
+}
+
+.timeline-node {
+  position: relative;
+  margin-bottom: 2.25rem;
+}
+
+.timeline-node::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  top: 1.25rem;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 4px solid var(--accent);
+  box-shadow: 0 0 0 4px rgba(217, 119, 6, 0.2);
+  z-index: 2;
+  transition: transform var(--transition-fast);
+}
+
+.timeline-node:hover::before {
+  transform: scale(1.3);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 6px rgba(14, 42, 71, 0.2);
+}
+
+.timeline-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.timeline-card:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(217, 119, 6, 0.4);
+}
+
+.timeline-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.timeline-time {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.timeline-badges {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+.badge-train   { background: #e0f2fe; color: #0369a1; }
+.badge-subway  { background: #fef3c7; color: #92400e; }
+.badge-ropeway { background: #ede9fe; color: #6d28d9; }
+.badge-walk    { background: #dcfce7; color: #15803d; }
+.badge-food    { background: #fee2e2; color: #b91c1c; }
+.badge-sunset  { background: #ffedd5; color: #c2410c; }
+.badge-hotel   { background: #f1f5f9; color: #475569; }
+
+/* Action Links inside Timeline */
+.action-toolbar {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-sm);
+  background: #f1f5f9;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  transition: var(--transition-fast);
+}
+
+.btn-action:hover {
+  background: #e2e8f0;
+  color: var(--primary);
+}
+
+.btn-action.btn-maps {
+  background: linear-gradient(135deg, #0284c7, #0369a1);
+  color: #ffffff;
+  border-color: transparent;
+}
+
+.btn-action.btn-maps:hover {
+  background: #0284c7;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.4);
+}
+
+.btn-action.btn-copy {
+  background: #ffffff;
+  border-color: #cbd5e1;
+}
+
+.btn-action.btn-copy:hover {
+  background: #f8fafc;
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn-action.btn-photos {
+  background: #fdf2f8;
+  color: #db2777;
+  border-color: #fbcfe8;
+}
+
+.btn-action.btn-photos:hover {
+  background: #fce7f3;
+  color: #be185d;
+  border-color: #f472b6;
+  box-shadow: 0 2px 8px rgba(219, 39, 119, 0.2);
+}
+
+/* ---------- 8. Mobile Bottom Quick Dock (Mobile-First) ---------- */
+.bottom-dock {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--dock-height);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--border-color);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+  z-index: 200;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+
+.dock-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  flex: 1;
+  padding: 0.4rem 0;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-fast);
+}
+
+.dock-item .dock-icon {
+  font-size: 1.25rem;
+}
+
+.dock-item.active,
+.dock-item:hover {
+  color: var(--primary);
+}
+
+.dock-item.active .dock-icon {
+  transform: scale(1.15);
+  color: var(--accent);
+}
+
+/* ---------- 9. Instant Filter Pills (Evening Hub) ---------- */
+.filter-container {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  overflow-x: auto;
+  padding: 0.5rem 0 1rem;
+  margin-bottom: 1.5rem;
+  scrollbar-width: none;
+}
+
+.filter-container::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-pill {
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1.1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-sub);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.filter-pill:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.filter-pill.active {
+  background: var(--primary-gradient);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 2px 10px rgba(14, 42, 71, 0.25);
+}
+
+/* ---------- 10. Toast Notification & Pronunciation Card ---------- */
+.toast-box {
+  position: fixed;
+  bottom: calc(var(--dock-height) + 1.5rem);
+  left: 50%;
+  transform: translateX(-50%) translateY(120px);
+  background: #0f172a;
+  color: #ffffff;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-size: 0.88rem;
+  font-weight: 500;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  width: min(92vw, 440px);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+}
+
+.toast-box.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ---------- 11. Responsive Breakpoints ---------- */
+@media (max-width: 992px) {
+  .col-8, .col-7, .col-6, .col-5, .col-4, .col-3 {
+    grid-column: span 12;
+  }
+  .bento-grid {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-nav .nav-links {
+    display: none; /* Replaced by bottom dock on mobile */
+  }
+  .bottom-dock {
+    display: flex;
+  }
+  .bento-card {
+    padding: 1.25rem;
+  }
+  .timeline-section {
+    padding-left: 1.5rem;
+  }
+  .timeline-node::before {
+    left: -1.5rem;
+  }
+}
+
+/* ---------- CH x Travel 規劃存檔提示 ---------- */
+.planning-archive-banner {
+  background: #fff7ed;
+  border-bottom: 1px solid #fed7aa;
+  color: #7c2d12;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.planning-archive-inner {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 0.55rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.planning-archive-banner a {
+  flex: 0 0 auto;
+  color: #9a3412;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+@media (max-width: 768px) {
+  .planning-archive-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+}

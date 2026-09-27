@@ -25,6 +25,12 @@ TRIPS_DIR = BASE_DIR / "trips"
 
 MAX_ALLOWED_WIDTH = 1600
 MAX_ALLOWED_BYTES = 2.5 * 1024 * 1024  # 2.5MB
+PLANNING_ARCHIVE_ROOT = DOCS_DIR / "2026-osaka" / "plan"
+
+
+def is_planning_archive(path):
+    """Planning snapshots use their own navigation and JavaScript contracts."""
+    return path.resolve().is_relative_to(PLANNING_ARCHIVE_ROOT.resolve())
 
 
 def validate_docs():
@@ -224,7 +230,7 @@ def validate_docs():
                 errors.append(f"[JS 包含原始 JPG 引用] {r} in {jf.relative_to(DOCS_DIR)}")
             
             # 檢查 published app.js 是否完整包含圖集快速入口函式
-            if jf.name == "app.js":
+            if jf.name == "app.js" and not is_planning_archive(jf):
                 if "openCurrentPageGallery" not in js_text or "openDay03Gallery" not in js_text:
                     errors.append(f"[Published JS 缺少圖集函式] {jf.relative_to(DOCS_DIR)} 未同步包含 openCurrentPageGallery / openDayXXGallery")
                 if re.search(r'const\s+ALL_STORIES\s*=\s*\[', js_text):
@@ -342,7 +348,10 @@ def validate_docs():
             # 4.3 檢查 <img> 標籤的 CLS 尺寸 (width/height) 與重複屬性（排除 script 區塊）
             clean_html = re.sub(r'<script[\s\S]*?</script>', '', content, flags=re.IGNORECASE)
 
-            if re.fullmatch(r'day-\d{2}\.html', hf.name, re.IGNORECASE):
+            if (
+                re.fullmatch(r'day-\d{2}\.html', hf.name, re.IGNORECASE)
+                and not is_planning_archive(hf)
+            ):
                 chapter_nav_count = len(re.findall(
                     r'class=["\'][^"\']*\bchapter-nav\b',
                     clean_html,

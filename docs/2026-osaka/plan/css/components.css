@@ -1,0 +1,377 @@
+/* ==========================================================================
+   2026 日本關西旅行 Portal - 組件與微動畫樣式表 (components.css)
+   ========================================================================== */
+
+/* ---------- Google Fonts Import ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Outfit:wght@500;600;700;800&display=swap');
+
+/* ---------- 1. Typography Elements ---------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--primary);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+.hero-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 1.25rem;
+  font-weight: 400;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin: 1.75rem 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ---------- 2. Bento Stat Badges & Info Items ---------- */
+.bento-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.bento-hero .stat-label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.stat-value {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.1;
+}
+
+.bento-hero .stat-value {
+  color: #ffffff;
+}
+
+.stat-desc {
+  font-size: 0.85rem;
+  color: var(--text-sub);
+}
+
+.bento-hero .stat-desc {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ---------- 3. Timeline Card: Horizontal Side-by-Side Image Layout ---------- */
+.timeline-card.has-image {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 1.25rem;
+  align-items: stretch;
+  padding: 1.25rem;
+}
+
+.timeline-card.has-image .timeline-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 210px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 0;
+  box-shadow: var(--shadow-sm);
+  background: #e2e8f0;
+}
+
+.timeline-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+}
+
+.timeline-card:hover .timeline-img {
+  transform: scale(1.06);
+}
+
+.timeline-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.img-floating-tag {
+  position: absolute;
+  top: 0.65rem;
+  left: 0.65rem;
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.25rem 0.55rem;
+  border-radius: var(--radius-full);
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  line-height: 1.2;
+}
+
+/* ---------- 4. Interactive Cards (Evening Hub & Guides) ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.interactive-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.interactive-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(217, 119, 6, 0.4);
+}
+
+.card-header-tag {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.65rem;
+}
+
+.card-rank {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.card-time-badge {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.35rem;
+}
+
+.card-japanese {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.card-desc {
+  font-size: 0.9rem;
+  color: var(--text-sub);
+  line-height: 1.55;
+  margin-bottom: 1rem;
+}
+
+.card-food-box {
+  background: #f8fafc;
+  border-left: 3px solid var(--accent);
+  padding: 0.6rem 0.8rem;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.85rem;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+}
+
+/* ---------- 5. Tables with Modern Styling ---------- */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  margin: 1.25rem 0;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background: #ffffff;
+  box-shadow: var(--shadow-xs);
+}
+
+.modern-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.92rem;
+}
+
+.modern-table th {
+  background: #f1f5f9;
+  color: var(--primary);
+  font-weight: 700;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  white-space: nowrap;
+}
+
+.modern-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-sub);
+  vertical-align: middle;
+}
+
+.modern-table tr:last-child td {
+  border-bottom: none;
+}
+
+.modern-table tr:hover td {
+  background-color: #f8fafc;
+}
+
+/* ---------- 6. Collapsible Accordions ---------- */
+.accordion {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-xs);
+  transition: border-color var(--transition-fast);
+}
+
+.accordion:hover {
+  border-color: #cbd5e1;
+}
+
+.accordion-header {
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  background: #ffffff;
+  font-weight: 700;
+  color: var(--primary);
+  user-select: none;
+  transition: background var(--transition-fast);
+}
+
+.accordion-header:hover {
+  background: #f8fafc;
+}
+
+.accordion-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.02rem;
+}
+
+.accordion-arrow {
+  font-size: 0.8rem;
+  transition: transform var(--transition-fast);
+  color: var(--text-muted);
+}
+
+.accordion.open .accordion-arrow {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  display: none;
+  padding: 1.25rem;
+  border-top: 1px solid var(--border-color);
+  background: #f8fafc;
+  color: var(--text-sub);
+  line-height: 1.6;
+}
+
+.accordion.open .accordion-content {
+  display: block;
+}
+
+/* ---------- 7. Quick Action Floating Pill (Back to Hotel) ---------- */
+.floating-hotel-btn {
+  position: fixed;
+  right: 1.25rem;
+  bottom: calc(var(--dock-height) + 1.25rem);
+  z-index: 90;
+  background: linear-gradient(135deg, #0e2a47, #1d456f);
+  color: #ffffff;
+  padding: 0.65rem 1.1rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 15px rgba(14, 42, 71, 0.35);
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.floating-hotel-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(14, 42, 71, 0.45);
+}
+
+/* Responsive adjust for mobile screens */
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .timeline-card.has-image {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .timeline-card.has-image .timeline-image-wrap {
+    height: 190px;
+    min-height: auto;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* ---------- 8. In-Text Google Maps Navigation Links ---------- */
+.text-map-link {
+  color: inherit;
+  text-decoration: underline dotted 1.5px currentColor;
+  text-underline-offset: 3px;
+  transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
+  cursor: pointer;
+}
+
+.text-map-link:hover {
+  color: var(--accent);
+  text-decoration: underline solid 2px var(--accent);
+}

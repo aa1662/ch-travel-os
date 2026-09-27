@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="noindex, follow" name="robots"/>
+<meta content="2026 日本關西專題深度指南庫總覽：12大獨立景點專屬攻略、歷史典故、三大機位、美食評測與社群避坑心得" name="description"/>
+<title>📖 12大深度專題指南總覽 | 2026 關西漫遊</title>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/components.css" rel="stylesheet"/>
+<style>
+    .filter-pills {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .filter-btn {
+      padding: 0.5rem 1.1rem;
+      border-radius: 9999px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text-sub);
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .filter-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: #f8fafc;
+    }
+    .filter-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.15);
+    }
+    .guide-card-item {
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .guide-card-item.hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+<!-- 頂部導覽列 -->
+<nav class="site-nav">
+<div class="container">
+<a class="nav-brand" href="index.html">
+<span>🇯🇵 2026 關西漫遊</span>
+<span class="brand-badge">Guides Portal</span>
+</a>
+<ul class="nav-links">
+<li><a href="index.html">🏠 首頁總覽</a></li>
+<li><a href="day-01.html">Day 1</a></li>
+<li><a href="day-02.html">Day 2</a></li>
+<li><a href="day-03.html">Day 3</a></li>
+<li><a href="day-04.html">Day 4</a></li>
+<li><a href="evening-hub.html">🌆 傍晚環線</a></li>
+<li><a href="transport.html">🚆 交通指南</a></li>
+<li><a class="active" href="guides.html">📖 專題指南</a></li>
+</ul>
+</div>
+</nav>
+<main class="container" style="margin-top: 1.75rem; margin-bottom: 5rem;">
+<!-- 頁首標題 -->
+<div style="margin-bottom: 1.5rem;">
+<span class="badge" style="background: var(--cool-lake-light); color: var(--cool-lake); margin-bottom: 0.5rem;">
+        📖 13 大獨立景點專屬攻略 ✕ 歷史典故 ✕ 社群實戰心得
+      </span>
+<h1 style="font-size: 2.1rem; color: var(--primary); margin-bottom: 0.5rem;">
+        關西名景深度專題 ✕ 社群實戰指南庫
+      </h1>
+<p style="color: var(--text-muted); font-size: 0.95rem;">
+        點擊下方地域標籤可即時篩選特定城市攻略。每篇均內含高清實拍、歷史傳奇典故、分步動線、名店菜單與 TripNG 實戰避坑矩陣。
+      </p>
+</div>
+<!-- 🏷️ 地域分類即時篩選標籤 -->
+<div class="filter-pills">
+<button class="filter-btn active" onclick="filterGuides('all', this)">🔥 全部專題 (<span id="count-all">13</span>)</button>
+<button class="filter-btn" onclick="filterGuides('kyoto', this)">🌲 京都・洛北避暑 (<span id="count-kyoto">2</span>)</button>
+<button class="filter-btn" onclick="filterGuides('hyogo', this)">⛰️ 兵庫・神戶名城 (<span id="count-hyogo">2</span>)</button>
+<button class="filter-btn" onclick="filterGuides('shiga', this)">🌊 滋賀・湖光水鄉 (<span id="count-shiga">4</span>)</button>
+<button class="filter-btn" onclick="filterGuides('osaka', this)">🏙️ 大阪・水岸文化 (<span id="count-osaka">5</span>)</button>
+<button class="filter-btn" onclick="filterGuides('ninja', this)">🥷 戰國忍者特輯 (<span id="count-ninja">2</span>)</button>
+</div>
+<!-- 13 大專題 Bento Grid 卡片矩陣 -->
+<div class="guides-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem;">
+<!-- 1. 【NEW】京都比叡山延曆寺 -->
+<a class="guide-card-item" data-category="kyoto shiga" href="guide-hieizan.html" style="text-decoration: none; color: inherit;">
+<div class="bento-card card-interactive" style="padding: 0; overflow: hidden; border-top: 4px solid #0284c7; height: 100%; display: flex; flex-direction: column;">
+<div style="position: relative; height: 180px;">
+<img alt="比叡山延曆寺與琵琶湖全景" height="800" src="images/hieizan.webp" style="width: 100%; height: 100%; object-fit: cover;" width="1200"/>
+<span class="img-floating-tag">🌲 海拔 848m 避暑 ✕ 雙傳奇登山纜車 ✕ 1200年不滅法燈</span>
+</div>
+<div style="padding: 1.25rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+<div>
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+<h3 style="color: #0369a1; font-size: 1.25rem; margin:0;">
+                  🌲 比叡山延曆寺 848m 越嶺橫斷
+                </h3>
+<span class="badge" style="background:#e0f2fe; color:#0369a1; font-weight:700;">京都 ✕ 滋賀</span>
+</div>
+<p style="font-size: 0.88rem; color: var(--text-sub); line-height: 1.55;">
+                叡電未來感觀光車 HIEI、全日最陡纜車登頂（22°C 涼溫）、根本中堂不滅法燈、全日最長坂本纜車俯瞰琵琶湖與 JR 新快速直達大阪。
+              </p>
+</div>
+<div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+<span class="badge" style="background:#e0f2fe; color:#0369a1;">京都進 ➔ 滋賀出</span>
+<span style="font-weight: 700; color: #0284c7; font-size: 0.88rem;">閱讀完整攻略 ➔</span>
+</div>
+</div>
+</div>
+</a>
+<!-- 2. 【NEW】京都鞍馬寺 ✕ 貴船神社 -->
+<a class="guide-card-item" data-category="kyoto" href="guide-kurama-kifune.html" style="text-decoration: none; color: inherit;">
+<div class="bento-card card-interactive" style="padding: 0; overflow: hidden; border-top: 4px solid #16a34a; height: 100%; display: flex; flex-direction: column;">
+<div style="position: relative; height: 180px;">
+<img alt="京都貴船神社紅燈籠階梯" height="800" src="images/kurama_kifune.webp" style="width: 100%; height: 100%; object-fit: cover;" width="1200"/>
+<span class="img-floating-tag">🌲 京都洛北 ✕ 盛夏避暑 ✕ 宇宙靈氣 ✕ 川床香魚</span>
+</div>
+<div style="padding: 1.25rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+<div>
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+<h3 style="color: #15803d; font-size: 1.25rem; margin:0;">
+                  🌲 京都・鞍馬寺靈氣 ✕ 貴船神社川床香魚
+                </h3>
+<span class="badge" style="background:#dcfce7; color:#15803d; font-weight:700;">京都・洛北</span>
+</div>
+<p style="font-size: 0.88rem; color: var(--text-sub); line-height: 1.55;">
+                叡電展望列車穿青楓隧道、牛若號纜車省力登頂、六芒星金剛床宇宙靈氣、牛若丸練劍木之根道、川床鹽烤香魚與神泉水占卜。
+              </p>
+</div>
+<div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+<span class="badge" style="background:#f0fdf4; color:#16a34a;">體感驟降 8°C</span>
+<span style="font-weight: 700; color: #16a34a; font-size: 0.88rem;">閱讀完整攻略 ➔</span>
+</div>
+</div>
+</div>
+</a>
+<!-- 2. 六甲山 ✕ 有馬溫泉 ✕ 神戶牛 -->
+<a class="guide-card-item" data-category="hyogo" href="guide-rokko-arima.html" style="text-decoration: none; color: inherit;">
+<div class="bento-card card-interactive" style="padding: 0; overflow: hidden; border-top: 4px solid #0284c7; height: 100%; display: flex; flex-direction: column;">
+<div style="position: relative; height: 180px;">
+<img alt="神戶六甲山山頂避暑與俯瞰" height="566" src="images/rokko_arima.webp" style="width: 100%; height: 100%; object-fit: cover;" width="850"/>
+<span class="img-floating-tag">Day 3 全日 ✕ 860m 避暑 ✕ 千年金湯 ✕ 神戶牛</span>
+</div>
+<div style="padding: 1.25rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+<div>
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+<h3 style="color: #0369a1; font-size: 1.25rem; margin:0;">
+                  🌲 神戶・六甲山 860m 避暑 ✕ 有馬溫泉金湯
+                </h3>
+<span class="badge" style="background:#e0f2fe; color:#0369a1; font-weight:700;">兵庫・神戶</span>
+</div>
+<p style="font-size: 0.88rem; color: var(--text-sub); line-height: 1.55;">
+                昭和登山纜車、GREENIA空中運動、六甲枝垂（24°C 天然避暑）、空中索道直落有馬、金之湯足湯與 Mouriya 正宗神戶牛。
+              </p>
+</div>
+<div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+<span class="badge" style="background:#e0f2fe; color:#0369a1;">盛夏 24°C 避暑</span>
+<span style="font-weight: 700; color: #0284c7; font-size: 0.88rem;">閱讀完整攻略 ➔</span>
+</div>
+</div>
+</div>
+</a>
+<!-- 3. 姬路城 ✕ 好古園 (備選特輯) -->
+<a class="guide-card-item" data-category="hyogo" href="guide-himeji.html" style="text-decoration: none; color: inherit;">
+<div class="bento-card card-interactive" style="padding: 0; overflow: hidden; border-top: 4px solid #64748b; height: 100%; display: flex; flex-direction: column;">
+<div style="position: relative; height: 180px;">
+<img alt="國寶姬路城" height="800" src="images/himeji_castle.webp" style="width: 100%; height: 100%; object-fit: cover;" width="1200"/>
+<span class="img-floating-tag">🏯 兵庫備選特輯 ✕ 國寶第一名城</span>
+</div>
+<div style="padding: 1.25rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+<div>
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+<h3 style="color: #334155; font-size: 1.25rem; margin:0;">
+                  🏯 國寶姬路城登大天守 ✕ 好古園活水軒
+                </h3>
+<span class="badge" style="background:#f1f5f9; color:#475569; font-weight:700;">兵庫・姬路</span>
+</div>
+<p style="font-size: 0.88rem; color: var(--text-sub); line-height: 1.55;">
+                400年不滅純木造大天守閣、2026新票制（18歲以下免費）、三大黃金機位與好古園活水軒星鰻御膳。
+              </p>
+</div>
+<div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+<span class="badge" style="background:#f1f5f9; color:#475569;">世界文化遺產</span>
+<span style="font-weight: 700; color: #64748b; font-size: 0.88rem;">查看備用攻略 ➔</span>
+</div>
+</div>
+</div>
+</a>
+<!-- 4. 琵琶湖露台 ✕ 近江牛 -->
+<a class="guide-card-item" data-category="shiga" href="guide-biwako.html" style="text-decoration: none; color: inherit;">
+<div class="bento-card card-interactive" style="padding: 0; overflow: hidden; border-top: 4px solid var(--cool-lake); height: 100%; display: flex; flex-direction: column;">
+<div style="position: relative; height: 180px;">
+<img alt="琵琶湖露台" height="844" src="images/biwako_terrace.webp" style="width: 100%; height: 100%; object-fit: cover;" width="1200"/>
+<span class="img-floating-tag">Day 2 上午 ✕ 海拔 1,174m 避暑</span>
+</div>
+<div style="padding: 1.25rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+<div>
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+<h3 style="color: var(--cool-lake); font-size: 1.25rem; margin:0;">
+                  🌲 滋賀・琵琶湖露台 1,174m 漫步 ✕ 近江牛
+                </h3>
+<span class="badge" style="background:var(--cool-lake-light); color:var(--cool-lake); font-weight:700;">滋賀・大津</span>
+</div>
+<p style="font-size: 0.88rem; color: var(--text-sub); line-height: 1.55;">
+                一面湖兩座山頭三趟纜車、打見山 Grand Terrace 無邊際水池、兩段高空吊椅無料搭乘、蓬萊山 CAFÉ 360 與近江牛美饌。
+              </p>
+</div>
+<div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+<span class="badge" style="background:var(--cool-lake-light); color:var(--cool-lake);">盛夏 22°C 涼溫</span>
+<span style="font-weight: 700; color: var(--cool-lake); font-size: 0.88rem;">閱讀琵琶湖攻略 ➔</span>
+</div>
+</div>
+</div>
+</a>
+<!-- 5. 近江八幡 ✕ La Collina -->
+<a class="guide-card-item" data-category="shiga" href="guide-omihachiman.html" style="text-decoration: none; color: inherit;">
+<div class="bento-card card-interactive" style="padding: 0; overflow: hidden; border-top: 4px solid #059669; height: 100%; display: flex; flex-direction: column;">
+<div style="position: relative; height: 180px;">
+<img alt="近江八幡水鄉手搖船" height="801" src="images/omihachiman_boat.webp" style="width: 100%; height: 100%; object-fit: cover;" width="1200"/>
+<span class="img-floating-tag">Day 2 下午 ✕ 400年水鄉 ✕ 吉卜力草屋</span>
+</div>
+<div style="padding: 1.25rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+<div>
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+<h3 style="color: #059669; font-size: 1.25rem; margin:0;">
+                  🚣 滋賀・近江八幡水鄉手搖船 ✕ La Collina
+                </h3>
+<span class="badge" style="background:#d1fae5; color:#059669; font-weight:700;">滋賀・八幡</span>
+</div>
+<p style="font-size: 0.88rem; color: var(--text-sub); line-height: 1.55;">
+                400年八幡堀水鄉手搖船、《神劍闖江湖》取景舞台、藤森照信童話草屋頂、CLUB HARIE 現烤熱年輪蛋糕與千成亭 A5 近江牛。
+              </p>
+</div>
+<div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+<span class="badge" style="background:#d1fae5; color:#059669;">Tabelog 3.68 高分</span>
+<span style="font-weight: 700; color: #059669; font-size: 0.88rem;">閱讀完整攻略 ➔</span>
+</div>
+</div>
+</div>
+</a>
+<!-- 6. 甲賀忍術村 (備選特輯) -->
+<a class="guide-card-item" data-category="shiga ninja" href="guide-koka.html" style="text-decoration: none; color: inherit;">
+<div class="bento-card card-interactive" style="padding: 0; overflow: hidden; border-top: 4px solid #64748b; height: 100%; display: flex; flex-direction: column;">
+<div style="position: relative; height: 180px;">
+<img alt="甲賀忍術村" height="602" src="images/koka_ninja.webp" style="width: 100%; height: 100%; object-fit: cover;" width="1200"/>
+<span class="img-floating-tag">🎒 滋賀備選 ✕ 300年忍者機關屋</span>
+</div>
+<div style="padding: 1.25rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+<div>
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+<h3 style="color: #334155; font-size: 1.25rem; margin:0;">
+                  🥷 滋賀・甲賀之里忍術村（戶外闖關修練）
+                </h3>
+<span class="badge" style="background:#f1f5f9; color:#475569; font-weight:700;">滋賀・甲賀</span>
+</div>
+<p style="font-size: 0.88rem; color: var(--text-sub); line-height: 1.55;">
+                適合國小～國中生親子動態放電！300年望月家暗器旋轉壁、土遁地道、實鐵手裏劍投擲與水蜘蛛輕功。
+              </p>
+</div>
+<div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+<span class="badge" style="background:#f1f5f9; color:#475569;">JR 周遊券適用</span>
+<span style="font-weight: 700; color: #64748b; font-size: 0.88rem;">查看甲賀攻略 ➔</span>
+</div>
+</div>
+</div>
+</a>
+<!-- 7. 伊賀忍者博物館 (備選特輯) -->
+<a class="guide-card-item" data-category="ninja" href="guide-iga.html" style="text-decoration: none; color: inherit;">
+<div class="bento-card card-interactive" style="padding: 0; overflow: hidden; border-top: 4px solid #0f172a; height: 100%; display: flex; flex-direction: column;">
+<div style="position: relative; height: 180px;">
+<img alt="伊賀忍者博物館與伊賀上野城" height="567" src="images/iga_ninja.webp" style="width: 100%; height: 100%; object-fit: cover;" width="850"/>
+<span class="img-floating-tag">🏯 三重特輯 ✕ 阿修羅真刀武打秀</span>
+</div>
+<div style="padding: 1.25rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+<div>
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+<h3 style="color: #0f172a; font-size: 1.25rem; margin:0;">
+                  🥷 三重・伊賀流忍者博物館 ✕ 伊賀上野城
+                </h3>
+<span class="badge" style="background:#e2e8f0; color:#0f172a; font-weight:700;">三重・伊賀</span>
+</div>
+<p style="font-size: 0.88rem; color: var(--text-sub); line-height: 1.55;">
+                服部半藏發祥地！阿修羅真人熱血武打秀、女忍者機關屋敷、30m 日本第一高石垣白鳳城與松本零士彩繪電車。
+              </p>
+</div>
+<div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+<span class="badge" style="background:#e2e8f0; color:#0f172a;">三館共通券 1500円</span>
+<span style="font-weight: 700; color: #0f172a; font-size: 0.88rem;">查看伊賀攻略 ➔</span>
+</div>
+</div>
+</div>
+</a>
+<!-- 8. 勝尾寺滿山紅達摩 -->
+<a class="guide-card-item" data-category="osaka" href="guide-katsuoji.html" style="text-decoration: none; color: inherit;">
+<div class="bento-card card-interactive" style="padding: 0; overflow: hidden; border-top: 4px solid var(--daruma-red); height: 100%; display: flex; flex-direction: column;">
+<div style="position: relative; height: 180px;">
+<img alt="勝尾寺紅達摩" height="800" src="images/katsuoji_daruma.webp" style="width: 100%; height: 100%; object-fit: cover;" width="1200"/>
+<span class="img-floating-tag">Day 4 上午 ✕ 關西第一勝運之寺</span>
+</div>
+<div style="padding: 1.25rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+<div>
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+<h3 style="color: var(--daruma-red); font-size: 1.25rem; margin:0;">
+                  ⛩️ 大阪・勝運之寺 勝尾寺 ✕ 滿山紅達摩
+                </h3>
+<span class="badge" style="background:#fee2e2; color:#dc2626; font-weight:700;">大阪・箕面</span>
+</div>
+<p style="font-size: 0.88rem; color: var(--text-sub); line-height: 1.55;">
+                萬隻紅達摩不倒翁海、六層套印紀念明信片、易經六十四卦達摩神籤與點睛許願開眼秘笈。
+              </p>
+</div>
+<div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+<span class="badge" style="background:#fee2e2; color:#dc2626;">易經64卦達摩籤</span>
+<span style="font-weight: 700; color: var(--daruma-red); font-size: 0.88rem;">閱讀勝尾寺攻略 ➔</span>
+</div>
+</div>
+</div>
+</a>
+<!-- 9. 箕面大瀑布 ✕ 溪谷林道 -->
+<a class="guide-card-item" data-category="osaka" href="guide-minoh.html" style="text-decoration: none; color: inherit;">
+<div class="bento-card card-interactive" style="padding: 0; overflow: hidden; border-top: 4px solid #0284c7; height: 100%; display: flex; flex-direction: column;">
+<div style="position: relative; height: 180px;">
+<img alt="箕面大瀑布" height="1600" src="images/minoh_waterfall.webp" style="width: 100%; height: 100%; object-fit: cover;" width="1067"/>
+<span class="img-floating-tag">Day 4 森林消暑 ✕ 日本瀑布百選</span>
+</div>
+<div style="padding: 1.25rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+<div>
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+<h3 style="color: #0284c7; font-size: 1.25rem; margin:0;">
+                  🌊 大阪・箕面大瀑布 ✕ 溪谷森林步道
+                </h3>
+<span class="badge" style="background:#e0f2fe; color:#0284c7; font-weight:700;">大阪・箕面</span>
+</div>
+<p style="font-size: 0.88rem; color: var(--text-sub); line-height: 1.55;">
+                大日停車場 10 分鐘下坡捷徑、33m 白絹飛瀑負離子、瀧安寺朱紅瑞雲橋與 1300 年炸楓葉名物。
+              </p>
+</div>
+<div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+<span class="badge" style="background:#e0f2fe; color:#0284c7;">全程下坡 40 分</span>
+<span style="font-weight: 700; color: #0284c7; font-size: 0.88rem;">閱讀瀑布攻略 ➔</span>
+</div>
+</div>
+</div>
+</a>
+<!-- 10. 中之島水岸 ✕ 藍天大廈夕陽 -->
+<a class="guide-card-item" data-category="osaka" href="guide-nakanoshima.html" style="text-decoration: none; color: inherit;">
+<div class="bento-card card-interactive" style="padding: 0; overflow: hidden; border-top: 4px solid #0284c7; height: 100%; display: flex; flex-direction: column;">
+<div style="position: relative; height: 180px;">
+<img alt="藍天大廈空中庭園夕陽" height="770" src="images/sky_building.webp" style="width: 100%; height: 100%; object-fit: cover;" width="1200"/>
+<span class="img-floating-tag">Day 1 下午 ✕ 173m 淀川落日</span>
+</div>
+<div style="padding: 1.25rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+<div>
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+<h3 style="color: #0284c7; font-size: 1.25rem; margin:0;">
+                  🏛️ 大阪・中之島文化水岸 ✕ 藍天大廈夕陽
+                </h3>
+<span class="badge" style="background:#e0f2fe; color:#0284c7; font-weight:700;">大阪・中之島</span>
+</div>
+<p style="font-size: 0.88rem; color: var(--text-sub); line-height: 1.55;">
+                天下廚房堂島米市、岩本榮之助義商傳奇、安藤忠雄巨大青蘋果、原廣司1,000噸空中吊升奇蹟。
+              </p>
+</div>
+<div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+<span class="badge" style="background:#e0f2fe; color:#0284c7;">黃金 40 分鐘夕陽</span>
+<span style="font-weight: 700; color: #0284c7; font-size: 0.88rem;">閱讀完整攻略 ➔</span>
+</div>
+</div>
+</div>
+</a>
+<!-- 11. 中之島名店對決 -->
+<a class="guide-card-item" data-category="osaka" href="guide-food-nakanoshima.html" style="text-decoration: none; color: inherit;">
+<div class="bento-card card-interactive" style="padding: 0; overflow: hidden; border-top: 4px solid #e11d48; height: 100%; display: flex; flex-direction: column;">
+<div style="position: relative; height: 180px;">
+<img alt="中之島中央公會堂" height="691" src="images/nakanoshima.webp" style="width: 100%; height: 100%; object-fit: cover;" width="1200"/>
+<span class="img-floating-tag">Day 1 遲午餐 ✕ 15:00 避峰名店</span>
+</div>
+<div style="padding: 1.25rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+<div>
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+<h3 style="color: #e11d48; font-size: 1.25rem; margin:0;">
+                  🍕 中之島名店對決：GARB披薩 vs AWAKE蛋包飯
+                </h3>
+<span class="badge" style="background:#ffe4e6; color:#e11d48; font-weight:700;">大阪・美食</span>
+</div>
+<p style="font-size: 0.88rem; color: var(--text-sub); line-height: 1.55;">
+                450°C 櫻木柴燒拿坡里瑪格麗特披薩 vs 1918 百年公會堂米其林主廚紅酒牛肉燴醬蛋包飯。
+              </p>
+</div>
+<div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+<span class="badge" style="background:#ffe4e6; color:#e11d48;">Tabelog 3.55</span>
+<span style="font-weight: 700; color: #e11d48; font-size: 0.88rem;">閱讀完整攻略 ➔</span>
+</div>
+</div>
+</div>
+</a>
+<!-- 12. 大阪城傍晚水岸 ✕ MIRAIZA 點燈 -->
+<a class="guide-card-item" data-category="osaka" href="guide-osaka-castle.html" style="text-decoration: none; color: inherit;">
+<div class="bento-card card-interactive" style="padding: 0; overflow: hidden; border-top: 4px solid var(--primary); height: 100%; display: flex; flex-direction: column;">
+<div style="position: relative; height: 180px;">
+<img alt="大阪城傍晚點燈" height="800" src="images/osaka_castle.webp" style="width: 100%; height: 100%; object-fit: cover;" width="1200"/>
+<span class="img-floating-tag">Day 3 傍晚 ✕ 避開 90% 團客</span>
+</div>
+<div style="padding: 1.25rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+<div>
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+<h3 style="color: var(--primary); font-size: 1.25rem; margin:0;">
+                  🏯 大阪城傍晚水岸漫步 ✕ MIRAIZA 點燈
+                </h3>
+<span class="badge" style="background:#ede9fe; color:#6d28d9; font-weight:700;">大阪・古蹟</span>
+</div>
+<p style="font-size: 0.88rem; color: var(--text-sub); line-height: 1.55;">
+                豐臣秀吉黃金城掩埋之謎、108噸第一巨石「蛸石」、1931陸軍古堡露台平視天守閣夜間金光。
+              </p>
+</div>
+<div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+<span class="badge" style="background:#ede9fe; color:#6d28d9;">水面平靜倒影</span>
+<span style="font-weight: 700; color: var(--primary); font-size: 0.88rem;">閱讀完整攻略 ➔</span>
+</div>
+</div>
+</div>
+</a>
+<!-- 13. 大丸梅田最終採買 ✕ 退稅 -->
+<a class="guide-card-item" data-category="osaka" href="guide-daimaru.html" style="text-decoration: none; color: inherit;">
+<div class="bento-card card-interactive" style="padding: 0; overflow: hidden; border-top: 4px solid var(--accent); height: 100%; display: flex; flex-direction: column;">
+<div style="position: relative; height: 180px; background: linear-gradient(135deg, #78350f, #d97706); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 3rem;">
+            🛍️ 🍰 🎮
+            <span class="img-floating-tag">Day 4 下午 ✕ 機場特急前 2 小時</span>
+</div>
+<div style="padding: 1.25rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+<div>
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+<h3 style="color: var(--accent); font-size: 1.25rem; margin:0;">
+                  🛍️ 大丸梅田最終採買：HARBS ✕ 小倉山莊退稅
+                </h3>
+<span class="badge" style="background:var(--accent-light); color:var(--accent); font-weight:700;">大阪・梅田</span>
+</div>
+<p style="font-size: 0.88rem; color: var(--text-sub); line-height: 1.55;">
+                HARBS 8吋水果千層避峰攻略、寶可夢任天堂旗艦周邊、百人一首和歌仙貝、14:30前快速退稅。
+              </p>
+</div>
+<div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+<span class="badge" style="background:var(--accent-light); color:var(--accent);">免排隊退稅秘笈</span>
+<span style="font-weight: 700; color: var(--accent); font-size: 0.88rem;">閱讀完整攻略 ➔</span>
+</div>
+</div>
+</div>
+</a>
+</div>
+</main>
+<!-- Mobile Bottom Dock -->
+<div class="bottom-dock">
+<a class="dock-item" href="index.html"><span class="dock-icon">🏠</span><span class="dock-label">總覽</span></a>
+<a class="dock-item" href="day-01.html"><span class="dock-icon">⏱️</span><span class="dock-label">Day 1</span></a>
+<a class="dock-item" href="day-02.html"><span class="dock-icon">🌲</span><span class="dock-label">Day 2</span></a>
+<a class="dock-item" href="day-03.html"><span class="dock-icon">🏯</span><span class="dock-label">Day 3</span></a>
+<a class="dock-item" href="day-04.html"><span class="dock-icon">⛩️</span><span class="dock-label">Day 4</span></a>
+<a class="dock-item" href="evening-hub.html"><span class="dock-icon">🌆</span><span class="dock-label">傍晚15選</span></a>
+</div>
+<script src="js/app.js"></script>
+<script>
+    function filterGuides(category, btnElement) {
+      // 1. Update button active states
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      if (btnElement) {
+        btnElement.classList.add('active');
+      }
+
+      // 2. Filter cards
+      const cards = document.querySelectorAll('.guide-card-item');
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category') || '';
+        if (category === 'all' || cat.includes(category)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // Dynamic count updater
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.guide-card-item');
+      document.getElementById('count-all').textContent = cards.length;
+      document.getElementById('count-kyoto').textContent = document.querySelectorAll('.guide-card-item[data-category*="kyoto"]').length;
+      document.getElementById('count-hyogo').textContent = document.querySelectorAll('.guide-card-item[data-category*="hyogo"]').length;
+      document.getElementById('count-shiga').textContent = document.querySelectorAll('.guide-card-item[data-category*="shiga"]').length;
+      document.getElementById('count-osaka').textContent = document.querySelectorAll('.guide-card-item[data-category*="osaka"]').length;
+      document.getElementById('count-ninja').textContent = document.querySelectorAll('.guide-card-item[data-category*="ninja"]').length;
+    });
+  </script>
+</body>
+</html>
