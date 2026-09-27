@@ -267,6 +267,12 @@ def journey_href_to_article_href(href):
 
 def render_article_header(config, journey_title):
     brand_title = config.get("brand_title", "🧭 CH Travel OS")
+    series_href = config.get("article_series_href", "../index.html")
+    series_label = f'<span>{html_escape(journey_title)}</span>'
+    series_html = (
+        f'<a href="{html_escape(series_href)}" class="brand-series">{series_label}</a>'
+        if series_href else f'<span class="brand-series">{series_label}</span>'
+    )
     nav_links = config.get("article_nav_links")
     if nav_links:
         links_html = "\n".join(
@@ -291,9 +297,7 @@ def render_article_header(config, journey_title):
           <span>{html_escape(brand_title)}</span>
         </a>
         <span class="brand-separator">/</span>
-        <a href="../index.html" class="brand-series">
-          <span>{html_escape(journey_title)}</span>
-        </a>
+        {series_html}
       </div>
       <ul class="nav-links">
 {links_html}

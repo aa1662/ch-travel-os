@@ -4,10 +4,20 @@ from tools.build_trip_html import (
     build_reading_navigation,
     journey_href_to_article_href,
     replace_mobile_overview,
+    render_article_header,
 )
 
 
 class NavigationContractTests(unittest.TestCase):
+    def test_unpublished_hub_has_no_series_link(self):
+        header = render_article_header({"article_series_href": None,
+            "article_nav_links": [{"href": "../../index.html", "label": "全球旅程"}]}, "東京")
+        self.assertNotIn('href="../index.html"', header)
+        self.assertIn('<span class="brand-series">', header)
+
+    def test_existing_series_link_remains_default(self):
+        self.assertIn('href="../index.html" class="brand-series"', render_article_header({}, "澳洲"))
+
     def setUp(self):
         self.entries = [
             {"id": "day-01"},

@@ -1,0 +1,193 @@
+{
+  "schema_version": 2,
+  "trip": "2023-tokyo",
+  "dest": "2023-tokyo",
+  "journey_title": "2023 東京出差散步",
+  "brand_title": "CH x Travel",
+  "article_series_href": null,
+  "article_nav_links": [
+    {
+      "href": "../../index.html",
+      "label": "全球旅程"
+    },
+    {
+      "href": "#photos",
+      "label": "瀏覽照片"
+    }
+  ],
+  "show_gallery_titles": true,
+  "entries": [
+    {
+      "id": "tokyo-arrival-meiji-jingu",
+      "title": "六年沒來東京，先去明治神宮走走",
+      "source": "trips/2023-tokyo/sources/blog/tokyo-arrival-meiji-jingu.html",
+      "output": "docs/2023-tokyo/blog/tokyo-arrival-meiji-jingu.html",
+      "image_folder": "arrival",
+      "preserve_gallery_groups": true,
+      "footer_center": "gallery",
+      "prev_link": "../../index.html",
+      "prev_title": "← 全球旅程",
+      "next_title": "2023 東京 · 抵達日散步",
+      "og_url": "https://chxtravel.com/2023-tokyo/blog/tokyo-arrival-meiji-jingu.html",
+      "og_image": "https://chxtravel.com/2023-tokyo/images/arrival/20231113_173312-desktop-1200w.webp",
+      "gallery_groups": [
+        {
+          "id": "tokyo-arrival-landscape",
+          "title": "橫式照片",
+          "items": [
+            {
+              "image": "18240500719233278.webp",
+              "image_id": "18240500719233278",
+              "title": "明治神宮酒桶牆與境內 · 1"
+            },
+            {
+              "image": "18025628185782305.webp",
+              "image_id": "18025628185782305",
+              "title": "明治神宮酒桶牆與境內 · 2"
+            },
+            {
+              "image": "18048619900518553.webp",
+              "image_id": "18048619900518553",
+              "title": "明治神宮酒桶牆與境內 · 3"
+            },
+            {
+              "image": "18087310885383380.webp",
+              "image_id": "18087310885383380",
+              "title": "明治神宮酒桶牆與境內 · 4"
+            },
+            {
+              "image": "18130657909311129.webp",
+              "image_id": "18130657909311129",
+              "title": "明治神宮酒桶牆與境內 · 5"
+            },
+            {
+              "image": "17994553646461649.webp",
+              "image_id": "17994553646461649",
+              "title": "明治神宮酒桶牆與境內 · 6"
+            },
+            {
+              "image": "18284660395155807.webp",
+              "image_id": "18284660395155807",
+              "title": "明治神宮、參道與菊花展 · 1"
+            },
+            {
+              "image": "17976280142438334.webp",
+              "image_id": "17976280142438334",
+              "title": "明治神宮、參道與菊花展 · 2"
+            },
+            {
+              "image": "18043734721557492.webp",
+              "image_id": "18043734721557492",
+              "title": "明治神宮、參道與菊花展 · 3"
+            },
+            {
+              "image": "18004296026318867.webp",
+              "image_id": "18004296026318867",
+              "title": "明治神宮、參道與菊花展 · 4"
+            },
+            {
+              "image": "17941616888729519.webp",
+              "image_id": "17941616888729519",
+              "title": "明治神宮、參道與菊花展 · 5"
+            },
+            {
+              "image": "17863130183998394.webp",
+              "image_id": "17863130183998394",
+              "title": "明治神宮、參道與菊花展 · 6"
+            },
+            {
+              "image": "17977773884415356.webp",
+              "image_id": "17977773884415356",
+              "title": "明治神宮、參道與菊花展 · 7"
+            },
+            {
+              "image": "18020231047876589.webp",
+              "image_id": "18020231047876589",
+              "title": "明治神宮、參道與菊花展 · 8"
+            },
+            {
+              "image": "18398746453000067.webp",
+              "image_id": "18398746453000067",
+              "title": "原宿街景、車站與月台 · 1"
+            },
+            {
+              "image": "17998509257253151.webp",
+              "image_id": "17998509257253151",
+              "title": "原宿街景、車站與月台 · 2"
+            },
+            {
+              "image": "17912712086768570.webp",
+              "image_id": "17912712086768570",
+              "title": "原宿街景、車站與月台 · 3"
+            },
+            {
+              "image": "17954755484693701.webp",
+              "image_id": "17954755484693701",
+              "title": "東京車站夜景 · 1"
+            },
+            {
+              "image": "18030919246642962.webp",
+              "image_id": "18030919246642962",
+              "title": "東京車站夜景 · 2"
+            },
+            {
+              "image": "17983722245579423.webp",
+              "image_id": "17983722245579423",
+              "title": "東京車站夜景 · 3"
+            },
+            {
+              "image": "18202929997274557.webp",
+              "image_id": "18202929997274557",
+              "title": "東京車站夜景 · 4"
+            },
+            {
+              "image": "20231113_173312.jpg",
+              "image_id": "20231113_173312",
+              "title": "東京車站與丸之內夜景"
+            },
+            {
+              "image": "18001196669471774.webp",
+              "image_id": "18001196669471774",
+              "title": "東京隨拍 · 1"
+            },
+            {
+              "image": "17981930390580500.webp",
+              "image_id": "17981930390580500",
+              "title": "東京隨拍 · 2"
+            },
+            {
+              "image": "18040118119575907.webp",
+              "image_id": "18040118119575907",
+              "title": "東京隨拍 · 3"
+            },
+            {
+              "image": "18013555363831123.webp",
+              "image_id": "18013555363831123",
+              "title": "東京隨拍 · 4"
+            },
+            {
+              "image": "18105648229356611.webp",
+              "image_id": "18105648229356611",
+              "title": "東京隨拍 · 6"
+            },
+            {
+              "image": "18288128548145105.webp",
+              "image_id": "18288128548145105",
+              "title": "東京隨拍 · 7"
+            },
+            {
+              "image": "18024616786772905.webp",
+              "image_id": "18024616786772905",
+              "title": "東京隨拍 · 8"
+            },
+            {
+              "image": "20231113_210809.jpg",
+              "image_id": "20231113_210809",
+              "title": "飯店窗外的東京夜景"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

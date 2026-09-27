@@ -2145,3 +2145,24 @@ img {
     grid-template-columns: 112px minmax(0, 1fr);
   }
 }
+
+/* Photo essays: full-frame hero, short prose and original Instagram cards. */
+.photo-essay .photo-essay-hero { position: relative; margin: 1rem 0 2rem; }
+.photo-essay-hero img { display:block; width:100%; height:auto; border-radius:var(--radius-lg); }
+.photo-essay-hero .photo-essay-heading { position:absolute; inset:7% 5% auto; text-align:center; color:#fff; pointer-events:none; text-shadow:0 2px 12px #000; }
+.photo-essay-heading h1 { color:inherit; font-size:clamp(1.35rem,3.2vw,2.35rem); margin:0.4rem 0; }
+.photo-essay-heading p { margin:0; font-size:0.85rem; letter-spacing:0.12em; }
+.photo-essay > p { max-width:46rem; margin:1.2rem auto; line-height:1.95; }
+.photo-essay > h2 { margin:3rem 0 1.2rem; font-size:1.45rem; }
+.photo-essay .ig-post-media-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+.photo-essay .ig-post-caption { white-space:pre-line; overflow-wrap:anywhere; }
+.photo-essay .ig-post-media-grid img { object-fit:contain; background:#f4f3ef; }
+.photo-essay .gallery-actions button { cursor:pointer; }
+.photo-essay figcaption { text-align:center; font-size:0.85rem; color:var(--text-muted); margin-top:0.5rem; }
+@media(max-width:768px) {
+  .photo-essay .ig-post-media-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .photo-essay-hero .photo-essay-heading { inset:5% 3% auto; }
+  .photo-essay-heading h1 { font-size:clamp(1.1rem,4.4vw,1.7rem); }
+  .photo-essay-heading p { font-size:0.68rem; }
+  .photo-essay > h2 { font-size:1.25rem; }
+}

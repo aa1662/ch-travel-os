@@ -1,0 +1,480 @@
+{
+  "source_export": "Takeout/Instagram/your_instagram_activity/media/posts_1.json",
+  "crosscheck_export": "Takeout/Instagram/your_instagram_activity/media/posts.json",
+  "scope": "第一篇 A1–A5；只保存來源與影像映射，不複製 EXIF/GPS",
+  "posts": [
+    {
+      "tag": "A1",
+      "creation_timestamp": 1699880676,
+      "published_jst": "2023-11-13T22:04:36+09:00",
+      "caption": "お久しぶり，上次來東京是2017年...\n探索日本傳統之美，明治神宮的酒桶牆展示了各式各樣的清酒，每一桶都蘊含著祈願與敬意。每當陽光灑落，它們就像是藝術品一般閃耀，彷彿在訴說著曆史與現代的交融。#明治神宮 #清酒之美 #日本傳統 #東京散步",
+      "alternate_matches": [
+        {
+          "fbid": "17995598138112341",
+          "timestamp": 1699880677,
+          "media_uris": [
+            "media/posts/17995598138112341.webp",
+            "media/posts/202311/17994553646461649.webp",
+            "media/posts/202311/18130657909311129.webp",
+            "media/posts/202311/18087310885383380.webp",
+            "media/posts/202311/18048619900518553.webp",
+            "media/posts/202311/18025628185782305.webp",
+            "media/posts/202311/18240500719233278.webp"
+          ],
+          "same_media_stems": false,
+          "identical_source_bytes": true,
+          "reconciliation": "包含 posts_1.json 全部媒體（相同檔案），另有一張貼文封面。已逐張視覺比對封面為首張同畫面，不重複收錄。此匯出列表的媒體順序相反，採 posts_1.json 原順序。",
+          "additional_cover_uri": "media/posts/17995598138112341.webp"
+        }
+      ],
+      "media": [
+        {
+          "order": 1,
+          "source_uri": "media/posts/202311/18240500719233278.webp",
+          "filename": "18240500719233278.webp",
+          "included": true,
+          "sha256": "831f4f37dcd3a722b30caad2073f98d377196f0853e00dce9a30b01647cac93a",
+          "width": 1440,
+          "height": 1440,
+          "pixel_sha256": "b87879013f26c59fa5d2aee979059d7310447009f7b7a0797325f01b2479d3dc",
+          "orientation": "landscape"
+        },
+        {
+          "order": 2,
+          "source_uri": "media/posts/202311/18025628185782305.webp",
+          "filename": "18025628185782305.webp",
+          "included": true,
+          "sha256": "30888629149e5aa0c8635045c65735df0eb9b7d57976f350c0f03121e6d9546c",
+          "width": 1440,
+          "height": 1440,
+          "pixel_sha256": "5bce91388ef2ed4371bebce7a5336c908766b1f29da8f4245669d3f8cf36bb59",
+          "orientation": "landscape"
+        },
+        {
+          "order": 3,
+          "source_uri": "media/posts/202311/18048619900518553.webp",
+          "filename": "18048619900518553.webp",
+          "included": true,
+          "sha256": "9da7d94fba788a6b171e3d3c2d24fde280b9cc715a2f79bbc062992269af198e",
+          "width": 1440,
+          "height": 1440,
+          "pixel_sha256": "9f750826399fe7da354bb130904a28b7beecede0ab7e977d6d39d4dcf9da012d",
+          "orientation": "landscape"
+        },
+        {
+          "order": 4,
+          "source_uri": "media/posts/202311/18087310885383380.webp",
+          "filename": "18087310885383380.webp",
+          "included": true,
+          "sha256": "3a910736cd357cb706fd281ac971b1043979fe893fc49f6599c77b578d629461",
+          "width": 1440,
+          "height": 1440,
+          "pixel_sha256": "43b9bf7e76822d948b3638631357b95858569858ebf37bf9c012accb0e207abd",
+          "orientation": "landscape"
+        },
+        {
+          "order": 5,
+          "source_uri": "media/posts/202311/18130657909311129.webp",
+          "filename": "18130657909311129.webp",
+          "included": true,
+          "sha256": "77799a9223c9d7967f85030bd8feadd9cdb2021d29c75b04aaafdd1e89aaccf0",
+          "width": 1440,
+          "height": 1440,
+          "pixel_sha256": "41748dc80d980308af264d080cf0cc5806dc308bc0f3806981d4febe6bd49c4d",
+          "orientation": "landscape"
+        },
+        {
+          "order": 6,
+          "source_uri": "media/posts/202311/17994553646461649.webp",
+          "filename": "17994553646461649.webp",
+          "included": true,
+          "sha256": "b2597b2e15ed63277db426ad9209d5cbb1484cb496b597b04aae05362e6c9f10",
+          "width": 1440,
+          "height": 1440,
+          "pixel_sha256": "adcf6616f2bdb8dd5ff8f67ed548059b05aef9042ed040c068afa0459ab6ba69",
+          "orientation": "landscape"
+        }
+      ]
+    },
+    {
+      "tag": "A2",
+      "creation_timestamp": 1699881184,
+      "published_jst": "2023-11-13T22:13:04+09:00",
+      "caption": "晴朗的藍天，在東京的心臟地帶找到了一片靜謐之地：明治神宮。漫步於這片綠意盎然的環境中，仿佛能夠聽到歷史的呢喃。來這裡，不僅是為了賞景，更是來尋找心靈的寧靜。#明治神宮 #東京探索 #靜謐時刻",
+      "alternate_matches": [
+        {
+          "fbid": "17854089603072384",
+          "timestamp": 1699881185,
+          "media_uris": [
+            "media/posts/17854089603072384.webp",
+            "media/posts/202311/18020231047876589.webp",
+            "media/posts/202311/17977773884415356.webp",
+            "media/posts/202311/17863130183998394.webp",
+            "media/posts/202311/17941616888729519.webp",
+            "media/posts/202311/18004296026318867.webp",
+            "media/posts/202311/18043734721557492.webp",
+            "media/posts/202311/17976280142438334.webp",
+            "media/posts/202311/18284660395155807.webp"
+          ],
+          "same_media_stems": false,
+          "identical_source_bytes": true,
+          "reconciliation": "包含 posts_1.json 全部媒體（相同檔案），另有一張貼文封面。已逐張視覺比對封面為首張同畫面，不重複收錄。此匯出列表的媒體順序相反，採 posts_1.json 原順序。",
+          "additional_cover_uri": "media/posts/17854089603072384.webp"
+        }
+      ],
+      "media": [
+        {
+          "order": 1,
+          "source_uri": "media/posts/202311/18284660395155807.webp",
+          "filename": "18284660395155807.webp",
+          "included": true,
+          "sha256": "962366f54148c1cb6e8ddfbc74264d0aa273a378521b2261e6284a6c2316a5a1",
+          "width": 1440,
+          "height": 1440,
+          "pixel_sha256": "0aefea328bae4dada7bce4ec240bbad1a5fb1681f320484d0004abf0badd13db",
+          "orientation": "landscape"
+        },
+        {
+          "order": 2,
+          "source_uri": "media/posts/202311/17976280142438334.webp",
+          "filename": "17976280142438334.webp",
+          "included": true,
+          "sha256": "1f57e12eac0b1715d3b9350eeb48fdeaa864b2948f0227df9dec56117d0dc22b",
+          "width": 1440,
+          "height": 1440,
+          "pixel_sha256": "585e13f7ba8d439bde862f0127a4f693ded9b88975f49c6ddfb27eaebc8afef5",
+          "orientation": "landscape"
+        },
+        {
+          "order": 3,
+          "source_uri": "media/posts/202311/18043734721557492.webp",
+          "filename": "18043734721557492.webp",
+          "included": true,
+          "sha256": "03ff977ac95d98d0a515de70c4b593197a5a8d3a35a3cb0c2752e4041a308b77",
+          "width": 1440,
+          "height": 1440,
+          "pixel_sha256": "bd207cbf4b83827f26a3dd545941d3a6a6644e49cfb225191f97dd310d467269",
+          "orientation": "landscape"
+        },
+        {
+          "order": 4,
+          "source_uri": "media/posts/202311/18004296026318867.webp",
+          "filename": "18004296026318867.webp",
+          "included": true,
+          "sha256": "03ada05e56d6596c6fa9c0b3b58e4adec00339e8611d52e0f86ef781aae38e80",
+          "width": 1440,
+          "height": 1440,
+          "pixel_sha256": "97045afa950fdda3a1399136dced850fca967ec91dca7338b66df6e5f033f3ab",
+          "orientation": "landscape"
+        },
+        {
+          "order": 5,
+          "source_uri": "media/posts/202311/17941616888729519.webp",
+          "filename": "17941616888729519.webp",
+          "included": true,
+          "sha256": "f97f40032117daade3cfb5b04e306bf4165ff415a3d54409dd0e5416bc5634c1",
+          "width": 1440,
+          "height": 1440,
+          "pixel_sha256": "6a2d18cdfa2358d76196c2fa8461706ecd5030c29fdad001ac671fa670a8ebfd",
+          "orientation": "landscape"
+        },
+        {
+          "order": 6,
+          "source_uri": "media/posts/202311/17863130183998394.webp",
+          "filename": "17863130183998394.webp",
+          "included": true,
+          "sha256": "08233f4dcd0e3898929c2dd9efb499ea4ccddb39ece1f19d25b46d51a4d76ceb",
+          "width": 1440,
+          "height": 1440,
+          "pixel_sha256": "c4a84b78a77bf3ca4e5a4a6911c9d5c42faa5d4df31deac845b2658827a6a2b7",
+          "orientation": "landscape"
+        },
+        {
+          "order": 7,
+          "source_uri": "media/posts/202311/17977773884415356.webp",
+          "filename": "17977773884415356.webp",
+          "included": true,
+          "sha256": "8b162c2ef372422a89366c592e7d52178e6de67e40d94fc292bc96e8e2e8f8c8",
+          "width": 1440,
+          "height": 1440,
+          "pixel_sha256": "59faeba8d6f34415fcf658c0eb64e9e8693db953d6ea8946a800fdf67e976364",
+          "orientation": "landscape"
+        },
+        {
+          "order": 8,
+          "source_uri": "media/posts/202311/18020231047876589.webp",
+          "filename": "18020231047876589.webp",
+          "included": true,
+          "sha256": "3a9230b4f6bb52a6fc0244eb6a60cc4fe9664230a1d3be80aaf07440d3faaa70",
+          "width": 1440,
+          "height": 1440,
+          "pixel_sha256": "78c800484b17da3b772f21b155fcff7b86a3bbbbdf57cfd3aef3193b26f6ad27",
+          "orientation": "landscape"
+        }
+      ]
+    },
+    {
+      "tag": "A3",
+      "creation_timestamp": 1699881375,
+      "published_jst": "2023-11-13T22:16:15+09:00",
+      "caption": "",
+      "alternate_matches": [
+        {
+          "fbid": "18129174982313130",
+          "timestamp": 1699881376,
+          "media_uris": [
+            "media/posts/18129174982313130.webp",
+            "media/posts/202311/17912712086768570.webp",
+            "media/posts/202311/17998509257253151.webp",
+            "media/posts/202311/18398746453000067.webp"
+          ],
+          "same_media_stems": false,
+          "identical_source_bytes": true,
+          "reconciliation": "包含 posts_1.json 全部媒體（相同檔案），另有一張貼文封面。已逐張視覺比對封面為首張同畫面，不重複收錄。此匯出列表的媒體順序相反，採 posts_1.json 原順序。",
+          "additional_cover_uri": "media/posts/18129174982313130.webp"
+        }
+      ],
+      "media": [
+        {
+          "order": 1,
+          "source_uri": "media/posts/202311/18398746453000067.webp",
+          "filename": "18398746453000067.webp",
+          "included": true,
+          "sha256": "0ce82b3a707519df9894ff1049554660402c6e6809133ed9761c4844f83ff3da",
+          "width": 1440,
+          "height": 1440,
+          "pixel_sha256": "b6aa48e10a15eacb7a8e9bfe34ba36e9fbeb96adbccccb44556c5655ee5d82b8",
+          "orientation": "landscape"
+        },
+        {
+          "order": 2,
+          "source_uri": "media/posts/202311/17998509257253151.webp",
+          "filename": "17998509257253151.webp",
+          "included": true,
+          "sha256": "960204840ba201077ab46fee1152827486029394961296b9060b31245b0bb172",
+          "width": 1440,
+          "height": 1440,
+          "pixel_sha256": "70bf606e79e5a09a6ae535974d28d649e3e39eb0df0b5fc0a011e84bd1b41052",
+          "orientation": "landscape"
+        },
+        {
+          "order": 3,
+          "source_uri": "media/posts/202311/17912712086768570.webp",
+          "filename": "17912712086768570.webp",
+          "included": true,
+          "sha256": "8b02ec1029e4deabb12f534316f0fec9e5acf2c416740286eb250acf15f6cb0c",
+          "width": 1440,
+          "height": 1440,
+          "pixel_sha256": "ae43bfe6497a25eacf14b2b68c087eb77579bd40c9b0a76aa776ab5dd6a783c2",
+          "orientation": "landscape"
+        }
+      ]
+    },
+    {
+      "tag": "A4",
+      "creation_timestamp": 1699881665,
+      "published_jst": "2023-11-13T22:21:05+09:00",
+      "caption": "東京夜晚的璀璨不僅是霓虹閃爍，還有這座經典的東京車站，歷史與現代的完美融合。當夜幕低垂，它的紅磚牆在城市燈光的映照下更加醒目，讓人不禁停下腳步，欣賞這座城市的靜謐美景。 #東京車站 #夜景 #歷史與現代 🚂✨",
+      "alternate_matches": [
+        {
+          "fbid": "18007757981084173",
+          "timestamp": 1699881666,
+          "media_uris": [
+            "media/posts/18007757981084173.webp",
+            "media/posts/202311/18202929997274557.webp",
+            "media/posts/202311/17983722245579423.webp",
+            "media/posts/202311/18030919246642962.webp",
+            "media/posts/202311/17954755484693701.webp"
+          ],
+          "same_media_stems": false,
+          "identical_source_bytes": true,
+          "reconciliation": "包含 posts_1.json 全部媒體（相同檔案），另有一張貼文封面。已逐張視覺比對封面為首張同畫面，不重複收錄。此匯出列表的媒體順序相反，採 posts_1.json 原順序。",
+          "additional_cover_uri": "media/posts/18007757981084173.webp"
+        }
+      ],
+      "media": [
+        {
+          "order": 1,
+          "source_uri": "media/posts/202311/17954755484693701.webp",
+          "filename": "17954755484693701.webp",
+          "included": true,
+          "sha256": "c6348f74936dad7a41db0a5242ca61a2d39bdfedfb2d771fa0c944e1c52e987a",
+          "width": 1440,
+          "height": 1440,
+          "pixel_sha256": "68900fefdacdcdb3ca63408294639abe68db394dcb5440c843fe91051b624e6d",
+          "orientation": "landscape"
+        },
+        {
+          "order": 2,
+          "source_uri": "media/posts/202311/18030919246642962.webp",
+          "filename": "18030919246642962.webp",
+          "included": true,
+          "sha256": "d09b6f46c30bf675a827471bdb4a6eb3c06e1ecaf2f74ddce7b3d31db1a0aec0",
+          "width": 1440,
+          "height": 1440,
+          "pixel_sha256": "503bee5f3cc65654c53ce18bbd5c807c79147e9668c2953d63476317cf84dde9",
+          "orientation": "landscape"
+        },
+        {
+          "order": 3,
+          "source_uri": "media/posts/202311/17983722245579423.webp",
+          "filename": "17983722245579423.webp",
+          "included": true,
+          "sha256": "ce41d767dedb7f99bf93133668cc211cb204f66a0e10d8043a58a4afc113e6a4",
+          "width": 1440,
+          "height": 1440,
+          "pixel_sha256": "086cab7eae6fc748b974380303004c8a1d5225a70c3382f4feae77a3d6acc4d5",
+          "orientation": "landscape"
+        },
+        {
+          "order": 4,
+          "source_uri": "media/posts/202311/18202929997274557.webp",
+          "filename": "18202929997274557.webp",
+          "included": true,
+          "sha256": "1b18ff03f97084972a514f964b4c79e953b3c65153a41862b638e8ee59533dc9",
+          "width": 1440,
+          "height": 1440,
+          "pixel_sha256": "3031332baf5b603ba1ada3a54857ee0bacf37d3276456eb2aabf6aa0af3023b4",
+          "orientation": "landscape"
+        }
+      ]
+    },
+    {
+      "tag": "A5",
+      "creation_timestamp": 1699882055,
+      "published_jst": "2023-11-13T22:27:35+09:00",
+      "caption": "東京隨拍",
+      "alternate_matches": [
+        {
+          "fbid": "17954775512701274",
+          "timestamp": 1699882055,
+          "media_uris": [
+            "media/posts/17954775512701274.webp",
+            "media/posts/202311/18024616786772905.webp",
+            "media/posts/202311/18288128548145105.webp",
+            "media/posts/202311/18105648229356611.webp",
+            "media/posts/202311/17993301407153330.webp",
+            "media/posts/202311/18013555363831123.webp",
+            "media/posts/202311/18040118119575907.webp",
+            "media/posts/202311/17981930390580500.webp",
+            "media/posts/202311/18001196669471774.webp"
+          ],
+          "same_media_stems": false,
+          "identical_source_bytes": true,
+          "reconciliation": "包含 posts_1.json 全部媒體（相同檔案），另有一張貼文封面。已逐張視覺比對封面為首張同畫面，不重複收錄。此匯出列表的媒體順序相反，採 posts_1.json 原順序。",
+          "additional_cover_uri": "media/posts/17954775512701274.webp"
+        }
+      ],
+      "media": [
+        {
+          "order": 1,
+          "source_uri": "media/posts/202311/18001196669471774.webp",
+          "filename": "18001196669471774.webp",
+          "included": true,
+          "sha256": "6c1b2d1e3b335cb1921a817beb9c748b3089af8c7eb80386cd2094b5d46569a8",
+          "width": 1440,
+          "height": 1440,
+          "pixel_sha256": "df44fef1729485cf3d5965de3929bb4ad800c1b997db0d629fa870aedd309226",
+          "orientation": "landscape"
+        },
+        {
+          "order": 2,
+          "source_uri": "media/posts/202311/17981930390580500.webp",
+          "filename": "17981930390580500.webp",
+          "included": true,
+          "sha256": "dfe3e6bb177f84a160c1f28cc0915af07aa39d7c1faf7b94a6f3b21f3640494b",
+          "width": 1440,
+          "height": 1440,
+          "pixel_sha256": "f1ce0ff79d029675675ee4011aa4e421f5372dd95925bb56fd324d57c4a317cb",
+          "orientation": "landscape"
+        },
+        {
+          "order": 3,
+          "source_uri": "media/posts/202311/18040118119575907.webp",
+          "filename": "18040118119575907.webp",
+          "included": true,
+          "sha256": "1d597d0a66a7610abc73ab36d4019d8847a6c8ce33d37f9277e717bc8f02fa01",
+          "width": 1440,
+          "height": 1440,
+          "pixel_sha256": "537967fdc67df94946ec9de5b5ad0a69a16ed0d439dd3d32ce2db7c866e025c9",
+          "orientation": "landscape"
+        },
+        {
+          "order": 4,
+          "source_uri": "media/posts/202311/18013555363831123.webp",
+          "filename": "18013555363831123.webp",
+          "included": true,
+          "sha256": "786cb940fa0cd74ab174e44cb80f411a1de6eb712143fa351053af7e797ecd1e",
+          "width": 1440,
+          "height": 1440,
+          "pixel_sha256": "1f15e57a6277e760d2610d708df7293186d27c72c1f34ef3646f8ae53c22d1ff",
+          "orientation": "landscape"
+        },
+        {
+          "order": 5,
+          "source_uri": "media/posts/202311/17993301407153330.webp",
+          "filename": "17993301407153330.webp",
+          "included": false,
+          "sha256": "353ffec65bf0d09a75878f1eff383bf78286b7145ad1c07b33a0b47af4c9d238",
+          "width": 1440,
+          "height": 1440,
+          "pixel_sha256": "ade77d3916a2a0ff1d8d36d25c3f664773e4491e4af1df1a474dd24dccb0d475",
+          "orientation": "landscape",
+          "reason": "作者指定排除帶公司名稱的照片"
+        },
+        {
+          "order": 6,
+          "source_uri": "media/posts/202311/18105648229356611.webp",
+          "filename": "18105648229356611.webp",
+          "included": true,
+          "sha256": "6aa786242cedf5632c398951a43656327d60aa0b087e093da8d0b49737f48bf1",
+          "width": 1440,
+          "height": 1440,
+          "pixel_sha256": "3e82b5e034d934953a9b4ffc9b8ff2971e935fe49fa91e6024ff51092f28f9b1",
+          "orientation": "landscape"
+        },
+        {
+          "order": 7,
+          "source_uri": "media/posts/202311/18288128548145105.webp",
+          "filename": "18288128548145105.webp",
+          "included": true,
+          "sha256": "ea6acd647c79d1c3b1ec554a50523fa08cc5623f046582a45ab1eb17cc9652d1",
+          "width": 1440,
+          "height": 1440,
+          "pixel_sha256": "293d08a5525ca9041737287f262e1aedbab9fbb023000d5ac92003480f3af516",
+          "orientation": "landscape"
+        },
+        {
+          "order": 8,
+          "source_uri": "media/posts/202311/18024616786772905.webp",
+          "filename": "18024616786772905.webp",
+          "included": true,
+          "sha256": "fb6f8edb8f52acf0f1c61515cf84e762aa241789deae76476722d2128336fdf7",
+          "width": 1440,
+          "height": 1440,
+          "pixel_sha256": "f164e6b4dda8259066d8f3411ee5a3055b3c2aec0656645fc786546180b10272",
+          "orientation": "landscape"
+        }
+      ]
+    }
+  ],
+  "camera_sources": [
+    {
+      "filename": "20231113_173312.jpg",
+      "sha256": "a1d0c95e7d67425f6a6e51c8326859e4a50a38a29ae0095a1baa0287691c3c6b",
+      "width": 4032,
+      "height": 2268,
+      "pixel_sha256": "84e01020f291013167eec6ddebd1fee87a8db68393ddd39067f03e808ab58045",
+      "orientation": "landscape"
+    },
+    {
+      "filename": "20231113_210809.jpg",
+      "sha256": "6c8a7c51a838d716d1414f32aa6313b7821d9c3831076619450bb744dfefad92",
+      "width": 4032,
+      "height": 2268,
+      "pixel_sha256": "2dc65090dcf9ee41640eeedd27ffe07ffce995fb05302df5f7f169477dc9b8a4",
+      "orientation": "landscape"
+    }
+  ],
+  "gallery_order": "依文章行進順序保留各 IG 貼文內原順序；東京車站相機版接 A4、飯店相機版接 A5。未知 IG 拍攝時間不冒充精確時間排序。"
+}
