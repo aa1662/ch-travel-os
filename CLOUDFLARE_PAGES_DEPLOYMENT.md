@@ -17,16 +17,16 @@
 
 ---
 
-## 2. Cloudflare Dashboard 建立步驟
+## 2. 部署方式
 
-1. 登入 Cloudflare Dashboard ➔ 進入 **Compute (Workers & Pages)** ➔ **Pages**。
-2. 點擊 **Connect to Git**（或透過 Direct Upload / Wrangler）。
-3. 選擇 GitHub Repository：`aa1662/ch-travel-os`。
-4. 設定 **Build settings**：
-   - **Framework preset**：`None`
-   - **Build command**：*(空)*
-   - **Build output directory**：`docs`
-5. 點擊 **Save and Deploy** 即可於 15 秒內完成全球 CDN 部署。
+Cloudflare Pages 專案 `ch-travel` 目前採用 **Direct Upload (Wrangler)** 模式（Git Provider: No）。
+
+本地一鍵發布指令：
+```bash
+npx --yes wrangler pages deploy docs --project-name=ch-travel --branch=master
+```
+> 註：執行後約 5~10 秒內完成全球 CDN 部署。
+
 
 ---
 
