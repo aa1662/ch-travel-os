@@ -12,26 +12,27 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
 </head>
 <body>
-<!-- 頂部導航 -->
-<header class="site-header">
-<div class="header-container">
-<div class="brand">
-<span class="brand-badge">2026 OSAKA</span>
-<span class="brand-title">大阪避暑自由行</span>
-</div>
-<nav class="nav-links">
-<a class="nav-link" href="index.html">行程總覽</a>
-<a class="nav-link" href="day-01.html">Day 1</a>
-<a class="nav-link" href="day-02.html">Day 2</a>
-<a class="nav-link" href="day-03.html">Day 3</a>
-<a class="nav-link" href="day-04.html">Day 4</a>
-<a class="nav-link" href="transport.html">交通票券</a>
-<a class="nav-link" href="evening-hub.html">傍晚15選</a>
-<a class="nav-link active" href="guides.html">專題攻略</a>
+<!-- 頂部導覽列 -->
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="nav-brand">
+      <span>🇯🇵 2026 關西漫遊</span>
+      <span class="brand-badge">Guide 特輯</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">🏠 首頁總覽</a></li>
+      <li><a href="day-01.html">Day 1</a></li>
+      <li><a href="day-02.html">Day 2</a></li>
+      <li><a href="day-03.html">Day 3</a></li>
+      <li><a href="day-04.html">Day 4</a></li>
+      <li><a href="evening-hub.html">🌆 傍晚環線</a></li>
+      <li><a href="transport.html">🚆 交通指南</a></li>
+      <li><a href="guides.html" class="active">📖 專題指南</a></li>
+    </ul>
+  </div>
 </nav>
-</div>
-</header>
-<main class="page-container" style="max-width: 900px; margin: 0 auto; padding: 1.5rem 1rem 6rem;">
+
+<main class="container" style="margin-top: 1.5rem; margin-bottom: 5rem;">
 <!-- 返回按鈕列 -->
 <div style="margin-bottom: 1.25rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
 <a class="btn-action" href="guides.html" style="background: #f1f5f9; color: var(--text-main); border: 1px solid var(--border-color);">
@@ -44,47 +45,45 @@
         🚣 前往下午近江八幡水鄉攻略 ➔
       </a>
 </div>
-<!-- 主題 Hero Banner -->
-<section class="guide-hero-card" style="margin-bottom: 2rem; position: relative; border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);">
-<div style="height: 340px; position: relative;">
-<img alt="琵琶湖露台全景與無邊際水池" height="844" src="images/biwako_terrace.webp" style="width: 100%; height: 100%; object-fit: cover;" width="1200"/>
-<div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,23,42,0.1) 0%, rgba(15,23,42,0.85) 100%);"></div>
-<div style="position: absolute; bottom: 1.5rem; left: 1.5rem; right: 1.5rem; color: #ffffff;">
-<div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.6rem;">
-<span class="badge" style="background: #0284c7; color: #ffffff; font-weight: 700;">Day 2 上午 ✕ 滋賀高山</span>
-<span class="badge" style="background: #059669; color: #ffffff;">海拔 1,174m 盛夏 22°C</span>
-<span class="badge" style="background: #d97706; color: #ffffff;">兩段滑雪吊椅無料</span>
-<span class="badge" style="background: #7c3aed; color: #ffffff;">Grand Terrace 水天一色</span>
-<span class="badge" style="background: #dc2626; color: #ffffff;">近江牛黑咖哩</span>
-</div>
-<h1 style="font-size: 1.85rem; font-weight: 900; line-height: 1.25; margin-bottom: 0.5rem; color: #ffffff;">
-            🌲 滋賀・琵琶湖露台 1,174m 空中漫步 ✕ 近江牛深度攻略
-          </h1>
-<p style="color: #e2e8f0; font-size: 0.95rem; margin-bottom: 1rem;">
-            一面湖 ✕ 兩座山頭 ✕ 三趟纜車 ✕ 打見山 Grand Terrace ✕ 蓬萊山 CAFÉ 360 ✕ 笹平天空鞦韆
-          </p>
-<div class="action-toolbar" style="margin-top: 0;">
-<a class="btn-action btn-maps" href="https://www.google.com/maps/search/?api=1&amp;query=The+Biwako+Terrace" target="_blank">
-              📍 琵琶湖露台定位
-            </a>
-<a class="btn-action" href="https://weather.com/zh-TW/jp/shiga/city/otsu/tenday" style="background: #0284c7; color: #fff; font-weight: 700;" target="_blank">
-              ⛅ 滋賀大津 10 日天氣 ➔
-            </a>
-<a class="btn-action" href="https://www.biwako-valley.com/livecam/" style="background: #059669; color: #fff; border: none;" target="_blank">
-              📹 官網即時 WebCam ➔
-            </a>
-<a class="btn-action" href="https://we-love-osaka-ch-han.com/biwako_terrace/" style="background: #0284c7; color: #fff; border: none;" target="_blank">
-              🌐 We Love Osaka 攻略 ➔
-            </a>
-<a class="btn-action" href="https://cjscene.com/the-biwako-terrace.html" style="background: #ea580c; color: #fff; border: none;" target="_blank">
-              🌐 CJ夫人空中露台攻略 ➔
-            </a>
-<button class="btn-action btn-copy" onclick="copyText('びわ湖テラス (Biwako Terrace)', this)">
-              📋 複製露台日文
-            </button>
-</div>
-</div>
-</div>
+<!-- 主題 Hero Banner (方向甲：滿版大圖封面，頂部 100% 通透原色，底部平滑羽化壓字) -->
+<section class="guide-hero-card" style="margin-bottom: 2rem; position: relative; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); min-height: 380px; display: flex; flex-direction: column; justify-content: flex-end; border-top: 5px solid var(--cool-lake);">
+  <img alt="琵琶湖露台全景與無邊際水池" height="844" src="images/biwako_terrace.webp" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;" width="1200"/>
+  <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.35) 50%, transparent 100%); z-index: 2;"></div>
+  <div style="position: relative; z-index: 3; padding: 2rem; color: #ffffff;">
+    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.65rem;">
+      <span class="badge" style="background: #0284c7; color: #ffffff; font-weight: 700;">Day 2 上午 ✕ 滋賀高山</span>
+      <span class="badge" style="background: #059669; color: #ffffff;">海拔 1,174m 盛夏 22°C</span>
+      <span class="badge" style="background: #d97706; color: #ffffff;">兩段滑雪吊椅無料</span>
+      <span class="badge" style="background: #7c3aed; color: #ffffff;">Grand Terrace 水天一色</span>
+      <span class="badge" style="background: #dc2626; color: #ffffff;">近江牛黑咖哩</span>
+    </div>
+    <h1 style="color: #ffffff; font-size: 2rem; font-weight: 800; line-height: 1.25; margin-bottom: 0.65rem; text-shadow: 0 2px 8px rgba(0,0,0,0.5);">
+      🌲 滋賀・琵琶湖露台 1,174m 空中漫步 ✕ 近江牛深度攻略
+    </h1>
+    <p style="color: #f1f5f9; font-size: 0.98rem; line-height: 1.6; margin-bottom: 1.25rem; text-shadow: 0 1px 4px rgba(0,0,0,0.5);">
+      一面湖 ✕ 兩座山頭 ✕ 三趟纜車 ✕ 打見山 Grand Terrace ✕ 蓬萊山 CAFÉ 360 ✕ 笹平天空鞦韆
+    </p>
+    <div class="action-toolbar" style="margin-top: 0;">
+      <a class="btn-action btn-maps" href="https://www.google.com/maps/search/?api=1&amp;query=The+Biwako+Terrace" target="_blank">
+        📍 琵琶湖露台定位
+      </a>
+      <a class="btn-action" href="https://weather.com/zh-TW/jp/shiga/city/otsu/tenday" style="background: #0284c7; color: #fff; font-weight: 700;" target="_blank">
+        ⛅ 滋賀大津 10 日天氣 ➔
+      </a>
+      <a class="btn-action" href="https://www.biwako-valley.com/livecam/" style="background: #059669; color: #fff; border: none;" target="_blank">
+        📹 官網即時 WebCam ➔
+      </a>
+      <a class="btn-action" href="https://we-love-osaka-ch-han.com/biwako_terrace/" style="background: #0284c7; color: #fff; border: none;" target="_blank">
+        🌐 We Love Osaka 攻略 ➔
+      </a>
+      <a class="btn-action" href="https://cjscene.com/the-biwako-terrace.html" style="background: #ea580c; color: #fff; border: none;" target="_blank">
+        🌐 CJ夫人空中露台攻略 ➔
+      </a>
+      <button class="btn-action btn-copy" onclick="copyText('びわ湖テラス (Biwako Terrace)', this)">
+        📋 複製露台日文
+      </button>
+    </div>
+  </div>
 </section>
 <!-- 景點速覽資訊卡 -->
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 2rem;">

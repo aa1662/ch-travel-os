@@ -13,19 +13,25 @@
 
   <!-- 頂部導覽列 -->
   <nav class="site-nav">
-    <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
-      <a href="day-04.html" class="btn-action" style="background:#ffffff; color:var(--accent); font-weight:700; border:1px solid var(--border-color); padding:0.4rem 0.85rem;">
-        ⬅️ 返回 Day 4 行程時間軸
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <span>🇯🇵 2026 關西漫遊</span>
+        <span class="brand-badge">Guide 特輯</span>
       </a>
       <ul class="nav-links">
-        <li><a href="index.html">🏠 首頁</a></li>
+        <li><a href="index.html">🏠 首頁總覽</a></li>
+        <li><a href="day-01.html">Day 1</a></li>
+        <li><a href="day-02.html">Day 2</a></li>
+        <li><a href="day-03.html">Day 3</a></li>
         <li><a href="day-04.html">Day 4</a></li>
-        <li><a href="guides.html">📖 攻略總覽</a></li>
+        <li><a href="evening-hub.html">🌆 傍晚環線</a></li>
+        <li><a href="transport.html">🚆 交通指南</a></li>
+        <li><a href="guides.html" class="active">📖 專題指南</a></li>
       </ul>
     </div>
   </nav>
 
-  <main class="container" style="max-width: 960px; margin-top: 1.5rem; margin-bottom: 5rem;">
+  <main class="container" style="margin-top: 1.5rem; margin-bottom: 5rem;">
 
     <!-- 麵包屑導航 -->
     <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
@@ -35,30 +41,28 @@
     </div>
 
     <!-- 頁首 Hero 橫幅 -->
-    <section class="bento-card" style="padding: 0; overflow: hidden; margin-bottom: 2rem; border-top: 4px solid var(--accent);">
-      <div style="position: relative; height: 320px; background: linear-gradient(135deg, #78350f 0%, #d97706 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
-        <span class="badge" style="background: #ffffff; color: #78350f; width: fit-content; margin-bottom: 0.5rem; font-weight: 700;">
-          Day 4 最終採買 ✕ 14:30 避排退稅
-        </span>
-        <h1 style="color: #ffffff; font-size: 2.1rem; margin-bottom: 0.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">
-          🛍️ 大丸梅田最終採買：HARBS水果千層 ✕ 小倉山莊退稅秘笈
-        </h1>
-        <p style="color: #fef3c7; font-size: 0.95rem; margin-bottom: 1rem;">
-          HARBS 8 吋千層哲學 ✕ 寶可夢任天堂旗艦 ✕ 百人一首和歌仙貝 ✕ 14:30 前快速退稅
-        </p>
-        <div class="action-toolbar" style="margin-top: 0;">
-          <a href="https://www.google.com/maps/search/?api=1&query=Daimaru+Umeda" target="_blank" class="btn-action btn-maps">
-            📍 大丸梅田地圖
-          </a>
-          <a href="https://www.google.com/search?udm=2&q=HARBS+%E5%A4%A7%E4%B8%B8%E6%A2%85%E7%94%B0" target="_blank" class="btn-action btn-photos">
-            🖼️ HARBS 實景相簿
-          </a>
-          <a href="https://www.google.com/search?udm=2&q=%E5%B0%8F%E5%80%89%E5%B1%B1%E8%8E%8A+%E5%B1%B1%E6%98%A5%E7%A7%8B" target="_blank" class="btn-action btn-photos">
-            🖼️ 小倉山莊實景
-          </a>
-        </div>
+    <div class="guide-hero" style="position: relative; border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 2rem; box-shadow: var(--shadow-md); min-height: 380px; display: flex; flex-direction: column; justify-content: flex-end; border-top: 5px solid var(--accent); background: linear-gradient(135deg, #78350f 0%, #d97706 100%); padding: 2rem; color: #ffffff;">
+      <span class="badge" style="background: #ffffff; color: #78350f; width: fit-content; margin-bottom: 0.5rem; font-weight: 700;">
+        Day 4 最終採買 ✕ 14:30 避排退稅
+      </span>
+      <h1 style="color: #ffffff; font-size: 2.1rem; margin-bottom: 0.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">
+        🛍️ 大丸梅田最終採買：HARBS水果千層 ✕ 小倉山莊退稅秘笈
+      </h1>
+      <p style="color: #fef3c7; font-size: 0.95rem; margin-bottom: 1rem;">
+        HARBS 8 吋千層哲學 ✕ 寶可夢任天堂旗艦 ✕ 百人一首和歌仙貝 ✕ 14:30 前快速退稅
+      </p>
+      <div class="action-toolbar" style="margin-top: 0;">
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Daimaru+Umeda" target="_blank" class="btn-action btn-maps">
+          📍 大丸梅田地圖
+        </a>
+        <a href="https://www.google.com/search?udm=2&amp;q=HARBS+%E5%A4%A7%E4%B8%B8%E6%A2%85%E7%94%B0" target="_blank" class="btn-action btn-photos">
+          🖼️ HARBS 實景相簿
+        </a>
+        <a href="https://www.google.com/search?udm=2&amp;q=%E5%B0%8F%E5%80%89%E5%B1%B1%E8%8E%8A+%E5%B1%B1%E6%98%A5%E7%A7%8B" target="_blank" class="btn-action btn-photos">
+          🖼️ 小倉山莊實景
+        </a>
       </div>
-    </section>
+    </div>
 
     <!-- 景點速覽資訊卡 -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 2rem;">

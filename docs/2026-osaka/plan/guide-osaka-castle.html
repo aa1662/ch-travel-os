@@ -13,18 +13,24 @@
 <body>
 <!-- 頂部導覽列 -->
 <nav class="site-nav">
-<div class="container" style="display:flex; justify-content:space-between; align-items:center;">
-<a class="btn-action" href="day-03.html" style="background:#ffffff; color:var(--primary); font-weight:700; border:1px solid var(--border-color); padding:0.4rem 0.85rem;">
-        ⬅️ 返回 Day 3 行程時間軸
-      </a>
-<ul class="nav-links">
-<li><a href="index.html">🏠 首頁</a></li>
-<li><a href="day-03.html">Day 3</a></li>
-<li><a href="guides.html">📖 攻略總覽</a></li>
-</ul>
-</div>
+  <div class="container">
+    <a href="index.html" class="nav-brand">
+      <span>🇯🇵 2026 關西漫遊</span>
+      <span class="brand-badge">Guide 特輯</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">🏠 首頁總覽</a></li>
+      <li><a href="day-01.html">Day 1</a></li>
+      <li><a href="day-02.html">Day 2</a></li>
+      <li><a href="day-03.html">Day 3</a></li>
+      <li><a href="day-04.html">Day 4</a></li>
+      <li><a href="evening-hub.html">🌆 傍晚環線</a></li>
+      <li><a href="transport.html">🚆 交通指南</a></li>
+      <li><a href="guides.html" class="active">📖 專題指南</a></li>
+    </ul>
+  </div>
 </nav>
-<main class="container" style="max-width: 960px; margin-top: 1.5rem; margin-bottom: 5rem;">
+<main class="container" style="margin-top: 1.5rem; margin-bottom: 5rem;">
 <!-- 麵包屑導航 -->
 <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
 <a href="index.html" style="color: var(--text-muted); text-decoration: none;">首頁</a> &gt;
@@ -32,33 +38,33 @@
       <strong style="color: var(--primary);">大阪城傍晚水岸 ✕ MIRAIZA 點燈</strong>
 </div>
 <!-- 頁首 Hero 橫幅 -->
-<section class="bento-card" style="padding: 0; overflow: hidden; margin-bottom: 2rem; border-top: 4px solid var(--primary);">
-<div style="position: relative; height: 340px;">
-<img alt="大阪城天守閣與水岸" height="800" src="images/osaka_castle.webp" style="width: 100%; height: 100%; object-fit: cover;" width="1200"/>
-<div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.25) 60%, transparent 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
-<span class="badge" style="background: var(--accent); color: #fff; width: fit-content; margin-bottom: 0.5rem;">
-            避開日間團客 ✕ 護城河無人倒影 ✕ 1931 歐風古堡
-          </span>
-<h1 style="color: #ffffff; font-size: 2.1rem; margin-bottom: 0.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">
-            🏯 大阪城傍晚水岸漫步 ✕ MIRAIZA 點燈攻略
-          </h1>
-<p style="color: #e2e8f0; font-size: 0.95rem; margin-bottom: 1rem;">
-            秀吉黃金城掩埋之謎 ✕ 108 噸第一巨石「蛸石」 ✕ 頂樓露台平視點燈天守閣
-          </p>
-<div class="action-toolbar" style="margin-top: 0;">
-<a class="btn-action btn-maps" href="https://www.google.com/maps/search/?api=1&amp;query=Osaka+Castle" target="_blank">
-              📍 大阪城地圖
-            </a>
-<a class="btn-action btn-maps" href="https://www.google.com/maps/search/?api=1&amp;query=MIRAIZA+OSAKA-JO" target="_blank">
-              📍 MIRAIZA 地圖
-            </a>
-<a class="btn-action btn-photos" href="https://www.google.com/search?udm=2&amp;q=%E5%A4%A7%E9%98%AA%E5%9F%8E+%E5%A4%95%E9%99%BD" target="_blank">
-              🖼️ Google 實景相簿
-            </a>
+<!-- 頁首 Hero 橫幅 (方向甲：滿版大圖封面，頂部 100% 通透原色，底部平滑羽化壓字) -->
+<div class="guide-hero" style="position: relative; border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 2rem; box-shadow: var(--shadow-md); min-height: 380px; display: flex; flex-direction: column; justify-content: flex-end; border-top: 5px solid var(--primary);">
+  <img alt="大阪城天守閣與水岸" height="800" src="images/osaka_castle.webp" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;" width="1200"/>
+  <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.35) 50%, transparent 100%); z-index: 2;"></div>
+  <div style="position: relative; z-index: 3; padding: 2rem; color: #ffffff;">
+    <span class="badge" style="background: var(--accent); color: #fff; width: fit-content; margin-bottom: 0.5rem;">
+      避開日間團客 ✕ 護城河無人倒影 ✕ 1931 歐風古堡
+    </span>
+    <h1 style="color: #ffffff; font-size: 2.1rem; margin-bottom: 0.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">
+      🏯 大阪城傍晚水岸漫步 ✕ MIRAIZA 點燈攻略
+    </h1>
+    <p style="color: #e2e8f0; font-size: 0.95rem; margin-bottom: 1rem;">
+      秀吉黃金城掩埋之謎 ✕ 108 噸第一巨石「蛸石」 ✕ 頂樓露台平視點燈天守閣
+    </p>
+    <div class="action-toolbar" style="margin-top: 0;">
+      <a class="btn-action btn-maps" href="https://www.google.com/maps/search/?api=1&amp;query=Osaka+Castle" target="_blank">
+        📍 大阪城地圖
+      </a>
+      <a class="btn-action btn-maps" href="https://www.google.com/maps/search/?api=1&amp;query=MIRAIZA+OSAKA-JO" target="_blank">
+        📍 MIRAIZA 地圖
+      </a>
+      <a class="btn-action btn-photos" href="https://www.google.com/search?udm=2&amp;q=%E5%A4%A7%E9%98%AA%E5%9F%8E+%E5%A4%95%E9%99%BD" target="_blank">
+        🖼️ Google 實景相簿
+      </a>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-</section>
 <!-- 景點速覽資訊卡 -->
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
 <div style="background: #ffffff; border: 1px solid var(--border-color); padding: 1.1rem; border-radius: var(--radius-md);">

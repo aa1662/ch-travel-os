@@ -40,23 +40,25 @@
       <span style="color: var(--text-main);">京都・鞍馬寺 ✕ 貴船神社川床避暑</span>
     </div>
 
-    <!-- 景點 Hero 區塊 -->
-    <div class="guide-hero" style="background: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.85)), url('images/kurama_kifune.webp') center/cover no-repeat; border-radius: var(--radius-lg); padding: 2.5rem 2rem; color: #fff; margin-bottom: 2rem; box-shadow: var(--shadow-md);">
-      <div style="max-width: 820px;">
-        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
-          <span class="badge" style="background: #15803d; color: #fff; font-weight: 700;">京都洛北 ✕ 盛夏避暑第一首選</span>
+    <!-- 景點 Hero 區塊 (方向甲：滿版大圖封面，頂部 100% 通透原色，底部平滑羽化壓字) -->
+    <div class="guide-hero" style="position: relative; border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 2rem; box-shadow: var(--shadow-md); min-height: 380px; display: flex; flex-direction: column; justify-content: flex-end; border-top: 5px solid #15803d;">
+      <img src="images/kurama_kifune.webp" alt="京都鞍馬寺與貴船神社" width="1200" height="800" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+      <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.35) 50%, transparent 100%); z-index: 2;"></div>
+      <div style="position: relative; z-index: 3; padding: 2rem; color: #ffffff;">
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.65rem;">
+          <span class="badge" style="background: #15803d; color: #ffffff; font-weight: 700;">京都洛北 ✕ 盛夏避暑第一首選</span>
           <span class="badge" style="background: rgba(255,255,255,0.2); color: #fff;">體感驟降 6~8°C</span>
           <span class="badge" style="background: rgba(255,255,255,0.2); color: #fff;">天狗 ✕ 宇宙靈氣 ✕ 繪馬始祖</span>
         </div>
-        <h1 style="font-size: 2.2rem; font-weight: 800; line-height: 1.25; margin-bottom: 0.75rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
+        <h1 style="color: #ffffff; font-size: 2rem; font-weight: 800; line-height: 1.25; margin-bottom: 0.65rem; text-shadow: 0 2px 8px rgba(0,0,0,0.5);">
           京都・鞍馬寺靈氣之山 ✕ 貴船神社水神參道 ✕ 川床香魚避暑全攻略
         </h1>
-        <p style="font-size: 1.05rem; line-height: 1.6; color: #e2e8f0; margin-bottom: 1.5rem;">
+        <p style="color: #f1f5f9; font-size: 0.98rem; line-height: 1.6; margin-bottom: 1.25rem; text-shadow: 0 1px 4px rgba(0,0,0,0.5);">
           逃離京都平地 38°C 酷暑！搭乘叡山電車展望列車穿梭青楓綠色隧道，在 4m 巨大天狗前搭乘牛若號纜車直上鞍馬寺，站在六芒星金剛床感受宇宙靈氣；穿越牛若丸修煉的木之根道輕鬆下坡抵達貴船川畔，坐在清流竹蓆上享用鹽烤野生香魚，體驗神泉水占卜！
         </p>
 
         <!-- 工具按鈕列 -->
-        <div class="action-toolbar" style="margin-top: 1.25rem;">
+        <div class="action-toolbar" style="margin-top: 0;">
           <a href="https://www.google.com/maps/dir/Demachiyanagi+Station/Kurama-dera/Kifune+Shrine/Demachiyanagi+Station" target="_blank" class="btn-action" style="background: #0284c7; color: #fff; font-weight: 700;">
             🚗 Google Maps 全程越嶺導航
           </a>

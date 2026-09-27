@@ -12,24 +12,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+TC:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
 </head>
 <body>
-<!-- 頂部導航列 -->
-<nav class="navbar">
-<div class="container nav-container">
-<a class="nav-brand" href="index.html">
-<span class="brand-icon">🍧</span>
-<span class="brand-text">2026 關西盛夏避暑之旅</span>
-</a>
-<div class="nav-links">
-<a class="nav-link" href="index.html">總覽</a>
-<a class="nav-link" href="day-01.html">D1 機場水都</a>
-<a class="nav-link" href="day-02.html">D2 琵琶湖近江</a>
-<a class="nav-link" href="day-03.html">D3 六甲有馬</a>
-<a class="nav-link" href="day-04.html">D4 勝尾箕面</a>
-<a class="nav-link" href="transport.html">交通票券</a>
-<a class="nav-link" href="evening-hub.html">傍晚自由選</a>
-<a class="nav-link active" href="guides.html">專題指南</a>
-</div>
-</div>
+<!-- 頂部導覽列 -->
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="nav-brand">
+      <span>🇯🇵 2026 關西漫遊</span>
+      <span class="brand-badge">Guide 特輯</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">🏠 首頁總覽</a></li>
+      <li><a href="day-01.html">Day 1</a></li>
+      <li><a href="day-02.html">Day 2</a></li>
+      <li><a href="day-03.html">Day 3</a></li>
+      <li><a href="day-04.html">Day 4</a></li>
+      <li><a href="evening-hub.html">🌆 傍晚環線</a></li>
+      <li><a href="transport.html">🚆 交通指南</a></li>
+      <li><a href="guides.html" class="active">📖 專題指南</a></li>
+    </ul>
+  </div>
 </nav>
 <main class="container" style="margin-top: 1.75rem; margin-bottom: 5rem;">
 <!-- 頂部麵包屑導航 -->
@@ -38,30 +38,28 @@
         ⬅️ 返回專題指南庫
       </a>
 </div>
-<!-- 主題 Hero Banner -->
-<div class="guide-hero" style="border-top: 5px solid #059669;">
-<div class="guide-hero-img-wrap" style="position: relative; height: 280px;">
-<img alt="近江八幡八幡堀水鄉手搖船" height="801" src="images/omihachiman_boat.webp" style="width: 100%; height: 100%; object-fit: cover;" width="1200"/>
-<span class="img-floating-tag">🚣 400 年水鄉手搖船 ✕ 日牟禮八幡宮 ✕ 吉卜力草屋頂 ✕ CLUB HARIE 現烤年輪</span>
-</div>
-<div style="padding: 1.5rem;">
-<div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
-<span class="badge" style="background:#d1fae5; color:#059669; font-weight:700;">Day 2 下午 ✕ 滋賀必訪</span>
-<span class="badge badge-walk">八幡堀手搖屋形船</span>
-<span class="badge badge-cool">1900年日牟禮八幡宮金鴿</span>
-<span class="badge badge-food">Tabelog 3.68 現烤年輪</span>
-<span class="badge badge-cool">A5 炙燒近江牛</span>
-</div>
-<h1 style="color: #059669; font-size: 1.85rem; margin-bottom: 0.5rem;">
-          滋賀・近江八幡江戶水鄉手搖船 ✕ 日牟禮八幡宮 ✕ La Collina 甜點草屋深度攻略
-        </h1>
-<p style="color: var(--text-sub); font-size: 0.95rem; line-height: 1.6;">
-<strong>地理位置</strong>：滋賀縣近江八幡市（JR 近江八幡站搭公車 7 分鐘直達八幡堀）。<br/>
-<strong>建議停留</strong>：3 ~ 3.5 小時（水鄉手搖船 35 分鐘 ＋ 日牟禮八幡宮與千成亭 40 分鐘 ＋ La Collina 1.5 小時）。<br/>
-<strong>核心亮點</strong>：豐臣秀次 400 年水鄉 ✕ 《神劍闖江湖》手搖屋形船 ✕ 1900 年日牟禮八幡宮金色神鴿 ✕ 相機旅圖三大機位 ✕ 藤森照信草屋頂 ✕ 現烤溫熱年輪蛋糕 ✕ JR 新快速 55 分直達大阪。
-        </p>
-<!-- 工具按鈕列 -->
-<div class="action-toolbar" style="margin-top: 1.25rem;">
+<!-- 主題 Hero Banner (方向甲：滿版大圖封面，頂部 100% 通透原色，底部平滑羽化壓字) -->
+<div class="guide-hero" style="position: relative; border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 2rem; box-shadow: var(--shadow-md); min-height: 380px; display: flex; flex-direction: column; justify-content: flex-end; border-top: 5px solid #059669;">
+  <img alt="近江八幡八幡堀水鄉手搖船" height="801" src="images/omihachiman_boat.webp" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;" width="1200"/>
+  <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.35) 50%, transparent 100%); z-index: 2;"></div>
+  <div style="position: relative; z-index: 3; padding: 2rem; color: #ffffff;">
+    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.65rem;">
+      <span class="badge" style="background:#059669; color:#ffffff; font-weight:700;">Day 2 下午 ✕ 滋賀必訪</span>
+      <span class="badge" style="background: rgba(255,255,255,0.2); color: #fff;">八幡堀手搖屋形船</span>
+      <span class="badge" style="background: rgba(255,255,255,0.2); color: #fff;">1900年日牟禮八幡宮金鴿</span>
+      <span class="badge" style="background:#d97706; color:#ffffff; font-weight:700;">Tabelog 3.68 現烤年輪</span>
+      <span class="badge" style="background:#dc2626; color:#ffffff; font-weight:700;">A5 炙燒近江牛</span>
+    </div>
+    <h1 style="color: #ffffff; font-size: 2rem; font-weight: 800; line-height: 1.25; margin-bottom: 0.65rem; text-shadow: 0 2px 8px rgba(0,0,0,0.5);">
+      滋賀・近江八幡江戶水鄉手搖船 ✕ 日牟禮八幡宮 ✕ La Collina 甜點草屋深度攻略
+    </h1>
+    <p style="color: #f1f5f9; font-size: 0.98rem; line-height: 1.6; margin-bottom: 1.25rem; text-shadow: 0 1px 4px rgba(0,0,0,0.5);">
+      <strong>地理位置</strong>：滋賀縣近江八幡市（JR 近江八幡站搭公車 7 分鐘直達八幡堀）。<br/>
+      <strong>建議停留</strong>：3 ~ 3.5 小時（水鄉手搖船 35 分鐘 ＋ 日牟禮八幡宮與千成亭 40 分鐘 ＋ La Collina 1.5 小時）。<br/>
+      <strong>核心亮點</strong>：豐臣秀次 400 年水鄉 ✕ 《神劍闖江湖》手搖屋形船 ✕ 1900 年日牟禮八幡宮金色神鴿 ✕ 相機旅圖三大機位 ✕ 藤森照信草屋頂 ✕ 現烤溫熱年輪蛋糕 ✕ JR 新快速 55 分直達大阪。
+    </p>
+    <!-- 工具按鈕列 -->
+    <div class="action-toolbar" style="margin-top: 0;">
 <a class="btn-action" href="https://www.google.com/maps/dir/Omihachiman+Station/Hachimanbori/Hinomure+Hachimangu/Sennaritei+Hachimanbori/La+Collina+Omihachiman/Omihachiman+Station" style="background: #059669; color: #fff; font-weight: 700;" target="_blank">
             🚗 Google Maps 全程 O 型步行導航
           </a>

@@ -13,18 +13,24 @@
 <body>
 <!-- 頂部導覽列 -->
 <nav class="site-nav">
-<div class="container" style="display:flex; justify-content:space-between; align-items:center;">
-<a class="btn-action" href="guides.html" style="background:#ffffff; color:#1e293b; font-weight:700; border:1px solid var(--border-color); padding:0.4rem 0.85rem;">
-        ⬅️ 返回攻略指南總覽
-      </a>
-<ul class="nav-links">
-<li><a href="index.html">🏠 首頁</a></li>
-<li><a href="day-02.html">Day 2</a></li>
-<li><a href="guides.html">📖 攻略總覽</a></li>
-</ul>
-</div>
+  <div class="container">
+    <a href="index.html" class="nav-brand">
+      <span>🇯🇵 2026 關西漫遊</span>
+      <span class="brand-badge">Guide 特輯</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">🏠 首頁總覽</a></li>
+      <li><a href="day-01.html">Day 1</a></li>
+      <li><a href="day-02.html">Day 2</a></li>
+      <li><a href="day-03.html">Day 3</a></li>
+      <li><a href="day-04.html">Day 4</a></li>
+      <li><a href="evening-hub.html">🌆 傍晚環線</a></li>
+      <li><a href="transport.html">🚆 交通指南</a></li>
+      <li><a href="guides.html" class="active">📖 專題指南</a></li>
+    </ul>
+  </div>
 </nav>
-<main class="container" style="max-width: 960px; margin-top: 1.5rem; margin-bottom: 5rem;">
+<main class="container" style="margin-top: 1.5rem; margin-bottom: 5rem;">
 <!-- 麵包屑導航 -->
 <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
 <a href="index.html" style="color: var(--text-muted); text-decoration: none;">首頁</a> &gt;
@@ -32,42 +38,42 @@
       <strong style="color: #0f172a;">三重・伊賀流忍者博物館 ✕ 伊賀上野城</strong>
 </div>
 <!-- 頁首 Hero 橫幅 -->
-<section class="bento-card" style="padding: 0; overflow: hidden; margin-bottom: 2rem; border-top: 4px solid #0f172a;">
-<div style="position: relative; height: 340px;">
-<img alt="伊賀上野城與忍者博物館" height="567" src="images/iga_ninja.webp" style="width: 100%; height: 100%; object-fit: cover;" width="850"/>
-<div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.25) 60%, transparent 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
-<span class="badge" style="background: #1e293b; color: #fff; width: fit-content; margin-bottom: 0.5rem;">
-            服部半藏發祥地 ✕ 日本百大名城白鳳城 ✕ 阿修羅武打秀
-          </span>
-<h1 style="color: #ffffff; font-size: 2.1rem; margin-bottom: 0.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">
-            🥷 三重・伊賀流忍者博物館 ✕ 伊賀上野城攻略
-          </h1>
-<p style="color: #e2e8f0; font-size: 0.95rem; margin-bottom: 1rem;">
-            真鐵手裏劍對決 ✕ 女忍者機關屋敷 ✕ 30m 日本第一高石垣 ✕ 松本零士彩繪電車
-          </p>
-<div class="action-toolbar" style="margin-top: 0;">
-<a class="btn-action btn-maps" href="https://www.google.com/maps/search/?api=1&amp;query=Iga+Ninja+Museum" target="_blank">
-              📍 忍者博物館定位
-            </a>
-<a class="btn-action btn-maps" href="https://www.google.com/maps/search/?api=1&amp;query=Iga+Ueno+Castle" target="_blank">
-              📍 伊賀上野城定位
-            </a>
-<a class="btn-action" href="https://mimigo.tw/iga-ueno/" style="background: #0f172a; color: #fff; border: 1px solid #475569;" target="_blank">
-              🌐 Mimi韓伊賀忍者攻略 ➔
-            </a>
-<a class="btn-action btn-photos" href="https://www.google.com/search?udm=2&amp;q=%E4%BC%8A%E8%B3%80%E6%B5%81%E5%BF%8D%E8%80%85%E5%8D%9A%E7%89%A9%E9%A4%A8+%E4%BC%8A%E8%B3%80%E4%B8%8A%E9%87%8E%E5%9F%8E" target="_blank">
-              🖼️ Google 實景相簿
-            </a>
-<button class="btn-action btn-copy" onclick="copyText('伊賀流忍者博物館', this)">
-              📋 複製博物館日文
-            </button>
-<button class="btn-action btn-copy" onclick="copyText('伊賀上野城', this)">
-              📋 複製上野城日文
-            </button>
+<!-- 頁首 Hero 橫幅 (方向甲：滿版大圖封面，頂部 100% 通透原色，底部平滑羽化壓字) -->
+<div class="guide-hero" style="position: relative; border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 2rem; box-shadow: var(--shadow-md); min-height: 380px; display: flex; flex-direction: column; justify-content: flex-end; border-top: 5px solid #0f172a;">
+  <img alt="伊賀上野城與忍者博物館" height="567" src="images/iga_ninja.webp" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;" width="850"/>
+  <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.35) 50%, transparent 100%); z-index: 2;"></div>
+  <div style="position: relative; z-index: 3; padding: 2rem; color: #ffffff;">
+    <span class="badge" style="background: #1e293b; color: #fff; width: fit-content; margin-bottom: 0.5rem;">
+      服部半藏發祥地 ✕ 日本百大名城白鳳城 ✕ 阿修羅武打秀
+    </span>
+    <h1 style="color: #ffffff; font-size: 2.1rem; margin-bottom: 0.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">
+      🥷 三重・伊賀流忍者博物館 ✕ 伊賀上野城攻略
+    </h1>
+    <p style="color: #e2e8f0; font-size: 0.95rem; margin-bottom: 1rem;">
+      真鐵手裏劍對決 ✕ 女忍者機關屋敷 ✕ 30m 日本第一高石垣 ✕ 松本零士彩繪電車
+    </p>
+    <div class="action-toolbar" style="margin-top: 0;">
+      <a class="btn-action btn-maps" href="https://www.google.com/maps/search/?api=1&amp;query=Iga+Ninja+Museum" target="_blank">
+        📍 忍者博物館定位
+      </a>
+      <a class="btn-action btn-maps" href="https://www.google.com/maps/search/?api=1&amp;query=Iga+Ueno+Castle" target="_blank">
+        📍 伊賀上野城定位
+      </a>
+      <a class="btn-action" href="https://mimigo.tw/iga-ueno/" style="background: #0f172a; color: #fff; border: 1px solid #475569;" target="_blank">
+        🌐 Mimi韓伊賀忍者攻略 ➔
+      </a>
+      <a class="btn-action btn-photos" href="https://www.google.com/search?udm=2&amp;q=%E4%BC%8A%E8%B3%80%E6%B5%81%E5%BF%8D%E8%80%85%E5%8D%9A%E7%89%A9%E9%A4%A8+%E4%BC%8A%E8%B3%80%E4%B8%8A%E9%87%8E%E5%9F%8E" target="_blank">
+        🖼️ Google 實景相簿
+      </a>
+      <button class="btn-action btn-copy" onclick="copyText('伊賀流忍者博物館', this)">
+        📋 複製博物館日文
+      </button>
+      <button class="btn-action btn-copy" onclick="copyText('伊賀上野城', this)">
+        📋 複製上野城日文
+      </button>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-</section>
 <!-- 景點速覽資訊卡 -->
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
 <div style="background: #ffffff; border: 1px solid var(--border-color); padding: 1.1rem; border-radius: var(--radius-md);">
