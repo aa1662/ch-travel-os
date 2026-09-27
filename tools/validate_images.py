@@ -37,12 +37,39 @@ def validate_docs():
     total_images = 0
     blog_contracts = {}
     gallery_title_policies = {}
+    navigation_contracts = {}
     timeline_contracts = {}
     timeline_entries = {}
 
     for config_path in TRIPS_DIR.glob("*/blog-migration.json"):
         try:
             config = json.loads(config_path.read_text(encoding="utf-8"))
+            published_entries = {
+                entry["id"]: entry
+                for entry in config.get("entries", [])
+                if entry.get("status") != "draft"
+            }
+            reading_units = config.get("reading_units", [])
+            if reading_units:
+                unit_ids = [unit.get("id") for unit in reading_units]
+                unit_hrefs = [unit.get("href") for unit in reading_units]
+                story_entry_ids = [
+                    unit.get("entry_id")
+                    for unit in reading_units
+                    if unit.get("type") == "story"
+                ]
+                if any(not value for value in unit_ids + unit_hrefs + story_entry_ids):
+                    errors.append(f"[導覽契約欄位缺失] {config_path.relative_to(BASE_DIR)}")
+                if len(unit_ids) != len(set(unit_ids)):
+                    errors.append(f"[導覽單元 ID 重複] {config_path.relative_to(BASE_DIR)}")
+                if len(unit_hrefs) != len(set(unit_hrefs)):
+                    errors.append(f"[導覽單元 URL 重複] {config_path.relative_to(BASE_DIR)}")
+                valid_story_entry_ids = [entry_id for entry_id in story_entry_ids if entry_id]
+                if set(valid_story_entry_ids) != set(published_entries):
+                    errors.append(
+                        f"[導覽文章集合不一致] reading_units={sorted(valid_story_entry_ids)} "
+                        f"published={sorted(published_entries)} in {config_path.relative_to(BASE_DIR)}"
+                    )
             for entry in config.get("entries", []):
                 output_path = (BASE_DIR / entry["output"]).resolve()
                 if not output_path.is_relative_to(DOCS_DIR.resolve()):
@@ -54,6 +81,23 @@ def validate_docs():
                     "show_gallery_titles",
                     config.get("show_gallery_titles", True),
                 )
+                if reading_units and entry.get("status") != "draft":
+                    related_ids = entry.get("related", [])
+                    if len(related_ids) > 2:
+                        errors.append(f"[延伸閱讀超量] {entry['id']} 最多只能指定 2 篇")
+                    if len(related_ids) != len(set(related_ids)):
+                        errors.append(f"[延伸閱讀重複] {entry['id']}")
+                    if entry["id"] in related_ids:
+                        errors.append(f"[延伸閱讀指向自己] {entry['id']}")
+                    unknown_related = sorted(set(related_ids) - set(published_entries))
+                    if unknown_related:
+                        errors.append(
+                            f"[延伸閱讀文章不存在] {entry['id']}: {', '.join(unknown_related)}"
+                        )
+                    navigation_contracts[rel_output] = {
+                        "related_count": len(related_ids),
+                        "mobile_overview": config.get("mobile_overview"),
+                    }
         except (OSError, json.JSONDecodeError, KeyError) as exc:
             errors.append(f"[Blog Config 解析失敗] {config_path.relative_to(BASE_DIR)} ({exc})")
 
@@ -220,6 +264,38 @@ def validate_docs():
                     errors.append(f"[Editor Metadata 外洩] 正式 Blog 含 window.__PAGE_CONFIG__: {hf.relative_to(DOCS_DIR)}")
                 if "平行改寫預覽版" in content or "Place Preview" in content:
                     errors.append(f"[Preview 施工字樣外洩] 正式 Blog 含預覽術語: {hf.relative_to(DOCS_DIR)}")
+
+            if rel_html in navigation_contracts:
+                contract = navigation_contracts[rel_html]
+                navigation_count = len(re.findall(
+                    r'class=["\'][^"\']*\barticle-navigation\b',
+                    content,
+                    re.IGNORECASE,
+                ))
+                if navigation_count != 1:
+                    errors.append(
+                        f"[文章導覽數量錯誤] 預期 1 組、實際 {navigation_count} 組 in {hf.relative_to(DOCS_DIR)}"
+                    )
+                related_count = len(re.findall(
+                    r'class=["\'][^"\']*\brelated-story-card\b',
+                    content,
+                    re.IGNORECASE,
+                ))
+                if related_count != contract["related_count"]:
+                    errors.append(
+                        f"[延伸閱讀數量錯誤] 預期 {contract['related_count']}、實際 {related_count} "
+                        f"in {hf.relative_to(DOCS_DIR)}"
+                    )
+                if "article-global-link" not in content:
+                    errors.append(f"[全球旅程入口缺失] {hf.relative_to(DOCS_DIR)}")
+                mobile_overview = contract.get("mobile_overview")
+                if mobile_overview:
+                    expected_mobile = (
+                        f'<span class="dock-icon">{mobile_overview["icon"]}</span>'
+                        f'\n      <span>{mobile_overview["label"]}</span>'
+                    )
+                    if expected_mobile not in content:
+                        errors.append(f"[手機旅程總覽標示錯誤] {hf.relative_to(DOCS_DIR)}")
 
             if rel_html in page_contracts:
                 canonical_match = re.search(r'<link\s+rel=["\']canonical["\']\s+href=["\']([^"\']+)["\']', content, re.IGNORECASE)

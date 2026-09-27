@@ -1,8 +1,72 @@
 {
+  "schema_version": 2,
   "trip": "2024-australia",
   "dest": "2024-australia",
   "journey_title": "🇦🇺 2024 澳洲漫遊記",
+  "brand_title": "🧭 CH x Travel",
   "nav_slot_3_html": "<li><a href=\"../index.html#stories\">📖 澳洲全系列</a></li>",
+  "article_nav_links": [
+    {
+      "href": "../../index.html",
+      "label": "🌍 全球旅程"
+    },
+    {
+      "href": "../index.html",
+      "label": "🇦🇺 澳洲總覽"
+    },
+    {
+      "href": "../index.html#stories",
+      "label": "📖 全系列"
+    }
+  ],
+  "mobile_overview": {
+    "href": "../index.html",
+    "icon": "🇦🇺",
+    "label": "澳洲總覽"
+  },
+  "reading_units": [
+    {
+      "id": "day-01-02",
+      "type": "story",
+      "entry_id": "day-01-02",
+      "href": "blog/sydney-harbour-and-gulls.html",
+      "title": "Day 01-02 · 雪梨港、魚市場與海鷗突襲"
+    },
+    {
+      "id": "day-03-04",
+      "type": "story",
+      "entry_id": "day-03-04",
+      "href": "blog/sydney-skyline-and-lazy-zoo.html",
+      "title": "Day 03-04 · 雪梨天際線與慵懶動物園"
+    },
+    {
+      "id": "day-05-interlude",
+      "type": "interlude",
+      "href": "index.html#interlude",
+      "title": "Day 05 · 雪梨轉往墨爾本中場特刊"
+    },
+    {
+      "id": "day-06",
+      "type": "story",
+      "entry_id": "day-06",
+      "href": "blog/yarra-valley-wine-and-grassland.html",
+      "title": "Day 06 · 亞拉河谷、琴酒與大草原"
+    },
+    {
+      "id": "day-07",
+      "type": "story",
+      "entry_id": "day-07",
+      "href": "blog/puffing-billy-and-fairy-penguins.html",
+      "title": "Day 07 · 普芬比利與菲利普島企鵝"
+    },
+    {
+      "id": "day-08",
+      "type": "story",
+      "entry_id": "day-08",
+      "href": "blog/sovereign-hill-gold-rush.html",
+      "title": "Day 08 · 疏芬山淘金鎮"
+    }
+  ],
   "show_gallery_titles": false,
   "entries": [
     {
@@ -15,10 +79,10 @@
       "footer_center": "gallery",
       "og_url": "https://chxtravel.com/2024-australia/blog/sydney-harbour-and-gulls.html",
       "og_image": "https://chxtravel.com/2024-australia/images/day-01/20241027_172248-desktop-1200w.webp",
-      "prev_link": null,
-      "prev_title": null,
-      "next_link": "sydney-skyline-and-lazy-zoo.html",
-      "next_title": "Day 03-04 · 46 樓會議室的高空震撼：俯瞰雪梨全景，與動物園全員極致躺平日記",
+      "related": [
+        "day-06",
+        "day-08"
+      ],
       "gallery_groups": [
         {
           "id": "sydney-harbour-landscape",
@@ -292,10 +356,10 @@
       "output": "docs/2024-australia/blog/sydney-skyline-and-lazy-zoo.html",
       "image_folder": "day-03-04",
       "footer_center": "gallery",
-      "prev_link": "sydney-harbour-and-gulls.html",
-      "prev_title": "Day 01-02 · 雪梨出差變地陪：48小時專案驗收，擺平空中黑幫突襲",
-      "next_link": "../index.html#interlude",
-      "next_title": "Day 05 · 四千元拯救腰椎，十澳幣買到全車最孤獨的 Myki",
+      "related": [
+        "day-07",
+        "day-08"
+      ],
       "preserve_gallery_groups": true,
       "gallery_groups": [
         {
@@ -493,10 +557,10 @@
       "footer_center": "gallery",
       "og_url": "https://chxtravel.com/2024-australia/blog/yarra-valley-wine-and-grassland.html",
       "og_image": "https://chxtravel.com/2024-australia/images/day-06/20241101_151456-desktop-1200w.webp",
-      "prev_link": "../index.html#interlude",
-      "prev_title": "Day 05 · 四千元拯救腰椎，十澳幣買到全車最孤獨的 Myki",
-      "next_link": "puffing-billy-and-fairy-penguins.html",
-      "next_title": "Day 07 · 差點錯過普芬比利，最後等到企鵝回家",
+      "related": [
+        "day-01-02",
+        "day-08"
+      ],
       "gallery_groups": [
         {
           "id": "yarra-valley-landscape",
@@ -807,10 +871,10 @@
       "footer_center": "gallery",
       "og_url": "https://chxtravel.com/2024-australia/blog/puffing-billy-and-fairy-penguins.html",
       "og_image": "https://chxtravel.com/2024-australia/images/day-07/20241102_124800-desktop-1200w.webp",
-      "prev_link": "yarra-valley-wine-and-grassland.html",
-      "prev_title": "Day 06 · 聽妹妹的話成行亞拉河谷",
-      "next_link": "sovereign-hill-gold-rush.html",
-      "next_title": "Day 08 · 搭火車闖進疏芬山：淘金、下礦坑，還遇見神祕老奶奶",
+      "related": [
+        "day-01-02",
+        "day-03-04"
+      ],
       "gallery_groups": [
         {
           "id": "puffing-billy-landscape",
@@ -1281,10 +1345,10 @@
       "footer_center": "gallery",
       "og_url": "https://chxtravel.com/2024-australia/blog/sovereign-hill-gold-rush.html",
       "og_image": "https://chxtravel.com/2024-australia/images/day-08/20241103_123308-desktop-1200w.webp",
-      "prev_link": "puffing-billy-and-fairy-penguins.html",
-      "prev_title": "Day 07 · 差點錯過普芬比利，最後等到企鵝回家",
-      "next_link": "../index.html",
-      "next_title": "🎉 2024 澳洲漫遊記 · 全系列完結",
+      "related": [
+        "day-06",
+        "day-01-02"
+      ],
       "gallery_groups": [
         {
           "id": "sovereign-hill-landscape",

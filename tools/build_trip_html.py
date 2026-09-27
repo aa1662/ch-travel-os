@@ -5,7 +5,7 @@ CH Travel OS 2.0 - Config-Driven Blog HTML Builder
 依據 trips/<trip>/blog-migration.json 進行確定性批次構建：
 1. 讀取 SSoT 模板與 image-manifest.json
 2. 結構化解析 <img> 屬性，完整注入 width/height (CLS=0)、srcset、lazy loading (無重複屬性)
-3. 嚴格對齊章節導覽鏈結 (prev_link / next_link)，未發布天數以非 <a> 標籤優雅降級
+3. 由 reading_units 契約產生上一篇／下一篇與延伸閱讀；舊旅程仍相容 prev_link / next_link
 4. 統一社群 OG/Twitter 元數據
 5. 嚴格模式：遇任何 source 遺失或圖片 miss 立即退出 (non-zero exit)
 6. 若存在 trips/<trip>/sources/index.html，全量構建時於同一筆交易同步 Journey Hub
@@ -203,6 +203,182 @@ def render_gallery_registry(item, img_folder, errors, show_gallery_titles=True):
     return '<div class="gallery-registry" hidden aria-hidden="true">\n' + "\n".join(group_html) + "\n      </div>"
 
 
+def build_reading_navigation(config, all_entries, errors):
+    """驗證並展開 Journey 閱讀順序；未 opt-in 的舊 config 回傳空映射。"""
+    units = config.get("reading_units", []) if isinstance(config, dict) else []
+    if not units:
+        return {}
+
+    entry_ids = {
+        entry["id"] for entry in all_entries if entry.get("status") != "draft"
+    }
+    seen_unit_ids = set()
+    seen_hrefs = set()
+    story_entry_ids = set()
+    navigation = {}
+
+    for index, unit in enumerate(units):
+        unit_id = unit.get("id", "").strip()
+        href = unit.get("href", "").strip()
+        title = unit.get("title", "").strip()
+        if not unit_id or not href or not title:
+            errors.append("reading_units 每個單元都必須包含 id、href 與 title")
+            continue
+        if unit_id in seen_unit_ids:
+            errors.append(f"reading_units id 重複: {unit_id}")
+        if href in seen_hrefs:
+            errors.append(f"reading_units href 重複: {href}")
+        if href.startswith(("/", "http://", "https://")) or ".." in Path(href).parts:
+            errors.append(f"reading_units href 必須是 Journey 根目錄相對路徑: {href}")
+        seen_unit_ids.add(unit_id)
+        seen_hrefs.add(href)
+
+        entry_id = unit.get("entry_id")
+        if unit.get("type") == "story":
+            if not entry_id:
+                errors.append(f"reading_units story 缺少 entry_id: {unit_id}")
+                continue
+            if entry_id not in entry_ids:
+                errors.append(f"reading_units 指向不存在或未發布的 entry: {entry_id}")
+            if entry_id in story_entry_ids:
+                errors.append(f"reading_units entry_id 重複: {entry_id}")
+            story_entry_ids.add(entry_id)
+            navigation[entry_id] = {
+                "unit": unit,
+                "previous": units[index - 1] if index > 0 else None,
+                "next": units[index + 1] if index + 1 < len(units) else None,
+            }
+
+    missing_entries = sorted(entry_ids - story_entry_ids)
+    extra_entries = sorted(story_entry_ids - entry_ids)
+    if missing_entries:
+        errors.append(f"reading_units 缺少已發布文章: {', '.join(missing_entries)}")
+    if extra_entries:
+        errors.append(f"reading_units 包含未知文章: {', '.join(extra_entries)}")
+    return navigation
+
+
+def journey_href_to_article_href(href):
+    """將 Journey 根目錄相對路徑轉成 blog 頁面的相對路徑。"""
+    if href.startswith("blog/"):
+        return href[len("blog/"):]
+    return f"../{href}"
+
+
+def render_article_header(config, journey_title):
+    brand_title = config.get("brand_title", "🧭 CH Travel OS")
+    nav_links = config.get("article_nav_links")
+    if nav_links:
+        links_html = "\n".join(
+            f'        <li><a href="{html_escape(link["href"])}">{html_escape(link["label"])}</a></li>'
+            for link in nav_links
+        )
+    else:
+        slot_3 = config.get(
+            "nav_slot_3_html",
+            '<li><a href="../index.html#stories">📖 深度遊記</a></li>',
+        )
+        links_html = "\n".join((
+            '        <li><a href="../../index.html">🌍 全球旅程</a></li>',
+            '        <li><a href="../index.html#stories">📖 深度遊記</a></li>',
+            f"        {slot_3}",
+        ))
+
+    return f'''<nav class="site-nav">
+    <div class="container">
+      <div class="brand-group">
+        <a href="../../index.html" class="brand-link">
+          <span>{html_escape(brand_title)}</span>
+        </a>
+        <span class="brand-separator">/</span>
+        <a href="../index.html" class="brand-series">
+          <span>{html_escape(journey_title)}</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+{links_html}
+      </ul>
+      <button class="nav-share-btn btn-share" type="button"><span>📤 分享</span></button>
+    </div>
+  </nav>'''
+
+
+def render_related_stories(item, entries_by_id, images_dict, errors):
+    related_ids = item.get("related", [])
+    if not related_ids:
+        return ""
+    if len(related_ids) > 2:
+        errors.append(f"{item['id']}: related 最多只能指定 2 篇")
+        return ""
+    if len(related_ids) != len(set(related_ids)):
+        errors.append(f"{item['id']}: related 不得重複")
+        return ""
+
+    cards = []
+    for related_id in related_ids:
+        related = entries_by_id.get(related_id)
+        if not related or related.get("status") == "draft":
+            errors.append(f"{item['id']}: related 指向不存在或未發布的文章: {related_id}")
+            continue
+        if related_id == item["id"]:
+            errors.append(f"{item['id']}: related 不得指向自己")
+            continue
+
+        image_url = related.get("og_image", "")
+        image_filename = image_url.rsplit("/", 1)[-1]
+        image_folder = related.get("image_folder", "")
+        derivative = None
+        for manifest_key, manifest_item in images_dict.items():
+            if not manifest_key.startswith(f"{image_folder}/"):
+                continue
+            derivatives = manifest_item.get("derivatives", [])
+            if any(d.get("filename") == image_filename for d in derivatives):
+                derivative = next(
+                    (d for d in derivatives if d.get("profile") == "thumb"),
+                    next((d for d in derivatives if d.get("filename") == image_filename), None),
+                )
+                break
+        if not derivative:
+            errors.append(f"{item['id']}: related 封面找不到 Manifest 紀錄: {related_id}")
+            continue
+
+        related_href = Path(related["output"]).name
+        related_title = html_escape(related["title"])
+        cards.append(f'''        <a class="related-story-card" href="{html_escape(related_href)}">
+          <img src="../images/{html_escape(image_folder)}/{html_escape(derivative['filename'])}" width="{derivative['width']}" height="{derivative['height']}" loading="lazy" decoding="async" alt="{related_title}">
+          <span class="related-story-copy">
+            <span class="related-story-kicker">延伸閱讀</span>
+            <span class="related-story-title">{related_title}</span>
+            <span class="related-story-arrow" aria-hidden="true">→</span>
+          </span>
+        </a>''')
+
+    if not cards:
+        return ""
+    return f'''      <section class="related-stories" aria-labelledby="related-stories-title">
+        <h2 id="related-stories-title">同系列還可以看</h2>
+        <div class="related-story-grid">
+{chr(10).join(cards)}
+        </div>
+      </section>'''
+
+
+def replace_mobile_overview(html_content, mobile_overview):
+    if not mobile_overview:
+        return html_content
+    replacement = f'''\\1<a href="{html_escape(mobile_overview['href'])}" class="dock-item">
+      <span class="dock-icon">{html_escape(mobile_overview['icon'])}</span>
+      <span>{html_escape(mobile_overview['label'])}</span>
+    </a>'''
+    return re.sub(
+        r'(<div class="mobile-dock">\s*)<a href="[^"]*" class="dock-item">\s*'
+        r'<span class="dock-icon">[^<]*</span>\s*<span>[^<]*</span>\s*</a>',
+        replacement,
+        html_content,
+        count=1,
+    )
+
+
 def sync_public_core_assets():
     docs_core = DOCS_DIR / "core"
     for parts in PUBLIC_CORE_FILES:
@@ -225,6 +401,9 @@ def build_trip(trip_slug="2026-germany", dest_slug=None, entry_id=None):
     with open(config_path, "r", encoding="utf-8") as f:
         config_data = json.load(f)
         all_entries = config_data.get("entries", config_data) if isinstance(config_data, dict) else config_data
+
+    entries_by_id = {item["id"]: item for item in all_entries}
+    reading_navigation = build_reading_navigation(config_data, all_entries, errors)
 
     entries = [
         item for item in all_entries
@@ -303,28 +482,9 @@ def build_trip(trip_slug="2026-germany", dest_slug=None, entry_id=None):
         html_content = re.sub(r'src="(?:\.\./)*js/app\.js(?:\?[^"]*)?"', 'src="../../core/js/app.js"', html_content)
         html_content = re.sub(r'src="(?:\.\./)*js/main\.js(?:\?[^"]*)?"', 'src="../../core/js/main.js"', html_content)
 
-        # 1.1 統一文章頂部導覽列 (Standard Breadcrumb Brand & 4 Slots)
+        # 1.1 統一文章頂部導覽列
         journey_title = config_data.get("journey_title", trip_slug) if isinstance(config_data, dict) else trip_slug
-        slot_3 = config_data.get("nav_slot_3_html", '<li><a href="../index.html#stories">📖 深度遊記</a></li>') if isinstance(config_data, dict) else '<li><a href="../index.html#stories">📖 深度遊記</a></li>'
-        standard_article_nav = f'''  <nav class="site-nav">
-    <div class="container">
-      <div class="brand-group">
-        <a href="../../index.html" class="brand-link">
-          <span>🧭 CH Travel OS</span>
-        </a>
-        <span class="brand-separator">/</span>
-        <a href="../index.html" class="brand-series">
-          <span>{journey_title}</span>
-        </a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="../../index.html">🌍 全球旅程</a></li>
-        <li><a href="../index.html#stories">📖 深度遊記</a></li>
-        {slot_3}
-      </ul>
-      <button class="nav-share-btn btn-share" type="button"><span>📤 分享</span></button>
-    </div>
-  </nav>'''
+        standard_article_nav = render_article_header(config_data, journey_title)
         html_content = re.sub(r'<nav class="site-nav">[\s\S]*?</nav>', standard_article_nav.strip(), html_content)
 
         # 2. 轉換圖片為 WebP 規格
@@ -361,14 +521,47 @@ def build_trip(trip_slug="2026-germany", dest_slug=None, entry_id=None):
             )
 
         # 4. 建立嚴格無 404 的篇章導航區塊 (Footer Navigation)
-        if item.get("prev_link"):
+        reading_item = reading_navigation.get(item["id"])
+        if reading_item:
+            previous_unit = reading_item["previous"]
+            next_unit = reading_item["next"]
+            if previous_unit:
+                prev_html = (
+                    f'<a class="article-linear-link article-linear-link-prev" '
+                    f'href="{html_escape(journey_href_to_article_href(previous_unit["href"]))}">'
+                    f'<span class="article-linear-label">上一篇</span>'
+                    f'<span>← {html_escape(previous_unit["title"])}</span></a>'
+                )
+            else:
+                prev_html = (
+                    '<a class="article-linear-link article-linear-link-prev" href="../index.html#stories">'
+                    '<span class="article-linear-label">系列起點</span>'
+                    '<span>← 澳洲旅程總覽</span></a>'
+                )
+
+            if next_unit:
+                next_html = (
+                    f'<a class="article-linear-link article-linear-link-next" '
+                    f'href="{html_escape(journey_href_to_article_href(next_unit["href"]))}">'
+                    f'<span class="article-linear-label">下一篇</span>'
+                    f'<span>{html_escape(next_unit["title"])} →</span></a>'
+                )
+            else:
+                next_html = (
+                    '<a class="article-linear-link article-linear-link-next" href="../index.html">'
+                    '<span class="article-linear-label">系列完結</span>'
+                    '<span>回到澳洲旅程總覽 →</span></a>'
+                )
+        elif item.get("prev_link"):
             p_title = item["prev_title"]
             p_text = p_title if (p_title.startswith("←") or p_title.startswith("上一篇")) else f"← 上一篇：{p_title}"
             prev_html = f'<a href="{item["prev_link"]}" style="font-weight: 600; color: var(--primary); font-size: 0.95rem;">{p_text}</a>'
         else:
             prev_html = '<a href="../index.html#itinerary" style="font-weight: 600; color: var(--primary); font-size: 0.95rem;">← 🗺️ 行程起點 · 旅程總覽</a>'
 
-        if item.get("next_link"):
+        if reading_item:
+            pass
+        elif item.get("next_link"):
             n_title = item["next_title"]
             n_text = n_title if (n_title.startswith("🎉") or n_title.startswith("下一篇")) else f"下一篇：{n_title}"
             if not n_text.endswith("→"):
@@ -391,7 +584,23 @@ def build_trip(trip_slug="2026-germany", dest_slug=None, entry_id=None):
             timeline_fallback_link = item.get("timeline_fallback_link", "../index.html#itinerary")
             center_html = f'<a href="{timeline_fallback_link}" class="badge badge-gold" style="font-size: 0.9rem; padding: 0.5rem 1rem; text-decoration: none;">🗺️ 行程總覽</a>'
 
-        new_nav_block = f'''<!-- 篇章導覽按鈕 -->
+        if reading_item:
+            related_html = render_related_stories(item, entries_by_id, images_dict, errors)
+            new_nav_block = f'''<!-- 篇章導覽按鈕 -->
+      <section class="article-navigation" aria-label="文章導覽">
+        <div class="article-linear-nav">
+          {prev_html}
+          <div class="article-footer-actions">
+            <a href="../index.html" class="article-overview-link">🇦🇺 澳洲旅程總覽</a>
+            {center_html}
+          </div>
+          {next_html}
+        </div>
+{related_html}
+        <a class="article-global-link" href="../../index.html">回到 CH x Travel 全球旅程 →</a>
+      </section>'''
+        else:
+            new_nav_block = f'''<!-- 篇章導覽按鈕 -->
       <div style="display: flex; justify-content: space-between; align-items: center; margin: 3.5rem 0 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); flex-wrap: wrap; gap: 1rem;">
         {prev_html}
         {center_html}
@@ -412,6 +621,10 @@ def build_trip(trip_slug="2026-germany", dest_slug=None, entry_id=None):
         if not timeline_physical.exists():
             timeline_fallback_link = item.get("timeline_fallback_link", "../index.html#itinerary")
             html_content = html_content.replace(f'href="../day-{day_num}.html"', f'href="{timeline_fallback_link}"')
+        html_content = replace_mobile_overview(
+            html_content,
+            config_data.get("mobile_overview") if isinstance(config_data, dict) else None,
+        )
 
         compiled_outputs[out_file] = (item["id"], html_content)
 
