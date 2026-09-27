@@ -1,0 +1,24 @@
+# 原始素材與私人照片：不得透過 C2C 提供給 ChatGPT
+masters/
+**/masters/
+**/takeout/
+
+# 本機工作區、暫存、備份與工具狀態
+scratch/
+output/
+**/.backups/
+*.bak
+*.tmp
+.wrangler/
+.playwright-cli/
+.playwright-mcp/
+
+# 編輯器與作業系統產物
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# C2C 測試只開放指定 Markdown；未來若放入其他測試素材，預設不外送
+tests/**
+!tests/c2c-test.md

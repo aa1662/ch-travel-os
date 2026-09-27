@@ -4,6 +4,16 @@
 
 ---
 
+## 0. C2C 觸發詞
+
+- 當使用者訊息以 `c2c:` 開頭時，啟用 `.agents/c2c-blog-workflow.md` 定義的 Codex with ChatGPT 協作流程。
+- `c2c:` 後方文字視為本次任務目標；若沒有內容，先詢問要處理的任務。
+- ChatGPT 負責分析、規劃與 Review；Codex 負責讀寫檔案、執行命令、測試與 Git。
+- `c2c:` 不包含 `commit`、`push`、`deploy` 或 `publish` 授權；這些操作仍須依當次明確範圍另行確認。
+- 未使用 `c2c:` 時，不應自行啟動 C2C，除非使用者以其他文字明確要求使用 Codex with ChatGPT。
+
+---
+
 ## 1. 核心定位與架構邊界 (SSoT)
 
 1. **引擎與內容完全解耦 (Separation of Engine & Content)**：
