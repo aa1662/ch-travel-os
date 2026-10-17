@@ -2,6 +2,8 @@
 
 > 本文件定義未來內容產品的方向、里程碑與驗收條件。
 > 原始 Takeout 貼文與媒體數量必須經由審計腳本重新 audit，不得直接以舊統計作為 SSoT。
+>
+> 2026-10-17：本輪只迭代往後製作流程；既有文章、URL、圖片與入口不因新規則回改。第 7 節保留里程碑脈絡，不是重新執行舊遷移的指令。新篇依 Production Playbook 與本篇 plan 最新確認執行。
 
 ## 1. 品牌定位
 
@@ -13,6 +15,8 @@ CH Travel OS 的品牌核心是個人旅行誌，不是即時旅遊資料庫：
 
 - **品牌層（B）**：個人經驗、重返、人物關係、移動過程與旅行後留下的感受。
 - **搜尋層（A）**：造訪當時親自使用過的交通、停車、路線、票價與營業資訊，作為讀者找到故事的入口。
+
+也容納照片主導的輕鬆小品。作者喜歡的攝影與短段觀察即可成立，不要求每篇都有重返、家庭、重大轉折或深刻心得；在看圖口述與 grillme 時逐篇討論。
 
 若兩者衝突，以品牌層為優先。不得為了增加篇數或搜尋流量，自動把每一日、每則 IG 或每個景點擴寫成文章。
 
@@ -71,7 +75,7 @@ Journey path 負責識別一次完整旅程，Blog filename 只描述文章的 P
 - Day 保留於 Blog entry id、Timeline filename、Journey 導覽順序、圖片 day folder 與頁面顯示標籤。
 - 同一 Place 在不同 Journey 可有不同文章；Journey path 提供年份與旅程語境。
 - 不為 SEO 複製內容相近的純 Place 文章，避免 duplicate content 與維護分裂。
-- 目前站點尚未正式公開，本輪 URL migration 採 clean rename，不建立 redirect 或相容頁。
+- 早期未公開階段的 clean rename 是歷史遷移決策，不適用於目前所有 URL。另行授權更名時先確認實際公開狀態與既有連結；本次流程改版不變更 URL。
 - 精選故事資料由各 Journey Hub 擁有；`core/js/app.js` 只負責隨機抽選、DOM render 與共用互動。
 
 ## 4. 編輯與探索架構
@@ -122,6 +126,7 @@ Journey path 負責識別一次完整旅程，Blog filename 只描述文章的 P
 
 - 使用「文學 H1＋描述副標＋SEO title＋穩定 canonical URL」。
 - IG 卡片、長篇散文、Before／After、照片短句、地圖、圖集與實戰筆記都是可選呈現方式，不是每篇必填模板。
+- IG 欄數、圖片版本與配置不設全站固定值；由集中候選照片開始看圖口述、同步選圖，潤飾前討論寫法，最終選圖定案後才轉檔排版。
 - 實用資訊只描述造訪當時的第一手紀錄，例如「2026 年 2 月造訪時」。
 - 不承諾最新票價、即時營業時間或完整攻略，也不建立外部定期查核責任。
 - AI 寫作必須遵守 `EDITORIAL_STYLE_GUIDE.md`。
@@ -248,7 +253,7 @@ Germany 完成後，再評估香港重返、澳洲、台灣分段環島、義大
 - 未發布內容沒有可點擊的 404 入口。
 - 公開目錄沒有原始照片、影片、GPS／EXIF 或未核准人物內容。
 - 本機瀏覽器 UAT 與 `python tools/validate_images.py` 100% 通過。
-- Commit、push 與 GitHub Pages 發布各自取得當下範圍的明確授權。
+- Commit、push 與正式部署依當下範圍取得授權；託管方式依 `CLOUDFLARE_PAGES_DEPLOYMENT.md`，不沿用歷史 GitHub Pages 描述。
 
 ## 8. 非目標
 
@@ -262,10 +267,9 @@ Germany 完成後，再評估香港重返、澳洲、台灣分段環島、義大
 - 因框架流行而重寫現有 zero-build 架構。
 - 在內容底帳完成前承諾固定文章總數。
 
-## 9. 下一個可執行步驟
+## 9. 後續新遊記的下一步
 
-1. 依 `url_migration.md` 執行 Journey Namespace and URL Migration。
-2. 將 2026 Journey 從 `docs/germany/` 搬至 `docs/2026-germany/`，並建立最小 Germany Country Hub。
-3. 將 16 篇 Blog clean rename 為 Journey-scoped Place／Theme URL。
-4. 收斂 builder、editor server、validator 與 Journey stories ownership。
-5. 完成圖片 cache、全站 validator 與本機瀏覽器 UAT 後，再獨立取得 commit／push 授權。
+1. 作者提供一個集中候選照片的私人資料夾。
+2. 看圖口述、同步選圖，潤飾前先討論本篇寫法與呈現。
+3. 在既有 plan 置頂記錄最新決策；定案後只為入選照片轉檔，再組版與驗收。
+4. 已完成 Journey、文章與 URL 保持原樣；歷史遷移與精修紀錄不自動成為新任務。

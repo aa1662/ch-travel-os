@@ -1,19 +1,19 @@
 # 澳洲遊記新篇範型（給 Gemini）
 
-新篇先讀根目錄 `AGENTS.md`、`EDITORIAL_STYLE_GUIDE.md`、`TRAVEL_BLOG_PRODUCTION_PLAYBOOK.md`，再讀本篇口述、IG 原文、照片 audit、`plan.md` 與 `photo-selections/<entry-id>.json`。以 `blog-source.template.html` 複製成 `sources/blog/<slug>.html`，替換所有 `{{...}}` 佔位符；不要從已發布的 `docs/` 頁面反向起稿。參照已驗收的同 Journey 文章確認視覺節奏，但不要複製其事件、笑點或多餘的 inline CSS。
+2026-10-17 更新：只供後續新篇組版參考，不回改已完成澳洲文章。先讀根目錄 `AGENTS.md`、`EDITORIAL_STYLE_GUIDE.md`、`TRAVEL_BLOG_PRODUCTION_PLAYBOOK.md` 與本篇 plan 最新決策。`blog-source.template.html` 是元件骨架，不是固定寫法、模組數或 IG 欄數；在口述與選圖討論完成後才按需要使用，不從 `docs/` 反向起稿。
 
 ## 開工順序
 
-1. **內容**：先寫出文章命題、事件順序、正文／IG 原文／讀者筆記的界線。IG 貼文只用 Takeout 原文；作者未確認的記憶和照片內容不得補成事實。適度喜劇加工可保留在語氣與無傷大雅對話，笑點優先落在作者自己身上。
-2. **建立可選圖的文章草稿**：先依 `blog-source.template.html` 建立 source，並在 `blog-migration.json` 登錄唯一 `id/title/source/output/image_folder`，並設 `"status": "draft"`。這讓 editor 能選到新篇。模板中的圖片佔位符此時不能進行 build，也不要把新篇加進公開導覽；待照片定案後才補齊 source、config，移除 `status: draft` 並建立公開頁面。
-3. **選圖**：作者在本機 editor 的「選圖與燈箱」先標記 `body` 與 `gallery`。`status=draft` 時，只能使用本機低解析預覽，不得把 master 路徑、預覽 API 或未轉檔照片寫入 HTML。作者按「確認選圖並統一轉 WebP」後，清單為 `finalized`；只引用其已產生的公開 WebP。`body` 是正文候選，仍須逐張對準段落；`gallery` 是燈箱入選，仍須按拍攝時間與橫直分組。兩欄可同時為 true，燈箱只註冊一次。已有 IG 歷史貼文如需完整呈現，仍以本篇已核准的 IG 清單和隱私規則為準。
-4. **工程**：替換 source 中所有佔位符，在 `blog-migration.json` 補齊 `og_*` 與 `gallery_groups`。`gallery_groups` 只含作者選入燈箱且核准的照片；每個 `image_id` 全頁唯一，橫直分組各自依拍攝時間升冪。正文、Hero、IG 縮圖只用 `.gallery-opener[data-gallery-open]` 指向 registry；若作者選為正文但不進燈箱，用沒有 opener 的圖片呈現。不得讓未產生頁面出現 404 導覽連結。
-5. **版面**：橫圖使用 `.fullwidth-landscape-wrap` 滿寬，彼此間至少隔一至兩段有內容推進的正文；直圖使用 `.story-split`，框內填滿且 `object-position` 對準主體，必要時調整容器比例。IG 縮圖桌機四欄、手機兩欄；badge 只寫日期與「IG 發布紀錄」，不寫死張數。Bento、IG 卡、照片札記皆按故事需要取捨，不套固定篇數或段數。
-6. **驗證**：執行 `python tools/build_trip_html.py --trip 2024-australia --dest 2024-australia --entry <entry-id>`、`python tools/validate_images.py`、`git diff --check`，再做桌機及手機視覺檢查，逐張核對圖說與像素畫面。`masters/` 永不進 `docs/` 或 Git。暫時腳本只放 `scratch/<task>/`，完成後清理；可重用工具放 `tools/`。不要自行 commit、push、deploy。
+1. **看圖與口述**：由作者集中候選照片的資料夾看圖，邊聽故事邊一起選圖，不先全量轉縮圖。只有需要時才作私人低解析預覽。
+2. **討論寫法**：潤飾前先 grillme，確認本篇型態、分篇、語氣與呈現。IG 欄數、點開原圖／調色版及 caption 逐篇決定，記入 plan，不硬套澳洲或其他篇配置。IG 原文與新正文分清楚，保留作者核准的適度藝術加工。
+3. **確認後轉檔**：母稿及最終選圖確認後，僅為入選圖製作公開 WebP；先核對 pipeline 輸入範圍，不能只用 `--pilot-day` 假定已排除未選圖。直接討論的選圖引用本篇 plan／mapping；若使用 Editor，才建立必要 `status: draft` scaffold、準備 `masters/` 工作副本，並用 `photo-selections` 保存。現有 Editor 不等於任意資料夾匯入器，不為開始口述而先建 source/config。
+4. **工程**：定案後補齊 source、`blog-migration.json`、`og_*` 與 `gallery_groups`，移除完成篇的 draft 標記。模板佔位符不進公開 build；gallery 只收核准圖片版本、唯一註冊且順序可追溯。正文圖若不入燈箱則不掛 opener，不暴露未生成頁面的入口。
+5. **版面**：沿用共用元件，依本篇決策組合 Hero、正文、IG、照片札記、gallery 與可選 Bento。檢查照片焦點、圖文平衡、字體、header/footer 與手機互動，不以固定段數或欄數代替驗收。
+6. **驗證**：執行單篇 builder、validator、diff check 與桌機／手機視覺檢查。小修不重跑新篇流程；核准文字與選圖不被 gallery 或 caption 修正連帶改動。原圖不公開、不進 Git；commit、push、deploy 依當次授權執行。
 
 ## 完成前自檢
 
-- 文章沒有 `{{...}}` 佔位符、虛構場景、錯誤時間或 AI 套話。
-- `photo-selections/<entry-id>.json` 的 `body`／`gallery` 決策已逐一對應到正文與 migration config；未入選照片沒有被公開。
-- 每張照片的 caption、alt、畫面和段落相符；Hero、正文、IG 可重用同一影像，但 Lightbox registry 不重複。
-- Source、config、manifest、docs 的連結一致，所有驗證通過後才交作者 UAT。
+- 本篇母稿、最終選圖及呈現決策已確認；未入選候選未轉為公開資產。
+- 最終清單／mapping（使用 Editor 時含 `photo-selections/<entry-id>.json`）已對應正文與 migration config；不假造 Editor 已儲存。
+- 文章沒有未替換佔位符；caption、alt、畫面與段落相符。作者選定的原圖／IG 版本及燈箱行為正確。
+- Source、config、manifest、docs 一致；自動與視覺驗證通過後才交作者集中 UAT。新流程不修改任何已完成文章。

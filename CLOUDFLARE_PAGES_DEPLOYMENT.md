@@ -21,11 +21,13 @@
 
 Cloudflare Pages 專案 `ch-travel` 目前採用 **Direct Upload (Wrangler)** 模式（Git Provider: No）。
 
-本地一鍵發布指令：
+發布前核實實際模式；本文件既有記錄為 Direct Upload，因此 Git push 是 GitHub 保存，不應假設會自動發布或空等 Git integration。已授權發布時，從明確目標 commit 建立乾淨 export／detached worktree，僅上傳該版本的 `docs/`，不可直接部署含無關 dirty changes 的工作目錄。若實際模式已變更，先釐清並更新指引。
+
+以下指令在**已驗證的乾淨 export／worktree 根目錄**執行，且需當次發布授權：
 ```bash
 npx --yes wrangler pages deploy docs --project-name=ch-travel --branch=master
 ```
-> 註：執行後約 5~10 秒內完成全球 CDN 部署。
+> 完成後核對 deployment 與目標版本、live HTTP 200 及本次內容 fingerprint；指令返回成功不代替 live 驗證。不得因文件更新而實際部署。
 
 
 ---

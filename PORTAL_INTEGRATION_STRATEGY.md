@@ -1,7 +1,8 @@
 # 🗺️ CH Travel OS × Snaplog 統一門戶整合策略與決策紀錄 (Portal Integration Strategy)
 
 > **建立日期**：2026 年 8 月 30 日  
-> **文件定位**：記錄 CH Travel OS 與 Snaplog（Blogger 數位典藏）之整合管理決策、生命週期演進規範與託管發布策略，作為下一階段實施與長期維護的 SSoT 依據。
+> **文件定位**：早期整合策略與歷史決策紀錄。
+> **2026-10-17 狀態註記**：下文的待辦、託管與改寫 SOP 保留當時脈絡，不是現在的執行指令。新篇依 `TRAVEL_BLOG_PRODUCTION_PLAYBOOK.md`，編輯依 `EDITORIAL_STYLE_GUIDE.md`，部署依 `CLOUDFLARE_PAGES_DEPLOYMENT.md`；已完成文章不因流程改版回改。
 
 ---
 
