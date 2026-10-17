@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CH x Travel 日本旅程總覽：從 2023 東京出差散步，到 2026 關西盛夏的山林、寺院與家庭旅行。">
+  <meta property="og:site_name" content="CH x Travel">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="日本旅程｜東京、關西與歷年影像典藏">
+  <meta property="og:description" content="依年份收藏 CH 在日本走過的城市、山林、古寺與家庭旅行。">
+  <meta property="og:url" content="https://chxtravel.com/japan/">
+  <meta property="og:image" content="https://chxtravel.com/2026-osaka/images/day-03/20260826_163826-desktop-1200w.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://chxtravel.com/japan/">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <title>日本旅程｜東京、關西與歷年影像典藏</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Noto+Sans+TC:wght@400;500;700;900&amp;family=Outfit:wght@600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../core/css/style.css">
+  <style>
+    .japan-country-hub { background:#f7f5f0; color:var(--ink); }
+    .japan-country-hub .reading-progress { z-index:120; }
+    .japan-country-hub section[id] { scroll-margin-top:5.5rem; }
+
+    .country-hero {
+      position:relative;
+      min-height:600px;
+      height:72vh;
+      max-height:760px;
+      overflow:hidden;
+      background:#172934;
+    }
+    .country-hero-media { position:absolute; inset:0; display:grid; grid-template-columns:1fr 1fr; }
+    .country-hero-media::after {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(11,25,34,0.13) 12%, rgba(11,25,34,0.88) 100%);
+    }
+    .country-hero-media img { width:100%; height:100%; object-fit:cover; display:block; }
+    .country-hero-media img:first-child { object-position:center 55%; }
+    .country-hero-media img:last-child { object-position:center 58%; }
+    .country-hero-copy {
+      position:relative;
+      z-index:1;
+      display:flex;
+      min-height:inherit;
+      height:100%;
+      align-items:flex-end;
+      padding-top:5rem;
+      padding-bottom:4rem;
+      color:#fff;
+    }
+    .country-hero-copy-inner { max-width:850px; }
+    .country-hero h1 {
+      margin:0.55rem 0 0.85rem;
+      color:#fff;
+      font-family:var(--font-heading);
+      font-size:clamp(2.8rem, 6vw, 4.6rem);
+      line-height:1.08;
+      letter-spacing:-0.02em;
+      text-shadow:0 3px 22px rgba(0,0,0,0.7);
+    }
+    .country-hero p { max-width:720px; margin:0; color:rgba(255,255,255,0.95); font-size:1.12rem; line-height:1.8; text-shadow:0 2px 14px rgba(0,0,0,0.78); }
+    .country-hero-actions { display:flex; flex-wrap:wrap; gap:0.75rem; margin-top:1.45rem; }
+    .country-hero-actions a { display:inline-flex; align-items:center; min-height:44px; padding:0.68rem 1.2rem; border-radius:999px; font-weight:800; text-decoration:none; transition:transform .2s ease, box-shadow .2s ease; }
+    .country-hero-actions a:hover { transform:translateY(-2px); box-shadow:var(--shadow-md); }
+    .country-hero-actions .is-primary { background:var(--accent); color:var(--primary); }
+    .country-hero-actions .is-secondary { border:1px solid rgba(255,255,255,.72); background:rgba(14,32,42,.68); color:#fff; backdrop-filter:blur(8px); }
+
+    .country-main { max-width:1120px; margin:0 auto; padding:3.6rem 1.25rem 5rem; }
+    .country-intro { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(250px,.75fr); gap:2rem; padding:2.5rem 2.7rem; border:1px solid rgba(36,52,71,.08); border-radius:20px; background:#fff; box-shadow:0 8px 30px rgba(36,52,71,.06); }
+    .country-intro h2, .country-section-title { margin:.45rem 0 .9rem; color:var(--primary); font-family:var(--font-heading); line-height:1.3; }
+    .country-intro h2 { font-size:1.9rem; }
+    .country-intro p { margin:0; font-size:1.02rem; line-height:1.9; }
+    .country-facts { display:grid; gap:.8rem; align-content:start; }
+    .country-fact { padding:1rem 1.05rem; border-radius:12px; background:#f3f0ea; }
+    .country-fact span { display:block; color:var(--text-muted); font-size:.77rem; font-weight:800; letter-spacing:.05em; text-transform:uppercase; }
+    .country-fact strong { display:block; margin-top:.22rem; color:var(--primary); font-size:.98rem; line-height:1.5; }
+
+    .country-section { margin-top:4.2rem; }
+    .country-section-head { margin-bottom:1.5rem; }
+    .country-section-title { font-size:2.05rem; }
+    .country-section-desc { max-width:730px; margin:0; color:var(--text-muted); line-height:1.8; }
+    .journey-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.7rem; }
+    .journey-card { display:flex; flex-direction:column; overflow:hidden; border:1px solid rgba(36,52,71,.1); border-radius:18px; background:#fff; box-shadow:0 6px 24px rgba(36,52,71,.06); transition:transform .22s ease, box-shadow .22s ease; }
+    .journey-card:hover { transform:translateY(-4px); box-shadow:0 14px 36px rgba(36,52,71,.12); }
+    .journey-card-media { position:relative; aspect-ratio:16/10; overflow:hidden; background:#ddd7cc; }
+    .journey-card-media img { display:block; width:100%; height:100%; object-fit:cover; transition:transform .35s ease; }
+    .journey-card:first-child .journey-card-media img { object-position:center 55%; }
+    .journey-card:last-child .journey-card-media img { object-position:center 54%; }
+    .journey-card:hover .journey-card-media img { transform:scale(1.035); }
+    .journey-year { position:absolute; top:.9rem; left:.9rem; padding:.34rem .72rem; border:1px solid rgba(255,255,255,.25); border-radius:999px; background:rgba(16,34,44,.8); color:#fff; font-size:.78rem; font-weight:800; backdrop-filter:blur(7px); }
+    .journey-card-body { display:flex; flex:1; flex-direction:column; padding:1.7rem 1.8rem 1.85rem; }
+    .journey-card-kicker { color:var(--accent-dark); font-size:.84rem; font-weight:800; }
+    .journey-card h3 { margin:.52rem 0 .72rem; color:var(--primary); font-family:var(--font-heading); font-size:1.48rem; line-height:1.38; }
+    .journey-card p { flex:1; margin:0 0 1.25rem; color:var(--text-muted); font-size:.96rem; line-height:1.78; }
+    .journey-card-link { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:.72rem 1rem; border-radius:10px; background:var(--primary); color:#fff; font-weight:800; text-decoration:none; }
+    .journey-card-link:hover { background:var(--primary-light); color:#fff; }
+
+    .country-archive { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:2rem; padding:2rem 2.25rem; border:1px solid #e4cf9e; border-radius:16px; background:linear-gradient(135deg,#fffaf0 0%,#f7ead0 100%); }
+    .country-archive h2 { margin:.35rem 0 .45rem; color:var(--primary); font-family:var(--font-heading); font-size:1.45rem; }
+    .country-archive p { margin:0; color:var(--text-muted); line-height:1.72; }
+    .country-archive a { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:.72rem 1.25rem; border-radius:999px; background:var(--primary); color:#fff; font-weight:800; text-decoration:none; white-space:nowrap; }
+    .country-footer { padding:2.7rem 0 5.5rem; border-top:1px solid rgba(36,52,71,.11); color:var(--text-muted); text-align:center; font-size:.88rem; }
+    .country-footer p { margin:.45rem 0; }
+
+    @media (max-width:860px) {
+      .country-hero { min-height:540px; height:74vh; }
+      .country-hero-media { grid-template-columns:1fr 1fr; }
+      .country-intro, .journey-grid { grid-template-columns:1fr; }
+      .country-main { padding:2.5rem 1rem 4.5rem; }
+      .country-intro { padding:1.8rem 1.5rem; }
+      .country-archive { grid-template-columns:1fr; gap:1.2rem; padding:1.6rem 1.4rem; }
+      .country-archive a { width:100%; }
+    }
+    @media (max-width:600px) {
+      .country-hero { min-height:520px; height:72vh; }
+      .country-hero-copy { padding-bottom:2.8rem; }
+      .country-hero p { font-size:1rem; line-height:1.7; }
+      .country-hero-actions a { width:100%; justify-content:center; }
+      .journey-card-body { padding:1.45rem 1.35rem 1.55rem; }
+    }
+  </style>
+</head>
+<body class="japan-country-hub" id="top">
+  <div class="reading-progress" aria-hidden="true"></div>
+  <nav class="site-nav">
+    <div class="container">
+      <div class="brand-group">
+        <a href="../index.html" class="brand-link"><span>CH x Travel</span></a>
+        <span class="brand-separator">/</span>
+        <a href="index.html" class="brand-series"><span>日本旅程</span></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../index.html">全球旅程</a></li>
+        <li><a href="#journeys">歷年旅程</a></li>
+        <li><a href="../about/">關於 CH</a></li>
+      </ul>
+      <button class="nav-share-btn btn-share" type="button"><span>📤 分享</span></button>
+    </div>
+  </nav>
+
+  <header class="country-hero">
+    <div class="country-hero-media" aria-hidden="true">
+      <img src="../2023-tokyo/images/index/20231114_135023-desktop-1200w.webp" width="1200" height="677" alt="">
+      <img src="../2026-osaka/images/day-03/20260826_163826-desktop-1200w.webp" width="1200" height="675" alt="">
+    </div>
+    <div class="container country-hero-copy">
+      <div class="country-hero-copy-inner">
+        <div class="hero-badge-group">
+          <span class="badge badge-gold">Japan Journeys</span>
+          <span class="badge badge-glass">東京 · 京都 · 大阪</span>
+        </div>
+        <h1>日本旅程</h1>
+        <p>從出差空檔裡的東京散步，到盛夏關西的山林古寺與家庭旅行。每一次再來，都換一種方式認識日本。</p>
+        <div class="country-hero-actions">
+          <a class="is-primary" href="#journeys">瀏覽兩趟旅程 ↓</a>
+          <a class="is-secondary" href="../2026-osaka/index.html">從最新的關西開始 →</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="country-main">
+    <section class="country-intro" aria-labelledby="japan-intro-title">
+      <div>
+        <span class="badge badge-wine">Country Collection</span>
+        <h2 id="japan-intro-title">同一個國家，不同年份有不同走法</h2>
+        <p>有時候是工作前後順路走走，有時候是和家人臨時成行；有人留在城市逛街，我就自己往山裡走。這裡依年份收好每一趟日本旅程，再從各自的照片與故事慢慢讀進去。</p>
+      </div>
+      <div class="country-facts" aria-label="日本旅程摘要">
+        <div class="country-fact"><span>Journeys</span><strong>2023 東京 · 2026 關西</strong></div>
+        <div class="country-fact"><span>Stories</span><strong>6 篇完整圖文遊記</strong></div>
+        <div class="country-fact"><span>Ways of travel</span><strong>商務空檔 · 家庭同行 · 一個人走山</strong></div>
+      </div>
+    </section>
+
+    <section class="country-section" id="journeys" aria-labelledby="journeys-title">
+      <header class="country-section-head">
+        <span class="badge badge-gold">Journey Archive</span>
+        <h2 class="country-section-title" id="journeys-title">依年份閱讀日本</h2>
+        <p class="country-section-desc">每張卡片是一趟完整旅程。進入後再選擇當次的文章、照片與行程片段。</p>
+      </header>
+
+      <div class="journey-grid">
+        <article class="journey-card">
+          <div class="journey-card-media">
+            <img src="../2026-osaka/images/day-03/20260826_163826-content-960w.webp"
+                 srcset="../2026-osaka/images/day-03/20260826_163826-thumb-480w.webp 480w,
+                         ../2026-osaka/images/day-03/20260826_163826-content-960w.webp 960w,
+                         ../2026-osaka/images/day-03/20260826_163826-desktop-1200w.webp 1200w"
+                 sizes="(max-width:860px) calc(100vw - 2rem), 540px" width="3782" height="2128" loading="lazy" decoding="async"
+                 alt="大阪城、本丸日本庭園與池水倒影">
+            <span class="journey-year">2026 · Osaka &amp; Kyoto</span>
+          </div>
+          <div class="journey-card-body">
+            <div class="journey-card-kicker">4 天家庭行 · 4 篇深度遊記</div>
+            <h3>孩子有約，就要去｜關西盛夏漫遊</h3>
+            <p>一個週末完成規劃，到了現場再把路線重新洗牌。鞍馬、貴船、比叡山、勝尾寺、箕面瀑布與大阪城，有人逛街，有人走山。</p>
+            <a class="journey-card-link" href="../2026-osaka/index.html">進入 2026 關西旅程 →</a>
+          </div>
+        </article>
+
+        <article class="journey-card">
+          <div class="journey-card-media">
+            <img src="../2023-tokyo/images/index/20231114_135023-content-960w.webp"
+                 srcset="../2023-tokyo/images/index/20231114_135023-thumb-480w.webp 480w,
+                         ../2023-tokyo/images/index/20231114_135023-content-960w.webp 960w,
+                         ../2023-tokyo/images/index/20231114_135023-desktop-1200w.webp 1200w"
+                 sizes="(max-width:860px) calc(100vw - 2rem), 540px" width="4000" height="2256" loading="lazy" decoding="async"
+                 alt="從高處俯瞰東京皇居外苑、護城河與城市天際線">
+            <span class="journey-year">2023 · Tokyo</span>
+          </div>
+          <div class="journey-card-body">
+            <div class="journey-card-kicker">3 天商務出差 · 2 篇照片小品</div>
+            <h3>東京出差，順路走走</h3>
+            <p>沒有特別安排旅行，只把抵達後的一個下午與回程前的幾個小時，留給明治神宮、東京車站、皇居與二重橋。</p>
+            <a class="journey-card-link" href="../2023-tokyo/index.html">進入 2023 東京旅程 →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="country-section" id="archive">
+      <aside class="country-archive" aria-label="歷年日本影像典藏">
+        <div>
+          <span class="badge badge-forest">Legacy Archive</span>
+          <h2>更早的日本旅行，先留在 Snaplog</h2>
+          <p>早期日本旅程仍保留在歷年影像典藏站。新的完整專刊會逐步收進這裡，舊照片則繼續保留原來的時間感。</p>
+        </div>
+        <a href="https://snaplog.chxtravel.com/" target="_blank" rel="noopener noreferrer">開啟 Snaplog 典藏 ↗</a>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="country-footer">
+    <div class="container">
+      <p><strong>CH x Travel · 日本旅程</strong></p>
+      <p><a href="../about/">關於 CH</a> · <a href="../index.html">全球旅程</a> · <a href="https://www.instagram.com/ch.huangs/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+    </div>
+  </footer>
+
+  <div class="mobile-dock" aria-label="行動版導覽">
+    <a href="../index.html" class="dock-item"><span class="dock-icon">←</span><span>全球旅程</span></a>
+    <a href="#journeys" class="dock-item"><span class="dock-icon">🗾</span><span>日本旅程</span></a>
+    <a href="#archive" class="dock-item"><span class="dock-icon">🏛️</span><span>典藏</span></a>
+    <button type="button" class="dock-item btn-share"><span class="dock-icon">📤</span><span>分享</span></button>
+  </div>
+
+  <script src="../core/js/app.js"></script>
+</body>
+</html>

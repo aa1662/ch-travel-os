@@ -38,7 +38,26 @@ document.addEventListener('DOMContentLoaded', () => {
   initTimelineCards();
   initGLightbox();
   initFeaturedRandomizer();
+  initInlineAutoplayVideos();
 });
+
+function initInlineAutoplayVideos() {
+  document.querySelectorAll('video[autoplay][muted]').forEach(video => {
+    video.muted = true;
+    const startPlayback = () => {
+      const playback = video.play();
+      if (playback && typeof playback.catch === 'function') {
+        playback.catch(() => {});
+      }
+    };
+
+    if (video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) {
+      startPlayback();
+    } else {
+      video.addEventListener('canplay', startPlayback, { once: true });
+    }
+  });
+}
 
 /* ==========================================================================
    1. 德語 / 法語發音與美食文化辭典 (German & French Pronunciation Engine)

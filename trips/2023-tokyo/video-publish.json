@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "videos": [
+    {
+      "source": "masters/2023-tokyo/return/18001386131484342.mp4",
+      "public_path": "2023-tokyo/media/return/tokyo-tracks-muted.mp4",
+      "sha256": "62fbf8925dff231e4d74b785e7df8ee7c6b6de7cce45119d2d18b0d9fa67dce4",
+      "codec": "H.264",
+      "pixel_format": "yuv420p",
+      "audio": false,
+      "metadata_stripped": true,
+      "faststart": true,
+      "bytes": 7821905
+    }
+  ]
+}

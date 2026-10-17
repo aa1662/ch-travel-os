@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700;900&amp;family=Noto+Sans+TC:wght@400;500;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../core/css/style.css?v=20260903-nav-unify">
+  <link rel="stylesheet" href="../../core/css/style.css?v=20260929-related-stories">
   <link rel="stylesheet" href="../../core/vendor/glightbox/glightbox.min.css">
   <style>
     /* 看圖說故事：左右圖文交錯排版 (Magazine Split Layout) */
@@ -776,11 +776,40 @@
       </section>
 
       <!-- 篇章導覽按鈕 -->
-      <div style="display: flex; justify-content: space-between; align-items: center; margin: 3.5rem 0 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); flex-wrap: wrap; gap: 1rem;">
-        <a href="heidelberg-castle.html" style="font-weight: 600; color: var(--primary); font-size: 0.95rem;">← 上一篇：Day 08 海德堡古堡</a>
-        <a href="../day-09.html" class="badge badge-gold" style="font-size: 0.9rem; padding: 0.5rem 1rem; text-decoration: none;">🧭 查看 Day 9 行程筆記</a>
-        <a href="speyer-cathedral.html" style="font-weight: 600; color: var(--primary); font-size: 0.95rem;">下一篇：Day 10 (上) 史派爾大教堂 →</a>
-      </div>
+      <section class="article-navigation" aria-label="文章導覽">
+        <div class="article-linear-nav">
+          <a class="article-linear-link article-linear-link-prev" href="heidelberg-castle.html"><span class="article-linear-label">上一篇</span><span>← Day 08 海德堡古堡</span></a>
+          <div class="article-footer-actions">
+            <a href="../index.html" class="article-overview-link">🇩🇪 德南冬旅總覽</a>
+            <a href="../day-09.html" class="badge badge-gold" style="font-size: 0.9rem; padding: 0.5rem 1rem; text-decoration: none;">🧭 查看 Day 9 行程筆記</a>
+          </div>
+          <a class="article-linear-link article-linear-link-next" href="speyer-cathedral.html"><span class="article-linear-label">下一篇</span><span>Day 10 (上) 史派爾大教堂 →</span></a>
+        </div>
+      <section class="related-stories" aria-labelledby="related-stories-title">
+        <h2 id="related-stories-title">同系列還可以看</h2>
+        <div class="related-story-grid">
+        <a class="related-story-card" href="neuschwanstein-winter.html">
+          <img src="../images/day-13/18085943692920080-thumb-480w.webp" width="480" height="480" loading="lazy" decoding="async" alt="二十五年後，帶女兒重返新天鵝堡">
+          <span class="related-story-copy">
+            <span class="related-story-kicker">延伸閱讀</span>
+            <span class="related-story-title">二十五年後，帶女兒重返新天鵝堡</span>
+            <span class="related-story-arrow" aria-hidden="true">→</span>
+            <span class="related-story-teaser">二十五年前以為照片是假的；這次帶著剛考完學測的 Belle，在雪裡親眼看一次真城堡。</span>
+          </span>
+        </a>
+        <a class="related-story-card" href="colmar-little-venice.html">
+          <img src="../images/day-10/18082561442231943-thumb-480w.webp" width="480" height="480" loading="lazy" decoding="async" alt="科爾馬小威尼斯：走進童話畫框">
+          <span class="related-story-copy">
+            <span class="related-story-kicker">延伸閱讀</span>
+            <span class="related-story-title">科爾馬小威尼斯：走進童話畫框</span>
+            <span class="related-story-arrow" aria-hidden="true">→</span>
+            <span class="related-story-teaser">彩色木筋屋、運河與小橋，把冬日午後變成一座可以慢慢走進去的童話場景。</span>
+          </span>
+        </a>
+        </div>
+      </section>
+        <a class="article-global-link" href="../../index.html">回到 CH x Travel 全球旅程 →</a>
+      </section>
     </article>
   </main>
 

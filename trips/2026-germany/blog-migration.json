@@ -2,6 +2,7 @@
   "trip": "2026-germany",
   "dest": "2026-germany",
   "journey_title": "🇩🇪 2026 德南冬旅誌",
+  "journey_overview_label": "🇩🇪 德南冬旅總覽",
   "nav_slot_3_html": "<li><a href=\"../index.html#itinerary\">🗺️ 15天自駕行程</a></li>",
   "entries": [
     {
@@ -111,6 +112,8 @@
     {
       "id": "day-09",
       "title": "Day 09：從格林童話起點走到金融天際線 ✕ 哈瑙飄雪宮殿、大通膨紙鈔裙與法蘭克福老城藍調",
+      "nav_title": "哈瑙童話與法蘭克福天際線",
+      "teaser": "同一天從格林兄弟故鄉走到法蘭克福金融天際線，看見兩個完全不同的德國。",
       "source": "trips/2026-germany/sources/blog/hanau-frankfurt.html",
       "output": "docs/2026-germany/blog/hanau-frankfurt.html",
       "image_folder": "day-09",
@@ -119,7 +122,12 @@
       "prev_link": "heidelberg-castle.html",
       "prev_title": "Day 08 海德堡古堡",
       "next_link": "speyer-cathedral.html",
-      "next_title": "Day 10 (上) 史派爾大教堂"
+      "next_title": "Day 10 (上) 史派爾大教堂",
+      "navigation_style": "discovery",
+      "related": [
+        "day-13",
+        "day-10-colmar"
+      ]
     },
     {
       "id": "day-10-speyer",
@@ -137,6 +145,8 @@
     {
       "id": "day-10-colmar",
       "title": "Day 10 (下)：走進宮崎駿的童話畫框 ✕ 霍爾的移動城堡原型、小威尼斯運河與市集美學",
+      "nav_title": "科爾馬小威尼斯：走進童話畫框",
+      "teaser": "彩色木筋屋、運河與小橋，把冬日午後變成一座可以慢慢走進去的童話場景。",
       "source": "trips/2026-germany/sources/blog/colmar-little-venice.html",
       "output": "docs/2026-germany/blog/colmar-little-venice.html",
       "image_folder": "day-10",
@@ -176,6 +186,8 @@
     {
       "id": "day-13",
       "title": "Day 13：新天鵝堡雪景重遊 ✕ 馬車上的父女童話時光",
+      "nav_title": "二十五年後，帶女兒重返新天鵝堡",
+      "teaser": "二十五年前以為照片是假的；這次帶著剛考完學測的 Belle，在雪裡親眼看一次真城堡。",
       "source": "trips/2026-germany/sources/blog/neuschwanstein-winter.html",
       "output": "docs/2026-germany/blog/neuschwanstein-winter.html",
       "image_folder": "day-13",

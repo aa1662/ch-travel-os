@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="2023 東京出差散步：利用開會前後的空檔，走進明治神宮、東京車站、皇居與二重橋，留下兩篇以照片為主的城市小品。">
+  <meta property="og:site_name" content="2023 東京出差散步 · CH x Travel">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="東京出差，順路走走｜2023 東京出差散步">
+  <meta property="og:description" content="沒有特別安排旅行，只把公務前後的幾個小時留給明治神宮、東京車站與皇居周邊。">
+  <meta property="og:url" content="https://chxtravel.com/2023-tokyo/index.html">
+  <meta property="og:image" content="https://chxtravel.com/2023-tokyo/images/index/20231114_135023-desktop-1200w.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://chxtravel.com/2023-tokyo/index.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <title>東京出差，順路走走｜2023 東京出差散步</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Noto+Sans+TC:wght@400;500;700;900&amp;family=Outfit:wght@600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../core/css/style.css?v=20260927-photo-grid">
+  <style>
+    .tokyo-journey-hub { background:#f7f5f0; color:var(--ink); }
+    .tokyo-journey-hub .reading-progress { z-index:120; }
+    .tokyo-journey-hub section[id] { scroll-margin-top:5.5rem; }
+
+    .tokyo-hub-hero {
+      position:relative;
+      min-height:560px;
+      height:68vh;
+      max-height:720px;
+      overflow:hidden;
+      background:#243447;
+    }
+    .tokyo-hub-hero > img {
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center 54%;
+    }
+    .tokyo-hub-hero::after {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(15,28,39,0.12) 10%, rgba(15,28,39,0.84) 100%);
+    }
+    .tokyo-hub-hero-inner {
+      position:relative;
+      z-index:1;
+      display:flex;
+      min-height:inherit;
+      height:100%;
+      align-items:flex-end;
+      padding-top:5rem;
+      padding-bottom:3.8rem;
+      color:#fff;
+    }
+    .tokyo-hub-hero-copy { max-width:820px; }
+    .tokyo-hub-hero h1 {
+      margin:0.6rem 0 0.85rem;
+      color:#fff;
+      font-family:var(--font-heading);
+      font-size:clamp(2.45rem, 5vw, 4rem);
+      line-height:1.12;
+      letter-spacing:-0.02em;
+      text-shadow:0 3px 20px rgba(0,0,0,0.68);
+    }
+    .tokyo-hub-hero p {
+      max-width:720px;
+      margin:0;
+      color:rgba(255,255,255,0.95);
+      font-size:1.1rem;
+      line-height:1.8;
+      text-shadow:0 2px 14px rgba(0,0,0,0.78);
+    }
+    .tokyo-hub-hero-actions { display:flex; flex-wrap:wrap; gap:0.75rem; margin-top:1.45rem; }
+    .tokyo-hub-hero-actions a {
+      display:inline-flex;
+      align-items:center;
+      min-height:44px;
+      padding:0.68rem 1.2rem;
+      border-radius:999px;
+      font-weight:800;
+      text-decoration:none;
+      transition:transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .tokyo-hub-hero-actions a:hover { transform:translateY(-2px); box-shadow:var(--shadow-md); }
+    .tokyo-hub-hero-actions .is-primary { background:var(--accent); color:var(--primary); }
+    .tokyo-hub-hero-actions .is-secondary { border:1px solid rgba(255,255,255,0.7); background:rgba(18,35,48,0.66); color:#fff; backdrop-filter:blur(8px); }
+
+    .tokyo-hub-main { max-width:1120px; margin:0 auto; padding:3.5rem 1.25rem 5rem; }
+    .tokyo-hub-intro {
+      display:grid;
+      grid-template-columns:minmax(0,1.45fr) minmax(260px,0.55fr);
+      gap:2rem;
+      padding:2.4rem 2.6rem;
+      border:1px solid rgba(36,52,71,0.09);
+      border-radius:20px;
+      background:#fff;
+      box-shadow:0 8px 30px rgba(36,52,71,0.06);
+    }
+    .tokyo-hub-intro h2, .tokyo-hub-section-title {
+      margin:0.45rem 0 0.9rem;
+      color:var(--primary);
+      font-family:var(--font-heading);
+      line-height:1.3;
+    }
+    .tokyo-hub-intro h2 { font-size:1.8rem; }
+    .tokyo-hub-intro p { margin:0 0 0.85rem; font-size:1.02rem; line-height:1.9; }
+    .tokyo-hub-intro p:last-child { margin-bottom:0; }
+    .tokyo-hub-facts { display:grid; align-content:start; gap:0.8rem; }
+    .tokyo-hub-fact { padding:0.95rem 1rem; border-radius:12px; background:#f4f1eb; }
+    .tokyo-hub-fact span { display:block; color:var(--text-muted); font-size:0.78rem; font-weight:800; letter-spacing:0.05em; text-transform:uppercase; }
+    .tokyo-hub-fact strong { display:block; margin-top:0.2rem; color:var(--primary); font-size:0.98rem; line-height:1.45; }
+
+    .tokyo-hub-section { margin-top:4rem; }
+    .tokyo-hub-section-head { margin-bottom:1.45rem; }
+    .tokyo-hub-section-title { font-size:2rem; }
+    .tokyo-hub-section-desc { max-width:700px; margin:0; color:var(--text-muted); line-height:1.75; }
+    .tokyo-story-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.6rem; }
+    .tokyo-story-card {
+      display:flex;
+      flex-direction:column;
+      overflow:hidden;
+      border:1px solid rgba(36,52,71,0.1);
+      border-radius:18px;
+      background:#fff;
+      box-shadow:0 6px 24px rgba(36,52,71,0.06);
+      transition:transform 0.22s ease, box-shadow 0.22s ease;
+    }
+    .tokyo-story-card:hover { transform:translateY(-4px); box-shadow:0 14px 36px rgba(36,52,71,0.12); }
+    .tokyo-story-media { position:relative; aspect-ratio:16/10; overflow:hidden; background:#d9d3c8; }
+    .tokyo-story-media img { display:block; width:100%; height:100%; object-fit:cover; transition:transform 0.35s ease; }
+    .tokyo-story-card:hover .tokyo-story-media img { transform:scale(1.035); }
+    .tokyo-story-card:first-child .tokyo-story-media img { object-position:center 55%; }
+    .tokyo-story-card:last-child .tokyo-story-media img { object-position:center 52%; }
+    .tokyo-story-number { position:absolute; top:0.9rem; left:0.9rem; padding:0.35rem 0.7rem; border:1px solid rgba(255,255,255,0.25); border-radius:999px; background:rgba(18,35,48,0.78); color:#fff; font-size:0.78rem; font-weight:800; backdrop-filter:blur(7px); }
+    .tokyo-story-body { display:flex; flex:1; flex-direction:column; padding:1.65rem 1.75rem 1.8rem; }
+    .tokyo-story-kicker { color:var(--accent-dark); font-size:0.84rem; font-weight:800; }
+    .tokyo-story-body h3 { margin:0.55rem 0 0.75rem; color:var(--primary); font-family:var(--font-heading); font-size:1.42rem; line-height:1.38; }
+    .tokyo-story-body p { flex:1; margin:0 0 1.3rem; color:var(--text-muted); font-size:0.96rem; line-height:1.78; }
+    .tokyo-story-link { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:0.7rem 1rem; border-radius:10px; background:var(--primary); color:#fff; font-weight:800; text-decoration:none; }
+    .tokyo-story-link:hover { background:var(--primary-light); color:#fff; }
+
+    .tokyo-route {
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:1rem;
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+    .tokyo-route li { position:relative; padding:1.35rem 1.3rem 1.4rem; border-top:4px solid var(--accent); border-radius:14px; background:#fff; box-shadow:0 5px 20px rgba(36,52,71,0.05); }
+    .tokyo-route time { color:var(--accent-dark); font-size:0.82rem; font-weight:800; }
+    .tokyo-route strong { display:block; margin:0.4rem 0 0.45rem; color:var(--primary); font-family:var(--font-heading); font-size:1.08rem; }
+    .tokyo-route p { margin:0; color:var(--text-muted); font-size:0.9rem; line-height:1.65; }
+
+    .tokyo-hub-closing { margin-top:4rem; padding:2.1rem 2.3rem; border-left:4px solid var(--accent); border-radius:0 16px 16px 0; background:#fff; }
+    .tokyo-hub-closing p { margin:0; color:var(--primary); font-family:var(--font-heading); font-size:1.16rem; font-weight:700; line-height:1.8; }
+    .tokyo-journey-hub .journey-footer { padding:2.7rem 0 5.5rem; border-top:1px solid rgba(36,52,71,0.12); color:var(--text-muted); text-align:center; font-size:0.88rem; }
+
+    @media (max-width:860px) {
+      .tokyo-hub-hero { min-height:520px; height:72vh; }
+      .tokyo-hub-hero > img { object-position:center 52%; }
+      .tokyo-hub-intro { grid-template-columns:1fr; padding:1.8rem 1.5rem; }
+      .tokyo-story-grid, .tokyo-route { grid-template-columns:1fr; }
+      .tokyo-hub-main { padding:2.4rem 1rem 4.5rem; }
+    }
+    @media (max-width:600px) {
+      .tokyo-hub-hero { min-height:500px; height:70vh; }
+      .tokyo-hub-hero-inner { padding-bottom:2.8rem; }
+      .tokyo-hub-hero p { font-size:1rem; line-height:1.7; }
+      .tokyo-hub-hero-actions a { width:100%; justify-content:center; }
+      .tokyo-story-body { padding:1.4rem 1.3rem 1.5rem; }
+      .tokyo-hub-closing { padding:1.6rem 1.4rem; }
+    }
+  </style>
+</head>
+<body class="tokyo-journey-hub" id="top">
+  <div class="reading-progress" aria-hidden="true"></div>
+
+  <nav class="site-nav">
+    <div class="container">
+      <div class="brand-group">
+        <a href="../index.html" class="brand-link"><span>CH x Travel</span></a>
+        <span class="brand-separator">/</span>
+        <a href="index.html" class="brand-series"><span>2023 東京出差散步</span></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../index.html">全球旅程</a></li>
+        <li><a href="../japan/">日本旅程</a></li>
+        <li><a href="#stories">兩篇遊記</a></li>
+        <li><a href="#route">三日動線</a></li>
+      </ul>
+      <button class="nav-share-btn btn-share" type="button"><span>📤 分享</span></button>
+    </div>
+  </nav>
+
+  <header class="tokyo-hub-hero">
+    <img src="images/index/20231114_135023-desktop-1200w.webp"
+         srcset="images/index/20231114_135023-thumb-480w.webp 480w,
+                 images/index/20231114_135023-content-960w.webp 960w,
+                 images/index/20231114_135023-desktop-1200w.webp 1200w,
+                 images/index/20231114_135023-lightbox-1600w.webp 1600w"
+         sizes="100vw" width="4000" height="2256" loading="eager" decoding="async" fetchpriority="high"
+         alt="從高處俯瞰東京皇居外苑、護城河與城市天際線">
+    <div class="container tokyo-hub-hero-inner">
+      <div class="tokyo-hub-hero-copy">
+        <div class="hero-badge-group">
+          <span class="badge badge-gold">2023.11.13–11.15 · Tokyo</span>
+          <span class="badge badge-glass">出差前後的城市散步</span>
+        </div>
+        <h1>東京出差，順路走走</h1>
+        <p>沒有特別安排旅行，只把抵達後的一個下午，以及回程前的幾個小時，留給明治神宮、東京車站與皇居周邊。</p>
+        <div class="tokyo-hub-hero-actions">
+          <a class="is-primary" href="#stories">閱讀兩篇照片小品 ↓</a>
+          <a class="is-secondary" href="blog/tokyo-arrival-meiji-jingu.html">從抵達日開始 →</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="tokyo-hub-main">
+    <section class="tokyo-hub-intro" id="overview" aria-labelledby="tokyo-intro-title">
+      <div>
+        <span class="badge badge-wine">Journey Note</span>
+        <h2 id="tokyo-intro-title">不是完整行程，是公務空檔留下來的東京</h2>
+        <p>上次來東京是 2017 年，和家人一起旅行，順路在市區逛了一下。六年後再來，這次是為了開會。</p>
+        <p>我出國通常會優先往有歷史或自然景觀的地方走，大城市多半只是旅程的中繼點。這一趟也沒有特別做功課，只在公務前後有空時散步、拍照，最後整理成兩篇輕鬆的小品。</p>
+      </div>
+      <div class="tokyo-hub-facts" aria-label="旅程摘要">
+        <div class="tokyo-hub-fact"><span>日期</span><strong>2023 年 11 月 13–15 日</strong></div>
+        <div class="tokyo-hub-fact"><span>場景</span><strong>原宿、丸之內、皇居、上野</strong></div>
+        <div class="tokyo-hub-fact"><span>內容</span><strong>2 篇照片主導的出差散步小品</strong></div>
+      </div>
+    </section>
+
+    <section class="tokyo-hub-section" id="stories" aria-labelledby="tokyo-stories-title">
+      <header class="tokyo-hub-section-head">
+        <span class="badge badge-gold">The 2 Stories</span>
+        <h2 class="tokyo-hub-section-title" id="tokyo-stories-title">兩段空檔，兩種東京</h2>
+        <p class="tokyo-hub-section-desc">一篇從神宮的樹蔭走回東京車站夜色；另一篇從高處的城市視野，走到皇居水邊與回程月台。</p>
+      </header>
+
+      <div class="tokyo-story-grid">
+        <article class="tokyo-story-card">
+          <div class="tokyo-story-media">
+            <img src="images/arrival/20231113_173312-content-960w.webp"
+                 srcset="images/arrival/20231113_173312-thumb-480w.webp 480w,
+                         images/arrival/20231113_173312-content-960w.webp 960w,
+                         images/arrival/20231113_173312-desktop-1200w.webp 1200w"
+                 sizes="(max-width: 860px) calc(100vw - 2rem), 540px" width="4032" height="2268" loading="lazy" decoding="async"
+                 alt="夜色中的東京車站紅磚站體與周邊高樓">
+            <span class="tokyo-story-number">Story 01 · 抵達日</span>
+          </div>
+          <div class="tokyo-story-body">
+            <div class="tokyo-story-kicker">明治神宮 · 菊花展 · 東京車站夜景</div>
+            <h3>六年沒來東京，先去明治神宮走走</h3>
+            <p>早上從台北出發，晚上已有 welcome dinner。中間這個下午，從原宿走進明治神宮，再回到百年車站與高樓交疊的夜色裡。</p>
+            <a class="tokyo-story-link" href="blog/tokyo-arrival-meiji-jingu.html">閱讀第一篇 →</a>
+          </div>
+        </article>
+
+        <article class="tokyo-story-card">
+          <div class="tokyo-story-media">
+            <img src="images/return/20231115_125404-content-960w.webp"
+                 srcset="images/return/20231115_125404-thumb-480w.webp 480w,
+                         images/return/20231115_125404-content-960w.webp 960w,
+                         images/return/20231115_125404-desktop-1200w.webp 1200w"
+                 sizes="(max-width: 860px) calc(100vw - 2rem), 540px" width="4032" height="2268" loading="lazy" decoding="async"
+                 alt="皇居外圍建築、樹木與水面倒影">
+            <span class="tokyo-story-number">Story 02 · 回程日</span>
+          </div>
+          <div class="tokyo-story-body">
+            <div class="tokyo-story-kicker">高處鐵道 · 皇居散步 · 和牛 · 阿美橫町</div>
+            <h3>東京出差的空檔：皇居散步，吃飽再回家</h3>
+            <p>辦公室窗外是皇居，飯店窗下是像貪吃蛇一樣穿梭的電車。開完會後走到二重橋，再利用上野轉車的空檔買點心回去請同事。</p>
+            <a class="tokyo-story-link" href="blog/tokyo-imperial-palace-and-return.html">閱讀第二篇 →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="tokyo-hub-section" id="route" aria-labelledby="tokyo-route-title">
+      <header class="tokyo-hub-section-head">
+        <span class="badge badge-forest">3 Days in Tokyo</span>
+        <h2 class="tokyo-hub-section-title" id="tokyo-route-title">公務行程之間的三日動線</h2>
+        <p class="tokyo-hub-section-desc">這不是攻略，只是把兩篇文章放回當時的時間位置。</p>
+      </header>
+      <ol class="tokyo-route">
+        <li><time datetime="2023-11-13">11 月 13 日</time><strong>抵達後，先走進樹林</strong><p>台北出發、入住東京車站旁飯店，下午前往明治神宮，晚上回到丸之內赴約。</p></li>
+        <li><time datetime="2023-11-14">11 月 14 日</time><strong>會議日，從窗邊看東京</strong><p>進公司開會，從辦公室高處看見皇居外苑在市中心空出一大片綠地。</p></li>
+        <li><time datetime="2023-11-15">11 月 15 日</time><strong>開完會，再走一段才回家</strong><p>東京車站、二重橋與皇居周邊散步，吃過午餐後到上野轉車，再前往機場。</p></li>
+      </ol>
+    </section>
+
+    <aside class="tokyo-hub-closing" aria-label="旅程收束">
+      <p>沒有磅礴的行程，也沒有非寫不可的大道理。只是出差途中剛好遇見幾個喜歡的畫面，就把它們留了下來。</p>
+    </aside>
+  </main>
+
+  <footer class="journey-footer">
+    <div class="container">
+      <p><strong>CH x Travel · 2023 東京出差散步</strong></p>
+      <p>從世界遺產、山林古道，到城市裡順路留下的照片。</p>
+      <p><a href="../japan/">日本旅程</a> · <a href="../about/">關於 CH</a> · <a href="../index.html">全球旅程</a> · <a href="https://www.instagram.com/ch.huangs/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+    </div>
+  </footer>
+
+  <div class="mobile-dock" aria-label="行動版導覽">
+    <a href="../japan/" class="dock-item"><span class="dock-icon">🗾</span><span>日本旅程</span></a>
+    <a href="#stories" class="dock-item"><span class="dock-icon">📖</span><span>兩篇遊記</span></a>
+    <a href="../about/" class="dock-item"><span class="dock-icon">👤</span><span>關於 CH</span></a>
+    <button type="button" class="dock-item btn-share"><span class="dock-icon">📤</span><span>分享</span></button>
+  </div>
+
+  <script src="../core/js/app.js"></script>
+</body>
+</html>

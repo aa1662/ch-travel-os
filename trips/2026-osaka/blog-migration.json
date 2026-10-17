@@ -65,5 +65,21 @@
       "next_link": "../index.html",
       "next_title": "🎉 回到 2026 關西盛夏漫遊總覽"
     }
+  ],
+  "article_nav_links": [
+    {
+      "href": "../../japan/",
+      "label": "日本旅程"
+    },
+    {
+      "href": "../index.html#stories",
+      "label": "關西遊記"
+    },
+    {
+      "href": "https://aa1662.github.io/2026-Osaka/",
+      "label": "行前規劃 ↗",
+      "target": "_blank",
+      "rel": "noopener noreferrer"
+    }
   ]
 }

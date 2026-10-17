@@ -76,23 +76,25 @@
           "order": 5,
           "source_uri": "media/posts/202311/18130657909311129.webp",
           "filename": "18130657909311129.webp",
-          "included": true,
+          "included": false,
           "sha256": "77799a9223c9d7967f85030bd8feadd9cdb2021d29c75b04aaafdd1e89aaccf0",
           "width": 1440,
           "height": 1440,
           "pixel_sha256": "41748dc80d980308af264d080cf0cc5806dc308bc0f3806981d4febe6bd49c4d",
-          "orientation": "landscape"
+          "orientation": "landscape",
+          "reason": "作者 2026-09-27 指定從頁面與圖集移除，私人原檔保留"
         },
         {
           "order": 6,
           "source_uri": "media/posts/202311/17994553646461649.webp",
           "filename": "17994553646461649.webp",
-          "included": true,
+          "included": false,
           "sha256": "b2597b2e15ed63277db426ad9209d5cbb1484cb496b597b04aae05362e6c9f10",
           "width": 1440,
           "height": 1440,
           "pixel_sha256": "adcf6616f2bdb8dd5ff8f67ed548059b05aef9042ed040c068afa0459ab6ba69",
-          "orientation": "landscape"
+          "orientation": "landscape",
+          "reason": "作者後續指定移除以調整卡片排列；私人原檔保留"
         }
       ]
     },
@@ -250,7 +252,8 @@
           "order": 2,
           "source_uri": "media/posts/202311/17998509257253151.webp",
           "filename": "17998509257253151.webp",
-          "included": true,
+          "included": false,
+          "reason": "作者於版面 UAT 指定移除，以配合 IG 雙欄平衡；私人原檔保留",
           "sha256": "960204840ba201077ab46fee1152827486029394961296b9060b31245b0bb172",
           "width": 1440,
           "height": 1440,
@@ -297,7 +300,8 @@
           "order": 1,
           "source_uri": "media/posts/202311/17954755484693701.webp",
           "filename": "17954755484693701.webp",
-          "included": true,
+          "included": false,
+          "reason": "作者於版面 UAT 指定移除，以配合 IG 雙欄平衡；私人原檔保留",
           "sha256": "c6348f74936dad7a41db0a5242ca61a2d39bdfedfb2d771fa0c944e1c52e987a",
           "width": 1440,
           "height": 1440,
@@ -330,12 +334,13 @@
           "order": 4,
           "source_uri": "media/posts/202311/18202929997274557.webp",
           "filename": "18202929997274557.webp",
-          "included": true,
+          "included": false,
           "sha256": "1b18ff03f97084972a514f964b4c79e953b3c65153a41862b638e8ee59533dc9",
           "width": 1440,
           "height": 1440,
           "pixel_sha256": "3031332baf5b603ba1ada3a54857ee0bacf37d3276456eb2aabf6aa0af3023b4",
-          "orientation": "landscape"
+          "orientation": "landscape",
+          "reason": "作者 2026-09-27 指定從頁面與圖集移除，私人原檔保留"
         }
       ]
     },
@@ -370,12 +375,13 @@
           "order": 1,
           "source_uri": "media/posts/202311/18001196669471774.webp",
           "filename": "18001196669471774.webp",
-          "included": true,
+          "included": false,
           "sha256": "6c1b2d1e3b335cb1921a817beb9c748b3089af8c7eb80386cd2094b5d46569a8",
           "width": 1440,
           "height": 1440,
           "pixel_sha256": "df44fef1729485cf3d5965de3929bb4ad800c1b997db0d629fa870aedd309226",
-          "orientation": "landscape"
+          "orientation": "landscape",
+          "reason": "作者 2026-09-27 指定從頁面與圖集移除，私人原檔保留"
         },
         {
           "order": 2,
@@ -403,12 +409,13 @@
           "order": 4,
           "source_uri": "media/posts/202311/18013555363831123.webp",
           "filename": "18013555363831123.webp",
-          "included": true,
+          "included": false,
           "sha256": "786cb940fa0cd74ab174e44cb80f411a1de6eb712143fa351053af7e797ecd1e",
           "width": 1440,
           "height": 1440,
           "pixel_sha256": "1f15e57a6277e760d2610d708df7293186d27c72c1f34ef3646f8ae53c22d1ff",
-          "orientation": "landscape"
+          "orientation": "landscape",
+          "reason": "作者 2026-09-27 指定從頁面與圖集移除，私人原檔保留"
         },
         {
           "order": 5,
@@ -448,7 +455,8 @@
           "order": 8,
           "source_uri": "media/posts/202311/18024616786772905.webp",
           "filename": "18024616786772905.webp",
-          "included": true,
+          "included": false,
+          "reason": "作者於版面 UAT 指定移除，以配合 IG 雙欄平衡；私人原檔保留",
           "sha256": "fb6f8edb8f52acf0f1c61515cf84e762aa241789deae76476722d2128336fdf7",
           "width": 1440,
           "height": 1440,

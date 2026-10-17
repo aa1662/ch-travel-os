@@ -9,6 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 FILES = {
+    ROOT / "site" / "home" / "index.html": ROOT / "docs" / "index.html",
     ROOT / "site" / "about" / "index.html": ROOT / "docs" / "about" / "index.html",
     ROOT / "core" / "css" / "about.css": ROOT / "docs" / "core" / "css" / "about.css",
 }

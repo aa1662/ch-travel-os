@@ -16,6 +16,7 @@ import re
 import sys
 import json
 import urllib.parse
+import hashlib
 from pathlib import Path
 from PIL import Image
 
@@ -196,10 +197,27 @@ def validate_docs():
         except Exception as e:
             errors.append(f"[檔案損毀無法解碼] {img_path.relative_to(DOCS_DIR)} ({e})")
 
-    # 1.1 檢查是否有未經公開衍生處理之影片或大型多媒體原檔外洩至 docs/
+    # 1.1 只允許列入 journey video-publish.json、已去除 metadata 的公開影片衍生檔。
+    approved_videos = {}
+    for video_config in TRIPS_DIR.glob("*/video-publish.json"):
+        try:
+            config = json.loads(video_config.read_text(encoding="utf-8"))
+            for item in config.get("videos", []):
+                public_path = item["public_path"].replace("\\", "/").lstrip("/")
+                approved_videos[public_path] = item
+        except (OSError, json.JSONDecodeError, KeyError) as exc:
+            errors.append(f"[影片發布設定解析失敗] {video_config.relative_to(BASE_DIR)} ({exc})")
+
     raw_media_files = list(DOCS_DIR.rglob("*.mp4")) + list(DOCS_DIR.rglob("*.mov")) + list(DOCS_DIR.rglob("*.webm"))
     for rmf in raw_media_files:
-        errors.append(f"[多媒體原檔外洩] 發現未經公開衍生處理之影片原檔存在於 docs: {rmf.relative_to(DOCS_DIR)}")
+        rel_media = rmf.relative_to(DOCS_DIR).as_posix()
+        contract = approved_videos.get(rel_media)
+        if not contract:
+            errors.append(f"[多媒體原檔外洩] 發現未經公開衍生處理之影片原檔存在於 docs: {rmf.relative_to(DOCS_DIR)}")
+            continue
+        digest = hashlib.sha256(rmf.read_bytes()).hexdigest()
+        if digest != contract.get("sha256"):
+            errors.append(f"[影片衍生檔 Hash 不一致] {rmf.relative_to(DOCS_DIR)}")
 
     # 2. 檢查 Image Manifest 一致性
     manifest_files = list(DOCS_DIR.rglob("image-manifest.json"))
@@ -515,7 +533,7 @@ def validate_docs():
                             )
 
             # 4.5 檢查所有本機連結與資源是否皆存在 (避免 404 與無效錨點)
-            ref_pattern = re.compile(r'(?:href|src)=["\']([^"\']+)["\']')
+            ref_pattern = re.compile(r'(?:href|src|poster)=["\']([^"\']+)["\']')
             for match in ref_pattern.finditer(clean_html):
                 target = match.group(1).strip()
                 # 排除外部連結、JavaScript 虛擬協定

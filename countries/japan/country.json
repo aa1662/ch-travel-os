@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "id": "japan",
+  "title": "日本旅程",
+  "source": "countries/japan/sources/index.html",
+  "output": "docs/japan/index.html",
+  "canonical": "https://chxtravel.com/japan/",
+  "journeys": [
+    {
+      "id": "2026-osaka",
+      "title": "2026 關西盛夏漫遊",
+      "href": "../2026-osaka/index.html",
+      "image": "../2026-osaka/images/day-03/20260826_163826-desktop-1200w.webp"
+    },
+    {
+      "id": "2023-tokyo",
+      "title": "2023 東京出差散步",
+      "href": "../2023-tokyo/index.html",
+      "image": "../2023-tokyo/images/index/20231114_135023-desktop-1200w.webp"
+    }
+  ]
+}

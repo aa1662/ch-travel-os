@@ -73,7 +73,43 @@ def transform_html_images(html_content, images_dict, img_folder, rel_img_prefix,
 
     html_content = re.sub(r'href="(?:\.\./)*images/([^/]+)/([^"]+\.(?:jpg|jpeg|png|webp|heic))"', replace_a_href, html_content, flags=re.IGNORECASE)
 
-    # 2. 結構化重構 <img> 標籤
+    # 2. 將 video poster 的邏輯來源映射為公開 content derivative。
+    def replace_video_poster(match):
+        matched_folder = match.group(1)
+        img_name = match.group(2)
+        clean_img_name = re.sub(
+            r'-(?:thumb|content|desktop|lightbox)-\d+w\.webp$',
+            '.jpg',
+            img_name,
+            flags=re.IGNORECASE,
+        )
+        candidates = [f"{matched_folder}/{clean_img_name}", f"{matched_folder}/{img_name}"]
+        key = next((candidate for candidate in candidates if candidate in images_dict), None)
+        if key is None:
+            stem = Path(img_name).stem.split("-")[0]
+            key = next(
+                (candidate for candidate in images_dict if candidate.startswith(f"{matched_folder}/{stem}")),
+                None,
+            )
+        if key is None:
+            errors.append(f"影片 poster 找不到 Manifest 映射: {matched_folder}/{img_name}")
+            return match.group(0)
+
+        derivatives = images_dict[key]["derivatives"]
+        content_derivative = next(
+            (derivative for derivative in derivatives if derivative["profile"] == "content"),
+            derivatives[0],
+        )
+        return f'poster="../images/{matched_folder}/{content_derivative["filename"]}"'
+
+    html_content = re.sub(
+        r'poster="(?:\.\./)*images/([^/]+)/([^"]+\.(?:jpg|jpeg|png|webp|heic))"',
+        replace_video_poster,
+        html_content,
+        flags=re.IGNORECASE,
+    )
+
+    # 3. 結構化重構 <img> 標籤
     def replace_img_tag(match):
         full_tag = match.group(0)
         inner_attrs_str = match.group(1)
@@ -347,13 +383,20 @@ def render_related_stories(item, entries_by_id, images_dict, errors):
             continue
 
         related_href = Path(related["output"]).name
-        related_title = html_escape(related["title"])
+        related_title = html_escape(related.get("nav_title", related["title"]))
+        related_teaser = related.get("teaser")
+        teaser_html = (
+            f'<span class="related-story-teaser">{html_escape(related_teaser)}</span>'
+            if related_teaser
+            else ""
+        )
         cards.append(f'''        <a class="related-story-card" href="{html_escape(related_href)}">
           <img src="../images/{html_escape(image_folder)}/{html_escape(derivative['filename'])}" width="{derivative['width']}" height="{derivative['height']}" loading="lazy" decoding="async" alt="{related_title}">
           <span class="related-story-copy">
             <span class="related-story-kicker">延伸閱讀</span>
             <span class="related-story-title">{related_title}</span>
             <span class="related-story-arrow" aria-hidden="true">→</span>
+            {teaser_html}
           </span>
         </a>''')
 
@@ -479,8 +522,8 @@ def build_trip(trip_slug="2026-germany", dest_slug=None, entry_id=None):
         html_content = html_content.replace("<!-- GALLERY_REGISTRY -->", gallery_registry)
 
         # 1. 調整核心資源路徑至 ../../core/
-        html_content = re.sub(r'href="(?:\.\./)*css/style\.css(?:\?[^"]*)?"', 'href="../../core/css/style.css?v=20260903-nav-unify"', html_content)
-        html_content = re.sub(r'href="(?:\.\./)*core/css/style\.css(?:\?[^"]*)?"', 'href="../../core/css/style.css?v=20260903-nav-unify"', html_content)
+        html_content = re.sub(r'href="(?:\.\./)*css/style\.css(?:\?[^"]*)?"', 'href="../../core/css/style.css?v=20260929-related-stories"', html_content)
+        html_content = re.sub(r'href="(?:\.\./)*core/css/style\.css(?:\?[^"]*)?"', 'href="../../core/css/style.css?v=20260929-related-stories"', html_content)
         html_content = re.sub(r'href="(?:\.\./)*vendor/glightbox/glightbox\.min\.css(?:\?[^"]*)?"', 'href="../../core/vendor/glightbox/glightbox.min.css"', html_content)
         html_content = re.sub(r'src="(?:\.\./)*vendor/glightbox/glightbox\.min\.js(?:\?[^"]*)?"', 'src="../../core/vendor/glightbox/glightbox.min.js"', html_content)
         html_content = re.sub(r'src="(?:\.\./)*js/app\.js(?:\?[^"]*)?"', 'src="../../core/js/app.js"', html_content)
@@ -588,20 +631,76 @@ def build_trip(trip_slug="2026-germany", dest_slug=None, entry_id=None):
             timeline_fallback_link = item.get("timeline_fallback_link", "../index.html#itinerary")
             center_html = f'<a href="{timeline_fallback_link}" class="badge badge-gold" style="font-size: 0.9rem; padding: 0.5rem 1rem; text-decoration: none;">🗺️ 行程總覽</a>'
 
-        if reading_item:
+        if item.get("navigation_style") == "discovery" and not reading_item:
+            if item.get("prev_link"):
+                prev_html = (
+                    f'<a class="article-linear-link article-linear-link-prev" href="{html_escape(item["prev_link"])}">'
+                    f'<span class="article-linear-label">上一篇</span>'
+                    f'<span>← {html_escape(item["prev_title"])}</span></a>'
+                )
+            else:
+                prev_html = (
+                    '<a class="article-linear-link article-linear-link-prev" href="../index.html#itinerary">'
+                    '<span class="article-linear-label">系列起點</span>'
+                    '<span>← 旅程總覽</span></a>'
+                )
+            if item.get("next_link"):
+                next_html = (
+                    f'<a class="article-linear-link article-linear-link-next" href="{html_escape(item["next_link"])}">'
+                    f'<span class="article-linear-label">下一篇</span>'
+                    f'<span>{html_escape(item["next_title"])} →</span></a>'
+                )
+            else:
+                next_html = (
+                    '<a class="article-linear-link article-linear-link-next" href="../index.html">'
+                    '<span class="article-linear-label">系列完結</span>'
+                    '<span>回到旅程總覽 →</span></a>'
+                )
+
+        if reading_item or item.get("navigation_style") == "discovery":
             related_html = render_related_stories(item, entries_by_id, images_dict, errors)
+            overview_label = (
+                config_data.get("journey_overview_label", "🇦🇺 澳洲旅程總覽")
+                if isinstance(config_data, dict)
+                else "旅程總覽"
+            )
             new_nav_block = f'''<!-- 篇章導覽按鈕 -->
       <section class="article-navigation" aria-label="文章導覽">
         <div class="article-linear-nav">
           {prev_html}
           <div class="article-footer-actions">
-            <a href="../index.html" class="article-overview-link">🇦🇺 澳洲旅程總覽</a>
+            <a href="../index.html" class="article-overview-link">{html_escape(overview_label)}</a>
             {center_html}
           </div>
           {next_html}
         </div>
 {related_html}
         <a class="article-global-link" href="../../index.html">回到 CH x Travel 全球旅程 →</a>
+      </section>'''
+        elif item.get("navigation_style") == "compact":
+            compact_prev_link = item.get("prev_link", "../index.html")
+            compact_prev_title = item.get("prev_title", journey_title)
+            compact_next_link = item.get("next_link", "../index.html")
+            compact_next_title = item.get("next_title", journey_title)
+            compact_prev_label = "旅程總覽" if compact_prev_link == "../index.html" else "上一篇"
+            compact_next_label = "旅程總覽" if compact_next_link == "../index.html" else "下一篇"
+            new_nav_block = f'''<!-- 篇章導覽按鈕 -->
+      <section class="article-navigation" aria-label="文章導覽">
+        <div class="article-linear-nav">
+          <a class="article-linear-link article-linear-link-prev" href="{html_escape(compact_prev_link)}">
+            <span class="article-linear-label">{compact_prev_label}</span>
+            <span>← {html_escape(compact_prev_title)}</span>
+          </a>
+          <div class="article-footer-actions">
+            <button type="button" class="btn-gallery-quick">瀏覽完整圖集</button>
+            <a class="article-overview-link" href="../../about/">關於 CH</a>
+            <a class="article-overview-link" href="#top">回到文章開頭 ↑</a>
+          </div>
+          <a class="article-linear-link article-linear-link-next" href="{html_escape(compact_next_link)}">
+            <span class="article-linear-label">{compact_next_label}</span>
+            <span>{html_escape(compact_next_title)} →</span>
+          </a>
+        </div>
       </section>'''
         else:
             new_nav_block = f'''<!-- 篇章導覽按鈕 -->
@@ -636,7 +735,7 @@ def build_trip(trip_slug="2026-germany", dest_slug=None, entry_id=None):
     if entry_id is None and hub_source.exists():
         hub_output = DOCS_DIR / dest_slug / "index.html"
         hub_content = strip_editor_metadata(hub_source.read_text(encoding="utf-8"))
-        hub_content = re.sub(r'href="(?:\.\./)*core/css/style\.css(?:\?[^"]*)?"', 'href="../core/css/style.css?v=20260903-nav-unify"', hub_content)
+        hub_content = re.sub(r'href="(?:\.\./)*core/css/style\.css(?:\?[^"]*)?"', 'href="../core/css/style.css?v=20260929-related-stories"', hub_content)
         compiled_outputs[hub_output] = ("journey-hub", hub_content)
 
     # 嚴格原子性把關：若有任何錯誤，絕不寫入磁碟！

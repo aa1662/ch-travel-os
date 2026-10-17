@@ -4,18 +4,22 @@
   "dest": "2023-tokyo",
   "journey_title": "2023 東京出差散步",
   "brand_title": "CH x Travel",
-  "article_series_href": null,
+  "article_series_href": "../index.html",
   "article_nav_links": [
     {
-      "href": "../../index.html",
-      "label": "全球旅程"
+      "href": "../../japan/",
+      "label": "日本旅程"
+    },
+    {
+      "href": "../index.html",
+      "label": "東京首頁"
     },
     {
       "href": "#photos",
       "label": "瀏覽照片"
     }
   ],
-  "show_gallery_titles": true,
+  "show_gallery_titles": false,
   "entries": [
     {
       "id": "tokyo-arrival-meiji-jingu",
@@ -25,9 +29,9 @@
       "image_folder": "arrival",
       "preserve_gallery_groups": true,
       "footer_center": "gallery",
-      "prev_link": "../../index.html",
-      "prev_title": "← 全球旅程",
-      "next_title": "2023 東京 · 抵達日散步",
+      "prev_link": "../index.html",
+      "prev_title": "2023 東京旅程首頁",
+      "next_title": "東京出差的空檔：皇居散步，吃飽再回家",
       "og_url": "https://chxtravel.com/2023-tokyo/blog/tokyo-arrival-meiji-jingu.html",
       "og_image": "https://chxtravel.com/2023-tokyo/images/arrival/20231113_173312-desktop-1200w.webp",
       "gallery_groups": [
@@ -54,16 +58,6 @@
               "image": "18087310885383380.webp",
               "image_id": "18087310885383380",
               "title": "明治神宮酒桶牆與境內 · 4"
-            },
-            {
-              "image": "18130657909311129.webp",
-              "image_id": "18130657909311129",
-              "title": "明治神宮酒桶牆與境內 · 5"
-            },
-            {
-              "image": "17994553646461649.webp",
-              "image_id": "17994553646461649",
-              "title": "明治神宮酒桶牆與境內 · 6"
             },
             {
               "image": "18284660395155807.webp",
@@ -111,19 +105,9 @@
               "title": "原宿街景、車站與月台 · 1"
             },
             {
-              "image": "17998509257253151.webp",
-              "image_id": "17998509257253151",
-              "title": "原宿街景、車站與月台 · 2"
-            },
-            {
               "image": "17912712086768570.webp",
               "image_id": "17912712086768570",
               "title": "原宿街景、車站與月台 · 3"
-            },
-            {
-              "image": "17954755484693701.webp",
-              "image_id": "17954755484693701",
-              "title": "東京車站夜景 · 1"
             },
             {
               "image": "18030919246642962.webp",
@@ -136,19 +120,9 @@
               "title": "東京車站夜景 · 3"
             },
             {
-              "image": "18202929997274557.webp",
-              "image_id": "18202929997274557",
-              "title": "東京車站夜景 · 4"
-            },
-            {
               "image": "20231113_173312.jpg",
               "image_id": "20231113_173312",
               "title": "東京車站與丸之內夜景"
-            },
-            {
-              "image": "18001196669471774.webp",
-              "image_id": "18001196669471774",
-              "title": "東京隨拍 · 1"
             },
             {
               "image": "17981930390580500.webp",
@@ -161,11 +135,6 @@
               "title": "東京隨拍 · 3"
             },
             {
-              "image": "18013555363831123.webp",
-              "image_id": "18013555363831123",
-              "title": "東京隨拍 · 4"
-            },
-            {
               "image": "18105648229356611.webp",
               "image_id": "18105648229356611",
               "title": "東京隨拍 · 6"
@@ -176,18 +145,230 @@
               "title": "東京隨拍 · 7"
             },
             {
-              "image": "18024616786772905.webp",
-              "image_id": "18024616786772905",
-              "title": "東京隨拍 · 8"
-            },
-            {
               "image": "20231113_210809.jpg",
               "image_id": "20231113_210809",
               "title": "飯店窗外的東京夜景"
             }
           ]
         }
-      ]
+      ],
+      "navigation_style": "compact",
+      "next_link": "tokyo-imperial-palace-and-return.html"
+    },
+    {
+      "id": "tokyo-imperial-palace-and-return",
+      "title": "東京出差的空檔：皇居散步，吃飽再回家",
+      "source": "trips/2023-tokyo/sources/blog/tokyo-imperial-palace-and-return.html",
+      "output": "docs/2023-tokyo/blog/tokyo-imperial-palace-and-return.html",
+      "image_folder": "return",
+      "preserve_gallery_groups": true,
+      "footer_center": "gallery",
+      "prev_link": "tokyo-arrival-meiji-jingu.html",
+      "prev_title": "六年沒來東京，先去明治神宮走走",
+      "next_title": "回到東京旅程首頁",
+      "og_url": "https://chxtravel.com/2023-tokyo/blog/tokyo-imperial-palace-and-return.html",
+      "og_image": "https://chxtravel.com/2023-tokyo/images/return/20231115_125404-desktop-1200w.webp",
+      "gallery_groups": [
+        {
+          "id": "tokyo-return-landscape",
+          "title": "橫式照片",
+          "items": [
+            {
+              "image": "18026385133752022.webp",
+              "image_id": "18026385133752022",
+              "title": "辦公室窗外的皇居景觀 · 1"
+            },
+            {
+              "image": "18019884139868625.webp",
+              "image_id": "18019884139868625",
+              "title": "辦公室窗外的皇居景觀 · 2"
+            },
+            {
+              "image": "18106279600348897.webp",
+              "image_id": "18106279600348897",
+              "title": "辦公室窗外的皇居景觀 · 3"
+            },
+            {
+              "image": "17850818367084756.webp",
+              "image_id": "17850818367084756",
+              "title": "辦公室窗外的皇居景觀 · 4"
+            },
+            {
+              "image": "18067802698409467.webp",
+              "image_id": "18067802698409467",
+              "title": "辦公室窗外的皇居景觀 · 6"
+            },
+            {
+              "image": "17893521959925186.webp",
+              "image_id": "17893521959925186",
+              "title": "辦公室窗外的皇居景觀 · 7"
+            },
+            {
+              "image": "17974519472475258.webp",
+              "image_id": "17974519472475258",
+              "title": "辦公室窗外的皇居景觀 · 8"
+            },
+            {
+              "image": "18257674240204157.webp",
+              "image_id": "18257674240204157",
+              "title": "辦公室窗外的皇居景觀 · 9"
+            },
+            {
+              "image": "18040066129576597.webp",
+              "image_id": "18040066129576597",
+              "title": "辦公室窗外的皇居景觀 · 10"
+            },
+            {
+              "image": "17845061277101393.webp",
+              "image_id": "17845061277101393",
+              "title": "二重橋 · 1"
+            },
+            {
+              "image": "17857120728062069.webp",
+              "image_id": "17857120728062069",
+              "title": "二重橋 · 2"
+            },
+            {
+              "image": "17962858487656352.webp",
+              "image_id": "17962858487656352",
+              "title": "二重橋 · 3"
+            },
+            {
+              "image": "17856847557062924.webp",
+              "image_id": "17856847557062924",
+              "title": "二重橋 · 4"
+            },
+            {
+              "image": "18059603371465102.webp",
+              "image_id": "18059603371465102",
+              "title": "皇居周邊與秋色 · 2"
+            },
+            {
+              "image": "18001623674227842.webp",
+              "image_id": "18001623674227842",
+              "title": "皇居周邊與秋色 · 3"
+            },
+            {
+              "image": "17989049897452142.webp",
+              "image_id": "17989049897452142",
+              "title": "皇居周邊與秋色 · 4"
+            },
+            {
+              "image": "18034564846627260.webp",
+              "image_id": "18034564846627260",
+              "title": "皇居周邊與秋色 · 5"
+            },
+            {
+              "image": "18001280936226302.webp",
+              "image_id": "18001280936226302",
+              "title": "皇居周邊與秋色 · 6"
+            },
+            {
+              "image": "17895365480846904.webp",
+              "image_id": "17895365480846904",
+              "title": "和牛與漢堡肉套餐 · 1"
+            },
+            {
+              "image": "17981787638577077.webp",
+              "image_id": "17981787638577077",
+              "title": "和牛與漢堡肉套餐 · 2"
+            },
+            {
+              "image": "17849678826080031.webp",
+              "image_id": "17849678826080031",
+              "title": "和牛與漢堡肉套餐 · 3"
+            },
+            {
+              "image": "17995251674516827.webp",
+              "image_id": "17995251674516827",
+              "title": "和牛與漢堡肉套餐 · 4"
+            },
+            {
+              "image": "18023109985840968.webp",
+              "image_id": "18023109985840968",
+              "title": "和牛與漢堡肉套餐 · 5"
+            },
+            {
+              "image": "17902762160886090.webp",
+              "image_id": "17902762160886090",
+              "title": "和牛與漢堡肉套餐 · 6"
+            },
+            {
+              "image": "17980320242539690.webp",
+              "image_id": "17980320242539690",
+              "title": "和牛與漢堡肉套餐 · 7"
+            },
+            {
+              "image": "18016910050785998.webp",
+              "image_id": "18016910050785998",
+              "title": "阿美橫町 · 1"
+            },
+            {
+              "image": "18274783099082465.webp",
+              "image_id": "18274783099082465",
+              "title": "阿美橫町 · 2"
+            },
+            {
+              "image": "17851528488084194.webp",
+              "image_id": "17851528488084194",
+              "title": "阿美橫町 · 3"
+            },
+            {
+              "image": "20231115_125404.jpg",
+              "image_id": "20231115_125404",
+              "title": "皇居外圍建築與水面倒影"
+            }
+          ]
+        },
+        {
+          "id": "tokyo-return-portrait",
+          "title": "直式照片",
+          "items": [
+            {
+              "image": "18000819815042107.webp",
+              "image_id": "18000819815042107",
+              "title": "飯店窗外的鐵道 · 2"
+            },
+            {
+              "image": "18016205425784828.webp",
+              "image_id": "18016205425784828",
+              "title": "東京車站白天與站內 · 1"
+            },
+            {
+              "image": "17845276320093492.webp",
+              "image_id": "17845276320093492",
+              "title": "東京車站白天與站內 · 2"
+            },
+            {
+              "image": "17981518718572866.webp",
+              "image_id": "17981518718572866",
+              "title": "東京車站白天與站內 · 3"
+            },
+            {
+              "image": "18083796364396339.webp",
+              "image_id": "18083796364396339",
+              "title": "東京車站白天與站內 · 4"
+            },
+            {
+              "image": "17979158267387021.webp",
+              "image_id": "17979158267387021",
+              "title": "東京車站白天與站內 · 5"
+            },
+            {
+              "image": "18015135112938353.webp",
+              "image_id": "18015135112938353",
+              "title": "皇居周邊與秋色 · 1"
+            },
+            {
+              "image": "20231115_123659.jpg",
+              "image_id": "20231115_123659",
+              "title": "二重橋與水面倒影"
+            }
+          ]
+        }
+      ],
+      "navigation_style": "compact",
+      "next_link": "../index.html"
     }
   ]
 }

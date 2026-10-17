@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CH x Travel - CH 的私人旅程圖文誌，收錄現代旅行專刊、歷年影像典藏與自駕漫遊手記。">
+  <meta property="og:site_name" content="CH x Travel">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CH x Travel · 私人旅程圖文誌">
+  <meta property="og:description" content="從德南冬季自駕到關西盛夏漫遊，整理 CH 的家庭旅行、重返現場與歷年影像典藏。">
+  <meta property="og:url" content="https://chxtravel.com/">
+  <link rel="canonical" href="https://chxtravel.com/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <title>CH x Travel · 私人旅程圖文誌</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="core/css/style.css?v=20260903-nav-unify">
+  <link rel="stylesheet" href="core/vendor/glightbox/glightbox.min.css">
+  <style>
+    .snaplog-archive-btn {
+      background: var(--primary);
+      color: var(--text-white);
+      border-color: var(--primary);
+      box-shadow: 0 4px 14px rgba(36, 52, 71, 0.18);
+    }
+
+    .snaplog-archive-btn:hover {
+      background: var(--accent);
+      color: var(--text-white);
+      border-color: var(--accent);
+      box-shadow: 0 6px 18px rgba(217, 119, 6, 0.24);
+    }
+
+    .home-mobile-dock button.dock-item {
+      appearance: none;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding-bottom: calc(var(--dock-height) + 1rem);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 頂部玻璃擬態導覽列 -->
+  <nav class="site-nav">
+    <div class="container">
+      <div class="brand-group">
+        <a href="index.html" class="brand-link">
+          <span>🌍 CH x Travel</span>
+        </a>
+        <span class="brand-badge">全球旅程圖文誌</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#trips" class="active">🌍 旅程專刊</a></li>
+        <li><a href="2024-australia/index.html">🇦🇺 澳洲</a></li>
+        <li><a href="2026-germany/index.html">🇩🇪 德南</a></li>
+        <li><a href="japan/index.html">🇯🇵 日本</a></li>
+        <li><a href="2025-2026-beijing/index.html">🇨🇳 北京</a></li>
+        <li><a href="https://snaplog.chxtravel.com/" target="_blank" rel="noopener noreferrer">🏛️ Snaplog ↗</a></li>
+        <li><a href="about/">關於</a></li>
+      </ul>
+      <button class="nav-share-btn btn-share" type="button"><span>📤 分享</span></button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- Hero 總入口看板 -->
+    <section class="hero-bento" style="margin-top: 1.5rem;">
+      <div class="hero-banner">
+        <div class="hero-badge-group">
+          <span class="badge badge-gold">🌍 CH x Travel · Private Journey Journal</span>
+          <span class="badge badge-glass">📸 現代專刊與歷年影像典藏</span>
+          <span class="badge badge-forest">⚡ 雜誌風極速隨行載入</span>
+        </div>
+        <h1 class="hero-title">世界各地的光影、故事與生活印記</h1>
+        <p class="hero-subtitle">
+          從白雪皚皚的阿爾卑斯湖畔，到東京城市散步與關西盛夏的山林古道。這裡整理 CH 的現代旅行專刊，也保留早年 Snaplog 影像典藏的入口。
+        </p>
+        <div class="hero-actions">
+          <a href="2024-australia/index.html" class="btn-hero-primary">🇦🇺 2024 澳洲漫遊記完整專刊 →</a>
+          <a href="2026-germany/index.html" class="btn-hero-secondary">🇩🇪 2026 德南自駕 15 天專刊 →</a>
+          <a href="japan/index.html" class="btn-hero-secondary">🇯🇵 日本旅程：東京與關西 →</a>
+          <a href="2025-2026-beijing/index.html" class="btn-hero-secondary">🇨🇳 半年去了兩次北京 4 篇專刊 →</a>
+          <a href="#trips" class="btn-hero-secondary" style="border-style: dashed;">🧭 探索歷年旅程 ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 歷年旅程矩陣 -->
+    <section id="trips" style="margin: 3.5rem 0 2rem;">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;">
+        <h2 style="font-family: var(--font-heading); font-size: 1.6rem; color: var(--primary);">
+          🗺️ 現代專刊與歷年入口
+        </h2>
+        <span class="badge badge-glass">CH x Travel</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
+        <!-- Card 1: 2026 Germany (Published Flagship) -->
+        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
+          <div style="position: relative; aspect-ratio: 16/9; overflow: hidden;">
+            <img src="2026-germany/images/day-02/18041867387724285-desktop-1200w.webp"
+                 srcset="2026-germany/images/day-02/18041867387724285-thumb-480w.webp 480w,
+                         2026-germany/images/day-02/18041867387724285-content-960w.webp 960w,
+                         2026-germany/images/day-02/18041867387724285-desktop-1200w.webp 1200w"
+                 sizes="(max-width: 768px) 100vw, 400px"
+                 width="1200" height="1200"
+                 loading="lazy" decoding="async"
+                 alt="2026 德國南部冬季自駕"
+                 style="width: 100%; height: 100%; object-fit: cover;">
+            <div style="position: absolute; top: 1rem; left: 1rem;">
+              <span class="badge badge-gold">🇩🇪 2026 德南自駕</span>
+            </div>
+          </div>
+          <div style="padding: 1.25rem; flex: 1; display: flex; flex-direction: column;">
+            <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">2026.01.26 ~ 02.09 · 15 天自駕 ✕ 16 篇深度遊記</span>
+            <h3 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--primary); margin: 0.3rem 0 0.6rem;">
+              🇩🇪 德南南部 ✕ 阿爾卑斯四國冬季自駕
+            </h3>
+            <p style="font-size: 0.9rem; color: var(--text-sub); line-height: 1.6; flex: 1;">
+              哈修塔特十二年夏冬對照、符茲堡主教宮、班堡煙燻啤酒、羅騰堡童話、海德堡古堡、科爾馬與雪白新天鵝堡。
+            </p>
+            <div style="margin-top: 1rem; display: flex; gap: 0.75rem;">
+              <a href="2026-germany/index.html" class="btn-hero-primary" style="font-size: 0.88rem; padding: 0.5rem 1rem;">進入旅程總覽 →</a>
+              <a href="2026-germany/blog/hallstatt-winter.html" class="btn-hero-secondary" style="font-size: 0.88rem; padding: 0.5rem 1rem;">精選遊記</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Japan Country Hub -->
+        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
+          <div style="position: relative; aspect-ratio: 16/9; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; background: #182330;">
+            <img src="2023-tokyo/images/index/20231114_135023-content-960w.webp"
+                 srcset="2023-tokyo/images/index/20231114_135023-thumb-480w.webp 480w,
+                         2023-tokyo/images/index/20231114_135023-content-960w.webp 960w"
+                 sizes="(max-width: 768px) 50vw, 200px"
+                 width="4000" height="2256"
+                 loading="lazy" decoding="async"
+                 alt="東京皇居外苑與城市天際線"
+                 style="width: 100%; height: 100%; object-fit: cover; object-position: center 54%;">
+            <img src="2026-osaka/images/day-03/20260826_163826-content-960w.webp"
+                 srcset="2026-osaka/images/day-03/20260826_163826-thumb-480w.webp 480w,
+                         2026-osaka/images/day-03/20260826_163826-content-960w.webp 960w"
+                 sizes="(max-width: 768px) 50vw, 200px"
+                 width="3782" height="2128"
+                 loading="lazy" decoding="async"
+                 alt="大阪城與本丸日本庭園倒影"
+                 style="width: 100%; height: 100%; object-fit: cover; object-position: center 56%;">
+            <div style="position: absolute; top: 1rem; left: 1rem;">
+              <span class="badge badge-gold">🇯🇵 日本旅程</span>
+            </div>
+          </div>
+          <div style="padding: 1.25rem; flex: 1; display: flex; flex-direction: column;">
+            <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">2023 東京 ✕ 2026 關西 · 2 趟旅程 ✕ 6 篇完整遊記</span>
+            <h3 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--primary); margin: 0.3rem 0 0.6rem;">
+              🇯🇵 日本旅程 ✕ 東京出差散步與關西盛夏漫遊
+            </h3>
+            <p style="font-size: 0.9rem; color: var(--text-sub); line-height: 1.6; flex: 1;">
+              從明治神宮、東京車站與皇居周邊的出差空檔，到鞍馬貴船、比叡山、勝尾寺與大阪城的家庭旅行；依年份收好每一次不同的日本走法。
+            </p>
+            <div style="margin-top: 1rem; display: flex; gap: 0.75rem;">
+              <a href="japan/index.html" class="btn-hero-primary" style="font-size: 0.88rem; padding: 0.5rem 1rem;">進入日本旅程 →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: 2025-2026 Beijing (Published Flagship) -->
+        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
+          <div style="position: relative; aspect-ratio: 16/9; overflow: hidden;">
+            <img src="2025-2026-beijing/images/mutianyu/20251112_153025-desktop-1200w.webp"
+                 srcset="2025-2026-beijing/images/mutianyu/20251112_153025-thumb-480w.webp 480w,
+                         2025-2026-beijing/images/mutianyu/20251112_153025-content-960w.webp 960w,
+                         2025-2026-beijing/images/mutianyu/20251112_153025-desktop-1200w.webp 1200w"
+                 sizes="(max-width: 768px) 100vw, 400px"
+                 width="4000" height="2252"
+                 loading="lazy" decoding="async"
+                 alt="半年去了兩次北京圖文誌"
+                 style="width: 100%; height: 100%; object-fit: cover;">
+            <div style="position: absolute; top: 1rem; left: 1rem;">
+              <span class="badge badge-gold">🇨🇳 2025–2026 北京</span>
+            </div>
+          </div>
+          <div style="padding: 1.25rem; flex: 1; display: flex; flex-direction: column;">
+            <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">2025.11 ✕ 2026.06 · 雙次走讀 ✕ 4 篇深度圖文遊記</span>
+            <h3 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--primary); margin: 0.3rem 0 0.6rem;">
+              🇨🇳 半年去了兩次北京 ✕ 長城、水鎮、景山與胡同慢步
+            </h3>
+            <p style="font-size: 0.9rem; color: var(--text-sub); line-height: 1.6; flex: 1;">
+              深秋出差包車登慕田峪長城、夜宿司馬台古北水鎮；初夏陪 Belle 場勘，清晨登景山俯瞰故宮、午後在南鑼鼓巷與什剎海看放學的孩子。
+            </p>
+            <div style="margin-top: 1rem; display: flex; gap: 0.75rem;">
+              <a href="2025-2026-beijing/index.html" class="btn-hero-primary" style="font-size: 0.88rem; padding: 0.5rem 1rem;">進入旅程總覽 →</a>
+              <a href="2025-2026-beijing/blog/nanluoguxiang-shichahai.html" class="btn-hero-secondary" style="font-size: 0.88rem; padding: 0.5rem 1rem;">精選遊記</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: 2024 Australia (Published Flagship) -->
+        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
+          <div style="position: relative; aspect-ratio: 16/9; overflow: hidden;">
+            <img src="2024-australia/images/day-06/20241101_151456-desktop-1200w.webp"
+                 srcset="2024-australia/images/day-06/20241101_151456-thumb-480w.webp 480w,
+                         2024-australia/images/day-06/20241101_151456-content-960w.webp 960w,
+                         2024-australia/images/day-06/20241101_151456-desktop-1200w.webp 1200w"
+                 sizes="(max-width: 768px) 100vw, 400px"
+                 width="1200" height="676"
+                 loading="lazy" decoding="async"
+                 alt="2024 澳洲漫遊記 ✕ 亞拉河谷綠草如茵"
+                 style="width: 100%; height: 100%; object-fit: cover;">
+            <div style="position: absolute; top: 1rem; left: 1rem;">
+              <span class="badge badge-gold">🇦🇺 2024 澳洲漫遊</span>
+            </div>
+          </div>
+          <div style="padding: 1.25rem; flex: 1; display: flex; flex-direction: column;">
+            <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">2024.10.27 ~ 11.03 · 8 天漫遊 ✕ 5 篇核心專刊 + 1 篇中場</span>
+            <h3 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--primary); margin: 0.3rem 0 0.6rem;">
+              🇦🇺 澳洲漫遊記 ✕ 雪梨港灣、亞拉河谷與淘金小鎮
+            </h3>
+            <p style="font-size: 0.9rem; color: var(--text-sub); line-height: 1.6; flex: 1;">
+              從雪梨出差地陪遇上空中黑幫、46 樓鳥瞰天際線與極致躺平動物園，到四千元拯救腰椎的墨爾本電車中場；走入亞拉河谷封神大草原、百年蒸汽火車與菲利普島神仙企鵝。
+            </p>
+            <div style="margin-top: 1rem; display: flex; gap: 0.75rem;">
+              <a href="2024-australia/index.html" class="btn-hero-primary" style="font-size: 0.88rem; padding: 0.5rem 1rem;">進入旅程總覽 →</a>
+              <a href="2024-australia/blog/yarra-valley-wine-and-grassland.html" class="btn-hero-secondary" style="font-size: 0.88rem; padding: 0.5rem 1rem;">精選遊記</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 歷年足跡外部數位典藏庫 (Snaplog) -->
+      <div style="margin-top: 2rem; background: var(--card-bg); border: 1px dashed var(--border-color); border-radius: var(--radius-lg); padding: 1.4rem 1.8rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;">
+        <div>
+          <a href="https://snaplog.chxtravel.com/" target="_blank" rel="noopener noreferrer" aria-label="開啟 Snaplog 歷史足跡典藏" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.25rem; text-decoration: none;">
+            <span class="badge badge-gold">🏛️ 歷史足跡典藏</span>
+            <span style="font-weight: 700; color: var(--primary); font-size: 1.05rem;">Snaplog · 2000–2019 歷年旅行影像典藏</span>
+          </a>
+          <p style="margin: 0; font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">
+            收錄早期義大利、德奧、北京、香港、日本等國外旅行，也保留台灣單車環島與金門等國內紀錄。舊旅程先在獨立典藏站保存，未來再逐篇升級搬回 CH x Travel。
+          </p>
+        </div>
+        <a href="https://snaplog.chxtravel.com/" target="_blank" rel="noopener noreferrer" class="btn-hero-secondary snaplog-archive-btn" style="font-size: 0.88rem; padding: 0.5rem 1.1rem; white-space: nowrap;">
+          開啟 Snaplog 典藏庫 ↗
+        </a>
+      </div>
+    </section>
+
+    <!-- Brand Closing Note -->
+    <section aria-labelledby="brand-note-title" style="margin: 4.5rem 0 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+      <p style="margin: 0 0 0.45rem; color: var(--accent); font-size: 0.76rem; font-weight: 800; text-transform: uppercase;">CH x Travel</p>
+      <h2 id="brand-note-title" style="max-width: 720px; margin: 0; color: var(--primary); font-family: var(--font-heading); font-size: clamp(1.55rem, 3vw, 2.15rem); line-height: 1.35; letter-spacing: 0;">
+        走過的地方，慢慢整理成一冊冊旅程。
+      </h2>
+      <p style="max-width: 720px; margin: 0.85rem 0 0; color: var(--text-sub); font-size: 0.96rem; line-height: 1.8;">
+        記錄實際走過的路、同行的人，以及旅途中值得留下的片段。所有文章都從親身旅程與原始影像出發，持續整理成可以再次翻閱的私人旅行圖誌。
+      </p>
+    </section>
+  </main>
+
+  <footer style="margin-top: 4rem; padding: 2rem 0; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+    <p>© 2026 CH x Travel · CH 的私人旅程圖文誌</p>
+    <p style="margin-top: 0.35rem;">
+      <a href="about/" style="color: var(--text-muted); text-decoration: none;">關於 CH</a>
+      <span style="margin: 0 0.5rem;">·</span>
+      <a href="https://snaplog.chxtravel.com/" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); text-decoration: none;">Snaplog Archive ↗</a>
+    </p>
+  </footer>
+
+  <div class="mobile-dock home-mobile-dock">
+    <a href="index.html" class="dock-item active"><span class="dock-icon">🏠</span><span>首頁</span></a>
+    <a href="2024-australia/index.html" class="dock-item"><span class="dock-icon">🇦🇺</span><span>澳洲</span></a>
+    <a href="2026-germany/index.html" class="dock-item"><span class="dock-icon">🇩🇪</span><span>德南</span></a>
+    <a href="japan/index.html" class="dock-item"><span class="dock-icon">🗾</span><span>日本</span></a>
+    <a href="https://snaplog.chxtravel.com/" target="_blank" rel="noopener noreferrer" class="dock-item"><span class="dock-icon">🏛️</span><span>典藏</span></a>
+    <button type="button" class="dock-item btn-share"><span class="dock-icon">📤</span><span>分享</span></button>
+  </div>
+
+  <script src="core/vendor/glightbox/glightbox.min.js"></script>
+  <script src="core/js/app.js"></script>
+</body>
+</html>
