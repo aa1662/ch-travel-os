@@ -10,6 +10,10 @@
 :root{color-scheme:light;--ink:#243447;--muted:#656e75;--line:#dcdedb;--paper:#f6f5f1;--accent:#315c61}*{box-sizing:border-box}[hidden]{display:none!important}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit;color:inherit}button,.link{border:1px solid var(--line);border-radius:6px;padding:6px 12px;background:#fff;cursor:pointer;text-decoration:none;display:inline-block}button:hover,.link:hover{background:#edf2f0}button:disabled{opacity:.5;cursor:wait}button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}:focus-visible{outline:3px solid #348594;outline-offset:2px}input,select,textarea{border:1px solid var(--line);border-radius:6px;padding:7px;background:#fff;max-width:100%}textarea{width:100%;resize:vertical}h1,h2,h3,p{margin:0 0 12px}h1{font-size:23px}h2{font-size:19px}small,.muted{color:var(--muted);font-size:13px}.login-card{max-width:420px;margin:12vh auto;padding:28px;background:#fff;border:1px solid var(--line);border-radius:12px}.login-card input{width:100%;margin:8px 0 16px}.shell{max-width:1480px;margin:auto;padding:20px}.topbar,.actions,.tabs,.pager,.detail-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.topbar{justify-content:space-between;margin-bottom:12px}.topbar h1{margin:0}.local{font-size:12px;background:#ece6d4;padding:3px 8px;border-radius:20px}.counts{display:flex;flex-wrap:wrap;gap:20px;font-size:14px;margin:12px 0}.counts strong{font-size:19px;margin-left:5px}.filters{display:flex;align-items:end;gap:12px;flex-wrap:wrap;margin:12px 0}.filters label{display:grid;gap:3px;font-size:13px}.filters .check{display:flex;align-items:center;gap:6px;padding-bottom:7px}.search{display:flex;gap:6px;align-items:end;flex-wrap:wrap}.tabs{border-bottom:1px solid var(--line);padding-bottom:10px}.tabs button[aria-pressed=true]{background:var(--accent);color:white;border-color:var(--accent)}.workspace{display:grid;grid-template-columns:minmax(290px,390px) minmax(0,1fr);border:1px solid var(--line);border-radius:10px;background:#fff;overflow:hidden;margin-top:12px;min-height:60vh}.sidebar{border-right:1px solid var(--line);min-width:0}.list{max-height:66vh;overflow:auto}.row{display:block;width:100%;text-align:left;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:12px 15px;background:white}.row[aria-current=true]{background:#e9f1ef;box-shadow:inset 3px 0 var(--accent)}.row.unread .row-title{font-weight:750}.row-title{display:block;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.row-meta{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--muted);margin:3px 0}.preview{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px;line-height:1.5}.badge{display:inline-block;background:#f0eee6;border-radius:4px;padding:1px 6px;font-size:12px}.badge.new{background:#fff1cd;color:#815614}.pager{padding:12px;justify-content:space-between;border-top:1px solid var(--line);font-size:13px}.detail{padding:22px;min-width:0}.detail-head{justify-content:space-between}.body-text{white-space:pre-wrap;overflow-wrap:anywhere;background:#f8f8f5;padding:16px;border-radius:6px;margin:18px 0}.note-label{display:block;font-weight:650;margin:20px 0 6px}.note-meta{display:flex;justify-content:space-between;gap:8px;margin-bottom:8px}.notice{padding:10px 12px;border-radius:6px;background:#eaf1ef;margin:10px 0;white-space:pre-wrap;overflow-wrap:anywhere}.error{background:#fff0eb;color:#943d28}.empty{padding:32px 16px;text-align:center;color:var(--muted)}.back{display:none}dialog{border:1px solid var(--line);border-radius:12px;padding:24px;max-width:540px;width:calc(100% - 32px);color:var(--ink)}dialog::backdrop{background:#14273388}.conflict{border:1px solid #dbb39b;padding:12px;margin:12px 0;border-radius:6px}.conflict pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:180px;overflow:auto;font:inherit}.copy-area{margin-top:15px}.wide{width:100%}@media(max-width:760px){.shell{padding:12px}.workspace{grid-template-columns:1fr}.sidebar{border-right:0}.list{max-height:none}.detail{padding:16px}.workspace:not(.show-detail) .detail{display:none}.workspace.show-detail .sidebar{display:none}.back{display:inline-block}.filters{gap:8px}.filters>label{flex:1;min-width:130px}.search{width:100%}.search label{flex:1}.search input{width:100%}.counts{gap:12px}.topbar{align-items:start}.login-card{margin:10vh 16px}.pager button{padding:6px 10px}}
 .overview{margin:16px 0 24px;border:1px solid var(--line);border-radius:10px;background:#fff;padding:14px 16px}.overview summary{cursor:pointer;font-size:18px;font-weight:700}.overview .filters{margin-bottom:8px}.overview-table-wrap{max-height:300px;overflow:auto;border:1px solid var(--line);border-radius:6px}.overview table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:13px}.overview th,.overview td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:right;vertical-align:middle}.overview th{position:sticky;top:0;background:#edf2f0;z-index:1}.overview th:first-child,.overview td:first-child{text-align:left;width:67%}.overview th:not(:first-child){width:11%}.overview tbody tr:last-child td{border-bottom:0}.overview-title{border:0;padding:0;background:none;text-align:left;width:100%;font-weight:650;overflow-wrap:anywhere}.overview-title:hover{text-decoration:underline;background:none}.overview-trip{display:block;font-size:11px;color:var(--muted)}.inbox-heading{font-size:18px;margin:0 0 8px}@media(max-width:760px){.overview{padding:12px}.overview th,.overview td{padding:8px 5px}.overview th:first-child,.overview td:first-child{width:58%}.overview th:not(:first-child){width:14%}.overview-table-wrap{max-height:340px}}
 </style>
+<style>
+.filters>label{min-width:0;max-width:100%;flex:1 1 180px}
+.filters select{width:100%;min-width:0}
+</style>
 </head>
 <body>
 <section id="loginView" class="login-card" hidden>
@@ -18,7 +22,7 @@
 <p id="loginAlert" class="notice error" role="alert" hidden></p>
 </section>
 <div id="dashboardView" class="shell" hidden>
-<header class="topbar"><div class="actions"><h1>讀者回饋</h1><span class="local">本機環境</span></div><div class="actions"><button id="btnRefresh">重新整理</button><button id="btnLogout">登出</button></div></header>
+<header class="topbar"><div class="actions"><h1>讀者回饋</h1><span class="local">本機環境</span></div><div class="actions"><label for="feedbackSource">資料來源</label><select id="feedbackSource" disabled><option value="local">本機</option></select><button id="btnRefresh">重新整理</button><button id="btnLogout">登出</button></div></header>
 <details class="overview" id="articleOverview" open>
 <summary>文章回饋總覽</summary>
 <p class="muted">讚數為目前有效點讚，取消後不計。點文章名稱可查看該篇全部留言。</p>
@@ -66,6 +70,7 @@ const $ = id => document.getElementById(id);
 const labels = {pending:'待處理',in_progress:'處理中',done:'已完成',all:'全部'};
 const TOKEN_KEY = 'ch_author_token';
 let token = '';
+let source = 'local', sourcesReady = false, sourceRequest = 0;
 try { token = sessionStorage.getItem(TOKEN_KEY) || ''; } catch (_) { /* Memory-only session is supported. */ }
 let articles = [], messages = [], selected = null, baseNote = '', draft = '', conflict = false;
 let query = {article_id:'',trip:'',q:'',status:'pending',unread:'0',page:1,page_size:20};
@@ -76,10 +81,45 @@ function dirty() { return selected !== null && draft !== baseNote; }
 function storeToken(value) { token = value; try { if(value) sessionStorage.setItem(TOKEN_KEY,value); else sessionStorage.removeItem(TOKEN_KEY); } catch (_) {} }
 function notice(text, error = false) { $('feedback').textContent = text; $('feedback').classList.toggle('error',error); $('feedback').hidden = !text; }
 function login(message = '') { $('loginView').hidden=false; $('dashboardView').hidden=true; $('loginAlert').textContent=message; $('loginAlert').hidden=!message; $('passcodeInput').focus(); }
-function dashboard() { $('loginView').hidden=true; $('dashboardView').hidden=false; if(!metadataReady) loadMetadata(); loadMessages(); }
+async function dashboard() {
+ $('loginView').hidden=true; $('dashboardView').hidden=false;
+ if(!sourcesReady) {
+ const epoch=sessionId, serial=++sourceRequest;
+ try {
+ const data=await api('/api/author/sources');
+ if(epoch!==sessionId || serial!==sourceRequest)return;
+ if(!Array.isArray(data.sources) || !data.sources.includes(data.default) || data.sources.some(s=>!['local','cloud'].includes(s)))throw new Error('來源設定格式不正確。');
+ $('feedbackSource').replaceChildren(...data.sources.map(s=>new Option(s==='cloud'?'雲端':'本機',s)));
+ source=data.default;sourcesReady=true;$('feedbackSource').value=source;$('feedbackSource').disabled=false;
+ }catch(e){if(e.name!=='AbortError' && epoch===sessionId)notice('無法載入資料來源：'+e.message,true);return;}
+ }
+ if(!metadataReady)loadMetadata();loadMessages();
+}
+function resetSourceData() {
+ sessionId++;requestId++;metadataRequest++;sourceRequest++;controller?.abort();
+ articles=[];messages=[];selected=null;baseNote='';draft='';conflict=false;metadataReady=false;
+ pages=1;loading=false;busy=false;listFailed=false;sharedTotal=null;
+ query={article_id:'',trip:'',q:'',status:'pending',unread:'0',page:1,page_size:20};
+ for(const id of ['messagesList','counts','overviewRows'])$(id).replaceChildren();
+ for(const id of ['overviewTotals','articleTitle','senderMeta','messageIds','messageBody','serverNote','conflictHint'])$(id).textContent='';
+ for(const id of ['authorNote','copyText'])$(id).value='';
+ $('articleLink').removeAttribute('href');$('articleLink').hidden=true;
+ $('copyFallback').hidden=true;$('loadError').hidden=true;$('loadErrorText').textContent='';
+ $('overviewTable').hidden=true;$('overviewState').hidden=false;$('overviewState').textContent='載入中…';
+ $('overviewTrip').replaceChildren(new Option('全部旅程',''));$('overviewSort').value='likes_count';
+ $('tripFilter').replaceChildren(new Option('全部旅程',''));articleOptions();syncFilters();
+ for(const id of ['overviewTrip','overviewSort','tripFilter','articleFilter'])$(id).disabled=true;
+ document.querySelectorAll('[data-status]').forEach(b=>b.textContent=labels[b.dataset.status]+' (—)');
+ $('workspace').classList.remove('show-detail');$('pageInfo').textContent='—';
+ renderDetail();notice('');setLoading(true);
+}
+$('feedbackSource').onchange=e=>{
+ const next=e.target.value;e.target.value=source;
+ guard(()=>{resetSourceData();source=next;$('feedbackSource').value=source;loadMetadata();loadMessages();});
+};
 async function api(path, options = {}) {
  const authSession = sessionId;
- const res = await fetch(path,{...options,cache:'no-store',headers:{...options.headers,Authorization:'Bearer '+token}});
+ const res = await fetch(path,{...options,cache:'no-store',headers:{...options.headers,Authorization:'Bearer '+token,'X-Feedback-Source':source}});
  let data; try { data = await res.json(); } catch (_) { throw new Error('伺服器回應格式不正確，請重試。'); }
  if(authSession !== sessionId) throw new DOMException('Stale session','AbortError');
  if(res.status===401) { storeToken(''); metadataReady=false; requestId++; controller?.abort(); login('登入已過期，請重新登入。未儲存草稿仍保留在本頁，請勿關閉。'); throw new Error('登入已過期，請重新登入後重試。'); }
@@ -97,6 +137,7 @@ function articleOptions() {
  $('articleFilter').value=query.article_id;
 }
 async function loadMetadata() {
+ if(!sourcesReady)return;
  const epoch=sessionId, serial=++metadataRequest;
  $('overviewTable').hidden=true;$('overviewTotals').textContent='';$('overviewState').hidden=false;$('overviewState').textContent='載入文章統計中…';
  $('overviewTrip').disabled=true;$('overviewSort').disabled=true;$('tripFilter').disabled=true;$('articleFilter').disabled=true;
@@ -182,6 +223,7 @@ function noteControls() {
  $('modalDiscard').disabled=busy;$('modalStay').disabled=busy;
 }
 async function loadMessages() {
+ if(!sourcesReady)return false;
  const serial=++requestId;controller?.abort();controller=new AbortController();
  $('loadError').hidden=true;listFailed=false;setLoading(true);$('pageInfo').textContent='載入中…';
  try {
@@ -257,10 +299,10 @@ $('loginForm').onsubmit=async e=>{
  try {const res=await fetch('/api/author/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({passcode:$('passcodeInput').value.trim()})});const data=await res.json();if(!res.ok || !data.success || !data.token)throw new Error(typeof data.error==='string'?data.error:'登入失敗，請重新輸入。');storeToken(data.token);$('passcodeInput').value='';dashboard();}
  catch(e){$('loginAlert').textContent=e.message || '無法連線，請確認本機服務已啟動。';$('loginAlert').hidden=false;}finally{$('btnLogin').disabled=false;}
 };
-$('btnLogout').onclick=()=>guard(()=>{sessionId++;requestId++;metadataRequest++;controller?.abort();storeToken('');articles=[];messages=[];selected=null;baseNote='';draft='';conflict=false;metadataReady=false;$('messagesList').replaceChildren();$('counts').replaceChildren();$('overviewRows').replaceChildren();$('overviewTotals').textContent='';$('overviewTable').hidden=true;$('overviewTrip').value='';$('authorNote').value='';$('messageBody').textContent='';$('serverNote').textContent='';$('copyText').value='';renderDetail();notice('');login();});
+$('btnLogout').onclick=()=>guard(()=>{sourcesReady=false;sourceRequest++;$('feedbackSource').disabled=true;sessionId++;requestId++;metadataRequest++;controller?.abort();storeToken('');articles=[];messages=[];selected=null;baseNote='';draft='';conflict=false;metadataReady=false;$('messagesList').replaceChildren();$('counts').replaceChildren();$('overviewRows').replaceChildren();$('overviewTotals').textContent='';$('overviewTable').hidden=true;$('overviewTrip').value='';$('authorNote').value='';$('messageBody').textContent='';$('serverNote').textContent='';$('copyText').value='';renderDetail();notice('');login();});
 $('overviewTrip').onchange=renderOverview;
 $('overviewSort').onchange=renderOverview;
-$('btnRefresh').onclick=()=>guard(async()=>{loadMetadata();if(conflict && selected){try{await fetchConflictVersion(selected.id,selected.article_id);}catch(e){notice(e.message,true);}}loadMessages();},conflict);
+$('btnRefresh').onclick=()=>guard(async()=>{if(!sourcesReady){dashboard();return;}loadMetadata();if(conflict && selected){try{await fetchConflictVersion(selected.id,selected.article_id);}catch(e){notice(e.message,true);}}loadMessages();},conflict);
 $('retryLoad').onclick=()=>guard(()=>loadMessages(),conflict);
 $('tripFilter').onchange=e=>{const trip=e.target.value;const a=articles.find(a=>a.article_id===query.article_id);changeQuery({trip,article_id:a && (!trip || a.trip===trip)?query.article_id:''});};
 $('articleFilter').onchange=e=>changeQuery({article_id:e.target.value});

@@ -1,0 +1,19 @@
+{
+  "name": "ch-travel-feedback",
+  "main": "index.mjs",
+  "compatibility_date": "2026-09-30",
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    {"pattern": "chxtravel.com/api/feedback/*", "zone_name": "chxtravel.com"},
+    {"pattern": "www.chxtravel.com/api/feedback/*", "zone_name": "chxtravel.com"},
+    {"pattern": "chxtravel.com/internal/author/*", "zone_name": "chxtravel.com"}
+  ],
+  "observability": {"enabled": false},
+  "d1_databases": [{
+    "binding": "DB",
+    "database_name": "ch-travel-feedback",
+    "database_id": "24c91289-b6d3-4f47-bbb8-bdf1a99a5073",
+    "migrations_dir": "migrations"
+  }]
+}

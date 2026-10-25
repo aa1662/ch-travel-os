@@ -1,12 +1,34 @@
 # 讀者點讚與私密留言交接
 
-## 發布補記（2026-10-25）
+## 最新任務：Cloudflare 正式收件（2026-10-25）
+
+作者已明確授權本次完成雲端點讚、私密留言、commit／push／publish；東京行前規劃保留本機。風險 L2：新增雲端持久化與作者認證邊界，不搬移、不覆寫既有本機資料。
+
+- SSoT：trips config 維持文章資格／穩定 ID 來源；Worker catalog 為生成物。D1 擁有正式站 likes/messages/note/version；本機 SQLite 僅擁有本機測試資料與作者登入 session，兩者不互相同步覆蓋。
+- 邊界：公開 Worker 只提供本人讚狀態、點讚與私密收件，不提供留言讀取；雲端作者 API 以獨立隨機 secret 保護，只供 loopback 本機 server 代理。瀏覽器不取得雲端 secret，管理 HTML 不進 docs。
+- Invariants：31 篇資格一致、原 ID 不變、重送不重複收件、版本衝突不覆寫筆記、no-store、參數化 SQL、不記錄原始 IP／留言 body。資料來源切換不能混用資料或覆蓋未存草稿。
+- 驗證：隔離真實 D1／HTTP 完成讀者→收件匣→筆記→重啟持久化、401／409、分頁與限流；production 驗證同來源路由、31 篇 status、作者保護、live UI 與本機 cloud adapter。既有本機資料保持不變。
+- 停止條件：私人資料／secret 暴露、文章歸屬錯誤、資格分歧、重送重複、雲端故障被當成本機成功。Rollback：撤除精確 API Worker routes／回復相容版本；保留 D1 資料，不刪除或回灌舊資料庫。靜態互動區在 status 不可用時自動隱藏。
+
+### 實作與驗證結果
+
+- Worker + D1 的收件、重送冪等、有效讚、作者分頁／搜尋／狀態／已讀／筆記與 version CAS 均已接通。資料庫為新建正式 D1，本機資料未遷入；Worker 停用 workers.dev／preview URLs，只綁明確 API routes，observability 不記錄 payload。
+- 本機 bridge 先驗證 loopback／同來源與既有作者 session，再代送雲端 secret；拒絕 redirect，遠端錯誤轉通用 503，禁止失敗時自動改讀本機。選單預設 cloud，切換保護未儲存筆記、清空前來源資料並隔離過期回應。
+- 41 項 Python tests、10 項 JS tests、3983 圖片／83 HTML／5 JS 全站 validator 與 diff check 通過。另以真實本機 Wrangler/D1 驗證 auth、Origin、白名單、冪等、summary、筆記／409、篩選、跨 client IP 限流，並完成 deploy dry-run。
+- 正式站實測：點讚／重送→私密留言／重送→本機 protected cloud 收件匣→筆記／已讀／完成→舊版 409。測試讚已取消，僅保留 1 則明確標示「系統上線驗證」的私密已完成訊息，沒有把本機測試資料上傳。
+- 31 篇 live status API 全部回傳正確 JSON article ID；未授權雲端作者 API 401。真實瀏覽器看到啟用的讀者互動及可展開的留言表單；本機雲端總覽顯示 31 篇、0 讚、1 留言、0 未讀。窄版文章下拉選單造成溢出，集中修正後實際 CSS viewport 586／325 均無橫向溢出，截圖只有系統驗證資料。
+- 本機日常 8080 已重啟，SQLite integrity_check 為 ok；既有 3 筆 likes 與 3 則 messages 保留。期間 likes 全欄位 fingerprint 相同，messages fingerprint 有變化，故不宣稱私人訊息處理狀態完全未變，也未用備份覆寫目前資料。cloud bridge 的寫入路徑只修改 D1，沒有本機資料同步或 migration。
+- 獨立 reviewer 唯讀檢查 Worker／SQL／config／catalog，未發現 must-fix。review 修正 1 輪（窄版溢出），本輪新增人工 UAT 0 次；先前收件匣 UAT 由作者確認完成。無通知信、讀者帳戶、公開留言或自動回覆功能。
+- 精確最終 commit／Worker version／Pages deployment 與 live fingerprints 記錄在受忽略的 output/full-release/；Cloudflare 部署後再核對持久化。東京規劃不提交，AdSense production_enabled 仍為 false。
+
+
+## 歷史：靜態發布補記（2026-10-25，雲端接通前）
 
 作者授權 commit all、push 與 Cloudflare 發布。既有網站／工具共 64 檔已提交並推送為 e2567e7；東京未來出差規劃因公開範圍尚待確認，保留本機。正式站尚無 Cloudflare 收件 adapter，先以 hidden HTML 和實際 status API 成功為顯示條件：未接通不顯示互動區；已連線後若中斷仍保留草稿與重試。localhost 維持可測試。這不是雲端收件功能完成；新增雲端後端的範圍正在向作者確認。廣告 production_enabled 仍為 false，作者管理頁仍不進 docs/。發布結果與精確 commit／deployment evidence 放 output/full-release/。
 
 ---
 
-## 最新任務：文章回饋總覽（2026-10-25）
+## 歷史任務：文章回饋總覽（2026-10-25）
 
 狀態：`LOCAL_READY_FOR_UAT`。作者要求補上後台每篇點讚統計；本輪本機完成，不 commit、push 或部署。
 

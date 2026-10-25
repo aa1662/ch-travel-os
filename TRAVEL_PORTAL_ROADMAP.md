@@ -479,3 +479,10 @@ Germany 完成後，再評估香港重返、澳洲、台灣分段環島、義大
 - 後台採 Ads.txt 程式碼片段完成網站擁有權驗證，出現「您的網站已通過驗證」，再送出要求審查。最終狀態「正在接受審查／您的網站尚待審查，還不能放送廣告」，未宣稱已核准。
 - 正式廣告單元仍未啟用；審核結果、隱私說明與 consent 設定留待啟用前處理。先前本機整合成果不因送審而發布。
 - 證據：output/adsense-integration/release-24d6185.json、review-submitted.png。本段只更新本機規劃記錄，未納入 ads.txt 的單檔 commit。
+
+
+### 全站發布與雲端回饋接通（2026-10-25）
+
+作者授權安全範圍全部 commit／push／publish，東京私人行前規劃明確留本機。靜態推薦卡、31 篇回饋區、作者總覽已發布；新增獨立 Worker `ch-travel-feedback` 與 D1，正式站點讚、私密留言、本機受保護雲端收件匣已完成真實端到端驗證。資料來源可切換雲端／本機，兩者不合併；管理頁與 secrets 不公開。
+
+41 Python／10 JS tests、隔離真實 D1／HTTP、31 篇 live status、正式站送出→作者筆記／狀態／409、窄版排版與 validator 通過。驗證只保留 1 則已完成系統訊息，測試讚已取消。部署與回復方式見 CLOUDFLARE_PAGES_DEPLOYMENT.md、workers/reader-feedback/README.md；詳細變更與驗證仍集中 .agents/reader-feedback-handoff.md。AdSense 尚在審查，廣告正式開關維持關閉。

@@ -15,6 +15,14 @@
 - **根目錄 (Root Directory)**：*(預設 `/`)*
 - **Node.js / Python Runtime**：無須設定（零構建依賴）
 
+### 讀者回饋的獨立雲端服務（2026-10-25）
+
+靜態網站仍使用上述 Pages Direct Upload。31 篇開放回饋的文章另由 `workers/reader-feedback/` 提供 API，Worker `ch-travel-feedback` 綁定同名 D1；靜態 Pages upload 不會部署 Worker。
+
+- 正式網域與 www 的 `/api/feedback/*` 交由 Worker；canonical `/internal/author/*` 另需 Worker secret，不公開作者資料。
+- 作者管理頁仍只在本機 `http://127.0.0.1:8080/core/author-feedback.html`，登入後預設「雲端」，可切回獨立本機資料。管理 HTML、SQLite、secret 與東京私人規劃不進發布目錄。
+- Worker、D1 migration、catalog 更新與故障回復見 `workers/reader-feedback/README.md`。從目標 commit 的乾淨 worktree 發布 Worker，再核對 live API 與本機 protected bridge；不能只核對 Pages deployment。
+
 ---
 
 ## 2. 部署方式

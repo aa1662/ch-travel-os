@@ -17,6 +17,7 @@ output/
 
 # Cloudflare Wrangler local state
 .wrangler/
+.dev.vars
 
 # Python cache
 __pycache__/

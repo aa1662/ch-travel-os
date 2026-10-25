@@ -44,6 +44,8 @@ if str(BASE_DIR) not in sys.path:
 if str(TOOLS_DIR) not in sys.path:
     sys.path.insert(0, str(TOOLS_DIR))
 
+from cloud_feedback_service import CloudFeedbackService, CloudFeedbackUnavailable
+
 try:
     from build_trip_html import build_trip
     from build_timeline_html import build_timelines
@@ -106,6 +108,8 @@ class TravelOSMultiTripHandler(SimpleHTTPRequestHandler):
                 if not self.is_local_author_request():
                     self.send_json({"success": False, "error": "僅限本機作者存取"}, 403)
                     return
+            if self.handle_author_source(path, parsed.query):
+                return
 
             # 本機專用 Editor：來源保留在 core/，不得複製至公開 docs/。
             if path == "/core/editor.html":
@@ -510,6 +514,8 @@ class TravelOSMultiTripHandler(SimpleHTTPRequestHandler):
                 if not self.is_local_author_request() or not self.is_trusted_json_post():
                     self.send_json({"success": False, "error": "僅限本機同來源作者請求"}, 403)
                     return
+            if self.handle_author_source(path):
+                return
 
             if path == "/api/author/update-message":
                 if not feedback_service:
@@ -945,6 +951,47 @@ class TravelOSMultiTripHandler(SimpleHTTPRequestHandler):
             "width": item.get("original_width", 0) if item else 0,
             "height": item.get("original_height", 0) if item else 0,
         }
+
+    def handle_author_source(self, path, query=""):
+        """Authenticate locally before selecting or contacting an author source."""
+        actions = {"GET": {"sources", "summary", "messages"},
+                   "POST": {"update-message", "mark-read"}}
+        if not path.startswith("/api/author/"):
+            return False
+        action = path[len("/api/author/"):]
+        if action not in actions.get(self.command, set()):
+            return False
+        if not feedback_service:
+            self.send_json({"success": False, "error": "回饋服務未初始化"}, 503)
+            return True
+        if not feedback_service.verify_author_token(self.extract_bearer_token()):
+            self.send_json({"success": False, "error": "未授權的管理請求，請先登入"}, 401)
+            return True
+        bridge = CloudFeedbackService()
+        if action == "sources":
+            self.send_json(bridge.sources())
+            return True
+        source = self.headers.get("X-Feedback-Source", "local")
+        if source == "local":
+            return False
+        try:
+            if source != "cloud":
+                raise CloudFeedbackUnavailable()
+            payload = None
+            if self.command == "POST":
+                length = int(self.headers.get("Content-Length", 0))
+                if length < 1 or length > 40000:
+                    raise ValueError("無效的請求大小")
+                payload = json.loads(self.rfile.read(length).decode("utf-8"))
+                if not isinstance(payload, dict):
+                    raise ValueError("無效的請求")
+            result, status = bridge.request(action, query=query, payload=payload)
+            self.send_json(result, status)
+        except CloudFeedbackUnavailable as exc:
+            self.send_json({"success": False, "error": str(exc)}, 503)
+        except (ValueError, UnicodeError):
+            self.send_json({"success": False, "error": "無效的請求"}, 400)
+        return True
 
     def extract_bearer_token(self):
         auth_header = self.headers.get("Authorization", "")
