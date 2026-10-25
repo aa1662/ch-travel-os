@@ -54,7 +54,7 @@ class RolloutTests(unittest.TestCase):
                     self.assertEqual(page.count(f'data-article-id="{trip}:{entry["id"]}"'), 1)
                     for button in ('btnFeedbackLike', 'btnToggleComment', 'btnSubmitFeedback'):
                         self.assertIn(f'id="{button}" disabled', page)
-                    self.assertIn('core/js/app.js?v=20261024-feedback', page)
+                    self.assertIn('core/js/app.js?v=20261025-feedback-availability', page)
                     self.assertIn('core/css/style.css?v=20261025-related', page)
         self.assertFalse((ROOT/'docs/core/author-feedback.html').exists())
         self.assertEqual((ROOT/'core/js/app.js').read_bytes(), (ROOT/'docs/core/js/app.js').read_bytes())

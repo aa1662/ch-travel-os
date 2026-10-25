@@ -443,7 +443,7 @@ def render_reader_feedback(item, trip_slug, dest_slug=None):
         return ""
     article_id = f"{trip_slug}:{item['id']}"
     return f'''      <!-- 讀者點讚與私密留言 (Reader Feedback) -->
-      <section class="reader-feedback-section" data-article-id="{html_escape(article_id)}" aria-label="讀者互動回饋">
+      <section class="reader-feedback-section" data-article-id="{html_escape(article_id)}" aria-label="讀者互動回饋" hidden>
         <div class="feedback-card">
           <div class="feedback-header">
             <h3 class="feedback-title">喜歡這篇記錄嗎？</h3>
@@ -619,7 +619,7 @@ def build_trip(trip_slug="2026-germany", dest_slug=None, entry_id=None):
         if feedback_eligible(item, trip_slug, dest_slug):
             html_content = re.sub(
                 r'(src="../../core/js/app\.js)(?:\?[^" ]*)?"',
-                r'\1?v=20261024-feedback"', html_content,
+                r'\1?v=20261025-feedback-availability"', html_content,
             )
             html_content = re.sub(
                 r'(href="../../core/css/style\.css)(?:\?[^" ]*)?"',

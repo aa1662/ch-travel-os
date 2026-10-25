@@ -1,5 +1,11 @@
 # 讀者點讚與私密留言交接
 
+## 發布補記（2026-10-25）
+
+作者授權 commit all、push 與 Cloudflare 發布。既有網站／工具共 64 檔已提交並推送為 e2567e7；東京未來出差規劃因公開範圍尚待確認，保留本機。正式站尚無 Cloudflare 收件 adapter，先以 hidden HTML 和實際 status API 成功為顯示條件：未接通不顯示互動區；已連線後若中斷仍保留草稿與重試。localhost 維持可測試。這不是雲端收件功能完成；新增雲端後端的範圍正在向作者確認。廣告 production_enabled 仍為 false，作者管理頁仍不進 docs/。發布結果與精確 commit／deployment evidence 放 output/full-release/。
+
+---
+
 ## 最新任務：文章回饋總覽（2026-10-25）
 
 狀態：`LOCAL_READY_FOR_UAT`。作者要求補上後台每篇點讚統計；本輪本機完成，不 commit、push 或部署。

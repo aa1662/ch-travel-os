@@ -337,6 +337,9 @@ function initFeaturedRandomizer() {
 function initReaderFeedback() {
   const section = document.querySelector('.reader-feedback-section');
   if (!section) return;
+  const localPreview = ['localhost', '127.0.0.1', '[::1]'].includes(window.location.hostname);
+  let hasConnected = false;
+  section.hidden = !localPreview;
 
   const articleId = section.dataset.articleId;
   if (!articleId) return;
@@ -403,6 +406,7 @@ function initReaderFeedback() {
 
   function serviceUnavailable() {
     setServiceReady(false);
+    if (!localPreview && !hasConnected) section.hidden = true;
     if (statusMsg) statusMsg.textContent = '互動服務暫時無法連線，請重試。輸入內容已保留，文章可繼續閱讀。';
     if (btnRetry) btnRetry.hidden = false;
   }
@@ -432,6 +436,8 @@ function initReaderFeedback() {
         throw new Error('Invalid feedback status');
       }
       updateLikeUI(data.liked);
+      hasConnected = true;
+      section.hidden = false;
       setServiceReady(true);
       if (statusMsg) statusMsg.textContent = '';
     } catch (error) {

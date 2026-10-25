@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 const vm = require('node:vm');
 const fs = require('node:fs');
 const source = fs.readFileSync('core/js/app.js', 'utf8').split('function initReaderFeedback()')[1];
-function harness(fetch, timers = {}) {
+function harness(fetch, timers = {}, hostname = '127.0.0.1') {
   const nodes = {};
   for (const id of ['btnFeedbackLike','feedbackLikeStatus','btnToggleComment','btnSubmitFeedback','btnRetryFeedback','feedbackContent','feedbackNickname','readerFeedbackForm']) {
     nodes[id] = {disabled:false,hidden:false,value:'preserved draft',dataset:{},handlers:{},
@@ -13,9 +13,11 @@ function harness(fetch, timers = {}) {
   const section = {dataset:{articleId:'alpha:story'}};
   vm.runInNewContext('function initReaderFeedback()'+source+';initReaderFeedback();', {
     document:{querySelector:()=>section,getElementById:id=>nodes[id]||null},
+    window:{location:{hostname}},
     fetch,localStorage:{getItem:()=> 'test-client-123456789'},crypto:{randomUUID:()=> 'test-uuid'},
     AbortController, setTimeout:timers.setTimeout||setTimeout,clearTimeout:timers.clearTimeout||clearTimeout,
   });
+  nodes.section=section;
   return nodes;
 }
 const settle=()=>new Promise(resolve=>setImmediate(resolve));
@@ -77,4 +79,14 @@ test('like timeout disables controls, status retry recovers; 400 and 429 are not
   const nodes=harness(async url=>url.includes('/status?')?statusOK():{ok:false,status:code,json:async()=>({success:false,error:'validation'})});
   await settle();await nodes.readerFeedbackForm.handlers.submit({preventDefault(){}});assert.equal(nodes.btnSubmitFeedback.disabled,false);assert.equal(nodes.feedbackContent.value,'preserved draft');assert.equal(nodes.btnRetryFeedback.hidden,true);
  }
+});
+
+
+test('production hides unavailable service, opens after successful check, and preserves visible drafts on later outage',async()=>{
+ const offline=harness(async()=>{throw Error('offline')},{},'chxtravel.com');
+ assert.equal(offline.section.hidden,true);await settle();assert.equal(offline.section.hidden,true);
+ const connected=harness(async url=>url.includes('/status?')?statusOK():Promise.reject(Error('offline')),{},'chxtravel.com');
+ assert.equal(connected.section.hidden,true);await settle();assert.equal(connected.section.hidden,false);
+ await connected.readerFeedbackForm.handlers.submit({preventDefault(){}});
+ assert.equal(connected.section.hidden,false);assert.equal(connected.feedbackContent.value,'preserved draft');
 });
