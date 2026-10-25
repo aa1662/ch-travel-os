@@ -48,8 +48,15 @@ try:
     from build_trip_html import build_trip
     from build_timeline_html import build_timelines
     from image_pipeline import load_publish_exclusions, process_selected_image, get_file_sha256
+    from feedback_service import FeedbackService, FeedbackConflictError
+    feedback_service = FeedbackService(
+        db_path=os.environ.get("CH_FEEDBACK_DB"),
+        secret_path=os.environ.get("CH_FEEDBACK_SECRET"),
+        trips_dir=os.environ.get("CH_FEEDBACK_TRIPS"),
+    )
 except Exception as ie:
     print(f"Warning: Could not import build modules at startup: {ie}", flush=True)
+    feedback_service = None
 
 
 def is_relative_to(path, parent):
@@ -95,10 +102,73 @@ class TravelOSMultiTripHandler(SimpleHTTPRequestHandler):
             parsed = urllib.parse.urlparse(self.path)
             path = parsed.path
             query = urllib.parse.parse_qs(parsed.query)
+            if path.startswith("/api/author/") or path == "/core/author-feedback.html":
+                if not self.is_local_author_request():
+                    self.send_json({"success": False, "error": "僅限本機作者存取"}, 403)
+                    return
 
             # 本機專用 Editor：來源保留在 core/，不得複製至公開 docs/。
             if path == "/core/editor.html":
                 self.send_file(CORE_DIR / "editor.html")
+                return
+
+            # 本機專用作者回饋管理入口：來源保留在 core/，不得複製至公開 docs/。
+            if path == "/core/author-feedback.html":
+                self.send_file(CORE_DIR / "author-feedback.html")
+                return
+
+            # 讀者回饋 API：查詢點讚狀態（僅回傳讀者本人狀態，不洩漏讚數與私密留言）
+            if path == "/api/feedback/status":
+                if not feedback_service:
+                    self.send_json({"success": False, "error": "回饋服務未初始化"}, 500)
+                    return
+                article_id = query.get("article_id", [""])[0]
+                client_id = query.get("client_id", [""])[0]
+                try:
+                    res = feedback_service.get_reader_status(article_id, client_id)
+                    self.send_json(res)
+                except ValueError as ve:
+                    self.send_json({"success": False, "error": str(ve)}, 400)
+                except Exception as ex:
+                    self.send_json({"success": False, "error": str(ex)}, 500)
+                return
+
+            # 作者管理 API：回饋總覽
+            if path == "/api/author/summary":
+                if not feedback_service:
+                    self.send_json({"success": False, "error": "回饋服務未初始化"}, 500)
+                    return
+                token = self.extract_bearer_token()
+                try:
+                    res = feedback_service.get_author_summary(token)
+                    self.send_json(res)
+                except PermissionError as pe:
+                    self.send_json({"success": False, "error": str(pe)}, 401)
+                except Exception as ex:
+                    self.send_json({"success": False, "error": str(ex)}, 500)
+                return
+
+            # 作者管理 API：留言清單
+            if path == "/api/author/messages":
+                if not feedback_service:
+                    self.send_json({"success": False, "error": "回饋服務未初始化"}, 500)
+                    return
+                token = self.extract_bearer_token()
+                article_id = query.get("article_id", [None])[0]
+                try:
+                    res = feedback_service.get_author_messages(
+                        token, article_id=article_id,
+                        trip=query.get("trip", [None])[0], q=query.get("q", [""])[0],
+                        status=query.get("status", ["all"])[0], unread=query.get("unread", ["0"])[0],
+                        page=query.get("page", ["1"])[0], page_size=query.get("page_size", ["20"])[0],
+                    )
+                    self.send_json(res)
+                except PermissionError as pe:
+                    self.send_json({"success": False, "error": str(pe)}, 401)
+                except ValueError as ve:
+                    self.send_json({"success": False, "error": str(ve)}, 400)
+                except Exception as ex:
+                    self.send_json({"success": False, "error": str(ex)}, 500)
                 return
 
             # 0. 靜態文件與 /docs/ 容錯路由
@@ -436,6 +506,128 @@ class TravelOSMultiTripHandler(SimpleHTTPRequestHandler):
         try:
             parsed = urllib.parse.urlparse(self.path)
             path = parsed.path
+            if path.startswith("/api/author/"):
+                if not self.is_local_author_request() or not self.is_trusted_json_post():
+                    self.send_json({"success": False, "error": "僅限本機同來源作者請求"}, 403)
+                    return
+
+            if path == "/api/author/update-message":
+                if not feedback_service:
+                    self.send_json({"success": False, "error": "回饋服務未初始化"}, 503)
+                    return
+                try:
+                    length = int(self.headers.get("Content-Length", 0))
+                    if length < 1 or length > 40000:
+                        raise ValueError("無效的請求大小")
+                    payload = json.loads(self.rfile.read(length).decode("utf-8"))
+                    if not isinstance(payload, dict):
+                        raise ValueError("無效的請求")
+                    changes = {key: value for key, value in payload.items() if key not in ("message_id", "version")}
+                    result = feedback_service.update_author_message(
+                        self.extract_bearer_token(), payload.get("message_id"), payload.get("version"), **changes)
+                    self.send_json(result)
+                except PermissionError as exc:
+                    self.send_json({"success": False, "error": str(exc)}, 401)
+                except FeedbackConflictError as exc:
+                    self.send_json({"success": False, "error": str(exc)}, 409)
+                except (ValueError, UnicodeError) as exc:
+                    self.send_json({"success": False, "error": str(exc)}, 400)
+                return
+
+            # 讀者回饋 API：點讚與取消
+            if path == "/api/feedback/like":
+                if not self.is_trusted_json_post():
+                    self.send_json({"success": False, "error": "非法或跨來源請求"}, 403)
+                    return
+                if not feedback_service:
+                    self.send_json({"success": False, "error": "回饋服務未初始化"}, 500)
+                    return
+                content_len = int(self.headers.get("Content-Length", 0))
+                payload = json.loads(self.rfile.read(content_len).decode("utf-8"))
+                article_id = payload.get("article_id", "")
+                client_id = payload.get("client_id", "")
+                action = payload.get("action", "")
+                try:
+                    res = feedback_service.toggle_like(article_id, client_id, action)
+                    self.send_json(res)
+                except ValueError as ve:
+                    self.send_json({"success": False, "error": str(ve)}, 400)
+                except PermissionError as pe:
+                    self.send_json({"success": False, "error": str(pe)}, 429)
+                except Exception as ex:
+                    self.send_json({"success": False, "error": str(ex)}, 500)
+                return
+
+            # 讀者回饋 API：送出私密留言
+            if path == "/api/feedback/message":
+                if not self.is_trusted_json_post():
+                    self.send_json({"success": False, "error": "非法或跨來源請求"}, 403)
+                    return
+                if not feedback_service:
+                    self.send_json({"success": False, "error": "回饋服務未初始化"}, 500)
+                    return
+                content_len = int(self.headers.get("Content-Length", 0))
+                payload = json.loads(self.rfile.read(content_len).decode("utf-8"))
+                article_id = payload.get("article_id", "")
+                client_id = payload.get("client_id", "")
+                client_submission_id = payload.get("client_submission_id", "")
+                nickname = payload.get("nickname")
+                content = payload.get("content", "")
+                try:
+                    res = feedback_service.submit_message(
+                        article_id, client_id, client_submission_id, nickname, content
+                    )
+                    self.send_json(res)
+                except ValueError as ve:
+                    self.send_json({"success": False, "error": str(ve)}, 400)
+                except PermissionError as pe:
+                    self.send_json({"success": False, "error": str(pe)}, 429)
+                except Exception as ex:
+                    self.send_json({"success": False, "error": str(ex)}, 500)
+                return
+
+            # 作者管理 API：登入
+            if path == "/api/author/login":
+                if not self.is_trusted_json_post():
+                    self.send_json({"success": False, "error": "非法或跨來源請求"}, 403)
+                    return
+                if not feedback_service:
+                    self.send_json({"success": False, "error": "回饋服務未初始化"}, 500)
+                    return
+                content_len = int(self.headers.get("Content-Length", 0))
+                payload = json.loads(self.rfile.read(content_len).decode("utf-8"))
+                passcode = payload.get("passcode", "")
+                try:
+                    res = feedback_service.author_login(passcode)
+                    self.send_json(res)
+                except PermissionError as pe:
+                    self.send_json({"success": False, "error": str(pe)}, 401)
+                except Exception as ex:
+                    self.send_json({"success": False, "error": str(ex)}, 500)
+                return
+
+            # 作者管理 API：標記留言已讀
+            if path == "/api/author/mark-read":
+                if not self.is_trusted_json_post():
+                    self.send_json({"success": False, "error": "非法或跨來源請求"}, 403)
+                    return
+                if not feedback_service:
+                    self.send_json({"success": False, "error": "回饋服務未初始化"}, 500)
+                    return
+                token = self.extract_bearer_token()
+                content_len = int(self.headers.get("Content-Length", 0))
+                payload = json.loads(self.rfile.read(content_len).decode("utf-8"))
+                message_id = payload.get("message_id", "")
+                try:
+                    res = feedback_service.mark_message_read(token, message_id)
+                    self.send_json(res)
+                except PermissionError as pe:
+                    self.send_json({"success": False, "error": str(pe)}, 401)
+                except ValueError as ve:
+                    self.send_json({"success": False, "error": str(ve)}, 400)
+                except Exception as ex:
+                    self.send_json({"success": False, "error": str(ex)}, 500)
+                return
 
             if path == "/api/save-source":
                 if not self.is_trusted_json_post():
@@ -754,6 +946,12 @@ class TravelOSMultiTripHandler(SimpleHTTPRequestHandler):
             "height": item.get("original_height", 0) if item else 0,
         }
 
+    def extract_bearer_token(self):
+        auth_header = self.headers.get("Authorization", "")
+        if auth_header.startswith("Bearer "):
+            return auth_header[7:].strip()
+        return ""
+
     def is_trusted_json_post(self):
         content_type = self.headers.get("Content-Type", "").split(";", 1)[0].strip().lower()
         if content_type != "application/json":
@@ -792,6 +990,24 @@ class TravelOSMultiTripHandler(SimpleHTTPRequestHandler):
             return "application/json; charset=utf-8"
         return "application/octet-stream"
 
+    def is_local_author_request(self):
+        port = self.server.server_address[1]
+        allowed = {f"localhost:{port}", f"127.0.0.1:{port}"}
+        if self.client_address[0] not in ("127.0.0.1", "::1") or self.headers.get("Host") not in allowed:
+            return False
+        if self.headers.get("Sec-Fetch-Site") == "cross-site":
+            return False
+        for name in ("Origin", "Referer"):
+            value = self.headers.get(name)
+            if value and urllib.parse.urlparse(value).netloc not in allowed:
+                return False
+        return True
+
+    def log_message(self, format, *args):
+        if self.path.startswith(("/api/author/", "/api/feedback/")):
+            return
+        super().log_message(format, *args)
+
     def send_file(self, file_path):
         ctype = self.get_content_type(file_path)
         try:
@@ -801,7 +1017,7 @@ class TravelOSMultiTripHandler(SimpleHTTPRequestHandler):
             self.send_header("Content-Type", ctype)
             self.send_header("Content-Length", str(len(content)))
             self.send_header("Access-Control-Allow-Origin", "*")
-            self.send_header("Cache-Control", "public, max-age=3600")
+            self.send_header("Cache-Control", "no-store" if file_path == CORE_DIR / "author-feedback.html" else "public, max-age=3600")
             self.end_headers()
             self.wfile.write(content)
         except Exception as e:
@@ -827,6 +1043,7 @@ def main():
     print(f"🌍 CH Travel OS 2.0 Multi-Trip Server & Editor API Running!", flush=True)
     print(f"🌐 Portal URL : http://127.0.0.1:{PORT}/", flush=True)
     print(f"🎨 Editor URL : http://127.0.0.1:{PORT}/core/editor.html", flush=True)
+    print(f"📬 Author Inbox: http://127.0.0.1:{PORT}/core/author-feedback.html", flush=True)
     print(f"============================================================", flush=True)
     try:
         httpd.serve_forever()

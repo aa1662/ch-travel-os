@@ -71,6 +71,7 @@
   "entries": [
     {
       "id": "day-01-02",
+      "feedback": true,
       "title": "Day 01-02 · 雪梨出差變地陪：48小時專案驗收，擺平空中黑幫突襲",
       "source": "trips/2024-australia/sources/blog/sydney-harbour-and-gulls.html",
       "output": "docs/2024-australia/blog/sydney-harbour-and-gulls.html",
@@ -347,10 +348,13 @@
             }
           ]
         }
-      ]
+      ],
+      "nav_title": "雪梨港與海鷗：出差變地陪",
+      "teaser": "雪梨港、魚市場與海鷗突襲，出差行程裡還得兼任地陪。"
     },
     {
       "id": "day-03-04",
+      "feedback": true,
       "title": "Day 03-04 · 46 樓會議室的高空震撼：俯瞰雪梨全景，與動物園全員極致躺平日記",
       "source": "trips/2024-australia/sources/blog/sydney-skyline-and-lazy-zoo.html",
       "output": "docs/2024-australia/blog/sydney-skyline-and-lazy-zoo.html",
@@ -545,10 +549,13 @@
         }
       ],
       "og_url": "https://chxtravel.com/2024-australia/blog/sydney-skyline-and-lazy-zoo.html",
-      "og_image": "https://chxtravel.com/2024-australia/images/day-03-04/20241029_160747-desktop-1200w.webp"
+      "og_image": "https://chxtravel.com/2024-australia/images/day-03-04/20241029_160747-desktop-1200w.webp",
+      "nav_title": "46 樓的雪梨港，和躺平的袋鼠",
+      "teaser": "開會看港景、騎車拍夜景；到了動物園，袋鼠倒是比我還會休息。"
     },
     {
       "id": "day-06",
+      "feedback": true,
       "title": "Day 06：聽妹妹的話去亞拉河谷｜琴酒臉皺，大草原封神",
       "source": "trips/2024-australia/sources/blog/yarra-valley-wine-and-grassland.html",
       "output": "docs/2024-australia/blog/yarra-valley-wine-and-grassland.html",
@@ -859,10 +866,13 @@
             }
           ]
         }
-      ]
+      ],
+      "nav_title": "亞拉河谷：四柱琴酒與大草原",
+      "teaser": "品酒裝高雅失敗，琴酒喝到皺臉；午後的大草原卻拿下全行程第一名。"
     },
     {
       "id": "day-07",
+      "feedback": true,
       "title": "Day 07 · 普芬比利蒸汽火車 ✕ 菲利普島企鵝歸巢與海角海鷗大軍",
       "source": "trips/2024-australia/sources/blog/puffing-billy-and-fairy-penguins.html",
       "output": "docs/2024-australia/blog/puffing-billy-and-fairy-penguins.html",
@@ -1333,10 +1343,13 @@
             }
           ]
         }
-      ]
+      ],
+      "nav_title": "蒸汽火車懸空坐，海風裡等企鵝",
+      "teaser": "月台狂奔趕火車，到了海邊再頂著冷風，等小企鵝慢慢走回家。"
     },
     {
       "id": "day-08",
+      "feedback": true,
       "title": "Day 08 · 搭火車闖進疏芬山：淘金、下礦坑，還遇見神祕老奶奶",
       "source": "trips/2024-australia/sources/blog/sovereign-hill-gold-rush.html",
       "output": "docs/2024-australia/blog/sovereign-hill-gold-rush.html",
@@ -1902,7 +1915,9 @@
             }
           ]
         }
-      ]
+      ],
+      "nav_title": "疏芬山淘金，還遇見神祕老奶奶",
+      "teaser": "自己轉車去淘金鎮，下礦坑、看禮炮，還在別墅裡遇上一段午後奇遇。"
     }
   ]
 }

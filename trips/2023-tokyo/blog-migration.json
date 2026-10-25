@@ -23,6 +23,7 @@
   "entries": [
     {
       "id": "tokyo-arrival-meiji-jingu",
+      "feedback": true,
       "title": "六年沒來東京，先去明治神宮走走",
       "source": "trips/2023-tokyo/sources/blog/tokyo-arrival-meiji-jingu.html",
       "output": "docs/2023-tokyo/blog/tokyo-arrival-meiji-jingu.html",
@@ -153,10 +154,16 @@
         }
       ],
       "navigation_style": "compact",
-      "next_link": "tokyo-imperial-palace-and-return.html"
+      "next_link": "tokyo-imperial-palace-and-return.html",
+      "nav_title": "六年沒來東京，先去明治神宮走走",
+      "teaser": "下午走進明治神宮看酒桶牆與菊花，晚上回到東京車站，看紅磚與高樓一起亮燈。",
+      "related": [
+        "tokyo-imperial-palace-and-return"
+      ]
     },
     {
       "id": "tokyo-imperial-palace-and-return",
+      "feedback": true,
       "title": "東京出差的空檔：皇居散步，吃飽再回家",
       "source": "trips/2023-tokyo/sources/blog/tokyo-imperial-palace-and-return.html",
       "output": "docs/2023-tokyo/blog/tokyo-imperial-palace-and-return.html",
@@ -368,7 +375,12 @@
         }
       ],
       "navigation_style": "compact",
-      "next_link": "../index.html"
+      "next_link": "../index.html",
+      "nav_title": "東京出差的空檔：皇居散步，吃飽再回家",
+      "teaser": "會後走到二重橋，再去東京車站吃和牛、阿美橫町買點心，把回程前的空檔用完。",
+      "related": [
+        "tokyo-arrival-meiji-jingu"
+      ]
     }
   ]
 }

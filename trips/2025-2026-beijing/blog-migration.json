@@ -7,6 +7,7 @@
   "entries": [
     {
       "id": "mutianyu",
+      "feedback": true,
       "title": "慕田峪長城：錢都花了，VIP 卻不用排隊",
       "source": "trips/2025-2026-beijing/sources/blog/mutianyu-great-wall.html",
       "output": "docs/2025-2026-beijing/blog/mutianyu-great-wall.html",
@@ -94,10 +95,17 @@
           ]
         }
       ],
-      "next_link": "gubei-water-town-simatai.html"
+      "next_link": "gubei-water-town-simatai.html",
+      "nav_title": "慕田峪長城：VIP 卻不用排隊",
+      "teaser": "專車、導遊、快速通道都買了，下午到了長城，偏偏根本沒人排隊。",
+      "related": [
+        "gubei",
+        "nanluoguxiang"
+      ]
     },
     {
       "id": "gubei",
+      "feedback": true,
       "title": "古北水鎮與司馬台：半年去了兩次，一人住客棧、帶女兒住大飯店",
       "source": "trips/2025-2026-beijing/sources/blog/gubei-water-town-simatai.html",
       "output": "docs/2025-2026-beijing/blog/gubei-water-town-simatai.html",
@@ -365,10 +373,17 @@
             }
           ]
         }
+      ],
+      "nav_title": "古北水鎮與司馬台：半年去了兩次",
+      "teaser": "一趟自己住客棧，一趟帶 Belle 住大飯店；同一座水鎮，留下兩次不同的走法。",
+      "related": [
+        "mutianyu",
+        "nanluoguxiang"
       ]
     },
     {
       "id": "jingshan",
+      "feedback": true,
       "title": "景山公園：下午 16:00 臨時問 AI，爬上十幾層樓俯瞰整座紫禁城",
       "source": "trips/2025-2026-beijing/sources/blog/jingshan-park-forbidden-city.html",
       "output": "docs/2025-2026-beijing/blog/jingshan-park-forbidden-city.html",
@@ -442,10 +457,17 @@
       "next_link": "nanluoguxiang-shichahai.html",
       "next_title": "南鑼鼓巷與什剎海",
       "og_url": "https://chxtravel.com/2025-2026-beijing/blog/jingshan-park-forbidden-city.html",
-      "og_image": "https://chxtravel.com/2025-2026-beijing/images/jingshan/20260613_165225-desktop-1200w.webp"
+      "og_image": "https://chxtravel.com/2025-2026-beijing/images/jingshan/20260613_165225-desktop-1200w.webp",
+      "nav_title": "景山公園：臨時起意看紫禁城",
+      "teaser": "下午才問 AI 還能去哪，轉頭就爬上萬春亭，從高處看整片故宮屋頂。",
+      "related": [
+        "mutianyu",
+        "nanluoguxiang"
+      ]
     },
     {
       "id": "nanluoguxiang",
+      "feedback": true,
       "title": "Belle 去逛王府井，我一個人鑽進北京胡同",
       "source": "trips/2025-2026-beijing/sources/blog/nanluoguxiang-shichahai.html",
       "output": "docs/2025-2026-beijing/blog/nanluoguxiang-shichahai.html",
@@ -519,6 +541,12 @@
             }
           ]
         }
+      ],
+      "nav_title": "Belle 逛王府井，我鑽北京胡同",
+      "teaser": "想去的館都沒開，卻在胡同看見放學的孩子，最後帶著點心與滷味回飯店。",
+      "related": [
+        "gubei",
+        "mutianyu"
       ]
     }
   ]

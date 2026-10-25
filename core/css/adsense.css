@@ -1,0 +1,30 @@
+.article-ad[hidden] { display: none !important; }
+.article-ad {
+  margin: 3.5rem auto;
+  padding: 1.25rem 0;
+  border-block: 1px solid var(--border-color, #dedbd3);
+  width: 100%;
+  clear: both;
+}
+.article-ad-label {
+  margin: 0 0 .75rem;
+  text-align: center;
+  color: var(--text-muted, #68645e);
+  font-size: .75rem;
+  letter-spacing: .1em;
+}
+.article-ad-preview {
+  display: grid;
+  place-items: center;
+  min-height: 100px;
+  max-width: 728px;
+  margin-inline: auto;
+  padding: .75rem;
+  box-sizing: border-box;
+  border: 1px dashed #b5afa5;
+  background: #f2f0ea;
+  color: #59554f;
+  text-align: center;
+  font-size: .875rem;
+}
+.article-ad-slot { width: 100%; min-width: 0; }

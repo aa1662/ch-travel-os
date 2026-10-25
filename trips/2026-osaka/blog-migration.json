@@ -7,6 +7,7 @@
   "entries": [
     {
       "id": "day-02",
+      "feedback": true,
       "title": "三千金逛她們的街，我走我的山：鞍馬寺到貴船",
       "source": "trips/2026-osaka/sources/blog/kurama-kifune-hike.html",
       "output": "docs/2026-osaka/blog/kurama-kifune-hike.html",
@@ -18,10 +19,17 @@
       "prev_link": "../index.html",
       "prev_title": "← 2026 關西盛夏漫遊總覽",
       "next_link": "hieizan-enryakuji-eternal-flame.html",
-      "next_title": "比叡山延曆寺"
+      "next_title": "比叡山延曆寺",
+      "nav_title": "三千金逛街，我從鞍馬翻山到貴船",
+      "teaser": "從鞍馬寺走過木之根道，再一路下到盛夏的貴船；今天各走各的行程。",
+      "related": [
+        "day-03",
+        "day-03-osaka-castle"
+      ]
     },
     {
       "id": "day-02-hieizan",
+      "feedback": true,
       "title": "為了一盞傳了一千兩百年的燈，我臨時翻過比叡山",
       "source": "trips/2026-osaka/sources/blog/hieizan-enryakuji-eternal-flame.html",
       "output": "docs/2026-osaka/blog/hieizan-enryakuji-eternal-flame.html",
@@ -33,10 +41,17 @@
       "prev_link": "kurama-kifune-hike.html",
       "prev_title": "鞍馬寺到貴船",
       "next_link": "katsuoji-minoh-waterfall.html",
-      "next_title": "勝尾寺與箕面瀑布"
+      "next_title": "勝尾寺與箕面瀑布",
+      "nav_title": "臨時翻過比叡山，只為看一盞燈",
+      "teaser": "在寶池臨時換車，搭纜車上山，去看延曆寺傳了一千兩百年的法燈。",
+      "related": [
+        "day-02",
+        "day-03-osaka-castle"
+      ]
     },
     {
       "id": "day-03",
+      "feedback": true,
       "title": "我居然一直不知道勝尾寺｜滿山達摩之後，再走夏日箕面瀑布",
       "source": "trips/2026-osaka/sources/blog/katsuoji-minoh-waterfall.html",
       "output": "docs/2026-osaka/blog/katsuoji-minoh-waterfall.html",
@@ -48,10 +63,17 @@
       "prev_link": "hieizan-enryakuji-eternal-flame.html",
       "prev_title": "比叡山延曆寺",
       "next_link": "osaka-castle.html",
-      "next_title": "大阪城天守閣"
+      "next_title": "大阪城天守閣",
+      "nav_title": "滿山達摩之後，再走箕面瀑布",
+      "teaser": "孩子推薦了勝尾寺，才發現滿山達摩；收完六枚章，再沿溪谷走向瀑布。",
+      "related": [
+        "day-02",
+        "day-02-hieizan"
+      ]
     },
     {
       "id": "day-03-osaka-castle",
+      "feedback": true,
       "title": "光走進城，敵軍大概就投降了",
       "source": "trips/2026-osaka/sources/blog/osaka-castle.html",
       "output": "docs/2026-osaka/blog/osaka-castle.html",
@@ -63,7 +85,13 @@
       "prev_link": "katsuoji-minoh-waterfall.html",
       "prev_title": "勝尾寺與箕面瀑布",
       "next_link": "../index.html",
-      "next_title": "🎉 回到 2026 關西盛夏漫遊總覽"
+      "next_title": "🎉 回到 2026 關西盛夏漫遊總覽",
+      "nav_title": "大阪城：光走進城，敵軍就投降了",
+      "teaser": "八月西曬下走進大阪城，看天守閣、逛庭園，最後去天神橋筋吃鰻魚飯。",
+      "related": [
+        "day-02-hieizan",
+        "day-02"
+      ]
     }
   ],
   "article_nav_links": [

@@ -13,6 +13,7 @@ scratch/
 output/
 .playwright-mcp/
 .playwright-cli/
+.local_data/
 
 # Cloudflare Wrangler local state
 .wrangler/
@@ -24,6 +25,7 @@ __pycache__/
 
 # Local-only published editor guard
 docs/core/editor.html
+docs/core/author-feedback.html
 
 # OS & Editor files
 .DS_Store

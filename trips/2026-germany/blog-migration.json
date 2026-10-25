@@ -7,6 +7,7 @@
   "entries": [
     {
       "id": "day-01",
+      "feedback": true,
       "title": "Day 01：莫札特的家，我來過三次了 ✕ 機場取車自駕遠征、糧食胡同與哈修塔特藍調抵達",
       "source": "trips/2026-germany/sources/blog/salzburg-to-hallstatt.html",
       "output": "docs/2026-germany/blog/salzburg-to-hallstatt.html",
@@ -16,10 +17,17 @@
       "prev_link": null,
       "prev_title": null,
       "next_link": "hallstatt-winter.html",
-      "next_title": "Day 02 哈修塔特湖畔漫遊"
+      "next_title": "Day 02 哈修塔特湖畔漫遊",
+      "nav_title": "莫札特的家，我來過三次了",
+      "teaser": "慕尼黑取車後一路往奧地利開，重訪薩爾斯堡，再趕到哈修塔特看藍調。",
+      "related": [
+        "day-09",
+        "day-12"
+      ]
     },
     {
       "id": "day-02",
+      "feedback": true,
       "title": "Day 02：哈修塔特湖畔漫遊 — 夏與冬的十二年對照",
       "source": "trips/2026-germany/sources/blog/hallstatt-winter.html",
       "output": "docs/2026-germany/blog/hallstatt-winter.html",
@@ -29,10 +37,17 @@
       "prev_link": "salzburg-to-hallstatt.html",
       "prev_title": "Day 01 薩爾斯堡莫札特故鄉",
       "next_link": "ingolstadt-wuerzburg.html",
-      "next_title": "Day 03 告別湖區長途北上"
+      "next_title": "Day 03 告別湖區長途北上",
+      "nav_title": "哈修塔特：夏與冬的十二年對照",
+      "teaser": "把十二年前的盛夏照片翻出來，這次和 Belle 走在雪山倒映的湖邊。",
+      "related": [
+        "day-13",
+        "day-14"
+      ]
     },
     {
       "id": "day-03",
+      "feedback": true,
       "title": "Day 03：告別湖區長途北上 — Ingolstadt Outlet 尋寶記與符茲堡百年酒莊",
       "source": "trips/2026-germany/sources/blog/ingolstadt-wuerzburg.html",
       "output": "docs/2026-germany/blog/ingolstadt-wuerzburg.html",
@@ -42,10 +57,17 @@
       "prev_link": "hallstatt-winter.html",
       "prev_title": "Day 02 哈修塔特湖畔漫遊",
       "next_link": "bamberg-old-town.html",
-      "next_title": "Day 04 班堡老城與煙燻啤酒"
+      "next_title": "Day 04 班堡老城與煙燻啤酒",
+      "nav_title": "告別湖區，往符茲堡的酒莊開",
+      "teaser": "長途北上，中途逛 Outlet，晚上換成法蘭肯酒鄉與百年酒莊。",
+      "related": [
+        "day-11",
+        "day-15"
+      ]
     },
     {
       "id": "day-04",
+      "feedback": true,
       "title": "Day 04：班堡老城與煙燻啤酒 — 一座喝起來很有個性的世界遺產小城",
       "source": "trips/2026-germany/sources/blog/bamberg-old-town.html",
       "output": "docs/2026-germany/blog/bamberg-old-town.html",
@@ -55,10 +77,17 @@
       "prev_link": "ingolstadt-wuerzburg.html",
       "prev_title": "Day 03 符茲堡百年酒莊",
       "next_link": "nuremberg-kaiserburg.html",
-      "next_title": "Day 05 紐倫堡皇帝堡走讀"
+      "next_title": "Day 05 紐倫堡皇帝堡走讀",
+      "nav_title": "班堡冰雨散步，煙燻啤酒留待下次",
+      "teaser": "搭火車去看水上市政廳和主教座堂，這次卻沒喝到惦記的煙燻啤酒。",
+      "related": [
+        "day-06",
+        "day-10-colmar"
+      ]
     },
     {
       "id": "day-05",
+      "feedback": true,
       "title": "Day 05：紐倫堡皇帝堡與中世紀走讀 — 一座很有故事卻不沉重的城市",
       "source": "trips/2026-germany/sources/blog/nuremberg-kaiserburg.html",
       "output": "docs/2026-germany/blog/nuremberg-kaiserburg.html",
@@ -68,10 +97,17 @@
       "prev_link": "bamberg-old-town.html",
       "prev_title": "Day 04 班堡老城與煙燻啤酒",
       "next_link": "rothenburg-winter.html",
-      "next_title": "Day 06 羅騰堡童話小鎮"
+      "next_title": "Day 06 羅騰堡童話小鎮",
+      "nav_title": "紐倫堡：皇帝堡、金環與小香腸",
+      "teaser": "從城堡看老城紅瓦，轉轉幸運金環，再找炭烤小香腸填肚子。",
+      "related": [
+        "day-10-speyer",
+        "day-08"
+      ]
     },
     {
       "id": "day-06",
+      "feedback": true,
       "title": "Day 06：中世紀時間膠囊 ✕ 羅騰堡 — 走進下雪時像童話書般的永恆小鎮",
       "source": "trips/2026-germany/sources/blog/rothenburg-winter.html",
       "output": "docs/2026-germany/blog/rothenburg-winter.html",
@@ -81,10 +117,17 @@
       "prev_link": "nuremberg-kaiserburg.html",
       "prev_title": "Day 05 紐倫堡皇帝堡",
       "next_link": "wuerzburg-residenz.html",
-      "next_title": "Day 07 符茲堡主教宮與美茵河畔"
+      "next_title": "Day 07 符茲堡主教宮與美茵河畔",
+      "nav_title": "羅騰堡：雪球太甜，罰單被風吹跑",
+      "teaser": "走古城牆、逛聖誕博物館，最後還多了一張被風吹跑的停車罰單。",
+      "related": [
+        "day-04",
+        "day-10-colmar"
+      ]
     },
     {
       "id": "day-07",
+      "feedback": true,
       "title": "Day 07：巴洛克巔峰與美茵河畔散步 — 主教宮天頂畫、老橋風景與瑪麗恩堡雪景",
       "source": "trips/2026-germany/sources/blog/wuerzburg-residenz.html",
       "output": "docs/2026-germany/blog/wuerzburg-residenz.html",
@@ -94,10 +137,17 @@
       "prev_link": "rothenburg-winter.html",
       "prev_title": "Day 06 羅騰堡童話小鎮",
       "next_link": "heidelberg-castle.html",
-      "next_title": "Day 08 海德堡古堡與老橋"
+      "next_title": "Day 08 海德堡古堡與老橋",
+      "nav_title": "符茲堡：主教宮天頂畫與老橋風景",
+      "teaser": "抬頭看主教宮的天頂畫，再到美茵河畔與要塞，換幾個角度看這座城。",
+      "related": [
+        "day-01",
+        "day-10-speyer"
+      ]
     },
     {
       "id": "day-08",
+      "feedback": true,
       "title": "Day 08：我把心遺留在海德堡 ✕ 齒軌纜車登古堡、沉浸式藥事博物館與老橋河畔日落",
       "source": "trips/2026-germany/sources/blog/heidelberg-castle.html",
       "output": "docs/2026-germany/blog/heidelberg-castle.html",
@@ -107,7 +157,13 @@
       "prev_link": "wuerzburg-residenz.html",
       "prev_title": "Day 07 符茲堡主教宮",
       "next_link": "hanau-frankfurt.html",
-      "next_title": "Day 09 哈瑙童話與法蘭克福"
+      "next_title": "Day 09 哈瑙童話與法蘭克福",
+      "nav_title": "海德堡：古堡、纜車與藥事博物館",
+      "teaser": "搭齒軌纜車上古堡，看大酒桶、逛藥事博物館，再走回老橋河畔。",
+      "related": [
+        "day-02",
+        "day-13"
+      ]
     },
     {
       "id": "day-09",
@@ -127,10 +183,12 @@
       "related": [
         "day-13",
         "day-10-colmar"
-      ]
+      ],
+      "feedback": true
     },
     {
       "id": "day-10-speyer",
+      "feedback": true,
       "title": "Day 10 (上)：史派爾大教堂 ✕ 羅曼式帝國千年震撼",
       "source": "trips/2026-germany/sources/blog/speyer-cathedral.html",
       "output": "docs/2026-germany/blog/speyer-cathedral.html",
@@ -140,10 +198,17 @@
       "prev_link": "hanau-frankfurt.html",
       "prev_title": "Day 09 哈瑙與法蘭克福",
       "next_link": "colmar-little-venice.html",
-      "next_title": "Day 10 (下) 科爾馬小威尼斯"
+      "next_title": "Day 10 (下) 科爾馬小威尼斯",
+      "nav_title": "史派爾大教堂：走進羅曼式千年建築",
+      "teaser": "離開海德堡，先走一趟史派爾大教堂，再跨過德法邊界。",
+      "related": [
+        "day-07",
+        "day-05"
+      ]
     },
     {
       "id": "day-10-colmar",
+      "feedback": true,
       "title": "Day 10 (下)：走進宮崎駿的童話畫框 ✕ 霍爾的移動城堡原型、小威尼斯運河與市集美學",
       "nav_title": "科爾馬小威尼斯：走進童話畫框",
       "teaser": "彩色木筋屋、運河與小橋，把冬日午後變成一座可以慢慢走進去的童話場景。",
@@ -155,10 +220,15 @@
       "prev_link": "speyer-cathedral.html",
       "prev_title": "Day 10 (上) 史派爾大教堂",
       "next_link": "eguisheim-basel.html",
-      "next_title": "Day 11 亞爾薩斯埃吉桑姆與巴塞爾"
+      "next_title": "Day 11 亞爾薩斯埃吉桑姆與巴塞爾",
+      "related": [
+        "day-06",
+        "day-04"
+      ]
     },
     {
       "id": "day-11",
+      "feedback": true,
       "title": "Day 11：金融心臟的理性朝聖 ✕ 亞爾薩斯同心圓裡的恬淡生活感",
       "source": "trips/2026-germany/sources/blog/eguisheim-basel.html",
       "output": "docs/2026-germany/blog/eguisheim-basel.html",
@@ -168,10 +238,17 @@
       "prev_link": "colmar-little-venice.html",
       "prev_title": "Day 10 (下) 科爾馬小威尼斯",
       "next_link": "garmisch-das-graseck.html",
-      "next_title": "Day 12 加米許山莊隱世時光"
+      "next_title": "Day 12 加米許山莊隱世時光",
+      "nav_title": "巴塞爾與埃吉桑姆：兩種城市散步",
+      "teaser": "因為巴塞爾協議特地去看 BIS，午後再轉往法國同心圓排列的老街。",
+      "related": [
+        "day-09",
+        "day-07"
+      ]
     },
     {
       "id": "day-12",
+      "feedback": true,
       "title": "Day 12：黑森林過渡 ✕ 加米許山莊 Das Graseck 的極致隱世時光",
       "source": "trips/2026-germany/sources/blog/garmisch-das-graseck.html",
       "output": "docs/2026-germany/blog/garmisch-das-graseck.html",
@@ -181,10 +258,17 @@
       "prev_link": "eguisheim-basel.html",
       "prev_title": "Day 11 亞爾薩斯與巴塞爾",
       "next_link": "neuschwanstein-winter.html",
-      "next_title": "Day 13 新天鵝堡雪景重遊"
+      "next_title": "Day 13 新天鵝堡雪景重遊",
+      "nav_title": "Das Graseck：搭專用纜車上山住一晚",
+      "teaser": "飯店的訂房規定讓路線多繞了一段，開完長途，還得搭纜車才能入住。",
+      "related": [
+        "day-02",
+        "day-15"
+      ]
     },
     {
       "id": "day-13",
+      "feedback": true,
       "title": "Day 13：新天鵝堡雪景重遊 ✕ 馬車上的父女童話時光",
       "nav_title": "二十五年後，帶女兒重返新天鵝堡",
       "teaser": "二十五年前以為照片是假的；這次帶著剛考完學測的 Belle，在雪裡親眼看一次真城堡。",
@@ -196,10 +280,15 @@
       "prev_link": "garmisch-das-graseck.html",
       "prev_title": "Day 12 加米許雪山山莊",
       "next_link": "partnachklamm-ice.html",
-      "next_title": "Day 14 帕特納赫峽谷冰瀑奇景"
+      "next_title": "Day 14 帕特納赫峽谷冰瀑奇景",
+      "related": [
+        "day-09",
+        "day-10-colmar"
+      ]
     },
     {
       "id": "day-14",
+      "feedback": true,
       "title": "Day 14：帕特納赫峽谷冬季冰瀑奇景 ✕ 天然冰宮探秘",
       "source": "trips/2026-germany/sources/blog/partnachklamm-ice.html",
       "output": "docs/2026-germany/blog/partnachklamm-ice.html",
@@ -209,10 +298,17 @@
       "prev_link": "neuschwanstein-winter.html",
       "prev_title": "Day 13 新天鵝堡雪景",
       "next_link": "munich-departure.html",
-      "next_title": "Day 15 慕尼黑機場滿載賦歸"
+      "next_title": "Day 15 慕尼黑機場滿載賦歸",
+      "nav_title": "帕特納赫峽谷：走進冬天的冰瀑",
+      "teaser": "沿峽谷岩壁往裡走，看冰簾、冰瀑與狹窄步道，把冬季留在照片裡。",
+      "related": [
+        "day-02",
+        "day-12"
+      ]
     },
     {
       "id": "day-15",
+      "feedback": true,
       "title": "Day 15：慕尼黑機場滿載賦歸 ✕ 十五天德南冬旅自駕回甘",
       "source": "trips/2026-germany/sources/blog/munich-departure.html",
       "output": "docs/2026-germany/blog/munich-departure.html",
@@ -222,7 +318,13 @@
       "prev_link": "partnachklamm-ice.html",
       "prev_title": "Day 14 帕特納赫冰宮探秘",
       "next_link": "../index.html",
-      "next_title": "🎉 15天德南冬旅圓滿完結 · 回首頁"
+      "next_title": "🎉 15天德南冬旅圓滿完結 · 回首頁",
+      "nav_title": "告別 Audi，十五天冬旅準備回家",
+      "teaser": "父女自駕兩千多公里後，把白色 Audi 還回去，帶著這趟冬旅的照片登機。",
+      "related": [
+        "day-03",
+        "day-01"
+      ]
     }
   ]
 }

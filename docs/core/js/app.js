@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initGLightbox();
   initFeaturedRandomizer();
   initInlineAutoplayVideos();
+  initReaderFeedback();
 });
 
 function initInlineAutoplayVideos() {
@@ -326,6 +327,292 @@ function initFeaturedRandomizer() {
         grid.classList.remove('fade-out');
         showToast('🎲 已為您精選全新 3 篇遊記！');
       }, 220);
+    });
+  }
+}
+
+/* ==========================================================================
+   7. 讀者點讚與私密留言 (Reader Feedback Client Engine)
+   ========================================================================== */
+function initReaderFeedback() {
+  const section = document.querySelector('.reader-feedback-section');
+  if (!section) return;
+
+  const articleId = section.dataset.articleId;
+  if (!articleId) return;
+
+  function getReaderClientId() {
+    const key = 'ch_reader_cid';
+    let cid = '';
+    try {
+      cid = localStorage.getItem(key);
+      if (!cid || typeof cid !== 'string' || cid.length < 16 || cid.length > 64) {
+        if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+          cid = crypto.randomUUID();
+        } else {
+          cid = 'cid-' + Math.random().toString(36).slice(2) + '-' + Date.now().toString(36);
+        }
+        localStorage.setItem(key, cid);
+      }
+    } catch (e) {
+      cid = 'cid-fallback-' + Math.random().toString(36).slice(2);
+    }
+    return cid;
+  }
+
+  const clientId = getReaderClientId();
+  const btnLike = document.getElementById('btnFeedbackLike');
+  const likeText = btnLike ? btnLike.querySelector('.like-text') : null;
+  const likeIcon = btnLike ? btnLike.querySelector('.like-icon') : null;
+  const statusMsg = document.getElementById('feedbackLikeStatus');
+  const btnToggleComment = document.getElementById('btnToggleComment');
+  const commentPane = document.getElementById('feedbackCommentPane');
+  const form = document.getElementById('readerFeedbackForm');
+  const nicknameInput = document.getElementById('feedbackNickname');
+  const contentInput = document.getElementById('feedbackContent');
+  const charCount = document.getElementById('charCount');
+  const formAlert = document.getElementById('feedbackFormAlert');
+  const btnCancel = document.getElementById('btnCancelComment');
+  const btnSubmit = document.getElementById('btnSubmitFeedback');
+  const submitSpinner = btnSubmit ? btnSubmit.querySelector('.submit-spinner') : null;
+  const submitLabel = btnSubmit ? btnSubmit.querySelector('.submit-label') : null;
+  const successCard = document.getElementById('feedbackSuccessCard');
+  const btnSendAnother = document.getElementById('btnSendAnother');
+
+  const btnRetry = document.getElementById('btnRetryFeedback');
+  let serviceReady = false;
+  let checkingStatus = false;
+  let isLiked = false;
+  let currentSubmissionId = null;
+
+  function updateLikeUI(liked) {
+    isLiked = liked;
+    if (!btnLike) return;
+    btnLike.setAttribute('aria-pressed', liked ? 'true' : 'false');
+    btnLike.classList.toggle('active', liked);
+    if (likeIcon) likeIcon.textContent = liked ? '❤️' : '🤍';
+    if (likeText) likeText.textContent = liked ? '謝謝你喜歡 (取消)' : '喜歡這篇';
+  }
+
+  function setServiceReady(ready) {
+    serviceReady = ready;
+    [btnLike, btnToggleComment, btnSubmit].forEach(button => {
+      if (button) button.disabled = !ready;
+    });
+  }
+
+  function serviceUnavailable() {
+    setServiceReady(false);
+    if (statusMsg) statusMsg.textContent = '互動服務暫時無法連線，請重試。輸入內容已保留，文章可繼續閱讀。';
+    if (btnRetry) btnRetry.hidden = false;
+  }
+
+  async function feedbackRequest(url, options = {}) {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10000);
+    try {
+      const response = await fetch(url, { ...options, signal: controller.signal });
+      if (response.status >= 500) throw new Error('Feedback service unavailable');
+      // Keep the timeout active while reading the response body too.
+      return { response, data: await response.json() };
+    } finally {
+      clearTimeout(timeout);
+    }
+  }
+
+  async function checkServiceStatus() {
+    if (checkingStatus) return;
+    checkingStatus = true;
+    setServiceReady(false);
+    if (btnRetry) btnRetry.hidden = true;
+    if (statusMsg) statusMsg.textContent = '正在確認互動服務…';
+    try {
+      const { response, data } = await feedbackRequest('/api/feedback/status?article_id=' + encodeURIComponent(articleId) + '&client_id=' + encodeURIComponent(clientId));
+      if (!response.ok || data.success !== true || data.article_id !== articleId || typeof data.liked !== 'boolean') {
+        throw new Error('Invalid feedback status');
+      }
+      updateLikeUI(data.liked);
+      setServiceReady(true);
+      if (statusMsg) statusMsg.textContent = '';
+    } catch (error) {
+      serviceUnavailable();
+    } finally {
+      checkingStatus = false;
+    }
+  }
+
+  setServiceReady(false);
+  if (btnRetry) btnRetry.addEventListener('click', checkServiceStatus);
+  checkServiceStatus();
+
+  // 1. 僅在確認服務與文章資格後允許互動
+  if (btnLike) {
+    btnLike.addEventListener('click', async () => {
+      if (!serviceReady || btnLike.disabled) return;
+      btnLike.disabled = true;
+      const nextAction = isLiked ? 'unlike' : 'like';
+      try {
+        const { response: res, data } = await feedbackRequest('/api/feedback/like', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            article_id: articleId,
+            client_id: clientId,
+            action: nextAction
+          })
+        });
+        if (res.ok && data.success) {
+          updateLikeUI(data.liked);
+          if (statusMsg) {
+            statusMsg.textContent = data.liked
+              ? '謝謝你喜歡這篇記錄！若想分享心得，也歡迎在下方留幾句話喔。'
+              : '已取消喜歡。隨時歡迎再與我們交流！';
+          }
+        } else if (statusMsg) {
+          statusMsg.textContent = data.error || '點讚操作失敗，請稍後再試。';
+        }
+      } catch (err) {
+        serviceUnavailable();
+        if (statusMsg) statusMsg.textContent = '互動服務連線異常，請重試連線。';
+      } finally {
+        btnLike.disabled = !serviceReady;
+      }
+    });
+  }
+
+  // 2. 展開 / 收合留言表單
+  if (btnToggleComment && commentPane) {
+    btnToggleComment.addEventListener('click', () => {
+      if (!serviceReady) return;
+      const isHidden = commentPane.hidden;
+      commentPane.hidden = !isHidden;
+      btnToggleComment.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+      btnToggleComment.classList.toggle('active', isHidden);
+      if (isHidden && contentInput) {
+        contentInput.focus();
+      }
+    });
+  }
+
+  if (btnCancel && commentPane && btnToggleComment) {
+    btnCancel.addEventListener('click', () => {
+      commentPane.hidden = true;
+      btnToggleComment.setAttribute('aria-expanded', 'false');
+      btnToggleComment.classList.remove('active');
+    });
+  }
+
+  // 3. 字數計數器
+  if (contentInput && charCount) {
+    contentInput.addEventListener('input', () => {
+      charCount.textContent = contentInput.value.length;
+    });
+  }
+
+  // 4. 留言表單送出（重試防重複、失敗保留內容）
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!serviceReady || (btnSubmit && btnSubmit.disabled)) return;
+      if (formAlert) {
+        formAlert.hidden = true;
+        formAlert.className = 'feedback-form-alert';
+        formAlert.textContent = '';
+      }
+
+      const nickname = (nicknameInput ? nicknameInput.value : '').trim();
+      const content = (contentInput ? contentInput.value : '').trim();
+
+      if (!content) {
+        if (formAlert) {
+          formAlert.textContent = '請輸入想對 CH 說的留言內容。';
+          formAlert.classList.add('error');
+          formAlert.hidden = false;
+        }
+        if (contentInput) contentInput.focus();
+        return;
+      }
+
+      if (content.length > 1000) {
+        if (formAlert) {
+          formAlert.textContent = '留言長度不得超過 1000 字。';
+          formAlert.classList.add('error');
+          formAlert.hidden = false;
+        }
+        return;
+      }
+
+      if (nickname.length > 40) {
+        if (formAlert) {
+          formAlert.textContent = '暱稱長度不得超過 40 字。';
+          formAlert.classList.add('error');
+          formAlert.hidden = false;
+        }
+        return;
+      }
+
+      if (!currentSubmissionId) {
+        if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+          currentSubmissionId = crypto.randomUUID();
+        } else {
+          currentSubmissionId = 'sub-' + Math.random().toString(36).slice(2) + '-' + Date.now();
+        }
+      }
+
+      if (btnSubmit) btnSubmit.disabled = true;
+      if (submitSpinner) submitSpinner.hidden = false;
+      if (submitLabel) submitLabel.textContent = '傳送中...';
+
+      try {
+        const { response: res, data } = await feedbackRequest('/api/feedback/message', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            article_id: articleId,
+            client_id: clientId,
+            client_submission_id: currentSubmissionId,
+            nickname: nickname || null,
+            content: content
+          })
+        });
+
+        if (res.ok && data.success) {
+          // 成功：清空輸入並顯示成功卡片
+          form.reset();
+          if (charCount) charCount.textContent = '0';
+          currentSubmissionId = null;
+          form.hidden = true;
+          if (successCard) successCard.hidden = false;
+        } else {
+          // 失敗：保留當頁文字，顯示錯誤
+          if (formAlert) {
+            formAlert.textContent = data.error || '傳送失敗，請稍後再試。';
+            formAlert.classList.add('error');
+            formAlert.hidden = false;
+          }
+        }
+      } catch (err) {
+        serviceUnavailable();
+        // 網路異常：保留當頁文字
+        if (formAlert) {
+          formAlert.textContent = '伺服器未回應或連線中斷，輸入內容已保留，請檢查後重試。';
+          formAlert.classList.add('error');
+          formAlert.hidden = false;
+        }
+      } finally {
+        if (btnSubmit) btnSubmit.disabled = !serviceReady;
+        if (submitSpinner) submitSpinner.hidden = true;
+        if (submitLabel) submitLabel.textContent = '送出私密留言';
+      }
+    });
+  }
+
+  if (btnSendAnother && successCard && form) {
+    btnSendAnother.addEventListener('click', () => {
+      successCard.hidden = true;
+      form.hidden = false;
+      if (formAlert) formAlert.hidden = true;
+      if (contentInput) contentInput.focus();
     });
   }
 }

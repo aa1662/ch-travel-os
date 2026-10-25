@@ -126,6 +126,8 @@ def validate_docs():
 
     if (DOCS_DIR / "core" / "editor.html").exists():
         errors.append("[公開 Editor 外洩] docs/core/editor.html 不應進入 GitHub Pages 發布目錄")
+    if (DOCS_DIR / "core" / "author-feedback.html").exists():
+        errors.append("[作者管理入口外洩] docs/core/author-feedback.html 不應進入發布目錄")
 
     # 0. 載入旅程 research 中已人工驗證的雙軌媒體映射表 (IG -> 相機原圖)
     # key 必須包含 trip，避免不同旅程的 Instagram ID 彼此覆蓋。

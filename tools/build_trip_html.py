@@ -19,13 +19,20 @@ import shutil
 from html import escape as html_escape
 from pathlib import Path
 
+try:
+    from .feedback_eligibility import feedback_eligible
+except ImportError:
+    from feedback_eligibility import feedback_eligible
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 DOCS_DIR = BASE_DIR / "docs"
 TRIPS_DIR = BASE_DIR / "trips"
 CORE_DIR = BASE_DIR / "core"
 PUBLIC_CORE_FILES = (
     ("css", "style.css"),
+    ("css", "adsense.css"),
     ("js", "app.js"),
+    ("js", "adsense.js"),
     ("js", "main.js"),
     ("vendor", "glightbox", "glightbox.min.css"),
     ("vendor", "glightbox", "glightbox.min.js"),
@@ -367,12 +374,17 @@ def render_related_stories(item, entries_by_id, images_dict, errors):
         image_url = related.get("og_image", "")
         image_filename = image_url.rsplit("/", 1)[-1]
         image_folder = related.get("image_folder", "")
+        image_stem = re.sub(r'-(?:thumb|content|desktop|lightbox)-\d+w\.webp$', '', image_filename)
         derivative = None
         for manifest_key, manifest_item in images_dict.items():
             if not manifest_key.startswith(f"{image_folder}/"):
                 continue
             derivatives = manifest_item.get("derivatives", [])
-            if any(d.get("filename") == image_filename for d in derivatives):
+            if any(
+                d.get("filename") == image_filename or
+                re.sub(r'-(?:thumb|content|desktop|lightbox)-\d+w\.webp$', '', d.get("filename", "")) == image_stem
+                for d in derivatives
+            ):
                 derivative = next(
                     (d for d in derivatives if d.get("profile") == "thumb"),
                     next((d for d in derivatives if d.get("filename") == image_filename), None),
@@ -386,17 +398,17 @@ def render_related_stories(item, entries_by_id, images_dict, errors):
         related_title = html_escape(related.get("nav_title", related["title"]))
         related_teaser = related.get("teaser")
         teaser_html = (
-            f'<span class="related-story-teaser">{html_escape(related_teaser)}</span>'
+            f'\n            <span class="related-story-teaser">{html_escape(related_teaser)}</span>'
             if related_teaser
             else ""
         )
+        image_class = ' class="related-story-portrait"' if derivative['height'] >= derivative['width'] else ''
         cards.append(f'''        <a class="related-story-card" href="{html_escape(related_href)}">
-          <img src="../images/{html_escape(image_folder)}/{html_escape(derivative['filename'])}" width="{derivative['width']}" height="{derivative['height']}" loading="lazy" decoding="async" alt="{related_title}">
+          <img{image_class} src="../images/{html_escape(image_folder)}/{html_escape(derivative['filename'])}" width="{derivative['width']}" height="{derivative['height']}" loading="lazy" decoding="async" alt="{related_title}">
           <span class="related-story-copy">
             <span class="related-story-kicker">延伸閱讀</span>
             <span class="related-story-title">{related_title}</span>
-            <span class="related-story-arrow" aria-hidden="true">→</span>
-            {teaser_html}
+            <span class="related-story-arrow" aria-hidden="true">→</span>{teaser_html}
           </span>
         </a>''')
 
@@ -424,6 +436,77 @@ def replace_mobile_overview(html_content, mobile_overview):
         html_content,
         count=1,
     )
+
+
+def render_reader_feedback(item, trip_slug, dest_slug=None):
+    if not feedback_eligible(item, trip_slug, dest_slug):
+        return ""
+    article_id = f"{trip_slug}:{item['id']}"
+    return f'''      <!-- 讀者點讚與私密留言 (Reader Feedback) -->
+      <section class="reader-feedback-section" data-article-id="{html_escape(article_id)}" aria-label="讀者互動回饋">
+        <div class="feedback-card">
+          <div class="feedback-header">
+            <h3 class="feedback-title">喜歡這篇記錄嗎？</h3>
+            <p class="feedback-desc">歡迎表達喜歡，或留幾句話給 CH。留言內容僅作者可見，不會公開。</p>
+          </div>
+          <div class="feedback-actions">
+            <button type="button" class="btn-feedback-action btn-like" aria-pressed="false" id="btnFeedbackLike" disabled title="喜歡這篇記錄">
+              <span class="like-icon" aria-hidden="true">🤍</span>
+              <span class="like-text">喜歡這篇</span>
+            </button>
+            <button type="button" class="btn-feedback-action btn-toggle-comment" aria-expanded="false" id="btnToggleComment" disabled title="留幾句話給 CH">
+              <span class="comment-icon" aria-hidden="true">💬</span>
+              <span class="comment-btn-text">留幾句話給 CH</span>
+            </button>
+          </div>
+          <div class="feedback-status-msg" id="feedbackLikeStatus" aria-live="polite">正在確認互動服務…</div>
+          <button type="button" class="btn-feedback-cancel" id="btnRetryFeedback" hidden>重試連線</button>
+
+          <div class="feedback-comment-pane" id="feedbackCommentPane" hidden>
+            <div class="feedback-privacy-note">
+              <span>🔒</span> 留言只給 CH 看，不會公開顯示在網頁上。
+            </div>
+            <form class="feedback-form" id="readerFeedbackForm" novalidate>
+              <div class="form-group">
+                <label for="feedbackNickname" class="form-label">你的稱呼 <span class="form-sublabel">（選填，最多 40 字）</span></label>
+                <input type="text" id="feedbackNickname" class="feedback-input" maxlength="40" placeholder="例如：旅人小明、讀者" autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="feedbackContent" class="form-label">想說的話 <span class="form-sublabel">（必填，最多 1000 字）</span></label>
+                <textarea id="feedbackContent" class="feedback-textarea" rows="4" maxlength="1000" placeholder="想跟 CH 說的話、旅行交流或勘誤建議..." required></textarea>
+                <div class="feedback-char-counter"><span id="charCount">0</span> / 1000</div>
+              </div>
+              <div class="feedback-form-alert" id="feedbackFormAlert" role="alert" hidden></div>
+              <div class="feedback-form-actions">
+                <button type="button" class="btn-feedback-cancel" id="btnCancelComment">取消</button>
+                <button type="submit" class="btn-feedback-submit" id="btnSubmitFeedback" disabled>
+                  <span class="submit-spinner" hidden>⏳</span>
+                  <span class="submit-label">送出私密留言</span>
+                </button>
+              </div>
+            </form>
+            <div class="feedback-success-card" id="feedbackSuccessCard" hidden>
+              <div class="success-icon">💌</div>
+              <h4>已收到，謝謝你！</h4>
+              <p>你的私密留言已安全送達 CH。感謝你的細心閱讀與溫暖分享！</p>
+              <button type="button" class="btn-feedback-again" id="btnSendAnother">再留一則</button>
+            </div>
+          </div>
+        </div>
+      </section>'''
+
+
+def render_article_ad():
+    config = json.loads((CORE_DIR / "adsense.json").read_text(encoding="utf-8"))
+    client, slot = config["client"], config["article_footer_slot"]
+    if not re.fullmatch(r"ca-pub-\d{16}", client) or not re.fullmatch(r"\d+", slot):
+        raise ValueError("Invalid AdSense publisher or article footer slot")
+    enabled = "true" if config.get("production_enabled") is True else "false"
+    return f'''      <!-- Article footer advertisement -->
+      <aside class="article-ad" aria-label="廣告" data-client="{client}" data-slot="{slot}" data-enabled="{enabled}" hidden>
+        <p class="article-ad-label">廣告</p>
+        <div class="article-ad-slot"></div>
+      </aside>'''
 
 
 def sync_public_core_assets():
@@ -531,8 +614,17 @@ def build_trip(trip_slug="2026-germany", dest_slug=None, entry_id=None):
 
         # 1.1 統一文章頂部導覽列
         journey_title = config_data.get("journey_title", trip_slug) if isinstance(config_data, dict) else trip_slug
-        standard_article_nav = render_article_header(config_data, journey_title)
+        standard_article_nav = render_article_header(config_data, journey_title).strip()
         html_content = re.sub(r'<nav class="site-nav">[\s\S]*?</nav>', standard_article_nav.strip(), html_content)
+        if feedback_eligible(item, trip_slug, dest_slug):
+            html_content = re.sub(
+                r'(src="../../core/js/app\.js)(?:\?[^" ]*)?"',
+                r'\1?v=20261024-feedback"', html_content,
+            )
+            html_content = re.sub(
+                r'(href="../../core/css/style\.css)(?:\?[^" ]*)?"',
+                r'\1?v=20261025-related"', html_content,
+            )
 
         # 2. 轉換圖片為 WebP 規格
         rel_prefix = f"../images/{img_folder}"
@@ -657,8 +749,8 @@ def build_trip(trip_slug="2026-germany", dest_slug=None, entry_id=None):
                     '<span>回到旅程總覽 →</span></a>'
                 )
 
+        related_html = render_related_stories(item, entries_by_id, images_dict, errors)
         if reading_item or item.get("navigation_style") == "discovery":
-            related_html = render_related_stories(item, entries_by_id, images_dict, errors)
             overview_label = (
                 config_data.get("journey_overview_label", "🇦🇺 澳洲旅程總覽")
                 if isinstance(config_data, dict)
@@ -701,6 +793,7 @@ def build_trip(trip_slug="2026-germany", dest_slug=None, entry_id=None):
             <span>{html_escape(compact_next_title)} →</span>
           </a>
         </div>
+{related_html}
       </section>'''
         else:
             new_nav_block = f'''<!-- 篇章導覽按鈕 -->
@@ -708,17 +801,25 @@ def build_trip(trip_slug="2026-germany", dest_slug=None, entry_id=None):
         {prev_html}
         {center_html}
         {next_html}
-      </div>'''
+      </div>
+{related_html}'''
 
         html_content, nav_replacement_count = re.subn(
             r'<!--\s*篇章導覽按鈕\s*-->[\s\S]*?</div>\s*</article>',
-            f'{new_nav_block}\n    </article>',
+            (f'{render_reader_feedback(item, trip_slug, dest_slug)}\n' if feedback_eligible(item, trip_slug, dest_slug) else "") + f'{render_article_ad()}\n{new_nav_block}\n    </article>',
             html_content
         )
         if nav_replacement_count != 1:
             errors.append(
                 f"{item['id']}: 篇章導覽標記應恰好出現 1 次，實際為 {nav_replacement_count} 次"
             )
+
+        html_content = html_content.replace(
+            "</head>",
+            '  <link rel="stylesheet" href="../../core/css/adsense.css?v=20261025-1">\n'
+            '  <script defer src="../../core/js/adsense.js?v=20261025"></script>\n</head>',
+            1,
+        )
 
         # 5. 修正手機 Dock 與頂部導覽列中的未發布 timeline 連結
         if not timeline_physical.exists():

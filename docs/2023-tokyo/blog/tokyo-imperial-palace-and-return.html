@@ -16,8 +16,10 @@
 <meta property="og:title" content="東京出差的空檔：皇居散步，吃飽再回家">
 <meta property="og:description" content="從高處的皇居與貪吃蛇鐵道，走到二重橋、東京車站和阿美橫町。">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="../../core/css/style.css?v=20260927-photo-grid">
+<link rel="stylesheet" href="../../core/css/style.css?v=20261025-related">
 <link rel="stylesheet" href="../../core/vendor/glightbox/glightbox.min.css">
+  <link rel="stylesheet" href="../../core/css/adsense.css?v=20261025-1">
+  <script defer src="../../core/js/adsense.js?v=20261025"></script>
 </head><body id="top">
 <div class="reading-progress" aria-hidden="true"></div><nav class="site-nav">
     <div class="container">
@@ -443,6 +445,63 @@
                  alt="阿美橫町，原貼文第 3 張照片"></a></div>
 </section>
 <h2>後來在大阪又看到</h2><p>2026 年 8 月，在大阪唐吉訶德又看到干貝糖，一包就快七千日圓。想到上次同樣七千日圓帶走了兩包，難怪我一直記得阿美橫町。</p><p>是不是一模一樣的品牌和規格，還得再看看。我也不知道是當時買得便宜，還是後來漲了。下次到東京，要再去確認一下。如果價格還漂亮，就多帶幾包。</p>
+      <!-- 讀者點讚與私密留言 (Reader Feedback) -->
+      <section class="reader-feedback-section" data-article-id="2023-tokyo:tokyo-imperial-palace-and-return" aria-label="讀者互動回饋">
+        <div class="feedback-card">
+          <div class="feedback-header">
+            <h3 class="feedback-title">喜歡這篇記錄嗎？</h3>
+            <p class="feedback-desc">歡迎表達喜歡，或留幾句話給 CH。留言內容僅作者可見，不會公開。</p>
+          </div>
+          <div class="feedback-actions">
+            <button type="button" class="btn-feedback-action btn-like" aria-pressed="false" id="btnFeedbackLike" disabled title="喜歡這篇記錄">
+              <span class="like-icon" aria-hidden="true">🤍</span>
+              <span class="like-text">喜歡這篇</span>
+            </button>
+            <button type="button" class="btn-feedback-action btn-toggle-comment" aria-expanded="false" id="btnToggleComment" disabled title="留幾句話給 CH">
+              <span class="comment-icon" aria-hidden="true">💬</span>
+              <span class="comment-btn-text">留幾句話給 CH</span>
+            </button>
+          </div>
+          <div class="feedback-status-msg" id="feedbackLikeStatus" aria-live="polite">正在確認互動服務…</div>
+          <button type="button" class="btn-feedback-cancel" id="btnRetryFeedback" hidden>重試連線</button>
+
+          <div class="feedback-comment-pane" id="feedbackCommentPane" hidden>
+            <div class="feedback-privacy-note">
+              <span>🔒</span> 留言只給 CH 看，不會公開顯示在網頁上。
+            </div>
+            <form class="feedback-form" id="readerFeedbackForm" novalidate>
+              <div class="form-group">
+                <label for="feedbackNickname" class="form-label">你的稱呼 <span class="form-sublabel">（選填，最多 40 字）</span></label>
+                <input type="text" id="feedbackNickname" class="feedback-input" maxlength="40" placeholder="例如：旅人小明、讀者" autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="feedbackContent" class="form-label">想說的話 <span class="form-sublabel">（必填，最多 1000 字）</span></label>
+                <textarea id="feedbackContent" class="feedback-textarea" rows="4" maxlength="1000" placeholder="想跟 CH 說的話、旅行交流或勘誤建議..." required></textarea>
+                <div class="feedback-char-counter"><span id="charCount">0</span> / 1000</div>
+              </div>
+              <div class="feedback-form-alert" id="feedbackFormAlert" role="alert" hidden></div>
+              <div class="feedback-form-actions">
+                <button type="button" class="btn-feedback-cancel" id="btnCancelComment">取消</button>
+                <button type="submit" class="btn-feedback-submit" id="btnSubmitFeedback" disabled>
+                  <span class="submit-spinner" hidden>⏳</span>
+                  <span class="submit-label">送出私密留言</span>
+                </button>
+              </div>
+            </form>
+            <div class="feedback-success-card" id="feedbackSuccessCard" hidden>
+              <div class="success-icon">💌</div>
+              <h4>已收到，謝謝你！</h4>
+              <p>你的私密留言已安全送達 CH。感謝你的細心閱讀與溫暖分享！</p>
+              <button type="button" class="btn-feedback-again" id="btnSendAnother">再留一則</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Article footer advertisement -->
+      <aside class="article-ad" aria-label="廣告" data-client="ca-pub-1540286884381775" data-slot="8395271355" data-enabled="false" hidden>
+        <p class="article-ad-label">廣告</p>
+        <div class="article-ad-slot"></div>
+      </aside>
 <!-- 篇章導覽按鈕 -->
       <section class="article-navigation" aria-label="文章導覽">
         <div class="article-linear-nav">
@@ -460,10 +519,24 @@
             <span>回到東京旅程首頁 →</span>
           </a>
         </div>
+      <section class="related-stories" aria-labelledby="related-stories-title">
+        <h2 id="related-stories-title">同系列還可以看</h2>
+        <div class="related-story-grid">
+        <a class="related-story-card" href="tokyo-arrival-meiji-jingu.html">
+          <img src="../images/arrival/20231113_173312-thumb-480w.webp" width="480" height="270" loading="lazy" decoding="async" alt="六年沒來東京，先去明治神宮走走">
+          <span class="related-story-copy">
+            <span class="related-story-kicker">延伸閱讀</span>
+            <span class="related-story-title">六年沒來東京，先去明治神宮走走</span>
+            <span class="related-story-arrow" aria-hidden="true">→</span>
+            <span class="related-story-teaser">下午走進明治神宮看酒桶牆與菊花，晚上回到東京車站，看紅磚與高樓一起亮燈。</span>
+          </span>
+        </a>
+        </div>
+      </section>
       </section>
     </article></main>
 <footer class="travel-footer"><div class="container"><div class="travel-footer-brand">CH x Travel</div><p>2023 東京出差散步 · 會後與回程小品</p><nav class="travel-footer-nav" aria-label="頁尾導覽"><a href="../index.html">東京旅程首頁</a><a href="../../japan/">日本旅程</a><a href="../../about/">關於 CH</a><a href="../../index.html">全球旅程</a><a href="https://www.instagram.com/ch.huangs/" target="_blank" rel="noopener noreferrer">Instagram</a></nav></div></footer>
 <div class="mobile-dock" aria-label="行動版導覽"><a href="tokyo-arrival-meiji-jingu.html" class="dock-item"><span class="dock-icon">←</span><span>上一篇</span></a><a href="../index.html" class="dock-item"><span class="dock-icon">🏠</span><span>東京總覽</span></a><button type="button" class="dock-item btn-gallery-quick"><span class="dock-icon">🖼️</span><span>圖集</span></button><button type="button" class="dock-item btn-share"><span class="dock-icon">📤</span><span>分享</span></button></div>
-<script src="../../core/vendor/glightbox/glightbox.min.js"></script><script src="../../core/js/app.js?v=20260928-video"></script>
+<script src="../../core/vendor/glightbox/glightbox.min.js"></script><script src="../../core/js/app.js?v=20261024-feedback"></script>
 
 </body></html>

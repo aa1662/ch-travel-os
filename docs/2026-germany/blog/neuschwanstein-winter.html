@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Noto+Sans+TC:wght@400;500;700;900&amp;family=Noto+Serif+TC:wght@500;600;700;900&amp;family=Outfit:wght@600;700;800&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../core/css/style.css?v=20260927-photo-essay">
+  <link rel="stylesheet" href="../../core/css/style.css?v=20261025-related">
   <link rel="stylesheet" href="../../core/vendor/glightbox/glightbox.min.css">
   <style>
     /* 圖文遊記「看圖說故事」左右交錯排版規範 (Story-Split) */
@@ -109,6 +109,8 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="../../core/css/adsense.css?v=20261025-1">
+  <script defer src="../../core/js/adsense.js?v=20261025"></script>
 </head>
 <body>
   <!-- 頂部閱讀進度條 -->
@@ -702,12 +704,92 @@
         </div>
       </div>
 
-      <!-- 篇章導覽按鈕 -->
+            <!-- 讀者點讚與私密留言 (Reader Feedback) -->
+      <section class="reader-feedback-section" data-article-id="2026-germany:day-13" aria-label="讀者互動回饋">
+        <div class="feedback-card">
+          <div class="feedback-header">
+            <h3 class="feedback-title">喜歡這篇記錄嗎？</h3>
+            <p class="feedback-desc">歡迎表達喜歡，或留幾句話給 CH。留言內容僅作者可見，不會公開。</p>
+          </div>
+          <div class="feedback-actions">
+            <button type="button" class="btn-feedback-action btn-like" aria-pressed="false" id="btnFeedbackLike" disabled title="喜歡這篇記錄">
+              <span class="like-icon" aria-hidden="true">🤍</span>
+              <span class="like-text">喜歡這篇</span>
+            </button>
+            <button type="button" class="btn-feedback-action btn-toggle-comment" aria-expanded="false" id="btnToggleComment" disabled title="留幾句話給 CH">
+              <span class="comment-icon" aria-hidden="true">💬</span>
+              <span class="comment-btn-text">留幾句話給 CH</span>
+            </button>
+          </div>
+          <div class="feedback-status-msg" id="feedbackLikeStatus" aria-live="polite">正在確認互動服務…</div>
+          <button type="button" class="btn-feedback-cancel" id="btnRetryFeedback" hidden>重試連線</button>
+
+          <div class="feedback-comment-pane" id="feedbackCommentPane" hidden>
+            <div class="feedback-privacy-note">
+              <span>🔒</span> 留言只給 CH 看，不會公開顯示在網頁上。
+            </div>
+            <form class="feedback-form" id="readerFeedbackForm" novalidate>
+              <div class="form-group">
+                <label for="feedbackNickname" class="form-label">你的稱呼 <span class="form-sublabel">（選填，最多 40 字）</span></label>
+                <input type="text" id="feedbackNickname" class="feedback-input" maxlength="40" placeholder="例如：旅人小明、讀者" autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="feedbackContent" class="form-label">想說的話 <span class="form-sublabel">（必填，最多 1000 字）</span></label>
+                <textarea id="feedbackContent" class="feedback-textarea" rows="4" maxlength="1000" placeholder="想跟 CH 說的話、旅行交流或勘誤建議..." required></textarea>
+                <div class="feedback-char-counter"><span id="charCount">0</span> / 1000</div>
+              </div>
+              <div class="feedback-form-alert" id="feedbackFormAlert" role="alert" hidden></div>
+              <div class="feedback-form-actions">
+                <button type="button" class="btn-feedback-cancel" id="btnCancelComment">取消</button>
+                <button type="submit" class="btn-feedback-submit" id="btnSubmitFeedback" disabled>
+                  <span class="submit-spinner" hidden>⏳</span>
+                  <span class="submit-label">送出私密留言</span>
+                </button>
+              </div>
+            </form>
+            <div class="feedback-success-card" id="feedbackSuccessCard" hidden>
+              <div class="success-icon">💌</div>
+              <h4>已收到，謝謝你！</h4>
+              <p>你的私密留言已安全送達 CH。感謝你的細心閱讀與溫暖分享！</p>
+              <button type="button" class="btn-feedback-again" id="btnSendAnother">再留一則</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Article footer advertisement -->
+      <aside class="article-ad" aria-label="廣告" data-client="ca-pub-1540286884381775" data-slot="8395271355" data-enabled="false" hidden>
+        <p class="article-ad-label">廣告</p>
+        <div class="article-ad-slot"></div>
+      </aside>
+<!-- 篇章導覽按鈕 -->
       <div style="display: flex; justify-content: space-between; align-items: center; margin: 3.5rem 0 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); flex-wrap: wrap; gap: 1rem;">
         <a href="garmisch-das-graseck.html" style="font-weight: 600; color: var(--primary); font-size: 0.95rem;">← 上一篇：Day 12 加米許雪山山莊</a>
         <a href="../day-13.html" class="badge badge-gold" style="font-size: 0.9rem; padding: 0.5rem 1rem; text-decoration: none;">🧭 查看 Day 13 行程筆記</a>
         <a href="partnachklamm-ice.html" style="font-weight: 600; color: var(--primary); font-size: 0.95rem;">下一篇：Day 14 帕特納赫峽谷冰瀑奇景 →</a>
       </div>
+      <section class="related-stories" aria-labelledby="related-stories-title">
+        <h2 id="related-stories-title">同系列還可以看</h2>
+        <div class="related-story-grid">
+        <a class="related-story-card" href="hanau-frankfurt.html">
+          <img class="related-story-portrait" src="../images/day-09/17858740191605419-thumb-360w.webp" width="360" height="480" loading="lazy" decoding="async" alt="哈瑙童話與法蘭克福天際線">
+          <span class="related-story-copy">
+            <span class="related-story-kicker">延伸閱讀</span>
+            <span class="related-story-title">哈瑙童話與法蘭克福天際線</span>
+            <span class="related-story-arrow" aria-hidden="true">→</span>
+            <span class="related-story-teaser">同一天從格林兄弟故鄉走到法蘭克福金融天際線，看見兩個完全不同的德國。</span>
+          </span>
+        </a>
+        <a class="related-story-card" href="colmar-little-venice.html">
+          <img class="related-story-portrait" src="../images/day-10/18082561442231943-thumb-480w.webp" width="480" height="480" loading="lazy" decoding="async" alt="科爾馬小威尼斯：走進童話畫框">
+          <span class="related-story-copy">
+            <span class="related-story-kicker">延伸閱讀</span>
+            <span class="related-story-title">科爾馬小威尼斯：走進童話畫框</span>
+            <span class="related-story-arrow" aria-hidden="true">→</span>
+            <span class="related-story-teaser">彩色木筋屋、運河與小橋，把冬日午後變成一座可以慢慢走進去的童話場景。</span>
+          </span>
+        </a>
+        </div>
+      </section>
     </article>
   </main>
 
@@ -732,7 +814,7 @@
   </div>
 
   <script src="../../core/vendor/glightbox/glightbox.min.js"></script>
-  <script src="../../core/js/app.js"></script>
+  <script src="../../core/js/app.js?v=20261024-feedback"></script>
 
 
 </body></html>

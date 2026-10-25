@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>讀者回饋 · CH Travel OS</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<style>
+:root{color-scheme:light;--ink:#243447;--muted:#656e75;--line:#dcdedb;--paper:#f6f5f1;--accent:#315c61}*{box-sizing:border-box}[hidden]{display:none!important}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit;color:inherit}button,.link{border:1px solid var(--line);border-radius:6px;padding:6px 12px;background:#fff;cursor:pointer;text-decoration:none;display:inline-block}button:hover,.link:hover{background:#edf2f0}button:disabled{opacity:.5;cursor:wait}button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}:focus-visible{outline:3px solid #348594;outline-offset:2px}input,select,textarea{border:1px solid var(--line);border-radius:6px;padding:7px;background:#fff;max-width:100%}textarea{width:100%;resize:vertical}h1,h2,h3,p{margin:0 0 12px}h1{font-size:23px}h2{font-size:19px}small,.muted{color:var(--muted);font-size:13px}.login-card{max-width:420px;margin:12vh auto;padding:28px;background:#fff;border:1px solid var(--line);border-radius:12px}.login-card input{width:100%;margin:8px 0 16px}.shell{max-width:1480px;margin:auto;padding:20px}.topbar,.actions,.tabs,.pager,.detail-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.topbar{justify-content:space-between;margin-bottom:12px}.topbar h1{margin:0}.local{font-size:12px;background:#ece6d4;padding:3px 8px;border-radius:20px}.counts{display:flex;flex-wrap:wrap;gap:20px;font-size:14px;margin:12px 0}.counts strong{font-size:19px;margin-left:5px}.filters{display:flex;align-items:end;gap:12px;flex-wrap:wrap;margin:12px 0}.filters label{display:grid;gap:3px;font-size:13px}.filters .check{display:flex;align-items:center;gap:6px;padding-bottom:7px}.search{display:flex;gap:6px;align-items:end;flex-wrap:wrap}.tabs{border-bottom:1px solid var(--line);padding-bottom:10px}.tabs button[aria-pressed=true]{background:var(--accent);color:white;border-color:var(--accent)}.workspace{display:grid;grid-template-columns:minmax(290px,390px) minmax(0,1fr);border:1px solid var(--line);border-radius:10px;background:#fff;overflow:hidden;margin-top:12px;min-height:60vh}.sidebar{border-right:1px solid var(--line);min-width:0}.list{max-height:66vh;overflow:auto}.row{display:block;width:100%;text-align:left;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:12px 15px;background:white}.row[aria-current=true]{background:#e9f1ef;box-shadow:inset 3px 0 var(--accent)}.row.unread .row-title{font-weight:750}.row-title{display:block;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.row-meta{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--muted);margin:3px 0}.preview{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px;line-height:1.5}.badge{display:inline-block;background:#f0eee6;border-radius:4px;padding:1px 6px;font-size:12px}.badge.new{background:#fff1cd;color:#815614}.pager{padding:12px;justify-content:space-between;border-top:1px solid var(--line);font-size:13px}.detail{padding:22px;min-width:0}.detail-head{justify-content:space-between}.body-text{white-space:pre-wrap;overflow-wrap:anywhere;background:#f8f8f5;padding:16px;border-radius:6px;margin:18px 0}.note-label{display:block;font-weight:650;margin:20px 0 6px}.note-meta{display:flex;justify-content:space-between;gap:8px;margin-bottom:8px}.notice{padding:10px 12px;border-radius:6px;background:#eaf1ef;margin:10px 0;white-space:pre-wrap;overflow-wrap:anywhere}.error{background:#fff0eb;color:#943d28}.empty{padding:32px 16px;text-align:center;color:var(--muted)}.back{display:none}dialog{border:1px solid var(--line);border-radius:12px;padding:24px;max-width:540px;width:calc(100% - 32px);color:var(--ink)}dialog::backdrop{background:#14273388}.conflict{border:1px solid #dbb39b;padding:12px;margin:12px 0;border-radius:6px}.conflict pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:180px;overflow:auto;font:inherit}.copy-area{margin-top:15px}.wide{width:100%}@media(max-width:760px){.shell{padding:12px}.workspace{grid-template-columns:1fr}.sidebar{border-right:0}.list{max-height:none}.detail{padding:16px}.workspace:not(.show-detail) .detail{display:none}.workspace.show-detail .sidebar{display:none}.back{display:inline-block}.filters{gap:8px}.filters>label{flex:1;min-width:130px}.search{width:100%}.search label{flex:1}.search input{width:100%}.counts{gap:12px}.topbar{align-items:start}.login-card{margin:10vh 16px}.pager button{padding:6px 10px}}
+.overview{margin:16px 0 24px;border:1px solid var(--line);border-radius:10px;background:#fff;padding:14px 16px}.overview summary{cursor:pointer;font-size:18px;font-weight:700}.overview .filters{margin-bottom:8px}.overview-table-wrap{max-height:300px;overflow:auto;border:1px solid var(--line);border-radius:6px}.overview table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:13px}.overview th,.overview td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:right;vertical-align:middle}.overview th{position:sticky;top:0;background:#edf2f0;z-index:1}.overview th:first-child,.overview td:first-child{text-align:left;width:67%}.overview th:not(:first-child){width:11%}.overview tbody tr:last-child td{border-bottom:0}.overview-title{border:0;padding:0;background:none;text-align:left;width:100%;font-weight:650;overflow-wrap:anywhere}.overview-title:hover{text-decoration:underline;background:none}.overview-trip{display:block;font-size:11px;color:var(--muted)}.inbox-heading{font-size:18px;margin:0 0 8px}@media(max-width:760px){.overview{padding:12px}.overview th,.overview td{padding:8px 5px}.overview th:first-child,.overview td:first-child{width:58%}.overview th:not(:first-child){width:14%}.overview-table-wrap{max-height:340px}}
+</style>
+</head>
+<body>
+<section id="loginView" class="login-card" hidden>
+<h1>CH Travel OS</h1><p class="muted">讀者回饋 · 本機作者管理入口</p>
+<form id="loginForm"><label for="passcodeInput">本機管理 Passcode</label><input id="passcodeInput" type="password" required autocomplete="current-password"><button id="btnLogin" class="primary wide">驗證並進入</button></form>
+<p id="loginAlert" class="notice error" role="alert" hidden></p>
+</section>
+<div id="dashboardView" class="shell" hidden>
+<header class="topbar"><div class="actions"><h1>讀者回饋</h1><span class="local">本機環境</span></div><div class="actions"><button id="btnRefresh">重新整理</button><button id="btnLogout">登出</button></div></header>
+<details class="overview" id="articleOverview" open>
+<summary>文章回饋總覽</summary>
+<p class="muted">讚數為目前有效點讚，取消後不計。點文章名稱可查看該篇全部留言。</p>
+<div class="filters"><label>總覽旅程<select id="overviewTrip" disabled><option value="">全部旅程</option></select></label><label>排序<select id="overviewSort" disabled><option value="likes_count">讚數最多</option><option value="total_messages">留言最多</option><option value="unread_messages">未讀最多</option><option value="title">文章名稱</option></select></label></div>
+<p id="overviewTotals" class="muted" aria-live="polite"></p>
+<p id="overviewState" class="muted" role="status">載入中…</p>
+<div id="overviewTable" class="overview-table-wrap" hidden><table aria-label="各篇文章的讚數與留言統計"><thead><tr><th scope="col">文章</th><th scope="col">讚數</th><th scope="col">留言</th><th scope="col">未讀</th></tr></thead><tbody id="overviewRows"></tbody></table></div>
+<p class="muted">總覽依上方旅程統計，不受下方留言篩選影響；按「重新整理」取得最新數字。</p>
+</details>
+<h2 id="inboxTitle" class="inbox-heading" tabindex="-1">留言收件匣</h2>
+<div id="counts" class="counts" aria-live="polite"></div>
+<p class="muted">計數套用旅程、文章、搜尋與未讀條件，不受處理狀態頁籤影響。</p>
+<div class="filters" id="filters">
+<label>旅程<select id="tripFilter" disabled><option value="">全部旅程</option></select></label>
+<label>文章<select id="articleFilter" disabled><option value="">全部文章</option></select></label>
+<label class="check"><input id="unreadFilter" type="checkbox">只看未讀</label>
+<form id="searchForm" class="search"><label for="searchInput">搜尋留言或暱稱<input id="searchInput" type="search" maxlength="200" placeholder="輸入關鍵字"></label><button>搜尋</button><button id="clearSearch" type="button">清除搜尋</button></form>
+<button id="clearFilters">清除篩選</button>
+</div>
+<nav id="statusTabs" class="tabs" aria-label="處理狀態"></nav>
+<div id="feedback" class="notice" role="status" aria-live="polite" hidden></div>
+<div id="loadError" class="notice error" role="alert" hidden><span id="loadErrorText"></span> <button id="retryLoad">重試</button></div>
+<main id="workspace" class="workspace">
+<aside class="sidebar" aria-label="留言收件匣"><div id="listState" class="empty" role="status">載入中…</div><div id="messagesList" class="list"></div><nav class="pager" aria-label="留言分頁"><button id="prevPage">上一頁</button><span id="pageInfo">—</span><button id="nextPage">下一頁</button></nav></aside>
+<section class="detail" aria-label="留言詳情"><button id="backToList" class="back">← 返回收件匣</button><div id="detailEmpty" class="empty">選擇一則留言查看詳情；查看不會自動標記已讀。</div>
+<div id="detailContent" hidden>
+<div class="detail-head"><h2 id="articleTitle"></h2><span id="readBadge" class="badge"></span></div>
+<p id="senderMeta" class="muted"></p><p id="messageIds" class="muted"></p>
+<div class="actions"><button id="toggleRead"></button><a id="articleLink" class="link" target="_blank" rel="noopener noreferrer" hidden>開啟文章 ↗</a><button id="copyQuestion">複製問題</button></div>
+<p id="messageBody" class="body-text"></p>
+<label for="messageStatus">處理狀態</label> <select id="messageStatus"><option value="pending">待處理</option><option value="in_progress">處理中</option><option value="done">已完成</option></select>
+<p class="muted">已完成表示作者處理完畢。</p>
+<label for="authorNote" class="note-label">作者筆記</label><div class="note-meta"><small>私人筆記，不會寄出或公開</small><small id="noteCount">0 / 5000</small></div>
+<textarea id="authorNote" rows="9" maxlength="5000"></textarea>
+<div id="conflictPanel" class="conflict" hidden><strong>資料已由其他頁面更新，草稿已保留。</strong><p id="conflictHint" class="muted"></p><pre id="serverNote"></pre><button id="resolveConflict">已核對最新版，保留我的草稿繼續編輯</button></div>
+<div class="actions"><button id="saveNote" class="primary">儲存筆記</button><button id="discardNote">放棄修改</button><span id="noteState" class="muted" aria-live="polite"></span></div>
+<div id="copyFallback" class="copy-area" hidden><label for="copyText">無法自動複製，請選取下方文字手動複製</label><textarea id="copyText" rows="6" readonly></textarea><button id="selectCopy">全選文字</button></div>
+</div></section>
+</main></div>
+<dialog id="unsavedDialog" aria-labelledby="unsavedTitle"><h2 id="unsavedTitle">筆記尚未儲存</h2><p>離開前要如何處理這份草稿？</p><p id="modalError" class="notice error" role="alert" hidden></p><div class="actions"><button id="modalSave" class="primary">儲存並繼續</button><button id="modalDiscard">放棄並繼續</button><button id="modalStay" autofocus>留在此頁</button></div></dialog>
+<script>
+(() => {
+'use strict';
+const $ = id => document.getElementById(id);
+const labels = {pending:'待處理',in_progress:'處理中',done:'已完成',all:'全部'};
+const TOKEN_KEY = 'ch_author_token';
+let token = '';
+try { token = sessionStorage.getItem(TOKEN_KEY) || ''; } catch (_) { /* Memory-only session is supported. */ }
+let articles = [], messages = [], selected = null, baseNote = '', draft = '', conflict = false;
+let query = {article_id:'',trip:'',q:'',status:'pending',unread:'0',page:1,page_size:20};
+let pages = 1, loading = false, busy = false, requestId = 0, sessionId = 0, controller = null, pendingLeave = null, guardBusy = false;
+let metadataReady = false, metadataRequest = 0, listFailed = false, sharedTotal = null;
+function el(tag, text, className) { const n = document.createElement(tag); if (text !== undefined) n.textContent = String(text); if (className) n.className = className; return n; }
+function dirty() { return selected !== null && draft !== baseNote; }
+function storeToken(value) { token = value; try { if(value) sessionStorage.setItem(TOKEN_KEY,value); else sessionStorage.removeItem(TOKEN_KEY); } catch (_) {} }
+function notice(text, error = false) { $('feedback').textContent = text; $('feedback').classList.toggle('error',error); $('feedback').hidden = !text; }
+function login(message = '') { $('loginView').hidden=false; $('dashboardView').hidden=true; $('loginAlert').textContent=message; $('loginAlert').hidden=!message; $('passcodeInput').focus(); }
+function dashboard() { $('loginView').hidden=true; $('dashboardView').hidden=false; if(!metadataReady) loadMetadata(); loadMessages(); }
+async function api(path, options = {}) {
+ const authSession = sessionId;
+ const res = await fetch(path,{...options,cache:'no-store',headers:{...options.headers,Authorization:'Bearer '+token}});
+ let data; try { data = await res.json(); } catch (_) { throw new Error('伺服器回應格式不正確，請重試。'); }
+ if(authSession !== sessionId) throw new DOMException('Stale session','AbortError');
+ if(res.status===401) { storeToken(''); metadataReady=false; requestId++; controller?.abort(); login('登入已過期，請重新登入。未儲存草稿仍保留在本頁，請勿關閉。'); throw new Error('登入已過期，請重新登入後重試。'); }
+ if(res.status===409) { const e = new Error('資料版本衝突'); e.conflict=true; e.data=data; throw e; }
+ if(!res.ok || data.success!==true) throw new Error(typeof data.error==='string' ? data.error : '操作失敗，請稍後重試。');
+ return data;
+}
+function syncFilters() {
+ $('tripFilter').value=query.trip; $('articleFilter').value=query.article_id; $('unreadFilter').checked=query.unread==='1'; $('searchInput').value=query.q;
+ document.querySelectorAll('[data-status]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.status===query.status)));
+}
+function articleOptions() {
+ $('articleFilter').replaceChildren(new Option('全部文章',''));
+ articles.filter(a=>!query.trip || a.trip===query.trip).forEach(a=>$('articleFilter').add(new Option(a.title || a.article_id,a.article_id)));
+ $('articleFilter').value=query.article_id;
+}
+async function loadMetadata() {
+ const epoch=sessionId, serial=++metadataRequest;
+ $('overviewTable').hidden=true;$('overviewTotals').textContent='';$('overviewState').hidden=false;$('overviewState').textContent='載入文章統計中…';
+ $('overviewTrip').disabled=true;$('overviewSort').disabled=true;$('tripFilter').disabled=true;$('articleFilter').disabled=true;
+ try {
+ const data=await api('/api/author/summary'); if(epoch!==sessionId || serial!==metadataRequest)return;
+ if(!Array.isArray(data.articles) || data.articles.some(a=>!a || typeof a.article_id!=='string' || typeof a.trip!=='string' || ['likes_count','total_messages','unread_messages'].some(k=>!Number.isInteger(a[k]) || a[k]<0)))throw new Error('文章統計資料不完整，請確認服務版本。');
+ articles=data.articles; metadataReady=true;
+ const previousTrip=$('overviewTrip').value;
+ $('overviewTrip').replaceChildren(new Option('全部旅程',''));
+ $('tripFilter').replaceChildren(new Option('全部旅程',''));
+ [...new Set(articles.map(a=>a.trip).filter(Boolean))].sort().forEach(t=>{$('tripFilter').add(new Option(t,t));$('overviewTrip').add(new Option(t,t));});
+ $('overviewTrip').value=articles.some(a=>a.trip===previousTrip)?previousTrip:'';
+ articleOptions(); syncFilters(); $('tripFilter').disabled=false; $('articleFilter').disabled=false;
+ $('overviewTrip').disabled=false;$('overviewSort').disabled=false;renderOverview();
+ } catch(e) { if(epoch!==sessionId || serial!==metadataRequest || e.name==='AbortError')return;metadataReady=false;$('overviewState').textContent='文章統計載入失敗，請按「重新整理」重試。';notice('文章篩選資料載入失敗：'+e.message+' 可按重新整理重試。',true); }
+}
+function renderOverview() {
+ if(!metadataReady)return;
+ const trip=$('overviewTrip').value, sort=$('overviewSort').value;
+ const rows=articles.filter(a=>!trip || a.trip===trip).slice().sort((a,b)=>
+   (sort==='title'?0:b[sort]-a[sort]) || (a.title || a.article_id).localeCompare(b.title || b.article_id,'zh-Hant') || a.article_id.localeCompare(b.article_id));
+ $('overviewRows').replaceChildren();
+ const totals=rows.reduce((n,a)=>({likes:n.likes+a.likes_count,messages:n.messages+a.total_messages,unread:n.unread+a.unread_messages}),{likes:0,messages:0,unread:0});
+ $('overviewTotals').textContent=rows.length+' 篇 · 讚數 '+totals.likes+' · 留言 '+totals.messages+' · 未讀 '+totals.unread;
+ for(const a of rows) {
+ const row=el('tr'), name=el('td'), button=el('button',a.title || a.article_id,'overview-title');button.type='button';button.title='查看這篇文章的全部留言';
+ button.onclick=()=>changeQuery({trip:a.trip,article_id:a.article_id,q:'',status:'all',unread:'0'},()=>{$('inboxTitle').focus();$('inboxTitle').scrollIntoView({block:'start'});});
+ name.append(button,el('span',a.trip,'overview-trip'));row.append(name);
+ for(const k of ['likes_count','total_messages','unread_messages'])row.append(el('td',a[k]));
+ $('overviewRows').append(row);
+ }
+ $('overviewTable').hidden=rows.length===0;$('overviewState').hidden=rows.length>0;$('overviewState').textContent=rows.length?'':'目前沒有已開放回饋的文章。';
+}
+function setLoading(value) {
+ loading=value; $('messagesList').setAttribute('aria-busy',String(value));
+ $('prevPage').disabled=value || busy || query.page<=1; $('nextPage').disabled=value || busy || query.page>=pages;
+ $('listState').hidden=!value; if(value) { $('listState').textContent='載入中…'; $('messagesList').replaceChildren(); }
+}
+function renderCounts(counts) {
+ sharedTotal=counts.all;
+ $('counts').replaceChildren();
+ ['pending','in_progress','done','unread'].forEach(k=>{const s=el('span',k==='unread'?'未讀':labels[k]);s.append(el('strong',counts[k] ?? 0));$('counts').append(s);});
+ document.querySelectorAll('[data-status]').forEach(b=>{b.textContent=labels[b.dataset.status]+' ('+(counts[b.dataset.status] ?? 0)+')';});
+}
+function date(value) { const d=new Date(value); return Number.isNaN(d.getTime()) ? String(value || '') : d.toLocaleString('zh-TW',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}); }
+function title(m) { return m.article_title || articles.find(a=>a.article_id===m.article_id)?.title || m.article_id; }
+function renderList() {
+ $('messagesList').replaceChildren();
+ for(const m of messages) {
+ const row=el('button',undefined,'row'+(m.is_read?'':' unread'));row.type='button';row.setAttribute('aria-current',String(selected?.id===m.id));
+ row.append(el('span',title(m),'row-title'));
+ const meta=el('span',undefined,'row-meta');meta.append(el('span',m.nickname || '匿名讀者'),el('time',date(m.created_at)));row.append(meta,el('span',m.content,'preview'));
+ const badges=el('span',undefined,'actions');if(!m.is_read)badges.append(el('span','未讀','badge new'));badges.append(el('span',labels[m.status] || '待處理','badge'));row.append(badges);
+ row.disabled=busy;row.addEventListener('click',()=>guard(()=>{selectMessage(m);$('workspace').classList.add('show-detail');$('articleTitle').tabIndex=-1;$('articleTitle').focus();}));$('messagesList').append(row);
+ }
+ $('listState').hidden=messages.length>0;
+ if(!messages.length) {
+ const filtered=query.article_id || query.trip || query.q || query.unread==='1' || (query.status!=='all' && sharedTotal!==0);
+ $('listState').replaceChildren(el('p',filtered?'沒有符合條件的留言。':'尚無留言。'));
+ if(filtered) {const b=el('button','清除篩選');b.onclick=()=>clearFilters();$('listState').append(b);}
+ }
+}
+function safeUrl(m) { if(!m.article_url)return ''; try{const u=new URL(m.article_url,location.origin);return ['http:','https:'].includes(u.protocol) && u.origin===location.origin ? u.href : '';}catch(_){return '';} }
+function selectMessage(m) {
+ selected=m; baseNote=m.author_note || '';draft=baseNote;conflict=false;renderDetail();renderList();
+}
+function renderDetail() {
+ $('detailEmpty').hidden=!!selected;$('detailContent').hidden=!selected;if(!selected)return;
+ $('articleTitle').textContent=title(selected);$('readBadge').textContent=selected.is_read?'已讀':'未讀';
+ $('senderMeta').textContent=(selected.nickname || '匿名讀者')+' · '+date(selected.created_at)+' · '+(selected.trip || '');
+ $('messageIds').textContent='文章 ID：'+selected.article_id+' · 留言 ID：'+selected.id;
+ $('messageBody').textContent=selected.content;$('toggleRead').textContent=selected.is_read?'標記未讀':'標記已讀';$('messageStatus').value=selected.status;
+ const url=safeUrl(selected);$('articleLink').hidden=!url;if(url)$('articleLink').href=url;else $('articleLink').removeAttribute('href');
+ $('authorNote').value=draft;$('copyFallback').hidden=true;noteControls();
+}
+function noteControls() {
+ const length=Array.from(draft).length;
+ $('noteCount').textContent=length+' / 5000';$('noteState').textContent=busy?'儲存中…':conflict?'請先核對衝突內容':dirty()?'有未儲存修改':'已儲存';
+ $('saveNote').disabled=busy || conflict || !dirty() || length>5000;
+ $('discardNote').disabled=busy || (!dirty()&&!conflict);$('toggleRead').disabled=busy || conflict;$('messageStatus').disabled=busy || conflict;
+ $('authorNote').readOnly=busy;$('conflictPanel').hidden=!conflict;
+ $('modalSave').disabled=busy || conflict || length>5000;
+ $('modalDiscard').disabled=busy;$('modalStay').disabled=busy;
+}
+async function loadMessages() {
+ const serial=++requestId;controller?.abort();controller=new AbortController();
+ $('loadError').hidden=true;listFailed=false;setLoading(true);$('pageInfo').textContent='載入中…';
+ try {
+ const data=await api('/api/author/messages?'+new URLSearchParams(query),{signal:controller.signal});
+ if(serial!==requestId)return false;
+ if(!Array.isArray(data.messages) || !data.counts || !Number.isInteger(data.page) || !Number.isInteger(data.pages))throw new Error('留言分頁資料不完整，請確認服務版本。');
+ pages=Math.max(1,data.pages);
+ if(query.page>pages){query.page=pages;return await loadMessages();}
+ query.page=data.page;messages=data.messages;
+ if(selected) {
+ const fresh=messages.find(m=>m.id===selected.id);
+ if(fresh) {
+ if(dirty() || conflict) {
+ if(fresh.version!==selected.version) showConflict(fresh);
+ } else { selected=fresh;baseNote=fresh.author_note || '';draft=baseNote;renderDetail(); }
+ } else if(!dirty()&&!conflict) { selected=null;renderDetail();$('workspace').classList.remove('show-detail'); }
+ }
+ renderCounts(data.counts);setLoading(false);renderList();syncFilters();$('pageInfo').textContent='第 '+data.page+' / '+pages+' 頁 · '+data.total+' 則';return true;
+ }catch(e){if(serial!==requestId || e.name==='AbortError')return false;setLoading(false);listFailed=true;$('listState').hidden=false;$('listState').textContent='無法載入留言，請重試。';$('loadErrorText').textContent=e.message;$('loadError').hidden=false;$('pageInfo').textContent='載入失敗';$('prevPage').disabled=true;$('nextPage').disabled=true;return false;}
+}
+function showConflict(fresh) {
+ conflict=true;
+ if(fresh && fresh.id===selected?.id) {selected=fresh;baseNote=fresh.author_note || '';renderDetail();$('serverNote').textContent=baseNote || '（目前伺服器筆記為空）';$('conflictHint').textContent='以下為伺服器最新版筆記。核對後才能再次儲存，避免覆寫另一份修改。';$('resolveConflict').disabled=false;}
+ else {$('serverNote').textContent='';$('conflictHint').textContent='尚未取得最新版。請按重新整理載入；你的草稿會保留。';$('resolveConflict').disabled=true;}
+ noteControls();notice('版本衝突，未儲存草稿已保留。請核對最新版後重試原操作。',true);
+}
+async function fetchConflictVersion(id, articleId) {
+ // There is no single-message GET endpoint. Only conflict recovery scans the
+ // article's paginated inbox, without carrying status/search/unread filters.
+ const epoch=sessionId;
+ let page=1, lastPage=1;
+ do {
+ const params=new URLSearchParams({article_id:articleId,trip:'',q:'',status:'all',unread:'0',page:String(page),page_size:'20'});
+ const data=await api('/api/author/messages?'+params);
+ if(epoch!==sessionId || selected?.id!==id)return;
+ const fresh=data.messages?.find(m=>m.id===id);
+ if(fresh){showConflict(fresh);return;}
+ if(!Number.isInteger(data.pages) || data.pages<0)throw new Error('衝突資料的分頁格式不正確。');
+ lastPage=data.pages;page++;
+ }while(page<=lastPage);
+ throw new Error('目前找不到這則留言，請保留草稿並重新整理。');
+}
+async function update(fields) {
+ if(!selected || busy || conflict)return false;
+ if(fields.author_note!==undefined && Array.from(fields.author_note).length>5000) {notice('筆記最多 5000 字。',true);return false;}
+ const id=selected.id, epoch=sessionId;
+ busy=true;requestId++;controller?.abort();noteControls();renderList();
+ try {
+ const data=await api('/api/author/update-message',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message_id:id,version:selected.version,...fields})});
+ if(epoch!==sessionId || selected?.id!==id)return false;
+ if(!data.message || data.message.id!==id || data.message.version===undefined)throw new Error('更新回應不完整，草稿已保留，請重新整理確認。');
+ selected=data.message;
+ if(fields.author_note!==undefined) {baseNote=selected.author_note || '';draft=baseNote;}
+ else baseNote=selected.author_note || '';
+ renderDetail();notice(fields.author_note!==undefined?'筆記已儲存。':'狀態已更新。');
+ if(fields.is_read!==undefined)await loadMetadata();
+ await loadMessages();return true;
+ }catch(e){if(e.name==='AbortError')return false;if(e.conflict){showConflict(e.data?.message);if(!e.data?.message){try{await fetchConflictVersion(id,selected.article_id);}catch(recoveryError){notice('版本衝突，草稿已保留。'+recoveryError.message,true);}}await loadMessages();}else notice(e.message,true);return false;}
+ finally{busy=false;noteControls();if(!loading&&!listFailed)renderList();$('prevPage').disabled=loading || query.page<=1;$('nextPage').disabled=loading || query.page>=pages;}
+}
+function guard(action, keepDraft = false) {
+ if(busy || guardBusy)return;
+ if(!dirty() || keepDraft) {action();return;}
+ pendingLeave=action;$('modalError').hidden=true;$('unsavedDialog').showModal();noteControls();
+}
+function closeGuard() {pendingLeave=null;$('unsavedDialog').close();}
+function abandon() {draft=baseNote;conflict=false;renderDetail();}
+function changeQuery(patch, afterChange) {guard(()=>{query={...query,...patch,page:patch.page ?? 1};articleOptions();syncFilters();selected=null;baseNote='';draft='';conflict=false;renderDetail();$('workspace').classList.remove('show-detail');loadMessages();afterChange?.();});syncFilters();}
+function clearFilters() {changeQuery({article_id:'',trip:'',q:'',status:'all',unread:'0'});}
+for(const status of Object.keys(labels)) {const b=el('button',labels[status]+' (—)');b.type='button';b.dataset.status=status;b.setAttribute('aria-pressed',String(query.status===status));b.onclick=()=>changeQuery({status});$('statusTabs').append(b);}
+$('loginForm').onsubmit=async e=>{
+ e.preventDefault();$('btnLogin').disabled=true;$('loginAlert').hidden=true;
+ try {const res=await fetch('/api/author/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({passcode:$('passcodeInput').value.trim()})});const data=await res.json();if(!res.ok || !data.success || !data.token)throw new Error(typeof data.error==='string'?data.error:'登入失敗，請重新輸入。');storeToken(data.token);$('passcodeInput').value='';dashboard();}
+ catch(e){$('loginAlert').textContent=e.message || '無法連線，請確認本機服務已啟動。';$('loginAlert').hidden=false;}finally{$('btnLogin').disabled=false;}
+};
+$('btnLogout').onclick=()=>guard(()=>{sessionId++;requestId++;metadataRequest++;controller?.abort();storeToken('');articles=[];messages=[];selected=null;baseNote='';draft='';conflict=false;metadataReady=false;$('messagesList').replaceChildren();$('counts').replaceChildren();$('overviewRows').replaceChildren();$('overviewTotals').textContent='';$('overviewTable').hidden=true;$('overviewTrip').value='';$('authorNote').value='';$('messageBody').textContent='';$('serverNote').textContent='';$('copyText').value='';renderDetail();notice('');login();});
+$('overviewTrip').onchange=renderOverview;
+$('overviewSort').onchange=renderOverview;
+$('btnRefresh').onclick=()=>guard(async()=>{loadMetadata();if(conflict && selected){try{await fetchConflictVersion(selected.id,selected.article_id);}catch(e){notice(e.message,true);}}loadMessages();},conflict);
+$('retryLoad').onclick=()=>guard(()=>loadMessages(),conflict);
+$('tripFilter').onchange=e=>{const trip=e.target.value;const a=articles.find(a=>a.article_id===query.article_id);changeQuery({trip,article_id:a && (!trip || a.trip===trip)?query.article_id:''});};
+$('articleFilter').onchange=e=>changeQuery({article_id:e.target.value});
+$('unreadFilter').onchange=e=>changeQuery({unread:e.target.checked?'1':'0'});
+$('searchForm').onsubmit=e=>{e.preventDefault();changeQuery({q:$('searchInput').value.trim()});};
+$('clearSearch').onclick=()=>changeQuery({q:''});$('clearFilters').onclick=clearFilters;
+$('prevPage').onclick=()=>changeQuery({page:query.page-1});$('nextPage').onclick=()=>changeQuery({page:query.page+1});
+$('backToList').onclick=()=>guard(()=>{$('workspace').classList.remove('show-detail');});
+$('authorNote').oninput=e=>{draft=e.target.value;noteControls();};
+$('saveNote').onclick=()=>update({author_note:draft});
+$('discardNote').onclick=()=>guard(()=>abandon());
+$('toggleRead').onclick=()=>update({is_read:!selected.is_read});
+$('messageStatus').onchange=e=>{const status=e.target.value;e.target.value=selected.status;update({status});};
+$('resolveConflict').onclick=()=>{conflict=false;noteControls();notice('已保留草稿。請再次按儲存筆記或狀態操作。');};
+$('modalStay').onclick=closeGuard;$('unsavedDialog').addEventListener('cancel',e=>{if(busy)e.preventDefault();else pendingLeave=null;});
+$('modalDiscard').onclick=()=>{const action=pendingLeave;abandon();closeGuard();action?.();};
+$('modalSave').onclick=async()=>{guardBusy=true;const ok=await update({author_note:draft});guardBusy=false;if(ok){const action=pendingLeave;closeGuard();action?.();}else{$('modalError').textContent=conflict?'發生版本衝突，請留在此頁核對；草稿已保留。':'儲存失敗，草稿已保留。請重試或留在此頁。';$('modalError').hidden=false;}};
+$('copyQuestion').onclick=async()=>{
+ if(!selected)return;const text=title(selected)+'\n'+safeUrl(selected)+'\n\n'+selected.content;
+ try{if(!navigator.clipboard?.writeText)throw new Error('Clipboard unavailable');await navigator.clipboard.writeText(text);notice('問題已複製。');}
+ catch(_){$('copyText').value=text;$('copyFallback').hidden=false;$('copyText').focus();$('copyText').select();notice('請手動複製下方文字。');}
+};
+$('selectCopy').onclick=()=>{$('copyText').focus();$('copyText').select();};
+window.addEventListener('beforeunload',e=>{if(dirty() || busy){e.preventDefault();e.returnValue='';}});
+if(token)dashboard();else login();
+})();
+</script>
+</body>
+</html>
