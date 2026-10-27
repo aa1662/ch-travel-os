@@ -11,3 +11,8 @@
 參數不提供正文覆寫或公開轉檔功能。分篇可重複 `--manuscript`。母稿需保留在此私人目錄，正式編排仍使用既有流程與獨立授權。
 
 母稿引用相對於專案根目錄，也可直接指向 `trips/<journey>/manuscripts/*.md`，不複製既有母稿。
+
+
+## 原始口述與整理稿（2026-10-26）
+
+`item.igSource.caption` 是原IG來源，不是新口述；`item.memories` 是作者原始口述SSoT，photoIds為多圖分組。`item.acceptedDraft.text` 是作者明確接受的AI整理稿，不能取代原文，依據 `inputRevision`。快照頂層 `acceptedDraftStale=true` 表示口述已補充、接受稿尚未涵蓋新內容；保留舊稿並重新整合，不把它當最新版母稿。照片全組帶入仍是候選，不等於想用或公開核准。正式母稿與核准正文維持既有SSoT。
